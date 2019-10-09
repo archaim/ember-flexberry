@@ -1168,7 +1168,7 @@ define('dummy/tests/acceptance/components/flexberry-lookup/flexberry-lookup-auto
     visit('components-acceptance-tests/flexberry-lookup/settings-example-autofill-by-limit');
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var defaultValue = Ember.get(controller, 'defaultValue.name');
+      var defaultValue = Ember.get(controller, 'defaultValue.id');
 
       var $lookupField = Ember.$('.exist .lookup-field');
       var value = $lookupField.val();
@@ -2415,6 +2415,35 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-checked-
     });
   });
   /* eslint-enable no-unused-vars */
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test', ['dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (_executeFolvTest) {
+  'use strict';
+
+  (0, _executeFolvTest.executeTest)('check column config save button test', function (store, assert) {
+    assert.expect(3);
+    var path = 'ember-flexberry-dummy-suggestion-list';
+    visit(path);
+
+    andThen(function () {
+      assert.equal(currentPath(), path);
+
+      var $configButton = Ember.$('button.config-button');
+      click($configButton);
+
+      andThen(function () {
+        var $field = Ember.$('div.ui.action.input');
+        var $fieldInput = $field.children('input');
+
+        assert.equal($field.children('.cols-config-save.disabled').length === 1, true, 'button disabled');
+        fillIn($fieldInput, 'aaayyyeee leemaauuuu');
+      });
+
+      andThen(function () {
+        var $field = Ember.$('div.ui.action.input');
+        assert.equal($field.children('.cols-config-save.disabled').length === 0, true, 'button active');
+      });
+    });
+  });
 });
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-configurate-row-test', ['dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (_executeFolvTest) {
   'use strict';
@@ -4765,27 +4794,28 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
 
     visit(path);
     andThen(function () {
-      var controller = app.__container__.lookup('controller:' + currentRouteName());
       var $addButton = Ember.$('.in-groupedit .ui-add');
-      assert.strictEqual(Ember.$.trim($addButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Add\' is readonly');
-
       var $removeButton = Ember.$('.in-groupedit .ui-delete');
-      assert.strictEqual(Ember.$.trim($removeButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Remove\' is readonly');
-
       var $checkbox = Ember.$('.in-groupedit .flexberry-checkbox');
-      assert.strictEqual($checkbox.hasClass('read-only'), true, 'Flexberry-groupedit\'s checkbox helper is readonly');
-
       var $removeButtonRow = Ember.$('.in-groupedit .object-list-view-row-delete-button');
-      assert.strictEqual($removeButtonRow.hasClass('disabled'), true, 'Flexberry-groupedit\'s button \'Remove in row\' is readonly');
-
       var $itemEditMenu = Ember.$('.in-groupedit .edit-menu');
-      assert.strictEqual($itemEditMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Edit\' in left menu is readonly');
       var $itemDeleteMenu = Ember.$('.in-groupedit .delete-menu');
+
+      assert.strictEqual(Ember.$.trim($addButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Add\' is readonly');
+      assert.strictEqual(Ember.$.trim($removeButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Remove\' is readonly');
+      assert.strictEqual($checkbox.hasClass('read-only'), true, 'Flexberry-groupedit\'s checkbox helper is readonly');
+      assert.strictEqual($removeButtonRow.hasClass('disabled'), true, 'Flexberry-groupedit\'s button \'Remove in row\' is readonly');
+      assert.strictEqual($itemEditMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Edit\' in left menu is readonly');
       assert.strictEqual($itemDeleteMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Delete\' in left menu is readonly');
 
+      var controller = app.__container__.lookup('controller:' + currentRouteName());
       controller.set('readonly', false);
       Ember.run.scheduleOnce('afterRender', function () {
+        $checkbox = Ember.$('.in-groupedit .flexberry-checkbox');
+        $itemEditMenu = Ember.$('.in-groupedit .edit-menu');
+        $itemDeleteMenu = Ember.$('.in-groupedit .delete-menu');
         $removeButtonRow = Ember.$('.in-groupedit .object-list-view-row-delete-button');
+
         assert.strictEqual(Ember.$(undefined).is('disabled'), false, 'Flexberry-groupedit\'s button \'Add\' don\'t readonly');
         assert.strictEqual(Ember.$(undefined).is('disabled'), false, 'Flexberry-groupedit\'s button \'Remove\' don\'t readonly');
         assert.strictEqual($checkbox.hasClass('read-only'), false, 'Flexberry-groupedit\'s checkbox helper don\'t readonly');
@@ -5709,9 +5739,19 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/edit-form-with-detail-list.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/components-examples/flexberry-objectlistview/hierarchy-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/hierarchy-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/components-examples/flexberry-objectlistview/hierarchy-paging-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/hierarchy-paging-example.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/components-examples/flexberry-objectlistview/inheritance-models.js', function (assert) {
@@ -5767,6 +5807,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('controllers/components-examples/flexberry-objectlistview/limit-function-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/limit-function-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/components-examples/flexberry-objectlistview/list-on-editform.js', function (assert) {
@@ -5832,6 +5877,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('controllers/components-examples/flexberry-simpledatetime/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-simpledatetime/settings-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/components-examples/flexberry-text-cell/settings-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-text-cell/settings-example.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/components-examples/flexberry-textarea/settings-example.js', function (assert) {
@@ -5917,6 +5967,21 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('controllers/ember-flexberry-dummy-localization-list.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/ember-flexberry-dummy-localization-list.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/ember-flexberry-dummy-multi-list-user-edit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-multi-list-user-edit.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/ember-flexberry-dummy-multi-list-user-edit/new.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-multi-list-user-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/ember-flexberry-dummy-multi-list.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-multi-list.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/ember-flexberry-dummy-suggestion-edit.js', function (assert) {
@@ -6579,9 +6644,19 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/edit-form-with-detail-list.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/components-examples/flexberry-objectlistview/hierarchy-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/hierarchy-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/components-examples/flexberry-objectlistview/hierarchy-paging-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/hierarchy-paging-example.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/components-examples/flexberry-objectlistview/inheritance-models.js', function (assert) {
@@ -6637,6 +6712,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/components-examples/flexberry-objectlistview/limit-function-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/limit-function-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/components-examples/flexberry-objectlistview/limited-text-size-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/components-examples/flexberry-objectlistview/list-on-editform.js', function (assert) {
@@ -6702,6 +6782,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/components-examples/flexberry-simpledatetime/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-simpledatetime/settings-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/components-examples/flexberry-text-cell/settings-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-text-cell/settings-example.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/components-examples/flexberry-textarea/settings-example.js', function (assert) {
@@ -6787,6 +6872,21 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/ember-flexberry-dummy-localization-list.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/ember-flexberry-dummy-localization-list.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-multi-list-user-edit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-multi-list-user-edit.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-multi-list-user-edit/new.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-multi-list-user-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-multi-list.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-multi-list.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/ember-flexberry-dummy-suggestion-edit.js', function (assert) {
@@ -6932,6 +7032,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('serializers/ember-flexberry-dummy-vote.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'serializers/ember-flexberry-dummy-vote.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('services/offline-globals.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'services/offline-globals.js should pass ESLint\n\n');
   });
 
   QUnit.test('services/store.js', function (assert) {
@@ -11864,6 +11969,11 @@ define('dummy/tests/tests.lint-test', [], function () {
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-checked-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('acceptance/components/flexberry-objectlistview/folv-configurate-row-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-configurate-row-test.js should pass ESLint\n\n');
@@ -12294,6 +12404,26 @@ define('dummy/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/mixins/modal-application-route-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/mixins/multi-list-controller-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/mixins/multi-list-controller-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/mixins/multi-list-model-edit-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/mixins/multi-list-model-edit-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/mixins/multi-list-model-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/mixins/multi-list-model-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/mixins/multi-list-route-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/mixins/multi-list-route-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/mixins/paginated-controller-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/mixins/paginated-controller-test.js should pass ESLint\n\n');
@@ -12394,6 +12524,11 @@ define('dummy/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/services/objectlistview-events-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/utils/cut-string-by-length-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/utils/cut-string-by-length-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/utils/deserialize-sorting-param-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/utils/deserialize-sorting-param-test.js should pass ESLint\n\n');
@@ -12455,7 +12590,7 @@ define('dummy/tests/unit/controllers/detail-edit-form-test', ['ember-qunit'], fu
   'use strict';
 
   (0, _emberQunit.moduleFor)('controller:detail-edit-form', 'Unit | Controller | detail edit form', {
-    needs: ['controller:flexberry-file-view-dialog', 'controller:lookup-dialog', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state']
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:flexberry-file-view-dialog', 'controller:lookup-dialog', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state', 'service:adv-limit']
   });
 
   // Replace this with your real tests.
@@ -12476,7 +12611,7 @@ define('dummy/tests/unit/controllers/edit-form-test', ['ember-data', 'ember-quni
   var App;
 
   (0, _emberQunit.moduleFor)('controller:edit-form', 'Unit | Controller | edit form', {
-    needs: ['controller:flexberry-file-view-dialog', 'controller:lookup-dialog', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state'],
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:flexberry-file-view-dialog', 'controller:lookup-dialog', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state', 'service:adv-limit'],
 
     beforeEach: function beforeEach() {
       App = (0, _startApp.default)();
@@ -12570,7 +12705,7 @@ define('dummy/tests/unit/controllers/list-form-test', ['ember-qunit'], function 
   'use strict';
 
   (0, _emberQunit.moduleFor)('controller:list-form', 'Unit | Controller | list form', {
-    needs: ['controller:colsconfig-dialog', 'service:objectlistview-events', 'service:user-settings']
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'service:objectlistview-events', 'service:user-settings', 'service:adv-limit']
   });
 
   // Replace this with your real tests.
@@ -12583,7 +12718,7 @@ define('dummy/tests/unit/controllers/lookup-dialog-test', ['ember-qunit', 'sinon
   'use strict';
 
   (0, _emberQunit.moduleFor)('controller:lookup-dialog', 'Unit | Controller | lookup dialog', {
-    needs: ['controller:colsconfig-dialog', 'service:lookup-events', 'service:objectlistview-events', 'service:user-settings']
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'service:lookup-events', 'service:objectlistview-events', 'service:user-settings', 'service:adv-limit']
   });
 
   // Replace this with your real tests.
@@ -12615,7 +12750,7 @@ define('dummy/tests/unit/controllers/new-platform-flexberry-services-lock-list-t
   'use strict';
 
   (0, _emberQunit.moduleFor)('controller:new-platform-flexberry-services-lock-list', 'Unit | Controller | new-platform-flexberry-services-lock-list', {
-    needs: ['controller:colsconfig-dialog', 'service:objectlistview-events', 'service:user-settings']
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'service:adv-limit', 'service:objectlistview-events', 'service:user-settings']
   });
 
   (0, _emberQunit.test)('it exists', function (assert) {
@@ -13565,6 +13700,50 @@ define('dummy/tests/unit/mixins/modal-application-route-test', ['ember-flexberry
     assert.ok(subject);
   });
 });
+define('dummy/tests/unit/mixins/multi-list-controller-test', ['ember-flexberry/mixins/multi-list-controller', 'qunit'], function (_multiListController, _qunit) {
+  'use strict';
+
+  (0, _qunit.module)('Unit | Mixin | multi list controller');
+
+  (0, _qunit.test)('it works', function (assert) {
+    var MultiListControllerObject = Ember.Object.extend(_multiListController.default);
+    var subject = MultiListControllerObject.create();
+    assert.ok(subject);
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-model-edit-test', ['ember-flexberry/mixins/multi-list-model-edit', 'qunit'], function (_multiListModelEdit, _qunit) {
+  'use strict';
+
+  (0, _qunit.module)('Unit | Mixin | multi list model edit');
+
+  (0, _qunit.test)('it works', function (assert) {
+    var MultiListModelEditObject = Ember.Object.extend(_multiListModelEdit.default);
+    var subject = MultiListModelEditObject.create();
+    assert.ok(subject);
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-model-test', ['ember-flexberry/mixins/multi-list-model', 'qunit'], function (_multiListModel, _qunit) {
+  'use strict';
+
+  (0, _qunit.module)('Unit | Mixin | multi list model');
+
+  (0, _qunit.test)('it works', function (assert) {
+    var MultiListModelObject = Ember.Object.extend(_multiListModel.default);
+    var subject = MultiListModelObject.create();
+    assert.ok(subject);
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-route-test', ['ember-flexberry/mixins/multi-list-route', 'qunit'], function (_multiListRoute, _qunit) {
+  'use strict';
+
+  (0, _qunit.module)('Unit | Mixin | multi list route');
+
+  (0, _qunit.test)('it works', function (assert) {
+    var MultiListRouteObject = Ember.Object.extend(_multiListRoute.default);
+    var subject = MultiListRouteObject.create();
+    assert.ok(subject);
+  });
+});
 define('dummy/tests/unit/mixins/paginated-controller-test', ['ember-flexberry/mixins/paginated-controller', 'qunit'], function (_paginatedController, _qunit) {
   'use strict';
 
@@ -13788,7 +13967,7 @@ define('dummy/tests/unit/routes/edit-form-test', ['ember-qunit'], function (_emb
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:edit-form', 'Unit | Route | edit form', {
-    needs: ['service:cols-config-menu', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state']
+    needs: ['service:cols-config-menu', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state', 'service:adv-limit']
   });
 
   (0, _emberQunit.test)('it exists', function (assert) {
@@ -13800,7 +13979,7 @@ define('dummy/tests/unit/routes/list-form-test', ['ember-qunit'], function (_emb
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:list-form', 'Unit | Route | list form', {
-    needs: ['service:cols-config-menu', 'service:form-load-time-tracker', 'service:objectlistview-events', 'service:app-state']
+    needs: ['service:cols-config-menu', 'service:form-load-time-tracker', 'service:objectlistview-events', 'service:app-state', 'service:adv-limit']
   });
 
   (0, _emberQunit.test)('it exists', function (assert) {
@@ -13812,7 +13991,7 @@ define('dummy/tests/unit/routes/new-platform-flexberry-services-lock-list-test',
   'use strict';
 
   (0, _emberQunit.moduleFor)('route:new-platform-flexberry-services-lock-list', 'Unit | Route | new-platform-flexberry-services-lock-list', {
-    needs: ['service:cols-config-menu', 'service:form-load-time-tracker', 'service:objectlistview-events', 'service:app-state']
+    needs: ['service:cols-config-menu', 'service:form-load-time-tracker', 'service:objectlistview-events', 'service:app-state', 'service:adv-limit']
   });
 
   (0, _emberQunit.test)('it exists', function (assert) {
@@ -14724,6 +14903,45 @@ define('dummy/tests/unit/services/objectlistview-events-test', ['ember-qunit'], 
   (0, _emberQunit.test)('it exists', function (assert) {
     var service = this.subject();
     assert.ok(service);
+  });
+});
+define('dummy/tests/unit/utils/cut-string-by-length-test', ['dummy/utils/cut-string-by-length', 'qunit'], function (_cutStringByLength, _qunit) {
+  'use strict';
+
+  (0, _qunit.module)('Unit | Utility | cut string by length');
+
+  (0, _qunit.test)('cut by length', function (assert) {
+    var result = (0, _cutStringByLength.default)('test string', 6);
+    assert.equal(result, 'test s...');
+
+    result = (0, _cutStringByLength.default)('test string', 20);
+    assert.equal(result, 'test string');
+
+    result = (0, _cutStringByLength.default)('test string', 0);
+    assert.equal(result, 'test string');
+
+    result = (0, _cutStringByLength.default)('test string', 3);
+    assert.equal(result, 'tes...');
+  });
+
+  (0, _qunit.test)('cut by spaces', function (assert) {
+    var result = (0, _cutStringByLength.default)('test string with spaces', 6, true);
+    assert.equal(result, 'test...');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 50, true);
+    assert.equal(result, 'test string with spaces');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 0, true);
+    assert.equal(result, 'test string with spaces');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 3, true);
+    assert.equal(result, 'tes...');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 18, true);
+    assert.equal(result, 'test string with...');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 12, true);
+    assert.equal(result, 'test string...');
   });
 });
 define('dummy/tests/unit/utils/deserialize-sorting-param-test', ['dummy/utils/deserialize-sorting-param', 'qunit'], function (_deserializeSortingParam, _qunit) {

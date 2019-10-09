@@ -5204,12 +5204,18 @@ div.ui.secondary.menu.no-margin {
 }
 .ui.secondary.menu .ui.buttons.export-config .export-button,
 .ui.secondary.menu .ui.buttons.cols-config .export-button,
+.ui.secondary.menu .ui.buttons.adv-limit-config .export-button,
 .ui.secondary.menu .ui.buttons.export-config .config-button.settings-enabled,
-.ui.secondary.menu .ui.buttons.cols-config .config-button.settings-enabled {
+.ui.secondary.menu .ui.buttons.cols-config .config-button.settings-enabled,
+.ui.secondary.menu .ui.buttons.adv-limit-config .config-button.settings-enabled,
+.ui.secondary.menu .ui.buttons.export-config .adv-limit-button,
+.ui.secondary.menu .ui.buttons.cols-config .adv-limit-button,
+.ui.secondary.menu .ui.buttons.adv-limit-config .adv-limit-button {
   padding-right: 0em;
 }
 .ui.secondary.menu .ui.buttons.export-config .dropdown.button,
-.ui.secondary.menu .ui.buttons.cols-config .dropdown.button {
+.ui.secondary.menu .ui.buttons.cols-config .dropdown.button,
+.ui.secondary.menu .ui.buttons.adv-limit-config .dropdown.button {
   padding-left: 0.2em;
 }
 /**************************************
@@ -11272,6 +11278,15 @@ span.lookup-field {
   border-color: #E0B4B4;
   color: #9F3A38;
   box-shadow: none;
+}
+.ui.form .flexberry-advlimit-input {
+  width: 100%;
+}
+.ui.form .flexberry-advlimit-input .flexberry-textarea {
+  width: 100%;
+}
+.ui.form .flexberry-advlimit-input .flexberry-textarea textarea {
+  resize: none;
 }
 /*!
  * # Semantic UI - Label
@@ -40677,6 +40692,9 @@ img.item-minus {
   padding: 0px 10px 2em 10px;
   border-bottom: none;
   height: 100%;
+}
+.flexberry-dropdown.search.selection.ember-view.ui.dropdown.blue {
+  background: blue;
 }
 .flexberry-word-break {
   word-break: break-all !important;
