@@ -2346,6 +2346,51 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-checked-
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-checked-test.js should pass jshint.');
   });
 });
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
+
+  (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check column config save button test', function (store, assert, app) {
+    assert.expect(3);
+    var path = 'ember-flexberry-dummy-suggestion-list';
+    visit(path);
+
+    andThen(function () {
+      assert.equal(currentPath(), path);
+
+      var $configButton = _ember['default'].$('button.config-button');
+      click($configButton);
+
+      andThen(function () {
+        var $field = _ember['default'].$('div.ui.action.input');
+        var $fieldInput = $field.children('input');
+
+        assert.equal($field.children('.cols-config-save.disabled').length === 1, true, 'button disabled');
+        fillIn($fieldInput, 'aaayyyeee leemaauuuu');
+      });
+
+      andThen(function () {
+        var $field = _ember['default'].$('div.ui.action.input');
+        assert.equal($field.children('.cols-config-save.disabled').length === 0, true, 'button active');
+      });
+    });
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - acceptance/components/flexberry-objectlistview');
+  test('acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js should pass jscs', function () {
+    ok(true, 'acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js should pass jshint.');
+  });
+});
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-configurate-row-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check configurate row test', function (store, assert, app) {
@@ -5121,27 +5166,28 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
 
     visit(path);
     andThen(function () {
-      var controller = app.__container__.lookup('controller:' + currentRouteName());
       var $addButton = _ember['default'].$('.in-groupedit .ui-add');
-      assert.strictEqual(_ember['default'].$.trim($addButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Add\' is readonly');
-
       var $removeButton = _ember['default'].$('.in-groupedit .ui-delete');
-      assert.strictEqual(_ember['default'].$.trim($removeButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Remove\' is readonly');
-
       var $checkbox = _ember['default'].$('.in-groupedit .flexberry-checkbox');
-      assert.strictEqual($checkbox.hasClass('read-only'), true, 'Flexberry-groupedit\'s checkbox helper is readonly');
-
       var $removeButtonRow = _ember['default'].$('.in-groupedit .object-list-view-row-delete-button');
-      assert.strictEqual($removeButtonRow.hasClass('disabled'), true, 'Flexberry-groupedit\'s button \'Remove in row\' is readonly');
-
       var $itemEditMenu = _ember['default'].$('.in-groupedit .edit-menu');
-      assert.strictEqual($itemEditMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Edit\' in left menu is readonly');
       var $itemDeleteMenu = _ember['default'].$('.in-groupedit .delete-menu');
+
+      assert.strictEqual(_ember['default'].$.trim($addButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Add\' is readonly');
+      assert.strictEqual(_ember['default'].$.trim($removeButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Remove\' is readonly');
+      assert.strictEqual($checkbox.hasClass('read-only'), true, 'Flexberry-groupedit\'s checkbox helper is readonly');
+      assert.strictEqual($removeButtonRow.hasClass('disabled'), true, 'Flexberry-groupedit\'s button \'Remove in row\' is readonly');
+      assert.strictEqual($itemEditMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Edit\' in left menu is readonly');
       assert.strictEqual($itemDeleteMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Delete\' in left menu is readonly');
 
+      var controller = app.__container__.lookup('controller:' + currentRouteName());
       controller.set('readonly', false);
       _ember['default'].run.scheduleOnce('afterRender', function () {
+        $checkbox = _ember['default'].$('.in-groupedit .flexberry-checkbox');
+        $itemEditMenu = _ember['default'].$('.in-groupedit .edit-menu');
+        $itemDeleteMenu = _ember['default'].$('.in-groupedit .delete-menu');
         $removeButtonRow = _ember['default'].$('.in-groupedit .object-list-view-row-delete-button');
+
         assert.strictEqual($(_this).is('disabled'), false, 'Flexberry-groupedit\'s button \'Add\' don\'t readonly');
         assert.strictEqual($(_this).is('disabled'), false, 'Flexberry-groupedit\'s button \'Remove\' don\'t readonly');
         assert.strictEqual($checkbox.hasClass('read-only'), false, 'Flexberry-groupedit\'s checkbox helper don\'t readonly');
@@ -7177,6 +7223,23 @@ define('dummy/tests/controllers/components-examples/flexberry-objectlistview/edi
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/edit-form-with-detail-list.js should pass jshint.');
   });
 });
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/components-examples/flexberry-objectlistview');
+  test('controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass jscs', function () {
+    ok(true, 'controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass jshint.');
+  });
+});
 define('dummy/tests/controllers/components-examples/flexberry-objectlistview/hierarchy-example.jscs-test', ['exports'], function (exports) {
   'use strict';
 
@@ -7192,6 +7255,23 @@ define('dummy/tests/controllers/components-examples/flexberry-objectlistview/hie
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/hierarchy-example.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/hierarchy-paging-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/components-examples/flexberry-objectlistview');
+  test('controllers/components-examples/flexberry-objectlistview/hierarchy-paging-example.js should pass jscs', function () {
+    ok(true, 'controllers/components-examples/flexberry-objectlistview/hierarchy-paging-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/hierarchy-paging-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/components-examples/flexberry-objectlistview/hierarchy-paging-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/hierarchy-paging-example.js should pass jshint.');
   });
 });
 define('dummy/tests/controllers/components-examples/flexberry-objectlistview/inheritance-models.jscs-test', ['exports'], function (exports) {
@@ -7379,6 +7459,23 @@ define('dummy/tests/controllers/components-examples/flexberry-objectlistview/lim
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/limit-function-example.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/limited-text-size-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/components-examples/flexberry-objectlistview');
+  test('controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jscs', function () {
+    ok(true, 'controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/limited-text-size-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jshint.');
   });
 });
 define('dummy/tests/controllers/components-examples/flexberry-objectlistview/list-on-editform.jscs-test', ['exports'], function (exports) {
@@ -7738,6 +7835,23 @@ define('dummy/tests/controllers/components-examples/flexberry-simpleolv/toolbar-
     assert.ok(true, 'controllers/components-examples/flexberry-simpleolv/toolbar-custom-buttons-example.js should pass jshint.');
   });
 });
+define('dummy/tests/controllers/components-examples/flexberry-text-cell/settings-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/components-examples/flexberry-text-cell');
+  test('controllers/components-examples/flexberry-text-cell/settings-example.js should pass jscs', function () {
+    ok(true, 'controllers/components-examples/flexberry-text-cell/settings-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-text-cell/settings-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/components-examples/flexberry-text-cell/settings-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-text-cell/settings-example.js should pass jshint.');
+  });
+});
 define('dummy/tests/controllers/components-examples/flexberry-textarea/settings-example.jscs-test', ['exports'], function (exports) {
   'use strict';
 
@@ -8025,6 +8139,57 @@ define('dummy/tests/controllers/ember-flexberry-dummy-localization-list.jshint',
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/ember-flexberry-dummy-localization-list.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-multi-list-user-edit.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers');
+  test('controllers/ember-flexberry-dummy-multi-list-user-edit.js should pass jscs', function () {
+    ok(true, 'controllers/ember-flexberry-dummy-multi-list-user-edit.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-multi-list-user-edit.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/ember-flexberry-dummy-multi-list-user-edit.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-multi-list-user-edit.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-multi-list-user-edit/new.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/ember-flexberry-dummy-multi-list-user-edit');
+  test('controllers/ember-flexberry-dummy-multi-list-user-edit/new.js should pass jscs', function () {
+    ok(true, 'controllers/ember-flexberry-dummy-multi-list-user-edit/new.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-multi-list-user-edit/new.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/ember-flexberry-dummy-multi-list-user-edit/new.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-multi-list-user-edit/new.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-multi-list.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers');
+  test('controllers/ember-flexberry-dummy-multi-list.js should pass jscs', function () {
+    ok(true, 'controllers/ember-flexberry-dummy-multi-list.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-multi-list.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/ember-flexberry-dummy-multi-list.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-multi-list.js should pass jshint.');
   });
 });
 define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-edit.jscs-test', ['exports'], function (exports) {
@@ -14269,6 +14434,55 @@ define('dummy/tests/integration/components/flexberry-simpledatetime-test', ['exp
       };
     })()));
     assert.ok(true);
+  });
+
+  (0, _emberQunit.test)('check locale at month scroll hint', function (assert) {
+    this.render(_ember['default'].HTMLBars.template((function () {
+      return {
+        meta: {
+          'fragmentReason': {
+            'name': 'missing-wrapper',
+            'problems': ['wrong-type']
+          },
+          'revision': 'Ember@2.4.6',
+          'loc': {
+            'source': null,
+            'start': {
+              'line': 1,
+              'column': 0
+            },
+            'end': {
+              'line': 1,
+              'column': 28
+            }
+          }
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment('');
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+          dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
+          return morphs;
+        },
+        statements: [['content', 'flexberry-simpledatetime', ['loc', [null, [1, 0], [1, 28]]]]],
+        locals: [],
+        templates: []
+      };
+    })()));
+    this.set('i18n.locale', 'ru');
+    assert.equal(_ember['default'].$('.flatpickr-current-month .cur-month')[0].title, this.get('i18n').t('components.flexberry-simpledatetime.scroll-caption-text'), 'Locale ru is correct');
+    this.set('i18n.locale', 'en');
+    assert.equal(_ember['default'].$('.flatpickr-current-month .cur-month')[0].title, this.get('i18n').t('components.flexberry-simpledatetime.scroll-caption-text'), 'Locale en is correct');
   });
 
   (0, _emberQunit.test)('render with type before value', function (assert) {
@@ -21034,6 +21248,23 @@ define('dummy/tests/routes/components-examples/flexberry-objectlistview/edit-for
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/edit-form-with-detail-list.js should pass jshint.');
   });
 });
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/components-examples/flexberry-objectlistview');
+  test('routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass jscs', function () {
+    ok(true, 'routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass jshint.');
+  });
+});
 define('dummy/tests/routes/components-examples/flexberry-objectlistview/hierarchy-example.jscs-test', ['exports'], function (exports) {
   'use strict';
 
@@ -21049,6 +21280,23 @@ define('dummy/tests/routes/components-examples/flexberry-objectlistview/hierarch
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/hierarchy-example.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/hierarchy-paging-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/components-examples/flexberry-objectlistview');
+  test('routes/components-examples/flexberry-objectlistview/hierarchy-paging-example.js should pass jscs', function () {
+    ok(true, 'routes/components-examples/flexberry-objectlistview/hierarchy-paging-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/hierarchy-paging-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/components-examples/flexberry-objectlistview/hierarchy-paging-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/hierarchy-paging-example.js should pass jshint.');
   });
 });
 define('dummy/tests/routes/components-examples/flexberry-objectlistview/inheritance-models.jscs-test', ['exports'], function (exports) {
@@ -21236,6 +21484,23 @@ define('dummy/tests/routes/components-examples/flexberry-objectlistview/limit-fu
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/limit-function-example.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/limited-text-size-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/components-examples/flexberry-objectlistview');
+  test('routes/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jscs', function () {
+    ok(true, 'routes/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/limited-text-size-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/components-examples/flexberry-objectlistview/limited-text-size-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jshint.');
   });
 });
 define('dummy/tests/routes/components-examples/flexberry-objectlistview/list-on-editform.jscs-test', ['exports'], function (exports) {
@@ -21595,6 +21860,23 @@ define('dummy/tests/routes/components-examples/flexberry-simpleolv/toolbar-custo
     assert.ok(true, 'routes/components-examples/flexberry-simpleolv/toolbar-custom-buttons-example.js should pass jshint.');
   });
 });
+define('dummy/tests/routes/components-examples/flexberry-text-cell/settings-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/components-examples/flexberry-text-cell');
+  test('routes/components-examples/flexberry-text-cell/settings-example.js should pass jscs', function () {
+    ok(true, 'routes/components-examples/flexberry-text-cell/settings-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-text-cell/settings-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/components-examples/flexberry-text-cell/settings-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-text-cell/settings-example.js should pass jshint.');
+  });
+});
 define('dummy/tests/routes/components-examples/flexberry-textarea/settings-example.jscs-test', ['exports'], function (exports) {
   'use strict';
 
@@ -21882,6 +22164,57 @@ define('dummy/tests/routes/ember-flexberry-dummy-localization-list.jshint', ['ex
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/ember-flexberry-dummy-localization-list.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-multi-list-user-edit.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes');
+  test('routes/ember-flexberry-dummy-multi-list-user-edit.js should pass jscs', function () {
+    ok(true, 'routes/ember-flexberry-dummy-multi-list-user-edit.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-multi-list-user-edit.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/ember-flexberry-dummy-multi-list-user-edit.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-multi-list-user-edit.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-multi-list-user-edit/new.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/ember-flexberry-dummy-multi-list-user-edit');
+  test('routes/ember-flexberry-dummy-multi-list-user-edit/new.js should pass jscs', function () {
+    ok(true, 'routes/ember-flexberry-dummy-multi-list-user-edit/new.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-multi-list-user-edit/new.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/ember-flexberry-dummy-multi-list-user-edit/new.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-multi-list-user-edit/new.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-multi-list.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes');
+  test('routes/ember-flexberry-dummy-multi-list.js should pass jscs', function () {
+    ok(true, 'routes/ember-flexberry-dummy-multi-list.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-multi-list.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/ember-flexberry-dummy-multi-list.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-multi-list.js should pass jshint.');
   });
 });
 define('dummy/tests/routes/ember-flexberry-dummy-suggestion-edit.jscs-test', ['exports'], function (exports) {
@@ -22375,6 +22708,23 @@ define('dummy/tests/serializers/ember-flexberry-dummy-vote.jshint', ['exports'],
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'serializers/ember-flexberry-dummy-vote.js should pass jshint.');
+  });
+});
+define('dummy/tests/services/offline-globals.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - services');
+  test('services/offline-globals.js should pass jscs', function () {
+    ok(true, 'services/offline-globals.js should pass jscs.');
+  });
+});
+define('dummy/tests/services/offline-globals.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - services/offline-globals.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'services/offline-globals.js should pass jshint.');
   });
 });
 define('dummy/tests/services/store.jscs-test', ['exports'], function (exports) {
@@ -23997,6 +24347,114 @@ define('dummy/tests/unit/mixins/modal-application-route-test.jshint', ['exports'
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/mixins/modal-application-route-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-controller-test', ['exports', 'ember', 'ember-flexberry/mixins/multi-list-controller', 'qunit'], function (exports, _ember, _emberFlexberryMixinsMultiListController, _qunit) {
+
+  (0, _qunit.module)('Unit | Mixin | multi list controller');
+
+  (0, _qunit.test)('it works', function (assert) {
+    var MultiListControllerObject = _ember['default'].Object.extend(_emberFlexberryMixinsMultiListController['default']);
+    var subject = MultiListControllerObject.create();
+    assert.ok(subject);
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-controller-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - unit/mixins');
+  test('unit/mixins/multi-list-controller-test.js should pass jscs', function () {
+    ok(true, 'unit/mixins/multi-list-controller-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-controller-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/mixins/multi-list-controller-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/mixins/multi-list-controller-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-model-edit-test', ['exports', 'ember', 'ember-flexberry/mixins/multi-list-model-edit', 'qunit'], function (exports, _ember, _emberFlexberryMixinsMultiListModelEdit, _qunit) {
+
+  (0, _qunit.module)('Unit | Mixin | multi list model edit');
+
+  (0, _qunit.test)('it works', function (assert) {
+    var MultiListModelEditObject = _ember['default'].Object.extend(_emberFlexberryMixinsMultiListModelEdit['default']);
+    var subject = MultiListModelEditObject.create();
+    assert.ok(subject);
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-model-edit-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - unit/mixins');
+  test('unit/mixins/multi-list-model-edit-test.js should pass jscs', function () {
+    ok(true, 'unit/mixins/multi-list-model-edit-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-model-edit-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/mixins/multi-list-model-edit-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/mixins/multi-list-model-edit-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-model-test', ['exports', 'ember', 'ember-flexberry/mixins/multi-list-model', 'qunit'], function (exports, _ember, _emberFlexberryMixinsMultiListModel, _qunit) {
+
+  (0, _qunit.module)('Unit | Mixin | multi list model');
+
+  (0, _qunit.test)('it works', function (assert) {
+    var MultiListModelObject = _ember['default'].Object.extend(_emberFlexberryMixinsMultiListModel['default']);
+    var subject = MultiListModelObject.create();
+    assert.ok(subject);
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-model-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - unit/mixins');
+  test('unit/mixins/multi-list-model-test.js should pass jscs', function () {
+    ok(true, 'unit/mixins/multi-list-model-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-model-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/mixins/multi-list-model-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/mixins/multi-list-model-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-route-test', ['exports', 'ember', 'ember-flexberry/mixins/multi-list-route', 'qunit'], function (exports, _ember, _emberFlexberryMixinsMultiListRoute, _qunit) {
+
+  (0, _qunit.module)('Unit | Mixin | multi list route');
+
+  (0, _qunit.test)('it works', function (assert) {
+    var MultiListRouteObject = _ember['default'].Object.extend(_emberFlexberryMixinsMultiListRoute['default']);
+    var subject = MultiListRouteObject.create();
+    assert.ok(subject);
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-route-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - unit/mixins');
+  test('unit/mixins/multi-list-route-test.js should pass jscs', function () {
+    ok(true, 'unit/mixins/multi-list-route-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/unit/mixins/multi-list-route-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/mixins/multi-list-route-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/mixins/multi-list-route-test.js should pass jshint.');
   });
 });
 define('dummy/tests/unit/mixins/paginated-controller-test', ['exports', 'ember', 'ember-flexberry/mixins/paginated-controller', 'qunit'], function (exports, _ember, _emberFlexberryMixinsPaginatedController, _qunit) {
@@ -25769,6 +26227,61 @@ define('dummy/tests/unit/services/objectlistview-events-test.jshint', ['exports'
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/services/objectlistview-events-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/unit/utils/cut-string-by-length-test', ['exports', 'dummy/utils/cut-string-by-length', 'qunit'], function (exports, _dummyUtilsCutStringByLength, _qunit) {
+
+  (0, _qunit.module)('Unit | Utility | cut string by length');
+
+  (0, _qunit.test)('cut by length', function (assert) {
+    var result = (0, _dummyUtilsCutStringByLength['default'])('test string', 6);
+    assert.equal(result, 'test s...');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string', 20);
+    assert.equal(result, 'test string');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string', 0);
+    assert.equal(result, 'test string');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string', 3);
+    assert.equal(result, 'tes...');
+  });
+
+  (0, _qunit.test)('cut by spaces', function (assert) {
+    var result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 6, true);
+    assert.equal(result, 'test...');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 50, true);
+    assert.equal(result, 'test string with spaces');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 0, true);
+    assert.equal(result, 'test string with spaces');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 3, true);
+    assert.equal(result, 'tes...');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 18, true);
+    assert.equal(result, 'test string with...');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 12, true);
+    assert.equal(result, 'test string...');
+  });
+});
+define('dummy/tests/unit/utils/cut-string-by-length-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - unit/utils');
+  test('unit/utils/cut-string-by-length-test.js should pass jscs', function () {
+    ok(true, 'unit/utils/cut-string-by-length-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/unit/utils/cut-string-by-length-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/utils/cut-string-by-length-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/utils/cut-string-by-length-test.js should pass jshint.');
   });
 });
 define('dummy/tests/unit/utils/deserialize-sorting-param-test', ['exports', 'ember', 'dummy/utils/deserialize-sorting-param', 'qunit'], function (exports, _ember, _dummyUtilsDeserializeSortingParam, _qunit) {
