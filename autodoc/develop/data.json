@@ -8364,7 +8364,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1234,
+            "line": 1235,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "_buildDisplayValue",
@@ -8379,7 +8379,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1261,
+            "line": 1262,
             "description": "Creates an instance of the Builder class with selection and sorting specified in the component parameters.",
             "itemtype": "method",
             "name": "_createQueryBuilder",
@@ -8414,7 +8414,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1288,
+            "line": 1289,
             "description": "Concatenates predicates.",
             "itemtype": "method",
             "name": "_conjuctPredicates",
@@ -8448,7 +8448,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1339,
+            "line": 1340,
             "description": "Handles changing current locale.\nIt reinits autocomplete or dropdown mode (depending on flag) in order to localize messages.",
             "itemtype": "method",
             "name": "_languageReinit",
@@ -8459,7 +8459,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1354,
+            "line": 1355,
             "description": "Function for autofillByLimit observer.",
             "itemtype": "method",
             "name": "_autofillByLimitObserverFunction",
@@ -8470,7 +8470,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1364,
+            "line": 1365,
             "description": "Handles changing properties affecting the sample.",
             "itemtype": "method",
             "name": "_onAutofillByLimit",
@@ -25916,7 +25916,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/flexberry-lookup.js:1234"
+            "line": " addon/components/flexberry-lookup.js:1235"
         },
         {
             "message": "replacing incorrect tag: returns with return",
