@@ -303,24 +303,27 @@ export default FlexberryBaseComponent.extend({
      Set sort order and priority for column.
 
      @method actions.setSortOrder
-     @param {Integer} index Row number.
+     @param {Object} colDesc Column description object.
      @param {Object} element Dropdown.
      @param {String} value Selected value.
      */
-    setSortOrder: function(index, element, value) {
-      let currentValue = this.get(&#x60;model.colDescs.${index}.sortOrder&#x60;);
-      if (currentValue !== parseInt(value)) {
+    setSortOrder: function(colDesc, element, value) {
+      if (colDesc.sortOrder !== parseInt(value)) {
         if (value === &#x27;0&#x27;) {
-          this.set(&#x60;model.colDescs.${index}.sortPriority&#x60;, undefined);
-          this.set(&#x60;model.colDescs.${index}.sortOrder&#x60;, undefined);
+          Ember.set(colDesc, &#x27;sortPriority&#x27;, undefined);
+          Ember.set(colDesc, &#x27;sortOrder&#x27;, undefined);
         } else {
-          let sortPriority = this.get(&#x60;model.colDescs.${index}.sortPriority&#x60;);
-          if (Ember.isNone(sortPriority)) {
-            sortPriority = this.get(&#x27;model.colDescs&#x27;).filter(c =&gt; c.sortPriority).length + 1;
-            this.set(&#x60;model.colDescs.${index}.sortPriority&#x60;, sortPriority);
+          if (Ember.isNone(colDesc.sortPriority)) {
+            let max = 0;
+            this.get(&#x27;model.colDescs&#x27;).filter(c =&gt; {
+              if (max &lt; c.sortPriority) {
+                max = c.sortPriority;
+              }
+            });
+            Ember.set(colDesc, &#x27;sortPriority&#x27;, max + 1);
           }
 
-          this.set(&#x60;model.colDescs.${index}.sortOrder&#x60;, parseInt(value));
+          Ember.set(colDesc, &#x27;sortOrder&#x27;, parseInt(value));
         }
       }
     },

@@ -4167,9 +4167,9 @@
             "name": "actions.setSortOrder",
             "params": [
                 {
-                    "name": "index",
-                    "description": "Row number.",
-                    "type": "Integer"
+                    "name": "colDesc",
+                    "description": "Column description object.",
+                    "type": "Object"
                 },
                 {
                     "name": "element",
@@ -4187,7 +4187,7 @@
         },
         {
             "file": "addon/components/colsconfig-dialog-content.js",
-            "line": 114,
+            "line": 117,
             "description": "Move row upward in list.",
             "itemtype": "method",
             "name": "actions.rowUp",
@@ -4203,7 +4203,7 @@
         },
         {
             "file": "addon/components/colsconfig-dialog-content.js",
-            "line": 128,
+            "line": 131,
             "description": "Move row downward.",
             "itemtype": "method",
             "name": "actions.rowDown",
@@ -4219,7 +4219,7 @@
         },
         {
             "file": "addon/components/colsconfig-dialog-content.js",
-            "line": 142,
+            "line": 145,
             "description": "Apply specified usersettings.",
             "itemtype": "method",
             "name": "actions.apply",
@@ -4228,7 +4228,7 @@
         },
         {
             "file": "addon/components/colsconfig-dialog-content.js",
-            "line": 206,
+            "line": 209,
             "description": "Save specified usersettings.",
             "itemtype": "method",
             "name": "actions.saveColsSetting",
@@ -4237,7 +4237,7 @@
         },
         {
             "file": "addon/components/colsconfig-dialog-content.js",
-            "line": 253,
+            "line": 256,
             "description": "Scrolling content to bottom.",
             "itemtype": "method",
             "name": "_scrollToBottom",
@@ -4246,7 +4246,7 @@
         },
         {
             "file": "addon/components/colsconfig-dialog-content.js",
-            "line": 265,
+            "line": 268,
             "description": "Gets current query for export excel.",
             "itemtype": "method",
             "name": "_getCurrentQuery",
