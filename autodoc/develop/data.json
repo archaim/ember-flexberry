@@ -8378,9 +8378,16 @@
             "description": "Build predicate with settingsUrlDataQuery.",
             "itemtype": "method",
             "name": "_getAutocomplitePredicate",
+            "params": [
+                {
+                    "name": "settingsUrlDataQuery",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
             "return": {
                 "description": "",
-                "type": "String"
+                "type": "Predicate"
             },
             "access": "private",
             "tagname": "",
@@ -8389,7 +8396,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1266,
+            "line": 1267,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "_buildDisplayValue",
@@ -8404,7 +8411,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1293,
+            "line": 1294,
             "description": "Creates an instance of the Builder class with selection and sorting specified in the component parameters.",
             "itemtype": "method",
             "name": "_createQueryBuilder",
@@ -8439,7 +8446,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1320,
+            "line": 1321,
             "description": "Concatenates predicates.",
             "itemtype": "method",
             "name": "_conjuctPredicates",
@@ -8473,7 +8480,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1371,
+            "line": 1372,
             "description": "Handles changing current locale.\nIt reinits autocomplete or dropdown mode (depending on flag) in order to localize messages.",
             "itemtype": "method",
             "name": "_languageReinit",
@@ -8484,7 +8491,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1386,
+            "line": 1387,
             "description": "Function for autofillByLimit observer.",
             "itemtype": "method",
             "name": "_autofillByLimitObserverFunction",
@@ -8495,7 +8502,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1396,
+            "line": 1397,
             "description": "Handles changing properties affecting the sample.",
             "itemtype": "method",
             "name": "_onAutofillByLimit",
@@ -25945,7 +25952,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/flexberry-lookup.js:1266"
+            "line": " addon/components/flexberry-lookup.js:1267"
         },
         {
             "message": "replacing incorrect tag: returns with return",

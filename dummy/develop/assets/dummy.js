@@ -17294,18 +17294,6 @@ define('dummy/models/ember-flexberry-dummy-suggestion', ['exports', 'ember', 'em
 
   // Edit form projection with Karma.
   Model.defineProjection('SuggestionEWithKarma', 'ember-flexberry-dummy-suggestion', {
-    address: _emberFlexberryData.Projection.attr('Address'),
-    text: _emberFlexberryData.Projection.attr('Text'),
-    date: _emberFlexberryData.Projection.attr('Date'),
-    votes: _emberFlexberryData.Projection.attr('Votes'),
-    moderated: _emberFlexberryData.Projection.attr('Moderated'),
-    type: _emberFlexberryData.Projection.belongsTo('ember-flexberry-dummy-suggestion-type', 'Type', {
-      name: _emberFlexberryData.Projection.attr('Name', {
-        hidden: true
-      })
-    }, {
-      displayMemberPath: 'name'
-    }),
     author: _emberFlexberryData.Projection.belongsTo('ember-flexberry-dummy-application-user', 'Author', {
       name: _emberFlexberryData.Projection.attr('Name', {
         hidden: true
@@ -17313,40 +17301,6 @@ define('dummy/models/ember-flexberry-dummy-suggestion', ['exports', 'ember', 'em
       karma: _emberFlexberryData.Projection.attr('')
     }, {
       displayMemberPath: 'name'
-    }),
-    editor1: _emberFlexberryData.Projection.belongsTo('ember-flexberry-dummy-application-user', 'Editor', {
-      name: _emberFlexberryData.Projection.attr('Name', {
-        hidden: true
-      })
-    }, {
-      displayMemberPath: 'name'
-    }),
-    files: _emberFlexberryData.Projection.hasMany('ember-flexberry-dummy-suggestion-file', 'Files', {
-      order: _emberFlexberryData.Projection.attr('Order'),
-      file: _emberFlexberryData.Projection.attr('File')
-    }),
-    userVotes: _emberFlexberryData.Projection.hasMany('ember-flexberry-dummy-vote', 'User votes', {
-      voteType: _emberFlexberryData.Projection.attr('Vote type'),
-      author: _emberFlexberryData.Projection.belongsTo('ember-flexberry-dummy-application-user', 'Application user', {
-        name: _emberFlexberryData.Projection.attr('Name', {
-          hidden: true
-        }),
-        eMail: _emberFlexberryData.Projection.attr('Email')
-      }, {
-        displayMemberPath: 'name'
-      })
-    }),
-    comments: _emberFlexberryData.Projection.hasMany('ember-flexberry-dummy-comment', 'Comments', {
-      text: _emberFlexberryData.Projection.attr('Text'),
-      votes: _emberFlexberryData.Projection.attr('Votes'),
-      moderated: _emberFlexberryData.Projection.attr('Moderated'),
-      author: _emberFlexberryData.Projection.belongsTo('ember-flexberry-dummy-application-user', 'Author', {
-        name: _emberFlexberryData.Projection.attr('Name', {
-          hidden: true
-        })
-      }, {
-        displayMemberPath: 'name'
-      })
     })
   });
 
@@ -70774,7 +70728,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.16+6bdfa114"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.17"});
 }
 
 /* jshint ignore:end */
