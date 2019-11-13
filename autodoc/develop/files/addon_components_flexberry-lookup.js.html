@@ -222,6 +222,7 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 import { getRelationType } from &#x27;ember-flexberry-data/utils/model-functions&#x27;;
 import { Query } from &#x27;ember-flexberry-data&#x27;;
+import Information from &#x27;ember-flexberry-data/utils/information&#x27;;
 
 const {
   Builder,
@@ -740,6 +741,19 @@ export default FlexberryBaseComponent.extend({
   displayAttributeName: null,
 
   /**
+    Type of the attribute of the model to display for the user.
+
+    @property displayAttributeType
+    @type String
+  */
+  displayAttributeType: Ember.computed(&#x27;displayAttributeName&#x27;, function() {
+    let information = new Information(this.get(&#x27;store&#x27;));
+    let relationModelName = getRelationType(this.get(&#x27;relatedModel&#x27;), this.get(&#x27;relationName&#x27;));
+    let attrType = information.getType(relationModelName, this.get(&#x27;displayAttributeName&#x27;));
+    return attrType;
+  }),
+
+  /**
     Name of the attribute of the model to display for the user
     for hidden attribute by master.
     Is required for autocomplete and dropdown modes.
@@ -1204,10 +1218,7 @@ export default FlexberryBaseComponent.extend({
           let autocompleteOrder = _this.get(&#x27;autocompleteOrder&#x27;);
 
           let builder = _this._createQueryBuilder(store, relationModelName, autocompleteProjection, autocompleteOrder);
-
-          let autocompletePredicate = settings.urlData.query ?
-                                      new StringPredicate(displayAttributeName).contains(settings.urlData.query) :
-                                      undefined;
+          let autocompletePredicate = _this._getAutocomplitePredicate(settings.urlData.query);
           let resultPredicate = _this._conjuctPredicates(_this.get(&#x27;lookupLimitPredicate&#x27;), _this.get(&#x27;lookupAdditionalLimitFunction&#x27;), autocompletePredicate);
           if (resultPredicate) {
             builder.where(resultPredicate);
@@ -1390,10 +1401,7 @@ export default FlexberryBaseComponent.extend({
           let projectionName = _this.get(&#x27;projection&#x27;);
           let autocompleteOrder = _this.get(&#x27;autocompleteOrder&#x27;);
           let builder = _this._createQueryBuilder(store, relationModelName, projectionName, autocompleteOrder);
-
-          let autocompletePredicate = settings.urlData.query ?
-                                      new StringPredicate(displayAttributeName).contains(settings.urlData.query) :
-                                      undefined;
+          let autocompletePredicate = _this._getAutocomplitePredicate(settings.urlData.query);
           let resultPredicate = _this._conjuctPredicates(_this.get(&#x27;lookupLimitPredicate&#x27;), _this.get(&#x27;lookupAdditionalLimitFunction&#x27;), autocompletePredicate);
           if (resultPredicate) {
             builder.where(resultPredicate);
@@ -1444,6 +1452,29 @@ export default FlexberryBaseComponent.extend({
           });
       }
     });
+  },
+
+  /**
+    Build predicate with settingsUrlDataQuery.
+
+    @method _getAutocomplitePredicate
+    @returns {String}
+    @private
+  */
+  _getAutocomplitePredicate(settingsUrlDataQuery) {
+    if (settingsUrlDataQuery) {
+      let displayAttributeType = this.get(&#x27;displayAttributeType&#x27;);
+      let displayAttributeName = this.get(&#x27;displayAttributeName&#x27;);
+      switch (displayAttributeType) {
+        case &#x27;decimal&#x27;:
+        case &#x27;int&#x27;:
+        case &#x27;long&#x27;:
+          return new SimplePredicate(displayAttributeName, Query.FilterOperator.Eq, settingsUrlDataQuery);
+
+        default:
+          return new StringPredicate(displayAttributeName).contains(settingsUrlDataQuery);
+      }
+    }
   },
 
   /**
