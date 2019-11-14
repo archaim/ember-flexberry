@@ -1017,7 +1017,7 @@ define('dummy/tests/acceptance/components/flexberry-lookup/flexberry-lookup-proj
           assert.strictEqual($lookupHeaders.length === 3, true, 'Component has SuggestionTypeE projection');
 
           done();
-        }, 1000);
+        }, 5000);
       });
     });
   });
@@ -6966,6 +6966,23 @@ define('dummy/tests/controllers/components-examples/flexberry-lookup/lookup-in-m
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-lookup/lookup-in-modal.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-lookup/numeric-autocomplete.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/components-examples/flexberry-lookup');
+  test('controllers/components-examples/flexberry-lookup/numeric-autocomplete.js should pass jscs', function () {
+    ok(true, 'controllers/components-examples/flexberry-lookup/numeric-autocomplete.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-lookup/numeric-autocomplete.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/components-examples/flexberry-lookup/numeric-autocomplete.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-lookup/numeric-autocomplete.js should pass jshint.');
   });
 });
 define('dummy/tests/controllers/components-examples/flexberry-lookup/settings-example.jscs-test', ['exports'], function (exports) {
@@ -20991,6 +21008,23 @@ define('dummy/tests/routes/components-examples/flexberry-lookup/lookup-in-modal.
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-lookup/lookup-in-modal.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-lookup/numeric-autocomplete.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/components-examples/flexberry-lookup');
+  test('routes/components-examples/flexberry-lookup/numeric-autocomplete.js should pass jscs', function () {
+    ok(true, 'routes/components-examples/flexberry-lookup/numeric-autocomplete.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-lookup/numeric-autocomplete.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/components-examples/flexberry-lookup/numeric-autocomplete.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-lookup/numeric-autocomplete.js should pass jshint.');
   });
 });
 define('dummy/tests/routes/components-examples/flexberry-lookup/settings-example.jscs-test', ['exports'], function (exports) {
