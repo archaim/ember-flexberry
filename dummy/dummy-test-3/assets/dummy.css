@@ -18922,7 +18922,7 @@ ol.ui.horizontal.list li:before,
   border-radius: 0px;
   outline: none;
 }
-.flexberry-simpledatetime .ui.fluid.action.input input.flatpickr-input {
+.flexberry-simpledatetime .ui.fluid.action.input input.custom-flatpickr {
   border-bottom: none;
 }
 input[type="checkbox"]:after {

@@ -1342,7 +1342,7 @@ define('dummy/tests/acceptance/components/flexberry-lookup/flexberry-lookup-proj
           assert.strictEqual($lookupHeaders.length === 3, true, 'Component has SuggestionTypeE projection');
 
           done();
-        }, 1000);
+        }, 5000);
       });
     });
   });
@@ -5664,6 +5664,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/components-examples/flexberry-lookup/lookup-in-modal.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/components-examples/flexberry-lookup/numeric-autocomplete.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-lookup/numeric-autocomplete.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/components-examples/flexberry-lookup/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-lookup/settings-example.js should pass ESLint\n\n');
@@ -6567,6 +6572,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/components-examples/flexberry-lookup/lookup-in-modal.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-lookup/lookup-in-modal.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/components-examples/flexberry-lookup/numeric-autocomplete.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-lookup/numeric-autocomplete.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/components-examples/flexberry-lookup/settings-example.js', function (assert) {
