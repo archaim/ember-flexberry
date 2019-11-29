@@ -22670,6 +22670,10 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
   flex-wrap: wrap-reverse;
   justify-content: flex-end;
 }
+div.ui.secondary.menu.no-margin.nav-bar .right.menu {
+  flex-basis: 0px;
+  flex-grow: 1;
+}
 /*!
  * # Semantic UI - Message
  * http://github.com/semantic-org/semantic-ui/
@@ -32250,8 +32254,8 @@ select.ui.dropdown {
 }
 .ui.buttons.cols-config > .ui.dropdown:last-child .menu,
 .ui.buttons.export-config > .ui.dropdown:last-child .menu {
-  left: auto;
-  right: -5em;
+  left: -2em;
+  right: auto;
 }
 .flexberry-dropdown {
   max-width: 100%;
