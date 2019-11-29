@@ -27255,7 +27255,7 @@ define("dummy/templates/components-examples/flexberry-button/settings-example", 
               "column": 4
             },
             "end": {
-              "line": 17,
+              "line": 18,
               "column": 4
             }
           },
@@ -27280,7 +27280,7 @@ define("dummy/templates/components-examples/flexberry-button/settings-example", 
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-button", [], ["class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [10, 14], [10, 19]]]]], [], []], "iconClass", ["subexpr", "@mut", [["get", "iconClass", ["loc", [null, [11, 18], [11, 27]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "caption", ["loc", [null, [12, 16], [12, 23]]]]], [], []], "tooltip", ["subexpr", "@mut", [["get", "tooltip", ["loc", [null, [13, 16], [13, 23]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [14, 17], [14, 25]]]]], [], []], "click", ["subexpr", "action", ["onButtonClick"], [], ["loc", [null, [15, 14], [15, 38]]]]], ["loc", [null, [9, 6], [16, 8]]]]],
+        statements: [["inline", "flexberry-button", [], ["class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [11, 14], [11, 19]]]]], [], []], "iconClass", ["subexpr", "@mut", [["get", "iconClass", ["loc", [null, [12, 18], [12, 27]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "caption", ["loc", [null, [13, 16], [13, 23]]]]], [], []], "tooltip", ["subexpr", "@mut", [["get", "tooltip", ["loc", [null, [14, 16], [14, 23]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [15, 17], [15, 25]]]]], [], []], "click", ["subexpr", "action", ["onButtonClick"], [], ["loc", [null, [16, 14], [16, 38]]]]], ["loc", [null, [10, 6], [17, 8]]]]],
         locals: [],
         templates: []
       };
@@ -27299,7 +27299,7 @@ define("dummy/templates/components-examples/flexberry-button/settings-example", 
             "column": 0
           },
           "end": {
-            "line": 20,
+            "line": 21,
             "column": 0
           }
         },
@@ -27345,7 +27345,7 @@ define("dummy/templates/components-examples/flexberry-button/settings-example", 
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-button.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 97]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [17, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-button.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 97]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [18, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -27365,7 +27365,7 @@ define("dummy/templates/components-examples/flexberry-checkbox/settings-example"
               "column": 4
             },
             "end": {
-              "line": 15,
+              "line": 16,
               "column": 4
             }
           },
@@ -27390,7 +27390,7 @@ define("dummy/templates/components-examples/flexberry-checkbox/settings-example"
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-checkbox", [], ["value", ["subexpr", "@mut", [["get", "model.flag", ["loc", [null, [10, 14], [10, 24]]]]], [], []], "label", ["subexpr", "@mut", [["get", "label", ["loc", [null, [11, 14], [11, 19]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 17], [12, 25]]]]], [], []], "class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [13, 14], [13, 19]]]]], [], []]], ["loc", [null, [9, 6], [14, 8]]]]],
+        statements: [["inline", "flexberry-checkbox", [], ["value", ["subexpr", "@mut", [["get", "model.flag", ["loc", [null, [11, 14], [11, 24]]]]], [], []], "label", ["subexpr", "@mut", [["get", "label", ["loc", [null, [12, 14], [12, 19]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [13, 17], [13, 25]]]]], [], []], "class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [14, 14], [14, 19]]]]], [], []]], ["loc", [null, [10, 6], [15, 8]]]]],
         locals: [],
         templates: []
       };
@@ -27409,7 +27409,7 @@ define("dummy/templates/components-examples/flexberry-checkbox/settings-example"
             "column": 0
           },
           "end": {
-            "line": 18,
+            "line": 19,
             "column": 0
           }
         },
@@ -27455,7 +27455,7 @@ define("dummy/templates/components-examples/flexberry-checkbox/settings-example"
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-checkbox.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 99]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [15, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-checkbox.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 99]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [16, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -27475,7 +27475,7 @@ define("dummy/templates/components-examples/flexberry-datepicker/settings-exampl
               "column": 4
             },
             "end": {
-              "line": 19,
+              "line": 20,
               "column": 4
             }
           },
@@ -27500,7 +27500,7 @@ define("dummy/templates/components-examples/flexberry-datepicker/settings-exampl
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-datepicker", [], ["dateTimeFormat", ["subexpr", "@mut", [["get", "dateTimeFormat", ["loc", [null, [10, 23], [10, 37]]]]], [], []], "hasTimePicker", ["subexpr", "@mut", [["get", "hasTimePicker", ["loc", [null, [11, 22], [11, 35]]]]], [], []], "minDate", ["subexpr", "@mut", [["get", "minDate", ["loc", [null, [12, 16], [12, 23]]]]], [], []], "maxDate", ["subexpr", "@mut", [["get", "maxDate", ["loc", [null, [13, 16], [13, 23]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.date", ["loc", [null, [14, 14], [14, 24]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [15, 20], [15, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [16, 17], [16, 25]]]]], [], []], "drops", "up"], ["loc", [null, [9, 6], [18, 8]]]]],
+        statements: [["inline", "flexberry-datepicker", [], ["dateTimeFormat", ["subexpr", "@mut", [["get", "dateTimeFormat", ["loc", [null, [11, 23], [11, 37]]]]], [], []], "hasTimePicker", ["subexpr", "@mut", [["get", "hasTimePicker", ["loc", [null, [12, 22], [12, 35]]]]], [], []], "minDate", ["subexpr", "@mut", [["get", "minDate", ["loc", [null, [13, 16], [13, 23]]]]], [], []], "maxDate", ["subexpr", "@mut", [["get", "maxDate", ["loc", [null, [14, 16], [14, 23]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.date", ["loc", [null, [15, 14], [15, 24]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [16, 20], [16, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [17, 17], [17, 25]]]]], [], []], "drops", "up"], ["loc", [null, [10, 6], [19, 8]]]]],
         locals: [],
         templates: []
       };
@@ -27519,7 +27519,7 @@ define("dummy/templates/components-examples/flexberry-datepicker/settings-exampl
             "column": 0
           },
           "end": {
-            "line": 22,
+            "line": 23,
             "column": 0
           }
         },
@@ -27565,7 +27565,7 @@ define("dummy/templates/components-examples/flexberry-datepicker/settings-exampl
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-datepicker.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 101]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [19, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-datepicker.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 101]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [20, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -27585,7 +27585,7 @@ define("dummy/templates/components-examples/flexberry-ddau-checkbox/settings-exa
               "column": 4
             },
             "end": {
-              "line": 16,
+              "line": 17,
               "column": 4
             }
           },
@@ -27610,7 +27610,7 @@ define("dummy/templates/components-examples/flexberry-ddau-checkbox/settings-exa
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-ddau-checkbox", [], ["class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [10, 14], [10, 19]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.flag", ["loc", [null, [11, 14], [11, 24]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "caption", ["loc", [null, [12, 16], [12, 23]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [13, 17], [13, 25]]]]], [], []], "change", ["subexpr", "action", ["onCheckboxChange", "model.flag"], [], ["loc", [null, [14, 15], [14, 55]]]]], ["loc", [null, [9, 6], [15, 8]]]]],
+        statements: [["inline", "flexberry-ddau-checkbox", [], ["class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [11, 14], [11, 19]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.flag", ["loc", [null, [12, 14], [12, 24]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "caption", ["loc", [null, [13, 16], [13, 23]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [14, 17], [14, 25]]]]], [], []], "change", ["subexpr", "action", ["onCheckboxChange", "model.flag"], [], ["loc", [null, [15, 15], [15, 55]]]]], ["loc", [null, [10, 6], [16, 8]]]]],
         locals: [],
         templates: []
       };
@@ -27629,7 +27629,7 @@ define("dummy/templates/components-examples/flexberry-ddau-checkbox/settings-exa
             "column": 0
           },
           "end": {
-            "line": 19,
+            "line": 20,
             "column": 0
           }
         },
@@ -27675,7 +27675,7 @@ define("dummy/templates/components-examples/flexberry-ddau-checkbox/settings-exa
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-ddau-checkbox.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 104]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [16, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-ddau-checkbox.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 104]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [17, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -28055,7 +28055,7 @@ define("dummy/templates/components-examples/flexberry-dropdown/settings-example"
               "column": 4
             },
             "end": {
-              "line": 16,
+              "line": 17,
               "column": 4
             }
           },
@@ -28080,7 +28080,7 @@ define("dummy/templates/components-examples/flexberry-dropdown/settings-example"
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-dropdown", [], ["items", ["subexpr", "flexberry-enum", ["components-examples/flexberry-dropdown/settings-example/enumeration"], [], ["loc", [null, [10, 14], [10, 100]]]], "value", ["subexpr", "@mut", [["get", "model.enumeration", ["loc", [null, [11, 14], [11, 31]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [12, 20], [12, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [13, 17], [13, 25]]]]], [], []], "class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [14, 14], [14, 19]]]]], [], []]], ["loc", [null, [9, 6], [15, 8]]]]],
+        statements: [["inline", "flexberry-dropdown", [], ["items", ["subexpr", "flexberry-enum", ["components-examples/flexberry-dropdown/settings-example/enumeration"], [], ["loc", [null, [11, 14], [11, 100]]]], "value", ["subexpr", "@mut", [["get", "model.enumeration", ["loc", [null, [12, 14], [12, 31]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [13, 20], [13, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [14, 17], [14, 25]]]]], [], []], "class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [15, 14], [15, 19]]]]], [], []]], ["loc", [null, [10, 6], [16, 8]]]]],
         locals: [],
         templates: []
       };
@@ -28099,7 +28099,7 @@ define("dummy/templates/components-examples/flexberry-dropdown/settings-example"
             "column": 0
           },
           "end": {
-            "line": 19,
+            "line": 20,
             "column": 0
           }
         },
@@ -28145,7 +28145,7 @@ define("dummy/templates/components-examples/flexberry-dropdown/settings-example"
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-dropdown.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 99]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [16, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-dropdown.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 99]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [17, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -28165,7 +28165,7 @@ define("dummy/templates/components-examples/flexberry-field/settings-example", [
               "column": 4
             },
             "end": {
-              "line": 18,
+              "line": 19,
               "column": 4
             }
           },
@@ -28190,7 +28190,7 @@ define("dummy/templates/components-examples/flexberry-field/settings-example", [
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-field", [], ["class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [10, 14], [10, 19]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.text", ["loc", [null, [11, 14], [11, 24]]]]], [], []], "label", ["subexpr", "@mut", [["get", "label", ["loc", [null, [12, 14], [12, 19]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [13, 20], [13, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [14, 17], [14, 25]]]]], [], []], "type", ["subexpr", "@mut", [["get", "type", ["loc", [null, [15, 13], [15, 17]]]]], [], []], "maxlength", ["subexpr", "@mut", [["get", "maxlength", ["loc", [null, [16, 18], [16, 27]]]]], [], []]], ["loc", [null, [9, 6], [17, 8]]]]],
+        statements: [["inline", "flexberry-field", [], ["class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [11, 14], [11, 19]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.text", ["loc", [null, [12, 14], [12, 24]]]]], [], []], "label", ["subexpr", "@mut", [["get", "label", ["loc", [null, [13, 14], [13, 19]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [14, 20], [14, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [15, 17], [15, 25]]]]], [], []], "type", ["subexpr", "@mut", [["get", "type", ["loc", [null, [16, 13], [16, 17]]]]], [], []], "maxlength", ["subexpr", "@mut", [["get", "maxlength", ["loc", [null, [17, 18], [17, 27]]]]], [], []]], ["loc", [null, [10, 6], [18, 8]]]]],
         locals: [],
         templates: []
       };
@@ -28209,7 +28209,7 @@ define("dummy/templates/components-examples/flexberry-field/settings-example", [
             "column": 0
           },
           "end": {
-            "line": 21,
+            "line": 22,
             "column": 0
           }
         },
@@ -28255,7 +28255,7 @@ define("dummy/templates/components-examples/flexberry-field/settings-example", [
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-field.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 96]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [18, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-field.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 96]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [19, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -28427,7 +28427,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
               "column": 2
             },
             "end": {
-              "line": 23,
+              "line": 24,
               "column": 2
             }
           },
@@ -28452,7 +28452,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-file", [], ["value", ["subexpr", "@mut", [["get", "model.file", ["loc", [null, [9, 12], [9, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [10, 18], [10, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [11, 15], [11, 23]]]]], [], []], "uploadUrl", ["subexpr", "@mut", [["get", "uploadUrl", ["loc", [null, [12, 16], [12, 25]]]]], [], []], "maxUploadFileSize", ["subexpr", "@mut", [["get", "maxUploadFileSize", ["loc", [null, [13, 24], [13, 41]]]]], [], []], "showPreview", ["subexpr", "@mut", [["get", "showPreview", ["loc", [null, [14, 18], [14, 29]]]]], [], []], "showUploadButton", ["subexpr", "@mut", [["get", "showUploadButton", ["loc", [null, [15, 23], [15, 39]]]]], [], []], "showDownloadButton", ["subexpr", "@mut", [["get", "showDownloadButton", ["loc", [null, [16, 25], [16, 43]]]]], [], []], "showModalDialogOnUploadError", ["subexpr", "@mut", [["get", "showModalDialogOnUploadError", ["loc", [null, [17, 35], [17, 63]]]]], [], []], "showModalDialogOnDownloadError", ["subexpr", "@mut", [["get", "showModalDialogOnDownloadError", ["loc", [null, [18, 37], [18, 67]]]]], [], []], "inputClass", ["subexpr", "@mut", [["get", "inputClass", ["loc", [null, [19, 17], [19, 27]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [20, 18], [20, 29]]]]], [], []], "openFileInNewWindowInsteadOfLoading", ["subexpr", "@mut", [["get", "openFileInNewWindowInsteadOfLoading", ["loc", [null, [21, 42], [21, 77]]]]], [], []]], ["loc", [null, [8, 4], [22, 6]]]]],
+        statements: [["inline", "flexberry-file", [], ["value", ["subexpr", "@mut", [["get", "model.file", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "uploadUrl", ["subexpr", "@mut", [["get", "uploadUrl", ["loc", [null, [13, 16], [13, 25]]]]], [], []], "maxUploadFileSize", ["subexpr", "@mut", [["get", "maxUploadFileSize", ["loc", [null, [14, 24], [14, 41]]]]], [], []], "showPreview", ["subexpr", "@mut", [["get", "showPreview", ["loc", [null, [15, 18], [15, 29]]]]], [], []], "showUploadButton", ["subexpr", "@mut", [["get", "showUploadButton", ["loc", [null, [16, 23], [16, 39]]]]], [], []], "showDownloadButton", ["subexpr", "@mut", [["get", "showDownloadButton", ["loc", [null, [17, 25], [17, 43]]]]], [], []], "showModalDialogOnUploadError", ["subexpr", "@mut", [["get", "showModalDialogOnUploadError", ["loc", [null, [18, 35], [18, 63]]]]], [], []], "showModalDialogOnDownloadError", ["subexpr", "@mut", [["get", "showModalDialogOnDownloadError", ["loc", [null, [19, 37], [19, 67]]]]], [], []], "inputClass", ["subexpr", "@mut", [["get", "inputClass", ["loc", [null, [20, 17], [20, 27]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [21, 18], [21, 29]]]]], [], []], "openFileInNewWindowInsteadOfLoading", ["subexpr", "@mut", [["get", "openFileInNewWindowInsteadOfLoading", ["loc", [null, [22, 42], [22, 77]]]]], [], []]], ["loc", [null, [9, 4], [23, 6]]]]],
         locals: [],
         templates: []
       };
@@ -28471,7 +28471,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
             "column": 0
           },
           "end": {
-            "line": 25,
+            "line": 26,
             "column": 0
           }
         },
@@ -28508,7 +28508,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-file.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []]], 0, null, ["loc", [null, [3, 2], [23, 23]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-file.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [24, 23]]]]],
       locals: [],
       templates: [child0]
     };
@@ -31920,7 +31920,7 @@ define("dummy/templates/components-examples/flexberry-menu/settings-example", ["
               "column": 4
             },
             "end": {
-              "line": 26,
+              "line": 27,
               "column": 4
             }
           },
@@ -31963,7 +31963,7 @@ define("dummy/templates/components-examples/flexberry-menu/settings-example", ["
           morphs[3] = dom.createMorphAt(element0, 5, 5);
           return morphs;
         },
-        statements: [["attribute", "class", ["get", "menuPosition", ["loc", [null, [9, 17], [9, 29]]]]], ["inline", "flexberry-menu", [], ["items", ["subexpr", "@mut", [["get", "itemsLeft", ["loc", [null, [11, 14], [11, 23]]]]], [], []], "onItemClick", ["subexpr", "action", ["onMenuItemClick"], [], ["loc", [null, [12, 20], [12, 46]]]], "collapseMenuOnItemClick", ["subexpr", "@mut", [["get", "collapseMenuOnItemClick", ["loc", [null, [13, 32], [13, 55]]]]], [], []]], ["loc", [null, [10, 6], [14, 8]]]], ["inline", "flexberry-menu", [], ["items", ["subexpr", "@mut", [["get", "itemsRight", ["loc", [null, [16, 14], [16, 24]]]]], [], []], "onItemClick", ["subexpr", "action", ["onMenuItemClick"], [], ["loc", [null, [17, 20], [17, 46]]]], "collapseMenuOnItemClick", ["subexpr", "@mut", [["get", "collapseMenuOnItemClick", ["loc", [null, [18, 32], [18, 55]]]]], [], []]], ["loc", [null, [15, 6], [19, 8]]]], ["inline", "flexberry-menu", [], ["items", ["subexpr", "@mut", [["get", "itemsSubmenu", ["loc", [null, [21, 14], [21, 26]]]]], [], []], "onItemClick", ["subexpr", "action", ["onMenuItemClick"], [], ["loc", [null, [22, 20], [22, 46]]]], "collapseMenuOnItemClick", ["subexpr", "@mut", [["get", "collapseMenuOnItemClick", ["loc", [null, [23, 32], [23, 55]]]]], [], []]], ["loc", [null, [20, 6], [24, 8]]]]],
+        statements: [["attribute", "class", ["get", "menuPosition", ["loc", [null, [10, 17], [10, 29]]]]], ["inline", "flexberry-menu", [], ["items", ["subexpr", "@mut", [["get", "itemsLeft", ["loc", [null, [12, 14], [12, 23]]]]], [], []], "onItemClick", ["subexpr", "action", ["onMenuItemClick"], [], ["loc", [null, [13, 20], [13, 46]]]], "collapseMenuOnItemClick", ["subexpr", "@mut", [["get", "collapseMenuOnItemClick", ["loc", [null, [14, 32], [14, 55]]]]], [], []]], ["loc", [null, [11, 6], [15, 8]]]], ["inline", "flexberry-menu", [], ["items", ["subexpr", "@mut", [["get", "itemsRight", ["loc", [null, [17, 14], [17, 24]]]]], [], []], "onItemClick", ["subexpr", "action", ["onMenuItemClick"], [], ["loc", [null, [18, 20], [18, 46]]]], "collapseMenuOnItemClick", ["subexpr", "@mut", [["get", "collapseMenuOnItemClick", ["loc", [null, [19, 32], [19, 55]]]]], [], []]], ["loc", [null, [16, 6], [20, 8]]]], ["inline", "flexberry-menu", [], ["items", ["subexpr", "@mut", [["get", "itemsSubmenu", ["loc", [null, [22, 14], [22, 26]]]]], [], []], "onItemClick", ["subexpr", "action", ["onMenuItemClick"], [], ["loc", [null, [23, 20], [23, 46]]]], "collapseMenuOnItemClick", ["subexpr", "@mut", [["get", "collapseMenuOnItemClick", ["loc", [null, [24, 32], [24, 55]]]]], [], []]], ["loc", [null, [21, 6], [25, 8]]]]],
         locals: [],
         templates: []
       };
@@ -31982,7 +31982,7 @@ define("dummy/templates/components-examples/flexberry-menu/settings-example", ["
             "column": 0
           },
           "end": {
-            "line": 29,
+            "line": 30,
             "column": 0
           }
         },
@@ -32028,7 +32028,7 @@ define("dummy/templates/components-examples/flexberry-menu/settings-example", ["
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-menu.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [26, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-menu.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [27, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -39613,7 +39613,7 @@ define("dummy/templates/components-examples/flexberry-simpledatetime/settings-ex
               "column": 4
             },
             "end": {
-              "line": 18,
+              "line": 19,
               "column": 4
             }
           },
@@ -39638,7 +39638,7 @@ define("dummy/templates/components-examples/flexberry-simpledatetime/settings-ex
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-simpledatetime", [], ["type", ["subexpr", "@mut", [["get", "type", ["loc", [null, [10, 13], [10, 17]]]]], [], []], "removeButton", ["subexpr", "@mut", [["get", "removeButton", ["loc", [null, [11, 21], [11, 33]]]]], [], []], "value", ["subexpr", "@mut", [["get", "value", ["loc", [null, [12, 14], [12, 19]]]]], [], []], "min", ["subexpr", "@mut", [["get", "min", ["loc", [null, [13, 12], [13, 15]]]]], [], []], "max", ["subexpr", "@mut", [["get", "max", ["loc", [null, [14, 12], [14, 15]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [15, 17], [15, 25]]]]], [], []], "class", "example-simpledatetime"], ["loc", [null, [9, 6], [17, 8]]]]],
+        statements: [["inline", "flexberry-simpledatetime", [], ["type", ["subexpr", "@mut", [["get", "type", ["loc", [null, [11, 13], [11, 17]]]]], [], []], "removeButton", ["subexpr", "@mut", [["get", "removeButton", ["loc", [null, [12, 21], [12, 33]]]]], [], []], "value", ["subexpr", "@mut", [["get", "value", ["loc", [null, [13, 14], [13, 19]]]]], [], []], "min", ["subexpr", "@mut", [["get", "min", ["loc", [null, [14, 12], [14, 15]]]]], [], []], "max", ["subexpr", "@mut", [["get", "max", ["loc", [null, [15, 12], [15, 15]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [16, 17], [16, 25]]]]], [], []], "class", "example-simpledatetime"], ["loc", [null, [10, 6], [18, 8]]]]],
         locals: [],
         templates: []
       };
@@ -39657,7 +39657,7 @@ define("dummy/templates/components-examples/flexberry-simpledatetime/settings-ex
             "column": 0
           },
           "end": {
-            "line": 21,
+            "line": 22,
             "column": 0
           }
         },
@@ -39703,7 +39703,7 @@ define("dummy/templates/components-examples/flexberry-simpledatetime/settings-ex
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-simpledatetime.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 105]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [18, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-simpledatetime.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 105]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [19, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -41548,7 +41548,7 @@ define("dummy/templates/components-examples/flexberry-text-cell/settings-example
               "column": 4
             },
             "end": {
-              "line": 15,
+              "line": 16,
               "column": 4
             }
           },
@@ -41573,7 +41573,7 @@ define("dummy/templates/components-examples/flexberry-text-cell/settings-example
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-text-cell", [], ["value", ["subexpr", "@mut", [["get", "value", ["loc", [null, [11, 12], [11, 17]]]]], [], []], "maxTextLength", ["subexpr", "@mut", [["get", "maxTextLength", ["loc", [null, [12, 20], [12, 33]]]]], [], []], "cutBySpaces", ["subexpr", "@mut", [["get", "cutBySpaces", ["loc", [null, [13, 18], [13, 29]]]]], [], []]], ["loc", [null, [10, 4], [14, 6]]]]],
+        statements: [["inline", "flexberry-text-cell", [], ["value", ["subexpr", "@mut", [["get", "value", ["loc", [null, [12, 12], [12, 17]]]]], [], []], "maxTextLength", ["subexpr", "@mut", [["get", "maxTextLength", ["loc", [null, [13, 20], [13, 33]]]]], [], []], "cutBySpaces", ["subexpr", "@mut", [["get", "cutBySpaces", ["loc", [null, [14, 18], [14, 29]]]]], [], []]], ["loc", [null, [11, 4], [15, 6]]]]],
         locals: [],
         templates: []
       };
@@ -41592,7 +41592,7 @@ define("dummy/templates/components-examples/flexberry-text-cell/settings-example
             "column": 0
           },
           "end": {
-            "line": 18,
+            "line": 19,
             "column": 0
           }
         },
@@ -41644,7 +41644,7 @@ define("dummy/templates/components-examples/flexberry-text-cell/settings-example
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [1, 24], [1, 29]]]]], [], []]], ["loc", [null, [1, 0], [1, 31]]]], ["inline", "t", ["forms.components-examples.flexberry-text-cell.settings-example.caption"], [], ["loc", [null, [2, 22], [2, 100]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [6, 27], [6, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [7, 32], [7, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [8, 28], [8, 49]]]]], [], []]], 0, null, ["loc", [null, [5, 4], [15, 25]]]]],
+      statements: [["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [1, 24], [1, 29]]]]], [], []]], ["loc", [null, [1, 0], [1, 31]]]], ["inline", "t", ["forms.components-examples.flexberry-text-cell.settings-example.caption"], [], ["loc", [null, [2, 22], [2, 100]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [6, 27], [6, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [7, 32], [7, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [8, 28], [8, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [5, 4], [16, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -41664,7 +41664,7 @@ define("dummy/templates/components-examples/flexberry-textarea/settings-example"
               "column": 2
             },
             "end": {
-              "line": 25,
+              "line": 26,
               "column": 2
             }
           },
@@ -41689,7 +41689,7 @@ define("dummy/templates/components-examples/flexberry-textarea/settings-example"
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-textarea", [], ["value", ["subexpr", "@mut", [["get", "model.text", ["loc", [null, [9, 12], [9, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [10, 18], [10, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [11, 15], [11, 23]]]]], [], []], "class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [12, 11], [12, 16]]]]], [], []], "required", ["subexpr", "@mut", [["get", "required", ["loc", [null, [13, 15], [13, 23]]]]], [], []], "rows", ["subexpr", "@mut", [["get", "rows", ["loc", [null, [14, 11], [14, 15]]]]], [], []], "cols", ["subexpr", "@mut", [["get", "cols", ["loc", [null, [15, 11], [15, 15]]]]], [], []], "disabled", ["subexpr", "@mut", [["get", "disabled", ["loc", [null, [16, 15], [16, 23]]]]], [], []], "maxlength", ["subexpr", "@mut", [["get", "maxlength", ["loc", [null, [17, 16], [17, 25]]]]], [], []], "selectionStart", ["subexpr", "@mut", [["get", "selectionStart", ["loc", [null, [18, 21], [18, 35]]]]], [], []], "selectionEnd", ["subexpr", "@mut", [["get", "selectionEnd", ["loc", [null, [19, 19], [19, 31]]]]], [], []], "selectionDirection", ["subexpr", "@mut", [["get", "selectionDirection", ["loc", [null, [20, 25], [20, 43]]]]], [], []], "wrap", ["subexpr", "@mut", [["get", "wrap", ["loc", [null, [21, 11], [21, 15]]]]], [], []], "autofocus", ["subexpr", "@mut", [["get", "autofocus", ["loc", [null, [22, 16], [22, 25]]]]], [], []], "spellcheck", ["subexpr", "@mut", [["get", "spellcheck", ["loc", [null, [23, 17], [23, 27]]]]], [], []]], ["loc", [null, [8, 4], [24, 6]]]]],
+        statements: [["inline", "flexberry-textarea", [], ["value", ["subexpr", "@mut", [["get", "model.text", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [13, 11], [13, 16]]]]], [], []], "required", ["subexpr", "@mut", [["get", "required", ["loc", [null, [14, 15], [14, 23]]]]], [], []], "rows", ["subexpr", "@mut", [["get", "rows", ["loc", [null, [15, 11], [15, 15]]]]], [], []], "cols", ["subexpr", "@mut", [["get", "cols", ["loc", [null, [16, 11], [16, 15]]]]], [], []], "disabled", ["subexpr", "@mut", [["get", "disabled", ["loc", [null, [17, 15], [17, 23]]]]], [], []], "maxlength", ["subexpr", "@mut", [["get", "maxlength", ["loc", [null, [18, 16], [18, 25]]]]], [], []], "selectionStart", ["subexpr", "@mut", [["get", "selectionStart", ["loc", [null, [19, 21], [19, 35]]]]], [], []], "selectionEnd", ["subexpr", "@mut", [["get", "selectionEnd", ["loc", [null, [20, 19], [20, 31]]]]], [], []], "selectionDirection", ["subexpr", "@mut", [["get", "selectionDirection", ["loc", [null, [21, 25], [21, 43]]]]], [], []], "wrap", ["subexpr", "@mut", [["get", "wrap", ["loc", [null, [22, 11], [22, 15]]]]], [], []], "autofocus", ["subexpr", "@mut", [["get", "autofocus", ["loc", [null, [23, 16], [23, 25]]]]], [], []], "spellcheck", ["subexpr", "@mut", [["get", "spellcheck", ["loc", [null, [24, 17], [24, 27]]]]], [], []]], ["loc", [null, [9, 4], [25, 6]]]]],
         locals: [],
         templates: []
       };
@@ -41708,7 +41708,7 @@ define("dummy/templates/components-examples/flexberry-textarea/settings-example"
             "column": 0
           },
           "end": {
-            "line": 27,
+            "line": 28,
             "column": 0
           }
         },
@@ -41745,7 +41745,7 @@ define("dummy/templates/components-examples/flexberry-textarea/settings-example"
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-textarea.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 99]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []]], 0, null, ["loc", [null, [3, 2], [25, 23]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-textarea.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 99]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [26, 23]]]]],
       locals: [],
       templates: [child0]
     };
@@ -41765,7 +41765,7 @@ define("dummy/templates/components-examples/flexberry-textbox/settings-example",
               "column": 2
             },
             "end": {
-              "line": 15,
+              "line": 16,
               "column": 2
             }
           },
@@ -41790,7 +41790,7 @@ define("dummy/templates/components-examples/flexberry-textbox/settings-example",
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-textbox", [], ["class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [9, 12], [9, 17]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.text", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "maxlength", ["subexpr", "@mut", [["get", "maxlength", ["loc", [null, [13, 16], [13, 25]]]]], [], []]], ["loc", [null, [8, 4], [14, 6]]]]],
+        statements: [["inline", "flexberry-textbox", [], ["class", ["subexpr", "@mut", [["get", "class", ["loc", [null, [10, 12], [10, 17]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.text", ["loc", [null, [11, 12], [11, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [12, 18], [12, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [13, 15], [13, 23]]]]], [], []], "maxlength", ["subexpr", "@mut", [["get", "maxlength", ["loc", [null, [14, 16], [14, 25]]]]], [], []]], ["loc", [null, [9, 4], [15, 6]]]]],
         locals: [],
         templates: []
       };
@@ -41809,7 +41809,7 @@ define("dummy/templates/components-examples/flexberry-textbox/settings-example",
             "column": 0
           },
           "end": {
-            "line": 17,
+            "line": 18,
             "column": 0
           }
         },
@@ -41846,7 +41846,7 @@ define("dummy/templates/components-examples/flexberry-textbox/settings-example",
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-textbox.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 98]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []]], 0, null, ["loc", [null, [3, 2], [15, 23]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-textbox.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 98]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [16, 23]]]]],
       locals: [],
       templates: [child0]
     };
@@ -42122,11 +42122,11 @@ define("dummy/templates/components-examples/flexberry-toggler/settings-example",
             "loc": {
               "source": null,
               "start": {
-                "line": 9,
+                "line": 10,
                 "column": 6
               },
               "end": {
-                "line": 18,
+                "line": 19,
                 "column": 6
               }
             },
@@ -42151,7 +42151,7 @@ define("dummy/templates/components-examples/flexberry-toggler/settings-example",
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "t", ["forms.components-examples.flexberry-toggler.settings-example.togglerContent"], [], ["loc", [null, [17, 10], [17, 93]]]]],
+          statements: [["inline", "t", ["forms.components-examples.flexberry-toggler.settings-example.togglerContent"], [], ["loc", [null, [18, 10], [18, 93]]]]],
           locals: [],
           templates: []
         };
@@ -42167,7 +42167,7 @@ define("dummy/templates/components-examples/flexberry-toggler/settings-example",
               "column": 4
             },
             "end": {
-              "line": 19,
+              "line": 20,
               "column": 4
             }
           },
@@ -42190,7 +42190,7 @@ define("dummy/templates/components-examples/flexberry-toggler/settings-example",
           dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [["block", "flexberry-toggler", [], ["caption", ["subexpr", "@mut", [["get", "caption", ["loc", [null, [10, 16], [10, 23]]]]], [], []], "expandedCaption", ["subexpr", "@mut", [["get", "expandedCaption", ["loc", [null, [11, 24], [11, 39]]]]], [], []], "collapsedCaption", ["subexpr", "@mut", [["get", "collapsedCaption", ["loc", [null, [12, 25], [12, 41]]]]], [], []], "expanded", ["subexpr", "@mut", [["get", "expanded", ["loc", [null, [13, 17], [13, 25]]]]], [], []], "iconClass", ["subexpr", "@mut", [["get", "iconClass", ["loc", [null, [14, 18], [14, 27]]]]], [], []], "componentName", "myToggler"], 0, null, ["loc", [null, [9, 6], [18, 28]]]]],
+        statements: [["block", "flexberry-toggler", [], ["caption", ["subexpr", "@mut", [["get", "caption", ["loc", [null, [11, 16], [11, 23]]]]], [], []], "expandedCaption", ["subexpr", "@mut", [["get", "expandedCaption", ["loc", [null, [12, 24], [12, 39]]]]], [], []], "collapsedCaption", ["subexpr", "@mut", [["get", "collapsedCaption", ["loc", [null, [13, 25], [13, 41]]]]], [], []], "expanded", ["subexpr", "@mut", [["get", "expanded", ["loc", [null, [14, 17], [14, 25]]]]], [], []], "iconClass", ["subexpr", "@mut", [["get", "iconClass", ["loc", [null, [15, 18], [15, 27]]]]], [], []], "componentName", "myToggler"], 0, null, ["loc", [null, [10, 6], [19, 28]]]]],
         locals: [],
         templates: [child0]
       };
@@ -42209,7 +42209,7 @@ define("dummy/templates/components-examples/flexberry-toggler/settings-example",
             "column": 0
           },
           "end": {
-            "line": 21,
+            "line": 22,
             "column": 7
           }
         },
@@ -42253,7 +42253,7 @@ define("dummy/templates/components-examples/flexberry-toggler/settings-example",
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-toggler.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 98]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [19, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-toggler.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 98]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [20, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -42273,7 +42273,7 @@ define("dummy/templates/components-examples/flexberry-tree/settings-example", ["
               "column": 6
             },
             "end": {
-              "line": 33,
+              "line": 34,
               "column": 6
             }
           },
@@ -42298,7 +42298,7 @@ define("dummy/templates/components-examples/flexberry-tree/settings-example", ["
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-tree", [], ["class", ["subexpr", "@mut", [["get", "jsonTreeClass", ["loc", [null, [16, 16], [16, 29]]]]], [], []], "exclusive", ["subexpr", "@mut", [["get", "jsonTreeExclusive", ["loc", [null, [17, 20], [17, 37]]]]], [], []], "collapsible", ["subexpr", "@mut", [["get", "jsonTreeCollapsible", ["loc", [null, [18, 22], [18, 41]]]]], [], []], "animateChildren", ["subexpr", "@mut", [["get", "jsonTreeAnimateChildren", ["loc", [null, [19, 26], [19, 49]]]]], [], []], "duration", ["subexpr", "@mut", [["get", "jsonTreeDuration", ["loc", [null, [20, 19], [20, 35]]]]], [], []], "nodes", ["subexpr", "get-with-dynamic-actions", [["get", "this", ["loc", [null, [21, 42], [21, 46]]]], "jsonTreeNodes"], ["hierarchyPropertyName", "nodes", "pathKeyword", "nodePath", "dynamicActions", ["subexpr", "array", [["subexpr", "hash", [], ["on", "headerClick", "actionName", "onTreenodeHeaderClick", "actionArguments", ["subexpr", "array", ["{% nodePath %}"], [], ["loc", [null, [28, 32], [28, 56]]]]], ["loc", [null, [25, 14], [29, 15]]]]], [], ["loc", [null, [24, 27], [30, 13]]]]], ["loc", [null, [21, 16], [31, 11]]]]], ["loc", [null, [15, 8], [32, 10]]]]],
+        statements: [["inline", "flexberry-tree", [], ["class", ["subexpr", "@mut", [["get", "jsonTreeClass", ["loc", [null, [17, 16], [17, 29]]]]], [], []], "exclusive", ["subexpr", "@mut", [["get", "jsonTreeExclusive", ["loc", [null, [18, 20], [18, 37]]]]], [], []], "collapsible", ["subexpr", "@mut", [["get", "jsonTreeCollapsible", ["loc", [null, [19, 22], [19, 41]]]]], [], []], "animateChildren", ["subexpr", "@mut", [["get", "jsonTreeAnimateChildren", ["loc", [null, [20, 26], [20, 49]]]]], [], []], "duration", ["subexpr", "@mut", [["get", "jsonTreeDuration", ["loc", [null, [21, 19], [21, 35]]]]], [], []], "nodes", ["subexpr", "get-with-dynamic-actions", [["get", "this", ["loc", [null, [22, 42], [22, 46]]]], "jsonTreeNodes"], ["hierarchyPropertyName", "nodes", "pathKeyword", "nodePath", "dynamicActions", ["subexpr", "array", [["subexpr", "hash", [], ["on", "headerClick", "actionName", "onTreenodeHeaderClick", "actionArguments", ["subexpr", "array", ["{% nodePath %}"], [], ["loc", [null, [29, 32], [29, 56]]]]], ["loc", [null, [26, 14], [30, 15]]]]], [], ["loc", [null, [25, 27], [31, 13]]]]], ["loc", [null, [22, 16], [32, 11]]]]], ["loc", [null, [16, 8], [33, 10]]]]],
         locals: [],
         templates: []
       };
@@ -42317,7 +42317,7 @@ define("dummy/templates/components-examples/flexberry-tree/settings-example", ["
             "column": 0
           },
           "end": {
-            "line": 44,
+            "line": 45,
             "column": 0
           }
         },
@@ -42402,7 +42402,7 @@ define("dummy/templates/components-examples/flexberry-tree/settings-example", ["
         morphs[3] = dom.createMorphAt(element1, 5, 5);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-tree.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["inline", "t", ["forms.components-examples.flexberry-tree.settings-example.json-tree-tab-caption"], [], ["loc", [null, [6, 8], [6, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [11, 29], [11, 33]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "jsonTreeComponentSettingsMetadata", ["loc", [null, [12, 34], [12, 67]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "jsonTreeComponentTemplateText", ["loc", [null, [13, 30], [13, 59]]]]], [], []]], 0, null, ["loc", [null, [10, 6], [33, 27]]]], ["inline", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [36, 29], [36, 33]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "jsonTreeLatestClickedNodeComponentSettingsMetadata", ["loc", [null, [37, 34], [37, 84]]]]], [], []], "componentSettingsCaption", ["subexpr", "t", ["forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-caption"], [], ["loc", [null, [38, 33], [38, 134]]]], "componentSettingsPlaceholder", ["subexpr", "t", ["forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-placeholder"], [], ["loc", [null, [39, 37], [39, 142]]]]], ["loc", [null, [35, 6], [40, 8]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-tree.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["inline", "t", ["forms.components-examples.flexberry-tree.settings-example.json-tree-tab-caption"], [], ["loc", [null, [6, 8], [6, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [11, 29], [11, 33]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "jsonTreeComponentSettingsMetadata", ["loc", [null, [12, 34], [12, 67]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "jsonTreeComponentTemplateText", ["loc", [null, [13, 30], [13, 59]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [10, 6], [34, 27]]]], ["inline", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [37, 29], [37, 33]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "jsonTreeLatestClickedNodeComponentSettingsMetadata", ["loc", [null, [38, 34], [38, 84]]]]], [], []], "componentSettingsCaption", ["subexpr", "t", ["forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-caption"], [], ["loc", [null, [39, 33], [39, 134]]]], "componentSettingsPlaceholder", ["subexpr", "t", ["forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-placeholder"], [], ["loc", [null, [40, 37], [40, 142]]]]], ["loc", [null, [36, 6], [41, 8]]]]],
       locals: [],
       templates: [child0]
     };
@@ -70728,7 +70728,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.17"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.17+8dc9f5f6"});
 }
 
 /* jshint ignore:end */
