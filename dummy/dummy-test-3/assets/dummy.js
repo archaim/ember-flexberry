@@ -1004,6 +1004,11 @@ define('dummy/controllers/application', ['exports', 'dummy/config/environment'],
             caption: i18n.t('forms.application.sitemap.application.multi.caption'),
             title: i18n.t('forms.application.sitemap.application.multi.title'),
             children: null
+          }, {
+            link: 'ember-flexberry-dummy-suggestion-file-list',
+            caption: i18n.t('forms.application.sitemap.application.suggestion-file.caption'),
+            title: i18n.t('forms.application.sitemap.application.suggestion-file.title'),
+            children: null
           }]
         }, {
           link: null,
@@ -9698,6 +9703,51 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-edit/new', ['exports'
     }
   });
 });
+define('dummy/controllers/ember-flexberry-dummy-suggestion-file-edit', ['exports', 'ember-flexberry/controllers/edit-form', 'ember-flexberry/mixins/edit-form-controller-operations-indication'], function (exports, _editForm, _editFormControllerOperationsIndication) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _editForm.default.extend(_editFormControllerOperationsIndication.default, {
+    /**
+      Route name for transition after close edit form.
+       @property parentRoute
+      @type String
+      @default 'ember-flexberry-dummy-suggestion-file-list'
+    */
+    parentRoute: 'ember-flexberry-dummy-suggestion-file-list'
+  });
+});
+define('dummy/controllers/ember-flexberry-dummy-suggestion-file-edit/new', ['exports', 'dummy/controllers/ember-flexberry-dummy-suggestion-file-edit'], function (exports, _emberFlexberryDummySuggestionFileEdit) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _emberFlexberryDummySuggestionFileEdit.default;
+    }
+  });
+});
+define('dummy/controllers/ember-flexberry-dummy-suggestion-file-list', ['exports', 'ember-flexberry/controllers/list-form', 'dummy/mixins/list-form-controller-operations-indication'], function (exports, _listForm, _listFormControllerOperationsIndication) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _listForm.default.extend(_listFormControllerOperationsIndication.default, {
+    /**
+      Name of related edit form route.
+       @property editFormRoute
+      @type String
+      @default 'ember-flexberry-dummy-suggestion-file-edit'
+     */
+    editFormRoute: 'ember-flexberry-dummy-suggestion-file-edit'
+  });
+});
 define('dummy/controllers/ember-flexberry-dummy-suggestion-list', ['exports', 'ember-flexberry/controllers/list-form', 'dummy/mixins/list-form-controller-operations-indication'], function (exports, _listForm, _listFormControllerOperationsIndication) {
   'use strict';
 
@@ -13766,6 +13816,10 @@ define('dummy/locales/en/translations', ['exports', 'ember-flexberry/locales/en/
             'language-dropdown': {
               'caption': 'Application language',
               'placeholder': 'Choose language'
+            },
+            'suggestion-file': {
+              'caption': 'Suggestion file',
+              'title': ''
             }
           },
           'login': {
@@ -14245,6 +14299,17 @@ define('dummy/locales/en/translations', ['exports', 'ember-flexberry/locales/en/
         'editor-validation-message-caption': 'Editor is required',
         'readonly-groupedit-with-lookup-with-computed-atribute-field': 'Readonly for LookUp "Application User" in GroupEdit "User votes"',
         'limit-function-groupedit-with-lookup-with-computed-atribute-field': 'Limitations for LookUp "Application User" in GroupEdit "User votes"'
+      },
+
+      'ember-flexberry-dummy-suggestion-file-list': {
+        'header': 'Suggestion files'
+      },
+
+      'ember-flexberry-dummy-suggestion-file-edit': {
+        'header': 'Suggestion file',
+        'suggestion': 'Suggestion',
+        'order': 'Order',
+        'file': 'File'
       },
 
       'ember-flexberry-dummy-toggler-example-master-e': {
@@ -15132,6 +15197,21 @@ define('dummy/locales/ru/translations', ['exports', 'ember-flexberry/locales/ru/
           }
         }
       },
+      'ember-flexberry-dummy-suggestion-file': {
+        'projections': {
+          'SuggestionFileL': {
+            'order': {
+              __caption__: 'Порядок'
+            },
+            'file': {
+              __caption__: 'Файл'
+            },
+            'suggestion': {
+              __caption__: 'Предложение'
+            }
+          }
+        }
+      },
       'integration-examples/edit-form/validation/base': {
         'projections': {
           'BaseE': {
@@ -15260,6 +15340,10 @@ define('dummy/locales/ru/translations', ['exports', 'ember-flexberry/locales/ru/
             },
             'multi': {
               'caption': 'Несколько списков',
+              'title': ''
+            },
+            'suggestion-file': {
+              'caption': 'Файлы предложения',
               'title': ''
             }
           },
@@ -15687,6 +15771,17 @@ define('dummy/locales/ru/translations', ['exports', 'ember-flexberry/locales/ru/
         'editor-validation-message-caption': 'Заполните поле "Редактор"',
         'readonly-groupedit-with-lookup-with-computed-atribute-field': 'Readonly для LookUp "Пользователь приложения" в GroupEdit "Голоса пользователей"',
         'limit-function-groupedit-with-lookup-with-computed-atribute-field': 'Ограничения для LookUp "Пользователь приложения" в GroupEdit "Голоса пользователей"'
+      },
+
+      'ember-flexberry-dummy-suggestion-file-list': {
+        'header': 'Файлы предложения'
+      },
+
+      'ember-flexberry-dummy-suggestion-file-edit': {
+        'header': 'Файл предложения',
+        'suggestion': 'Предложение',
+        'order': 'Номер',
+        'file': 'Файл'
       },
 
       'ember-flexberry-dummy-toggler-example-master-e': {
@@ -17134,9 +17229,25 @@ define('dummy/models/ember-flexberry-dummy-suggestion-file', ['exports', 'ember-
     file: _emberData.default.attr('file')
   });
 
+  // List form projection.
+  Model.defineProjection('SuggestionFileL', 'ember-flexberry-dummy-suggestion-file', {
+    order: (0, _attributes.attr)('Order'),
+    suggestion: (0, _attributes.belongsTo)('ember-flexberry-dummy-suggestion', 'Suggestion', {
+      address: (0, _attributes.attr)('Address', {
+        hidden: true
+      })
+    }, {
+      displayMemberPath: 'address'
+    }),
+    file: (0, _attributes.attr)('File')
+  });
+
   // Edit form projection.
   Model.defineProjection('SuggestionFileE', 'ember-flexberry-dummy-suggestion-file', {
     order: (0, _attributes.attr)('Order'),
+    suggestion: (0, _attributes.belongsTo)('ember-flexberry-dummy-suggestion', 'Suggestion', {
+      address: (0, _attributes.attr)('Address')
+    }),
     file: (0, _attributes.attr)('File')
   });
 
@@ -18366,6 +18477,10 @@ define('dummy/router', ['exports', 'dummy/config/environment'], function (export
     this.route('ember-flexberry-dummy-suggestion-list');
     this.route('ember-flexberry-dummy-suggestion-edit', { path: 'ember-flexberry-dummy-suggestion-edit/:id' });
     this.route('ember-flexberry-dummy-suggestion-edit.new', { path: 'ember-flexberry-dummy-suggestion-edit/new' });
+
+    this.route('ember-flexberry-dummy-suggestion-file-list');
+    this.route('ember-flexberry-dummy-suggestion-file-edit', { path: 'ember-flexberry-dummy-suggestion-file-edit/:id' });
+    this.route('ember-flexberry-dummy-suggestion-file-edit.new', { path: 'ember-flexberry-dummy-suggestion-file-edit/new' });
 
     this.route('ember-flexberry-dummy-suggestion-type-list');
     this.route('ember-flexberry-dummy-suggestion-type-edit', { path: 'ember-flexberry-dummy-suggestion-type-edit/:id' });
@@ -23882,6 +23997,111 @@ define('dummy/routes/ember-flexberry-dummy-suggestion-edit/new', ['exports', 'em
     })
   });
 });
+define('dummy/routes/ember-flexberry-dummy-suggestion-file-edit', ['exports', 'ember-flexberry/routes/edit-form', 'ember-flexberry/mixins/edit-form-route-operations-indication'], function (exports, _editForm, _editFormRouteOperationsIndication) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _editForm.default.extend(_editFormRouteOperationsIndication.default, {
+    /**
+      Name of model projection to be used as record's properties limitation.
+       @property modelProjection
+      @type String
+      @default 'SuggestionFileE'
+     */
+    modelProjection: 'SuggestionFileE',
+
+    /**
+      Name of model to be used as form's record type.
+       @property modelName
+      @type String
+      @default 'ember-flexberry-dummy-suggestion-file'
+     */
+    modelName: 'ember-flexberry-dummy-suggestion-file'
+  });
+});
+define('dummy/routes/ember-flexberry-dummy-suggestion-file-edit/new', ['exports', 'ember-flexberry/routes/edit-form-new', 'ember-flexberry/mixins/edit-form-route-operations-indication'], function (exports, _editFormNew, _editFormRouteOperationsIndication) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _editFormNew.default.extend(_editFormRouteOperationsIndication.default, {
+    /**
+      Name of model projection to be used as record's properties limitation.
+       @property modelProjection
+      @type String
+      @default 'SuggestionFileE'
+    */
+    modelProjection: 'SuggestionFileE',
+
+    /**
+      Name of model to be used as form's record type.
+       @property modelName
+      @type String
+      @default 'ember-flexberry-dummy-suggestion-file'
+    */
+    modelName: 'ember-flexberry-dummy-suggestion-file',
+
+    /**
+      Name of template to be rendered.
+       @property templateName
+      @type String
+      @default 'ember-flexberry-dummy-suggestion-file-edit'
+    */
+    templateName: 'ember-flexberry-dummy-suggestion-file-edit'
+  });
+});
+define('dummy/routes/ember-flexberry-dummy-suggestion-file-list', ['exports', 'ember-flexberry/routes/list-form', 'dummy/mixins/list-form-route-operations-indication'], function (exports, _listForm, _listFormRouteOperationsIndication) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _listForm.default.extend(_listFormRouteOperationsIndication.default, {
+    /**
+      Name of model projection to be used as record's properties limitation.
+       @property modelProjection
+      @type String
+      @default 'SuggestionFileE'
+     */
+    modelProjection: 'SuggestionFileL',
+
+    /**
+    developerUserSettings.
+    {
+    <componentName>: {
+      <settingName>: {
+          colsOrder: [ { propName :<colName>, hide: true|false }, ... ],
+          sorting: [{ propName: <colName>, direction: "asc"|"desc" }, ... ],
+          colsWidths: [ <colName>:<colWidth>, ... ],
+        },
+        ...
+      },
+      ...
+    }
+    For default userSetting use empty name ('').
+    <componentName> may contain any of properties: colsOrder, sorting, colsWidth or being empty.
+     @property developerUserSettings
+    @type Object
+    @default {}
+    */
+    developerUserSettings: Ember.computed(function () {
+      return {
+        localizationObjectListView: {}
+      };
+    }),
+
+    /**
+      Name of model to be used as list's records types.
+       @property modelName
+      @type String
+      @default 'ember-flexberry-dummy-suggestion-file'
+     */
+    modelName: 'ember-flexberry-dummy-suggestion-file'
+  });
+});
 define('dummy/routes/ember-flexberry-dummy-suggestion-list', ['exports', 'ember-flexberry/routes/list-form', 'dummy/mixins/list-form-route-operations-indication'], function (exports, _listForm, _listFormRouteOperationsIndication) {
   'use strict';
 
@@ -25505,7 +25725,7 @@ define("dummy/templates/components-examples/flexberry-button/settings-example", 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "nRQCF9wc", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-button.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-button\",null,[[\"class\",\"iconClass\",\"caption\",\"tooltip\",\"readonly\",\"click\"],[[22,[\"class\"]],[22,[\"iconClass\"]],[22,[\"caption\"]],[22,[\"tooltip\"]],[22,[\"readonly\"]],[26,\"action\",[[21,0,[]],\"onButtonClick\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-button/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "cU5qleY2", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-button.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-button\",null,[[\"class\",\"iconClass\",\"caption\",\"tooltip\",\"readonly\",\"click\"],[[22,[\"class\"]],[22,[\"iconClass\"]],[22,[\"caption\"]],[22,[\"tooltip\"]],[22,[\"readonly\"]],[26,\"action\",[[21,0,[]],\"onButtonClick\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-button/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-checkbox/settings-example", ["exports"], function (exports) {
   "use strict";
@@ -25513,7 +25733,15 @@ define("dummy/templates/components-examples/flexberry-checkbox/settings-example"
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "oXIFi4En", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-checkbox.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-checkbox\",null,[[\"value\",\"label\",\"readonly\",\"class\"],[[22,[\"model\",\"flag\"]],[22,[\"label\"]],[22,[\"readonly\"]],[22,[\"class\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-checkbox/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "5izmeEPp", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-checkbox.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-checkbox\",null,[[\"value\",\"label\",\"readonly\",\"class\"],[[22,[\"model\",\"flag\"]],[22,[\"label\"]],[22,[\"readonly\"]],[22,[\"class\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-checkbox/settings-example.hbs" } });
+});
+define("dummy/templates/components-examples/flexberry-datepicker/settings-example", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "+RzPsLmL", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-datepicker.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-datepicker\",null,[[\"dateTimeFormat\",\"hasTimePicker\",\"minDate\",\"maxDate\",\"value\",\"placeholder\",\"readonly\",\"drops\"],[[22,[\"dateTimeFormat\"]],[22,[\"hasTimePicker\"]],[22,[\"minDate\"]],[22,[\"maxDate\"]],[22,[\"model\",\"date\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],\"up\"]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-datepicker/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-ddau-checkbox/settings-example", ["exports"], function (exports) {
   "use strict";
@@ -25521,7 +25749,7 @@ define("dummy/templates/components-examples/flexberry-ddau-checkbox/settings-exa
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "Gc/GVUXE", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-ddau-checkbox.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-ddau-checkbox\",null,[[\"class\",\"value\",\"caption\",\"readonly\",\"change\"],[[22,[\"class\"]],[22,[\"model\",\"flag\"]],[22,[\"caption\"]],[22,[\"readonly\"]],[26,\"action\",[[21,0,[]],\"onCheckboxChange\",\"model.flag\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-ddau-checkbox/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "xI0iWtOl", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-ddau-checkbox.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-ddau-checkbox\",null,[[\"class\",\"value\",\"caption\",\"readonly\",\"change\"],[[22,[\"class\"]],[22,[\"model\",\"flag\"]],[22,[\"caption\"]],[22,[\"readonly\"]],[26,\"action\",[[21,0,[]],\"onCheckboxChange\",\"model.flag\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-ddau-checkbox/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-dropdown/conditional-render-example", ["exports"], function (exports) {
   "use strict";
@@ -25553,7 +25781,7 @@ define("dummy/templates/components-examples/flexberry-dropdown/settings-example"
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "hqUQGw0R", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-dropdown.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-dropdown\",null,[[\"items\",\"value\",\"placeholder\",\"readonly\",\"class\"],[[26,\"flexberry-enum\",[\"components-examples/flexberry-dropdown/settings-example/enumeration\"],null],[22,[\"model\",\"enumeration\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"class\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-dropdown/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "yPrhDvcE", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-dropdown.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-dropdown\",null,[[\"items\",\"value\",\"placeholder\",\"readonly\",\"class\"],[[26,\"flexberry-enum\",[\"components-examples/flexberry-dropdown/settings-example/enumeration\"],null],[22,[\"model\",\"enumeration\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"class\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-dropdown/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-field/settings-example", ["exports"], function (exports) {
   "use strict";
@@ -25561,7 +25789,7 @@ define("dummy/templates/components-examples/flexberry-field/settings-example", [
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "Nn32qeDo", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-field.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-field\",null,[[\"class\",\"value\",\"label\",\"placeholder\",\"readonly\",\"type\",\"maxlength\"],[[22,[\"class\"]],[22,[\"model\",\"text\"]],[22,[\"label\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"type\"]],[22,[\"maxlength\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-field/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "YL/25a/l", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-field.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-field\",null,[[\"class\",\"value\",\"label\",\"placeholder\",\"readonly\",\"type\",\"maxlength\"],[[22,[\"class\"]],[22,[\"model\",\"text\"]],[22,[\"label\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"type\"]],[22,[\"maxlength\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-field/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-file/flexberry-file-in-modal", ["exports"], function (exports) {
   "use strict";
@@ -25577,7 +25805,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "+MPVWE4X", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-file.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"    \"],[1,[26,\"flexberry-file\",null,[[\"value\",\"placeholder\",\"readonly\",\"uploadUrl\",\"maxUploadFileSize\",\"showPreview\",\"showUploadButton\",\"showDownloadButton\",\"showModalDialogOnUploadError\",\"showModalDialogOnDownloadError\",\"inputClass\",\"buttonClass\",\"openFileInNewWindowInsteadOfLoading\"],[[22,[\"model\",\"file\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"uploadUrl\"]],[22,[\"maxUploadFileSize\"]],[22,[\"showPreview\"]],[22,[\"showUploadButton\"]],[22,[\"showDownloadButton\"]],[22,[\"showModalDialogOnUploadError\"]],[22,[\"showModalDialogOnDownloadError\"]],[22,[\"inputClass\"]],[22,[\"buttonClass\"]],[22,[\"openFileInNewWindowInsteadOfLoading\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-file/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "kw0DImCW", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-file.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"    \"],[1,[26,\"flexberry-file\",null,[[\"value\",\"placeholder\",\"readonly\",\"uploadUrl\",\"maxUploadFileSize\",\"showPreview\",\"showUploadButton\",\"showDownloadButton\",\"showModalDialogOnUploadError\",\"showModalDialogOnDownloadError\",\"inputClass\",\"buttonClass\",\"openFileInNewWindowInsteadOfLoading\"],[[22,[\"model\",\"file\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"uploadUrl\"]],[22,[\"maxUploadFileSize\"]],[22,[\"showPreview\"]],[22,[\"showUploadButton\"]],[22,[\"showDownloadButton\"]],[22,[\"showModalDialogOnUploadError\"]],[22,[\"showModalDialogOnDownloadError\"]],[22,[\"inputClass\"]],[22,[\"buttonClass\"]],[22,[\"openFileInNewWindowInsteadOfLoading\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-file/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-groupedit/configurate-row-example", ["exports"], function (exports) {
   "use strict";
@@ -25761,7 +25989,7 @@ define("dummy/templates/components-examples/flexberry-menu/settings-example", ["
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "8usHUwb4", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-menu.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"    \"],[6,\"div\"],[11,\"class\",[20,\"menuPosition\"],null],[8],[0,\"\\n      \"],[1,[26,\"flexberry-menu\",null,[[\"items\",\"onItemClick\",\"collapseMenuOnItemClick\"],[[22,[\"itemsLeft\"]],[26,\"action\",[[21,0,[]],\"onMenuItemClick\"],null],[22,[\"collapseMenuOnItemClick\"]]]]],false],[0,\"\\n      \"],[1,[26,\"flexberry-menu\",null,[[\"items\",\"onItemClick\",\"collapseMenuOnItemClick\"],[[22,[\"itemsRight\"]],[26,\"action\",[[21,0,[]],\"onMenuItemClick\"],null],[22,[\"collapseMenuOnItemClick\"]]]]],false],[0,\"\\n      \"],[1,[26,\"flexberry-menu\",null,[[\"items\",\"onItemClick\",\"collapseMenuOnItemClick\"],[[22,[\"itemsSubmenu\"]],[26,\"action\",[[21,0,[]],\"onMenuItemClick\"],null],[22,[\"collapseMenuOnItemClick\"]]]]],false],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-menu/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "KTAVizhf", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-menu.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"    \"],[6,\"div\"],[11,\"class\",[20,\"menuPosition\"],null],[8],[0,\"\\n      \"],[1,[26,\"flexberry-menu\",null,[[\"items\",\"onItemClick\",\"collapseMenuOnItemClick\"],[[22,[\"itemsLeft\"]],[26,\"action\",[[21,0,[]],\"onMenuItemClick\"],null],[22,[\"collapseMenuOnItemClick\"]]]]],false],[0,\"\\n      \"],[1,[26,\"flexberry-menu\",null,[[\"items\",\"onItemClick\",\"collapseMenuOnItemClick\"],[[22,[\"itemsRight\"]],[26,\"action\",[[21,0,[]],\"onMenuItemClick\"],null],[22,[\"collapseMenuOnItemClick\"]]]]],false],[0,\"\\n      \"],[1,[26,\"flexberry-menu\",null,[[\"items\",\"onItemClick\",\"collapseMenuOnItemClick\"],[[22,[\"itemsSubmenu\"]],[26,\"action\",[[21,0,[]],\"onMenuItemClick\"],null],[22,[\"collapseMenuOnItemClick\"]]]]],false],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-menu/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-objectlistview/before-delete-record/folv-for-before-delete-record-data-cancel", ["exports"], function (exports) {
   "use strict";
@@ -26065,7 +26293,7 @@ define("dummy/templates/components-examples/flexberry-simpledatetime/settings-ex
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "jZmnPyeF", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-simpledatetime.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-simpledatetime\",null,[[\"type\",\"removeButton\",\"value\",\"min\",\"max\",\"readonly\",\"class\"],[[22,[\"type\"]],[22,[\"removeButton\"]],[22,[\"value\"]],[22,[\"min\"]],[22,[\"max\"]],[22,[\"readonly\"]],\"example-simpledatetime\"]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-simpledatetime/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "J8hL4VyB", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-simpledatetime.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"      \"],[1,[26,\"flexberry-simpledatetime\",null,[[\"type\",\"removeButton\",\"value\",\"min\",\"max\",\"readonly\",\"class\"],[[22,[\"type\"]],[22,[\"removeButton\"]],[22,[\"value\"]],[22,[\"min\"]],[22,[\"max\"]],[22,[\"readonly\"]],\"example-simpledatetime\"]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-simpledatetime/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-text-cell/settings-example", ["exports"], function (exports) {
   "use strict";
@@ -26073,7 +26301,7 @@ define("dummy/templates/components-examples/flexberry-text-cell/settings-example
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "tXh+m2j0", "block": "{\"symbols\":[],\"statements\":[[1,[26,\"flexberry-error\",null,[[\"error\"],[[22,[\"error\"]]]]],false],[0,\"\\n\"],[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-text-cell.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"    \"],[1,[26,\"flexberry-text-cell\",null,[[\"value\",\"maxTextLength\",\"cutBySpaces\"],[[22,[\"value\"]],[22,[\"maxTextLength\"]],[22,[\"cutBySpaces\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-text-cell/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "psYpcbey", "block": "{\"symbols\":[],\"statements\":[[1,[26,\"flexberry-error\",null,[[\"error\"],[[22,[\"error\"]]]]],false],[0,\"\\n\"],[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-text-cell.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"    \"],[1,[26,\"flexberry-text-cell\",null,[[\"value\",\"maxTextLength\",\"cutBySpaces\"],[[22,[\"value\"]],[22,[\"maxTextLength\"]],[22,[\"cutBySpaces\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-text-cell/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-textarea/settings-example", ["exports"], function (exports) {
   "use strict";
@@ -26081,7 +26309,7 @@ define("dummy/templates/components-examples/flexberry-textarea/settings-example"
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "oozLs6YA", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-textarea.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"    \"],[1,[26,\"flexberry-textarea\",null,[[\"value\",\"placeholder\",\"readonly\",\"class\",\"required\",\"rows\",\"cols\",\"disabled\",\"maxlength\",\"selectionStart\",\"selectionEnd\",\"selectionDirection\",\"wrap\",\"autofocus\",\"spellcheck\"],[[22,[\"model\",\"text\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"class\"]],[22,[\"required\"]],[22,[\"rows\"]],[22,[\"cols\"]],[22,[\"disabled\"]],[22,[\"maxlength\"]],[22,[\"selectionStart\"]],[22,[\"selectionEnd\"]],[22,[\"selectionDirection\"]],[22,[\"wrap\"]],[22,[\"autofocus\"]],[22,[\"spellcheck\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-textarea/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "KAAfbv+C", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-textarea.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"    \"],[1,[26,\"flexberry-textarea\",null,[[\"value\",\"placeholder\",\"readonly\",\"class\",\"required\",\"rows\",\"cols\",\"disabled\",\"maxlength\",\"selectionStart\",\"selectionEnd\",\"selectionDirection\",\"wrap\",\"autofocus\",\"spellcheck\"],[[22,[\"model\",\"text\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"class\"]],[22,[\"required\"]],[22,[\"rows\"]],[22,[\"cols\"]],[22,[\"disabled\"]],[22,[\"maxlength\"]],[22,[\"selectionStart\"]],[22,[\"selectionEnd\"]],[22,[\"selectionDirection\"]],[22,[\"wrap\"]],[22,[\"autofocus\"]],[22,[\"spellcheck\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-textarea/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-textbox/settings-example", ["exports"], function (exports) {
   "use strict";
@@ -26089,7 +26317,7 @@ define("dummy/templates/components-examples/flexberry-textbox/settings-example",
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "6sm979Wz", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-textbox.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[0,\"    \"],[1,[26,\"flexberry-textbox\",null,[[\"class\",\"value\",\"placeholder\",\"readonly\",\"maxlength\"],[[22,[\"class\"]],[22,[\"model\",\"text\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"maxlength\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-textbox/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "qN6B8VMY", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-textbox.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"    \"],[1,[26,\"flexberry-textbox\",null,[[\"class\",\"value\",\"placeholder\",\"readonly\",\"maxlength\"],[[22,[\"class\"]],[22,[\"model\",\"text\"]],[22,[\"placeholder\"]],[22,[\"readonly\"]],[22,[\"maxlength\"]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-textbox/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-toggler/ge-into-toggler-example", ["exports"], function (exports) {
   "use strict";
@@ -26113,7 +26341,7 @@ define("dummy/templates/components-examples/flexberry-toggler/settings-example",
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "q8lAYOL0", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-toggler.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]]]],{\"statements\":[[4,\"flexberry-toggler\",null,[[\"caption\",\"expandedCaption\",\"collapsedCaption\",\"expanded\",\"iconClass\",\"componentName\"],[[22,[\"caption\"]],[22,[\"expandedCaption\"]],[22,[\"collapsedCaption\"]],[22,[\"expanded\"]],[22,[\"iconClass\"]],\"myToggler\"]],{\"statements\":[[0,\"          \"],[1,[26,\"t\",[\"forms.components-examples.flexberry-toggler.settings-example.togglerContent\"],null],false],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-toggler/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "PrKYMWfn", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-toggler.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"componentSettingsMetadata\"]],[22,[\"componentTemplateText\"]],\"visible\"]],{\"statements\":[[4,\"flexberry-toggler\",null,[[\"caption\",\"expandedCaption\",\"collapsedCaption\",\"expanded\",\"iconClass\",\"componentName\"],[[22,[\"caption\"]],[22,[\"expandedCaption\"]],[22,[\"collapsedCaption\"]],[22,[\"expanded\"]],[22,[\"iconClass\"]],\"myToggler\"]],{\"statements\":[[0,\"          \"],[1,[26,\"t\",[\"forms.components-examples.flexberry-toggler.settings-example.togglerContent\"],null],false],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-toggler/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/flexberry-tree/settings-example", ["exports"], function (exports) {
   "use strict";
@@ -26121,7 +26349,7 @@ define("dummy/templates/components-examples/flexberry-tree/settings-example", ["
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "qdlBHh0r", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"ui top attached tabular menu\"],[8],[0,\"\\n      \"],[6,\"a\"],[10,\"class\",\"item active\"],[10,\"data-tab\",\"jsonTree\"],[8],[0,\"\\n        \"],[1,[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-tab-caption\"],null],false],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"ui bottom attached tab segment active\"],[10,\"data-tab\",\"jsonTree\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\"],[[21,0,[]],[22,[\"jsonTreeComponentSettingsMetadata\"]],[22,[\"jsonTreeComponentTemplateText\"]]]],{\"statements\":[[0,\"        \"],[1,[26,\"flexberry-tree\",null,[[\"class\",\"exclusive\",\"collapsible\",\"animateChildren\",\"duration\",\"nodes\"],[[22,[\"jsonTreeClass\"]],[22,[\"jsonTreeExclusive\"]],[22,[\"jsonTreeCollapsible\"]],[22,[\"jsonTreeAnimateChildren\"]],[22,[\"jsonTreeDuration\"]],[26,\"get-with-dynamic-actions\",[[21,0,[]],\"jsonTreeNodes\"],[[\"hierarchyPropertyName\",\"pathKeyword\",\"dynamicActions\"],[\"nodes\",\"nodePath\",[26,\"array\",[[26,\"hash\",null,[[\"on\",\"actionName\",\"actionArguments\"],[\"headerClick\",\"onTreenodeHeaderClick\",[26,\"array\",[\"{% nodePath %}\"],null]]]]],null]]]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"      \"],[6,\"br\"],[8],[9],[0,\"\\n      \"],[1,[26,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentSettingsCaption\",\"componentSettingsPlaceholder\"],[[21,0,[]],[22,[\"jsonTreeLatestClickedNodeComponentSettingsMetadata\"]],[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-caption\"],null],[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-placeholder\"],null]]]],false],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-tree/settings-example.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "eMM8S1DP", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"ui top attached tabular menu\"],[8],[0,\"\\n      \"],[6,\"a\"],[10,\"class\",\"item active\"],[10,\"data-tab\",\"jsonTree\"],[8],[0,\"\\n        \"],[1,[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-tab-caption\"],null],false],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"ui bottom attached tab segment active\"],[10,\"data-tab\",\"jsonTree\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"jsonTreeComponentSettingsMetadata\"]],[22,[\"jsonTreeComponentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"        \"],[1,[26,\"flexberry-tree\",null,[[\"class\",\"exclusive\",\"collapsible\",\"animateChildren\",\"duration\",\"nodes\"],[[22,[\"jsonTreeClass\"]],[22,[\"jsonTreeExclusive\"]],[22,[\"jsonTreeCollapsible\"]],[22,[\"jsonTreeAnimateChildren\"]],[22,[\"jsonTreeDuration\"]],[26,\"get-with-dynamic-actions\",[[21,0,[]],\"jsonTreeNodes\"],[[\"hierarchyPropertyName\",\"pathKeyword\",\"dynamicActions\"],[\"nodes\",\"nodePath\",[26,\"array\",[[26,\"hash\",null,[[\"on\",\"actionName\",\"actionArguments\"],[\"headerClick\",\"onTreenodeHeaderClick\",[26,\"array\",[\"{% nodePath %}\"],null]]]]],null]]]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"      \"],[6,\"br\"],[8],[9],[0,\"\\n      \"],[1,[26,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentSettingsCaption\",\"componentSettingsPlaceholder\"],[[21,0,[]],[22,[\"jsonTreeLatestClickedNodeComponentSettingsMetadata\"]],[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-caption\"],null],[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-placeholder\"],null]]]],false],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-tree/settings-example.hbs" } });
 });
 define("dummy/templates/components-examples/ui-message/settings-example", ["exports"], function (exports) {
   "use strict";
@@ -26594,6 +26822,30 @@ define("dummy/templates/ember-flexberry-dummy-suggestion-edit", ["exports"], fun
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "EdonLU68", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"success\",true,[22,[\"showFormSuccessMessage\"]],[22,[\"formSuccessMessageCaption\"]],[22,[\"formSuccessMessage\"]],[26,\"action\",[[21,0,[]],\"onSuccessMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onSuccessMessageHide\"],null]]]],false],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"error\",true,[22,[\"showFormErrorMessage\"]],[22,[\"formErrorMessageCaption\"]],[22,[\"formErrorMessage\"]],[26,\"action\",[[21,0,[]],\"onErrorMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onErrorMessageHide\"],null]]]],false],[0,\"\\n  \"],[1,[26,\"flexberry-error\",null,[[\"error\"],[[22,[\"error\"]]]]],false],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"sixteen wide\"],[8],[0,\"\\n      \"],[1,[26,\"flexberry-validationsummary\",null,[[\"errors\"],[[26,\"get\",[[22,[\"validationObject\",\"validations\"]],\"messages\"],null]]]],false],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"flexberry-edit-panel\"],[8],[0,\"\\n\"],[4,\"unless\",[[22,[\"readonly\"]]],null,{\"statements\":[[4,\"unless\",[[26,\"and\",[[22,[\"hasParentRoute\"]],[26,\"not\",[[22,[\"saveBeforeRouteLeave\"]]],null]],null]],null,{\"statements\":[[0,\"          \"],[6,\"button\"],[10,\"class\",\"ui button save-button\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"save\"]],[8],[1,[26,\"t\",[\"forms.edit-form.save-button-text\"],null],false],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"unless\",[[26,\"and\",[[22,[\"hasParentRoute\"]],[26,\"not\",[[22,[\"saveBeforeRouteLeave\"]]],null]],null]],null,{\"statements\":[[0,\"          \"],[6,\"button\"],[10,\"class\",\"ui button save-close-button\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"saveAndClose\"]],[8],[1,[26,\"t\",[\"forms.edit-form.saveAndClose-button-text\"],null],false],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"unless\",[[26,\"and\",[[22,[\"model\",\"isNew\"]],[26,\"or\",[[26,\"not\",[[22,[\"hasParentRoute\"]]],null],[26,\"and\",[[22,[\"hasParentRoute\"]],[22,[\"saveBeforeRouteLeave\"]]],null]],null]],null]],null,{\"statements\":[[0,\"          \"],[6,\"button\"],[10,\"class\",\"ui button save-del-button\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"delete\"]],[8],[1,[26,\"t\",[\"forms.edit-form.delete-button-text\"],null],false],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"      \"],[6,\"button\"],[10,\"class\",\"ui button close-button\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"close\"]],[8],[1,[26,\"t\",[\"forms.edit-form.close-button-text\"],null],false],[9],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"address\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[1,[26,\"flexberry-field\",null,[[\"value\",\"label\",\"readonly\"],[[22,[\"model\",\"address\"]],[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.address-caption\"],null],[22,[\"readonly\"]]]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"address\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"text\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[1,[26,\"flexberry-field\",null,[[\"value\",\"label\",\"readonly\"],[[22,[\"model\",\"text\"]],[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.text-caption\"],null],[22,[\"readonly\"]]]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"text\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"date\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.date-caption\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-simpledatetime\",null,[[\"type\",\"value\",\"readonly\"],[\"date\",[22,[\"model\",\"date\"]],[22,[\"readonly\"]]]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"date\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"votes\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[1,[26,\"flexberry-field\",null,[[\"value\",\"label\",\"readonly\"],[[22,[\"model\",\"votes\"]],[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.votes-caption\"],null],[22,[\"readonly\"]]]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"votes\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"moderated\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.moderated-caption\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-checkbox\",null,[[\"value\",\"readonly\"],[[22,[\"model\",\"moderated\"]],[22,[\"readonly\"]]]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"moderated\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"type\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.type-caption\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-lookup\",null,[[\"value\",\"relatedModel\",\"relationName\",\"projection\",\"displayAttributeName\",\"title\",\"choose\",\"remove\",\"dropdown\",\"readonly\",\"direction\",\"componentName\"],[[22,[\"model\",\"type\"]],[22,[\"model\"]],\"type\",\"SuggestionTypeL\",\"name\",[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.type-caption\"],null],[26,\"action\",[[21,0,[]],\"showLookupDialog\"],null],[26,\"action\",[[21,0,[]],\"removeLookupValue\"],null],true,[22,[\"readonly\"]],\"upward\",\"SuggestionEditType\"]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"type\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"author\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.author-caption\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-lookup\",null,[[\"value\",\"relatedModel\",\"relationName\",\"projection\",\"displayAttributeName\",\"showPreviewButton\",\"previewOnSeparateRoute\",\"previewFormRoute\",\"title\",\"choose\",\"remove\",\"preview\",\"readonly\",\"componentName\"],[[22,[\"model\",\"author\"]],[22,[\"model\"]],\"author\",\"ApplicationUserL\",\"name\",true,true,\"ember-flexberry-dummy-application-user-edit\",[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.author-caption\"],null],[26,\"action\",[[21,0,[]],\"showLookupDialog\"],null],[26,\"action\",[[21,0,[]],\"removeLookupValue\"],null],[26,\"action\",[[21,0,[]],\"previewLookupValue\"],null],[22,[\"readonly\"]],\"SuggestionEditAuthor\"]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"author\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"editor1\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.editor1-caption\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-lookup\",null,[[\"value\",\"relatedModel\",\"relationName\",\"projection\",\"displayAttributeName\",\"showPreviewButton\",\"previewFormRoute\",\"title\",\"choose\",\"remove\",\"preview\",\"readonly\",\"componentName\"],[[22,[\"model\",\"editor1\"]],[22,[\"model\"]],\"editor1\",\"ApplicationUserL\",\"name\",true,\"ember-flexberry-dummy-application-user-edit\",[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.editor1-caption\"],null],[26,\"action\",[[21,0,[]],\"showLookupDialog\"],null],[26,\"action\",[[21,0,[]],\"removeLookupValue\"],null],[26,\"action\",[[21,0,[]],\"previewLookupValue\"],null],[22,[\"readonly\"]],\"SuggestionEditEditor1\"]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"editor1\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"files\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.files-caption\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-groupedit\",null,[[\"componentName\",\"content\",\"mainModelProjection\",\"modelProjection\",\"orderable\",\"readonly\"],[\"filesGroupEdit\",[22,[\"model\",\"files\"]],[22,[\"modelProjection\"]],[22,[\"modelProjection\",\"attributes\",\"files\"]],true,[22,[\"readonly\"]]]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"files\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"userVotes\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.userVotes-caption\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-groupedit\",null,[[\"componentName\",\"content\",\"mainModelProjection\",\"modelProjection\",\"orderable\",\"readonly\"],[\"suggestionUserVotesGroupEdit\",[22,[\"model\",\"userVotes\"]],[22,[\"modelProjection\"]],[22,[\"modelProjection\",\"attributes\",\"userVotes\"]],true,[22,[\"readonly\"]]]]],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"comments\"],null],\"isInvalid\"],null],\"error\"],null]]]],[8],[0,\"\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-edit.comments-caption\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-groupedit\",null,[[\"componentName\",\"content\",\"mainModelProjection\",\"modelProjection\",\"rowClickable\",\"rowClick\",\"editOnSeparateRoute\",\"editFormRoute\",\"saveBeforeRouteLeave\",\"orderable\",\"readonly\"],[\"suggestionCommentsGroupEdit\",[22,[\"model\",\"comments\"]],[22,[\"modelProjection\"]],[22,[\"modelProjection\",\"attributes\",\"comments\"]],true,\"rowClick\",true,[22,[\"commentsEditRoute\"]],true,true,[22,[\"readonly\"]]]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\"],[[26,\"get\",[[26,\"get\",[[22,[\"validationObject\",\"validations\",\"attrs\"]],\"comments\"],null],\"messages\"],null]]]],false],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/ember-flexberry-dummy-suggestion-edit.hbs" } });
+});
+define("dummy/templates/ember-flexberry-dummy-suggestion-file-edit", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "ENAHJCkv", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-file-edit.header\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"success\",true,[22,[\"showFormSuccessMessage\"]],[22,[\"formSuccessMessageCaption\"]],[22,[\"formSuccessMessage\"]],[26,\"action\",[[21,0,[]],\"onSuccessMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onSuccessMessageHide\"],null]]]],false],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"error\",true,[22,[\"showFormErrorMessage\"]],[22,[\"formErrorMessageCaption\"]],[22,[\"formErrorMessage\"]],[26,\"action\",[[21,0,[]],\"onErrorMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onErrorMessageHide\"],null]]]],false],[0,\"\\n  \"],[1,[26,\"flexberry-error\",null,[[\"error\"],[[22,[\"error\"]]]]],false],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"sixteen wide\"],[8],[0,\"\\n      \"],[1,[26,\"flexberry-validationsummary\",null,[[\"errors\"],[[22,[\"model\",\"errors\"]]]]],false],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"flexberry-edit-panel\"],[8],[0,\"\\n\"],[4,\"unless\",[[22,[\"readonly\"]]],null,{\"statements\":[[4,\"unless\",[[26,\"and\",[[22,[\"hasParentRoute\"]],[26,\"not\",[[22,[\"saveBeforeRouteLeave\"]]],null]],null]],null,{\"statements\":[[0,\"          \"],[6,\"button\"],[10,\"class\",\"ui button save-button\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"save\"]],[8],[1,[26,\"t\",[\"forms.edit-form.save-button-text\"],null],false],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"unless\",[[26,\"and\",[[22,[\"hasParentRoute\"]],[26,\"not\",[[22,[\"saveBeforeRouteLeave\"]]],null]],null]],null,{\"statements\":[[0,\"          \"],[6,\"button\"],[10,\"class\",\"ui button save-close-button\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"saveAndClose\"]],[8],[1,[26,\"t\",[\"forms.edit-form.saveAndClose-button-text\"],null],false],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"unless\",[[26,\"and\",[[22,[\"model\",\"isNew\"]],[26,\"or\",[[26,\"not\",[[22,[\"hasParentRoute\"]]],null],[26,\"and\",[[22,[\"hasParentRoute\"]],[22,[\"saveBeforeRouteLeave\"]]],null]],null]],null]],null,{\"statements\":[[0,\"          \"],[6,\"button\"],[10,\"class\",\"ui button save-del-button\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"delete\"]],[8],[1,[26,\"t\",[\"forms.edit-form.delete-button-text\"],null],false],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"      \"],[6,\"button\"],[10,\"class\",\"ui button close-button\"],[10,\"type\",\"submit\"],[3,\"action\",[[21,0,[]],\"close\"]],[8],[1,[26,\"t\",[\"forms.edit-form.close-button-text\"],null],false],[9],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"div\"],[11,\"class\",[27,[\"field \",[26,\"if\",[[22,[\"model\",\"errors\",\"name\"]],\"error\",\"\"],null]]]],[8],[0,\"\\n    \"],[1,[26,\"flexberry-field\",null,[[\"value\",\"label\",\"readonly\"],[[22,[\"model\",\"order\"]],[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-file-edit.order\"],null],[22,[\"readonly\"]]]]],false],[0,\"\\n    \"],[1,[26,\"flexberry-validationmessage\",null,[[\"error\",\"pointing\"],[[22,[\"model\",\"errors\",\"name\"]],\"pointing\"]]],false],[0,\"\\n\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-file-edit.file\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-file\",null,[[\"value\",\"showPreview\",\"showUploadButton\",\"showDownloadButton\"],[[22,[\"model\",\"file\"]],true,true,true]]],false],[0,\"\\n\\n    \"],[6,\"label\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-file-edit.suggestion\"],null],false],[9],[0,\"\\n    \"],[1,[26,\"flexberry-lookup\",null,[[\"value\",\"relatedModel\",\"relationName\",\"projection\",\"displayAttributeName\",\"title\",\"choose\",\"remove\",\"preview\",\"readonly\",\"componentName\"],[[22,[\"model\",\"suggestion\"]],[22,[\"model\"]],\"suggestion\",\"SuggestionL\",\"address\",[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-file-edit.suggestion\"],null],[26,\"action\",[[21,0,[]],\"showLookupDialog\"],null],[26,\"action\",[[21,0,[]],\"removeLookupValue\"],null],[26,\"action\",[[21,0,[]],\"previewLookupValue\"],null],[22,[\"readonly\"]],\"Suggestion\"]]],false],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/ember-flexberry-dummy-suggestion-file-edit.hbs" } });
+});
+define("dummy/templates/ember-flexberry-dummy-suggestion-file-list", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "9QDIRrTu", "block": "{\"symbols\":[],\"statements\":[[1,[26,\"flexberry-error\",null,[[\"error\"],[[22,[\"error\"]]]]],false],[0,\"\\n\"],[6,\"h3\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-file-edit.header\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"success\",true,[22,[\"showFormSuccessMessage\"]],[22,[\"formSuccessMessageCaption\"]],[22,[\"formSuccessMessage\"]],[26,\"action\",[[21,0,[]],\"onSuccessMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onSuccessMessageHide\"],null]]]],false],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"error\",true,[22,[\"showFormErrorMessage\"]],[22,[\"formErrorMessageCaption\"]],[22,[\"formErrorMessage\"]],[26,\"action\",[[21,0,[]],\"onErrorMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onErrorMessageHide\"],null]]]],false],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n  \"],[1,[26,\"flexberry-objectlistview\",null,[[\"content\",\"modelName\",\"modelProjection\",\"editFormRoute\",\"createNewButton\",\"refreshButton\",\"deleteButton\",\"showCheckBoxInRow\",\"sorting\",\"orderable\",\"pages\",\"perPageValue\",\"perPageValues\",\"recordsTotalCount\",\"hasPreviousPage\",\"hasNextPage\",\"sortByColumn\",\"addColumnToSorting\",\"beforeDeleteAllRecords\",\"previousPage\",\"gotoPage\",\"nextPage\",\"componentName\"],[[22,[\"model\"]],\"ember-flexberry-dummy-suggestion-file\",[22,[\"modelProjection\"]],[22,[\"editFormRoute\"]],true,true,true,true,[22,[\"computedSorting\"]],true,[22,[\"pages\"]],[22,[\"perPageValue\"]],[22,[\"perPageValues\"]],[22,[\"recordsTotalCount\"]],[22,[\"hasPreviousPage\"]],[22,[\"hasNextPage\"]],[26,\"action\",[[21,0,[]],\"sortByColumn\"],null],[26,\"action\",[[21,0,[]],\"addColumnToSorting\"],null],[26,\"action\",[[21,0,[]],\"beforeDeleteAllRecords\"],null],[26,\"action\",[[21,0,[]],\"previousPage\"],null],[26,\"action\",[[21,0,[]],\"gotoPage\"],null],[26,\"action\",[[21,0,[]],\"nextPage\"],null],\"fileObjectListView\"]]],false],[0,\"\\n\"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/ember-flexberry-dummy-suggestion-file-list.hbs" } });
+});
+define("dummy/templates/ember-flexberry-dummy-suggestion-file-list/loading", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "GTq/4R/x", "block": "{\"symbols\":[],\"statements\":[[6,\"div\"],[10,\"class\",\"loading-pane\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"loading-message\"],[8],[0,\"\\n        Loading ...\\n        \"],[6,\"div\"],[10,\"class\",\"spinner\"],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"],[9],[0,\" \\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/ember-flexberry-dummy-suggestion-file-list/loading.hbs" } });
 });
 define("dummy/templates/ember-flexberry-dummy-suggestion-list", ["exports"], function (exports) {
   "use strict";
@@ -27317,6 +27569,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.2.0-beta.6+8908ac55"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.2.0-beta.7+1bb51572"});
 }
 //# sourceMappingURL=dummy.map

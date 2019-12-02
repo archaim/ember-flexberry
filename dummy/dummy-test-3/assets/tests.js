@@ -5999,6 +5999,21 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-edit/new.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/ember-flexberry-dummy-suggestion-file-edit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-edit.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/ember-flexberry-dummy-suggestion-file-edit/new.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/ember-flexberry-dummy-suggestion-file-list.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-list.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/ember-flexberry-dummy-suggestion-list.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-list.js should pass ESLint\n\n');
@@ -6907,6 +6922,21 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/ember-flexberry-dummy-suggestion-edit/new.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-suggestion-file-edit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-edit.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-suggestion-file-edit/new.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-suggestion-file-list.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-list.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/ember-flexberry-dummy-suggestion-list.js', function (assert) {
