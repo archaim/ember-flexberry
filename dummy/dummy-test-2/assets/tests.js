@@ -8243,6 +8243,57 @@ define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-edit/new.jshint
     assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-edit/new.js should pass jshint.');
   });
 });
+define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-file-edit.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers');
+  test('controllers/ember-flexberry-dummy-suggestion-file-edit.js should pass jscs', function () {
+    ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-edit.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-file-edit.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/ember-flexberry-dummy-suggestion-file-edit.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-edit.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-file-edit/new.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/ember-flexberry-dummy-suggestion-file-edit');
+  test('controllers/ember-flexberry-dummy-suggestion-file-edit/new.js should pass jscs', function () {
+    ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-edit/new.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-file-edit/new.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/ember-flexberry-dummy-suggestion-file-edit/new.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-edit/new.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-file-list.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers');
+  test('controllers/ember-flexberry-dummy-suggestion-file-list.js should pass jscs', function () {
+    ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-list.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-file-list.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/ember-flexberry-dummy-suggestion-file-list.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-list.js should pass jshint.');
+  });
+});
 define('dummy/tests/controllers/ember-flexberry-dummy-suggestion-list.jscs-test', ['exports'], function (exports) {
   'use strict';
 
@@ -22283,6 +22334,57 @@ define('dummy/tests/routes/ember-flexberry-dummy-suggestion-edit/new.jshint', ['
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-edit/new.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-suggestion-file-edit.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes');
+  test('routes/ember-flexberry-dummy-suggestion-file-edit.js should pass jscs', function () {
+    ok(true, 'routes/ember-flexberry-dummy-suggestion-file-edit.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-suggestion-file-edit.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/ember-flexberry-dummy-suggestion-file-edit.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-edit.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-suggestion-file-edit/new.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/ember-flexberry-dummy-suggestion-file-edit');
+  test('routes/ember-flexberry-dummy-suggestion-file-edit/new.js should pass jscs', function () {
+    ok(true, 'routes/ember-flexberry-dummy-suggestion-file-edit/new.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-suggestion-file-edit/new.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/ember-flexberry-dummy-suggestion-file-edit/new.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-edit/new.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-suggestion-file-list.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes');
+  test('routes/ember-flexberry-dummy-suggestion-file-list.js should pass jscs', function () {
+    ok(true, 'routes/ember-flexberry-dummy-suggestion-file-list.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/ember-flexberry-dummy-suggestion-file-list.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/ember-flexberry-dummy-suggestion-file-list.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-list.js should pass jshint.');
   });
 });
 define('dummy/tests/routes/ember-flexberry-dummy-suggestion-list.jscs-test', ['exports'], function (exports) {
