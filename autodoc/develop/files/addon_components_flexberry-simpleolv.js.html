@@ -3323,7 +3323,9 @@ export default folv.extend(
     */
     let ua = navigator.userAgent;
 
-    if (ua.search(/Firefox/) !== -1 &amp;&amp; ua.split(&#x27;Firefox/&#x27;)[1].substr(0, 2) &gt; 58) {
+    if ((ua.search(/Firefox/) !== -1 &amp;&amp; ua.split(&#x27;Firefox/&#x27;)[1].substr(0, 2) &gt; 58) ||
+        (ua.search(/iPhone|iPad/) !== -1 &amp;&amp; ua.split(&#x27;Version/&#x27;)[1].substr(0, 2) &gt;= 8) ||
+        (ua.search(/Android/) !== -1 &amp;&amp; ua.split(&#x27;Chrome/&#x27;)[1].substr(0, 2) &gt;= 78)) {
       $currentTable
             .find(&#x27;thead tr &gt; *&#x27;)
             .css({ &#x27;position&#x27;:&#x27;sticky&#x27;, &#x27;top&#x27;:&#x27;0&#x27; });
