@@ -19823,6 +19823,15 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "addon/mixins/flexberry-lookup-compatible-component.js",
+            "line": 33,
+            "description": "View selected value.",
+            "itemtype": "method",
+            "name": "actions.previewLookupValue",
+            "class": "FlexberryLookupCompatibleComponent",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "addon/mixins/flexberry-lookup-controller.js",
             "line": 21,
             "description": "Lookup settings for modal window.\nIt has to be overriden on controller where this mixin is used.",

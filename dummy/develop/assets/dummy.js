@@ -5312,6 +5312,14 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
     dropdown: false,
 
     /**
+      Flag indicates whether 'flexberry-lookup' component  in 'dropdown' mode is search.
+       @property dropdownIsSearch
+      @type Boolean
+      @default false
+    */
+    dropdownIsSearch: false,
+
+    /**
       Content for 'flexberry-lookup' component 'chooseText' property.
        @property chooseText
       @type String
@@ -5352,11 +5360,27 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
     removeButtonClass: '',
 
     /**
+      Flag to show in lookup preview button.
+       @property showPreviewButton
+      @type Boolean
+      @default false
+    */
+    showPreviewButton: false,
+
+    /**
+      Flag to show the selected object in separate route.
+       @property previewOnSeparateRoute
+      @type Boolean
+      @default false
+    */
+    previewOnSeparateRoute: false,
+
+    /**
       Template text for 'flexberry-lookup' component.
        @property componentTemplateText
       @type String
     */
-    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-lookup<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  value=model.type<br>' + '  projection="SettingLookupExampleView"<br>' + '  displayAttributeName="name"<br>' + '  title="Master"<br>' + '  relatedModel=model<br>' + '  relationName="type"<br>' + '  choose="showLookupDialog"<br>' + '  remove="removeLookupValue"<br>' + '  autocomplete=autocomplete<br>' + '  autocompletePersistValue=autocompletePersistValue<br>' + '  displayValue=model.lookupDisplayValue<br>' + '  dropdown=dropdown<br>' + '  chooseText=chooseText<br>' + '  removeText=removeText<br>' + '  chooseButtonClass=chooseButtonClass<br>' + '  removeButtonClass=removeButtonClass<br>' + '}}'),
+    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-lookup<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  value=model.type<br>' + '  projection="SettingLookupExampleView"<br>' + '  displayAttributeName="name"<br>' + '  title="Master"<br>' + '  relatedModel=model<br>' + '  relationName="type"<br>' + '  choose="showLookupDialog"<br>' + '  remove="removeLookupValue"<br>' + '  autocomplete=autocomplete<br>' + '  autocompletePersistValue=autocompletePersistValue<br>' + '  displayValue=model.lookupDisplayValue<br>' + '  dropdown=dropdown<br>' + '  dropdownIsSearch=dropdownIsSearch<br>' + '  chooseText=chooseText<br>' + '  removeText=removeText<br>' + '  chooseButtonClass=chooseButtonClass<br>' + '  removeButtonClass=removeButtonClass<br>' + '  showPreviewButton=showPreviewButton<br>' + '  previewOnSeparateRoute=previewOnSeparateRoute<br>' + '  previewFormRoute="ember-flexberry-dummy-suggestion-type-edit"<br>' + '}}'),
 
     /**
       Component settings metadata.
@@ -5402,6 +5426,12 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
         bindedControllerPropertieName: 'dropdown'
       });
       componentSettingsMetadata.pushObject({
+        settingName: 'dropdownIsSearch',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'dropdownIsSearch'
+      });
+      componentSettingsMetadata.pushObject({
         settingName: 'chooseText',
         settingType: 'string',
         settingDefaultValue: this.get('i18n').t('components.flexberry-lookup.choose-button-text'),
@@ -5434,7 +5464,18 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
         settingAvailableItems: ['blue'],
         bindedControllerPropertieName: 'dropdownClass'
       });
-
+      componentSettingsMetadata.pushObject({
+        settingName: 'showPreviewButton',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'showPreviewButton'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'previewOnSeparateRoute',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'previewOnSeparateRoute'
+      });
       return componentSettingsMetadata;
     })
   });
@@ -31996,7 +32037,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
               "column": 4
             },
             "end": {
-              "line": 32,
+              "line": 37,
               "column": 4
             }
           },
@@ -32021,7 +32062,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-lookup", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 20], [11, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 17], [12, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [13, 14], [13, 24]]]]], [], []], "projection", "SettingLookupExampleView", "displayAttributeName", "name", "title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [16, 14], [16, 19]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [17, 21], [17, 26]]]]], [], []], "relationName", "type", "choose", "showLookupDialog", "remove", "removeLookupValue", "autocomplete", ["subexpr", "@mut", [["get", "autocomplete", ["loc", [null, [21, 21], [21, 33]]]]], [], []], "autocompletePersistValue", ["subexpr", "@mut", [["get", "autocompletePersistValue", ["loc", [null, [22, 33], [22, 57]]]]], [], []], "displayValue", ["subexpr", "@mut", [["get", "model.lookupDisplayValue", ["loc", [null, [23, 21], [23, 45]]]]], [], []], "dropdown", ["subexpr", "@mut", [["get", "dropdown", ["loc", [null, [24, 17], [24, 25]]]]], [], []], "chooseText", ["subexpr", "@mut", [["get", "chooseText", ["loc", [null, [25, 19], [25, 29]]]]], [], []], "removeText", ["subexpr", "@mut", [["get", "removeText", ["loc", [null, [26, 19], [26, 29]]]]], [], []], "dropdownClass", ["subexpr", "@mut", [["get", "dropdownClass", ["loc", [null, [27, 22], [27, 35]]]]], [], []], "chooseButtonClass", ["subexpr", "@mut", [["get", "chooseButtonClass", ["loc", [null, [28, 26], [28, 43]]]]], [], []], "removeButtonClass", ["subexpr", "@mut", [["get", "removeButtonClass", ["loc", [null, [29, 26], [29, 43]]]]], [], []], "multiselect", true], ["loc", [null, [10, 6], [31, 8]]]]],
+        statements: [["inline", "flexberry-lookup", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 20], [11, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 17], [12, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [13, 14], [13, 24]]]]], [], []], "projection", "SettingLookupExampleView", "displayAttributeName", "name", "title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [16, 14], [16, 19]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [17, 21], [17, 26]]]]], [], []], "relationName", "type", "choose", "showLookupDialog", "remove", "removeLookupValue", "autocomplete", ["subexpr", "@mut", [["get", "autocomplete", ["loc", [null, [21, 21], [21, 33]]]]], [], []], "autocompletePersistValue", ["subexpr", "@mut", [["get", "autocompletePersistValue", ["loc", [null, [22, 33], [22, 57]]]]], [], []], "displayValue", ["subexpr", "@mut", [["get", "model.lookupDisplayValue", ["loc", [null, [23, 21], [23, 45]]]]], [], []], "dropdown", ["subexpr", "@mut", [["get", "dropdown", ["loc", [null, [24, 17], [24, 25]]]]], [], []], "dropdownIsSearch", ["subexpr", "@mut", [["get", "dropdownIsSearch", ["loc", [null, [25, 25], [25, 41]]]]], [], []], "chooseText", ["subexpr", "@mut", [["get", "chooseText", ["loc", [null, [26, 19], [26, 29]]]]], [], []], "removeText", ["subexpr", "@mut", [["get", "removeText", ["loc", [null, [27, 19], [27, 29]]]]], [], []], "dropdownClass", ["subexpr", "@mut", [["get", "dropdownClass", ["loc", [null, [28, 22], [28, 35]]]]], [], []], "chooseButtonClass", ["subexpr", "@mut", [["get", "chooseButtonClass", ["loc", [null, [29, 26], [29, 43]]]]], [], []], "removeButtonClass", ["subexpr", "@mut", [["get", "removeButtonClass", ["loc", [null, [30, 26], [30, 43]]]]], [], []], "multiselect", true, "showPreviewButton", ["subexpr", "@mut", [["get", "showPreviewButton", ["loc", [null, [32, 26], [32, 43]]]]], [], []], "previewOnSeparateRoute", ["subexpr", "@mut", [["get", "previewOnSeparateRoute", ["loc", [null, [33, 31], [33, 53]]]]], [], []], "previewFormRoute", "ember-flexberry-dummy-suggestion-type-edit", "preview", ["subexpr", "action", ["previewLookupValue"], [], ["loc", [null, [35, 16], [35, 45]]]]], ["loc", [null, [10, 6], [36, 8]]]]],
         locals: [],
         templates: []
       };
@@ -32040,7 +32081,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
             "column": 0
           },
           "end": {
-            "line": 35,
+            "line": 40,
             "column": 0
           }
         },
@@ -32086,7 +32127,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 97]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [32, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 97]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [37, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -68390,6 +68431,59 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
         };
       })();
       var child3 = (function () {
+        var child0 = (function () {
+          return {
+            meta: {
+              "fragmentReason": false,
+              "revision": "Ember@2.4.6",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 32,
+                  "column": 6
+                },
+                "end": {
+                  "line": 40,
+                  "column": 6
+                }
+              },
+              "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
+            },
+            isEmpty: false,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              var el1 = dom.createTextNode("        ");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createElement("button");
+              var el2 = dom.createTextNode("\n          ");
+              dom.appendChild(el1, el2);
+              var el2 = dom.createComment("");
+              dom.appendChild(el1, el2);
+              var el2 = dom.createTextNode("\n        ");
+              dom.appendChild(el1, el2);
+              dom.appendChild(el0, el1);
+              var el1 = dom.createTextNode("\n");
+              dom.appendChild(el0, el1);
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+              var element1 = dom.childAt(fragment, [1]);
+              var morphs = new Array(5);
+              morphs[0] = dom.createAttrMorph(element1, 'class');
+              morphs[1] = dom.createAttrMorph(element1, 'title');
+              morphs[2] = dom.createAttrMorph(element1, 'type');
+              morphs[3] = dom.createElementMorph(element1);
+              morphs[4] = dom.createUnsafeMorphAt(element1, 1, 1);
+              return morphs;
+            },
+            statements: [["attribute", "class", ["concat", ["ui ui-preview ", ["subexpr", "if", [["get", "isBlocked", ["loc", [null, [34, 36], [34, 45]]]], " disabled"], [], ["loc", [null, [34, 31], [34, 59]]]], " ", ["get", "previewButtonClass", ["loc", [null, [34, 62], [34, 80]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.preview-button-text"], [], ["loc", [null, [35, 16], [35, 71]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [36, 20], [36, 32]]]], "button", ""], [], ["loc", [null, [36, 15], [36, 46]]]]], ["element", "action", ["preview"], [], ["loc", [null, [37, 10], [37, 30]]]], ["content", "previewText", ["loc", [null, [38, 10], [38, 27]]]]],
+            locals: [],
+            templates: []
+          };
+        })();
         return {
           meta: {
             "fragmentReason": false,
@@ -68401,7 +68495,47 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
                 "column": 4
               },
               "end": {
-                "line": 37,
+                "line": 41,
+                "column": 4
+              }
+            },
+            "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            dom.insertBoundary(fragment, null);
+            return morphs;
+          },
+          statements: [["block", "if", [["subexpr", "and", [["get", "previewFormRoute", ["loc", [null, [32, 17], [32, 33]]]], ["get", "value", ["loc", [null, [32, 34], [32, 39]]]]], [], ["loc", [null, [32, 12], [32, 40]]]]], [], 0, null, ["loc", [null, [32, 6], [40, 13]]]]],
+          locals: [],
+          templates: [child0]
+        };
+      })();
+      var child4 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.6",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 42,
+                "column": 4
+              },
+              "end": {
+                "line": 48,
                 "column": 4
               }
             },
@@ -68435,7 +68569,7 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
             morphs[2] = dom.createUnsafeMorphAt(element0, 1, 1);
             return morphs;
           },
-          statements: [["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [33, 36], [33, 44]]]], ["get", "isBlocked", ["loc", [null, [33, 45], [33, 54]]]]], [], ["loc", [null, [33, 32], [33, 55]]]], " disabled"], [], ["loc", [null, [33, 27], [33, 69]]]], " ", ["get", "removeButtonClass", ["loc", [null, [33, 72], [33, 89]]]], " button"]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [34, 26], [34, 36]]]]], [], ["loc", [null, [34, 8], [34, 38]]]], ["content", "removeText", ["loc", [null, [35, 8], [35, 24]]]]],
+          statements: [["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [44, 36], [44, 44]]]], ["get", "isBlocked", ["loc", [null, [44, 45], [44, 54]]]]], [], ["loc", [null, [44, 32], [44, 55]]]], " disabled"], [], ["loc", [null, [44, 27], [44, 69]]]], " ", ["get", "removeButtonClass", ["loc", [null, [44, 72], [44, 89]]]], " button"]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [45, 26], [45, 36]]]]], [], ["loc", [null, [45, 8], [45, 38]]]], ["content", "removeText", ["loc", [null, [46, 8], [46, 24]]]]],
           locals: [],
           templates: []
         };
@@ -68451,7 +68585,7 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
               "column": 0
             },
             "end": {
-              "line": 39,
+              "line": 50,
               "column": 0
             }
           },
@@ -68492,6 +68626,8 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
           dom.appendChild(el1, el2);
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("  ");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
@@ -68500,19 +68636,20 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element1 = dom.childAt(fragment, [1]);
-          var element2 = dom.childAt(element1, [1]);
-          var morphs = new Array(5);
-          morphs[0] = dom.createAttrMorph(element2, 'class');
-          morphs[1] = dom.createElementMorph(element2);
-          morphs[2] = dom.createMorphAt(dom.childAt(element2, [1]), 1, 1);
-          morphs[3] = dom.createMorphAt(element2, 3, 3);
-          morphs[4] = dom.createMorphAt(element1, 3, 3);
+          var element2 = dom.childAt(fragment, [1]);
+          var element3 = dom.childAt(element2, [1]);
+          var morphs = new Array(6);
+          morphs[0] = dom.createAttrMorph(element3, 'class');
+          morphs[1] = dom.createElementMorph(element3);
+          morphs[2] = dom.createMorphAt(dom.childAt(element3, [1]), 1, 1);
+          morphs[3] = dom.createMorphAt(element3, 3, 3);
+          morphs[4] = dom.createMorphAt(element2, 3, 3);
+          morphs[5] = dom.createMorphAt(element2, 4, 4);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui transparent ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [15, 37], [15, 45]]]], ["get", "isBlocked", ["loc", [null, [15, 46], [15, 55]]]]], [], ["loc", [null, [15, 33], [15, 56]]]], " disabled"], [], ["loc", [null, [15, 28], [15, 70]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [15, 80], [15, 99]]]], ["get", "modalIsStartToShow", ["loc", [null, [15, 100], [15, 118]]]]], [], ["loc", [null, [15, 76], [15, 119]]]], " loading"], [], ["loc", [null, [15, 71], [15, 132]]]], " icon input "]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [14, 24], [14, 34]]]]], [], ["loc", [null, [14, 6], [14, 36]]]], ["block", "if", [["get", "value", ["loc", [null, [17, 14], [17, 19]]]]], [], 0, 1, ["loc", [null, [17, 8], [25, 15]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [27, 16], [27, 24]]]]], [], 2, null, ["loc", [null, [27, 6], [29, 17]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [31, 14], [31, 22]]]]], [], 3, null, ["loc", [null, [31, 4], [37, 15]]]]],
+        statements: [["attribute", "class", ["concat", ["ui transparent ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [15, 37], [15, 45]]]], ["get", "isBlocked", ["loc", [null, [15, 46], [15, 55]]]]], [], ["loc", [null, [15, 33], [15, 56]]]], " disabled"], [], ["loc", [null, [15, 28], [15, 70]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [15, 80], [15, 99]]]], ["get", "modalIsStartToShow", ["loc", [null, [15, 100], [15, 118]]]]], [], ["loc", [null, [15, 76], [15, 119]]]], " loading"], [], ["loc", [null, [15, 71], [15, 132]]]], " icon input "]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [14, 24], [14, 34]]]]], [], ["loc", [null, [14, 6], [14, 36]]]], ["block", "if", [["get", "value", ["loc", [null, [17, 14], [17, 19]]]]], [], 0, 1, ["loc", [null, [17, 8], [25, 15]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [27, 16], [27, 24]]]]], [], 2, null, ["loc", [null, [27, 6], [29, 17]]]], ["block", "if", [["get", "showPreviewButton", ["loc", [null, [31, 10], [31, 27]]]]], [], 3, null, ["loc", [null, [31, 4], [41, 11]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [42, 14], [42, 22]]]]], [], 4, null, ["loc", [null, [42, 4], [48, 15]]]]],
         locals: [],
-        templates: [child0, child1, child2, child3]
+        templates: [child0, child1, child2, child3, child4]
       };
     })();
     return {
@@ -68529,7 +68666,7 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
             "column": 0
           },
           "end": {
-            "line": 40,
+            "line": 51,
             "column": 0
           }
         },
@@ -68552,7 +68689,7 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [39, 7]]]]],
+      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [50, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -71409,7 +71546,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.18+8eacb1e6"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.18+e4e57661"});
 }
 
 /* jshint ignore:end */

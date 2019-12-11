@@ -243,6 +243,15 @@ export default Ember.Mixin.create({
     removeLookupValue() {
       this.get(&#x27;currentController&#x27;).send(&#x27;removeLookupValue&#x27;, ...arguments);
     },
+
+    /**
+      View selected value.
+
+      @method actions.previewLookupValue
+     */
+    previewLookupValue() {
+      this.get(&#x27;currentController&#x27;).send(&#x27;previewLookupValue&#x27;, ...arguments);
+    },
   },
 });
 
