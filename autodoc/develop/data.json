@@ -18131,7 +18131,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 237,
+            "line": 238,
             "description": "Redirect actions into route.",
             "itemtype": "method",
             "name": "actions.loadRecords",
@@ -18162,7 +18162,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 255,
+            "line": 256,
             "description": "It observes query parameters changing.\nIf query parameter (filter, current page, etc.) is changed then displayed data are reloaded.",
             "itemtype": "method",
             "name": "queryParametersChanged",
@@ -18171,7 +18171,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 267,
+            "line": 268,
             "description": "It clears current controller.\nIt has to be done before each use.",
             "itemtype": "method",
             "name": "clear",
@@ -18187,7 +18187,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 300,
+            "line": 301,
             "description": "Set master to corresponding property of editing object.",
             "itemtype": "method",
             "name": "_selectMaster",
@@ -18205,7 +18205,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 319,
+            "line": 320,
             "description": "Close current modal window if it exists.",
             "itemtype": "method",
             "name": "_closeModalDialog",

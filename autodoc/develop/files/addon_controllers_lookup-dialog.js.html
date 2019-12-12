@@ -435,6 +435,7 @@ export default ListFormController.extend(SortableRouteMixin, PredicateFromFilter
         folvComponentName: this.get(&#x27;folvComponentName&#x27;)
       };
 
+      reloadData.customPropertiesData.inHierarchicalMode = this.get(&#x27;inHierarchicalMode&#x27;);
       let folvComponentName = this.get(&#x27;folvComponentName&#x27;);
       if (folvComponentName) {
         let userSettingsParams = {
