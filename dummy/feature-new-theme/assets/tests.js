@@ -3925,7 +3925,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-
               var $divOrd = Ember.$('div', $ord);
 
               assert.equal($divOrd.attr('title'), Ember.get(_translations.default, 'components.object-list-view.sort-ascending'), 'title is Order ascending');
-              assert.equal(Ember.$.trim($divOrd.text()), String.fromCharCode('9650') + '1', 'sorting symbol added');
+              assert.equal(Ember.$('.icon', $divOrd).hasClass('ascending'), true, 'sorting symbol added');
 
               var done2 = assert.async();
               (0, _folvTestsFunctions.checkSortingList)(store, projectionName, $olv, 'address asc').then(function (isTrue) {
@@ -4008,7 +4008,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-
               var $divOrd = Ember.$('div', $ord);
 
               assert.equal($divOrd.attr('title'), Ember.get(_translations.default, 'components.object-list-view.sort-ascending'), 'title is Order ascending');
-              assert.equal(Ember.$.trim($divOrd.text()), String.fromCharCode('9650') + '1', 'sorting symbol added');
+              assert.equal(Ember.$('.icon', $divOrd).hasClass("ascending"), true, 'sorting symbol added');
               assert.equal(controller.sort, '+address', 'up sorting in URL');
 
               var done2 = assert.async();
@@ -4021,7 +4021,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-
                   var $divOrd = Ember.$('div', $ord);
 
                   assert.equal($divOrd.attr('title'), Ember.get(_translations.default, 'components.object-list-view.sort-descending'), 'title is Order descending');
-                  assert.equal(Ember.$.trim($divOrd.text()), String.fromCharCode('9660') + '1', 'sorting symbol changed');
+                  assert.equal(Ember.$('.icon', $divOrd).hasClass("descending"), true, 'sorting symbol added');
                   assert.equal(controller.sort, '-address', 'down sorting in URL');
 
                   var done4 = assert.async();
@@ -4083,7 +4083,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-
           var $divOrd = Ember.$('div', $ord);
 
           assert.equal($divOrd.attr('title'), Ember.get(_translations.default, 'components.object-list-view.sort-ascending'), 'title is Order ascending');
-          assert.equal(Ember.$.trim($divOrd.text()), String.fromCharCode('9650') + '1', 'sorting symbol added');
+          assert.equal(Ember.$('.icon', $divOrd).hasClass('ascending'), true, 'sorting symbol added');
           assert.equal(controller.sort, '+name', 'up sorting in URL');
 
           var done1 = assert.async();
@@ -4093,7 +4093,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-
             var $divOrd = Ember.$('div', $ord);
 
             assert.equal($divOrd.attr('title'), Ember.get(_translations.default, 'components.object-list-view.sort-descending'), 'title is Order descending');
-            assert.equal(Ember.$.trim($divOrd.text()), String.fromCharCode('9660') + '1', 'sorting symbol changed');
+            assert.equal(Ember.$('.icon', $divOrd).hasClass('descending'), true, 'sorting symbol changed');
             assert.equal(controller.sort, '-name', 'down sorting in URL');
 
             var done2 = assert.async();
