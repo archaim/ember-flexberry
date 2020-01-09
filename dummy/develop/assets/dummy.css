@@ -5109,6 +5109,13 @@ div.ui.secondary.menu.no-margin {
   color: #FF7500;
   opacity: 1;
 }
+html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.button {
+  width: 20px;
+  margin-right: 3px;
+}
+html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.button .remove.icon {
+  margin-left: 0px;
+}
 .ui.fluid.action.input:hover {
   background: none;
 }
@@ -18422,6 +18429,9 @@ ol.ui.horizontal.list li:before,
 }
 .flexberry-simpledatetime .ui.fluid.action.input input.flatpickr-input {
   border-bottom: none;
+}
+html.mobile .overflowed-cell .flexberry-simpledatetime {
+  width: 100%;
 }
 input[type="checkbox"]:after {
   content: "";
