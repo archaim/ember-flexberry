@@ -473,7 +473,7 @@ export default ListFormController.extend(SortableRouteMixin, PredicateFromFilter
 
     @method queryParametersChanged
   */
-  queryParametersChanged: Ember.observer(&#x27;filter&#x27;, &#x27;page&#x27;, &#x27;perPage&#x27;, &#x27;sort&#x27;, function() {
+  queryParametersChanged: Ember.observer(&#x27;filter&#x27;, &#x27;page&#x27;, &#x27;perPage&#x27;, &#x27;sort&#x27;, function () {
     if (this.get(&#x27;reloadObserverIsActive&#x27;)) {
       this.send(&#x27;refreshList&#x27;);
     }
@@ -486,7 +486,7 @@ export default ListFormController.extend(SortableRouteMixin, PredicateFromFilter
     @method clear
     @param {Boolean} initialClear Flag indicates whether it is clear on first load or just on reload.
   */
-  clear: function(initialClear) {
+  clear: function (initialClear) {
     this.set(&#x27;reloadObserverIsActive&#x27;, false);
 
     if (initialClear) {

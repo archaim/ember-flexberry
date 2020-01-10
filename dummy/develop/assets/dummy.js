@@ -66893,7 +66893,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
               "column": 0
             },
             "end": {
-              "line": 11,
+              "line": 12,
               "column": 0
             }
           },
@@ -66918,7 +66918,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "outlet", ["modal-content"], [], ["loc", [null, [10, 2], [10, 28]]]]],
+        statements: [["inline", "outlet", ["modal-content"], [], ["loc", [null, [11, 2], [11, 28]]]]],
         locals: [],
         templates: []
       };
@@ -66937,7 +66937,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 12,
+            "line": 13,
             "column": 0
           }
         },
@@ -66960,7 +66960,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "sizeClass", ["subexpr", "@mut", [["get", "sizeClass", ["loc", [null, [3, 12], [3, 21]]]]], [], []], "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", false, "useCloseButton", false, "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [8, 16], [8, 29]]]]], [], []]], 0, null, ["loc", [null, [1, 0], [11, 17]]]]],
+      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "sizeClass", ["subexpr", "@mut", [["get", "sizeClass", ["loc", [null, [3, 12], [3, 21]]]]], [], []], "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", false, "useCloseButton", false, "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [8, 16], [8, 29]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "model.modalDialogSettings", ["loc", [null, [9, 11], [9, 36]]]]], [], []]], 0, null, ["loc", [null, [1, 0], [12, 17]]]]],
       locals: [],
       templates: [child0]
     };
@@ -71546,7 +71546,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0+ec27a139"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0+93ba9700"});
 }
 
 /* jshint ignore:end */

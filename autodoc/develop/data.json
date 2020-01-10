@@ -19883,7 +19883,39 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 63,
+            "line": 62,
+            "description": "Object with settings for modal window.",
+            "itemtype": "property",
+            "name": "modalDialogSettings",
+            "type": "Object",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/flexberry-lookup-controller.js",
+            "line": 70,
+            "description": "Modal detachable param.\nIf set to false will prevent the modal from being moved to inside the dimmer.",
+            "itemtype": "property",
+            "name": "detachable",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/flexberry-lookup-controller.js",
+            "line": 80,
+            "description": "Modal context param.\nSelector or jquery object specifying the area to dim.",
+            "itemtype": "property",
+            "name": "context",
+            "type": "String",
+            "default": "'.ember-application > .ember-view'",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/flexberry-lookup-controller.js",
+            "line": 92,
             "description": "Controller to show modal window.",
             "itemtype": "property",
             "name": "lookupController",
@@ -19893,7 +19925,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 71,
+            "line": 100,
             "description": "Default number of records per page on lookup window list.",
             "itemtype": "property",
             "name": "lookupModalWindowPerPage",
@@ -19904,7 +19936,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 81,
+            "line": 110,
             "description": "Handles action from lookup choose action.\nIt opens modal window where availible values are shown.\n\nIn order to customize content of all lookup modal window there is such a way:\n1. Create template with necessary content and set unique name for it (for example 'customlookupform.hbs');\n2. Override lookup setting `lookupSettings.contentTemplate` on controller level (for example 'customlookupform');\n3. If there has to be specific logic or properties on controller for template,\n   current lookup controller can be overriden (it is 'lookup-dialog' for edit forms),\n   new name can be set on lookup setting `lookupSettings.controllerName`\n   and new controller can be injected as `lookupController`\n   (if the controller was extended and not reopened).",
             "itemtype": "method",
             "name": "actions.showLookupDialog",
@@ -19920,7 +19952,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 192,
+            "line": 221,
             "description": "Handlers corresponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "actions.routeWillTransition",
@@ -19929,7 +19961,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 202,
+            "line": 231,
             "description": "Handlers action from FlexberryLookup remove action.",
             "itemtype": "method",
             "name": "actions.removeLookupValue",
@@ -19945,7 +19977,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 223,
+            "line": 252,
             "description": "Handlers action from FlexberryLookup preview action.",
             "itemtype": "method",
             "name": "actions.previewLookupValue",
@@ -19961,7 +19993,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 299,
+            "line": 328,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "actions.updateLookupValue",
@@ -19977,7 +20009,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 322,
+            "line": 351,
             "description": "This method refreshes displayed data on lookup modal window.\n\nIt reloads current lookup modal window in order to show loading image.\nThen proper request to load data is formed (it considers current page, filter, etc).\nAfter the data loading data are displayed on lookup modal window.\n\nThis method is called during the first data loading\nand after each change of request parameters (current page, filter, etc) on lookup modal window controller\n(it is implemented by sending handler on this method to lookup modal window controller).",
             "itemtype": "method",
             "name": "_reloadModalData",
