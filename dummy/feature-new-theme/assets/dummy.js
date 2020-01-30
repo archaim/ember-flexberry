@@ -9727,6 +9727,18 @@ define('dummy/controllers/integration-examples/edit-form/readonly-mode', ['expor
         };
       }
 
+      if (attr.kind === 'belongsTo' && bindingPath === 'masterDropdown') {
+        cellComponent.componentProperties = {
+          projection: 'MasterDropdownL',
+          displayAttributeName: 'text',
+          dropdown: true,
+          title: 'Master dropdown',
+          relationName: 'masterDropdown',
+          choose: 'showLookupDialog',
+          remove: 'removeLookupValue'
+        };
+      }
+
       return cellComponent;
     }
     /* eslint-enable no-unused-vars */
@@ -18312,7 +18324,7 @@ define('dummy/routes/components-acceptance-tests/edit-form-readonly', ['exports'
       return {
         aggregatorDetailsGroupedit: {
           'DEFAULT': {
-            'columnWidths': [{ 'propName': 'OlvRowToolbar', 'fixed': true, 'width': 65 }]
+            'columnWidths': [{ 'propName': 'OlvRowToolbar', 'fixed': true, 'width': 65 }, { 'propName': 'masterDropdown', 'width': 220 }]
           }
         }
       };
@@ -23946,7 +23958,7 @@ define('dummy/routes/integration-examples/edit-form/readonly-mode', ['exports', 
       return {
         aggregatorDetailsGroupedit: {
           'DEFAULT': {
-            'columnWidths': [{ 'propName': 'OlvRowToolbar', 'fixed': true, 'width': 65 }]
+            'columnWidths': [{ 'propName': 'OlvRowToolbar', 'fixed': true, 'width': 65 }, { 'propName': 'masterDropdown', 'width': 220 }]
           }
         }
       };
@@ -26966,6 +26978,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.2.0-beta.3+d955dc5f"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.2.0-beta.3+bf85360a"});
 }
 //# sourceMappingURL=dummy.map
