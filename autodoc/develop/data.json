@@ -13517,18 +13517,42 @@
         {
             "file": "addon/components/groupedit-toolbar.js",
             "line": 24,
-            "description": "Boolean flag to indicate enabled state of delete rows button.\n\nIf rows at {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}} are selected this flag is enabled.",
-            "itemtype": "property",
-            "name": "_isDeleteRowsEnabled",
-            "type": "Boolean",
             "access": "private",
             "tagname": "",
+            "itemtype": "property",
+            "name": "_hasSelectedRows",
+            "type": "Boolean",
+            "default": "false",
             "class": "GroupEditToolbarComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 35,
+            "line": 32,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_disableMoveUpButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "GroupEditToolbarComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/groupedit-toolbar.js",
+            "line": 40,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_disableMoveDownButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "GroupEditToolbarComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/groupedit-toolbar.js",
+            "line": 48,
             "description": "Default class for component wrapper.",
             "itemtype": "property",
             "name": "classNames",
@@ -13539,7 +13563,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 44,
+            "line": 57,
             "description": "Boolean property to show or hide add button in toolbar.\nAdd new record button will not display if set to false.",
             "itemtype": "property",
             "name": "createNewButton",
@@ -13550,7 +13574,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 54,
+            "line": 67,
             "description": "Name of action to send out, action triggered by click on user button.",
             "itemtype": "property",
             "name": "customButtonAction",
@@ -13561,7 +13585,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 62,
+            "line": 75,
             "description": "Array of custom buttons of special structures [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...].",
             "example": [
                 "\n ```\n {\n   buttonName: '...', // Button displayed name.\n   buttonAction: '...', // Action that is called from controller on this button click (it has to be registered at component).\n   buttonClasses: '...', // Css classes for button.\n   buttonTitle: '...', // Button title.\n   iconClasses: '' // Css classes for icon.\n }\n ```"
@@ -13574,7 +13598,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 79,
+            "line": 92,
             "description": "Boolean property to show or hide delete button in toolbar.\nDelete record button will not display if set to false.",
             "itemtype": "property",
             "name": "deleteButton",
@@ -13585,7 +13609,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 89,
+            "line": 102,
             "description": "Flag: indicates whether to show default settings button at toolbar.",
             "itemtype": "property",
             "name": "defaultSettingsButton",
@@ -13596,7 +13620,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 98,
+            "line": 111,
             "description": "Boolean property to show or hide arrows button in toolbar.",
             "itemtype": "property",
             "name": "arrowsButtons",
@@ -13605,7 +13629,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 108,
+            "line": 121,
             "description": "Handles add record button click and triggers add record event on\n{{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.addRow",
@@ -13614,7 +13638,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 123,
+            "line": 136,
             "description": "Handles delete records button click and triggers delete records event on\n{{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.deleteRows",
@@ -13623,7 +13647,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 146,
+            "line": 159,
             "description": "Handles default usersettings button click.",
             "itemtype": "method",
             "name": "actions.setDefaultSettings",
@@ -13632,7 +13656,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 172,
+            "line": 185,
             "description": "Action for custom button.",
             "itemtype": "method",
             "name": "actions.customButtonAction",
@@ -13650,7 +13674,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 189,
+            "line": 202,
             "description": "Handles arrow buttons click.",
             "itemtype": "method",
             "name": "actions.moveRow",
@@ -13659,7 +13683,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 204,
+            "line": 217,
             "description": "An overridable method called when objects are instantiated.\nFor more information see {{#crossLink \"FlexberryBaseComponent/init:method\"}}init method{{/crossLink}}\nof {{#crossLink \"FlexberryBaseComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "init",
@@ -13672,7 +13696,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 223,
+            "line": 236,
             "description": "An overridable method called when objects is teardowned.\nFor more information see {{#crossLink \"FlexberryBaseComponent/willDestroy:method\"}}willDestroy method{{/crossLink}}\nof {{#crossLink \"FlexberryBaseComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "willDestroy",
@@ -13681,7 +13705,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 236,
+            "line": 249,
             "description": "Event handler for \"row has been selected\" event in {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "_rowSelected",
@@ -13719,7 +13743,7 @@
         },
         {
             "file": "addon/components/groupedit-toolbar.js",
-            "line": 254,
+            "line": 273,
             "description": "Event handler for \"selected rows has been deleted\" event in {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "_rowsDeleted",
