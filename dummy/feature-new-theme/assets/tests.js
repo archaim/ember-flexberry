@@ -1342,7 +1342,7 @@ define('dummy/tests/acceptance/components/flexberry-lookup/flexberry-lookup-proj
           assert.strictEqual($lookupHeaders.length === 3, true, 'Component has SuggestionTypeE projection');
 
           done();
-        }, 1000);
+        }, 5000);
       });
     });
   });
@@ -4968,10 +4968,8 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-detail-delet
       var $validationFlexberryOLVDeleteButton = Ember.$(Ember.$('.ui.disabled.button')[1]);
 
       // Delete detail.
-      Ember.run(function () {
-        $validationFlexberryCheckbox.click();
-        $validationFlexberryOLVDeleteButton.click();
-      });
+      Ember.run($validationFlexberryCheckbox, $validationFlexberryCheckbox.click);
+      Ember.run($validationFlexberryOLVDeleteButton, $validationFlexberryOLVDeleteButton.click);
 
       // Сounting the number of validationmessage = 8 afther detail delete.
       $validationLablesContainer = Ember.$('.ember-view.ui.basic.label');
@@ -5678,6 +5676,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/components-examples/flexberry-lookup/lookup-in-modal.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/components-examples/flexberry-lookup/numeric-autocomplete.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-lookup/numeric-autocomplete.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/components-examples/flexberry-lookup/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-lookup/settings-example.js should pass ESLint\n\n');
@@ -5823,6 +5826,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/limit-function-example.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/components-examples/flexberry-objectlistview/list-on-editform.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/list-on-editform.js should pass ESLint\n\n');
@@ -5886,6 +5894,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('controllers/components-examples/flexberry-simpledatetime/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-simpledatetime/settings-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/components-examples/flexberry-text-cell/settings-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-text-cell/settings-example.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/components-examples/flexberry-textarea/settings-example.js', function (assert) {
@@ -5996,6 +6009,21 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('controllers/ember-flexberry-dummy-suggestion-edit/new.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/ember-flexberry-dummy-suggestion-file-edit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-edit.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/ember-flexberry-dummy-suggestion-file-edit/new.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/ember-flexberry-dummy-suggestion-file-list.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/ember-flexberry-dummy-suggestion-file-list.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/ember-flexberry-dummy-suggestion-list.js', function (assert) {
@@ -6578,6 +6606,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/components-examples/flexberry-lookup/lookup-in-modal.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/components-examples/flexberry-lookup/numeric-autocomplete.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-lookup/numeric-autocomplete.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/components-examples/flexberry-lookup/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-lookup/settings-example.js should pass ESLint\n\n');
@@ -6723,6 +6756,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/limit-function-example.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/components-examples/flexberry-objectlistview/limited-text-size-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/components-examples/flexberry-objectlistview/list-on-editform.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/list-on-editform.js should pass ESLint\n\n');
@@ -6786,6 +6824,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/components-examples/flexberry-simpledatetime/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-simpledatetime/settings-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/components-examples/flexberry-text-cell/settings-example.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-text-cell/settings-example.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/components-examples/flexberry-textarea/settings-example.js', function (assert) {
@@ -6896,6 +6939,21 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/ember-flexberry-dummy-suggestion-edit/new.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-suggestion-file-edit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-edit.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-suggestion-file-edit/new.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-edit/new.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/ember-flexberry-dummy-suggestion-file-list.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/ember-flexberry-dummy-suggestion-file-list.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/ember-flexberry-dummy-suggestion-list.js', function (assert) {
@@ -7036,6 +7094,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('serializers/ember-flexberry-dummy-vote.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'serializers/ember-flexberry-dummy-vote.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('services/offline-globals.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'services/offline-globals.js should pass ESLint\n\n');
   });
 
   QUnit.test('services/store.js', function (assert) {
@@ -12524,6 +12587,11 @@ define('dummy/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/services/objectlistview-events-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/utils/cut-string-by-length-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/utils/cut-string-by-length-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/utils/deserialize-sorting-param-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/utils/deserialize-sorting-param-test.js should pass ESLint\n\n');
@@ -14898,6 +14966,45 @@ define('dummy/tests/unit/services/objectlistview-events-test', ['ember-qunit'], 
   (0, _emberQunit.test)('it exists', function (assert) {
     var service = this.subject();
     assert.ok(service);
+  });
+});
+define('dummy/tests/unit/utils/cut-string-by-length-test', ['dummy/utils/cut-string-by-length', 'qunit'], function (_cutStringByLength, _qunit) {
+  'use strict';
+
+  (0, _qunit.module)('Unit | Utility | cut string by length');
+
+  (0, _qunit.test)('cut by length', function (assert) {
+    var result = (0, _cutStringByLength.default)('test string', 6);
+    assert.equal(result, 'test s...');
+
+    result = (0, _cutStringByLength.default)('test string', 20);
+    assert.equal(result, 'test string');
+
+    result = (0, _cutStringByLength.default)('test string', 0);
+    assert.equal(result, 'test string');
+
+    result = (0, _cutStringByLength.default)('test string', 3);
+    assert.equal(result, 'tes...');
+  });
+
+  (0, _qunit.test)('cut by spaces', function (assert) {
+    var result = (0, _cutStringByLength.default)('test string with spaces', 6, true);
+    assert.equal(result, 'test...');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 50, true);
+    assert.equal(result, 'test string with spaces');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 0, true);
+    assert.equal(result, 'test string with spaces');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 3, true);
+    assert.equal(result, 'tes...');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 18, true);
+    assert.equal(result, 'test string with...');
+
+    result = (0, _cutStringByLength.default)('test string with spaces', 12, true);
+    assert.equal(result, 'test string...');
   });
 });
 define('dummy/tests/unit/utils/deserialize-sorting-param-test', ['dummy/utils/deserialize-sorting-param', 'qunit'], function (_deserializeSortingParam, _qunit) {
