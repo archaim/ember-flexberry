@@ -10247,6 +10247,16 @@
         {
             "file": "addon/components/flexberry-simpledatetime.js",
             "line": 233,
+            "description": "Array CSS class names for scroll.",
+            "itemtype": "property",
+            "name": "scrollClassNames",
+            "type": "Array",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-simpledatetime.js",
+            "line": 241,
             "description": "If true, then onClick calling flatpickr.open().",
             "itemtype": "property",
             "name": "canClick",
@@ -10256,7 +10266,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 241,
+            "line": 249,
             "description": "If undefined, then uses application locale.\nSupported locales: 'en', 'ru'.",
             "itemtype": "property",
             "name": "locale",
@@ -10266,7 +10276,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 250,
+            "line": 258,
             "description": "If true, then flatpickr has remove button.",
             "itemtype": "property",
             "name": "removeButton",
@@ -10276,14 +10286,14 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 258,
+            "line": 266,
             "description": "Initializes DOM-related component's logic.",
             "class": "FlexberrySimpledatetime",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 268,
+            "line": 277,
             "description": "Called when the element of the view is going to be destroyed. Override this function to do any teardown that requires an element, like removing event listeners.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement).",
             "itemtype": "method",
             "name": "willDestroyElement",
@@ -10292,7 +10302,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 279,
+            "line": 289,
             "description": "Component click handler.",
             "itemtype": "method",
             "name": "click",
@@ -10303,7 +10313,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 292,
+            "line": 302,
             "description": "Validation date and time.",
             "itemtype": "method",
             "name": "_validationDateTime",
@@ -10314,7 +10324,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 326,
+            "line": 336,
             "description": "Create Flatpickr instance, and save it into `_flatpickr` property.",
             "itemtype": "method",
             "name": "_flatpickrCreate",
@@ -10325,21 +10335,21 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 398,
+            "line": 408,
             "description": "Sets readonly attr for flatpickr.",
             "class": "FlexberrySimpledatetime",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 405,
+            "line": 415,
             "description": "Reinit flatpickr (defaultHour and defaultMinute for dynamically updating because set() for this options doesn't update view).",
             "class": "FlexberrySimpledatetime",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 413,
+            "line": 423,
             "description": "Destroy Flatpickr instance.",
             "itemtype": "method",
             "name": "_flatpickrDestroy",
@@ -10350,7 +10360,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 427,
+            "line": 437,
             "description": "Convert Date object to appropriate string value for input.",
             "itemtype": "method",
             "name": "_convertDateToString",
@@ -10372,7 +10382,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 458,
+            "line": 468,
             "description": "Converts string value of input to Date object.",
             "itemtype": "method",
             "name": "_convertStringToDate",
@@ -10394,7 +10404,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 478,
+            "line": 488,
             "description": "Converts date (without time) to local date.",
             "itemtype": "method",
             "name": "_convertDateToLocal",
@@ -10416,7 +10426,7 @@
         },
         {
             "file": "addon/components/flexberry-simpledatetime.js",
-            "line": 500,
+            "line": 510,
             "description": "Clear current value.",
             "itemtype": "method",
             "name": "actions.remove",
@@ -26245,15 +26255,15 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's logic.",
-            "line": " addon/components/flexberry-simpledatetime.js:258"
+            "line": " addon/components/flexberry-simpledatetime.js:266"
         },
         {
             "message": "Missing item type\nSets readonly attr for flatpickr.",
-            "line": " addon/components/flexberry-simpledatetime.js:398"
+            "line": " addon/components/flexberry-simpledatetime.js:408"
         },
         {
             "message": "Missing item type\nReinit flatpickr (defaultHour and defaultMinute for dynamically updating because set() for this options doesn't update view).",
-            "line": " addon/components/flexberry-simpledatetime.js:405"
+            "line": " addon/components/flexberry-simpledatetime.js:415"
         },
         {
             "message": "Missing item type\nSimple object list view  component.",
