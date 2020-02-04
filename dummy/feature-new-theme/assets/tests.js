@@ -5931,6 +5931,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/components-examples/flexberry-tree/settings-example.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/components-examples/modal-dialog/index.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/modal-dialog/index.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/components-examples/ui-message/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/ui-message/settings-example.js should pass ESLint\n\n');

@@ -1439,6 +1439,11 @@ define('dummy/controllers/application', ['exports', 'dummy/config/environment'],
               children: null
             }]
           }, {
+            link: 'components-examples/modal-dialog',
+            caption: i18n.t('forms.application.sitemap.components-examples.modal-dialog.caption'),
+            title: i18n.t('forms.application.sitemap.components-examples.modal-dialog.title'),
+            children: null
+          }, {
             link: null,
             caption: i18n.t('forms.application.sitemap.components-examples.ui-message.caption'),
             title: i18n.t('forms.application.sitemap.components-examples.ui-message.title'),
@@ -9391,6 +9396,39 @@ define('dummy/controllers/components-examples/flexberry-tree/settings-example', 
     }
   });
 });
+define('dummy/controllers/components-examples/modal-dialog/index', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Controller.extend({
+    actions: {
+      openLightbox: function openLightbox() {
+        this.set('appContextSidepageIsOpen', false);
+        this.set('appContextLightboxIsOpen', true);
+        this.send('showModalDialog', 'modal/modal-dialog', { controller: 'components-examples/modal-dialog/index' });
+      },
+      openSidepage: function openSidepage() {
+        this.set('appContextLightboxIsOpen', false);
+        this.set('appContextSidepageIsOpen', true);
+        this.send('showModalDialog', 'modal/modal-dialog', { controller: 'components-examples/modal-dialog/index' });
+      },
+      closeLightbox: function closeLightbox() {
+        this.set('appContextLightboxIsOpen', false);
+        if (!this.get('appContextSidepageIsOpen')) {
+          this.send('removeModalDialog');
+        }
+      },
+      closeSidepage: function closeSidepage() {
+        this.set('appContextSidepageIsOpen', false);
+        if (!this.get('appContextLightboxIsOpen')) {
+          this.send('removeModalDialog');
+        }
+      }
+    }
+  });
+});
 define('dummy/controllers/components-examples/ui-message/settings-example', ['exports'], function (exports) {
   'use strict';
 
@@ -14341,6 +14379,10 @@ define('dummy/locales/en/translations', ['exports', 'ember-flexberry/locales/en/
                 'title': ''
               }
             },
+            'modal-dialog': {
+              'caption': 'modal-dialog',
+              'title': ''
+            },
             'ui-message': {
               'caption': 'ui-message',
               'title': '',
@@ -14791,6 +14833,19 @@ define('dummy/locales/en/translations', ['exports', 'ember-flexberry/locales/en/
             'json-tree-latest-clicked-node-caption': 'Latest clicked tree node settings',
             'json-tree-latest-clicked-node-placeholder': 'Click on any tree node to display it\'s settings'
           }
+        },
+        'modal-dialog': {
+          'caption': 'Examples of using the {{component}} component',
+          'in-current-context': 'In the context of the current template',
+          'application-context': 'In the context of the application template',
+          'open-lightbox': 'Open modal window',
+          'open-second-lightbox': 'Open second modal window',
+          'lightbox-title': 'Modal window',
+          'second-lightbox-title': 'Second modal window',
+          'open-sidepage': 'Open modal window in «sidepage» mode',
+          'open-second-sidepage': 'Open second modal window in «sidepage» mode',
+          'sidepage-title': 'Modal window in «sidepage» mode',
+          'second-sidepage-title': 'Second modal window in «sidepage» mode'
         },
         'ui-message': {
           'settings-example': {
@@ -15816,6 +15871,10 @@ define('dummy/locales/ru/translations', ['exports', 'ember-flexberry/locales/ru/
                 'title': ''
               }
             },
+            'modal-dialog': {
+              'caption': 'modal-dialog',
+              'title': ''
+            },
             'ui-message': {
               'caption': 'ui-message',
               'title': '',
@@ -16266,6 +16325,19 @@ define('dummy/locales/ru/translations', ['exports', 'ember-flexberry/locales/ru/
             'json-tree-latest-clicked-node-caption': 'Настройки последней кликнутой вершины дерева',
             'json-tree-latest-clicked-node-placeholder': 'Кликните на любую вершину дерева, чтобы отобразить её настройки'
           }
+        },
+        'modal-dialog': {
+          'caption': 'Примеры использования компонента {{component}}',
+          'in-current-context': 'В контексте текущего шаблона',
+          'application-context': 'В контексте шаблона приложения',
+          'open-lightbox': 'Открыть модальное окно',
+          'open-second-lightbox': 'Открыть второе модальное окно',
+          'lightbox-title': 'Модальное окно',
+          'second-lightbox-title': 'Второе модальное окно',
+          'open-sidepage': 'Открыть модальное окно в режиме «sidepage»',
+          'open-second-sidepage': 'Открыть второе модальное окно в режиме «sidepage»',
+          'sidepage-title': 'Модальное окно в режиме «sidepage»',
+          'second-sidepage-title': 'Второе модальное окно в режиме «sidepage»'
         },
         'ui-message': {
           'settings-example': {
@@ -18741,6 +18813,9 @@ define('dummy/router', ['exports', 'dummy/config/environment'], function (export
     this.route('components-examples/flexberry-toggler/settings-example-inner');
     this.route('components-examples/flexberry-toggler/ge-into-toggler-example');
     this.route('components-examples/flexberry-tree/settings-example');
+    this.route('components-examples/modal-dialog', function () {
+      this.route('index', { path: '/' });
+    });
     this.route('components-examples/ui-message/settings-example');
 
     // Integration examples routes.
@@ -26537,6 +26612,14 @@ define("dummy/templates/components-examples/flexberry-tree/settings-example", ["
   });
   exports.default = Ember.HTMLBars.template({ "id": "eMM8S1DP", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"ui top attached tabular menu\"],[8],[0,\"\\n      \"],[6,\"a\"],[10,\"class\",\"item active\"],[10,\"data-tab\",\"jsonTree\"],[8],[0,\"\\n        \"],[1,[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-tab-caption\"],null],false],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"ui bottom attached tab segment active\"],[10,\"data-tab\",\"jsonTree\"],[8],[0,\"\\n\"],[4,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentTemplateText\",\"componentBlockOverflow\"],[[21,0,[]],[22,[\"jsonTreeComponentSettingsMetadata\"]],[22,[\"jsonTreeComponentTemplateText\"]],\"visible\"]],{\"statements\":[[0,\"        \"],[1,[26,\"flexberry-tree\",null,[[\"class\",\"exclusive\",\"collapsible\",\"animateChildren\",\"duration\",\"nodes\"],[[22,[\"jsonTreeClass\"]],[22,[\"jsonTreeExclusive\"]],[22,[\"jsonTreeCollapsible\"]],[22,[\"jsonTreeAnimateChildren\"]],[22,[\"jsonTreeDuration\"]],[26,\"get-with-dynamic-actions\",[[21,0,[]],\"jsonTreeNodes\"],[[\"hierarchyPropertyName\",\"pathKeyword\",\"dynamicActions\"],[\"nodes\",\"nodePath\",[26,\"array\",[[26,\"hash\",null,[[\"on\",\"actionName\",\"actionArguments\"],[\"headerClick\",\"onTreenodeHeaderClick\",[26,\"array\",[\"{% nodePath %}\"],null]]]]],null]]]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"      \"],[6,\"br\"],[8],[9],[0,\"\\n      \"],[1,[26,\"settings-example\",null,[[\"controllerProperties\",\"componentSettingsMetadata\",\"componentSettingsCaption\",\"componentSettingsPlaceholder\"],[[21,0,[]],[22,[\"jsonTreeLatestClickedNodeComponentSettingsMetadata\"]],[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-caption\"],null],[26,\"t\",[\"forms.components-examples.flexberry-tree.settings-example.json-tree-latest-clicked-node-placeholder\"],null]]]],false],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/flexberry-tree/settings-example.hbs" } });
 });
+define("dummy/templates/components-examples/modal-dialog/index", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "D47icJ7q", "block": "{\"symbols\":[],\"statements\":[[6,\"h3\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.caption\"],[[\"component\"],[\"{{modal-dialog}}\"]]],false],[9],[0,\"\\n\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[6,\"h4\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.in-current-context\"],null],false],[9],[0,\"\\n  \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"lightboxIsOpen\",true]],[8],[0,\"\\n    \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-lightbox\"],null],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"sidepageIsOpen\",true]],[8],[0,\"\\n    \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-sidepage\"],null],false],[0,\"\\n  \"],[9],[0,\"\\n\\n  \"],[6,\"h4\"],[10,\"class\",\"ui header\"],[8],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.application-context\"],null],false],[9],[0,\"\\n  \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],\"openLightbox\"]],[8],[0,\"\\n    \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-lightbox\"],null],false],[0,\"\\n  \"],[9],[0,\"\\n  \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],\"openSidepage\"]],[8],[0,\"\\n    \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-sidepage\"],null],false],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[4,\"if\",[[22,[\"lightboxIsOpen\"]]],null,{\"statements\":[[4,\"modal-dialog\",null,[[\"title\",\"useOkButton\",\"useCloseButton\",\"close\",\"settings\"],[[26,\"t\",[\"forms.components-examples.modal-dialog.lightbox-title\"],null],false,false,[26,\"action\",[[21,0,[]],[22,[\"set\"]],\"lightboxIsOpen\",false],null],[26,\"hash\",null,[[\"context\"],[\".stackable.grid.container\"]]]]],{\"statements\":[[0,\"    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"sidepageIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-sidepage\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"secondLightboxIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-second-lightbox\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"],[4,\"if\",[[22,[\"sidepageIsOpen\"]]],null,{\"statements\":[[4,\"modal-dialog\",null,[[\"title\",\"useSidePageMode\",\"useOkButton\",\"useCloseButton\",\"close\",\"settings\"],[[26,\"t\",[\"forms.components-examples.modal-dialog.sidepage-title\"],null],true,false,false,[26,\"action\",[[21,0,[]],[22,[\"set\"]],\"sidepageIsOpen\",false],null],[26,\"hash\",null,[[\"context\"],[\".stackable.grid.container\"]]]]],{\"statements\":[[0,\"    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"secondSidepageIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-second-sidepage\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"secondLightboxIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-second-lightbox\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"],[4,\"if\",[[22,[\"secondSidepageIsOpen\"]]],null,{\"statements\":[[4,\"modal-dialog\",null,[[\"title\",\"useSidePageMode\",\"useOkButton\",\"useCloseButton\",\"close\",\"settings\"],[[26,\"t\",[\"forms.components-examples.modal-dialog.second-sidepage-title\"],null],true,false,false,[26,\"action\",[[21,0,[]],[22,[\"set\"]],\"secondSidepageIsOpen\",false],null],[26,\"hash\",null,[[\"context\"],[\".stackable.grid.container\"]]]]],{\"statements\":[[0,\"    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"secondLightboxIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-second-lightbox\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"],[4,\"if\",[[22,[\"secondLightboxIsOpen\"]]],null,{\"statements\":[[0,\"  \"],[1,[26,\"modal-dialog\",null,[[\"title\",\"sizeClass\",\"useCloseButton\",\"close\",\"settings\"],[[26,\"t\",[\"forms.components-examples.modal-dialog.second-lightbox-title\"],null],\"large\",false,[26,\"action\",[[21,0,[]],[22,[\"set\"]],\"secondLightboxIsOpen\",false],null],[26,\"hash\",null,[[\"context\"],[\".stackable.grid.container\"]]]]]],false],[0,\"\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components-examples/modal-dialog/index.hbs" } });
+});
 define("dummy/templates/components-examples/ui-message/settings-example", ["exports"], function (exports) {
   "use strict";
 
@@ -27265,6 +27348,14 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
   });
   exports.default = Ember.HTMLBars.template({ "id": "HUpxzQ2D", "block": "{\"symbols\":[\"record\",\"column\",\"currentError\"],\"statements\":[[4,\"if\",[[22,[\"errorMessages\"]]],null,{\"statements\":[[4,\"each\",[[22,[\"errorMessages\"]]],null,{\"statements\":[[0,\"    \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"title\",\"message\"],[\"error\",true,true,\"Error occurred\",[21,3,[]]]]],false],[0,\"\\n\"]],\"parameters\":[3]},null]],\"parameters\":[]},null],[6,\"table\"],[11,\"class\",[27,[\"object-list-view ui unstackable celled \",[26,\"if\",[[22,[\"readonly\"]],\"readonly\"],null],\" \",[20,\"tableClass\"],\" table\"]]],[8],[0,\"\\n\"],[4,\"if\",[[22,[\"singleColumnHeaderTitle\"]]],null,{\"statements\":[[0,\"    \"],[6,\"thead\"],[8],[0,\"\\n      \"],[6,\"tr\"],[8],[0,\"\\n\"],[4,\"if\",[[22,[\"showHelperColumn\"]]],null,{\"statements\":[[0,\"          \"],[6,\"th\"],[10,\"class\",\"object-list-view-operations collapsing\"],[10,\"data-olv-header-property-name\",\"OlvRowToolbar\"],[8],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"        \"],[6,\"th\"],[10,\"class\",\"dt-head-left me class\"],[10,\"data-olv-header-property-name\",\"OlvHeader\"],[8],[1,[20,\"singleColumnHeaderTitle\"],false],[9],[0,\"\\n\"],[4,\"if\",[[22,[\"showMenuColumn\"]]],null,{\"statements\":[[0,\"          \"],[6,\"th\"],[10,\"class\",\"object-list-view-menu collapsing\"],[10,\"data-olv-header-property-name\",\"OlvRowMenu\"],[8],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[6,\"tbody\"],[8],[0,\"\\n\"],[4,\"if\",[[22,[\"showFilters\"]]],null,{\"statements\":[[0,\"      \"],[6,\"tr\"],[8],[0,\"\\n\"],[4,\"if\",[[22,[\"showHelperColumn\"]]],null,{\"statements\":[[0,\"          \"],[6,\"td\"],[11,\"class\",[27,[\"object-list-view-helper-column \",[26,\"unless\",[[22,[\"showHelperColumn\"]],\"hidden\"],null]]]],[8],[0,\"\\n            \"],[6,\"div\"],[10,\"class\",\"object-list-view-helper-column-cell\"],[8],[9],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"        \"],[6,\"td\"],[10,\"class\",\"overflowed-cell\"],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"columns\"]]],null,{\"statements\":[[0,\"            \"],[6,\"div\"],[10,\"class\",\"inline fields filter\"],[8],[0,\"\\n              \"],[6,\"label\"],[8],[1,[21,2,[\"header\"]],false],[0,\":\"],[9],[0,\"\\n\"],[4,\"if\",[[21,2,[\"filter\",\"conditions\"]]],null,{\"statements\":[[0,\"                \"],[6,\"div\"],[10,\"class\",\"filter-operation\"],[8],[0,\"\\n                  \"],[1,[26,\"component\",[\"flexberry-dropdown\"],[[\"value\",\"items\",\"class\",\"placeholder\",\"needChecksOnValue\"],[[21,2,[\"filter\",\"condition\"]],[21,2,[\"filter\",\"conditions\"]],\"compact fluid\",\"\",false]]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"if\",[[21,2,[\"filter\",\"component\",\"name\"]]],null,{\"statements\":[[0,\"                \"],[6,\"div\"],[10,\"class\",\"filter-value\"],[8],[0,\"\\n                  \"],[1,[26,\"component\",[[21,2,[\"filter\",\"component\",\"name\"]]],[[\"value\",\"dynamicProperties\"],[[21,2,[\"filter\",\"pattern\"]],[21,2,[\"filter\",\"component\",\"properties\"]]]]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"            \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"        \"],[9],[0,\"\\n\"],[4,\"if\",[[22,[\"showMenuColumn\"]]],null,{\"statements\":[[0,\"          \"],[6,\"td\"],[10,\"class\",\"object-list-view-menu\"],[8],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"unless\",[[22,[\"content\"]]],null,{\"statements\":[[0,\"      \"],[6,\"tr\"],[8],[0,\"\\n        \"],[6,\"td\"],[11,\"colspan\",[27,[[20,\"colspan\"]]]],[10,\"style\",\"text-align:center;\"],[8],[0,\"\\n            \"],[1,[20,\"placeholder\"],false],[0,\"\\n        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[4,\"each\",[[22,[\"contentWithKeys\"]]],[[\"key\"],[\"key\"]],{\"statements\":[[0,\"        \"],[1,[26,\"object-list-view-row\",null,[[\"record\",\"columns\",\"readonly\",\"required\",\"showMenuColumn\",\"showHelperColumn\",\"defaultRowConfig\",\"showValidationMessages\",\"showDeleteMenuItemInRow\",\"showEditMenuItemInRow\",\"showAsteriskInRow\",\"showCheckBoxInRow\",\"showDeleteButtonInRow\",\"inExpandMode\",\"hierarchicalIndent\",\"inHierarchicalMode\",\"singleColumnCellComponent\",\"loadRecords\",\"doRenderData\",\"rowClick\",\"selectRow\",\"deleteRow\",\"hierarchyPaging\"],[[21,1,[]],[22,[\"columns\"]],[22,[\"readonly\"]],[22,[\"required\"]],[22,[\"showMenuColumn\"]],[22,[\"showHelperColumn\"]],[22,[\"defaultRowConfig\"]],[22,[\"showValidationMessagesInRow\"]],[22,[\"showDeleteMenuItemInRow\"]],[22,[\"showEditMenuItemInRow\"]],[22,[\"showAsteriskInRow\"]],[22,[\"showCheckBoxInRow\"]],[22,[\"showDeleteButtonInRow\"]],[22,[\"inExpandMode\"]],[22,[\"hierarchicalIndent\"]],[22,[\"inHierarchicalMode\"]],[22,[\"singleColumnCellComponent\"]],[22,[\"loadRecords\"]],[21,1,[\"doRenderData\"]],[26,\"action\",[[21,0,[]],\"rowClick\"],null],[26,\"action\",[[21,0,[]],\"selectRow\"],null],[26,\"action\",[[21,0,[]],\"deleteRow\"],null],[22,[\"hierarchyPaging\"]]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[4,\"if\",[[22,[\"rowByRowLoadingProgress\"]]],null,{\"statements\":[[0,\"        \"],[6,\"tr\"],[8],[0,\"\\n          \"],[6,\"td\"],[11,\"colspan\",[27,[[20,\"colspan\"]]]],[10,\"style\",\"text-align:center;\"],[8],[0,\"\\n            \"],[6,\"div\"],[10,\"class\",\"ui active centered inline loader\"],[8],[9],[0,\"\\n            \"],[1,[26,\"t\",[\"components.object-list-view.loading-text\"],null],false],[0,\"\\n          \"],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]}],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/mobile/components/object-list-view.hbs" } });
 });
+define("dummy/templates/modal/modal-dialog", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "/NEgPSu2", "block": "{\"symbols\":[],\"statements\":[[4,\"if\",[[22,[\"appContextLightboxIsOpen\"]]],null,{\"statements\":[[4,\"modal-dialog\",null,[[\"title\",\"useOkButton\",\"useCloseButton\",\"close\"],[[26,\"t\",[\"forms.components-examples.modal-dialog.lightbox-title\"],null],false,false,[26,\"action\",[[21,0,[]],\"closeLightbox\"],null]]],{\"statements\":[[0,\"    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"appContextSidepageIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-sidepage\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"appContextSecondLightboxIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-second-lightbox\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"],[4,\"if\",[[22,[\"appContextSidepageIsOpen\"]]],null,{\"statements\":[[4,\"modal-dialog\",null,[[\"title\",\"useSidePageMode\",\"useOkButton\",\"useCloseButton\",\"close\"],[[26,\"t\",[\"forms.components-examples.modal-dialog.sidepage-title\"],null],true,false,false,[26,\"action\",[[21,0,[]],\"closeSidepage\"],null]]],{\"statements\":[[0,\"    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"appContextSecondSidepageIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-second-sidepage\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"appContextSecondLightboxIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-second-lightbox\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"],[4,\"if\",[[22,[\"appContextSecondSidepageIsOpen\"]]],null,{\"statements\":[[4,\"modal-dialog\",null,[[\"title\",\"useSidePageMode\",\"useOkButton\",\"useCloseButton\",\"close\"],[[26,\"t\",[\"forms.components-examples.modal-dialog.second-sidepage-title\"],null],true,false,false,[26,\"action\",[[21,0,[]],[22,[\"set\"]],\"appContextSecondSidepageIsOpen\",false],null]]],{\"statements\":[[0,\"    \"],[6,\"button\"],[10,\"class\",\"ui button\"],[3,\"action\",[[21,0,[]],[22,[\"set\"]],\"appContextSecondLightboxIsOpen\",true]],[8],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.components-examples.modal-dialog.open-second-lightbox\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"],[4,\"if\",[[22,[\"appContextSecondLightboxIsOpen\"]]],null,{\"statements\":[[0,\"  \"],[1,[26,\"modal-dialog\",null,[[\"title\",\"sizeClass\",\"useCloseButton\",\"close\"],[[26,\"t\",[\"forms.components-examples.modal-dialog.second-lightbox-title\"],null],\"large\",false,[26,\"action\",[[21,0,[]],[22,[\"set\"]],\"appContextSecondLightboxIsOpen\",false],null]]]],false],[0,\"\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/modal/modal-dialog.hbs" } });
+});
 define("dummy/templates/new-platform-flexberry-services-lock-list", ["exports"], function (exports) {
   "use strict";
 
@@ -27771,6 +27862,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.2.1+8291ac8b"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.2.1+f7691a7e"});
 }
 //# sourceMappingURL=dummy.map
