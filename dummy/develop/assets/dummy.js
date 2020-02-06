@@ -5390,11 +5390,27 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
     previewOnSeparateRoute: false,
 
     /**
+      If `true`, page switching buttons will be available in the results for autocomplete.
+       @property usePaginationForAutocomplete
+      @type Boolean
+      @default false
+    */
+    usePaginationForAutocomplete: false,
+
+    /**
+      Max number of the results for autocomplete.
+       @property maxResults
+      @type Integer
+      @default 10
+    */
+    maxResults: 10,
+
+    /**
       Template text for 'flexberry-lookup' component.
        @property componentTemplateText
       @type String
     */
-    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-lookup<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  value=model.type<br>' + '  projection="SettingLookupExampleView"<br>' + '  displayAttributeName="name"<br>' + '  title="Master"<br>' + '  relatedModel=model<br>' + '  relationName="type"<br>' + '  choose="showLookupDialog"<br>' + '  remove="removeLookupValue"<br>' + '  autocomplete=autocomplete<br>' + '  autocompletePersistValue=autocompletePersistValue<br>' + '  displayValue=model.lookupDisplayValue<br>' + '  dropdown=dropdown<br>' + '  dropdownIsSearch=dropdownIsSearch<br>' + '  chooseText=chooseText<br>' + '  removeText=removeText<br>' + '  chooseButtonClass=chooseButtonClass<br>' + '  removeButtonClass=removeButtonClass<br>' + '  showPreviewButton=showPreviewButton<br>' + '  previewOnSeparateRoute=previewOnSeparateRoute<br>' + '  previewFormRoute="ember-flexberry-dummy-suggestion-type-edit"<br>' + '}}'),
+    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-lookup<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  value=model.type<br>' + '  projection="SettingLookupExampleView"<br>' + '  displayAttributeName="name"<br>' + '  title="Master"<br>' + '  relatedModel=model<br>' + '  relationName="type"<br>' + '  choose="showLookupDialog"<br>' + '  remove="removeLookupValue"<br>' + '  autocomplete=autocomplete<br>' + '  autocompletePersistValue=autocompletePersistValue<br>' + '  usePaginationForAutocomplete=usePaginationForAutocomplete<br>' + '  maxResults=maxResults<br>' + '  displayValue=model.lookupDisplayValue<br>' + '  dropdown=dropdown<br>' + '  dropdownIsSearch=dropdownIsSearch<br>' + '  chooseText=chooseText<br>' + '  removeText=removeText<br>' + '  chooseButtonClass=chooseButtonClass<br>' + '  removeButtonClass=removeButtonClass<br>' + '  showPreviewButton=showPreviewButton<br>' + '  previewOnSeparateRoute=previewOnSeparateRoute<br>' + '  previewFormRoute="ember-flexberry-dummy-suggestion-type-edit"<br>' + '}}'),
 
     /**
       Component settings metadata.
@@ -5432,6 +5448,18 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
         settingType: 'boolean',
         settingDefaultValue: false,
         bindedControllerPropertieName: 'autocompletePersistValue'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'usePaginationForAutocomplete',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'usePaginationForAutocomplete'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'maxResults',
+        settingType: 'number',
+        settingDefaultValue: 10,
+        bindedControllerPropertieName: 'maxResults'
       });
       componentSettingsMetadata.pushObject({
         settingName: 'dropdown',
@@ -32051,7 +32079,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
               "column": 4
             },
             "end": {
-              "line": 37,
+              "line": 39,
               "column": 4
             }
           },
@@ -32076,7 +32104,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-lookup", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 20], [11, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 17], [12, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [13, 14], [13, 24]]]]], [], []], "projection", "SettingLookupExampleView", "displayAttributeName", "name", "title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [16, 14], [16, 19]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [17, 21], [17, 26]]]]], [], []], "relationName", "type", "choose", "showLookupDialog", "remove", "removeLookupValue", "autocomplete", ["subexpr", "@mut", [["get", "autocomplete", ["loc", [null, [21, 21], [21, 33]]]]], [], []], "autocompletePersistValue", ["subexpr", "@mut", [["get", "autocompletePersistValue", ["loc", [null, [22, 33], [22, 57]]]]], [], []], "displayValue", ["subexpr", "@mut", [["get", "model.lookupDisplayValue", ["loc", [null, [23, 21], [23, 45]]]]], [], []], "dropdown", ["subexpr", "@mut", [["get", "dropdown", ["loc", [null, [24, 17], [24, 25]]]]], [], []], "dropdownIsSearch", ["subexpr", "@mut", [["get", "dropdownIsSearch", ["loc", [null, [25, 25], [25, 41]]]]], [], []], "chooseText", ["subexpr", "@mut", [["get", "chooseText", ["loc", [null, [26, 19], [26, 29]]]]], [], []], "removeText", ["subexpr", "@mut", [["get", "removeText", ["loc", [null, [27, 19], [27, 29]]]]], [], []], "dropdownClass", ["subexpr", "@mut", [["get", "dropdownClass", ["loc", [null, [28, 22], [28, 35]]]]], [], []], "chooseButtonClass", ["subexpr", "@mut", [["get", "chooseButtonClass", ["loc", [null, [29, 26], [29, 43]]]]], [], []], "removeButtonClass", ["subexpr", "@mut", [["get", "removeButtonClass", ["loc", [null, [30, 26], [30, 43]]]]], [], []], "multiselect", true, "showPreviewButton", ["subexpr", "@mut", [["get", "showPreviewButton", ["loc", [null, [32, 26], [32, 43]]]]], [], []], "previewOnSeparateRoute", ["subexpr", "@mut", [["get", "previewOnSeparateRoute", ["loc", [null, [33, 31], [33, 53]]]]], [], []], "previewFormRoute", "ember-flexberry-dummy-suggestion-type-edit", "preview", ["subexpr", "action", ["previewLookupValue"], [], ["loc", [null, [35, 16], [35, 45]]]]], ["loc", [null, [10, 6], [36, 8]]]]],
+        statements: [["inline", "flexberry-lookup", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 20], [11, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 17], [12, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [13, 14], [13, 24]]]]], [], []], "projection", "SettingLookupExampleView", "displayAttributeName", "name", "title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [16, 14], [16, 19]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [17, 21], [17, 26]]]]], [], []], "relationName", "type", "choose", "showLookupDialog", "remove", "removeLookupValue", "autocomplete", ["subexpr", "@mut", [["get", "autocomplete", ["loc", [null, [21, 21], [21, 33]]]]], [], []], "autocompletePersistValue", ["subexpr", "@mut", [["get", "autocompletePersistValue", ["loc", [null, [22, 33], [22, 57]]]]], [], []], "usePaginationForAutocomplete", ["subexpr", "@mut", [["get", "usePaginationForAutocomplete", ["loc", [null, [23, 37], [23, 65]]]]], [], []], "maxResults", ["subexpr", "@mut", [["get", "maxResults", ["loc", [null, [24, 19], [24, 29]]]]], [], []], "displayValue", ["subexpr", "@mut", [["get", "model.lookupDisplayValue", ["loc", [null, [25, 21], [25, 45]]]]], [], []], "dropdown", ["subexpr", "@mut", [["get", "dropdown", ["loc", [null, [26, 17], [26, 25]]]]], [], []], "dropdownIsSearch", ["subexpr", "@mut", [["get", "dropdownIsSearch", ["loc", [null, [27, 25], [27, 41]]]]], [], []], "chooseText", ["subexpr", "@mut", [["get", "chooseText", ["loc", [null, [28, 19], [28, 29]]]]], [], []], "removeText", ["subexpr", "@mut", [["get", "removeText", ["loc", [null, [29, 19], [29, 29]]]]], [], []], "dropdownClass", ["subexpr", "@mut", [["get", "dropdownClass", ["loc", [null, [30, 22], [30, 35]]]]], [], []], "chooseButtonClass", ["subexpr", "@mut", [["get", "chooseButtonClass", ["loc", [null, [31, 26], [31, 43]]]]], [], []], "removeButtonClass", ["subexpr", "@mut", [["get", "removeButtonClass", ["loc", [null, [32, 26], [32, 43]]]]], [], []], "multiselect", true, "showPreviewButton", ["subexpr", "@mut", [["get", "showPreviewButton", ["loc", [null, [34, 26], [34, 43]]]]], [], []], "previewOnSeparateRoute", ["subexpr", "@mut", [["get", "previewOnSeparateRoute", ["loc", [null, [35, 31], [35, 53]]]]], [], []], "previewFormRoute", "ember-flexberry-dummy-suggestion-type-edit", "preview", ["subexpr", "action", ["previewLookupValue"], [], ["loc", [null, [37, 16], [37, 45]]]]], ["loc", [null, [10, 6], [38, 8]]]]],
         locals: [],
         templates: []
       };
@@ -32095,7 +32123,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
             "column": 0
           },
           "end": {
-            "line": 40,
+            "line": 42,
             "column": 0
           }
         },
@@ -32141,7 +32169,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 97]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [37, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 97]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [39, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -71560,7 +71588,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.1+f6e8bf74"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.1+bf26a62a"});
 }
 
 /* jshint ignore:end */

@@ -305,6 +305,14 @@ export default FlexberryBaseComponent.extend({
   _cachedDropdownValue: undefined,
 
   /**
+    @private
+    @property _pageInResultsForAutocomplete
+    @type Number
+    @default 1
+  */
+  _pageInResultsForAutocomplete: 1,
+
+  /**
     Text to be displayed in field, if value not selected.
 
     @property placeholder
@@ -408,6 +416,15 @@ export default FlexberryBaseComponent.extend({
     @default false
   */
   autocomplete: false,
+
+  /**
+    If &#x60;true&#x60;, page switching buttons will be available in the results for autocomplete.
+
+    @property usePaginationForAutocomplete
+    @type Boolean
+    @default false
+  */
+  usePaginationForAutocomplete: false,
 
   /**
     Flag to show that lookup is in dropdown mode.
@@ -1023,6 +1040,15 @@ export default FlexberryBaseComponent.extend({
   valueObserver: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;value&#x27;, &#x27;displayAttributeName&#x27;, function() { Ember.run.once(this, &#x27;_valueObserver&#x27;); })),
 
   /**
+    Observe lookup autocomplete max results changes.
+  */
+  maxResultsObserver: Ember.observer(&#x27;maxResults&#x27;, function() {
+    if (this.get(&#x27;autocomplete&#x27;)) {
+      this._onAutocomplete();
+    }
+  }),
+
+  /**
     It seems to me a mistake here, it should be [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement).
     # WRANING!
 
@@ -1189,7 +1215,9 @@ export default FlexberryBaseComponent.extend({
     let i18n = _this.get(&#x27;i18n&#x27;);
     this.$().search({
       minCharacters: minCharacters,
-      maxResults: maxResults + 1,
+
+      // +2 for page switch buttons.
+      maxResults: maxResults + 2,
       cache: false,
       templates: {
         message: function(message, type) {
@@ -1224,31 +1252,26 @@ export default FlexberryBaseComponent.extend({
             builder.where(resultPredicate);
           }
 
-          let maxRes = _this.get(&#x27;maxResults&#x27;);
-          let iCount = 1;
-          builder.top(maxRes + 1);
+          const usePagination = _this.get(&#x27;usePaginationForAutocomplete&#x27;);
+          const skip = maxResults * (_this.get(&#x27;_pageInResultsForAutocomplete&#x27;) - 1);
+          builder.skip(skip);
+          builder.top(maxResults);
           builder.count();
 
           Ember.run(() =&gt; {
             store.query(relationModelName, builder.build()).then((records) =&gt; {
-              callback({
-                success: true,
-                results: records.map(i =&gt; {
-                  let attributeName = i.get(displayAttributeName);
-                  if (iCount &gt; maxRes &amp;&amp; records.meta.count &gt; maxRes) {
-                    return {
-                      title: &#x27;...&#x27;,
-                      noResult: true
-                    };
-                  } else {
-                    iCount += 1;
-                    return {
-                      title: attributeName,
-                      instance: i
-                    };
-                  }
-                })
-              });
+              const results = records.map((r) =&gt; ({ title: r.get(displayAttributeName), instance: r }));
+
+              if (usePagination &amp;&amp; skip &gt; 0) {
+                results.unshift({ title: &#x27;&lt;div class=&quot;ui center aligned container&quot;&gt;&lt;i class=&quot;angle up icon&quot;&gt;&lt;/i&gt;&lt;/div&gt;&#x27;, prevPage: true });
+              }
+
+              if (skip + records.get(&#x27;length&#x27;) &lt; records.get(&#x27;meta.count&#x27;)) {
+                const title = usePagination ? &#x27;&lt;div class=&quot;ui center aligned container&quot;&gt;&lt;i class=&quot;angle down icon&quot;&gt;&lt;/i&gt;&lt;/div&gt;&#x27; : &#x27;...&#x27;;
+                results.push({ title: title, nextPage: usePagination });
+              }
+
+              callback({ success: true, results: results });
             }, () =&gt; {
               callback({ success: false });
             });
@@ -1275,8 +1298,9 @@ export default FlexberryBaseComponent.extend({
        * @param {Object} result Item from array of objects, built in &#x60;responseAsync&#x60;.
        */
       onSelect(result) {
-        if (!result.noResult) {
+        if (result.instance) {
           state = &#x27;selected&#x27;;
+          _this.set(&#x27;_pageInResultsForAutocomplete&#x27;, 1);
 
           Ember.run(() =&gt; {
             Ember.debug(&#x60;Flexberry Lookup::autocomplete state = ${state}; result = ${result}&#x60;);
@@ -1289,6 +1313,24 @@ export default FlexberryBaseComponent.extend({
                 newRelationValue: result.instance
               });
           });
+        } else if (_this.get(&#x27;usePaginationForAutocomplete&#x27;)) {
+          state = &#x27;loading&#x27;;
+          if (result.nextPage) {
+            _this.incrementProperty(&#x27;_pageInResultsForAutocomplete&#x27;);
+          }
+
+          if (result.prevPage) {
+            _this.decrementProperty(&#x27;_pageInResultsForAutocomplete&#x27;);
+          }
+
+          // In the &#x60;Semantic UI&#x60; of version 2.1.7, the results are closed regardless of what the &#x60;onSelect&#x60; handler returns.
+          // This function allows us to start the search again, thanks to the &#x60;searchOnFocus&#x60; option.
+          Ember.run.later(() =&gt; {
+            _this.$().search(&#x27;add results&#x27;, &#x27;&#x27;);
+            _this.$(&#x27;input&#x27;).focus();
+          }, 500);
+
+          return false;
         }
       },
 
@@ -1300,7 +1342,8 @@ export default FlexberryBaseComponent.extend({
         // Set displayValue directly because value hasn&#x27;been changes
         // and Ember won&#x27;t change computed property.
 
-        if (state !== &#x27;selected&#x27;) {
+        if (state !== &#x27;selected&#x27; &amp;&amp; state !== &#x27;loading&#x27;) {
+          _this.set(&#x27;_pageInResultsForAutocomplete&#x27;, 1);
           let displayValue = _this.get(&#x27;displayValue&#x27;);
           if (displayValue) {
             if (_this.get(&#x27;autocompletePersistValue&#x27;)) {
