@@ -23178,7 +23178,7 @@
         },
         {
             "file": "addon/routes/list-form.js",
-            "line": 341,
+            "line": 342,
             "itemtype": "method",
             "name": "_invalidSorting",
             "params": [
