@@ -15994,7 +15994,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2718,
+            "line": 2720,
             "description": "Move all selected records.",
             "itemtype": "method",
             "name": "_moveRow",
