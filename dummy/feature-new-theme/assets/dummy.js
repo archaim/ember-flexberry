@@ -9760,7 +9760,7 @@ define('dummy/controllers/ember-flexberry-dummy-multi-list', ['exports', 'ember-
   });
   exports.default = _listForm.default.extend(_multiListController.default, {});
 });
-define('dummy/controllers/ember-flexberry-dummy-suggestion-edit', ['exports', 'ember-flexberry/controllers/edit-form', 'ember-flexberry/mixins/edit-form-controller-operations-indication'], function (exports, _editForm, _editFormControllerOperationsIndication) {
+define('dummy/controllers/ember-flexberry-dummy-suggestion-edit', ['exports', 'ember-flexberry/controllers/edit-form', 'ember-flexberry/mixins/edit-form-controller-operations-indication', 'ember-i18n'], function (exports, _editForm, _editFormControllerOperationsIndication, _emberI18n) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -9782,6 +9782,8 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-edit', ['exports', 'e
       @default 'ember-flexberry-dummy-comment-edit'
      */
     commentsEditRoute: 'ember-flexberry-dummy-comment-edit',
+
+    title: (0, _emberI18n.translationMacro)('forms.application.flexberry-objectlistview-modal-question-caption.delete-at-editform-question-caption'),
 
     /**
       Method to get type and attributes of a component,
@@ -9835,6 +9837,36 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-edit', ['exports', 'e
       }
 
       return cellComponent;
+    },
+
+
+    actions: {
+      /**
+        Show delete modal dialog before deleting.
+      */
+      delete: function _delete(skipTransition) {
+        var _this = this;
+
+        this.set('approveDeleting', function () {
+          _this.delete(skipTransition);
+        });
+        this.set('denyDeleting', function () {});
+
+        this.send('showModalDialog', 'modal/delete-record-modal-dialog', {
+          controller: 'ember-flexberry-dummy-suggestion-edit'
+        });
+      },
+
+
+      /**
+        Close modal dialog and clear actions.
+      */
+      closeModalDialog: function closeModalDialog() {
+        this.set('approveDeleting', null);
+        this.set('denyDeleting', null);
+
+        this.send('removeModalDialog');
+      }
     }
   });
 });
@@ -9896,7 +9928,7 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-file-list', ['exports
     editFormRoute: 'ember-flexberry-dummy-suggestion-file-edit'
   });
 });
-define('dummy/controllers/ember-flexberry-dummy-suggestion-list', ['exports', 'ember-flexberry/controllers/list-form', 'dummy/mixins/list-form-controller-operations-indication'], function (exports, _listForm, _listFormControllerOperationsIndication) {
+define('dummy/controllers/ember-flexberry-dummy-suggestion-list', ['exports', 'ember-flexberry/controllers/list-form', 'dummy/mixins/list-form-controller-operations-indication', 'ember-i18n'], function (exports, _listForm, _listFormControllerOperationsIndication, _emberI18n) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -9913,6 +9945,8 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-list', ['exports', 'e
 
     exportExcelProjection: 'SuggestionL',
 
+    title: (0, _emberI18n.translationMacro)('forms.application.flexberry-objectlistview-modal-question-caption.delete-at-listform-question-caption'),
+
     actions: {
       /**
         Hook that executes before deleting all records on all pages.
@@ -9920,6 +9954,33 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-list', ['exports', 'e
       */
       beforeDeleteAllRecords: function beforeDeleteAllRecords(modelName, data) {
         data.cancel = false;
+      },
+
+
+      /**
+        Show delete modal dialog before deleting.
+      */
+      beforeDeleteRecord: function beforeDeleteRecord() {
+        var _this = this;
+
+        return new Ember.RSVP.Promise(function (resolve, reject) {
+          _this.set('approveDeleting', resolve);
+          _this.set('denyDeleting', reject);
+
+          _this.send('showModalDialog', 'modal/delete-record-modal-dialog', {
+            controller: 'ember-flexberry-dummy-suggestion-list'
+          });
+        });
+      },
+
+      /**
+        Close modal dialog and clear actions.
+      */
+      closeModalDialog: function closeModalDialog() {
+        this.set('approveDeleting', null);
+        this.set('denyDeleting', null);
+
+        this.send('removeModalDialog');
       }
     }
   });
@@ -14028,6 +14089,13 @@ define('dummy/locales/en/translations', ['exports', 'ember-flexberry/locales/en/
           }
         },
 
+        'flexberry-objectlistview-modal-question-caption': {
+          'confirm-button-caption': 'Yes',
+          'cancel-button-caption': 'Cancel',
+          'delete-ask-caption': 'Are you sure you want to delete the selected entries?',
+          'delete-at-editform-ask-caption': 'Are you sure you want to delete entries?'
+        },
+
         'footer': {
           'application-name': 'Test stand for ember-flexberry',
           'application-version': {
@@ -15533,6 +15601,13 @@ define('dummy/locales/ru/translations', ['exports', 'ember-flexberry/locales/ru/
           'profile': {
             'caption': 'Личный кабинет'
           }
+        },
+
+        'flexberry-objectlistview-modal-question-caption': {
+          'confirm-button-caption': 'Да',
+          'cancel-button-caption': 'Отмена',
+          'delete-at-listform-question-caption': 'Вы уверены, что хотите удалить выбранные записи?',
+          'delete-at-editform-question-caption': 'Вы уверены, что хотите удалить запись?'
         },
 
         'footer': {
@@ -27171,7 +27246,7 @@ define("dummy/templates/ember-flexberry-dummy-suggestion-list", ["exports"], fun
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "ZnJog03k", "block": "{\"symbols\":[],\"statements\":[[1,[26,\"flexberry-error\",null,[[\"error\"],[[22,[\"error\"]]]]],false],[0,\"\\n\"],[6,\"h3\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-list.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"success\",true,[22,[\"showFormSuccessMessage\"]],[22,[\"formSuccessMessageCaption\"]],[22,[\"formSuccessMessage\"]],[26,\"action\",[[21,0,[]],\"onSuccessMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onSuccessMessageHide\"],null]]]],false],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"error\",true,[22,[\"showFormErrorMessage\"]],[22,[\"formErrorMessageCaption\"]],[22,[\"formErrorMessage\"]],[26,\"action\",[[21,0,[]],\"onErrorMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onErrorMessageHide\"],null]]]],false],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n  \"],[1,[26,\"flexberry-objectlistview\",null,[[\"editFormRoute\",\"showCheckBoxInRow\",\"modelName\",\"modelProjection\",\"content\",\"createNewButton\",\"enableFilters\",\"filters\",\"refreshButton\",\"exportExcelButton\",\"sorting\",\"orderable\",\"sortByColumn\",\"addColumnToSorting\",\"beforeDeleteAllRecords\",\"applyFilters\",\"resetFilters\",\"pages\",\"perPageValue\",\"perPageValues\",\"recordsTotalCount\",\"hasPreviousPage\",\"hasNextPage\",\"previousPage\",\"gotoPage\",\"nextPage\",\"componentName\",\"showDeleteMenuItemInRow\",\"deleteButton\",\"advLimitButton\"],[[22,[\"editFormRoute\"]],true,\"ember-flexberry-dummy-suggestion\",[22,[\"modelProjection\"]],[22,[\"model\"]],true,true,[22,[\"filters\"]],true,true,[22,[\"computedSorting\"]],true,[26,\"action\",[[21,0,[]],\"sortByColumn\"],null],[26,\"action\",[[21,0,[]],\"addColumnToSorting\"],null],[26,\"action\",[[21,0,[]],\"beforeDeleteAllRecords\"],null],[26,\"action\",[[21,0,[]],\"applyFilters\"],null],[26,\"action\",[[21,0,[]],\"resetFilters\"],null],[22,[\"pages\"]],[22,[\"perPageValue\"]],[22,[\"perPageValues\"]],[22,[\"recordsTotalCount\"]],[22,[\"hasPreviousPage\"]],[22,[\"hasNextPage\"]],[26,\"action\",[[21,0,[]],\"previousPage\"],null],[26,\"action\",[[21,0,[]],\"gotoPage\"],null],[26,\"action\",[[21,0,[]],\"nextPage\"],null],\"SuggestionObjectListView\",true,true,true]]],false],[0,\"\\n\"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/ember-flexberry-dummy-suggestion-list.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "GrkCTbi/", "block": "{\"symbols\":[],\"statements\":[[1,[26,\"flexberry-error\",null,[[\"error\"],[[22,[\"error\"]]]]],false],[0,\"\\n\"],[6,\"h3\"],[8],[1,[26,\"t\",[\"forms.ember-flexberry-dummy-suggestion-list.caption\"],null],false],[9],[0,\"\\n\"],[6,\"form\"],[10,\"class\",\"ui form flexberry-vertical-form\"],[10,\"role\",\"form\"],[8],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"success\",true,[22,[\"showFormSuccessMessage\"]],[22,[\"formSuccessMessageCaption\"]],[22,[\"formSuccessMessage\"]],[26,\"action\",[[21,0,[]],\"onSuccessMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onSuccessMessageHide\"],null]]]],false],[0,\"\\n  \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"caption\",\"message\",\"onShow\",\"onHide\"],[\"error\",true,[22,[\"showFormErrorMessage\"]],[22,[\"formErrorMessageCaption\"]],[22,[\"formErrorMessage\"]],[26,\"action\",[[21,0,[]],\"onErrorMessageShow\"],null],[26,\"action\",[[21,0,[]],\"onErrorMessageHide\"],null]]]],false],[0,\"\\n  \"],[6,\"div\"],[10,\"class\",\"field\"],[8],[0,\"\\n  \"],[1,[26,\"flexberry-objectlistview\",null,[[\"editFormRoute\",\"showCheckBoxInRow\",\"modelName\",\"modelProjection\",\"content\",\"createNewButton\",\"enableFilters\",\"filters\",\"refreshButton\",\"exportExcelButton\",\"sorting\",\"orderable\",\"sortByColumn\",\"addColumnToSorting\",\"beforeDeleteAllRecords\",\"applyFilters\",\"resetFilters\",\"pages\",\"perPageValue\",\"perPageValues\",\"recordsTotalCount\",\"hasPreviousPage\",\"hasNextPage\",\"previousPage\",\"gotoPage\",\"nextPage\",\"componentName\",\"showDeleteMenuItemInRow\",\"deleteButton\",\"advLimitButton\",\"beforeDeleteRecord\"],[[22,[\"editFormRoute\"]],true,\"ember-flexberry-dummy-suggestion\",[22,[\"modelProjection\"]],[22,[\"model\"]],true,true,[22,[\"filters\"]],true,true,[22,[\"computedSorting\"]],true,[26,\"action\",[[21,0,[]],\"sortByColumn\"],null],[26,\"action\",[[21,0,[]],\"addColumnToSorting\"],null],[26,\"action\",[[21,0,[]],\"beforeDeleteAllRecords\"],null],[26,\"action\",[[21,0,[]],\"applyFilters\"],null],[26,\"action\",[[21,0,[]],\"resetFilters\"],null],[22,[\"pages\"]],[22,[\"perPageValue\"]],[22,[\"perPageValues\"]],[22,[\"recordsTotalCount\"]],[22,[\"hasPreviousPage\"]],[22,[\"hasNextPage\"]],[26,\"action\",[[21,0,[]],\"previousPage\"],null],[26,\"action\",[[21,0,[]],\"gotoPage\"],null],[26,\"action\",[[21,0,[]],\"nextPage\"],null],\"SuggestionObjectListView\",true,true,true,[26,\"action\",[[21,0,[]],\"beforeDeleteRecord\"],null]]]],false],[0,\"\\n\"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/ember-flexberry-dummy-suggestion-list.hbs" } });
 });
 define("dummy/templates/ember-flexberry-dummy-suggestion-list/loading", ["exports"], function (exports) {
   "use strict";
@@ -27388,6 +27463,14 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "HUpxzQ2D", "block": "{\"symbols\":[\"record\",\"column\",\"currentError\"],\"statements\":[[4,\"if\",[[22,[\"errorMessages\"]]],null,{\"statements\":[[4,\"each\",[[22,[\"errorMessages\"]]],null,{\"statements\":[[0,\"    \"],[1,[26,\"ui-message\",null,[[\"type\",\"closeable\",\"visible\",\"title\",\"message\"],[\"error\",true,true,\"Error occurred\",[21,3,[]]]]],false],[0,\"\\n\"]],\"parameters\":[3]},null]],\"parameters\":[]},null],[6,\"table\"],[11,\"class\",[27,[\"object-list-view ui unstackable celled \",[26,\"if\",[[22,[\"readonly\"]],\"readonly\"],null],\" \",[20,\"tableClass\"],\" table\"]]],[8],[0,\"\\n\"],[4,\"if\",[[22,[\"singleColumnHeaderTitle\"]]],null,{\"statements\":[[0,\"    \"],[6,\"thead\"],[8],[0,\"\\n      \"],[6,\"tr\"],[8],[0,\"\\n\"],[4,\"if\",[[22,[\"showHelperColumn\"]]],null,{\"statements\":[[0,\"          \"],[6,\"th\"],[10,\"class\",\"object-list-view-operations collapsing\"],[10,\"data-olv-header-property-name\",\"OlvRowToolbar\"],[8],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"        \"],[6,\"th\"],[10,\"class\",\"dt-head-left me class\"],[10,\"data-olv-header-property-name\",\"OlvHeader\"],[8],[1,[20,\"singleColumnHeaderTitle\"],false],[9],[0,\"\\n\"],[4,\"if\",[[22,[\"showMenuColumn\"]]],null,{\"statements\":[[0,\"          \"],[6,\"th\"],[10,\"class\",\"object-list-view-menu collapsing\"],[10,\"data-olv-header-property-name\",\"OlvRowMenu\"],[8],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"  \"],[6,\"tbody\"],[8],[0,\"\\n\"],[4,\"if\",[[22,[\"showFilters\"]]],null,{\"statements\":[[0,\"      \"],[6,\"tr\"],[8],[0,\"\\n\"],[4,\"if\",[[22,[\"showHelperColumn\"]]],null,{\"statements\":[[0,\"          \"],[6,\"td\"],[11,\"class\",[27,[\"object-list-view-helper-column \",[26,\"unless\",[[22,[\"showHelperColumn\"]],\"hidden\"],null]]]],[8],[0,\"\\n            \"],[6,\"div\"],[10,\"class\",\"object-list-view-helper-column-cell\"],[8],[9],[0,\"\\n          \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"        \"],[6,\"td\"],[10,\"class\",\"overflowed-cell\"],[8],[0,\"\\n\"],[4,\"each\",[[22,[\"columns\"]]],null,{\"statements\":[[0,\"            \"],[6,\"div\"],[10,\"class\",\"inline fields filter\"],[8],[0,\"\\n              \"],[6,\"label\"],[8],[1,[21,2,[\"header\"]],false],[0,\":\"],[9],[0,\"\\n\"],[4,\"if\",[[21,2,[\"filter\",\"conditions\"]]],null,{\"statements\":[[0,\"                \"],[6,\"div\"],[10,\"class\",\"filter-operation\"],[8],[0,\"\\n                  \"],[1,[26,\"component\",[\"flexberry-dropdown\"],[[\"value\",\"items\",\"class\",\"placeholder\",\"needChecksOnValue\"],[[21,2,[\"filter\",\"condition\"]],[21,2,[\"filter\",\"conditions\"]],\"compact fluid\",\"\",false]]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"if\",[[21,2,[\"filter\",\"component\",\"name\"]]],null,{\"statements\":[[0,\"                \"],[6,\"div\"],[10,\"class\",\"filter-value\"],[8],[0,\"\\n                  \"],[1,[26,\"component\",[[21,2,[\"filter\",\"component\",\"name\"]]],[[\"value\",\"dynamicProperties\"],[[21,2,[\"filter\",\"pattern\"]],[21,2,[\"filter\",\"component\",\"properties\"]]]]],false],[0,\"\\n                \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"            \"],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"        \"],[9],[0,\"\\n\"],[4,\"if\",[[22,[\"showMenuColumn\"]]],null,{\"statements\":[[0,\"          \"],[6,\"td\"],[10,\"class\",\"object-list-view-menu\"],[8],[9],[0,\"\\n\"]],\"parameters\":[]},null],[0,\"      \"],[9],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"unless\",[[22,[\"content\"]]],null,{\"statements\":[[0,\"      \"],[6,\"tr\"],[8],[0,\"\\n        \"],[6,\"td\"],[11,\"colspan\",[27,[[20,\"colspan\"]]]],[10,\"style\",\"text-align:center;\"],[8],[0,\"\\n            \"],[1,[20,\"placeholder\"],false],[0,\"\\n        \"],[9],[0,\"\\n      \"],[9],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[4,\"each\",[[22,[\"contentWithKeys\"]]],[[\"key\"],[\"key\"]],{\"statements\":[[0,\"        \"],[1,[26,\"object-list-view-row\",null,[[\"record\",\"columns\",\"readonly\",\"required\",\"showMenuColumn\",\"showHelperColumn\",\"defaultRowConfig\",\"showValidationMessages\",\"showDeleteMenuItemInRow\",\"showEditMenuItemInRow\",\"showAsteriskInRow\",\"showCheckBoxInRow\",\"showDeleteButtonInRow\",\"inExpandMode\",\"hierarchicalIndent\",\"inHierarchicalMode\",\"singleColumnCellComponent\",\"loadRecords\",\"doRenderData\",\"rowClick\",\"selectRow\",\"deleteRow\",\"hierarchyPaging\"],[[21,1,[]],[22,[\"columns\"]],[22,[\"readonly\"]],[22,[\"required\"]],[22,[\"showMenuColumn\"]],[22,[\"showHelperColumn\"]],[22,[\"defaultRowConfig\"]],[22,[\"showValidationMessagesInRow\"]],[22,[\"showDeleteMenuItemInRow\"]],[22,[\"showEditMenuItemInRow\"]],[22,[\"showAsteriskInRow\"]],[22,[\"showCheckBoxInRow\"]],[22,[\"showDeleteButtonInRow\"]],[22,[\"inExpandMode\"]],[22,[\"hierarchicalIndent\"]],[22,[\"inHierarchicalMode\"]],[22,[\"singleColumnCellComponent\"]],[22,[\"loadRecords\"]],[21,1,[\"doRenderData\"]],[26,\"action\",[[21,0,[]],\"rowClick\"],null],[26,\"action\",[[21,0,[]],\"selectRow\"],null],[26,\"action\",[[21,0,[]],\"deleteRow\"],null],[22,[\"hierarchyPaging\"]]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[4,\"if\",[[22,[\"rowByRowLoadingProgress\"]]],null,{\"statements\":[[0,\"        \"],[6,\"tr\"],[8],[0,\"\\n          \"],[6,\"td\"],[11,\"colspan\",[27,[[20,\"colspan\"]]]],[10,\"style\",\"text-align:center;\"],[8],[0,\"\\n            \"],[6,\"div\"],[10,\"class\",\"ui active centered inline loader\"],[8],[9],[0,\"\\n            \"],[1,[26,\"t\",[\"components.object-list-view.loading-text\"],null],false],[0,\"\\n          \"],[9],[0,\"\\n        \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"parameters\":[]}],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/mobile/components/object-list-view.hbs" } });
+});
+define("dummy/templates/modal/delete-record-modal-dialog", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "pDMLMlWZ", "block": "{\"symbols\":[],\"statements\":[[4,\"modal-dialog\",null,[[\"title\",\"useOkButton\",\"useCloseButton\",\"close\",\"settings\"],[[22,[\"title\"]],false,false,[26,\"action\",[[21,0,[]],\"closeModalDialog\"],null],[26,\"hash\",null,[[\"closable\",\"onApprove\",\"onDeny\"],[false,[26,\"action\",[[21,0,[]],[22,[\"approveDeleting\"]]],null],[26,\"action\",[[21,0,[]],[22,[\"denyDeleting\"]]],null]]]]]],{\"statements\":[[0,\"  \"],[6,\"div\"],[10,\"class\",\"actions\"],[8],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"ui green approve button\"],[8],[0,\"\\n      \"],[6,\"i\"],[10,\"class\",\"checkmark icon\"],[8],[9],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.application.flexberry-objectlistview-modal-question-caption.confirm-button-caption\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n    \"],[6,\"div\"],[10,\"class\",\"ui red cancel button\"],[8],[0,\"\\n      \"],[6,\"i\"],[10,\"class\",\"cancel icon\"],[8],[9],[0,\"\\n      \"],[1,[26,\"t\",[\"forms.application.flexberry-objectlistview-modal-question-caption.cancel-button-caption\"],null],false],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"]],\"parameters\":[]},null]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/modal/delete-record-modal-dialog.hbs" } });
 });
 define("dummy/templates/modal/ember-flexberry-support-modal", ["exports"], function (exports) {
   "use strict";
@@ -27911,6 +27994,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.2.1+eb000375"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.2.1+a1076f89"});
 }
 //# sourceMappingURL=dummy.map
