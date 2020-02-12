@@ -367,7 +367,7 @@ export default Ember.Service.extend({
       let sizeWidth = dims.left + (dims.width / 2);
       let sizeHeight = dims.top + (dims.height / 2);
 
-      let perfElems = document.elementsFromPoint(sizeWidth, sizeHeight).filter((item) =&gt; item.tagName === &#x27;PERF&#x27;).without(dataElement);
+      let perfElems = Ember.A(document.elementsFromPoint(sizeWidth, sizeHeight).filter((item) =&gt; item.tagName === &#x27;PERF&#x27;)).without(dataElement);
 
       if (perfElems.length) {
         perfElem = perfElems.find((item) =&gt; item.classList.contains(&#x27;nudger&#x27;)) || perfElems[0];
@@ -431,7 +431,7 @@ export default Ember.Service.extend({
           },
           didTransition: function() {
             this._super(...arguments);
-            this._runOnTransitionEnd();
+            _this._runOnTransitionEnd();
           }
         }
       });
