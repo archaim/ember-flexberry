@@ -67002,7 +67002,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "sizeClass", ["subexpr", "@mut", [["get", "sizeClass", ["loc", [null, [3, 12], [3, 21]]]]], [], []], "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", false, "useCloseButton", false, "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [8, 16], [8, 29]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "model.modalDialogSettings", ["loc", [null, [9, 11], [9, 36]]]]], [], []]], 0, null, ["loc", [null, [1, 0], [12, 17]]]]],
+      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "sizeClass", ["subexpr", "@mut", [["get", "modalDialogSettings.sizeClass", ["loc", [null, [3, 12], [3, 41]]]]], [], []], "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", ["subexpr", "@mut", [["get", "modalDialogSettings.useOkButton", ["loc", [null, [6, 14], [6, 45]]]]], [], []], "useCloseButton", ["subexpr", "@mut", [["get", "modalDialogSettings.useCloseButton", ["loc", [null, [7, 17], [7, 51]]]]], [], []], "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [8, 16], [8, 29]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "modalDialogSettings.settings", ["loc", [null, [9, 11], [9, 39]]]]], [], []]], 0, null, ["loc", [null, [1, 0], [12, 17]]]]],
       locals: [],
       templates: [child0]
     };
@@ -71588,7 +71588,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.3.0-beta.1+b087be02"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.3.0-beta.1+c43b2164"});
 }
 
 /* jshint ignore:end */

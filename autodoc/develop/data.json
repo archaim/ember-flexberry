@@ -7645,6 +7645,17 @@
         {
             "file": "addon/components/flexberry-lookup.js",
             "line": 101,
+            "description": "Computed property for {{#crossLink \"FlexberryLookup/modalDialogSettings:property\"}}modalDialogSettings{{/crossLink}} property.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_modalDialogSettings",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-lookup.js",
+            "line": 115,
             "description": "Text to be displayed in field, if value not selected.",
             "itemtype": "property",
             "name": "placeholder",
@@ -7655,7 +7666,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 110,
+            "line": 124,
             "description": "Text on button preview value.",
             "itemtype": "property",
             "name": "previewText",
@@ -7666,7 +7677,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 119,
+            "line": 133,
             "description": "Text on button opening a modal window.",
             "itemtype": "property",
             "name": "chooseText",
@@ -7677,7 +7688,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 128,
+            "line": 142,
             "description": "Text on button clear value.\n\nTODD: Use 'flexberry-lookup.remove-button-text' from locale.",
             "itemtype": "property",
             "name": "removeText",
@@ -7688,7 +7699,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 139,
+            "line": 153,
             "description": "CSS classes for preview button.",
             "itemtype": "property",
             "name": "previewButtonClass",
@@ -7698,7 +7709,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 147,
+            "line": 161,
             "description": "CSS classes for flexberry-lookup at dropdown mode.",
             "itemtype": "property",
             "name": "dropdownClass",
@@ -7708,7 +7719,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 155,
+            "line": 169,
             "description": "CSS classes for choose button.",
             "itemtype": "property",
             "name": "chooseButtonClass",
@@ -7718,7 +7729,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 163,
+            "line": 177,
             "description": "CSS classes for remove button.",
             "itemtype": "property",
             "name": "removeButtonClass",
@@ -7728,7 +7739,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 171,
+            "line": 185,
             "description": "Projection name.",
             "itemtype": "property",
             "name": "projection",
@@ -7739,7 +7750,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 180,
+            "line": 194,
             "description": "Relation name.",
             "itemtype": "property",
             "name": "relationName",
@@ -7750,7 +7761,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 189,
+            "line": 203,
             "description": "Title for modal window.",
             "itemtype": "property",
             "name": "title",
@@ -7760,7 +7771,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 197,
+            "line": 211,
             "description": "Flag to show that lookup is in autocomplete mode.",
             "itemtype": "property",
             "name": "autocomplete",
@@ -7771,7 +7782,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 206,
+            "line": 220,
             "description": "If `true`, page switching buttons will be available in the results for autocomplete.",
             "itemtype": "property",
             "name": "usePaginationForAutocomplete",
@@ -7782,7 +7793,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 215,
+            "line": 229,
             "description": "Flag to show that lookup is in dropdown mode.",
             "itemtype": "property",
             "name": "dropdown",
@@ -7793,7 +7804,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 224,
+            "line": 238,
             "description": "Flag to show in lookup preview button.",
             "itemtype": "property",
             "name": "showPreviewButton",
@@ -7804,7 +7815,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 233,
+            "line": 247,
             "description": "The URL that will be used for viewing the selected object.",
             "itemtype": "property",
             "name": "previewFormRoute",
@@ -7815,7 +7826,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 242,
+            "line": 256,
             "description": "Projection name preview form.",
             "itemtype": "property",
             "name": "previewFormProjection",
@@ -7826,7 +7837,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 251,
+            "line": 265,
             "description": "Flag to show the selected object in separate route.",
             "itemtype": "property",
             "name": "previewOnSeparateRoute",
@@ -7837,7 +7848,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 260,
+            "line": 274,
             "description": "The controller for viewing the selected object.",
             "itemtype": "property",
             "name": "controllerForPreview",
@@ -7848,7 +7859,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 269,
+            "line": 283,
             "description": "Flag to show that lookup has search or autocomplete in dropdown mode.",
             "itemtype": "property",
             "name": "dropdownIsSearch",
@@ -7859,7 +7870,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 278,
+            "line": 292,
             "description": "Specify direction for sorting by `displayAttributeName`.\nFor `autocomplete` or `dropdown` mode only.\nPossible values: `asc` or `desc`.",
             "itemtype": "property",
             "name": "sorting",
@@ -7870,7 +7881,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 289,
+            "line": 303,
             "description": "Flag to fill value by limitPredicate.",
             "itemtype": "property",
             "name": "autofillByLimit",
@@ -7881,7 +7892,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 298,
+            "line": 312,
             "description": "Observer on 'autofillByLimit'.",
             "itemtype": "property",
             "name": "_autofillByLimitObserver",
@@ -7890,7 +7901,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 317,
+            "line": 331,
             "description": "Classes by property of autocomplete.",
             "itemtype": "property",
             "name": "autocompleteClass",
@@ -7901,7 +7912,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 330,
+            "line": 344,
             "description": "FOLV component name.",
             "itemtype": "property",
             "name": "folvComponentName",
@@ -7912,7 +7923,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 342,
+            "line": 356,
             "description": "Action's name to update model's relation value.",
             "itemtype": "property",
             "name": "updateLookupAction",
@@ -7923,7 +7934,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 351,
+            "line": 365,
             "description": "Maximum number of results to display on autocomplete or dropdown.",
             "itemtype": "property",
             "name": "maxResults",
@@ -7934,7 +7945,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 360,
+            "line": 374,
             "description": "Flag for remove autocomplete value if it's not in the results (remove when false).",
             "itemtype": "property",
             "name": "autocompletePersistValue",
@@ -7945,7 +7956,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 369,
+            "line": 383,
             "description": "Stores autocomplete value, when autocompletePersistValue=true and lookup value clearing.",
             "itemtype": "property",
             "name": "autocompletePersistValueCache",
@@ -7956,7 +7967,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 378,
+            "line": 392,
             "description": "Limit function on lookup.\nIt should not be just a string, it has to be predicate function (otherwise an exception will be thrown).",
             "itemtype": "property",
             "name": "lookupLimitPredicate",
@@ -7967,7 +7978,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 388,
+            "line": 402,
             "description": "Function of limit function for lookup in GroupEdit.\nIt should not be function return BasePredicate.",
             "example": [
                 "\n  ```javascript\n    lookupAdditionalLimitFunction = function (relationModel) {\n    return new StringPredicate('LookUpField').contains(relationModel.get('GroupEditField'));\n  };\n  ```"
@@ -7981,7 +7992,29 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 405,
+            "line": 419,
+            "description": "An object with options and settings for the modal dialog of the component.\n\nThe following options and settings are available:\n  - {{#crossLink \"ModalDialog/sizeClass:property\"}}`sizeClass`{{/crossLink}}, not set by default.\n  - {{#crossLink \"ModalDialog/useOkButton:property\"}}`useOkButton`{{/crossLink}}, default `false`.\n  - {{#crossLink \"ModalDialog/useCloseButton:property\"}}`useCloseButton`{{/crossLink}}, default `false`.\n  - {{#crossLink \"ModalDialog/settings:property\"}}`settings`{{/crossLink}}, not set by default.",
+            "itemtype": "property",
+            "name": "modalDialogSettings",
+            "type": "Object",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-lookup.js",
+            "line": 433,
+            "description": "Sets the {{#crossLink \"ModalDialog/sizeClass:property\"}}`sizeClass`{{/crossLink}} property for the modal dialog of the component.",
+            "itemtype": "property",
+            "name": "sizeClass",
+            "type": "String",
+            "deprecated": true,
+            "deprecationMessage": "Use `modalDialogSettings.sizeClass`.",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-lookup.js",
+            "line": 445,
             "description": "This computed property forms a set of properties to send to lookup window.\nClosure action `lookupWindowCustomProperties` is called here if defined,\notherwise `undefined` is returned.",
             "example": [
                 "\n  ```javascript\n  // app/controllers/post.js\n  import EditFormController from './edit-form';\n  export default EditFormController.extend({\n    actions: {\n      lookupWindowCustomProperties({ relationName, projection }) {\n        if (relationName === 'author' && projection === 'UserL') {\n          return {\n            filterButton: true,\n            filterByAnyWord: true,\n            enableFilters: true,\n            refreshButton: true,\n            perPage: 25,\n          };\n        }\n      },\n    },\n  });\n  ```\n\n  ```handlebars\n  <!-- app/templates/post.hbs -->\n  {{flexberry-lookup\n    componentName=\"AuthorLookup\"\n    choose=\"showLookupDialog\"\n    remove=\"removeLookupValue\"\n    value=model.author\n    projection=\"UserL\"\n    relationName=\"author\"\n    displayAttributeName=\"name\"\n    title=\"Author\"\n    placeholder=\"Not select\"\n    chooseText=\"Select\"\n    removeText=\"Clear\"\n    lookupWindowCustomProperties=(action \"getLookupFolvProperties\")\n  }}\n  ```"
@@ -7996,7 +8029,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 472,
+            "line": 512,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -8007,7 +8040,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 505,
+            "line": 544,
             "description": "Object with lookup properties to send on remove action.",
             "itemtype": "property",
             "name": "removeData",
@@ -8018,7 +8051,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 519,
+            "line": 558,
             "description": "Current store. Used for loading data for autocomplete and for dropdown.",
             "itemtype": "property",
             "name": "store",
@@ -8029,7 +8062,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 528,
+            "line": 567,
             "description": "The user settings service.",
             "itemtype": "property",
             "name": "userSettings",
@@ -8039,7 +8072,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 536,
+            "line": 575,
             "description": "Name of the attribute of the model to display for the user.\nIs required for autocomplete and dropdown modes.",
             "itemtype": "property",
             "name": "displayAttributeName",
@@ -8050,7 +8083,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 546,
+            "line": 585,
             "description": "Type of the attribute of the model to display for the user.",
             "itemtype": "property",
             "name": "displayAttributeType",
@@ -8060,7 +8093,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 559,
+            "line": 598,
             "description": "Name of the attribute of the model to display for the user\nfor hidden attribute by master.\nIs required for autocomplete and dropdown modes.",
             "itemtype": "property",
             "name": "autocompleteOrder",
@@ -8071,7 +8104,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 570,
+            "line": 609,
             "description": "Projection name for autocomplete query.",
             "itemtype": "property",
             "name": "autocompleteProjection",
@@ -8082,7 +8115,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 579,
+            "line": 618,
             "description": "Current selected instance of the model.",
             "itemtype": "property",
             "name": "value",
@@ -8092,7 +8125,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 587,
+            "line": 626,
             "description": "Flag indicating whether a modal dialog is open.",
             "itemtype": "property",
             "name": "modalIsShow",
@@ -8103,7 +8136,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 596,
+            "line": 635,
             "description": "Flag indicating whether a modal dialog starts to show.\nNeeds for add loading indicator for choose button.",
             "itemtype": "property",
             "name": "modalIsStartToShow",
@@ -8114,7 +8147,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 606,
+            "line": 645,
             "description": "Flag: indicates whether a modal dialog will be shown soon.",
             "itemtype": "property",
             "name": "modalIsBeforeToShow",
@@ -8125,7 +8158,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 615,
+            "line": 654,
             "description": "Service that triggers lookup events.",
             "itemtype": "property",
             "name": "lookupEventsService",
@@ -8135,7 +8168,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 623,
+            "line": 662,
             "description": "Text that displayed for the user as representation of currently selected value.\nThis property is binded to the view and can be changed by user (it won't be applied to model automatically).",
             "itemtype": "property",
             "name": "displayValue",
@@ -8145,7 +8178,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 632,
+            "line": 671,
             "description": "Standard CSS class names to apply to the view's outer element.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#property_classNames).",
             "itemtype": "property",
             "name": "classNames",
@@ -8156,7 +8189,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 642,
+            "line": 681,
             "description": "A list of properties of the view to apply as class names.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#property_classNameBindings).",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -8167,7 +8200,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 652,
+            "line": 691,
             "description": "Flag: indicates whether component is active or not.\nUsed to highlight component before data loading operation will be started.",
             "itemtype": "property",
             "name": "isActive",
@@ -8178,7 +8211,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 662,
+            "line": 701,
             "description": "Flag: indicates whether component is in blocked state now.",
             "itemtype": "property",
             "name": "isBlocked",
@@ -8189,7 +8222,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 673,
+            "line": 712,
             "description": "Used to identify lookup on the page.",
             "itemtype": "property",
             "name": "componentName",
@@ -8199,14 +8232,14 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 681,
+            "line": 720,
             "description": "Semantic-ui settings for dropdown.\nFor more information see [semantic-ui](http://semantic-ui.com/modules/dropdown.html#/settings)",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 705,
+            "line": 744,
             "description": "Open window for select value.",
             "itemtype": "method",
             "name": "actions.choose",
@@ -8222,7 +8255,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 742,
+            "line": 781,
             "description": "Clear current value.",
             "itemtype": "method",
             "name": "actions.remove",
@@ -8238,7 +8271,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 761,
+            "line": 800,
             "description": "Show window for select value.",
             "itemtype": "method",
             "name": "actions.preview",
@@ -8247,28 +8280,28 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 802,
+            "line": 842,
             "description": "An overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 823,
+            "line": 863,
             "description": "Observe lookup value changes.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 828,
+            "line": 868,
             "description": "Observe lookup autocomplete max results changes.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 837,
+            "line": 877,
             "description": "It seems to me a mistake here, it should be [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement).\n# WRANING!",
             "itemtype": "method",
             "name": "didDestroyElement",
@@ -8277,7 +8310,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 848,
+            "line": 888,
             "description": "Called when the element of the view has been inserted into the DOM or after the view was re-rendered.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_didInsertElement).",
             "itemtype": "method",
             "name": "didInsertElement",
@@ -8286,7 +8319,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 859,
+            "line": 899,
             "description": "Called after a component has been rendered, both on initial render and in subsequent rerenders.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_didRender).",
             "itemtype": "method",
             "name": "didRender",
@@ -8295,14 +8328,14 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 887,
+            "line": 927,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 904,
+            "line": 944,
             "description": "Additional observer of value and `relatedModel.relationName` change, updates `displayValue`.",
             "itemtype": "method",
             "name": "_valueObserver",
@@ -8313,7 +8346,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 914,
+            "line": 954,
             "description": "Set the value for the property `modalIsStartToShow`.",
             "itemtype": "method",
             "name": "_setModalIsStartToShow",
@@ -8324,7 +8357,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 927,
+            "line": 967,
             "description": "Set the value for the property `modalIsShow` & `modalIsStartToShow`.",
             "itemtype": "method",
             "name": "_setModalIsVisible",
@@ -8335,7 +8368,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 941,
+            "line": 981,
             "description": "Set the value for the property `modalIsShow`.",
             "itemtype": "method",
             "name": "_setModalIsHidden",
@@ -8346,7 +8379,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 955,
+            "line": 995,
             "description": "Initialize component with autocomplete mode.",
             "itemtype": "method",
             "name": "_onAutocomplete",
@@ -8357,7 +8390,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1018,
+            "line": 1058,
             "description": "Mocks call to the data source,\nUses query language and store for loading data explicitly.",
             "params": [
                 {
@@ -8376,14 +8409,14 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1068,
+            "line": 1108,
             "description": "Handles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1080,
+            "line": 1120,
             "description": "Handles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
             "params": [
                 {
@@ -8397,14 +8430,14 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1123,
+            "line": 1163,
             "description": "Handles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1181,
+            "line": 1221,
             "description": "Initialize component with dropdown mode.",
             "itemtype": "method",
             "name": "_onDropdown",
@@ -8415,7 +8448,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1289,
+            "line": 1329,
             "description": "Build predicate with settingsUrlDataQuery.",
             "itemtype": "method",
             "name": "_getAutocomplitePredicate",
@@ -8437,7 +8470,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1313,
+            "line": 1353,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "_buildDisplayValue",
@@ -8452,7 +8485,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1340,
+            "line": 1380,
             "description": "Creates an instance of the Builder class with selection and sorting specified in the component parameters.",
             "itemtype": "method",
             "name": "_createQueryBuilder",
@@ -8487,7 +8520,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1367,
+            "line": 1407,
             "description": "Concatenates predicates.",
             "itemtype": "method",
             "name": "_conjuctPredicates",
@@ -8521,7 +8554,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1418,
+            "line": 1458,
             "description": "Handles changing current locale.\nIt reinits autocomplete or dropdown mode (depending on flag) in order to localize messages.",
             "itemtype": "method",
             "name": "_languageReinit",
@@ -8532,7 +8565,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1433,
+            "line": 1473,
             "description": "Function for autofillByLimit observer.",
             "itemtype": "method",
             "name": "_autofillByLimitObserverFunction",
@@ -8543,7 +8576,7 @@
         },
         {
             "file": "addon/components/flexberry-lookup.js",
-            "line": 1443,
+            "line": 1483,
             "description": "Handles changing properties affecting the sample.",
             "itemtype": "method",
             "name": "_onAutofillByLimit",
@@ -20027,7 +20060,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 221,
+            "line": 219,
             "description": "Handlers corresponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "actions.routeWillTransition",
@@ -20036,7 +20069,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 231,
+            "line": 229,
             "description": "Handlers action from FlexberryLookup remove action.",
             "itemtype": "method",
             "name": "actions.removeLookupValue",
@@ -20052,7 +20085,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 252,
+            "line": 250,
             "description": "Handlers action from FlexberryLookup preview action.",
             "itemtype": "method",
             "name": "actions.previewLookupValue",
@@ -20068,7 +20101,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 328,
+            "line": 327,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "actions.updateLookupValue",
@@ -20084,7 +20117,7 @@
         },
         {
             "file": "addon/mixins/flexberry-lookup-controller.js",
-            "line": 351,
+            "line": 350,
             "description": "This method refreshes displayed data on lookup modal window.\n\nIt reloads current lookup modal window in order to show loading image.\nThen proper request to load data is formed (it considers current page, filter, etc).\nAfter the data loading data are displayed on lookup modal window.\n\nThis method is called during the first data loading\nand after each change of request parameters (current page, filter, etc) on lookup modal window controller\n(it is implemented by sending handler on this method to lookup modal window controller).",
             "itemtype": "method",
             "name": "_reloadModalData",
@@ -20152,12 +20185,6 @@
                         {
                             "name": "title",
                             "description": "Title of modal lookup window.",
-                            "type": "String",
-                            "optional": true
-                        },
-                        {
-                            "name": "sizeClass",
-                            "description": "Size of modal lookup window.",
                             "type": "String",
                             "optional": true
                         },
@@ -26064,11 +26091,11 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/flexberry-lookup.js:1289"
+            "line": " addon/components/flexberry-lookup.js:1329"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/flexberry-lookup.js:1313"
+            "line": " addon/components/flexberry-lookup.js:1353"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -26232,39 +26259,39 @@
         },
         {
             "message": "Missing item type\nSemantic-ui settings for dropdown.\nFor more information see [semantic-ui](http://semantic-ui.com/modules/dropdown.html#/settings)",
-            "line": " addon/components/flexberry-lookup.js:681"
+            "line": " addon/components/flexberry-lookup.js:720"
         },
         {
             "message": "Missing item type\nAn overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
-            "line": " addon/components/flexberry-lookup.js:802"
+            "line": " addon/components/flexberry-lookup.js:842"
         },
         {
             "message": "Missing item type\nObserve lookup value changes.",
-            "line": " addon/components/flexberry-lookup.js:823"
+            "line": " addon/components/flexberry-lookup.js:863"
         },
         {
             "message": "Missing item type\nObserve lookup autocomplete max results changes.",
-            "line": " addon/components/flexberry-lookup.js:828"
+            "line": " addon/components/flexberry-lookup.js:868"
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " addon/components/flexberry-lookup.js:887"
+            "line": " addon/components/flexberry-lookup.js:927"
         },
         {
             "message": "Missing item type\nMocks call to the data source,\nUses query language and store for loading data explicitly.",
-            "line": " addon/components/flexberry-lookup.js:1018"
+            "line": " addon/components/flexberry-lookup.js:1058"
         },
         {
             "message": "Missing item type\nHandles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
-            "line": " addon/components/flexberry-lookup.js:1068"
+            "line": " addon/components/flexberry-lookup.js:1108"
         },
         {
             "message": "Missing item type\nHandles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
-            "line": " addon/components/flexberry-lookup.js:1080"
+            "line": " addon/components/flexberry-lookup.js:1120"
         },
         {
             "message": "Missing item type\nHandles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
-            "line": " addon/components/flexberry-lookup.js:1123"
+            "line": " addon/components/flexberry-lookup.js:1163"
         },
         {
             "message": "Missing item type\nInitializes component.",
