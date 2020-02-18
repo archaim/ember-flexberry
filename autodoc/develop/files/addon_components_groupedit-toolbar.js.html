@@ -473,7 +473,7 @@ export default FlexberryBaseComponent.extend({
     @param {Object} recordWithKey The model wrapper with additional key corresponding to selected row
   */
   _rowSelected(componentName, record, count, checked, recordWithKey) {
-    if (componentName === this.get(&#x27;componentName&#x27;)) {
+    if (componentName === this.get(&#x27;componentName&#x27;) &amp;&amp; !this.get(&#x27;isDestroying&#x27;)) {
       this.set(&#x27;_hasSelectedRows&#x27;, count &gt; 0);
 
       const $tbody = this.$().parent().find(&#x27;tbody&#x27;);
