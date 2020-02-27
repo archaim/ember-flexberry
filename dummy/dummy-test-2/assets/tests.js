@@ -5443,10 +5443,8 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-detail-delet
       var $validationFlexberryOLVDeleteButton = _ember['default'].$(_ember['default'].$('.ui.disabled.button')[1]);
 
       // Delete detail.
-      _ember['default'].run(function () {
-        $validationFlexberryCheckbox.click();
-        $validationFlexberryOLVDeleteButton.click();
-      });
+      _ember['default'].run($validationFlexberryCheckbox, $validationFlexberryCheckbox.click);
+      _ember['default'].run($validationFlexberryOLVDeleteButton, $validationFlexberryOLVDeleteButton.click);
 
       // Сounting the number of validationmessage = 8 afther detail delete.
       $validationLablesContainer = _ember['default'].$('.ember-view.ui.basic.label');

@@ -4506,6 +4506,14 @@ define('dummy/controllers/components-examples/flexberry-groupedit/settings-examp
     defaultSortingButton: true,
 
     /**
+      Flag indicates whether to fix the table head (if `true`) or not (if `false`).
+       @property fixedHeader
+      @type Boolean
+      @default true
+    */
+    fixedHeader: false,
+
+    /**
       Flag for 'flexberry-groupedit' component 'allowColumnResize' property.
        @property allowColumnResize
       @type Boolean
@@ -4573,7 +4581,7 @@ define('dummy/controllers/components-examples/flexberry-groupedit/settings-examp
        @property componentTemplateText
       @type String
      */
-    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-groupedit<br>' + '  componentName=\"aggregatorDetailsGroupedit\"<br>' + '  content=model.details<br>' + '  modelProjection=detailsProjection<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  tableStriped=tableStriped<br>' + '  createNewButton=createNewButton<br>' + '  deleteButton=deleteButton<br>' + '  defaultSortingButton=defaultSortingButton<br>' + '  allowColumnResize=allowColumnResize<br>' + '  showAsteriskInRow=showAsteriskInRow<br>' + '  showCheckBoxInRow=showCheckBoxInRow<br>' + '  showDeleteButtonInRow=showDeleteButtonInRow<br>' + '  showEditMenuItemInRow=showEditMenuItemInRow<br>' + '  showDeleteMenuItemInRow=showDeleteMenuItemInRow<br>' + '  singleColumnHeaderTitle=singleColumnHeaderTitle<br>' + '  rowClickable=rowClickable<br>' + '  immediateDelete=immediateDelete<br>' + '  defaultSettingsButton=defaultSettingsButton<br>' + '}}'),
+    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-groupedit<br>' + '  componentName=\"aggregatorDetailsGroupedit\"<br>' + '  content=model.details<br>' + '  modelProjection=detailsProjection<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  tableStriped=tableStriped<br>' + '  createNewButton=createNewButton<br>' + '  deleteButton=deleteButton<br>' + '  defaultSortingButton=defaultSortingButton<br>' + '  allowColumnResize=allowColumnResize<br>' + '  showAsteriskInRow=showAsteriskInRow<br>' + '  showCheckBoxInRow=showCheckBoxInRow<br>' + '  showDeleteButtonInRow=showDeleteButtonInRow<br>' + '  showEditMenuItemInRow=showEditMenuItemInRow<br>' + '  showDeleteMenuItemInRow=showDeleteMenuItemInRow<br>' + '  singleColumnHeaderTitle=singleColumnHeaderTitle<br>' + '  rowClickable=rowClickable<br>' + '  immediateDelete=immediateDelete<br>' + '  defaultSettingsButton=defaultSettingsButton<br>' + '  fixedHeader=fixedHeader<br>' + '}}'),
 
     /**
       Component settings metadata.
@@ -4701,6 +4709,12 @@ define('dummy/controllers/components-examples/flexberry-groupedit/settings-examp
         settingType: 'boolean',
         settingDefaultValue: false,
         bindedControllerPropertieName: 'defaultSettingsButton'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'fixedHeader',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'fixedHeader'
       });
 
       return componentSettingsMetadata;
@@ -5312,6 +5326,14 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
     dropdown: false,
 
     /**
+      Flag indicates whether 'flexberry-lookup' component  in 'dropdown' mode is search.
+       @property dropdownIsSearch
+      @type Boolean
+      @default false
+    */
+    dropdownIsSearch: false,
+
+    /**
       Content for 'flexberry-lookup' component 'chooseText' property.
        @property chooseText
       @type String
@@ -5352,11 +5374,43 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
     removeButtonClass: '',
 
     /**
+      Flag to show in lookup preview button.
+       @property showPreviewButton
+      @type Boolean
+      @default false
+    */
+    showPreviewButton: false,
+
+    /**
+      Flag to show the selected object in separate route.
+       @property previewOnSeparateRoute
+      @type Boolean
+      @default false
+    */
+    previewOnSeparateRoute: false,
+
+    /**
+      If `true`, page switching buttons will be available in the results for autocomplete.
+       @property usePaginationForAutocomplete
+      @type Boolean
+      @default false
+    */
+    usePaginationForAutocomplete: false,
+
+    /**
+      Max number of the results for autocomplete.
+       @property maxResults
+      @type Integer
+      @default 10
+    */
+    maxResults: 10,
+
+    /**
       Template text for 'flexberry-lookup' component.
        @property componentTemplateText
       @type String
     */
-    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-lookup<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  value=model.type<br>' + '  projection="SettingLookupExampleView"<br>' + '  displayAttributeName="name"<br>' + '  title="Master"<br>' + '  relatedModel=model<br>' + '  relationName="type"<br>' + '  choose="showLookupDialog"<br>' + '  remove="removeLookupValue"<br>' + '  autocomplete=autocomplete<br>' + '  autocompletePersistValue=autocompletePersistValue<br>' + '  displayValue=model.lookupDisplayValue<br>' + '  dropdown=dropdown<br>' + '  chooseText=chooseText<br>' + '  removeText=removeText<br>' + '  chooseButtonClass=chooseButtonClass<br>' + '  removeButtonClass=removeButtonClass<br>' + '}}'),
+    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-lookup<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  value=model.type<br>' + '  projection="SettingLookupExampleView"<br>' + '  displayAttributeName="name"<br>' + '  title="Master"<br>' + '  relatedModel=model<br>' + '  relationName="type"<br>' + '  choose="showLookupDialog"<br>' + '  remove="removeLookupValue"<br>' + '  autocomplete=autocomplete<br>' + '  autocompletePersistValue=autocompletePersistValue<br>' + '  usePaginationForAutocomplete=usePaginationForAutocomplete<br>' + '  maxResults=maxResults<br>' + '  displayValue=model.lookupDisplayValue<br>' + '  dropdown=dropdown<br>' + '  dropdownIsSearch=dropdownIsSearch<br>' + '  chooseText=chooseText<br>' + '  removeText=removeText<br>' + '  chooseButtonClass=chooseButtonClass<br>' + '  removeButtonClass=removeButtonClass<br>' + '  showPreviewButton=showPreviewButton<br>' + '  previewOnSeparateRoute=previewOnSeparateRoute<br>' + '  previewFormRoute="ember-flexberry-dummy-suggestion-type-edit"<br>' + '}}'),
 
     /**
       Component settings metadata.
@@ -5396,10 +5450,28 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
         bindedControllerPropertieName: 'autocompletePersistValue'
       });
       componentSettingsMetadata.pushObject({
+        settingName: 'usePaginationForAutocomplete',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'usePaginationForAutocomplete'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'maxResults',
+        settingType: 'number',
+        settingDefaultValue: 10,
+        bindedControllerPropertieName: 'maxResults'
+      });
+      componentSettingsMetadata.pushObject({
         settingName: 'dropdown',
         settingType: 'boolean',
         settingDefaultValue: false,
         bindedControllerPropertieName: 'dropdown'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'dropdownIsSearch',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'dropdownIsSearch'
       });
       componentSettingsMetadata.pushObject({
         settingName: 'chooseText',
@@ -5434,7 +5506,18 @@ define('dummy/controllers/components-examples/flexberry-lookup/settings-example'
         settingAvailableItems: ['blue'],
         bindedControllerPropertieName: 'dropdownClass'
       });
-
+      componentSettingsMetadata.pushObject({
+        settingName: 'showPreviewButton',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'showPreviewButton'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'previewOnSeparateRoute',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'previewOnSeparateRoute'
+      });
       return componentSettingsMetadata;
     })
   });
@@ -9761,6 +9844,15 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-edit', ['exports', 'e
       @default 'ember-flexberry-dummy-comment-edit'
      */
     commentsEditRoute: 'ember-flexberry-dummy-comment-edit',
+
+    actions: {
+
+      getLookupFolvProperties: function getLookupFolvProperties() {
+        return {
+          colsConfigButton: true
+        };
+      }
+    },
 
     /**
       Method to get type and attributes of a component,
@@ -25149,7 +25241,7 @@ define("dummy/templates/colsconfig-dialog", ["exports"], function (exports) {
               "column": 0
             },
             "end": {
-              "line": 10,
+              "line": 11,
               "column": 0
             }
           },
@@ -25174,7 +25266,7 @@ define("dummy/templates/colsconfig-dialog", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "outlet", ["modal-content"], [], ["loc", [null, [9, 2], [9, 28]]]]],
+        statements: [["inline", "outlet", ["modal-content"], [], ["loc", [null, [10, 2], [10, 28]]]]],
         locals: [],
         templates: []
       };
@@ -25193,7 +25285,7 @@ define("dummy/templates/colsconfig-dialog", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 11,
+            "line": 12,
             "column": 0
           }
         },
@@ -25216,7 +25308,7 @@ define("dummy/templates/colsconfig-dialog", ["exports"], function (exports) {
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "if", [["get", "model.exportParams.isExportExcel", ["loc", [null, [2, 12], [2, 44]]]], ["subexpr", "t", ["components.colsconfig-dialog-content.export-modal-dialog-title"], [], ["loc", [null, [2, 45], [2, 113]]]], ["subexpr", "t", ["components.colsconfig-dialog-content.title"], [], ["loc", [null, [2, 114], [2, 162]]]]], [], ["loc", [null, [2, 8], [2, 163]]]], "sizeClass", "small", "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", false, "useCloseButton", false], 0, null, ["loc", [null, [1, 0], [10, 17]]]]],
+      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "if", [["get", "model.exportParams.isExportExcel", ["loc", [null, [2, 12], [2, 44]]]], ["subexpr", "t", ["components.colsconfig-dialog-content.export-modal-dialog-title"], [], ["loc", [null, [2, 45], [2, 113]]]], ["subexpr", "t", ["components.colsconfig-dialog-content.title"], [], ["loc", [null, [2, 114], [2, 162]]]]], [], ["loc", [null, [2, 8], [2, 163]]]], "sizeClass", "small", "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", false, "useCloseButton", false, "componentName", ["subexpr", "@mut", [["get", "model.componentName", ["loc", [null, [8, 16], [8, 35]]]]], [], []]], 0, null, ["loc", [null, [1, 0], [11, 17]]]]],
       locals: [],
       templates: [child0]
     };
@@ -30295,7 +30387,7 @@ define("dummy/templates/components-examples/flexberry-groupedit/settings-example
               "column": 4
             },
             "end": {
-              "line": 32,
+              "line": 33,
               "column": 4
             }
           },
@@ -30320,7 +30412,7 @@ define("dummy/templates/components-examples/flexberry-groupedit/settings-example
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-groupedit", [], ["componentName", "aggregatorDetailsGroupedit", "content", ["subexpr", "@mut", [["get", "model.details", ["loc", [null, [11, 16], [11, 29]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "detailsProjection", ["loc", [null, [12, 24], [12, 41]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [13, 20], [13, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [14, 17], [14, 25]]]]], [], []], "tableStriped", ["subexpr", "@mut", [["get", "tableStriped", ["loc", [null, [15, 21], [15, 33]]]]], [], []], "createNewButton", ["subexpr", "@mut", [["get", "createNewButton", ["loc", [null, [16, 24], [16, 39]]]]], [], []], "deleteButton", ["subexpr", "@mut", [["get", "deleteButton", ["loc", [null, [17, 21], [17, 33]]]]], [], []], "defaultSortingButton", ["subexpr", "@mut", [["get", "defaultSortingButton", ["loc", [null, [18, 29], [18, 49]]]]], [], []], "allowColumnResize", ["subexpr", "@mut", [["get", "allowColumnResize", ["loc", [null, [19, 26], [19, 43]]]]], [], []], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [20, 26], [20, 43]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [21, 26], [21, 43]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [22, 30], [22, 51]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [23, 30], [23, 51]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [24, 32], [24, 55]]]]], [], []], "useSingleColumn", ["subexpr", "@mut", [["get", "useSingleColumn", ["loc", [null, [25, 24], [25, 39]]]]], [], []], "singleColumnHeaderTitle", ["subexpr", "@mut", [["get", "singleColumnHeaderTitle", ["loc", [null, [26, 32], [26, 55]]]]], [], []], "rowClickable", ["subexpr", "@mut", [["get", "rowClickable", ["loc", [null, [27, 21], [27, 33]]]]], [], []], "immediateDelete", ["subexpr", "@mut", [["get", "immediateDelete", ["loc", [null, [28, 24], [28, 39]]]]], [], []], "orderable", true, "defaultSettingsButton", ["subexpr", "@mut", [["get", "defaultSettingsButton", ["loc", [null, [30, 30], [30, 51]]]]], [], []]], ["loc", [null, [9, 6], [31, 8]]]]],
+        statements: [["inline", "flexberry-groupedit", [], ["componentName", "aggregatorDetailsGroupedit", "content", ["subexpr", "@mut", [["get", "model.details", ["loc", [null, [11, 16], [11, 29]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "detailsProjection", ["loc", [null, [12, 24], [12, 41]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [13, 20], [13, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [14, 17], [14, 25]]]]], [], []], "tableStriped", ["subexpr", "@mut", [["get", "tableStriped", ["loc", [null, [15, 21], [15, 33]]]]], [], []], "createNewButton", ["subexpr", "@mut", [["get", "createNewButton", ["loc", [null, [16, 24], [16, 39]]]]], [], []], "deleteButton", ["subexpr", "@mut", [["get", "deleteButton", ["loc", [null, [17, 21], [17, 33]]]]], [], []], "defaultSortingButton", ["subexpr", "@mut", [["get", "defaultSortingButton", ["loc", [null, [18, 29], [18, 49]]]]], [], []], "allowColumnResize", ["subexpr", "@mut", [["get", "allowColumnResize", ["loc", [null, [19, 26], [19, 43]]]]], [], []], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [20, 26], [20, 43]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [21, 26], [21, 43]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [22, 30], [22, 51]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [23, 30], [23, 51]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [24, 32], [24, 55]]]]], [], []], "useSingleColumn", ["subexpr", "@mut", [["get", "useSingleColumn", ["loc", [null, [25, 24], [25, 39]]]]], [], []], "singleColumnHeaderTitle", ["subexpr", "@mut", [["get", "singleColumnHeaderTitle", ["loc", [null, [26, 32], [26, 55]]]]], [], []], "rowClickable", ["subexpr", "@mut", [["get", "rowClickable", ["loc", [null, [27, 21], [27, 33]]]]], [], []], "immediateDelete", ["subexpr", "@mut", [["get", "immediateDelete", ["loc", [null, [28, 24], [28, 39]]]]], [], []], "orderable", true, "defaultSettingsButton", ["subexpr", "@mut", [["get", "defaultSettingsButton", ["loc", [null, [30, 30], [30, 51]]]]], [], []], "fixedHeader", ["subexpr", "@mut", [["get", "fixedHeader", ["loc", [null, [31, 20], [31, 31]]]]], [], []]], ["loc", [null, [9, 6], [32, 8]]]]],
         locals: [],
         templates: []
       };
@@ -30339,7 +30431,7 @@ define("dummy/templates/components-examples/flexberry-groupedit/settings-example
             "column": 0
           },
           "end": {
-            "line": 35,
+            "line": 36,
             "column": 0
           }
         },
@@ -30385,7 +30477,7 @@ define("dummy/templates/components-examples/flexberry-groupedit/settings-example
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-groupedit.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 100]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [32, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-groupedit.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 100]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []]], 0, null, ["loc", [null, [4, 4], [33, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -31996,7 +32088,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
               "column": 4
             },
             "end": {
-              "line": 32,
+              "line": 39,
               "column": 4
             }
           },
@@ -32021,7 +32113,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-lookup", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 20], [11, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 17], [12, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [13, 14], [13, 24]]]]], [], []], "projection", "SettingLookupExampleView", "displayAttributeName", "name", "title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [16, 14], [16, 19]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [17, 21], [17, 26]]]]], [], []], "relationName", "type", "choose", "showLookupDialog", "remove", "removeLookupValue", "autocomplete", ["subexpr", "@mut", [["get", "autocomplete", ["loc", [null, [21, 21], [21, 33]]]]], [], []], "autocompletePersistValue", ["subexpr", "@mut", [["get", "autocompletePersistValue", ["loc", [null, [22, 33], [22, 57]]]]], [], []], "displayValue", ["subexpr", "@mut", [["get", "model.lookupDisplayValue", ["loc", [null, [23, 21], [23, 45]]]]], [], []], "dropdown", ["subexpr", "@mut", [["get", "dropdown", ["loc", [null, [24, 17], [24, 25]]]]], [], []], "chooseText", ["subexpr", "@mut", [["get", "chooseText", ["loc", [null, [25, 19], [25, 29]]]]], [], []], "removeText", ["subexpr", "@mut", [["get", "removeText", ["loc", [null, [26, 19], [26, 29]]]]], [], []], "dropdownClass", ["subexpr", "@mut", [["get", "dropdownClass", ["loc", [null, [27, 22], [27, 35]]]]], [], []], "chooseButtonClass", ["subexpr", "@mut", [["get", "chooseButtonClass", ["loc", [null, [28, 26], [28, 43]]]]], [], []], "removeButtonClass", ["subexpr", "@mut", [["get", "removeButtonClass", ["loc", [null, [29, 26], [29, 43]]]]], [], []], "multiselect", true], ["loc", [null, [10, 6], [31, 8]]]]],
+        statements: [["inline", "flexberry-lookup", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 20], [11, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 17], [12, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [13, 14], [13, 24]]]]], [], []], "projection", "SettingLookupExampleView", "displayAttributeName", "name", "title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [16, 14], [16, 19]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [17, 21], [17, 26]]]]], [], []], "relationName", "type", "choose", "showLookupDialog", "remove", "removeLookupValue", "autocomplete", ["subexpr", "@mut", [["get", "autocomplete", ["loc", [null, [21, 21], [21, 33]]]]], [], []], "autocompletePersistValue", ["subexpr", "@mut", [["get", "autocompletePersistValue", ["loc", [null, [22, 33], [22, 57]]]]], [], []], "usePaginationForAutocomplete", ["subexpr", "@mut", [["get", "usePaginationForAutocomplete", ["loc", [null, [23, 37], [23, 65]]]]], [], []], "maxResults", ["subexpr", "@mut", [["get", "maxResults", ["loc", [null, [24, 19], [24, 29]]]]], [], []], "displayValue", ["subexpr", "@mut", [["get", "model.lookupDisplayValue", ["loc", [null, [25, 21], [25, 45]]]]], [], []], "dropdown", ["subexpr", "@mut", [["get", "dropdown", ["loc", [null, [26, 17], [26, 25]]]]], [], []], "dropdownIsSearch", ["subexpr", "@mut", [["get", "dropdownIsSearch", ["loc", [null, [27, 25], [27, 41]]]]], [], []], "chooseText", ["subexpr", "@mut", [["get", "chooseText", ["loc", [null, [28, 19], [28, 29]]]]], [], []], "removeText", ["subexpr", "@mut", [["get", "removeText", ["loc", [null, [29, 19], [29, 29]]]]], [], []], "dropdownClass", ["subexpr", "@mut", [["get", "dropdownClass", ["loc", [null, [30, 22], [30, 35]]]]], [], []], "chooseButtonClass", ["subexpr", "@mut", [["get", "chooseButtonClass", ["loc", [null, [31, 26], [31, 43]]]]], [], []], "removeButtonClass", ["subexpr", "@mut", [["get", "removeButtonClass", ["loc", [null, [32, 26], [32, 43]]]]], [], []], "multiselect", true, "showPreviewButton", ["subexpr", "@mut", [["get", "showPreviewButton", ["loc", [null, [34, 26], [34, 43]]]]], [], []], "previewOnSeparateRoute", ["subexpr", "@mut", [["get", "previewOnSeparateRoute", ["loc", [null, [35, 31], [35, 53]]]]], [], []], "previewFormRoute", "ember-flexberry-dummy-suggestion-type-edit", "preview", ["subexpr", "action", ["previewLookupValue"], [], ["loc", [null, [37, 16], [37, 45]]]]], ["loc", [null, [10, 6], [38, 8]]]]],
         locals: [],
         templates: []
       };
@@ -32040,7 +32132,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
             "column": 0
           },
           "end": {
-            "line": 35,
+            "line": 42,
             "column": 0
           }
         },
@@ -32086,7 +32178,7 @@ define("dummy/templates/components-examples/flexberry-lookup/settings-example", 
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 97]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [32, 25]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 97]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [5, 27], [5, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [6, 32], [6, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [7, 28], [7, 49]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [4, 4], [39, 25]]]]],
       locals: [],
       templates: [child0]
     };
@@ -46761,7 +46853,7 @@ define("dummy/templates/components/flexberry-groupedit", ["exports"], function (
             "column": 0
           },
           "end": {
-            "line": 59,
+            "line": 60,
             "column": 0
           }
         },
@@ -46790,7 +46882,7 @@ define("dummy/templates/components/flexberry-groupedit", ["exports"], function (
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["inline", "groupedit-toolbar", [], ["componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [2, 16], [2, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [3, 11], [3, 19]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [4, 14], [4, 25]]]]], [], []], "createNewButton", ["subexpr", "@mut", [["get", "createNewButton", ["loc", [null, [5, 18], [5, 33]]]]], [], []], "deleteButton", ["subexpr", "@mut", [["get", "deleteButton", ["loc", [null, [6, 15], [6, 27]]]]], [], []], "defaultSettingsButton", ["subexpr", "@mut", [["get", "defaultSettingsButton", ["loc", [null, [7, 24], [7, 45]]]]], [], []], "confirmDeleteRows", ["subexpr", "@mut", [["get", "confirmDeleteRows", ["loc", [null, [8, 20], [8, 37]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "sorting", ["loc", [null, [9, 10], [9, 17]]]]], [], []], "customButtonAction", "customButtonAction", "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [11, 16], [11, 29]]]]], [], []], "orderedProperty", ["subexpr", "@mut", [["get", "orderedProperty", ["loc", [null, [12, 18], [12, 33]]]]], [], []]], ["loc", [null, [1, 0], [13, 2]]]], ["inline", "object-list-view", [], ["class", "groupedit-container", "orderedProperty", ["subexpr", "@mut", [["get", "orderedProperty", ["loc", [null, [16, 18], [16, 33]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [17, 14], [17, 25]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [18, 11], [18, 19]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [19, 14], [19, 25]]]]], [], []], "tableStriped", ["subexpr", "@mut", [["get", "tableStriped", ["loc", [null, [20, 15], [20, 27]]]]], [], []], "columnsWidthAutoresize", ["subexpr", "@mut", [["get", "columnsWidthAutoresize", ["loc", [null, [21, 25], [21, 47]]]]], [], []], "minAutoColumnWidth", ["subexpr", "@mut", [["get", "minAutoColumnWidth", ["loc", [null, [22, 21], [22, 39]]]]], [], []], "customTableClass", ["subexpr", "@mut", [["get", "customTableClass", ["loc", [null, [23, 19], [23, 35]]]]], [], []], "cellComponent", ["subexpr", "@mut", [["get", "cellComponent", ["loc", [null, [24, 16], [24, 29]]]]], [], []], "singleColumnCellComponent", ["subexpr", "@mut", [["get", "singleColumnCellComponent", ["loc", [null, [25, 28], [25, 53]]]]], [], []], "singleColumnHeaderTitle", ["subexpr", "@mut", [["get", "singleColumnHeaderTitle", ["loc", [null, [26, 26], [26, 49]]]]], [], []], "showValidationMessagesInRow", ["subexpr", "@mut", [["get", "showValidationMessagesInRow", ["loc", [null, [27, 30], [27, 57]]]]], [], []], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [28, 20], [28, 37]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [29, 20], [29, 37]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [30, 24], [30, 45]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [31, 24], [31, 45]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [32, 26], [32, 49]]]]], [], []], "sendMenuItemAction", ["subexpr", "action", ["sendMenuItemAction"], [], ["loc", [null, [33, 21], [33, 50]]]], "menuInRowAdditionalItems", ["subexpr", "@mut", [["get", "menuInRowAdditionalItems", ["loc", [null, [34, 27], [34, 51]]]]], [], []], "rowClickable", ["subexpr", "@mut", [["get", "rowClickable", ["loc", [null, [35, 15], [35, 27]]]]], [], []], "orderable", ["subexpr", "@mut", [["get", "orderable", ["loc", [null, [36, 12], [36, 21]]]]], [], []], "editOnSeparateRoute", ["subexpr", "@mut", [["get", "editOnSeparateRoute", ["loc", [null, [37, 22], [37, 41]]]]], [], []], "saveBeforeRouteLeave", ["subexpr", "@mut", [["get", "saveBeforeRouteLeave", ["loc", [null, [38, 23], [38, 43]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "sorting", ["loc", [null, [39, 10], [39, 17]]]]], [], []], "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [40, 12], [40, 21]]]]], [], []], "mainModelProjection", ["subexpr", "@mut", [["get", "mainModelProjection", ["loc", [null, [41, 22], [41, 41]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [42, 18], [42, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "content", ["loc", [null, [43, 10], [43, 17]]]]], [], []], "sortByColumn", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.sortByColumn", ["loc", [null, [44, 27], [44, 50]]]], ["get", "this.attrs.sortByColumn", ["loc", [null, [44, 51], [44, 74]]]], "sortByColumn"], [], ["loc", [null, [44, 23], [44, 90]]]]], [], ["loc", [null, [44, 15], [44, 91]]]], "addColumnToSorting", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.addColumnToSorting", ["loc", [null, [45, 33], [45, 62]]]], ["get", "this.attrs.addColumnToSorting", ["loc", [null, [45, 63], [45, 92]]]], "addColumnToSorting"], [], ["loc", [null, [45, 29], [45, 114]]]]], [], ["loc", [null, [45, 21], [45, 115]]]], "action", "groupEditRowClick", "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [47, 16], [47, 29]]]]], [], []], "allowColumnResize", ["subexpr", "@mut", [["get", "allowColumnResize", ["loc", [null, [48, 20], [48, 37]]]]], [], []], "configurateRow", ["subexpr", "@mut", [["get", "this.attrs.configurateRow", ["loc", [null, [49, 17], [49, 42]]]]], [], []], "confirmDeleteRow", ["subexpr", "@mut", [["get", "confirmDeleteRow", ["loc", [null, [50, 19], [50, 35]]]]], [], []], "configurateSelectedRows", ["subexpr", "@mut", [["get", "this.attrs.configurateSelectedRows", ["loc", [null, [51, 26], [51, 60]]]]], [], []], "beforeDeleteRecord", ["subexpr", "@mut", [["get", "beforeDeleteRecord", ["loc", [null, [52, 21], [52, 39]]]]], [], []], "searchForContentChange", ["subexpr", "@mut", [["get", "searchForContentChange", ["loc", [null, [53, 25], [53, 47]]]]], [], []], "immediateDelete", false, "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [55, 21], [55, 39]]]]], [], []], "defaultSortingButton", ["subexpr", "@mut", [["get", "defaultSortingButton", ["loc", [null, [56, 23], [56, 43]]]]], [], []], "overflowedComponents", ["subexpr", "@mut", [["get", "overflowedComponents", ["loc", [null, [57, 23], [57, 43]]]]], [], []]], ["loc", [null, [14, 0], [58, 2]]]]],
+      statements: [["inline", "groupedit-toolbar", [], ["componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [2, 16], [2, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [3, 11], [3, 19]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [4, 14], [4, 25]]]]], [], []], "createNewButton", ["subexpr", "@mut", [["get", "createNewButton", ["loc", [null, [5, 18], [5, 33]]]]], [], []], "deleteButton", ["subexpr", "@mut", [["get", "deleteButton", ["loc", [null, [6, 15], [6, 27]]]]], [], []], "defaultSettingsButton", ["subexpr", "@mut", [["get", "defaultSettingsButton", ["loc", [null, [7, 24], [7, 45]]]]], [], []], "confirmDeleteRows", ["subexpr", "@mut", [["get", "confirmDeleteRows", ["loc", [null, [8, 20], [8, 37]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "sorting", ["loc", [null, [9, 10], [9, 17]]]]], [], []], "customButtonAction", "customButtonAction", "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [11, 16], [11, 29]]]]], [], []], "orderedProperty", ["subexpr", "@mut", [["get", "orderedProperty", ["loc", [null, [12, 18], [12, 33]]]]], [], []]], ["loc", [null, [1, 0], [13, 2]]]], ["inline", "object-list-view", [], ["class", "groupedit-container", "orderedProperty", ["subexpr", "@mut", [["get", "orderedProperty", ["loc", [null, [16, 18], [16, 33]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [17, 14], [17, 25]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [18, 11], [18, 19]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [19, 14], [19, 25]]]]], [], []], "tableStriped", ["subexpr", "@mut", [["get", "tableStriped", ["loc", [null, [20, 15], [20, 27]]]]], [], []], "columnsWidthAutoresize", ["subexpr", "@mut", [["get", "columnsWidthAutoresize", ["loc", [null, [21, 25], [21, 47]]]]], [], []], "minAutoColumnWidth", ["subexpr", "@mut", [["get", "minAutoColumnWidth", ["loc", [null, [22, 21], [22, 39]]]]], [], []], "customTableClass", ["subexpr", "@mut", [["get", "customTableClass", ["loc", [null, [23, 19], [23, 35]]]]], [], []], "cellComponent", ["subexpr", "@mut", [["get", "cellComponent", ["loc", [null, [24, 16], [24, 29]]]]], [], []], "singleColumnCellComponent", ["subexpr", "@mut", [["get", "singleColumnCellComponent", ["loc", [null, [25, 28], [25, 53]]]]], [], []], "singleColumnHeaderTitle", ["subexpr", "@mut", [["get", "singleColumnHeaderTitle", ["loc", [null, [26, 26], [26, 49]]]]], [], []], "showValidationMessagesInRow", ["subexpr", "@mut", [["get", "showValidationMessagesInRow", ["loc", [null, [27, 30], [27, 57]]]]], [], []], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [28, 20], [28, 37]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [29, 20], [29, 37]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [30, 24], [30, 45]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [31, 24], [31, 45]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [32, 26], [32, 49]]]]], [], []], "sendMenuItemAction", ["subexpr", "action", ["sendMenuItemAction"], [], ["loc", [null, [33, 21], [33, 50]]]], "menuInRowAdditionalItems", ["subexpr", "@mut", [["get", "menuInRowAdditionalItems", ["loc", [null, [34, 27], [34, 51]]]]], [], []], "rowClickable", ["subexpr", "@mut", [["get", "rowClickable", ["loc", [null, [35, 15], [35, 27]]]]], [], []], "orderable", ["subexpr", "@mut", [["get", "orderable", ["loc", [null, [36, 12], [36, 21]]]]], [], []], "editOnSeparateRoute", ["subexpr", "@mut", [["get", "editOnSeparateRoute", ["loc", [null, [37, 22], [37, 41]]]]], [], []], "saveBeforeRouteLeave", ["subexpr", "@mut", [["get", "saveBeforeRouteLeave", ["loc", [null, [38, 23], [38, 43]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "sorting", ["loc", [null, [39, 10], [39, 17]]]]], [], []], "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [40, 12], [40, 21]]]]], [], []], "mainModelProjection", ["subexpr", "@mut", [["get", "mainModelProjection", ["loc", [null, [41, 22], [41, 41]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [42, 18], [42, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "content", ["loc", [null, [43, 10], [43, 17]]]]], [], []], "sortByColumn", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.sortByColumn", ["loc", [null, [44, 27], [44, 50]]]], ["get", "this.attrs.sortByColumn", ["loc", [null, [44, 51], [44, 74]]]], "sortByColumn"], [], ["loc", [null, [44, 23], [44, 90]]]]], [], ["loc", [null, [44, 15], [44, 91]]]], "addColumnToSorting", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.addColumnToSorting", ["loc", [null, [45, 33], [45, 62]]]], ["get", "this.attrs.addColumnToSorting", ["loc", [null, [45, 63], [45, 92]]]], "addColumnToSorting"], [], ["loc", [null, [45, 29], [45, 114]]]]], [], ["loc", [null, [45, 21], [45, 115]]]], "action", "groupEditRowClick", "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [47, 16], [47, 29]]]]], [], []], "allowColumnResize", ["subexpr", "@mut", [["get", "allowColumnResize", ["loc", [null, [48, 20], [48, 37]]]]], [], []], "configurateRow", ["subexpr", "@mut", [["get", "this.attrs.configurateRow", ["loc", [null, [49, 17], [49, 42]]]]], [], []], "confirmDeleteRow", ["subexpr", "@mut", [["get", "confirmDeleteRow", ["loc", [null, [50, 19], [50, 35]]]]], [], []], "configurateSelectedRows", ["subexpr", "@mut", [["get", "this.attrs.configurateSelectedRows", ["loc", [null, [51, 26], [51, 60]]]]], [], []], "beforeDeleteRecord", ["subexpr", "@mut", [["get", "beforeDeleteRecord", ["loc", [null, [52, 21], [52, 39]]]]], [], []], "searchForContentChange", ["subexpr", "@mut", [["get", "searchForContentChange", ["loc", [null, [53, 25], [53, 47]]]]], [], []], "immediateDelete", false, "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [55, 21], [55, 39]]]]], [], []], "defaultSortingButton", ["subexpr", "@mut", [["get", "defaultSortingButton", ["loc", [null, [56, 23], [56, 43]]]]], [], []], "overflowedComponents", ["subexpr", "@mut", [["get", "overflowedComponents", ["loc", [null, [57, 23], [57, 43]]]]], [], []], "fixedHeader", ["subexpr", "@mut", [["get", "fixedHeader", ["loc", [null, [58, 14], [58, 25]]]]], [], []]], ["loc", [null, [14, 0], [59, 2]]]]],
       locals: [],
       templates: []
     };
@@ -48561,111 +48653,6 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
     })();
     var child1 = (function () {
       var child0 = (function () {
-        var child0 = (function () {
-          return {
-            meta: {
-              "fragmentReason": false,
-              "revision": "Ember@2.4.6",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 7,
-                  "column": 6
-                },
-                "end": {
-                  "line": 15,
-                  "column": 6
-                }
-              },
-              "moduleName": "dummy/templates/components/flexberry-simpledatetime.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("        ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createElement("button");
-              dom.setAttribute(el1, "class", "ui ui-clear disabled button");
-              dom.setAttribute(el1, "disabled", "disabled");
-              var el2 = dom.createTextNode("\n          ");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createElement("i");
-              dom.setAttribute(el2, "class", "remove icon");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createTextNode("\n        ");
-              dom.appendChild(el1, el2);
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var element1 = dom.childAt(fragment, [1]);
-              var morphs = new Array(2);
-              morphs[0] = dom.createAttrMorph(element1, 'title');
-              morphs[1] = dom.createElementMorph(element1);
-              return morphs;
-            },
-            statements: [["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [10, 16], [10, 70]]]]], ["element", "action", ["remove"], ["bubbles", false], ["loc", [null, [12, 10], [12, 43]]]]],
-            locals: [],
-            templates: []
-          };
-        })();
-        var child1 = (function () {
-          return {
-            meta: {
-              "fragmentReason": false,
-              "revision": "Ember@2.4.6",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 15,
-                  "column": 6
-                },
-                "end": {
-                  "line": 22,
-                  "column": 6
-                }
-              },
-              "moduleName": "dummy/templates/components/flexberry-simpledatetime.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("        ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createElement("button");
-              dom.setAttribute(el1, "class", "ui ui-clear button");
-              var el2 = dom.createTextNode("\n          ");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createElement("i");
-              dom.setAttribute(el2, "class", "remove icon");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createTextNode("\n        ");
-              dom.appendChild(el1, el2);
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var element0 = dom.childAt(fragment, [1]);
-              var morphs = new Array(2);
-              morphs[0] = dom.createAttrMorph(element0, 'title');
-              morphs[1] = dom.createElementMorph(element0);
-              return morphs;
-            },
-            statements: [["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [18, 16], [18, 70]]]]], ["element", "action", ["remove"], ["bubbles", false], ["loc", [null, [19, 10], [19, 43]]]]],
-            locals: [],
-            templates: []
-          };
-        })();
         return {
           meta: {
             "fragmentReason": false,
@@ -48677,7 +48664,7 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
                 "column": 4
               },
               "end": {
-                "line": 23,
+                "line": 15,
                 "column": 4
               }
             },
@@ -48689,20 +48676,34 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
           hasRendered: false,
           buildFragment: function buildFragment(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createComment("");
+            var el1 = dom.createTextNode("      ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("button");
+            dom.setAttribute(el1, "type", "button");
+            var el2 = dom.createTextNode("\n        ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("i");
+            dom.setAttribute(el2, "class", "remove icon");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
             dom.appendChild(el0, el1);
             return el0;
           },
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var morphs = new Array(1);
-            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-            dom.insertBoundary(fragment, 0);
-            dom.insertBoundary(fragment, null);
+            var element0 = dom.childAt(fragment, [1]);
+            var morphs = new Array(4);
+            morphs[0] = dom.createAttrMorph(element0, 'class');
+            morphs[1] = dom.createAttrMorph(element0, 'title');
+            morphs[2] = dom.createAttrMorph(element0, 'disabled');
+            morphs[3] = dom.createElementMorph(element0);
             return morphs;
           },
-          statements: [["block", "if", [["get", "readonlyAttr", ["loc", [null, [7, 12], [7, 24]]]]], [], 0, 1, ["loc", [null, [7, 6], [22, 13]]]]],
+          statements: [["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["get", "readonlyAttr", ["loc", [null, [8, 32], [8, 44]]]], "disabled"], [], ["loc", [null, [8, 27], [8, 57]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [9, 14], [9, 68]]]]], ["attribute", "disabled", ["get", "readonlyAttr", ["loc", [null, [10, 19], [10, 31]]]]], ["element", "action", ["remove"], ["bubbles", false], ["loc", [null, [12, 8], [12, 41]]]]],
           locals: [],
-          templates: [child0, child1]
+          templates: []
         };
       })();
       return {
@@ -48716,7 +48717,7 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
               "column": 0
             },
             "end": {
-              "line": 25,
+              "line": 17,
               "column": 0
             }
           },
@@ -48749,14 +48750,14 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element2 = dom.childAt(fragment, [1]);
-          var element3 = dom.childAt(element2, [1]);
+          var element1 = dom.childAt(fragment, [1]);
+          var element2 = dom.childAt(element1, [1]);
           var morphs = new Array(2);
-          morphs[0] = dom.createAttrMorph(element3, 'placeholder');
-          morphs[1] = dom.createMorphAt(element2, 3, 3);
+          morphs[0] = dom.createAttrMorph(element2, 'placeholder');
+          morphs[1] = dom.createMorphAt(element1, 3, 3);
           return morphs;
         },
-        statements: [["attribute", "placeholder", ["get", "placeholder", ["loc", [null, [5, 37], [5, 48]]]]], ["block", "if", [["get", "removeButton", ["loc", [null, [6, 10], [6, 22]]]]], [], 0, null, ["loc", [null, [6, 4], [23, 11]]]]],
+        statements: [["attribute", "placeholder", ["get", "placeholder", ["loc", [null, [5, 37], [5, 48]]]]], ["block", "if", [["get", "removeButton", ["loc", [null, [6, 10], [6, 22]]]]], [], 0, null, ["loc", [null, [6, 4], [15, 11]]]]],
         locals: [],
         templates: [child0]
       };
@@ -48775,7 +48776,7 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
             "column": 0
           },
           "end": {
-            "line": 26,
+            "line": 18,
             "column": 0
           }
         },
@@ -48798,7 +48799,7 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["subexpr", "and", [["get", "currentTypeSupported", ["loc", [null, [1, 11], [1, 31]]]], ["get", "useBrowserInput", ["loc", [null, [1, 32], [1, 47]]]]], [], ["loc", [null, [1, 6], [1, 48]]]]], [], 0, 1, ["loc", [null, [1, 0], [25, 7]]]]],
+      statements: [["block", "if", [["subexpr", "and", [["get", "currentTypeSupported", ["loc", [null, [1, 11], [1, 31]]]], ["get", "useBrowserInput", ["loc", [null, [1, 32], [1, 47]]]]], [], ["loc", [null, [1, 6], [1, 48]]]]], [], 0, 1, ["loc", [null, [1, 0], [17, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -50360,7 +50361,7 @@ define("dummy/templates/components/groupedit-toolbar", ["exports"], function (ex
           morphs[3] = dom.createElementMorph(element5);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui ui-delete ", ["subexpr", "if", [["get", "_isDeleteRowsEnabled", ["loc", [null, [11, 29], [11, 49]]]], "", "disabled"], [], ["loc", [null, [11, 24], [11, 65]]]], " ", ["get", "buttonClass", ["loc", [null, [11, 68], [11, 79]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.groupedit-toolbar.delete-button-text"], [], ["loc", [null, [12, 10], [12, 65]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [13, 15], [13, 23]]]]], ["element", "action", ["deleteRows"], [], ["loc", [null, [13, 26], [13, 49]]]]],
+        statements: [["attribute", "class", ["concat", ["ui ui-delete ", ["subexpr", "unless", [["get", "_hasSelectedRows", ["loc", [null, [11, 33], [11, 49]]]], "disabled"], [], ["loc", [null, [11, 24], [11, 62]]]], " ", ["get", "buttonClass", ["loc", [null, [11, 65], [11, 76]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.groupedit-toolbar.delete-button-text"], [], ["loc", [null, [12, 10], [12, 65]]]]], ["attribute", "disabled", ["subexpr", "or", [["subexpr", "not", [["get", "_hasSelectedRows", ["loc", [null, [13, 23], [13, 39]]]]], [], ["loc", [null, [13, 18], [13, 40]]]], ["get", "readonly", ["loc", [null, [13, 41], [13, 49]]]]], [], ["loc", [null, [13, 13], [13, 51]]]]], ["element", "action", ["deleteRows"], [], ["loc", [null, [13, 52], [13, 75]]]]],
         locals: [],
         templates: []
       };
@@ -50481,7 +50482,7 @@ define("dummy/templates/components/groupedit-toolbar", ["exports"], function (ex
           morphs[7] = dom.createElementMorph(element3);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui ui-move-up ", ["get", "buttonClass", ["loc", [null, [28, 27], [28, 38]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.groupedit-toolbar.move-up-button-text"], [], ["loc", [null, [29, 10], [29, 66]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [30, 15], [30, 23]]]]], ["element", "action", ["moveRow", -1], [], ["loc", [null, [31, 4], [31, 27]]]], ["attribute", "class", ["concat", ["ui ui-move-down ", ["get", "buttonClass", ["loc", [null, [36, 29], [36, 40]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.groupedit-toolbar.move-down-button-text"], [], ["loc", [null, [37, 10], [37, 68]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [38, 15], [38, 23]]]]], ["element", "action", ["moveRow", 1], [], ["loc", [null, [39, 4], [39, 26]]]]],
+        statements: [["attribute", "class", ["concat", ["ui ui-move-up ", ["get", "buttonClass", ["loc", [null, [28, 27], [28, 38]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.groupedit-toolbar.move-up-button-text"], [], ["loc", [null, [29, 10], [29, 66]]]]], ["attribute", "disabled", ["subexpr", "or", [["subexpr", "not", [["get", "_hasSelectedRows", ["loc", [null, [30, 23], [30, 39]]]]], [], ["loc", [null, [30, 18], [30, 40]]]], ["get", "_disableMoveUpButton", ["loc", [null, [30, 41], [30, 61]]]], ["get", "readonly", ["loc", [null, [30, 62], [30, 70]]]]], [], ["loc", [null, [30, 13], [30, 72]]]]], ["element", "action", ["moveRow", -1], [], ["loc", [null, [31, 4], [31, 27]]]], ["attribute", "class", ["concat", ["ui ui-move-down ", ["get", "buttonClass", ["loc", [null, [36, 29], [36, 40]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.groupedit-toolbar.move-down-button-text"], [], ["loc", [null, [37, 10], [37, 68]]]]], ["attribute", "disabled", ["subexpr", "or", [["subexpr", "not", [["get", "_hasSelectedRows", ["loc", [null, [38, 23], [38, 39]]]]], [], ["loc", [null, [38, 18], [38, 40]]]], ["get", "_disableMoveDownButton", ["loc", [null, [38, 41], [38, 63]]]], ["get", "readonly", ["loc", [null, [38, 64], [38, 72]]]]], [], ["loc", [null, [38, 13], [38, 74]]]]], ["element", "action", ["moveRow", 1], [], ["loc", [null, [39, 4], [39, 26]]]]],
         locals: [],
         templates: []
       };
@@ -61453,7 +61454,7 @@ define("dummy/templates/ember-flexberry-dummy-suggestion-edit", ["exports"], fun
             "column": 0
           },
           "end": {
-            "line": 183,
+            "line": 184,
             "column": 0
           }
         },
@@ -61807,7 +61808,7 @@ define("dummy/templates/ember-flexberry-dummy-suggestion-edit", ["exports"], fun
         morphs[48] = dom.createMorphAt(element16, 5, 5);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.caption"], [], ["loc", [null, [1, 22], [1, 81]]]], ["inline", "ui-message", [], ["type", "success", "closeable", true, "visible", ["subexpr", "@mut", [["get", "showFormSuccessMessage", ["loc", [null, [6, 12], [6, 34]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "formSuccessMessageCaption", ["loc", [null, [7, 12], [7, 37]]]]], [], []], "message", ["subexpr", "@mut", [["get", "formSuccessMessage", ["loc", [null, [8, 12], [8, 30]]]]], [], []], "onShow", ["subexpr", "action", ["onSuccessMessageShow"], [], ["loc", [null, [9, 11], [9, 42]]]], "onHide", ["subexpr", "action", ["onSuccessMessageHide"], [], ["loc", [null, [10, 11], [10, 42]]]]], ["loc", [null, [3, 2], [11, 4]]]], ["inline", "ui-message", [], ["type", "error", "closeable", true, "visible", ["subexpr", "@mut", [["get", "showFormErrorMessage", ["loc", [null, [15, 12], [15, 32]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "formErrorMessageCaption", ["loc", [null, [16, 12], [16, 35]]]]], [], []], "message", ["subexpr", "@mut", [["get", "formErrorMessage", ["loc", [null, [17, 12], [17, 28]]]]], [], []], "onShow", ["subexpr", "action", ["onErrorMessageShow"], [], ["loc", [null, [18, 11], [18, 40]]]], "onHide", ["subexpr", "action", ["onErrorMessageHide"], [], ["loc", [null, [19, 11], [19, 40]]]]], ["loc", [null, [12, 2], [20, 4]]]], ["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [21, 26], [21, 31]]]]], [], []]], ["loc", [null, [21, 2], [21, 33]]]], ["inline", "flexberry-validationsummary", [], ["errors", ["subexpr", "@mut", [["get", "model.errors", ["loc", [null, [24, 43], [24, 55]]]]], [], []]], ["loc", [null, [24, 6], [24, 57]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [29, 16], [29, 24]]]]], [], 0, null, ["loc", [null, [29, 6], [39, 17]]]], ["element", "action", ["close"], [], ["loc", [null, [40, 59], [40, 77]]]], ["inline", "t", ["forms.edit-form.close-button-text"], [], ["loc", [null, [40, 78], [40, 119]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.address", ["loc", [null, [43, 25], [43, 45]]]], "error", ""], [], ["loc", [null, [43, 20], [43, 58]]]]]]], ["inline", "flexberry-field", [], ["value", ["subexpr", "@mut", [["get", "model.address", ["loc", [null, [45, 12], [45, 25]]]]], [], []], "label", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.address-caption"], [], ["loc", [null, [46, 12], [46, 77]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [47, 15], [47, 23]]]]], [], []]], ["loc", [null, [44, 4], [48, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.address", ["loc", [null, [49, 40], [49, 60]]]]], [], []], "pointing", "pointing"], ["loc", [null, [49, 4], [49, 82]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.text", ["loc", [null, [51, 25], [51, 42]]]], "error", ""], [], ["loc", [null, [51, 20], [51, 55]]]]]]], ["inline", "flexberry-field", [], ["value", ["subexpr", "@mut", [["get", "model.text", ["loc", [null, [53, 12], [53, 22]]]]], [], []], "label", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.text-caption"], [], ["loc", [null, [54, 12], [54, 74]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [55, 15], [55, 23]]]]], [], []]], ["loc", [null, [52, 4], [56, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.text", ["loc", [null, [57, 40], [57, 57]]]]], [], []], "pointing", "pointing"], ["loc", [null, [57, 4], [57, 79]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.date", ["loc", [null, [59, 25], [59, 42]]]], "error", ""], [], ["loc", [null, [59, 20], [59, 55]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.date-caption"], [], ["loc", [null, [60, 11], [60, 75]]]], ["inline", "flexberry-simpledatetime", [], ["type", "date", "value", ["subexpr", "@mut", [["get", "model.date", ["loc", [null, [63, 12], [63, 22]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [64, 15], [64, 23]]]]], [], []]], ["loc", [null, [61, 4], [65, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.date", ["loc", [null, [66, 40], [66, 57]]]]], [], []], "pointing", "pointing"], ["loc", [null, [66, 4], [66, 79]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.votes", ["loc", [null, [68, 25], [68, 43]]]], "error", ""], [], ["loc", [null, [68, 20], [68, 56]]]]]]], ["inline", "flexberry-field", [], ["value", ["subexpr", "@mut", [["get", "model.votes", ["loc", [null, [70, 12], [70, 23]]]]], [], []], "label", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.votes-caption"], [], ["loc", [null, [71, 12], [71, 75]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [72, 15], [72, 23]]]]], [], []]], ["loc", [null, [69, 4], [73, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.votes", ["loc", [null, [74, 40], [74, 58]]]]], [], []], "pointing", "pointing"], ["loc", [null, [74, 4], [74, 80]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.moderated", ["loc", [null, [76, 25], [76, 47]]]], "error", ""], [], ["loc", [null, [76, 20], [76, 60]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.moderated-caption"], [], ["loc", [null, [77, 11], [77, 80]]]], ["inline", "flexberry-checkbox", [], ["value", ["subexpr", "@mut", [["get", "model.moderated", ["loc", [null, [79, 12], [79, 27]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [80, 15], [80, 23]]]]], [], []]], ["loc", [null, [78, 4], [81, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.moderated", ["loc", [null, [82, 40], [82, 62]]]]], [], []], "pointing", "pointing"], ["loc", [null, [82, 4], [82, 84]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.type", ["loc", [null, [84, 25], [84, 42]]]], "error", ""], [], ["loc", [null, [84, 20], [84, 55]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.type-caption"], [], ["loc", [null, [85, 11], [85, 75]]]], ["inline", "flexberry-lookup", [], ["value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [87, 12], [87, 22]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [88, 19], [88, 24]]]]], [], []], "relationName", "type", "projection", "SuggestionTypeL", "displayAttributeName", "name", "title", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.type-caption"], [], ["loc", [null, [92, 12], [92, 74]]]], "choose", ["subexpr", "action", ["showLookupDialog"], [], ["loc", [null, [93, 13], [93, 40]]]], "remove", ["subexpr", "action", ["removeLookupValue"], [], ["loc", [null, [94, 13], [94, 41]]]], "dropdown", true, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [96, 15], [96, 23]]]]], [], []], "direction", "upward", "componentName", "SuggestionEditType"], ["loc", [null, [86, 4], [99, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.type", ["loc", [null, [100, 40], [100, 57]]]]], [], []], "pointing", "pointing"], ["loc", [null, [100, 4], [100, 79]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.author", ["loc", [null, [102, 25], [102, 44]]]], "error", ""], [], ["loc", [null, [102, 20], [102, 57]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.author-caption"], [], ["loc", [null, [103, 11], [103, 77]]]], ["inline", "flexberry-lookup", [], ["value", ["subexpr", "@mut", [["get", "model.author", ["loc", [null, [105, 12], [105, 24]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [106, 19], [106, 24]]]]], [], []], "relationName", "author", "projection", "ApplicationUserL", "displayAttributeName", "name", "showPreviewButton", true, "previewOnSeparateRoute", true, "previewFormRoute", "ember-flexberry-dummy-application-user-edit", "title", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.author-caption"], [], ["loc", [null, [113, 12], [113, 76]]]], "choose", ["subexpr", "action", ["showLookupDialog"], [], ["loc", [null, [114, 13], [114, 40]]]], "remove", ["subexpr", "action", ["removeLookupValue"], [], ["loc", [null, [115, 13], [115, 41]]]], "preview", ["subexpr", "action", ["previewLookupValue"], [], ["loc", [null, [116, 14], [116, 43]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [117, 15], [117, 23]]]]], [], []], "componentName", "SuggestionEditAuthor"], ["loc", [null, [104, 4], [119, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.author", ["loc", [null, [120, 40], [120, 59]]]]], [], []], "pointing", "pointing"], ["loc", [null, [120, 4], [120, 81]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.editor1", ["loc", [null, [122, 25], [122, 45]]]], "error", ""], [], ["loc", [null, [122, 20], [122, 58]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.editor1-caption"], [], ["loc", [null, [123, 11], [123, 78]]]], ["inline", "flexberry-lookup", [], ["value", ["subexpr", "@mut", [["get", "model.editor1", ["loc", [null, [125, 12], [125, 25]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [126, 19], [126, 24]]]]], [], []], "relationName", "editor1", "projection", "ApplicationUserL", "displayAttributeName", "name", "showPreviewButton", true, "previewFormRoute", "ember-flexberry-dummy-application-user-edit", "title", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.editor1-caption"], [], ["loc", [null, [132, 12], [132, 77]]]], "choose", ["subexpr", "action", ["showLookupDialog"], [], ["loc", [null, [133, 13], [133, 40]]]], "remove", ["subexpr", "action", ["removeLookupValue"], [], ["loc", [null, [134, 13], [134, 41]]]], "preview", ["subexpr", "action", ["previewLookupValue"], [], ["loc", [null, [135, 14], [135, 43]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [136, 15], [136, 23]]]]], [], []], "componentName", "SuggestionEditEditor1"], ["loc", [null, [124, 4], [138, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.editor1", ["loc", [null, [139, 40], [139, 60]]]]], [], []], "pointing", "pointing"], ["loc", [null, [139, 4], [139, 82]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.files", ["loc", [null, [141, 25], [141, 43]]]], "error", ""], [], ["loc", [null, [141, 20], [141, 56]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.files-caption"], [], ["loc", [null, [142, 11], [142, 76]]]], ["inline", "flexberry-groupedit", [], ["componentName", "filesGroupEdit", "content", ["subexpr", "@mut", [["get", "model.files", ["loc", [null, [145, 14], [145, 25]]]]], [], []], "mainModelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [146, 26], [146, 41]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection.attributes.files", ["loc", [null, [147, 22], [147, 54]]]]], [], []], "orderable", true, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [149, 15], [149, 23]]]]], [], []]], ["loc", [null, [143, 4], [150, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.files", ["loc", [null, [151, 40], [151, 58]]]]], [], []], "pointing", "pointing"], ["loc", [null, [151, 4], [151, 80]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.userVotes", ["loc", [null, [153, 25], [153, 47]]]], "error", ""], [], ["loc", [null, [153, 20], [153, 60]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.userVotes-caption"], [], ["loc", [null, [154, 11], [154, 80]]]], ["inline", "flexberry-groupedit", [], ["componentName", "suggestionUserVotesGroupEdit", "content", ["subexpr", "@mut", [["get", "model.userVotes", ["loc", [null, [157, 14], [157, 29]]]]], [], []], "mainModelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [158, 26], [158, 41]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection.attributes.userVotes", ["loc", [null, [159, 22], [159, 58]]]]], [], []], "orderable", true, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [161, 15], [161, 23]]]]], [], []]], ["loc", [null, [155, 4], [162, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.userVotes", ["loc", [null, [163, 40], [163, 62]]]]], [], []], "pointing", "pointing"], ["loc", [null, [163, 4], [163, 84]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.comments", ["loc", [null, [165, 25], [165, 46]]]], "error", ""], [], ["loc", [null, [165, 20], [165, 59]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.comments-caption"], [], ["loc", [null, [166, 11], [166, 79]]]], ["inline", "flexberry-groupedit", [], ["componentName", "suggestionCommentsGroupEdit", "content", ["subexpr", "@mut", [["get", "model.comments", ["loc", [null, [169, 14], [169, 28]]]]], [], []], "mainModelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [170, 26], [170, 41]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection.attributes.comments", ["loc", [null, [171, 22], [171, 57]]]]], [], []], "rowClickable", true, "rowClick", "rowClick", "editOnSeparateRoute", true, "editFormRoute", ["subexpr", "@mut", [["get", "commentsEditRoute", ["loc", [null, [175, 20], [175, 37]]]]], [], []], "saveBeforeRouteLeave", true, "orderable", true, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [178, 15], [178, 23]]]]], [], []]], ["loc", [null, [167, 4], [179, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.comments", ["loc", [null, [180, 40], [180, 61]]]]], [], []], "pointing", "pointing"], ["loc", [null, [180, 4], [180, 83]]]]],
+      statements: [["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.caption"], [], ["loc", [null, [1, 22], [1, 81]]]], ["inline", "ui-message", [], ["type", "success", "closeable", true, "visible", ["subexpr", "@mut", [["get", "showFormSuccessMessage", ["loc", [null, [6, 12], [6, 34]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "formSuccessMessageCaption", ["loc", [null, [7, 12], [7, 37]]]]], [], []], "message", ["subexpr", "@mut", [["get", "formSuccessMessage", ["loc", [null, [8, 12], [8, 30]]]]], [], []], "onShow", ["subexpr", "action", ["onSuccessMessageShow"], [], ["loc", [null, [9, 11], [9, 42]]]], "onHide", ["subexpr", "action", ["onSuccessMessageHide"], [], ["loc", [null, [10, 11], [10, 42]]]]], ["loc", [null, [3, 2], [11, 4]]]], ["inline", "ui-message", [], ["type", "error", "closeable", true, "visible", ["subexpr", "@mut", [["get", "showFormErrorMessage", ["loc", [null, [15, 12], [15, 32]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "formErrorMessageCaption", ["loc", [null, [16, 12], [16, 35]]]]], [], []], "message", ["subexpr", "@mut", [["get", "formErrorMessage", ["loc", [null, [17, 12], [17, 28]]]]], [], []], "onShow", ["subexpr", "action", ["onErrorMessageShow"], [], ["loc", [null, [18, 11], [18, 40]]]], "onHide", ["subexpr", "action", ["onErrorMessageHide"], [], ["loc", [null, [19, 11], [19, 40]]]]], ["loc", [null, [12, 2], [20, 4]]]], ["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [21, 26], [21, 31]]]]], [], []]], ["loc", [null, [21, 2], [21, 33]]]], ["inline", "flexberry-validationsummary", [], ["errors", ["subexpr", "@mut", [["get", "model.errors", ["loc", [null, [24, 43], [24, 55]]]]], [], []]], ["loc", [null, [24, 6], [24, 57]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [29, 16], [29, 24]]]]], [], 0, null, ["loc", [null, [29, 6], [39, 17]]]], ["element", "action", ["close"], [], ["loc", [null, [40, 59], [40, 77]]]], ["inline", "t", ["forms.edit-form.close-button-text"], [], ["loc", [null, [40, 78], [40, 119]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.address", ["loc", [null, [43, 25], [43, 45]]]], "error", ""], [], ["loc", [null, [43, 20], [43, 58]]]]]]], ["inline", "flexberry-field", [], ["value", ["subexpr", "@mut", [["get", "model.address", ["loc", [null, [45, 12], [45, 25]]]]], [], []], "label", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.address-caption"], [], ["loc", [null, [46, 12], [46, 77]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [47, 15], [47, 23]]]]], [], []]], ["loc", [null, [44, 4], [48, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.address", ["loc", [null, [49, 40], [49, 60]]]]], [], []], "pointing", "pointing"], ["loc", [null, [49, 4], [49, 82]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.text", ["loc", [null, [51, 25], [51, 42]]]], "error", ""], [], ["loc", [null, [51, 20], [51, 55]]]]]]], ["inline", "flexberry-field", [], ["value", ["subexpr", "@mut", [["get", "model.text", ["loc", [null, [53, 12], [53, 22]]]]], [], []], "label", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.text-caption"], [], ["loc", [null, [54, 12], [54, 74]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [55, 15], [55, 23]]]]], [], []]], ["loc", [null, [52, 4], [56, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.text", ["loc", [null, [57, 40], [57, 57]]]]], [], []], "pointing", "pointing"], ["loc", [null, [57, 4], [57, 79]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.date", ["loc", [null, [59, 25], [59, 42]]]], "error", ""], [], ["loc", [null, [59, 20], [59, 55]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.date-caption"], [], ["loc", [null, [60, 11], [60, 75]]]], ["inline", "flexberry-simpledatetime", [], ["type", "date", "value", ["subexpr", "@mut", [["get", "model.date", ["loc", [null, [63, 12], [63, 22]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [64, 15], [64, 23]]]]], [], []]], ["loc", [null, [61, 4], [65, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.date", ["loc", [null, [66, 40], [66, 57]]]]], [], []], "pointing", "pointing"], ["loc", [null, [66, 4], [66, 79]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.votes", ["loc", [null, [68, 25], [68, 43]]]], "error", ""], [], ["loc", [null, [68, 20], [68, 56]]]]]]], ["inline", "flexberry-field", [], ["value", ["subexpr", "@mut", [["get", "model.votes", ["loc", [null, [70, 12], [70, 23]]]]], [], []], "label", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.votes-caption"], [], ["loc", [null, [71, 12], [71, 75]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [72, 15], [72, 23]]]]], [], []]], ["loc", [null, [69, 4], [73, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.votes", ["loc", [null, [74, 40], [74, 58]]]]], [], []], "pointing", "pointing"], ["loc", [null, [74, 4], [74, 80]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.moderated", ["loc", [null, [76, 25], [76, 47]]]], "error", ""], [], ["loc", [null, [76, 20], [76, 60]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.moderated-caption"], [], ["loc", [null, [77, 11], [77, 80]]]], ["inline", "flexberry-checkbox", [], ["value", ["subexpr", "@mut", [["get", "model.moderated", ["loc", [null, [79, 12], [79, 27]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [80, 15], [80, 23]]]]], [], []]], ["loc", [null, [78, 4], [81, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.moderated", ["loc", [null, [82, 40], [82, 62]]]]], [], []], "pointing", "pointing"], ["loc", [null, [82, 4], [82, 84]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.type", ["loc", [null, [84, 25], [84, 42]]]], "error", ""], [], ["loc", [null, [84, 20], [84, 55]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.type-caption"], [], ["loc", [null, [85, 11], [85, 75]]]], ["inline", "flexberry-lookup", [], ["value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [87, 12], [87, 22]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [88, 19], [88, 24]]]]], [], []], "relationName", "type", "projection", "SuggestionTypeL", "displayAttributeName", "name", "title", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.type-caption"], [], ["loc", [null, [92, 12], [92, 74]]]], "choose", ["subexpr", "action", ["showLookupDialog"], [], ["loc", [null, [93, 13], [93, 40]]]], "remove", ["subexpr", "action", ["removeLookupValue"], [], ["loc", [null, [94, 13], [94, 41]]]], "dropdown", true, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [96, 15], [96, 23]]]]], [], []], "direction", "upward", "componentName", "SuggestionEditType"], ["loc", [null, [86, 4], [99, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.type", ["loc", [null, [100, 40], [100, 57]]]]], [], []], "pointing", "pointing"], ["loc", [null, [100, 4], [100, 79]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.author", ["loc", [null, [102, 25], [102, 44]]]], "error", ""], [], ["loc", [null, [102, 20], [102, 57]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.author-caption"], [], ["loc", [null, [103, 11], [103, 77]]]], ["inline", "flexberry-lookup", [], ["value", ["subexpr", "@mut", [["get", "model.author", ["loc", [null, [105, 12], [105, 24]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [106, 19], [106, 24]]]]], [], []], "relationName", "author", "projection", "ApplicationUserL", "displayAttributeName", "name", "showPreviewButton", true, "previewOnSeparateRoute", true, "previewFormRoute", "ember-flexberry-dummy-application-user-edit", "title", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.author-caption"], [], ["loc", [null, [113, 12], [113, 76]]]], "choose", ["subexpr", "action", ["showLookupDialog"], [], ["loc", [null, [114, 13], [114, 40]]]], "remove", ["subexpr", "action", ["removeLookupValue"], [], ["loc", [null, [115, 13], [115, 41]]]], "preview", ["subexpr", "action", ["previewLookupValue"], [], ["loc", [null, [116, 14], [116, 43]]]], "lookupWindowCustomProperties", ["subexpr", "action", ["getLookupFolvProperties"], [], ["loc", [null, [117, 35], [117, 69]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [118, 15], [118, 23]]]]], [], []], "componentName", "SuggestionEditAuthor"], ["loc", [null, [104, 4], [120, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.author", ["loc", [null, [121, 40], [121, 59]]]]], [], []], "pointing", "pointing"], ["loc", [null, [121, 4], [121, 81]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.editor1", ["loc", [null, [123, 25], [123, 45]]]], "error", ""], [], ["loc", [null, [123, 20], [123, 58]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.editor1-caption"], [], ["loc", [null, [124, 11], [124, 78]]]], ["inline", "flexberry-lookup", [], ["value", ["subexpr", "@mut", [["get", "model.editor1", ["loc", [null, [126, 12], [126, 25]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [127, 19], [127, 24]]]]], [], []], "relationName", "editor1", "projection", "ApplicationUserL", "displayAttributeName", "name", "showPreviewButton", true, "previewFormRoute", "ember-flexberry-dummy-application-user-edit", "title", ["subexpr", "t", ["forms.ember-flexberry-dummy-suggestion-edit.editor1-caption"], [], ["loc", [null, [133, 12], [133, 77]]]], "choose", ["subexpr", "action", ["showLookupDialog"], [], ["loc", [null, [134, 13], [134, 40]]]], "remove", ["subexpr", "action", ["removeLookupValue"], [], ["loc", [null, [135, 13], [135, 41]]]], "preview", ["subexpr", "action", ["previewLookupValue"], [], ["loc", [null, [136, 14], [136, 43]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [137, 15], [137, 23]]]]], [], []], "componentName", "SuggestionEditEditor1"], ["loc", [null, [125, 4], [139, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.editor1", ["loc", [null, [140, 40], [140, 60]]]]], [], []], "pointing", "pointing"], ["loc", [null, [140, 4], [140, 82]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.files", ["loc", [null, [142, 25], [142, 43]]]], "error", ""], [], ["loc", [null, [142, 20], [142, 56]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.files-caption"], [], ["loc", [null, [143, 11], [143, 76]]]], ["inline", "flexberry-groupedit", [], ["componentName", "filesGroupEdit", "content", ["subexpr", "@mut", [["get", "model.files", ["loc", [null, [146, 14], [146, 25]]]]], [], []], "mainModelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [147, 26], [147, 41]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection.attributes.files", ["loc", [null, [148, 22], [148, 54]]]]], [], []], "orderable", true, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [150, 15], [150, 23]]]]], [], []]], ["loc", [null, [144, 4], [151, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.files", ["loc", [null, [152, 40], [152, 58]]]]], [], []], "pointing", "pointing"], ["loc", [null, [152, 4], [152, 80]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.userVotes", ["loc", [null, [154, 25], [154, 47]]]], "error", ""], [], ["loc", [null, [154, 20], [154, 60]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.userVotes-caption"], [], ["loc", [null, [155, 11], [155, 80]]]], ["inline", "flexberry-groupedit", [], ["componentName", "suggestionUserVotesGroupEdit", "content", ["subexpr", "@mut", [["get", "model.userVotes", ["loc", [null, [158, 14], [158, 29]]]]], [], []], "mainModelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [159, 26], [159, 41]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection.attributes.userVotes", ["loc", [null, [160, 22], [160, 58]]]]], [], []], "orderable", true, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [162, 15], [162, 23]]]]], [], []]], ["loc", [null, [156, 4], [163, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.userVotes", ["loc", [null, [164, 40], [164, 62]]]]], [], []], "pointing", "pointing"], ["loc", [null, [164, 4], [164, 84]]]], ["attribute", "class", ["concat", ["field ", ["subexpr", "if", [["get", "model.errors.comments", ["loc", [null, [166, 25], [166, 46]]]], "error", ""], [], ["loc", [null, [166, 20], [166, 59]]]]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.comments-caption"], [], ["loc", [null, [167, 11], [167, 79]]]], ["inline", "flexberry-groupedit", [], ["componentName", "suggestionCommentsGroupEdit", "content", ["subexpr", "@mut", [["get", "model.comments", ["loc", [null, [170, 14], [170, 28]]]]], [], []], "mainModelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [171, 26], [171, 41]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection.attributes.comments", ["loc", [null, [172, 22], [172, 57]]]]], [], []], "rowClickable", true, "rowClick", "rowClick", "editOnSeparateRoute", true, "editFormRoute", ["subexpr", "@mut", [["get", "commentsEditRoute", ["loc", [null, [176, 20], [176, 37]]]]], [], []], "saveBeforeRouteLeave", true, "orderable", true, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [179, 15], [179, 23]]]]], [], []]], ["loc", [null, [168, 4], [180, 6]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.comments", ["loc", [null, [181, 40], [181, 61]]]]], [], []], "pointing", "pointing"], ["loc", [null, [181, 4], [181, 83]]]]],
       locals: [],
       templates: [child0]
     };
@@ -66852,7 +66853,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
               "column": 0
             },
             "end": {
-              "line": 11,
+              "line": 12,
               "column": 0
             }
           },
@@ -66877,7 +66878,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "outlet", ["modal-content"], [], ["loc", [null, [10, 2], [10, 28]]]]],
+        statements: [["inline", "outlet", ["modal-content"], [], ["loc", [null, [11, 2], [11, 28]]]]],
         locals: [],
         templates: []
       };
@@ -66896,7 +66897,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 12,
+            "line": 13,
             "column": 0
           }
         },
@@ -66919,7 +66920,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "sizeClass", ["subexpr", "@mut", [["get", "sizeClass", ["loc", [null, [3, 12], [3, 21]]]]], [], []], "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", false, "useCloseButton", false, "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [8, 16], [8, 29]]]]], [], []]], 0, null, ["loc", [null, [1, 0], [11, 17]]]]],
+      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "sizeClass", ["subexpr", "@mut", [["get", "modalDialogSettings.sizeClass", ["loc", [null, [3, 12], [3, 41]]]]], [], []], "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", ["subexpr", "@mut", [["get", "modalDialogSettings.useOkButton", ["loc", [null, [6, 14], [6, 45]]]]], [], []], "useCloseButton", ["subexpr", "@mut", [["get", "modalDialogSettings.useCloseButton", ["loc", [null, [7, 17], [7, 51]]]]], [], []], "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [8, 16], [8, 29]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "modalDialogSettings.settings", ["loc", [null, [9, 11], [9, 39]]]]], [], []]], 0, null, ["loc", [null, [1, 0], [12, 17]]]]],
       locals: [],
       templates: [child0]
     };
@@ -68390,6 +68391,59 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
         };
       })();
       var child3 = (function () {
+        var child0 = (function () {
+          return {
+            meta: {
+              "fragmentReason": false,
+              "revision": "Ember@2.4.6",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 32,
+                  "column": 6
+                },
+                "end": {
+                  "line": 40,
+                  "column": 6
+                }
+              },
+              "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
+            },
+            isEmpty: false,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              var el1 = dom.createTextNode("        ");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createElement("button");
+              var el2 = dom.createTextNode("\n          ");
+              dom.appendChild(el1, el2);
+              var el2 = dom.createComment("");
+              dom.appendChild(el1, el2);
+              var el2 = dom.createTextNode("\n        ");
+              dom.appendChild(el1, el2);
+              dom.appendChild(el0, el1);
+              var el1 = dom.createTextNode("\n");
+              dom.appendChild(el0, el1);
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+              var element1 = dom.childAt(fragment, [1]);
+              var morphs = new Array(5);
+              morphs[0] = dom.createAttrMorph(element1, 'class');
+              morphs[1] = dom.createAttrMorph(element1, 'title');
+              morphs[2] = dom.createAttrMorph(element1, 'type');
+              morphs[3] = dom.createElementMorph(element1);
+              morphs[4] = dom.createUnsafeMorphAt(element1, 1, 1);
+              return morphs;
+            },
+            statements: [["attribute", "class", ["concat", ["ui ui-preview ", ["subexpr", "if", [["get", "isBlocked", ["loc", [null, [34, 36], [34, 45]]]], " disabled"], [], ["loc", [null, [34, 31], [34, 59]]]], " ", ["get", "previewButtonClass", ["loc", [null, [34, 62], [34, 80]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.preview-button-text"], [], ["loc", [null, [35, 16], [35, 71]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [36, 20], [36, 32]]]], "button", ""], [], ["loc", [null, [36, 15], [36, 46]]]]], ["element", "action", ["preview"], [], ["loc", [null, [37, 10], [37, 30]]]], ["content", "previewText", ["loc", [null, [38, 10], [38, 27]]]]],
+            locals: [],
+            templates: []
+          };
+        })();
         return {
           meta: {
             "fragmentReason": false,
@@ -68401,7 +68455,47 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
                 "column": 4
               },
               "end": {
-                "line": 37,
+                "line": 41,
+                "column": 4
+              }
+            },
+            "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            dom.insertBoundary(fragment, null);
+            return morphs;
+          },
+          statements: [["block", "if", [["subexpr", "and", [["get", "previewFormRoute", ["loc", [null, [32, 17], [32, 33]]]], ["get", "value", ["loc", [null, [32, 34], [32, 39]]]]], [], ["loc", [null, [32, 12], [32, 40]]]]], [], 0, null, ["loc", [null, [32, 6], [40, 13]]]]],
+          locals: [],
+          templates: [child0]
+        };
+      })();
+      var child4 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.6",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 42,
+                "column": 4
+              },
+              "end": {
+                "line": 48,
                 "column": 4
               }
             },
@@ -68435,7 +68529,7 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
             morphs[2] = dom.createUnsafeMorphAt(element0, 1, 1);
             return morphs;
           },
-          statements: [["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [33, 36], [33, 44]]]], ["get", "isBlocked", ["loc", [null, [33, 45], [33, 54]]]]], [], ["loc", [null, [33, 32], [33, 55]]]], " disabled"], [], ["loc", [null, [33, 27], [33, 69]]]], " ", ["get", "removeButtonClass", ["loc", [null, [33, 72], [33, 89]]]], " button"]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [34, 26], [34, 36]]]]], [], ["loc", [null, [34, 8], [34, 38]]]], ["content", "removeText", ["loc", [null, [35, 8], [35, 24]]]]],
+          statements: [["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [44, 36], [44, 44]]]], ["get", "isBlocked", ["loc", [null, [44, 45], [44, 54]]]]], [], ["loc", [null, [44, 32], [44, 55]]]], " disabled"], [], ["loc", [null, [44, 27], [44, 69]]]], " ", ["get", "removeButtonClass", ["loc", [null, [44, 72], [44, 89]]]], " button"]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [45, 26], [45, 36]]]]], [], ["loc", [null, [45, 8], [45, 38]]]], ["content", "removeText", ["loc", [null, [46, 8], [46, 24]]]]],
           locals: [],
           templates: []
         };
@@ -68451,7 +68545,7 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
               "column": 0
             },
             "end": {
-              "line": 39,
+              "line": 50,
               "column": 0
             }
           },
@@ -68492,6 +68586,8 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
           dom.appendChild(el1, el2);
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("  ");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
@@ -68500,19 +68596,20 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element1 = dom.childAt(fragment, [1]);
-          var element2 = dom.childAt(element1, [1]);
-          var morphs = new Array(5);
-          morphs[0] = dom.createAttrMorph(element2, 'class');
-          morphs[1] = dom.createElementMorph(element2);
-          morphs[2] = dom.createMorphAt(dom.childAt(element2, [1]), 1, 1);
-          morphs[3] = dom.createMorphAt(element2, 3, 3);
-          morphs[4] = dom.createMorphAt(element1, 3, 3);
+          var element2 = dom.childAt(fragment, [1]);
+          var element3 = dom.childAt(element2, [1]);
+          var morphs = new Array(6);
+          morphs[0] = dom.createAttrMorph(element3, 'class');
+          morphs[1] = dom.createElementMorph(element3);
+          morphs[2] = dom.createMorphAt(dom.childAt(element3, [1]), 1, 1);
+          morphs[3] = dom.createMorphAt(element3, 3, 3);
+          morphs[4] = dom.createMorphAt(element2, 3, 3);
+          morphs[5] = dom.createMorphAt(element2, 4, 4);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui transparent ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [15, 37], [15, 45]]]], ["get", "isBlocked", ["loc", [null, [15, 46], [15, 55]]]]], [], ["loc", [null, [15, 33], [15, 56]]]], " disabled"], [], ["loc", [null, [15, 28], [15, 70]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [15, 80], [15, 99]]]], ["get", "modalIsStartToShow", ["loc", [null, [15, 100], [15, 118]]]]], [], ["loc", [null, [15, 76], [15, 119]]]], " loading"], [], ["loc", [null, [15, 71], [15, 132]]]], " icon input "]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [14, 24], [14, 34]]]]], [], ["loc", [null, [14, 6], [14, 36]]]], ["block", "if", [["get", "value", ["loc", [null, [17, 14], [17, 19]]]]], [], 0, 1, ["loc", [null, [17, 8], [25, 15]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [27, 16], [27, 24]]]]], [], 2, null, ["loc", [null, [27, 6], [29, 17]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [31, 14], [31, 22]]]]], [], 3, null, ["loc", [null, [31, 4], [37, 15]]]]],
+        statements: [["attribute", "class", ["concat", ["ui transparent ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [15, 37], [15, 45]]]], ["get", "isBlocked", ["loc", [null, [15, 46], [15, 55]]]]], [], ["loc", [null, [15, 33], [15, 56]]]], " disabled"], [], ["loc", [null, [15, 28], [15, 70]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [15, 80], [15, 99]]]], ["get", "modalIsStartToShow", ["loc", [null, [15, 100], [15, 118]]]]], [], ["loc", [null, [15, 76], [15, 119]]]], " loading"], [], ["loc", [null, [15, 71], [15, 132]]]], " icon input "]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [14, 24], [14, 34]]]]], [], ["loc", [null, [14, 6], [14, 36]]]], ["block", "if", [["get", "value", ["loc", [null, [17, 14], [17, 19]]]]], [], 0, 1, ["loc", [null, [17, 8], [25, 15]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [27, 16], [27, 24]]]]], [], 2, null, ["loc", [null, [27, 6], [29, 17]]]], ["block", "if", [["get", "showPreviewButton", ["loc", [null, [31, 10], [31, 27]]]]], [], 3, null, ["loc", [null, [31, 4], [41, 11]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [42, 14], [42, 22]]]]], [], 4, null, ["loc", [null, [42, 4], [48, 15]]]]],
         locals: [],
-        templates: [child0, child1, child2, child3]
+        templates: [child0, child1, child2, child3, child4]
       };
     })();
     return {
@@ -68529,7 +68626,7 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
             "column": 0
           },
           "end": {
-            "line": 40,
+            "line": 51,
             "column": 0
           }
         },
@@ -68552,7 +68649,7 @@ define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], functi
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [39, 7]]]]],
+      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [50, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -68570,11 +68667,11 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 100,
+                  "line": 101,
                   "column": 8
                 },
                 "end": {
-                  "line": 102,
+                  "line": 103,
                   "column": 8
                 }
               },
@@ -68614,11 +68711,11 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 103,
+                    "line": 104,
                     "column": 10
                   },
                   "end": {
-                    "line": 105,
+                    "line": 106,
                     "column": 10
                   }
                 },
@@ -68646,7 +68743,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
                 morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
                 return morphs;
               },
-              statements: [["content", "page.number", ["loc", [null, [104, 45], [104, 60]]]]],
+              statements: [["content", "page.number", ["loc", [null, [105, 45], [105, 60]]]]],
               locals: [],
               templates: []
             };
@@ -68659,11 +68756,11 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 105,
+                    "line": 106,
                     "column": 10
                   },
                   "end": {
-                    "line": 107,
+                    "line": 108,
                     "column": 10
                   }
                 },
@@ -68693,7 +68790,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
                 morphs[1] = dom.createMorphAt(element0, 0, 0);
                 return morphs;
               },
-              statements: [["element", "action", ["gotoPage", ["get", "this.attrs.gotoPage", ["loc", [null, [106, 58], [106, 77]]]], ["get", "page.number", ["loc", [null, [106, 78], [106, 89]]]]], [], ["loc", [null, [106, 38], [106, 91]]]], ["content", "page.number", ["loc", [null, [106, 92], [106, 107]]]]],
+              statements: [["element", "action", ["gotoPage", ["get", "this.attrs.gotoPage", ["loc", [null, [107, 58], [107, 77]]]], ["get", "page.number", ["loc", [null, [107, 78], [107, 89]]]]], [], ["loc", [null, [107, 38], [107, 91]]]], ["content", "page.number", ["loc", [null, [107, 92], [107, 107]]]]],
               locals: [],
               templates: []
             };
@@ -68705,11 +68802,11 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 102,
+                  "line": 103,
                   "column": 8
                 },
                 "end": {
-                  "line": 108,
+                  "line": 109,
                   "column": 8
                 }
               },
@@ -68732,7 +68829,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
               dom.insertBoundary(fragment, null);
               return morphs;
             },
-            statements: [["block", "if", [["get", "page.isCurrent", ["loc", [null, [103, 16], [103, 30]]]]], [], 0, 1, ["loc", [null, [103, 10], [107, 17]]]]],
+            statements: [["block", "if", [["get", "page.isCurrent", ["loc", [null, [104, 16], [104, 30]]]]], [], 0, 1, ["loc", [null, [104, 10], [108, 17]]]]],
             locals: [],
             templates: [child0, child1]
           };
@@ -68744,11 +68841,11 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
             "loc": {
               "source": null,
               "start": {
-                "line": 99,
+                "line": 100,
                 "column": 6
               },
               "end": {
-                "line": 109,
+                "line": 110,
                 "column": 6
               }
             },
@@ -68771,7 +68868,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["block", "if", [["get", "page.isEllipsis", ["loc", [null, [100, 14], [100, 29]]]]], [], 0, 1, ["loc", [null, [100, 8], [108, 15]]]]],
+          statements: [["block", "if", [["get", "page.isEllipsis", ["loc", [null, [101, 14], [101, 29]]]]], [], 0, 1, ["loc", [null, [101, 8], [109, 15]]]]],
           locals: ["page"],
           templates: [child0, child1]
         };
@@ -68785,11 +68882,11 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 115,
+                  "line": 116,
                   "column": 10
                 },
                 "end": {
-                  "line": 119,
+                  "line": 120,
                   "column": 10
                 }
               },
@@ -68814,7 +68911,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
               morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
               return morphs;
             },
-            statements: [["inline", "concat", [["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.showing"], [], ["loc", [null, [117, 14], [117, 79]]]], ["get", "currentIntervalRecords", ["loc", [null, [117, 80], [117, 102]]]], ["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.of"], [], ["loc", [null, [117, 103], [117, 163]]]], ["get", "recordsTotalCount", ["loc", [null, [117, 164], [117, 181]]]], ["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.entries"], [], ["loc", [null, [117, 182], [117, 247]]]]], [], ["loc", [null, [116, 12], [118, 14]]]]],
+            statements: [["inline", "concat", [["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.showing"], [], ["loc", [null, [118, 14], [118, 79]]]], ["get", "currentIntervalRecords", ["loc", [null, [118, 80], [118, 102]]]], ["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.of"], [], ["loc", [null, [118, 103], [118, 163]]]], ["get", "recordsTotalCount", ["loc", [null, [118, 164], [118, 181]]]], ["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.entries"], [], ["loc", [null, [118, 182], [118, 247]]]]], [], ["loc", [null, [117, 12], [119, 14]]]]],
             locals: [],
             templates: []
           };
@@ -68826,11 +68923,11 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
             "loc": {
               "source": null,
               "start": {
-                "line": 113,
+                "line": 114,
                 "column": 6
               },
               "end": {
-                "line": 121,
+                "line": 122,
                 "column": 6
               }
             },
@@ -68862,7 +68959,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
             morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
             return morphs;
           },
-          statements: [["block", "if", [["subexpr", "and", [["get", "currentIntervalRecords", ["loc", [null, [115, 21], [115, 43]]]], ["get", "recordsTotalCount", ["loc", [null, [115, 44], [115, 61]]]]], [], ["loc", [null, [115, 16], [115, 62]]]]], [], 0, null, ["loc", [null, [115, 10], [119, 17]]]]],
+          statements: [["block", "if", [["subexpr", "and", [["get", "currentIntervalRecords", ["loc", [null, [116, 21], [116, 43]]]], ["get", "recordsTotalCount", ["loc", [null, [116, 44], [116, 61]]]]], [], ["loc", [null, [116, 16], [116, 62]]]]], [], 0, null, ["loc", [null, [116, 10], [120, 17]]]]],
           locals: [],
           templates: [child0]
         };
@@ -68874,11 +68971,11 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
           "loc": {
             "source": null,
             "start": {
-              "line": 95,
+              "line": 96,
               "column": 0
             },
             "end": {
-              "line": 125,
+              "line": 126,
               "column": 0
             }
           },
@@ -68951,7 +69048,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
           morphs[6] = dom.createMorphAt(element5, 3, 3);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "hasPreviousPage", ["loc", [null, [98, 33], [98, 48]]]], "disabled"], [], ["loc", [null, [98, 24], [98, 61]]]], " button prev-page-button"]]], ["element", "action", ["previousPage", ["get", "this.attrs.previousPage", ["loc", [null, [98, 111], [98, 134]]]]], [], ["loc", [null, [98, 87], [98, 136]]]], ["block", "each", [["get", "pages", ["loc", [null, [99, 14], [99, 19]]]]], [], 0, null, ["loc", [null, [99, 6], [109, 15]]]], ["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "hasNextPage", ["loc", [null, [110, 33], [110, 44]]]], "disabled"], [], ["loc", [null, [110, 24], [110, 57]]]], " button next-page-button"]]], ["element", "action", ["nextPage", ["get", "this.attrs.nextPage", ["loc", [null, [110, 103], [110, 122]]]]], [], ["loc", [null, [110, 83], [110, 124]]]], ["block", "if", [["get", "showShowingEntries", ["loc", [null, [113, 12], [113, 30]]]]], [], 1, null, ["loc", [null, [113, 6], [121, 13]]]], ["inline", "flexberry-dropdown", [], ["items", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [122, 33], [122, 46]]]]], [], []], "value", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [122, 53], [122, 65]]]]], [], []], "class", "compact selection", "onChange", ["subexpr", "action", ["perPageClick"], [], ["loc", [null, [122, 101], [122, 124]]]], "needChecksOnValue", false, "direction", "upward"], ["loc", [null, [122, 6], [122, 169]]]]],
+        statements: [["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "hasPreviousPage", ["loc", [null, [99, 33], [99, 48]]]], "disabled"], [], ["loc", [null, [99, 24], [99, 61]]]], " button prev-page-button"]]], ["element", "action", ["previousPage", ["get", "this.attrs.previousPage", ["loc", [null, [99, 111], [99, 134]]]]], [], ["loc", [null, [99, 87], [99, 136]]]], ["block", "each", [["get", "pages", ["loc", [null, [100, 14], [100, 19]]]]], [], 0, null, ["loc", [null, [100, 6], [110, 15]]]], ["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "hasNextPage", ["loc", [null, [111, 33], [111, 44]]]], "disabled"], [], ["loc", [null, [111, 24], [111, 57]]]], " button next-page-button"]]], ["element", "action", ["nextPage", ["get", "this.attrs.nextPage", ["loc", [null, [111, 103], [111, 122]]]]], [], ["loc", [null, [111, 83], [111, 124]]]], ["block", "if", [["get", "showShowingEntries", ["loc", [null, [114, 12], [114, 30]]]]], [], 1, null, ["loc", [null, [114, 6], [122, 13]]]], ["inline", "flexberry-dropdown", [], ["items", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [123, 33], [123, 46]]]]], [], []], "value", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [123, 53], [123, 65]]]]], [], []], "class", "compact selection", "onChange", ["subexpr", "action", ["perPageClick"], [], ["loc", [null, [123, 101], [123, 124]]]], "needChecksOnValue", false, "direction", "upward"], ["loc", [null, [123, 6], [123, 169]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -68970,7 +69067,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
             "column": 0
           },
           "end": {
-            "line": 126,
+            "line": 127,
             "column": 0
           }
         },
@@ -69003,7 +69100,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["inline", "olv-toolbar", [], ["class", "ui secondary menu no-margin", "createNewButton", ["subexpr", "@mut", [["get", "createNewButton", ["loc", [null, [3, 18], [3, 33]]]]], [], []], "enableCreateNewButton", ["subexpr", "not", [["get", "readonly", ["loc", [null, [4, 29], [4, 37]]]]], [], ["loc", [null, [4, 24], [4, 38]]]], "refreshButton", ["subexpr", "@mut", [["get", "refreshButton", ["loc", [null, [5, 16], [5, 29]]]]], [], []], "deleteButton", ["subexpr", "@mut", [["get", "deleteButton", ["loc", [null, [6, 15], [6, 27]]]]], [], []], "colsConfigButton", ["subexpr", "@mut", [["get", "colsConfigButton", ["loc", [null, [7, 19], [7, 35]]]]], [], []], "enableFilters", ["subexpr", "@mut", [["get", "enableFilters", ["loc", [null, [8, 16], [8, 29]]]]], [], []], "exportExcelButton", ["subexpr", "@mut", [["get", "exportExcelButton", ["loc", [null, [9, 20], [9, 37]]]]], [], []], "showFilters", ["subexpr", "@mut", [["get", "_showFilters", ["loc", [null, [10, 14], [10, 26]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [11, 10], [11, 17]]]]], [], []], "toggleStateFilters", ["subexpr", "action", ["toggleStateFilters"], [], ["loc", [null, [12, 21], [12, 50]]]], "resetFilters", ["subexpr", "action", ["resetFilters", ["get", "this.attrs.resetFilters", ["loc", [null, [13, 38], [13, 61]]]]], [], ["loc", [null, [13, 15], [13, 62]]]], "filterButton", ["subexpr", "@mut", [["get", "filterButton", ["loc", [null, [14, 15], [14, 27]]]]], [], []], "filterText", ["subexpr", "@mut", [["get", "filterText", ["loc", [null, [15, 13], [15, 23]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [16, 14], [16, 25]]]]], [], []], "enableDeleteButton", ["subexpr", "not", [["get", "readonly", ["loc", [null, [17, 26], [17, 34]]]]], [], ["loc", [null, [17, 21], [17, 35]]]], "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [18, 16], [18, 29]]]]], [], []], "modelController", ["subexpr", "@mut", [["get", "currentController", ["loc", [null, [19, 18], [19, 35]]]]], [], []], "customButtonAction", "customButtonAction", "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [21, 16], [21, 29]]]]], [], []], "editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [22, 16], [22, 29]]]]], [], []], "showConfigDialog", "showConfigDialog", "confirmDeleteRows", ["subexpr", "@mut", [["get", "confirmDeleteRows", ["loc", [null, [24, 20], [24, 37]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [25, 21], [25, 39]]]]], [], []], "inExpandMode", ["subexpr", "@mut", [["get", "inExpandMode", ["loc", [null, [26, 15], [26, 27]]]]], [], []], "availableHierarchicalMode", ["subexpr", "@mut", [["get", "_availableHierarchicalMode", ["loc", [null, [27, 28], [27, 54]]]]], [], []], "availableCollExpandMode", ["subexpr", "@mut", [["get", "availableCollExpandMode", ["loc", [null, [28, 26], [28, 49]]]]], [], []], "switchHierarchicalMode", ["subexpr", "action", ["switchHierarchicalMode"], [], ["loc", [null, [29, 25], [29, 58]]]], "switchExpandMode", ["subexpr", "action", ["switchExpandMode"], [], ["loc", [null, [30, 19], [30, 46]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [31, 11], [31, 19]]]]], [], []]], ["loc", [null, [1, 0], [32, 2]]]], ["inline", "object-list-view", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [34, 14], [34, 25]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [35, 11], [35, 19]]]]], [], []], "columnsWidthAutoresize", true, "minAutoColumnWidth", ["subexpr", "@mut", [["get", "minAutoColumnWidth", ["loc", [null, [37, 21], [37, 39]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [38, 14], [38, 25]]]]], [], []], "tableStriped", ["subexpr", "@mut", [["get", "tableStriped", ["loc", [null, [39, 15], [39, 27]]]]], [], []], "customTableClass", ["subexpr", "@mut", [["get", "customTableClass", ["loc", [null, [40, 19], [40, 35]]]]], [], []], "cellComponent", ["subexpr", "@mut", [["get", "cellComponent", ["loc", [null, [41, 16], [41, 29]]]]], [], []], "singleColumnCellComponent", ["subexpr", "@mut", [["get", "singleColumnCellComponent", ["loc", [null, [42, 28], [42, 53]]]]], [], []], "singleColumnHeaderTitle", ["subexpr", "@mut", [["get", "singleColumnHeaderTitle", ["loc", [null, [43, 26], [43, 49]]]]], [], []], "showValidationMessagesInRow", ["subexpr", "and", [["subexpr", "not", [["get", "readonly", ["loc", [null, [44, 40], [44, 48]]]]], [], ["loc", [null, [44, 35], [44, 49]]]], ["get", "showValidationMessagesInRow", ["loc", [null, [44, 50], [44, 77]]]]], [], ["loc", [null, [44, 30], [44, 78]]]], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [45, 20], [45, 37]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [46, 20], [46, 37]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [47, 24], [47, 45]]]]], [], []], "showEditButtonInRow", ["subexpr", "@mut", [["get", "showEditButtonInRow", ["loc", [null, [48, 22], [48, 41]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [49, 24], [49, 45]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [50, 26], [50, 49]]]]], [], []], "sendMenuItemAction", ["subexpr", "action", ["sendMenuItemAction"], [], ["loc", [null, [51, 21], [51, 50]]]], "menuInRowAdditionalItems", ["subexpr", "@mut", [["get", "menuInRowAdditionalItems", ["loc", [null, [52, 27], [52, 51]]]]], [], []], "rowClickable", ["subexpr", "and", [["subexpr", "not", [["get", "readonly", ["loc", [null, [53, 25], [53, 33]]]]], [], ["loc", [null, [53, 20], [53, 34]]]], ["get", "rowClickable", ["loc", [null, [53, 35], [53, 47]]]]], [], ["loc", [null, [53, 15], [53, 48]]]], "orderable", ["subexpr", "@mut", [["get", "orderable", ["loc", [null, [54, 12], [54, 21]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "sorting", ["loc", [null, [55, 10], [55, 17]]]]], [], []], "immediateDelete", true, "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [57, 12], [57, 21]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [58, 18], [58, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "content", ["loc", [null, [59, 10], [59, 17]]]]], [], []], "sortByColumn", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.sortByColumn", ["loc", [null, [60, 27], [60, 50]]]], ["get", "this.attrs.sortByColumn", ["loc", [null, [60, 51], [60, 74]]]], "sortByColumn"], [], ["loc", [null, [60, 23], [60, 90]]]]], [], ["loc", [null, [60, 15], [60, 91]]]], "addColumnToSorting", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.addColumnToSorting", ["loc", [null, [61, 33], [61, 62]]]], ["get", "this.attrs.addColumnToSorting", ["loc", [null, [61, 63], [61, 92]]]], "addColumnToSorting"], [], ["loc", [null, [61, 29], [61, 114]]]]], [], ["loc", [null, [61, 21], [61, 115]]]], "enableFilters", ["subexpr", "@mut", [["get", "enableFilters", ["loc", [null, [62, 16], [62, 29]]]]], [], []], "showFilters", ["subexpr", "@mut", [["get", "_showFilters", ["loc", [null, [63, 14], [63, 26]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [64, 10], [64, 17]]]]], [], []], "applyFilters", ["subexpr", "action", [["subexpr", "if", [["get", "applyFilters", ["loc", [null, [65, 27], [65, 39]]]], ["get", "applyFilters", ["loc", [null, [65, 40], [65, 52]]]], "applyFilters"], [], ["loc", [null, [65, 23], [65, 68]]]]], [], ["loc", [null, [65, 15], [65, 69]]]], "componentForFilter", ["subexpr", "@mut", [["get", "componentForFilter", ["loc", [null, [66, 21], [66, 39]]]]], [], []], "conditionsByType", ["subexpr", "@mut", [["get", "conditionsByType", ["loc", [null, [67, 19], [67, 35]]]]], [], []], "filterByAnyMatch", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.filterByAnyMatch", ["loc", [null, [68, 31], [68, 58]]]], ["get", "this.attrs.filterByAnyMatch", ["loc", [null, [68, 59], [68, 86]]]], "filterByAnyMatch"], [], ["loc", [null, [68, 27], [68, 106]]]]], [], ["loc", [null, [68, 19], [68, 107]]]], "filterByAnyWord", ["subexpr", "@mut", [["get", "filterByAnyWord", ["loc", [null, [69, 18], [69, 33]]]]], [], []], "filterByAllWords", ["subexpr", "@mut", [["get", "filterByAllWords", ["loc", [null, [70, 19], [70, 35]]]]], [], []], "configurateRow", ["subexpr", "@mut", [["get", "this.attrs.configurateRow", ["loc", [null, [71, 17], [71, 42]]]]], [], []], "configurateSelectedRows", ["subexpr", "@mut", [["get", "this.attrs.configurateSelectedRows", ["loc", [null, [72, 26], [72, 60]]]]], [], []], "confirmDeleteRow", ["subexpr", "@mut", [["get", "confirmDeleteRow", ["loc", [null, [73, 19], [73, 35]]]]], [], []], "beforeDeleteRecord", ["subexpr", "@mut", [["get", "beforeDeleteRecord", ["loc", [null, [74, 21], [74, 39]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "@mut", [["get", "beforeDeleteAllRecords", ["loc", [null, [75, 25], [75, 47]]]]], [], []], "action", "objectListViewRowClick", "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [77, 16], [77, 29]]]]], [], []], "allowColumnResize", ["subexpr", "@mut", [["get", "allowColumnResize", ["loc", [null, [78, 20], [78, 37]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "selectedRecord", ["loc", [null, [79, 17], [79, 31]]]]], [], []], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [80, 21], [80, 39]]]]], [], []], "hierarchicalIndent", ["subexpr", "@mut", [["get", "hierarchicalIndent", ["loc", [null, [81, 21], [81, 39]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [82, 21], [82, 39]]]]], [], []], "inExpandMode", ["subexpr", "@mut", [["get", "inExpandMode", ["loc", [null, [83, 15], [83, 27]]]]], [], []], "disableHierarchicalMode", ["subexpr", "if", [["get", "hierarchyByAttribute", ["loc", [null, [84, 30], [84, 50]]]], true, ["get", "disableHierarchicalMode", ["loc", [null, [84, 56], [84, 79]]]]], [], ["loc", [null, [84, 26], [84, 80]]]], "loadRecords", ["subexpr", "action", ["loadRecords"], [], ["loc", [null, [85, 14], [85, 36]]]], "availableHierarchicalMode", ["subexpr", "action", ["availableHierarchicalMode"], [], ["loc", [null, [86, 28], [86, 64]]]], "useRowByRowLoading", ["subexpr", "@mut", [["get", "useRowByRowLoading", ["loc", [null, [87, 21], [87, 39]]]]], [], []], "useRowByRowLoadingProgress", ["subexpr", "@mut", [["get", "useRowByRowLoadingProgress", ["loc", [null, [88, 29], [88, 55]]]]], [], []], "eventsBus", ["subexpr", "@mut", [["get", "eventsBus", ["loc", [null, [89, 12], [89, 21]]]]], [], []], "onEditForm", ["subexpr", "@mut", [["get", "onEditForm", ["loc", [null, [90, 13], [90, 23]]]]], [], []], "defaultSortingButton", ["subexpr", "@mut", [["get", "defaultSortingButton", ["loc", [null, [91, 23], [91, 43]]]]], [], []], "defaultLeftPadding", ["subexpr", "@mut", [["get", "defaultLeftPadding", ["loc", [null, [92, 21], [92, 39]]]]], [], []], "overflowedComponents", ["subexpr", "@mut", [["get", "overflowedComponents", ["loc", [null, [93, 23], [93, 43]]]]], [], []]], ["loc", [null, [33, 0], [94, 2]]]], ["block", "if", [["subexpr", "or", [["subexpr", "not", [["get", "inHierarchicalMode", ["loc", [null, [95, 15], [95, 33]]]]], [], ["loc", [null, [95, 10], [95, 34]]]], ["get", "hierarchyPaging", ["loc", [null, [95, 35], [95, 50]]]]], [], ["loc", [null, [95, 6], [95, 51]]]]], [], 0, null, ["loc", [null, [95, 0], [125, 7]]]]],
+      statements: [["inline", "olv-toolbar", [], ["class", "ui secondary menu no-margin", "createNewButton", ["subexpr", "@mut", [["get", "createNewButton", ["loc", [null, [3, 18], [3, 33]]]]], [], []], "enableCreateNewButton", ["subexpr", "not", [["get", "readonly", ["loc", [null, [4, 29], [4, 37]]]]], [], ["loc", [null, [4, 24], [4, 38]]]], "refreshButton", ["subexpr", "@mut", [["get", "refreshButton", ["loc", [null, [5, 16], [5, 29]]]]], [], []], "deleteButton", ["subexpr", "@mut", [["get", "deleteButton", ["loc", [null, [6, 15], [6, 27]]]]], [], []], "colsConfigButton", ["subexpr", "@mut", [["get", "colsConfigButton", ["loc", [null, [7, 19], [7, 35]]]]], [], []], "enableFilters", ["subexpr", "@mut", [["get", "enableFilters", ["loc", [null, [8, 16], [8, 29]]]]], [], []], "exportExcelButton", ["subexpr", "@mut", [["get", "exportExcelButton", ["loc", [null, [9, 20], [9, 37]]]]], [], []], "showFilters", ["subexpr", "@mut", [["get", "_showFilters", ["loc", [null, [10, 14], [10, 26]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [11, 10], [11, 17]]]]], [], []], "toggleStateFilters", ["subexpr", "action", ["toggleStateFilters"], [], ["loc", [null, [12, 21], [12, 50]]]], "resetFilters", ["subexpr", "action", ["resetFilters", ["get", "this.attrs.resetFilters", ["loc", [null, [13, 38], [13, 61]]]]], [], ["loc", [null, [13, 15], [13, 62]]]], "filterButton", ["subexpr", "@mut", [["get", "filterButton", ["loc", [null, [14, 15], [14, 27]]]]], [], []], "filterText", ["subexpr", "@mut", [["get", "filterText", ["loc", [null, [15, 13], [15, 23]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [16, 14], [16, 25]]]]], [], []], "enableDeleteButton", ["subexpr", "not", [["get", "readonly", ["loc", [null, [17, 26], [17, 34]]]]], [], ["loc", [null, [17, 21], [17, 35]]]], "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [18, 16], [18, 29]]]]], [], []], "modelController", ["subexpr", "@mut", [["get", "currentController", ["loc", [null, [19, 18], [19, 35]]]]], [], []], "customButtonAction", "customButtonAction", "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [21, 16], [21, 29]]]]], [], []], "editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [22, 16], [22, 29]]]]], [], []], "showConfigDialog", "showConfigDialog", "confirmDeleteRows", ["subexpr", "@mut", [["get", "confirmDeleteRows", ["loc", [null, [24, 20], [24, 37]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [25, 21], [25, 39]]]]], [], []], "inExpandMode", ["subexpr", "@mut", [["get", "inExpandMode", ["loc", [null, [26, 15], [26, 27]]]]], [], []], "availableHierarchicalMode", ["subexpr", "@mut", [["get", "_availableHierarchicalMode", ["loc", [null, [27, 28], [27, 54]]]]], [], []], "availableCollExpandMode", ["subexpr", "@mut", [["get", "availableCollExpandMode", ["loc", [null, [28, 26], [28, 49]]]]], [], []], "switchHierarchicalMode", ["subexpr", "action", ["switchHierarchicalMode"], [], ["loc", [null, [29, 25], [29, 58]]]], "switchExpandMode", ["subexpr", "action", ["switchExpandMode"], [], ["loc", [null, [30, 19], [30, 46]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [31, 11], [31, 19]]]]], [], []]], ["loc", [null, [1, 0], [32, 2]]]], ["inline", "object-list-view", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [34, 14], [34, 25]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [35, 11], [35, 19]]]]], [], []], "columnsWidthAutoresize", true, "minAutoColumnWidth", ["subexpr", "@mut", [["get", "minAutoColumnWidth", ["loc", [null, [37, 21], [37, 39]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [38, 14], [38, 25]]]]], [], []], "tableStriped", ["subexpr", "@mut", [["get", "tableStriped", ["loc", [null, [39, 15], [39, 27]]]]], [], []], "customTableClass", ["subexpr", "@mut", [["get", "customTableClass", ["loc", [null, [40, 19], [40, 35]]]]], [], []], "cellComponent", ["subexpr", "@mut", [["get", "cellComponent", ["loc", [null, [41, 16], [41, 29]]]]], [], []], "singleColumnCellComponent", ["subexpr", "@mut", [["get", "singleColumnCellComponent", ["loc", [null, [42, 28], [42, 53]]]]], [], []], "singleColumnHeaderTitle", ["subexpr", "@mut", [["get", "singleColumnHeaderTitle", ["loc", [null, [43, 26], [43, 49]]]]], [], []], "showValidationMessagesInRow", ["subexpr", "and", [["subexpr", "not", [["get", "readonly", ["loc", [null, [44, 40], [44, 48]]]]], [], ["loc", [null, [44, 35], [44, 49]]]], ["get", "showValidationMessagesInRow", ["loc", [null, [44, 50], [44, 77]]]]], [], ["loc", [null, [44, 30], [44, 78]]]], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [45, 20], [45, 37]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [46, 20], [46, 37]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [47, 24], [47, 45]]]]], [], []], "showEditButtonInRow", ["subexpr", "@mut", [["get", "showEditButtonInRow", ["loc", [null, [48, 22], [48, 41]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [49, 24], [49, 45]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [50, 26], [50, 49]]]]], [], []], "sendMenuItemAction", ["subexpr", "action", ["sendMenuItemAction"], [], ["loc", [null, [51, 21], [51, 50]]]], "menuInRowAdditionalItems", ["subexpr", "@mut", [["get", "menuInRowAdditionalItems", ["loc", [null, [52, 27], [52, 51]]]]], [], []], "rowClickable", ["subexpr", "and", [["subexpr", "not", [["get", "readonly", ["loc", [null, [53, 25], [53, 33]]]]], [], ["loc", [null, [53, 20], [53, 34]]]], ["get", "rowClickable", ["loc", [null, [53, 35], [53, 47]]]]], [], ["loc", [null, [53, 15], [53, 48]]]], "orderable", ["subexpr", "@mut", [["get", "orderable", ["loc", [null, [54, 12], [54, 21]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "sorting", ["loc", [null, [55, 10], [55, 17]]]]], [], []], "immediateDelete", true, "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [57, 12], [57, 21]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [58, 18], [58, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "content", ["loc", [null, [59, 10], [59, 17]]]]], [], []], "sortByColumn", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.sortByColumn", ["loc", [null, [60, 27], [60, 50]]]], ["get", "this.attrs.sortByColumn", ["loc", [null, [60, 51], [60, 74]]]], "sortByColumn"], [], ["loc", [null, [60, 23], [60, 90]]]]], [], ["loc", [null, [60, 15], [60, 91]]]], "addColumnToSorting", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.addColumnToSorting", ["loc", [null, [61, 33], [61, 62]]]], ["get", "this.attrs.addColumnToSorting", ["loc", [null, [61, 63], [61, 92]]]], "addColumnToSorting"], [], ["loc", [null, [61, 29], [61, 114]]]]], [], ["loc", [null, [61, 21], [61, 115]]]], "enableFilters", ["subexpr", "@mut", [["get", "enableFilters", ["loc", [null, [62, 16], [62, 29]]]]], [], []], "showFilters", ["subexpr", "@mut", [["get", "_showFilters", ["loc", [null, [63, 14], [63, 26]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [64, 10], [64, 17]]]]], [], []], "applyFilters", ["subexpr", "action", [["subexpr", "if", [["get", "applyFilters", ["loc", [null, [65, 27], [65, 39]]]], ["get", "applyFilters", ["loc", [null, [65, 40], [65, 52]]]], "applyFilters"], [], ["loc", [null, [65, 23], [65, 68]]]]], [], ["loc", [null, [65, 15], [65, 69]]]], "componentForFilter", ["subexpr", "@mut", [["get", "componentForFilter", ["loc", [null, [66, 21], [66, 39]]]]], [], []], "conditionsByType", ["subexpr", "@mut", [["get", "conditionsByType", ["loc", [null, [67, 19], [67, 35]]]]], [], []], "filterByAnyMatch", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.filterByAnyMatch", ["loc", [null, [68, 31], [68, 58]]]], ["get", "this.attrs.filterByAnyMatch", ["loc", [null, [68, 59], [68, 86]]]], "filterByAnyMatch"], [], ["loc", [null, [68, 27], [68, 106]]]]], [], ["loc", [null, [68, 19], [68, 107]]]], "filterByAnyWord", ["subexpr", "@mut", [["get", "filterByAnyWord", ["loc", [null, [69, 18], [69, 33]]]]], [], []], "filterByAllWords", ["subexpr", "@mut", [["get", "filterByAllWords", ["loc", [null, [70, 19], [70, 35]]]]], [], []], "configurateRow", ["subexpr", "@mut", [["get", "this.attrs.configurateRow", ["loc", [null, [71, 17], [71, 42]]]]], [], []], "configurateSelectedRows", ["subexpr", "@mut", [["get", "this.attrs.configurateSelectedRows", ["loc", [null, [72, 26], [72, 60]]]]], [], []], "confirmDeleteRow", ["subexpr", "@mut", [["get", "confirmDeleteRow", ["loc", [null, [73, 19], [73, 35]]]]], [], []], "beforeDeleteRecord", ["subexpr", "@mut", [["get", "beforeDeleteRecord", ["loc", [null, [74, 21], [74, 39]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "@mut", [["get", "beforeDeleteAllRecords", ["loc", [null, [75, 25], [75, 47]]]]], [], []], "action", "objectListViewRowClick", "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [77, 16], [77, 29]]]]], [], []], "allowColumnResize", ["subexpr", "@mut", [["get", "allowColumnResize", ["loc", [null, [78, 20], [78, 37]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "selectedRecord", ["loc", [null, [79, 17], [79, 31]]]]], [], []], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [80, 21], [80, 39]]]]], [], []], "hierarchicalIndent", ["subexpr", "@mut", [["get", "hierarchicalIndent", ["loc", [null, [81, 21], [81, 39]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [82, 21], [82, 39]]]]], [], []], "inExpandMode", ["subexpr", "@mut", [["get", "inExpandMode", ["loc", [null, [83, 15], [83, 27]]]]], [], []], "disableHierarchicalMode", ["subexpr", "if", [["get", "hierarchyByAttribute", ["loc", [null, [84, 30], [84, 50]]]], true, ["get", "disableHierarchicalMode", ["loc", [null, [84, 56], [84, 79]]]]], [], ["loc", [null, [84, 26], [84, 80]]]], "loadRecords", ["subexpr", "action", ["loadRecords"], [], ["loc", [null, [85, 14], [85, 36]]]], "availableHierarchicalMode", ["subexpr", "action", ["availableHierarchicalMode"], [], ["loc", [null, [86, 28], [86, 64]]]], "useRowByRowLoading", ["subexpr", "@mut", [["get", "useRowByRowLoading", ["loc", [null, [87, 21], [87, 39]]]]], [], []], "useRowByRowLoadingProgress", ["subexpr", "@mut", [["get", "useRowByRowLoadingProgress", ["loc", [null, [88, 29], [88, 55]]]]], [], []], "eventsBus", ["subexpr", "@mut", [["get", "eventsBus", ["loc", [null, [89, 12], [89, 21]]]]], [], []], "onEditForm", ["subexpr", "@mut", [["get", "onEditForm", ["loc", [null, [90, 13], [90, 23]]]]], [], []], "defaultSortingButton", ["subexpr", "@mut", [["get", "defaultSortingButton", ["loc", [null, [91, 23], [91, 43]]]]], [], []], "defaultLeftPadding", ["subexpr", "@mut", [["get", "defaultLeftPadding", ["loc", [null, [92, 21], [92, 39]]]]], [], []], "overflowedComponents", ["subexpr", "@mut", [["get", "overflowedComponents", ["loc", [null, [93, 23], [93, 43]]]]], [], []], "fixedHeader", ["subexpr", "@mut", [["get", "fixedHeader", ["loc", [null, [94, 14], [94, 25]]]]], [], []]], ["loc", [null, [33, 0], [95, 2]]]], ["block", "if", [["subexpr", "or", [["subexpr", "not", [["get", "inHierarchicalMode", ["loc", [null, [96, 15], [96, 33]]]]], [], ["loc", [null, [96, 10], [96, 34]]]], ["get", "hierarchyPaging", ["loc", [null, [96, 35], [96, 50]]]]], [], ["loc", [null, [96, 6], [96, 51]]]]], [], 0, null, ["loc", [null, [96, 0], [126, 7]]]]],
       locals: [],
       templates: [child0]
     };
@@ -70267,7 +70364,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
                 "column": 6
               },
               "end": {
-                "line": 98,
+                "line": 99,
                 "column": 6
               }
             },
@@ -70292,7 +70389,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "object-list-view-row", [], ["record", ["subexpr", "@mut", [["get", "record", ["loc", [null, [74, 17], [74, 23]]]]], [], []], "columns", ["subexpr", "@mut", [["get", "columns", ["loc", [null, [75, 18], [75, 25]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [76, 19], [76, 27]]]]], [], []], "required", ["subexpr", "@mut", [["get", "required", ["loc", [null, [77, 19], [77, 27]]]]], [], []], "showMenuColumn", ["subexpr", "@mut", [["get", "showMenuColumn", ["loc", [null, [78, 25], [78, 39]]]]], [], []], "showHelperColumn", ["subexpr", "@mut", [["get", "showHelperColumn", ["loc", [null, [79, 27], [79, 43]]]]], [], []], "defaultRowConfig", ["subexpr", "@mut", [["get", "defaultRowConfig", ["loc", [null, [80, 27], [80, 43]]]]], [], []], "showValidationMessages", ["subexpr", "@mut", [["get", "showValidationMessagesInRow", ["loc", [null, [81, 33], [81, 60]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [82, 34], [82, 57]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [83, 32], [83, 53]]]]], [], []], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [84, 28], [84, 45]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [85, 28], [85, 45]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [86, 32], [86, 53]]]]], [], []], "inExpandMode", ["subexpr", "unbound", [["get", "inExpandMode", ["loc", [null, [87, 32], [87, 44]]]]], [], ["loc", [null, [87, 23], [87, 45]]]], "hierarchicalIndent", ["subexpr", "@mut", [["get", "hierarchicalIndent", ["loc", [null, [88, 29], [88, 47]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [89, 29], [89, 47]]]]], [], []], "singleColumnCellComponent", ["subexpr", "@mut", [["get", "singleColumnCellComponent", ["loc", [null, [90, 36], [90, 61]]]]], [], []], "loadRecords", ["subexpr", "@mut", [["get", "loadRecords", ["loc", [null, [91, 22], [91, 33]]]]], [], []], "doRenderData", ["subexpr", "@mut", [["get", "record.doRenderData", ["loc", [null, [92, 23], [92, 42]]]]], [], []], "rowClick", ["subexpr", "action", ["rowClick"], [], ["loc", [null, [93, 19], [93, 38]]]], "selectRow", ["subexpr", "action", ["selectRow"], [], ["loc", [null, [94, 20], [94, 40]]]], "deleteRow", ["subexpr", "action", ["deleteRow"], [], ["loc", [null, [95, 20], [95, 40]]]], "hierarchyPaging", ["subexpr", "@mut", [["get", "hierarchyPaging", ["loc", [null, [96, 26], [96, 41]]]]], [], []]], ["loc", [null, [73, 8], [97, 10]]]]],
+          statements: [["inline", "object-list-view-row", [], ["record", ["subexpr", "@mut", [["get", "record", ["loc", [null, [74, 17], [74, 23]]]]], [], []], "columns", ["subexpr", "@mut", [["get", "columns", ["loc", [null, [75, 18], [75, 25]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [76, 19], [76, 27]]]]], [], []], "required", ["subexpr", "@mut", [["get", "required", ["loc", [null, [77, 19], [77, 27]]]]], [], []], "showMenuColumn", ["subexpr", "@mut", [["get", "showMenuColumn", ["loc", [null, [78, 25], [78, 39]]]]], [], []], "showHelperColumn", ["subexpr", "@mut", [["get", "showHelperColumn", ["loc", [null, [79, 27], [79, 43]]]]], [], []], "defaultRowConfig", ["subexpr", "@mut", [["get", "defaultRowConfig", ["loc", [null, [80, 27], [80, 43]]]]], [], []], "showValidationMessages", ["subexpr", "@mut", [["get", "showValidationMessagesInRow", ["loc", [null, [81, 33], [81, 60]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [82, 34], [82, 57]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [83, 32], [83, 53]]]]], [], []], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [84, 28], [84, 45]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [85, 28], [85, 45]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [86, 32], [86, 53]]]]], [], []], "inExpandMode", ["subexpr", "unbound", [["get", "inExpandMode", ["loc", [null, [87, 32], [87, 44]]]]], [], ["loc", [null, [87, 23], [87, 45]]]], "hierarchicalIndent", ["subexpr", "@mut", [["get", "hierarchicalIndent", ["loc", [null, [88, 29], [88, 47]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [89, 29], [89, 47]]]]], [], []], "singleColumnCellComponent", ["subexpr", "@mut", [["get", "singleColumnCellComponent", ["loc", [null, [90, 36], [90, 61]]]]], [], []], "loadRecords", ["subexpr", "@mut", [["get", "loadRecords", ["loc", [null, [91, 22], [91, 33]]]]], [], []], "doRenderData", ["subexpr", "@mut", [["get", "record.doRenderData", ["loc", [null, [92, 23], [92, 42]]]]], [], []], "rowClick", ["subexpr", "action", ["rowClick"], [], ["loc", [null, [93, 19], [93, 38]]]], "selectRow", ["subexpr", "action", ["selectRow"], [], ["loc", [null, [94, 20], [94, 40]]]], "deleteRow", ["subexpr", "action", ["deleteRow"], [], ["loc", [null, [95, 20], [95, 40]]]], "hierarchyPaging", ["subexpr", "@mut", [["get", "hierarchyPaging", ["loc", [null, [96, 26], [96, 41]]]]], [], []], "fixedHeader", ["subexpr", "@mut", [["get", "fixedHeader", ["loc", [null, [97, 22], [97, 33]]]]], [], []]], ["loc", [null, [73, 8], [98, 10]]]]],
           locals: ["record"],
           templates: []
         };
@@ -70305,11 +70402,11 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             "loc": {
               "source": null,
               "start": {
-                "line": 99,
+                "line": 100,
                 "column": 6
               },
               "end": {
-                "line": 106,
+                "line": 107,
                 "column": 6
               }
             },
@@ -70354,7 +70451,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             morphs[1] = dom.createMorphAt(element0, 3, 3);
             return morphs;
           },
-          statements: [["attribute", "colspan", ["concat", [["get", "colspan", ["loc", [null, [101, 25], [101, 32]]]]]]], ["inline", "t", ["components.object-list-view.loading-text"], [], ["loc", [null, [103, 12], [103, 60]]]]],
+          statements: [["attribute", "colspan", ["concat", [["get", "colspan", ["loc", [null, [102, 25], [102, 32]]]]]]], ["inline", "t", ["components.object-list-view.loading-text"], [], ["loc", [null, [104, 12], [104, 60]]]]],
           locals: [],
           templates: []
         };
@@ -70370,7 +70467,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
               "column": 4
             },
             "end": {
-              "line": 107,
+              "line": 108,
               "column": 4
             }
           },
@@ -70396,7 +70493,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [["block", "each", [["get", "contentWithKeys", ["loc", [null, [72, 14], [72, 29]]]]], ["key", "key"], 0, null, ["loc", [null, [72, 6], [98, 15]]]], ["block", "if", [["get", "rowByRowLoadingProgress", ["loc", [null, [99, 12], [99, 35]]]]], [], 1, null, ["loc", [null, [99, 6], [106, 13]]]]],
+        statements: [["block", "each", [["get", "contentWithKeys", ["loc", [null, [72, 14], [72, 29]]]]], ["key", "key"], 0, null, ["loc", [null, [72, 6], [99, 15]]]], ["block", "if", [["get", "rowByRowLoadingProgress", ["loc", [null, [100, 12], [100, 35]]]]], [], 1, null, ["loc", [null, [100, 6], [107, 13]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -70415,7 +70512,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             "column": 0
           },
           "end": {
-            "line": 110,
+            "line": 111,
             "column": 0
           }
         },
@@ -70465,7 +70562,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["block", "if", [["get", "errorMessages", ["loc", [null, [1, 6], [1, 19]]]]], [], 0, null, ["loc", [null, [1, 0], [11, 7]]]], ["attribute", "class", ["concat", ["object-list-view ui unstackable celled ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [12, 58], [12, 66]]]], "readonly"], [], ["loc", [null, [12, 53], [12, 79]]]], " ", ["get", "tableClass", ["loc", [null, [12, 82], [12, 92]]]], " table"]]], ["block", "if", [["get", "singleColumnHeaderTitle", ["loc", [null, [13, 8], [13, 31]]]]], [], 1, null, ["loc", [null, [13, 2], [25, 9]]]], ["block", "if", [["get", "showFilters", ["loc", [null, [27, 10], [27, 21]]]]], [], 2, null, ["loc", [null, [27, 4], [64, 11]]]], ["block", "unless", [["get", "content", ["loc", [null, [65, 14], [65, 21]]]]], [], 3, 4, ["loc", [null, [65, 4], [107, 15]]]]],
+      statements: [["block", "if", [["get", "errorMessages", ["loc", [null, [1, 6], [1, 19]]]]], [], 0, null, ["loc", [null, [1, 0], [11, 7]]]], ["attribute", "class", ["concat", ["object-list-view ui unstackable celled ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [12, 58], [12, 66]]]], "readonly"], [], ["loc", [null, [12, 53], [12, 79]]]], " ", ["get", "tableClass", ["loc", [null, [12, 82], [12, 92]]]], " table"]]], ["block", "if", [["get", "singleColumnHeaderTitle", ["loc", [null, [13, 8], [13, 31]]]]], [], 1, null, ["loc", [null, [13, 2], [25, 9]]]], ["block", "if", [["get", "showFilters", ["loc", [null, [27, 10], [27, 21]]]]], [], 2, null, ["loc", [null, [27, 4], [64, 11]]]], ["block", "unless", [["get", "content", ["loc", [null, [65, 14], [65, 21]]]]], [], 3, 4, ["loc", [null, [65, 4], [108, 15]]]]],
       locals: [],
       templates: [child0, child1, child2, child3, child4]
     };
@@ -71409,7 +71506,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.18+58b3e30e"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.3.0-beta.3"});
 }
 
 /* jshint ignore:end */
