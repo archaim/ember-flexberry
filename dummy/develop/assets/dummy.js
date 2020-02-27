@@ -48644,111 +48644,6 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
     })();
     var child1 = (function () {
       var child0 = (function () {
-        var child0 = (function () {
-          return {
-            meta: {
-              "fragmentReason": false,
-              "revision": "Ember@2.4.6",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 7,
-                  "column": 6
-                },
-                "end": {
-                  "line": 15,
-                  "column": 6
-                }
-              },
-              "moduleName": "dummy/templates/components/flexberry-simpledatetime.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("        ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createElement("button");
-              dom.setAttribute(el1, "class", "ui ui-clear disabled button");
-              dom.setAttribute(el1, "disabled", "disabled");
-              var el2 = dom.createTextNode("\n          ");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createElement("i");
-              dom.setAttribute(el2, "class", "remove icon");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createTextNode("\n        ");
-              dom.appendChild(el1, el2);
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var element1 = dom.childAt(fragment, [1]);
-              var morphs = new Array(2);
-              morphs[0] = dom.createAttrMorph(element1, 'title');
-              morphs[1] = dom.createElementMorph(element1);
-              return morphs;
-            },
-            statements: [["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [10, 16], [10, 70]]]]], ["element", "action", ["remove"], ["bubbles", false], ["loc", [null, [12, 10], [12, 43]]]]],
-            locals: [],
-            templates: []
-          };
-        })();
-        var child1 = (function () {
-          return {
-            meta: {
-              "fragmentReason": false,
-              "revision": "Ember@2.4.6",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 15,
-                  "column": 6
-                },
-                "end": {
-                  "line": 22,
-                  "column": 6
-                }
-              },
-              "moduleName": "dummy/templates/components/flexberry-simpledatetime.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("        ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createElement("button");
-              dom.setAttribute(el1, "class", "ui ui-clear button");
-              var el2 = dom.createTextNode("\n          ");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createElement("i");
-              dom.setAttribute(el2, "class", "remove icon");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createTextNode("\n        ");
-              dom.appendChild(el1, el2);
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var element0 = dom.childAt(fragment, [1]);
-              var morphs = new Array(2);
-              morphs[0] = dom.createAttrMorph(element0, 'title');
-              morphs[1] = dom.createElementMorph(element0);
-              return morphs;
-            },
-            statements: [["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [18, 16], [18, 70]]]]], ["element", "action", ["remove"], ["bubbles", false], ["loc", [null, [19, 10], [19, 43]]]]],
-            locals: [],
-            templates: []
-          };
-        })();
         return {
           meta: {
             "fragmentReason": false,
@@ -48760,7 +48655,7 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
                 "column": 4
               },
               "end": {
-                "line": 23,
+                "line": 15,
                 "column": 4
               }
             },
@@ -48772,20 +48667,34 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
           hasRendered: false,
           buildFragment: function buildFragment(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createComment("");
+            var el1 = dom.createTextNode("      ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("button");
+            dom.setAttribute(el1, "type", "button");
+            var el2 = dom.createTextNode("\n        ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("i");
+            dom.setAttribute(el2, "class", "remove icon");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
             dom.appendChild(el0, el1);
             return el0;
           },
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var morphs = new Array(1);
-            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-            dom.insertBoundary(fragment, 0);
-            dom.insertBoundary(fragment, null);
+            var element0 = dom.childAt(fragment, [1]);
+            var morphs = new Array(4);
+            morphs[0] = dom.createAttrMorph(element0, 'class');
+            morphs[1] = dom.createAttrMorph(element0, 'title');
+            morphs[2] = dom.createAttrMorph(element0, 'disabled');
+            morphs[3] = dom.createElementMorph(element0);
             return morphs;
           },
-          statements: [["block", "if", [["get", "readonlyAttr", ["loc", [null, [7, 12], [7, 24]]]]], [], 0, 1, ["loc", [null, [7, 6], [22, 13]]]]],
+          statements: [["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["get", "readonlyAttr", ["loc", [null, [8, 32], [8, 44]]]], "disabled"], [], ["loc", [null, [8, 27], [8, 57]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [9, 14], [9, 68]]]]], ["attribute", "disabled", ["get", "readonlyAttr", ["loc", [null, [10, 19], [10, 31]]]]], ["element", "action", ["remove"], ["bubbles", false], ["loc", [null, [12, 8], [12, 41]]]]],
           locals: [],
-          templates: [child0, child1]
+          templates: []
         };
       })();
       return {
@@ -48799,7 +48708,7 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
               "column": 0
             },
             "end": {
-              "line": 25,
+              "line": 17,
               "column": 0
             }
           },
@@ -48832,14 +48741,14 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element2 = dom.childAt(fragment, [1]);
-          var element3 = dom.childAt(element2, [1]);
+          var element1 = dom.childAt(fragment, [1]);
+          var element2 = dom.childAt(element1, [1]);
           var morphs = new Array(2);
-          morphs[0] = dom.createAttrMorph(element3, 'placeholder');
-          morphs[1] = dom.createMorphAt(element2, 3, 3);
+          morphs[0] = dom.createAttrMorph(element2, 'placeholder');
+          morphs[1] = dom.createMorphAt(element1, 3, 3);
           return morphs;
         },
-        statements: [["attribute", "placeholder", ["get", "placeholder", ["loc", [null, [5, 37], [5, 48]]]]], ["block", "if", [["get", "removeButton", ["loc", [null, [6, 10], [6, 22]]]]], [], 0, null, ["loc", [null, [6, 4], [23, 11]]]]],
+        statements: [["attribute", "placeholder", ["get", "placeholder", ["loc", [null, [5, 37], [5, 48]]]]], ["block", "if", [["get", "removeButton", ["loc", [null, [6, 10], [6, 22]]]]], [], 0, null, ["loc", [null, [6, 4], [15, 11]]]]],
         locals: [],
         templates: [child0]
       };
@@ -48858,7 +48767,7 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
             "column": 0
           },
           "end": {
-            "line": 26,
+            "line": 18,
             "column": 0
           }
         },
@@ -48881,7 +48790,7 @@ define("dummy/templates/components/flexberry-simpledatetime", ["exports"], funct
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["subexpr", "and", [["get", "currentTypeSupported", ["loc", [null, [1, 11], [1, 31]]]], ["get", "useBrowserInput", ["loc", [null, [1, 32], [1, 47]]]]], [], ["loc", [null, [1, 6], [1, 48]]]]], [], 0, 1, ["loc", [null, [1, 0], [25, 7]]]]],
+      statements: [["block", "if", [["subexpr", "and", [["get", "currentTypeSupported", ["loc", [null, [1, 11], [1, 31]]]], ["get", "useBrowserInput", ["loc", [null, [1, 32], [1, 47]]]]], [], ["loc", [null, [1, 6], [1, 48]]]]], [], 0, 1, ["loc", [null, [1, 0], [17, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -71588,7 +71497,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.3.0-beta.2+39ecb271"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.3.0-beta.2+1162682f"});
 }
 
 /* jshint ignore:end */
