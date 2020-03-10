@@ -1,6 +1,8 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "AdvLimitDialogContentComponent",
+        "AdvLimitService",
         "AppStateService",
         "ApplicationInitializer",
         "ApplicationInstanceInitializer",
@@ -22,6 +24,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "EnumCaptionHelper",
         "ErrorableControllerMixin",
         "ErrorableRouteMixin",
+        "FlexberryAdvLimitModel",
+        "FlexberryAdvLimitSerializer",
         "FlexberryBaseComponent",
         "FlexberryButtonComponent",
         "FlexberryCheckboxComponent",
@@ -88,6 +92,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Mobile.ObjectListViewRowComponent",
         "ModalApplicationRoute",
         "ModalDialog",
+        "MultiListModelEditMixin",
         "NewPlatformFlexberryFlexberryUserSettingModel",
         "NewPlatformFlexberryFlexberryUserSettingSerializer",
         "NewPlatformFlexberryServicesLockListController",

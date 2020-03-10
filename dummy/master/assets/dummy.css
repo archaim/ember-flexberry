@@ -1342,6 +1342,10 @@ input::selection {
 .bgw-fix.mobile {
   height: 50px;
 }
+.pushable .pusher.mobile {
+  height: auto;
+  min-height: auto;
+}
 .background-logo {
   height: 80px;
   position: fixed;
@@ -1368,8 +1372,11 @@ input::selection {
 .background-logo a img {
   padding: 7px 0px;
 }
-.flexberry-content.ui.attached.segment {
+#example-mobile .flexberry-content.ui.attached.segment,
+#example .flexberry-content.ui.attached.segment {
   border: none;
+  height: auto;
+  min-height: 100%;
 }
 .flex-container {
   width: 100%!important;
@@ -4841,7 +4848,7 @@ lang {
 }
 .ui.small.button {
   border: none;
-  font-size: 12px;
+  font-size: 14px;
 }
 .ui.small.button:hover {
   background: #d01919;
@@ -4915,9 +4922,12 @@ div.ui.secondary.menu.no-margin {
 .ui.button.delete-button {
   border: none;
   font-size: 0px;
-  padding-top: 10px;
+  padding-right: 10px;
   padding-left: 10px;
   height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .ui.button.delete-button:hover {
   background: none;
@@ -4925,6 +4935,8 @@ div.ui.secondary.menu.no-margin {
 }
 .ui.button.icon.hierarchical-button {
   border: 0px;
+  padding: 0 5px 0;
+  font-size: 1.5rem;
 }
 .ui.button.icon.hierarchical-button:hover {
   background: #FFFFFF;
@@ -4970,6 +4982,16 @@ div.ui.secondary.menu.no-margin {
   background-color: #FF7500;
   border: 1px solid #FF7500;
   color: #FFFFFF;
+}
+.ui.secondary.menu .ui.buttons.export-config .export-button,
+.ui.secondary.menu .ui.buttons.cols-config .config-button,
+.ui.secondary.menu .ui.buttons.adv-limit-config .adv-limit-button {
+  padding-right: 0em;
+}
+.ui.secondary.menu .ui.buttons.export-config .dropdown.button,
+.ui.secondary.menu .ui.buttons.cols-config .dropdown.button,
+.ui.secondary.menu .ui.buttons.adv-limit-config .dropdown.button {
+  padding-left: 0.2em;
 }
 /**************************************
       Edit panel buttons section
@@ -5072,18 +5094,27 @@ div.ui.secondary.menu.no-margin {
   content: '';
 }
 .flexberry-lookup .ui.action.input .ui.button.ui-change,
-.flexberry-lookup .ui.action.input .ui.button.ui-clear {
+.flexberry-lookup .ui.action.input .ui.button.ui-clear,
+.flexberry-lookup .ui.action.input .ui.ui-preview.button {
   padding: 0em 0.3em 0em 0.3em;
   font-size: 1em;
   border: none;
 }
 .flexberry-lookup .ui.action.input .ui.button.ui-change i.icon,
-.flexberry-lookup .ui.action.input .ui.button.ui-clear i.icon {
+.flexberry-lookup .ui.action.input .ui.button.ui-clear i.icon,
+.flexberry-lookup .ui.action.input .ui.ui-preview.button i.icon {
   margin: 0px 3px 0px 3px;
 }
 .flexberry-lookup .ui.fluid.action.input .ui.button.ui-clear:hover {
   color: #FF7500;
   opacity: 1;
+}
+html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.button {
+  width: 20px;
+  margin-right: 3px;
+}
+html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.button .remove.icon {
+  margin-left: 0px;
 }
 .ui.fluid.action.input:hover {
   background: none;
@@ -5252,6 +5283,40 @@ div.ui.secondary.menu.no-margin {
 .ui.ui-clear-settings.button:hover {
   background: #FFFFFF;
 }
+.ui.ui-move-up.button {
+  padding: 0px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #7ba7d9;
+  text-align: right;
+}
+.ui.ui-move-up.button:hover {
+  background: #FFFFFF;
+}
+.ui.ui-move-down.button {
+  padding: 0px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #7ba7d9;
+  text-align: right;
+}
+.ui.ui-move-down.button:hover {
+  background: #FFFFFF;
+}
+.ui.custom.button {
+  padding: 0px 18px;
+  height: 30px;
+  border: 1px solid #7ba7d9;
+}
+.ui.custom.icon.button {
+  padding: 0px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #7ba7d9;
+}
+.ui.custom.icon.button:hover i.icon:before {
+  color: #FFFFFF;
+}
 .right.pointing.ui.icon.dropdown.button:hover i.icon.list.layout:before {
   color: #FFFFFF;
 }
@@ -5308,9 +5373,11 @@ div.ui.secondary.menu.no-margin {
 }
 .flexberry-colsconfig.content .cols-config-apply:hover {
   border: 1px solid #7dd4b4;
+  border-radius: 5px;
 }
 .flexberry-colsconfig.content .cols-config-save {
   border: 1px solid #7ba7d9;
+  border-radius: 5px !important;
 }
 .flexberry-colsconfig.content .cols-config-save:hover {
   border: 1px solid #7dd4b4;
@@ -5318,13 +5385,15 @@ div.ui.secondary.menu.no-margin {
 }
 .ui.icon.button > .large.table.icon,
 .large.file.excel {
-  margin-top: -4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .ui.buttons > .ui.button:not(.basic):not(.inverted),
 .ui.buttons:not(.basic):not(.inverted) > .button {
   border: none;
   background: none!important;
-  padding: 0.7400em 0.8571em!important;
+  padding: 0.7400em 0.8571em;
 }
 .ui.basic.buttons .active.button {
   color: #999!important;
@@ -5336,11 +5405,9 @@ div.ui.secondary.menu.no-margin {
 }
 .ui.icon.tiny.button {
   border: 1px solid #7ba7d9;
-  margin: 2px 15px;
 }
 .ui.icon.tiny.button.no-margin {
   border: 1px solid #7ba7d9;
-  margin: 2px 15px;
 }
 .ui.buttons:not(.basic):not(.inverted) {
   box-shadow: none;
@@ -9373,10 +9440,12 @@ i.icon.table:before {
   font-family: 'Crimean';
   content: "\e819";
 }
+i.icon.large.file.excel.outline {
+  font-size: 24px;
+}
 i.icon.file.excel.outline:before {
   font-family: 'Crimean';
   content: "\e80a";
-  font-size: 20px;
 }
 i.icon.filter:before {
   font-family: 'Crimean';
@@ -10949,6 +11018,15 @@ span.lookup-field {
   border-color: #E0B4B4;
   color: #9F3A38;
   box-shadow: none;
+}
+.ui.form .flexberry-advlimit-input {
+  width: 100%;
+}
+.ui.form .flexberry-advlimit-input .flexberry-textarea {
+  width: 100%;
+}
+.ui.form .flexberry-advlimit-input .flexberry-textarea textarea {
+  resize: none;
 }
 /*!
  * # Semantic UI - Label
@@ -15886,6 +15964,8 @@ ol.ui.horizontal.list li:before,
   bottom: 0px;
   z-index: 99;
   height: 40px;
+  width: 100% !important;
+  margin: 0px !important;
 }
 .daterangepicker .calendar td {
   color: #7ba7d9;
@@ -18350,6 +18430,9 @@ ol.ui.horizontal.list li:before,
 .flexberry-simpledatetime .ui.fluid.action.input input.flatpickr-input {
   border-bottom: none;
 }
+html.mobile .overflowed-cell .flexberry-simpledatetime {
+  width: 100%;
+}
 input[type="checkbox"]:after {
   content: "";
   display: inline-block;
@@ -18416,6 +18499,12 @@ option {
 }
 .ui.form .field .ui.input .block-action-input input {
   width: 100%;
+}
+.flexberry-file-error-modal-dialog .flexberry-file-error-modal-dialog-content {
+  text-align: center;
+}
+.flexberry-file-error-modal-dialog .flexberry-file-error-modal-dialog-button.ui.grid {
+  padding-top: 20px;
 }
 /*!
  * # Semantic UI - Grid
@@ -22593,6 +22682,10 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
   flex-wrap: wrap-reverse;
   justify-content: flex-end;
 }
+div.ui.secondary.menu.no-margin.nav-bar .right.menu {
+  flex-basis: 0px;
+  flex-grow: 1;
+}
 /*!
  * # Semantic UI - Message
  * http://github.com/semantic-org/semantic-ui/
@@ -24585,6 +24678,34 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 }
 .object-list-view-container.groupedit-container {
   overflow: visible;
+}
+.object-list-view-container.fixed-header {
+  max-height: calc(100vh - 350px);
+  width: intrinsic;
+  /* Safari/WebKit uses a non-standard name */
+  width: -moz-max-content;
+  /* Firefox/Gecko */
+  width: -webkit-max-content;
+  /* Chrome */
+  width: max-content;
+}
+.object-list-view-container.fixed-header .ui.celled.table tr th {
+  border-top: 1px solid rgba(34, 36, 38, 0.1);
+  z-index: 1;
+}
+.object-list-view-container.fixed-header .ui.table {
+  border-top: 0px;
+}
+.object-list-view-container.fixed-header tr.object-list-view-filters > * {
+  position: relative;
+  background-color: #fff;
+  z-index: 1;
+}
+.object-list-view-container.fixed-header tr.object-list-view-filters:first-child > * {
+  z-index: 2;
+}
+.object-list-view-container.fixed-header tr.object-list-view-filters:last-child > * {
+  border-bottom: 1px solid rgba(34, 36, 38, 0.1);
 }
 table.object-list-view.selectable tbody,
 table.object-list-view.selectable thead {
@@ -32125,10 +32246,6 @@ select.ui.dropdown {
 .ui.search.dropdown > .text {
   cursor: pointer;
 }
-.ui.dropdown.icon.button > .dropdown.icon {
-  margin-left: -20px;
-  margin-top: -4px;
-}
 .ui.icon.dropdown > .icon.dropdown:before {
   font-size: 20px;
 }
@@ -32149,8 +32266,8 @@ select.ui.dropdown {
 }
 .ui.buttons.cols-config > .ui.dropdown:last-child .menu,
 .ui.buttons.export-config > .ui.dropdown:last-child .menu {
-  left: auto;
-  right: -5em;
+  left: -2em;
+  right: auto;
 }
 .flexberry-dropdown {
   max-width: 100%;
@@ -33287,6 +33404,10 @@ select.ui.dropdown {
 /*******************************
          Theme Overrides
 *******************************/
+.ui.modal > .header:not(.ui) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .ui.modal > .close {
   top: 0rem;
   right: -0.2rem;
@@ -33307,6 +33428,12 @@ select.ui.dropdown {
 }
 .ui.modal .content h2.ui.header {
   word-wrap: break-word;
+}
+.ui.modal.preview-model .content {
+  overflow: scroll;
+}
+.ui.modal.preview-model .content .close-button {
+  display: none;
 }
 /*!
  * # Semantic UI - Nag
@@ -39347,6 +39474,9 @@ img.item-minus {
   padding: 0px 10px 2em 10px;
   border-bottom: none;
   height: 100%;
+}
+.flexberry-dropdown.search.selection.ember-view.ui.dropdown.blue {
+  background: blue;
 }
 .flexberry-word-break {
   word-break: break-all !important;
