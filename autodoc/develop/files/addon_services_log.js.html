@@ -543,7 +543,7 @@ export default Ember.Service.extend(Ember.Evented, {
     Ember.Logger.error = function() {
       originalEmberLoggerError(...arguments);
 
-      _this._storeToApplicationLog(messageCategory.error, joinArguments(...arguments), &#x27;&#x27;);
+      return _this._storeToApplicationLog(messageCategory.error, joinArguments(...arguments), &#x27;&#x27;);
     };
 
     // Extend Ember.Logger.warn logic.
@@ -559,9 +559,9 @@ export default Ember.Service.extend(Ember.Evented, {
 
       let message = joinArguments(...arguments);
       if (message.indexOf(&#x27;DEPRECATION&#x27;) === 0) {
-        _this._storeToApplicationLog(messageCategory.deprecate, message, &#x27;&#x27;);
+        return _this._storeToApplicationLog(messageCategory.deprecate, message, &#x27;&#x27;);
       } else {
-        _this._storeToApplicationLog(messageCategory.warn, message, &#x27;&#x27;);
+        return _this._storeToApplicationLog(messageCategory.warn, message, &#x27;&#x27;);
       }
     };
 
@@ -576,7 +576,7 @@ export default Ember.Service.extend(Ember.Evented, {
     Ember.Logger.log = function() {
       originalEmberLoggerLog(...arguments);
 
-      _this._storeToApplicationLog(messageCategory.log, joinArguments(...arguments), &#x27;&#x27;);
+      return _this._storeToApplicationLog(messageCategory.log, joinArguments(...arguments), &#x27;&#x27;);
     };
 
     // Extend Ember.Logger.info logic.
@@ -590,7 +590,7 @@ export default Ember.Service.extend(Ember.Evented, {
     Ember.Logger.info = function() {
       originalEmberLoggerInfo(...arguments);
 
-      _this._storeToApplicationLog(messageCategory.info, joinArguments(...arguments), &#x27;&#x27;);
+      return _this._storeToApplicationLog(messageCategory.info, joinArguments(...arguments), &#x27;&#x27;);
     };
 
     // Extend Ember.Logger.debug logic.
@@ -604,7 +604,7 @@ export default Ember.Service.extend(Ember.Evented, {
     Ember.Logger.debug = function() {
       originalEmberLoggerDebug(...arguments);
 
-      _this._storeToApplicationLog(messageCategory.debug, joinArguments(...arguments), &#x27;&#x27;);
+      return _this._storeToApplicationLog(messageCategory.debug, joinArguments(...arguments), &#x27;&#x27;);
     };
 
     this.set(&#x27;_originalMethodsCache&#x27;, originalMethodsCache);
