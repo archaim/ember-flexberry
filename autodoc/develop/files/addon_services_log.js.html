@@ -295,6 +295,32 @@ export default Ember.Service.extend(Ember.Evented, {
   enabled: false,
 
   /**
+    The name of a model that represents log entity.
+
+    @property applicationLogModelName
+    @type String
+    @default &#x27;i-i-s-caseberry-logging-objects-application-log&#x27;
+    @example
+    &#x60;&#x60;&#x60;
+    // Log service &#x27;applicationLogModelName&#x27; setting could be also defined through application config/environment.js
+    module.exports = function(environment) {
+      var ENV = {
+        ...
+        APP: {
+          ...
+          log: {
+            enabled: true,
+            applicationLogModelName: &#x27;custom-application-log&#x27;
+          }
+          ...
+        }
+        ...
+    };
+    &#x60;&#x60;&#x60;
+  */
+  applicationLogModelName: &#x27;i-i-s-caseberry-logging-objects-application-log&#x27;,
+
+  /**
     Flag: indicates whether log service will store error messages to application log or not.
 
     @property storeErrorMessages
@@ -512,6 +538,8 @@ export default Ember.Service.extend(Ember.Evented, {
     let _this = this;
     let originalMethodsCache = Ember.A();
 
+    this.initProperties();
+
     let originalEmberLoggerError = Ember.Logger.error;
     originalMethodsCache.pushObject({
       methodOwner: Ember.Logger,
@@ -611,6 +639,28 @@ export default Ember.Service.extend(Ember.Evented, {
   },
 
   /**
+   * Initializes properties of a log service.
+   */
+  initProperties() {
+    const config = getOwner(this).resolveRegistration(&#x27;config:environment&#x27;);
+    const logConfiguration = config.APP.log;
+
+    this.set(&#x27;enabled&#x27;, typeof logConfiguration.enabled === &#x27;boolean&#x27; &amp;&amp; logConfiguration.enabled);
+    this.set(&#x27;storeErrorMessages&#x27;, typeof logConfiguration.storeErrorMessages === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storeErrorMessages);
+    this.set(&#x27;storeWarnMessages&#x27;, typeof logConfiguration.storeWarnMessages === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storeWarnMessages);
+    this.set(&#x27;storeLogMessages&#x27;, typeof logConfiguration.storeLogMessages === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storeLogMessages);
+    this.set(&#x27;storeInfoMessages&#x27;, typeof logConfiguration.storeInfoMessages === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storeInfoMessages);
+    this.set(&#x27;storeDebugMessages&#x27;, typeof logConfiguration.storeDebugMessages === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storeDebugMessages);
+    this.set(&#x27;storeDeprecationMessages&#x27;, typeof logConfiguration.storeDeprecationMessages === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storeDeprecationMessages);
+    this.set(&#x27;storePromiseErrors&#x27;, typeof logConfiguration.storePromiseErrors === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storePromiseErrors);
+    this.set(&#x27;showPromiseErrors&#x27;, typeof logConfiguration.showPromiseErrors === &#x27;boolean&#x27; &amp;&amp; logConfiguration.showPromiseErrors);
+
+    if (typeof logConfiguration.applicationLogModelName === &#x27;string&#x27;) {
+      this.set(&#x27;applicationLogModelName&#x27;, logConfiguration.applicationLogModelName);
+    }
+  },
+
+  /**
     Destroys log service.
   */
   willDestroy() {
@@ -671,7 +721,7 @@ export default Ember.Service.extend(Ember.Evented, {
       formattedMessage: formattedMessage
     };
 
-    let applicationLogModelName = &#x27;i-i-s-caseberry-logging-objects-application-log&#x27;;
+    const applicationLogModelName = this.get(&#x27;applicationLogModelName&#x27;);
     let store = this.get(&#x27;store&#x27;);
 
     // Break if message already exists in store (to avoid infinit loop when message is generated while saving itself).
@@ -693,7 +743,7 @@ export default Ember.Service.extend(Ember.Evented, {
   },
 
   _triggerEvent(eventName, applicationLogModel) {
-    Ember.assert(&#x27;Logger Error: event name should be a string&#x27;, Ember.typeOf(eventName) === &#x27;string&#x27;);
+    Ember.assert(&#x27;Logger Error: event name should be a string&#x27;, typeof eventName === &#x27;string&#x27;);
     let eventNameToTrigger = eventName.toLowerCase();
     this.trigger(eventNameToTrigger, applicationLogModel);
   },
@@ -703,7 +753,7 @@ export default Ember.Service.extend(Ember.Evented, {
       return;
     }
 
-    if (Ember.typeOf(error) === &#x27;string&#x27;) {
+    if (typeof error === &#x27;string&#x27;) {
       error = new Error(error);
     }
 

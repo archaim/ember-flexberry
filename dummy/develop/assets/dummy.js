@@ -24193,72 +24193,13 @@ define('dummy/services/i18n', ['exports', 'ember-i18n/services/i18n'], function 
     }
   });
 });
-define('dummy/services/log', ['exports', 'ember', 'ember-flexberry/services/log', 'dummy/config/environment'], function (exports, _ember, _emberFlexberryServicesLog, _dummyConfigEnvironment) {
-
-  var enabled = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.enabled');
-  if (_ember['default'].typeOf(enabled) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      enabled: enabled
-    });
-  }
-
-  var storeErrorMessages = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.storeErrorMessages');
-  if (_ember['default'].typeOf(storeErrorMessages) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      storeErrorMessages: storeErrorMessages
-    });
-  }
-
-  var storeWarnMessages = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.storeWarnMessages');
-  if (_ember['default'].typeOf(storeWarnMessages) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      storeWarnMessages: storeWarnMessages
-    });
-  }
-
-  var storeLogMessages = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.storeLogMessages');
-  if (_ember['default'].typeOf(storeLogMessages) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      storeLogMessages: storeLogMessages
-    });
-  }
-
-  var storeInfoMessages = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.storeInfoMessages');
-  if (_ember['default'].typeOf(storeInfoMessages) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      storeInfoMessages: storeInfoMessages
-    });
-  }
-
-  var storeDebugMessages = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.storeDebugMessages');
-  if (_ember['default'].typeOf(storeDebugMessages) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      storeDebugMessages: storeDebugMessages
-    });
-  }
-
-  var storeDeprecationMessages = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.storeDeprecationMessages');
-  if (_ember['default'].typeOf(storeDeprecationMessages) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      storeDeprecationMessages: storeDeprecationMessages
-    });
-  }
-
-  var storePromiseErrors = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.storePromiseErrors');
-  if (_ember['default'].typeOf(storePromiseErrors) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      storePromiseErrors: storePromiseErrors
-    });
-  }
-
-  var showPromiseErrors = _ember['default'].get(_dummyConfigEnvironment['default'], 'APP.log.showPromiseErrors');
-  if (_ember['default'].typeOf(showPromiseErrors) === 'boolean') {
-    _emberFlexberryServicesLog['default'].reopen({
-      showPromiseErrors: showPromiseErrors
-    });
-  }
-
-  exports['default'] = _emberFlexberryServicesLog['default'];
+define('dummy/services/log', ['exports', 'ember-flexberry/services/log'], function (exports, _emberFlexberryServicesLog) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberFlexberryServicesLog['default'];
+    }
+  });
 });
 define('dummy/services/lookup-events', ['exports', 'ember-flexberry/services/lookup-events'], function (exports, _emberFlexberryServicesLookupEvents) {
   exports['default'] = _emberFlexberryServicesLookupEvents['default'];
@@ -71506,7 +71447,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.0+4ea8bd35"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.0+69312e14"});
 }
 
 /* jshint ignore:end */

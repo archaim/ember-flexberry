@@ -24212,6 +24212,20 @@
         {
             "file": "addon/services/log.js",
             "line": 83,
+            "description": "The name of a model that represents log entity.",
+            "itemtype": "property",
+            "name": "applicationLogModelName",
+            "type": "String",
+            "default": "'i-i-s-caseberry-logging-objects-application-log'",
+            "example": [
+                "\n```\n// Log service 'applicationLogModelName' setting could be also defined through application config/environment.js\nmodule.exports = function(environment) {\n  var ENV = {\n    ...\n    APP: {\n      ...\n      log: {\n        enabled: true,\n        applicationLogModelName: 'custom-application-log'\n      }\n      ...\n    }\n    ...\n};\n```"
+            ],
+            "class": "LogService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/log.js",
+            "line": 109,
             "description": "Flag: indicates whether log service will store error messages to application log or not.",
             "itemtype": "property",
             "name": "storeErrorMessages",
@@ -24225,7 +24239,7 @@
         },
         {
             "file": "addon/services/log.js",
-            "line": 109,
+            "line": 135,
             "description": "Flag: indicates whether log service will store 'WARN' messages to application log or not.",
             "itemtype": "property",
             "name": "storeWarnMessages",
@@ -24239,7 +24253,7 @@
         },
         {
             "file": "addon/services/log.js",
-            "line": 135,
+            "line": 161,
             "description": "Flag: indicates whether log service will store 'LOG' messages to application log or not.",
             "itemtype": "property",
             "name": "storeLogMessages",
@@ -24253,7 +24267,7 @@
         },
         {
             "file": "addon/services/log.js",
-            "line": 161,
+            "line": 187,
             "description": "Flag: indicates whether log service will store 'INFO' messages to application log or not.",
             "itemtype": "property",
             "name": "storeInfoMessages",
@@ -24267,7 +24281,7 @@
         },
         {
             "file": "addon/services/log.js",
-            "line": 187,
+            "line": 213,
             "description": "Flag: indicates whether log service will store 'DEBUG' messages to application log or not.",
             "itemtype": "property",
             "name": "storeDebugMessages",
@@ -24281,7 +24295,7 @@
         },
         {
             "file": "addon/services/log.js",
-            "line": 213,
+            "line": 239,
             "description": "Flag: indicates whether log service will store 'DEPRECATION' messages to application log or not.",
             "itemtype": "property",
             "name": "storeDeprecationMessages",
@@ -24295,7 +24309,7 @@
         },
         {
             "file": "addon/services/log.js",
-            "line": 239,
+            "line": 265,
             "description": "Flag: indicates whether log service will store promise errors to application log or not.",
             "itemtype": "property",
             "name": "storePromiseErrors",
@@ -24309,7 +24323,7 @@
         },
         {
             "file": "addon/services/log.js",
-            "line": 265,
+            "line": 291,
             "description": "Flag: indicates whether log service will display promise errors in console.",
             "itemtype": "property",
             "name": "showPromiseErrors",
@@ -24323,21 +24337,28 @@
         },
         {
             "file": "addon/services/log.js",
-            "line": 291,
+            "line": 317,
             "description": "Initializes log service.\nEmber services are singletons, so this code will be executed only once since application initialization.",
             "class": "LogService",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/services/log.js",
-            "line": 399,
+            "line": 427,
+            "description": "Initializes properties of a log service.",
+            "class": "LogService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/log.js",
+            "line": 449,
             "description": "Destroys log service.",
             "class": "LogService",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/services/log.js",
-            "line": 418,
+            "line": 468,
             "description": "Stores given message to application log.",
             "itemtype": "method",
             "name": "_storeToApplicationLog",
@@ -26599,11 +26620,15 @@
         },
         {
             "message": "Missing item type\nInitializes log service.\nEmber services are singletons, so this code will be executed only once since application initialization.",
-            "line": " addon/services/log.js:291"
+            "line": " addon/services/log.js:317"
+        },
+        {
+            "message": "Missing item type\nInitializes properties of a log service.",
+            "line": " addon/services/log.js:427"
         },
         {
             "message": "Missing item type\nDestroys log service.",
-            "line": " addon/services/log.js:399"
+            "line": " addon/services/log.js:449"
         },
         {
             "message": "Missing item type\nInitializes perf service.\nEmber services are singletons, so this code will be executed only once since application initialization.",
