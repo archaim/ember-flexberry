@@ -7313,7 +7313,7 @@
         },
         {
             "file": "addon/components/flexberry-groupedit.js",
-            "line": 698,
+            "line": 691,
             "description": "Hook that can be used to confirm delete row.",
             "example": [
                 "\n  ```handlebars\n  <!-- app/templates/example.hbs -->\n  {{flexberry-groupedit\n    ...\n    confirmDeleteRow=(action 'confirmDeleteRow')\n    ...\n  }}\n  ```\n\n  ```javascript\n  // app/controllers/example.js\n  ...\n  actions: {\n    ...\n    confirmDeleteRow() {\n      return confirm('You sure?');\n    }\n    ...\n  }\n  ...\n  ```"
@@ -7329,7 +7329,7 @@
         },
         {
             "file": "addon/components/flexberry-groupedit.js",
-            "line": 729,
+            "line": 722,
             "description": "Hook that can be used to confirm delete rows.",
             "example": [
                 "\n  ```handlebars\n  <!-- app/templates/example.hbs -->\n  {{flexberry-groupedit\n    ...\n    confirmDeleteRows=(action 'confirmDeleteRows')\n    ...\n  }}\n  ```\n\n  ```javascript\n  // app/controllers/example.js\n  ...\n  actions: {\n    ...\n    confirmDeleteRows() {\n      return confirm('You sure?');\n    }\n    ...\n  }\n  ...\n  ```"
@@ -7345,7 +7345,7 @@
         },
         {
             "file": "addon/components/flexberry-groupedit.js",
-            "line": 760,
+            "line": 753,
             "description": "Hook that executes before deleting the record.",
             "example": [
                 "\n  ```handlebars\n  <!-- app/templates/employees.hbs -->\n  {{flexberry-groupedit\n    ...\n    beforeDeleteRecord=(action 'beforeDeleteRecord')\n    ...\n  }}\n  ```\n\n  ```javascript\n  // app/controllers/employees.js\n  import ListFormController from './list-form';\n\n  export default ListFormController.extend({\n    actions: {\n      beforeDeleteRecord(record, data) {\n        if (record.get('myProperty')) {\n          data.cancel = true;\n        }\n      }\n    }\n  });\n  ```"
