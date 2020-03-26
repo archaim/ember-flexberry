@@ -9672,6 +9672,9 @@ i.minus.icon {
   position: relative;
   left: 5px;
 }
+.object-list-view-row-delete-button.mobile i.minus.icon {
+  left: 0px;
+}
 /*!
  * # Semantic UI - Image
  * http://github.com/semantic-org/semantic-ui/
