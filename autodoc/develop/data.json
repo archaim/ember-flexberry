@@ -24570,7 +24570,7 @@
             "itemtype": "property",
             "name": "errorMessageFilters",
             "type": "Array",
-            "default": "[{ group: 'PROMISE', message: \"TransitionAborted\" }]",
+            "default": "[{ category: 'PROMISE', message: \"TransitionAborted\" }]",
             "class": "LogService",
             "module": "ember-flexberry"
         },
