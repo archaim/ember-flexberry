@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>addon/components/flexberry-validationsummary.js - Flexberry Documentation</title>
+    <title>addon/components/filters-dialog-content.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -208,126 +208,111 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>addon/components/flexberry-validationsummary.js <small>File</small></h1>
+    <h1>addon/components/filters-dialog-content.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-/**
-  @module ember-flexberry
-*/
-
 import Ember from &#x27;ember&#x27;;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 
 /**
-  ValidationSummary component for Semantic UI.
+  Filters dialog Content component.
 
-  @class FlexberryValidationsummary
-  @extends Ember.Component
+  @class FiltersDialogContentComponent
+  @extends FlexberryBaseComponent
 */
-export default Ember.Component.extend({
+export default FlexberryBaseComponent.extend({
   /**
-    Default classes for component wrapper.
+   Service that triggers objectlistview events.
+
+   @property objectlistviewEvents
+   @type {Class}
+   @default Ember.inject.service()
   */
-  classNames: [&#x27;ui&#x27;, &#x27;message&#x27;],
+  objectlistviewEvents: Ember.inject.service(),
 
   /**
-    Semantic color class name for message text.
+    Filter columns without Enter key press event.
 
-    @property color
-    @type String
-    @default &#x27;red&#x27;
-  */
-  color: &#x27;red&#x27;,
-
-  /**
-    Errors object for display messages.
-
-    @property errors
-    @type Ember.Object
-  */
-  errors: undefined,
-
-  /**
-    Errors own properties with validation errors messages.
-
-    @property validationProperties
+    @property _filterColumnsWithoutEnter
+    @type Array
     @private
   */
-  validationProperties: undefined,
+  _filterColumnsWithoutEnter: Ember.A(),
 
   /**
-    Current errors messages
+    Columns with available filters.
 
-    @property messages
-    @type Ember.A
+    @property filterColumns
+    @type Object[]
   */
-  messages: undefined,
+  filterColumns: undefined,
 
   /**
-    Header of validationsummary
+    Unique name of the component.
 
-    @property headerText
+    @property componentName
     @type String
   */
-  headerText: undefined,
+  componentName: undefined,
 
-  /**
-    An overridable method called when objects are instantiated.
-    For more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).
-  */
-  init() {
+  didInsertElement: function() {
     this._super(...arguments);
 
-    let errors = this.get(&#x27;errors&#x27;);
+    let columnsWithoutEvent = Ember.A();
+    let originFilterColumns = this.get(&#x27;filterColumns&#x27;);
 
-    if (!errors) {
-      throw new Error(&#x27;Errors property for flexberry-validationsummary component must be set&#x27;);
-    }
+    Ember.$.extend(true, columnsWithoutEvent, originFilterColumns);
 
-    this.set(&#x27;validationProperties&#x27;, new Ember.A());
-
-    for (let propertyName in errors) {
-      // TODO: Delete after update Ember on 2.5.1 and up.
-      if (errors.hasOwnProperty(propertyName) &amp;&amp; propertyName !== &#x27;toString&#x27;) {
-        this.get(&#x27;validationProperties&#x27;).push(propertyName);
-        errors.addObserver(propertyName + &#x27;.[]&#x27;, this, &#x27;changeMessages&#x27;);
-      }
-    }
-
-    this.get(&#x27;classNames&#x27;).push(this.get(&#x27;color&#x27;));
-    this.changeMessages();
-  },
-
-  /**
-    Override to implement teardown.
-    For more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).
-  */
-  willDestroy() {
-    let errors = this.get(&#x27;errors&#x27;);
-    this.get(&#x27;validationProperties&#x27;).forEach(propertyName =&gt; errors.removeObserver(propertyName + &#x27;.[]&#x27;, this, &#x27;changeMessages&#x27;));
-    this._super(...arguments);
-  },
-
-  /**
-    Push validation errors to messages array
-    and change component visibility if no errors occurred.
-  */
-  changeMessages() {
-    let messages = new Ember.A();
-
-    this.get(&#x27;validationProperties&#x27;).forEach((property) =&gt; {
-      // TODO: Delete after update Ember on 2.5.1 and up.
-      if (property !== &#x27;toString&#x27;) {
-        let errorMessages = this.get(&#x27;errors.&#x27; + property);
-        errorMessages.forEach((errorMessage) =&gt; {
-          messages.pushObject(errorMessage);
-        });
+    // Disable key-down action, which was set in object-list-view.
+    columnsWithoutEvent.forEach((column) =&gt; {
+      if (!Ember.isNone(column.filter.component.properties.keyDown)) {
+        column.filter.component.properties.keyDown = undefined;
       }
     });
 
-    this.set(&#x27;isVisible&#x27;, !!messages.length);
-    this.set(&#x27;messages&#x27;, messages);
+    this.set(&#x27;_filterColumnsWithoutEnter&#x27;, columnsWithoutEvent);
+  },
+
+  actions: {
+    /**
+     Apply filters for current list.
+
+     @method actions.applyFilters
+    */
+    applyFilters() {
+      const filterColumnsOrigin = this.get(&#x27;filterColumns&#x27;);
+      const filterColumnsWithoutEnter = this.get(&#x27;_filterColumnsWithoutEnter&#x27;);
+
+      filterColumnsWithoutEnter.forEach((column) =&gt; {
+        let filterColumnOrigin = filterColumnsOrigin.find(obj =&gt; obj.filter.name === column.filter.name);
+
+        if (!Ember.isNone(filterColumnOrigin)) {
+          Ember.set(filterColumnOrigin.filter, &#x27;pattern&#x27;, column.filter.pattern);
+          Ember.set(filterColumnOrigin.filter, &#x27;condition&#x27;, column.filter.condition);
+        }
+      });
+
+      this.set(&#x27;filterColumns&#x27;, filterColumnsOrigin);
+      this.get(&#x27;objectlistviewEvents&#x27;).refreshListTrigger(this.get(&#x27;componentName&#x27;));
+      this.sendAction(&#x27;close&#x27;);
+    },
+
+    /**
+     Clear filters form.
+
+     @method actions.clearFiltersFields
+    */
+    clearFiltersFields() {
+      const columns = this.get(&#x27;_filterColumnsWithoutEnter&#x27;);
+
+      columns.forEach(column =&gt; {
+        const emptyPatternValue = (typeof column.filter.pattern === &#x27;string&#x27;) ? &#x27;&#x27; : undefined;
+        Ember.set(column.filter, &#x27;pattern&#x27;, emptyPatternValue);
+        Ember.set(column.filter, &#x27;condition&#x27;, undefined);
+      });
+    },
   }
 });
 

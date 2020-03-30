@@ -24,6 +24,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "EnumCaptionHelper",
         "ErrorableControllerMixin",
         "ErrorableRouteMixin",
+        "FiltersDialogContentComponent",
         "FlexberryAdvLimitModel",
         "FlexberryAdvLimitSerializer",
         "FlexberryBaseComponent",

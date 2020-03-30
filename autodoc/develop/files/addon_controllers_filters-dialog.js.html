@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>addon/components/flexberry-validationsummary.js - Flexberry Documentation</title>
+    <title>addon/controllers/filters-dialog.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -208,126 +208,54 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>addon/components/flexberry-validationsummary.js <small>File</small></h1>
+    <h1>addon/controllers/filters-dialog.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 /**
-  @module ember-flexberry
-*/
+ * @module ember-flexberry
+ */
 
 import Ember from &#x27;ember&#x27;;
+import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 
-/**
-  ValidationSummary component for Semantic UI.
-
-  @class FlexberryValidationsummary
-  @extends Ember.Component
-*/
-export default Ember.Component.extend({
+export default Ember.Controller.extend({
   /**
-    Default classes for component wrapper.
-  */
-  classNames: [&#x27;ui&#x27;, &#x27;message&#x27;],
+   * Current opened modal window.
+   *
+   * @property _openedModalDialog
+   * @type JQuery
+   * @default undefined
+   */
+  _openedModalDialog: undefined,
 
-  /**
-    Semantic color class name for message text.
+  title: t(&#x27;components.filters-dialog-content.title&#x27;),
 
-    @property color
-    @type String
-    @default &#x27;red&#x27;
-  */
-  color: &#x27;red&#x27;,
+  actions: {
+    /**
+     * Handles create modal window action.
+     * It saves created window to have opportunity to close it later.
+     *
+     * @method createdModalDialog
+     * @param {JQuery} modalDialog Created modal window.
+     */
+    createdModalDialog(modalDialog) {
+      this.set(&#x27;_openedModalDialog&#x27;, modalDialog);
+    },
 
-  /**
-    Errors object for display messages.
-
-    @property errors
-    @type Ember.Object
-  */
-  errors: undefined,
-
-  /**
-    Errors own properties with validation errors messages.
-
-    @property validationProperties
-    @private
-  */
-  validationProperties: undefined,
-
-  /**
-    Current errors messages
-
-    @property messages
-    @type Ember.A
-  */
-  messages: undefined,
-
-  /**
-    Header of validationsummary
-
-    @property headerText
-    @type String
-  */
-  headerText: undefined,
-
-  /**
-    An overridable method called when objects are instantiated.
-    For more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).
-  */
-  init() {
-    this._super(...arguments);
-
-    let errors = this.get(&#x27;errors&#x27;);
-
-    if (!errors) {
-      throw new Error(&#x27;Errors property for flexberry-validationsummary component must be set&#x27;);
-    }
-
-    this.set(&#x27;validationProperties&#x27;, new Ember.A());
-
-    for (let propertyName in errors) {
-      // TODO: Delete after update Ember on 2.5.1 and up.
-      if (errors.hasOwnProperty(propertyName) &amp;&amp; propertyName !== &#x27;toString&#x27;) {
-        this.get(&#x27;validationProperties&#x27;).push(propertyName);
-        errors.addObserver(propertyName + &#x27;.[]&#x27;, this, &#x27;changeMessages&#x27;);
+    /**
+     * Close current modal window if it exists.
+     *
+     * @method closeModalDialog
+     */
+    closeModalDialog() {
+      let openedDialog = this.get(&#x27;_openedModalDialog&#x27;);
+      if (openedDialog) {
+        openedDialog.modal(&#x27;hide&#x27;);
+        this.set(&#x27;_openedModalDialog&#x27;, undefined);
       }
-    }
-
-    this.get(&#x27;classNames&#x27;).push(this.get(&#x27;color&#x27;));
-    this.changeMessages();
-  },
-
-  /**
-    Override to implement teardown.
-    For more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).
-  */
-  willDestroy() {
-    let errors = this.get(&#x27;errors&#x27;);
-    this.get(&#x27;validationProperties&#x27;).forEach(propertyName =&gt; errors.removeObserver(propertyName + &#x27;.[]&#x27;, this, &#x27;changeMessages&#x27;));
-    this._super(...arguments);
-  },
-
-  /**
-    Push validation errors to messages array
-    and change component visibility if no errors occurred.
-  */
-  changeMessages() {
-    let messages = new Ember.A();
-
-    this.get(&#x27;validationProperties&#x27;).forEach((property) =&gt; {
-      // TODO: Delete after update Ember on 2.5.1 and up.
-      if (property !== &#x27;toString&#x27;) {
-        let errorMessages = this.get(&#x27;errors.&#x27; + property);
-        errorMessages.forEach((errorMessage) =&gt; {
-          messages.pushObject(errorMessage);
-        });
-      }
-    });
-
-    this.set(&#x27;isVisible&#x27;, !!messages.length);
-    this.set(&#x27;messages&#x27;, messages);
+    },
   }
 });
 

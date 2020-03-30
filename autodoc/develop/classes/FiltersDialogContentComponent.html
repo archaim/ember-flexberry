@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>EditFormControllerOperationsIndicationMixin - Flexberry Documentation</title>
+    <title>FiltersDialogContentComponent - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -208,14 +208,17 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>EditFormControllerOperationsIndicationMixin <small>Class</small></h1>
+    <h1>FiltersDialogContentComponent <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
 
+        <div class="extends">
+            Extends <a href="../classes/FlexberryBaseComponent.html" class="crosslink">FlexberryBaseComponent</a>
+        </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l7"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:7</code></a>
+            Defined in: <a href="../files/addon_components_filters-dialog-content.js.html#l4"><code>addon&#x2F;components&#x2F;filters-dialog-content.js:4</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -224,7 +227,7 @@
 
 
 <div class="well well-small">
-    <p>Edit forms controllers mixin which handles save/delete operations indication.</p>
+    <p>Filters dialog Content component.</p>
 
 </div>
 
@@ -244,57 +247,21 @@
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
-                    <ul class="index-list methods">
+                    <ul class="index-list methods extends">
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.onErrorMessageHide" data-tablink="actions.onErrorMessageHide">actions.onErrorMessageHide</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.applyFilters" data-tablink="actions.applyFilters">actions.applyFilters</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.onErrorMessageShow" data-tablink="actions.onErrorMessageShow">actions.onErrorMessageShow</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.clearFiltersFields" data-tablink="actions.clearFiltersFields">actions.clearFiltersFields</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.onSuccessMessageHide" data-tablink="actions.onSuccessMessageHide">actions.onSuccessMessageHide</a>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getTargetObjectByCondition." data-tablink="getTargetObjectByCondition.">getTargetObjectByCondition.</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.onSuccessMessageShow" data-tablink="actions.onSuccessMessageShow">actions.onSuccessMessageShow</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionAlways." data-tablink="onDeleteActionAlways.">onDeleteActionAlways.</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionFulfilled." data-tablink="onDeleteActionFulfilled.">onDeleteActionFulfilled.</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionRejected." data-tablink="onDeleteActionRejected.">onDeleteActionRejected.</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionStarted." data-tablink="onDeleteActionStarted.">onDeleteActionStarted.</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionStarted." data-tablink="onDeleteActionStarted.">onDeleteActionStarted.</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onSaveActionAlways." data-tablink="onSaveActionAlways.">onSaveActionAlways.</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onSaveActionFulfilled." data-tablink="onSaveActionFulfilled.">onSaveActionFulfilled.</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onSaveActionRejected." data-tablink="onSaveActionRejected.">onSaveActionRejected.</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_onSaveActionStarted." data-tablink="onSaveActionStarted.">onSaveActionStarted.</a>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_initProperty" data-tablink="initProperty">initProperty</a>
 
                             </li>
                     </ul>
@@ -303,33 +270,57 @@
                 <div class="index-section properties">
                     <h3>Properties</h3>
 
-                    <ul class="index-list properties">
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_formErrorMessage" data-tablink="formErrorMessage">formErrorMessage</a>
+                    <ul class="index-list properties extends">
+                            <li class="index-item property private">
+                                <a href="#" data-tabid="#properties" data-anchor="#property__filterColumnsWithoutEnter" data-tablink="_filterColumnsWithoutEnter">_filterColumnsWithoutEnter</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_appConfig" data-tablink="appConfig">appConfig</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_appConfigSettings" data-tablink="appConfigSettings">appConfigSettings</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_appConfigSettingsPath" data-tablink="appConfigSettingsPath">appConfigSettingsPath</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_componentName" data-tablink="componentName">componentName</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_currentController" data-tablink="currentController">currentController</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_dynamicProperties" data-tablink="dynamicProperties">dynamicProperties</a>
 
                             </li>
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_formErrorMessageCaption." data-tablink="formErrorMessageCaption.">formErrorMessageCaption.</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property_filterColumns" data-tablink="filterColumns">filterColumns</a>
 
                             </li>
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_formSuccessMessage." data-tablink="formSuccessMessage.">formSuccessMessage.</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property_objectlistviewEvents" data-tablink="objectlistviewEvents">objectlistviewEvents</a>
 
                             </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_formSuccessMessageCaption." data-tablink="formSuccessMessageCaption.">formSuccessMessageCaption.</a>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_readonly" data-tablink="readonly">readonly</a>
 
                             </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_latestOperationType." data-tablink="latestOperationType.">latestOperationType.</a>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_readonlyAttr" data-tablink="readonlyAttr">readonlyAttr</a>
 
                             </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_showFormErrorMessage." data-tablink="showFormErrorMessage.">showFormErrorMessage.</a>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_relatedModel" data-tablink="relatedModel">relatedModel</a>
 
                             </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_showFormSuccessMessage." data-tablink="showFormSuccessMessage.">showFormSuccessMessage.</a>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_required" data-tablink="required">required</a>
 
                             </li>
                     </ul>
@@ -341,8 +332,8 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method_actions.onErrorMessageHide" class="method item">
-                        <h3 class="name"><code>actions.onErrorMessageHide</code></h3>
+                    <div id="method_actions.applyFilters" class="method item">
+                        <h3 class="name"><code>actions.applyFilters</code></h3>
                     
                             <span class="paren">()</span>
                     
@@ -356,7 +347,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l39"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:39</code></a>
+                            <a href="../files/addon_components_filters-dialog-content.js.html#l64"><code>addon&#x2F;components&#x2F;filters-dialog-content.js:64</code></a>
                             </p>
                     
                     
@@ -364,15 +355,15 @@
                         </div>
                     
                         <div class="description">
-                            <p>Handler for error ui-message component 'onHide' action.</p>
+                            <p>Apply filters for current list.</p>
                     
                         </div>
                     
                     
                     
                     </div>
-                    <div id="method_actions.onErrorMessageShow" class="method item">
-                        <h3 class="name"><code>actions.onErrorMessageShow</code></h3>
+                    <div id="method_actions.clearFiltersFields" class="method item">
+                        <h3 class="name"><code>actions.clearFiltersFields</code></h3>
                     
                             <span class="paren">()</span>
                     
@@ -386,7 +377,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l31"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:31</code></a>
+                            <a href="../files/addon_components_filters-dialog-content.js.html#l87"><code>addon&#x2F;components&#x2F;filters-dialog-content.js:87</code></a>
                             </p>
                     
                     
@@ -394,80 +385,88 @@
                         </div>
                     
                         <div class="description">
-                            <p>Handler for error ui-message component 'onShow' action.</p>
+                            <p>Clear filters form.</p>
                     
                         </div>
                     
                     
                     
                     </div>
-                    <div id="method_actions.onSuccessMessageHide" class="method item">
-                        <h3 class="name"><code>actions.onSuccessMessageHide</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l22"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:22</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handler for success ui-message component 'onHide' action.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_actions.onSuccessMessageShow" class="method item">
-                        <h3 class="name"><code>actions.onSuccessMessageShow</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l14"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:14</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handler for success ui-message component 'onShow' action.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_onDeleteActionAlways." class="method item">
-                        <h3 class="name"><code>onDeleteActionAlways.</code></h3>
+                    <div id="method_getTargetObjectByCondition." class="method item inherited">
+                        <h3 class="name"><code>getTargetObjectByCondition.</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>data</code>
+                                            <code>condition</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Null | <a href="http://emberjs.com/api/classes/Ember.Component.html" class="crosslink external" target="_blank">Ember.Component</a> | <a href="http://emberjs.com/api/classes/Ember.Controller.html" class="crosslink external" target="_blank">Ember.Controller</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getTargetObjectByCondition.">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l224"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:224</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Returns that 'targetObject' (from 'targetObject's hierarchy) which satisfies a given condition.
+                    
+                    <code>&#x60;</code>javascript
+                    let controller = this.getTargetObjectByCondition((targetObject) => {
+                      return targetObject instanceof Ember.Controller;
+                    });
+                    <code>&#x60;</code>
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">condition</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Callback-function, which will be called for each 'targetObject' in 'targetObject's hierarchy, until callback return true for one of them.
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Null | <a href="http://emberjs.com/api/classes/Ember.Component.html" class="crosslink external" target="_blank">Ember.Component</a> | <a href="http://emberjs.com/api/classes/Ember.Controller.html" class="crosslink external" target="_blank">Ember.Controller</a></span>:
+                                        Target object which satisfies a given condition or null.
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_initProperty" class="method item inherited">
+                        <h3 class="name"><code>initProperty</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>options</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
@@ -480,9 +479,9 @@
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l224"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:224</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_initProperty">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l152"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:152</code></a>
                             </p>
                     
                     
@@ -490,9 +489,43 @@
                         </div>
                     
                         <div class="description">
-                            <p>This method will be invoked always when delete operation completed,
-                    regardless of delete promise's state (was it fulfilled or rejected).</p>
+                            Initializes component's property with recpect to following priority:
+                    1 - template-defined parameters,
+                    2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in 'appConfigSettingsPath' property),
+                    3 - component-defined defaults.
+                    Note! It is important to be declared as undefined for those component properties, which will be initialized through 'initProperty' call.
                     
+                    <code>&#x60;</code>javascript
+                    // ./config/environment.js.
+                    module.exports = function(environment) {
+                      var ENV = {
+                        APP: {
+                          components: {
+                            myComponent: {
+                              myComponentProperty: 'myComponentProperty config-defined default value',
+                            }
+                          }
+                        }
+                      };
+                      return ENV;
+                    };
+                    <code>&#x60;</code>
+                    
+                    <code>&#x60;</code>javascript
+                    // /components/my-component.js
+                    import FlexberryBaseComponent from 'ember-flexberry/flexberry-base-component';
+                    
+                    export default FlexberryBaseComponent.extend({
+                      appConfigSettingsPath: 'APP.components.myComponent',
+                    
+                      myComponentProperty: undefined,
+                    
+                      init() {
+                        this._super.apply(this, arguments);
+                        this.initProperty({ propertyName: 'myComponentProperty', defaultValue: 'myComponentProperty default value' });
+                      }
+                    });
+                    <code>&#x60;</code>
                         </div>
                     
                             <div class="params">
@@ -500,328 +533,39 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">data</code>
+                                            <code class="param-name">options</code>
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Data about completed delete operation.</p>
-                    
+                                            Method options.
                                         </div>
                     
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">propertyName</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Component's property name.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name">defaultValue</code>
+                                                        <span class="type"></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Component's property default value (from component defined default's).</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
                                     </li>
                                 </ul>
                             </div>
-                    
-                    
-                    </div>
-                    <div id="method_onDeleteActionFulfilled." class="method item">
-                        <h3 class="name"><code>onDeleteActionFulfilled.</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l199"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:199</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>This method will be invoked when delete operation successfully completed.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_onDeleteActionRejected." class="method item">
-                        <h3 class="name"><code>onDeleteActionRejected.</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>errorData</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l211"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:211</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>This method will be invoked when delete operation completed, but failed.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">errorData</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Data about delete operation fail.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_onDeleteActionStarted." class="method item">
-                        <h3 class="name"><code>onDeleteActionStarted.</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l235"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:235</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>This method will be invoked before close method will be called.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_onDeleteActionStarted." class="method item">
-                        <h3 class="name"><code>onDeleteActionStarted.</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l188"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:188</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>This method will be invoked before delete operation will be called.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_onSaveActionAlways." class="method item">
-                        <h3 class="name"><code>onSaveActionAlways.</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>data</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l177"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:177</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>This method will be invoked always when save operation completed,
-                    regardless of save promise's state (was it fulfilled or rejected).</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">data</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Data about completed save operation.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_onSaveActionFulfilled." class="method item">
-                        <h3 class="name"><code>onSaveActionFulfilled.</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l152"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:152</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>This method will be invoked when save operation successfully completed.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_onSaveActionRejected." class="method item">
-                        <h3 class="name"><code>onSaveActionRejected.</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>errorData</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l164"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:164</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>This method will be invoked when save operation completed, but failed.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">errorData</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Data about save operation fail.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_onSaveActionStarted." class="method item">
-                        <h3 class="name"><code>onSaveActionStarted.</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l141"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:141</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>This method will be invoked before save operation will be called.</p>
-                    
-                        </div>
-                    
                     
                     
                     </div>
@@ -830,9 +574,192 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_formErrorMessage" class="property item">
-                        <h3 class="name"><code>formErrorMessage</code></h3>
+                    <div id="property__filterColumnsWithoutEnter" class="property item private">
+                        <h3 class="name"><code>_filterColumnsWithoutEnter</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/addon_components_filters-dialog-content.js.html#l20"><code>addon&#x2F;components&#x2F;filters-dialog-content.js:20</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Filter columns without Enter key press event.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_appConfig" class="property item inherited">
+                        <h3 class="name"><code>appConfig</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_appConfig">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l87"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:87</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Application configuration (JSON from ./config/environment.js).
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_appConfigSettings" class="property item inherited">
+                        <h3 class="name"><code>appConfigSettings</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_appConfigSettings">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l96"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:96</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Component settings object from application configuration (part of JSON from ./config/environment.js).
+                    Part of appConfig related to appConfigSettingsPath.
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_appConfigSettingsPath" class="property item inherited">
+                        <h3 class="name"><code>appConfigSettingsPath</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_appConfigSettingsPath">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l78"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:78</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Path to component's settings in application configuration (JSON from ./config/environment.js).
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;APP.components.flexberryBaseComponent&#x27;</p>
+                    
+                    
+                    </div>
+                    <div id="property_componentName" class="property item">
+                        <h3 class="name"><code>componentName</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_componentName">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/addon_components_filters-dialog-content.js.html#l37"><code>addon&#x2F;components&#x2F;filters-dialog-content.js:37</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Unique name of the component.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_currentController" class="property item inherited">
+                        <h3 class="name"><code>currentController</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Ember.Controller.html" class="crosslink external" target="_blank">Ember.Controller</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_currentController">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l106"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:106</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Current controller.
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_dynamicProperties" class="property item inherited">
+                        <h3 class="name"><code>dynamicProperties</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_dynamicProperties">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l57"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:57</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Component dynamic properties ({ componentPropertyName: value }).
+                    Used when component renders dynamically with ember {{component}} helper:
+                    {{component 'my-component' value=value dynamicProperties=myConponentProperties}}.
+                    In the end of component initialization its properties values will be replaced with values from this object.
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_filterColumns" class="property item">
+                        <h3 class="name"><code>filterColumns</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object[]</a></span>
                     
                     
                     
@@ -841,23 +768,23 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l123"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:123</code></a>
+                            <a href="../files/addon_components_filters-dialog-content.js.html#l29"><code>addon&#x2F;components&#x2F;filters-dialog-content.js:29</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Success message related to current locale and operation type.</p>
+                            <p>Columns with available filters.</p>
                     
                         </div>
                     
                     
                     
                     </div>
-                    <div id="property_formErrorMessageCaption." class="property item">
-                        <h3 class="name"><code>formErrorMessageCaption.</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    <div id="property_objectlistviewEvents" class="property item">
+                        <h3 class="name"><code>objectlistviewEvents</code></h3>
+                        <span class="type">Class</span>
                     
                     
                     
@@ -866,97 +793,23 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l108"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:108</code></a>
+                            <a href="../files/addon_components_filters-dialog-content.js.html#l11"><code>addon&#x2F;components&#x2F;filters-dialog-content.js:11</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Error message caption related to current locale and operation type.</p>
+                            <p>Service that triggers objectlistview events.</p>
                     
                         </div>
                     
+                            <p><strong>Default:</strong> Ember.inject.service()</p>
                     
                     
                     </div>
-                    <div id="property_formSuccessMessage." class="property item">
-                        <h3 class="name"><code>formSuccessMessage.</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l81"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:81</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Success message related to current locale and operation type.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_formSuccessMessageCaption." class="property item">
-                        <h3 class="name"><code>formSuccessMessageCaption.</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l66"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:66</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Success message caption related to current locale and operation type.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_latestOperationType." class="property item">
-                        <h3 class="name"><code>latestOperationType.</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l49"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:49</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Latest operation type ('save' or 'delete').</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_showFormErrorMessage." class="property item">
-                        <h3 class="name"><code>showFormErrorMessage.</code></h3>
+                    <div id="property_readonly" class="property item inherited">
+                        <h3 class="name"><code>readonly</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
                     
                     
@@ -964,25 +817,73 @@
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l99"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:99</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_readonly">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l19"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:19</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Flag: indicates whether asynchronous operation failed or not.</p>
-                    
+                            Flag: indicates whether component is readonly.
                         </div>
                     
                             <p><strong>Default:</strong> false</p>
                     
                     
                     </div>
-                    <div id="property_showFormSuccessMessage." class="property item">
-                        <h3 class="name"><code>showFormSuccessMessage.</code></h3>
+                    <div id="property_readonlyAttr" class="property item inherited">
+                        <h3 class="name"><code>readonlyAttr</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a> | Undefined</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_readonlyAttr">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l28"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:28</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Readonly HTML attribute following to the <code>readonly</code> query param. According to the W3C standard, returns 'readonly' if <code>readonly</code> is <code>true</code> and <code>undefined</code> otherwise.
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_relatedModel" class="property item inherited">
+                        <h3 class="name"><code>relatedModel</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_relatedModel">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l69"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:69</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Model to which current component's value is related.
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_required" class="property item inherited">
+                        <h3 class="name"><code>required</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
                     
                     
@@ -990,17 +891,16 @@
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/addon_mixins_edit-form-controller-operations-indication.js.html#l57"><code>addon&#x2F;mixins&#x2F;edit-form-controller-operations-indication.js:57</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_required">FlexberryBaseComponent</a>:
+                            <a href="../files/addon_components_flexberry-base-component.js.html#l39"><code>addon&#x2F;components&#x2F;flexberry-base-component.js:39</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Flag: indicates whether asynchronous operation succeed or not.</p>
-                    
+                            Flag: indicates whether component is required.
                         </div>
                     
                             <p><strong>Default:</strong> false</p>
