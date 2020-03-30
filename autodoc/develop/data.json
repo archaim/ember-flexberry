@@ -24347,27 +24347,52 @@
         {
             "file": "addon/services/log.js",
             "line": 317,
+            "description": "Flag: indicates whether log service will skip error messages that defined in errorMessageFilters array variable.",
+            "itemtype": "property",
+            "name": "errorMessageFilterActive",
+            "type": "Boolean",
+            "default": "false",
+            "example": [
+                "\n```\n// Log service 'errorMessageFilterActive' setting could be also defined through application config/environment.js\nmodule.exports = function(environment) {\n  var ENV = {\n    ...\n    APP: {\n      ...\n      log: {\n        enabled: true,\n        errorMessageFilterActive: true\n      }\n      ...\n    }\n    ...\n};\n```"
+            ],
+            "class": "LogService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/log.js",
+            "line": 343,
+            "description": "Error messages which must be skipped when flag errorMessageFilterActive is true.",
+            "itemtype": "property",
+            "name": "errorMessageFilters",
+            "type": "Array",
+            "default": "[{ group: 'PROMISE', message: \"TransitionAborted\" }]",
+            "class": "LogService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/log.js",
+            "line": 354,
             "description": "Initializes log service.\nEmber services are singletons, so this code will be executed only once since application initialization.",
             "class": "LogService",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/services/log.js",
-            "line": 427,
+            "line": 464,
             "description": "Initializes properties of a log service.",
             "class": "LogService",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/services/log.js",
-            "line": 449,
+            "line": 487,
             "description": "Destroys log service.",
             "class": "LogService",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/services/log.js",
-            "line": 468,
+            "line": 506,
             "description": "Stores given message to application log.",
             "itemtype": "method",
             "name": "_storeToApplicationLog",
@@ -26629,15 +26654,15 @@
         },
         {
             "message": "Missing item type\nInitializes log service.\nEmber services are singletons, so this code will be executed only once since application initialization.",
-            "line": " addon/services/log.js:317"
+            "line": " addon/services/log.js:354"
         },
         {
             "message": "Missing item type\nInitializes properties of a log service.",
-            "line": " addon/services/log.js:427"
+            "line": " addon/services/log.js:464"
         },
         {
             "message": "Missing item type\nDestroys log service.",
-            "line": " addon/services/log.js:449"
+            "line": " addon/services/log.js:487"
         },
         {
             "message": "Missing item type\nInitializes perf service.\nEmber services are singletons, so this code will be executed only once since application initialization.",

@@ -529,6 +529,43 @@ export default Ember.Service.extend(Ember.Evented, {
   showPromiseErrors: false,
 
   /**
+    Flag: indicates whether log service will skip error messages that defined in errorMessageFilters array variable.
+
+    @property errorMessageFilterActive
+    @type Boolean
+    @default false
+    @example
+    &#x60;&#x60;&#x60;
+    // Log service &#x27;errorMessageFilterActive&#x27; setting could be also defined through application config/environment.js
+    module.exports = function(environment) {
+      var ENV = {
+        ...
+        APP: {
+          ...
+          log: {
+            enabled: true,
+            errorMessageFilterActive: true
+          }
+          ...
+        }
+        ...
+    };
+    &#x60;&#x60;&#x60;
+  */
+  errorMessageFilterActive: false,
+
+  /**
+    Error messages which must be skipped when flag errorMessageFilterActive is true.
+
+    @property errorMessageFilters
+    @type Array
+    @default [{ group: &#x27;PROMISE&#x27;, message: &quot;TransitionAborted&quot; }]
+  */
+  errorMessageFilters: Ember.A([
+    { category: &#x27;PROMISE&#x27;, message: &#x27;TransitionAborted&#x27; }
+  ]),
+
+  /**
     Initializes log service.
     Ember services are singletons, so this code will be executed only once since application initialization.
   */
@@ -654,6 +691,7 @@ export default Ember.Service.extend(Ember.Evented, {
     this.set(&#x27;storeDeprecationMessages&#x27;, typeof logConfiguration.storeDeprecationMessages === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storeDeprecationMessages);
     this.set(&#x27;storePromiseErrors&#x27;, typeof logConfiguration.storePromiseErrors === &#x27;boolean&#x27; &amp;&amp; logConfiguration.storePromiseErrors);
     this.set(&#x27;showPromiseErrors&#x27;, typeof logConfiguration.showPromiseErrors === &#x27;boolean&#x27; &amp;&amp; logConfiguration.showPromiseErrors);
+    this.set(&#x27;errorMessageFilterActive&#x27;, typeof logConfiguration.errorMessageFilterActive === &#x27;boolean&#x27; &amp;&amp; logConfiguration.errorMessageFilterActive);
 
     if (typeof logConfiguration.applicationLogModelName === &#x27;string&#x27;) {
       this.set(&#x27;applicationLogModelName&#x27;, logConfiguration.applicationLogModelName);
@@ -689,7 +727,19 @@ export default Ember.Service.extend(Ember.Evented, {
     @private
   */
   _storeToApplicationLog(category, message, formattedMessage) {
-    if (!this.get(&#x27;enabled&#x27;) ||
+    let isSkippedMessage = false;
+    let errorMessageFilters = this.get(&#x27;errorMessageFilters&#x27;);
+    let errorMessageFilterActive = this.get(&#x27;errorMessageFilterActive&#x27;);
+
+    if (errorMessageFilterActive) {
+      errorMessageFilters.forEach(errorMessageFilter =&gt; {
+        if (category.name === errorMessageFilter.category &amp;&amp; message.indexOf(errorMessageFilter.message) !== -1) {
+          isSkippedMessage = true;
+        }
+      });
+    }
+
+    if (!this.get(&#x27;enabled&#x27;) || isSkippedMessage ||
       category.name === messageCategory.error.name &amp;&amp; !this.get(&#x27;storeErrorMessages&#x27;) ||
       category.name === messageCategory.warn.name &amp;&amp; !this.get(&#x27;storeWarnMessages&#x27;) ||
       category.name === messageCategory.log.name &amp;&amp; !this.get(&#x27;storeLogMessages&#x27;) ||
