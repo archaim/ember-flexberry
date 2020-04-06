@@ -48303,11 +48303,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             "loc": {
               "source": null,
               "start": {
-                "line": 108,
+                "line": 110,
                 "column": 6
               },
               "end": {
-                "line": 111,
+                "line": 113,
                 "column": 6
               }
             },
@@ -48336,7 +48336,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             morphs[0] = dom.createElementMorph(element4);
             return morphs;
           },
-          statements: [["element", "action", ["previousPage", ["get", "this.attrs.previousPage", ["loc", [null, [109, 75], [109, 98]]]], ["get", "componentName", ["loc", [null, [109, 99], [109, 112]]]]], [], ["loc", [null, [109, 51], [109, 114]]]]],
+          statements: [["element", "action", ["previousPage", ["get", "this.attrs.previousPage", ["loc", [null, [111, 75], [111, 98]]]], ["get", "componentName", ["loc", [null, [111, 99], [111, 112]]]]], [], ["loc", [null, [111, 51], [111, 114]]]]],
           locals: [],
           templates: []
         };
@@ -48349,11 +48349,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             "loc": {
               "source": null,
               "start": {
-                "line": 111,
+                "line": 113,
                 "column": 6
               },
               "end": {
-                "line": 114,
+                "line": 116,
                 "column": 6
               }
             },
@@ -48383,7 +48383,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             morphs[0] = dom.createElementMorph(element3);
             return morphs;
           },
-          statements: [["element", "action", ["previousPage", ["get", "this.attrs.previousPage", ["loc", [null, [112, 84], [112, 107]]]], ["get", "componentName", ["loc", [null, [112, 108], [112, 121]]]]], [], ["loc", [null, [112, 60], [112, 123]]]]],
+          statements: [["element", "action", ["previousPage", ["get", "this.attrs.previousPage", ["loc", [null, [114, 84], [114, 107]]]], ["get", "componentName", ["loc", [null, [114, 108], [114, 121]]]]], [], ["loc", [null, [114, 60], [114, 123]]]]],
           locals: [],
           templates: []
         };
@@ -48397,11 +48397,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 116,
+                  "line": 118,
                   "column": 8
                 },
                 "end": {
-                  "line": 118,
+                  "line": 120,
                   "column": 8
                 }
               },
@@ -48441,11 +48441,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 119,
+                    "line": 121,
                     "column": 10
                   },
                   "end": {
-                    "line": 121,
+                    "line": 123,
                     "column": 10
                   }
                 },
@@ -48474,7 +48474,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
                 morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
                 return morphs;
               },
-              statements: [["content", "page.number", ["loc", [null, [120, 74], [120, 89]]]]],
+              statements: [["content", "page.number", ["loc", [null, [122, 74], [122, 89]]]]],
               locals: [],
               templates: []
             };
@@ -48487,11 +48487,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 121,
+                    "line": 123,
                     "column": 10
                   },
                   "end": {
-                    "line": 123,
+                    "line": 125,
                     "column": 10
                   }
                 },
@@ -48521,7 +48521,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
                 morphs[1] = dom.createMorphAt(element2, 0, 0);
                 return morphs;
               },
-              statements: [["element", "action", ["gotoPage", ["get", "this.attrs.gotoPage", ["loc", [null, [122, 58], [122, 77]]]], ["get", "page.number", ["loc", [null, [122, 78], [122, 89]]]], ["get", "componentName", ["loc", [null, [122, 90], [122, 103]]]]], [], ["loc", [null, [122, 38], [122, 105]]]], ["content", "page.number", ["loc", [null, [122, 106], [122, 121]]]]],
+              statements: [["element", "action", ["gotoPage", ["get", "this.attrs.gotoPage", ["loc", [null, [124, 58], [124, 77]]]], ["get", "page.number", ["loc", [null, [124, 78], [124, 89]]]], ["get", "componentName", ["loc", [null, [124, 90], [124, 103]]]]], [], ["loc", [null, [124, 38], [124, 105]]]], ["content", "page.number", ["loc", [null, [124, 106], [124, 121]]]]],
               locals: [],
               templates: []
             };
@@ -48533,11 +48533,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 118,
+                  "line": 120,
                   "column": 8
                 },
                 "end": {
-                  "line": 124,
+                  "line": 126,
                   "column": 8
                 }
               },
@@ -48560,7 +48560,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
               dom.insertBoundary(fragment, null);
               return morphs;
             },
-            statements: [["block", "if", [["get", "page.isCurrent", ["loc", [null, [119, 16], [119, 30]]]]], [], 0, 1, ["loc", [null, [119, 10], [123, 17]]]]],
+            statements: [["block", "if", [["get", "page.isCurrent", ["loc", [null, [121, 16], [121, 30]]]]], [], 0, 1, ["loc", [null, [121, 10], [125, 17]]]]],
             locals: [],
             templates: [child0, child1]
           };
@@ -48572,11 +48572,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             "loc": {
               "source": null,
               "start": {
-                "line": 115,
+                "line": 117,
                 "column": 6
               },
               "end": {
-                "line": 125,
+                "line": 127,
                 "column": 6
               }
             },
@@ -48599,7 +48599,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["block", "if", [["get", "page.isEllipsis", ["loc", [null, [116, 14], [116, 29]]]]], [], 0, 1, ["loc", [null, [116, 8], [124, 15]]]]],
+          statements: [["block", "if", [["get", "page.isEllipsis", ["loc", [null, [118, 14], [118, 29]]]]], [], 0, 1, ["loc", [null, [118, 8], [126, 15]]]]],
           locals: ["page"],
           templates: [child0, child1]
         };
@@ -48612,11 +48612,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             "loc": {
               "source": null,
               "start": {
-                "line": 126,
+                "line": 128,
                 "column": 6
               },
               "end": {
-                "line": 129,
+                "line": 131,
                 "column": 6
               }
             },
@@ -48645,7 +48645,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             morphs[0] = dom.createElementMorph(element1);
             return morphs;
           },
-          statements: [["element", "action", ["nextPage", ["get", "this.attrs.nextPage", ["loc", [null, [127, 71], [127, 90]]]], ["get", "componentName", ["loc", [null, [127, 91], [127, 104]]]]], [], ["loc", [null, [127, 51], [127, 106]]]]],
+          statements: [["element", "action", ["nextPage", ["get", "this.attrs.nextPage", ["loc", [null, [129, 71], [129, 90]]]], ["get", "componentName", ["loc", [null, [129, 91], [129, 104]]]]], [], ["loc", [null, [129, 51], [129, 106]]]]],
           locals: [],
           templates: []
         };
@@ -48658,11 +48658,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             "loc": {
               "source": null,
               "start": {
-                "line": 129,
+                "line": 131,
                 "column": 6
               },
               "end": {
-                "line": 132,
+                "line": 134,
                 "column": 6
               }
             },
@@ -48692,7 +48692,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             morphs[0] = dom.createElementMorph(element0);
             return morphs;
           },
-          statements: [["element", "action", ["nextPage", ["get", "this.attrs.nextPage", ["loc", [null, [130, 80], [130, 99]]]], ["get", "componentName", ["loc", [null, [130, 100], [130, 113]]]]], [], ["loc", [null, [130, 60], [130, 115]]]]],
+          statements: [["element", "action", ["nextPage", ["get", "this.attrs.nextPage", ["loc", [null, [132, 80], [132, 99]]]], ["get", "componentName", ["loc", [null, [132, 100], [132, 113]]]]], [], ["loc", [null, [132, 60], [132, 115]]]]],
           locals: [],
           templates: []
         };
@@ -48706,11 +48706,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 137,
+                  "line": 139,
                   "column": 10
                 },
                 "end": {
-                  "line": 141,
+                  "line": 143,
                   "column": 10
                 }
               },
@@ -48735,7 +48735,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
               morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
               return morphs;
             },
-            statements: [["inline", "concat", [["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.showing"], [], ["loc", [null, [139, 14], [139, 79]]]], ["get", "currentIntervalRecords", ["loc", [null, [139, 80], [139, 102]]]], ["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.of"], [], ["loc", [null, [139, 103], [139, 163]]]], ["get", "recordsTotalCount", ["loc", [null, [139, 164], [139, 181]]]], ["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.entries"], [], ["loc", [null, [139, 182], [139, 247]]]]], [], ["loc", [null, [138, 12], [140, 14]]]]],
+            statements: [["inline", "concat", [["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.showing"], [], ["loc", [null, [141, 14], [141, 79]]]], ["get", "currentIntervalRecords", ["loc", [null, [141, 80], [141, 102]]]], ["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.of"], [], ["loc", [null, [141, 103], [141, 163]]]], ["get", "recordsTotalCount", ["loc", [null, [141, 164], [141, 181]]]], ["subexpr", "t", ["components.flexberry-objectlistview.showing-entries.entries"], [], ["loc", [null, [141, 182], [141, 247]]]]], [], ["loc", [null, [140, 12], [142, 14]]]]],
             locals: [],
             templates: []
           };
@@ -48747,11 +48747,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             "loc": {
               "source": null,
               "start": {
-                "line": 135,
+                "line": 137,
                 "column": 6
               },
               "end": {
-                "line": 143,
+                "line": 145,
                 "column": 6
               }
             },
@@ -48783,7 +48783,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
             return morphs;
           },
-          statements: [["block", "if", [["subexpr", "and", [["get", "currentIntervalRecords", ["loc", [null, [137, 21], [137, 43]]]], ["get", "recordsTotalCount", ["loc", [null, [137, 44], [137, 61]]]]], [], ["loc", [null, [137, 16], [137, 62]]]]], [], 0, null, ["loc", [null, [137, 10], [141, 17]]]]],
+          statements: [["block", "if", [["subexpr", "and", [["get", "currentIntervalRecords", ["loc", [null, [139, 21], [139, 43]]]], ["get", "recordsTotalCount", ["loc", [null, [139, 44], [139, 61]]]]], [], ["loc", [null, [139, 16], [139, 62]]]]], [], 0, null, ["loc", [null, [139, 10], [143, 17]]]]],
           locals: [],
           templates: [child0]
         };
@@ -48795,11 +48795,11 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
           "loc": {
             "source": null,
             "start": {
-              "line": 105,
+              "line": 107,
               "column": 0
             },
             "end": {
-              "line": 147,
+              "line": 149,
               "column": 0
             }
           },
@@ -48864,7 +48864,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
           morphs[4] = dom.createMorphAt(element7, 3, 3);
           return morphs;
         },
-        statements: [["block", "if", [["get", "hasPreviousPage", ["loc", [null, [108, 12], [108, 27]]]]], [], 0, 1, ["loc", [null, [108, 6], [114, 13]]]], ["block", "each", [["get", "pages", ["loc", [null, [115, 14], [115, 19]]]]], [], 2, null, ["loc", [null, [115, 6], [125, 15]]]], ["block", "if", [["get", "hasNextPage", ["loc", [null, [126, 12], [126, 23]]]]], [], 3, 4, ["loc", [null, [126, 6], [132, 13]]]], ["block", "if", [["get", "showShowingEntries", ["loc", [null, [135, 12], [135, 30]]]]], [], 5, null, ["loc", [null, [135, 6], [143, 13]]]], ["inline", "flexberry-dropdown", [], ["items", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [144, 33], [144, 46]]]]], [], []], "value", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [144, 53], [144, 65]]]]], [], []], "class", "compact selection", "onChange", ["subexpr", "action", ["perPageClick"], [], ["loc", [null, [144, 101], [144, 124]]]], "needChecksOnValue", false, "direction", "upward"], ["loc", [null, [144, 6], [144, 169]]]]],
+        statements: [["block", "if", [["get", "hasPreviousPage", ["loc", [null, [110, 12], [110, 27]]]]], [], 0, 1, ["loc", [null, [110, 6], [116, 13]]]], ["block", "each", [["get", "pages", ["loc", [null, [117, 14], [117, 19]]]]], [], 2, null, ["loc", [null, [117, 6], [127, 15]]]], ["block", "if", [["get", "hasNextPage", ["loc", [null, [128, 12], [128, 23]]]]], [], 3, 4, ["loc", [null, [128, 6], [134, 13]]]], ["block", "if", [["get", "showShowingEntries", ["loc", [null, [137, 12], [137, 30]]]]], [], 5, null, ["loc", [null, [137, 6], [145, 13]]]], ["inline", "flexberry-dropdown", [], ["items", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [146, 33], [146, 46]]]]], [], []], "value", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [146, 53], [146, 65]]]]], [], []], "class", "compact selection", "onChange", ["subexpr", "action", ["perPageClick"], [], ["loc", [null, [146, 101], [146, 124]]]], "needChecksOnValue", false, "direction", "upward"], ["loc", [null, [146, 6], [146, 169]]]]],
         locals: [],
         templates: [child0, child1, child2, child3, child4, child5]
       };
@@ -48883,7 +48883,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
             "column": 0
           },
           "end": {
-            "line": 148,
+            "line": 150,
             "column": 0
           }
         },
@@ -48916,7 +48916,7 @@ define("dummy/templates/components/flexberry-objectlistview", ["exports"], funct
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["inline", "olv-toolbar", [], ["class", "ui secondary menu no-margin", "createNewButton", ["subexpr", "@mut", [["get", "createNewButton", ["loc", [null, [3, 18], [3, 33]]]]], [], []], "enableCreateNewButton", ["subexpr", "not", [["get", "readonly", ["loc", [null, [4, 29], [4, 37]]]]], [], ["loc", [null, [4, 24], [4, 38]]]], "refreshButton", ["subexpr", "@mut", [["get", "refreshButton", ["loc", [null, [5, 16], [5, 29]]]]], [], []], "deleteButton", ["subexpr", "@mut", [["get", "deleteButton", ["loc", [null, [6, 15], [6, 27]]]]], [], []], "colsConfigButton", ["subexpr", "@mut", [["get", "colsConfigButton", ["loc", [null, [7, 19], [7, 35]]]]], [], []], "advLimitButton", ["subexpr", "@mut", [["get", "advLimitButton", ["loc", [null, [8, 17], [8, 31]]]]], [], []], "enableFilters", ["subexpr", "@mut", [["get", "enableFilters", ["loc", [null, [9, 16], [9, 29]]]]], [], []], "exportExcelButton", ["subexpr", "@mut", [["get", "exportExcelButton", ["loc", [null, [10, 20], [10, 37]]]]], [], []], "showFilters", ["subexpr", "@mut", [["get", "_showFilters", ["loc", [null, [11, 14], [11, 26]]]]], [], []], "showFiltersInModal", ["subexpr", "@mut", [["get", "showFiltersInModal", ["loc", [null, [12, 21], [12, 39]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [13, 10], [13, 17]]]]], [], []], "toggleStateFilters", ["subexpr", "action", ["toggleStateFilters"], [], ["loc", [null, [14, 21], [14, 50]]]], "resetFilters", ["subexpr", "action", ["resetFilters", ["get", "this.attrs.resetFilters", ["loc", [null, [15, 38], [15, 61]]]]], [], ["loc", [null, [15, 15], [15, 62]]]], "filterButton", ["subexpr", "@mut", [["get", "filterButton", ["loc", [null, [16, 15], [16, 27]]]]], [], []], "filterText", ["subexpr", "@mut", [["get", "filterText", ["loc", [null, [17, 13], [17, 23]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [18, 14], [18, 25]]]]], [], []], "enableDeleteButton", ["subexpr", "not", [["get", "readonly", ["loc", [null, [19, 26], [19, 34]]]]], [], ["loc", [null, [19, 21], [19, 35]]]], "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [20, 16], [20, 29]]]]], [], []], "modelController", ["subexpr", "@mut", [["get", "currentController", ["loc", [null, [21, 18], [21, 35]]]]], [], []], "customButtonAction", "customButtonAction", "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [23, 16], [23, 29]]]]], [], []], "editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [24, 16], [24, 29]]]]], [], []], "showConfigDialog", "showConfigDialog", "showAdvLimitDialog", "showConfigDialog", "confirmDeleteRows", ["subexpr", "@mut", [["get", "confirmDeleteRows", ["loc", [null, [27, 20], [27, 37]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [28, 21], [28, 39]]]]], [], []], "inExpandMode", ["subexpr", "@mut", [["get", "inExpandMode", ["loc", [null, [29, 15], [29, 27]]]]], [], []], "availableHierarchicalMode", ["subexpr", "@mut", [["get", "_availableHierarchicalMode", ["loc", [null, [30, 28], [30, 54]]]]], [], []], "availableCollExpandMode", ["subexpr", "@mut", [["get", "availableCollExpandMode", ["loc", [null, [31, 26], [31, 49]]]]], [], []], "switchHierarchicalMode", ["subexpr", "action", ["switchHierarchicalMode"], [], ["loc", [null, [32, 25], [32, 58]]]], "switchExpandMode", ["subexpr", "action", ["switchExpandMode"], [], ["loc", [null, [33, 19], [33, 46]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [34, 11], [34, 19]]]]], [], []]], ["loc", [null, [1, 0], [35, 2]]]], ["inline", "object-list-view", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [37, 14], [37, 25]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [38, 11], [38, 19]]]]], [], []], "columnsWidthAutoresize", ["subexpr", "@mut", [["get", "columnsWidthAutoresize", ["loc", [null, [39, 25], [39, 47]]]]], [], []], "minAutoColumnWidth", ["subexpr", "@mut", [["get", "minAutoColumnWidth", ["loc", [null, [40, 21], [40, 39]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [41, 14], [41, 25]]]]], [], []], "tableStriped", ["subexpr", "@mut", [["get", "tableStriped", ["loc", [null, [42, 15], [42, 27]]]]], [], []], "customTableClass", ["subexpr", "@mut", [["get", "customTableClass", ["loc", [null, [43, 19], [43, 35]]]]], [], []], "cellComponent", ["subexpr", "@mut", [["get", "cellComponent", ["loc", [null, [44, 16], [44, 29]]]]], [], []], "singleColumnCellComponent", ["subexpr", "@mut", [["get", "singleColumnCellComponent", ["loc", [null, [45, 28], [45, 53]]]]], [], []], "singleColumnHeaderTitle", ["subexpr", "@mut", [["get", "singleColumnHeaderTitle", ["loc", [null, [46, 26], [46, 49]]]]], [], []], "createNewByPrototype", ["subexpr", "action", ["createNewByPrototype"], [], ["loc", [null, [47, 23], [47, 54]]]], "showValidationMessagesInRow", ["subexpr", "and", [["subexpr", "not", [["get", "readonly", ["loc", [null, [48, 40], [48, 48]]]]], [], ["loc", [null, [48, 35], [48, 49]]]], ["get", "showValidationMessagesInRow", ["loc", [null, [48, 50], [48, 77]]]]], [], ["loc", [null, [48, 30], [48, 78]]]], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [49, 20], [49, 37]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [50, 20], [50, 37]]]]], [], []], "showEditButtonInRow", ["subexpr", "@mut", [["get", "showEditButtonInRow", ["loc", [null, [51, 22], [51, 41]]]]], [], []], "showPrototypeButtonInRow", ["subexpr", "@mut", [["get", "showPrototypeButtonInRow", ["loc", [null, [52, 27], [52, 51]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [53, 24], [53, 45]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [54, 24], [54, 45]]]]], [], []], "showPrototypeMenuItemInRow", ["subexpr", "@mut", [["get", "showPrototypeMenuItemInRow", ["loc", [null, [55, 29], [55, 55]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [56, 26], [56, 49]]]]], [], []], "sendMenuItemAction", ["subexpr", "action", ["sendMenuItemAction"], [], ["loc", [null, [57, 21], [57, 50]]]], "menuInRowAdditionalItems", ["subexpr", "@mut", [["get", "menuInRowAdditionalItems", ["loc", [null, [58, 27], [58, 51]]]]], [], []], "rowClickable", ["subexpr", "and", [["subexpr", "not", [["get", "readonly", ["loc", [null, [59, 25], [59, 33]]]]], [], ["loc", [null, [59, 20], [59, 34]]]], ["get", "rowClickable", ["loc", [null, [59, 35], [59, 47]]]]], [], ["loc", [null, [59, 15], [59, 48]]]], "orderable", ["subexpr", "@mut", [["get", "orderable", ["loc", [null, [60, 12], [60, 21]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "sorting", ["loc", [null, [61, 10], [61, 17]]]]], [], []], "immediateDelete", true, "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [63, 12], [63, 21]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [64, 18], [64, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "content", ["loc", [null, [65, 10], [65, 17]]]]], [], []], "sortByColumn", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.sortByColumn", ["loc", [null, [66, 27], [66, 50]]]], ["get", "this.attrs.sortByColumn", ["loc", [null, [66, 51], [66, 74]]]], "sortByColumn"], [], ["loc", [null, [66, 23], [66, 90]]]]], [], ["loc", [null, [66, 15], [66, 91]]]], "addColumnToSorting", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.addColumnToSorting", ["loc", [null, [67, 33], [67, 62]]]], ["get", "this.attrs.addColumnToSorting", ["loc", [null, [67, 63], [67, 92]]]], "addColumnToSorting"], [], ["loc", [null, [67, 29], [67, 114]]]]], [], ["loc", [null, [67, 21], [67, 115]]]], "enableFilters", ["subexpr", "@mut", [["get", "enableFilters", ["loc", [null, [68, 16], [68, 29]]]]], [], []], "showFilters", ["subexpr", "@mut", [["get", "_showFilters", ["loc", [null, [69, 14], [69, 26]]]]], [], []], "showFiltersInModal", ["subexpr", "@mut", [["get", "showFiltersInModal", ["loc", [null, [70, 21], [70, 39]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [71, 10], [71, 17]]]]], [], []], "applyFilters", ["subexpr", "action", [["subexpr", "if", [["get", "applyFilters", ["loc", [null, [72, 27], [72, 39]]]], ["get", "applyFilters", ["loc", [null, [72, 40], [72, 52]]]], "applyFilters"], [], ["loc", [null, [72, 23], [72, 68]]]]], [], ["loc", [null, [72, 15], [72, 69]]]], "componentForFilter", ["subexpr", "@mut", [["get", "componentForFilter", ["loc", [null, [73, 21], [73, 39]]]]], [], []], "conditionsByType", ["subexpr", "@mut", [["get", "conditionsByType", ["loc", [null, [74, 19], [74, 35]]]]], [], []], "filterByAnyMatch", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.filterByAnyMatch", ["loc", [null, [75, 31], [75, 58]]]], ["get", "this.attrs.filterByAnyMatch", ["loc", [null, [75, 59], [75, 86]]]], "filterByAnyMatch"], [], ["loc", [null, [75, 27], [75, 106]]]]], [], ["loc", [null, [75, 19], [75, 107]]]], "filterByAnyWord", ["subexpr", "@mut", [["get", "filterByAnyWord", ["loc", [null, [76, 18], [76, 33]]]]], [], []], "filterByAllWords", ["subexpr", "@mut", [["get", "filterByAllWords", ["loc", [null, [77, 19], [77, 35]]]]], [], []], "configurateRow", ["subexpr", "@mut", [["get", "this.attrs.configurateRow", ["loc", [null, [78, 17], [78, 42]]]]], [], []], "configurateSelectedRows", ["subexpr", "@mut", [["get", "this.attrs.configurateSelectedRows", ["loc", [null, [79, 26], [79, 60]]]]], [], []], "confirmDeleteRow", ["subexpr", "@mut", [["get", "confirmDeleteRow", ["loc", [null, [80, 19], [80, 35]]]]], [], []], "beforeDeleteRecord", ["subexpr", "@mut", [["get", "beforeDeleteRecord", ["loc", [null, [81, 21], [81, 39]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "@mut", [["get", "beforeDeleteAllRecords", ["loc", [null, [82, 25], [82, 47]]]]], [], []], "action", "objectListViewRowClick", "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [84, 16], [84, 29]]]]], [], []], "allowColumnResize", ["subexpr", "@mut", [["get", "allowColumnResize", ["loc", [null, [85, 20], [85, 37]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "selectedRecord", ["loc", [null, [86, 17], [86, 31]]]]], [], []], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [87, 21], [87, 39]]]]], [], []], "hierarchicalIndent", ["subexpr", "@mut", [["get", "hierarchicalIndent", ["loc", [null, [88, 21], [88, 39]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [89, 21], [89, 39]]]]], [], []], "inExpandMode", ["subexpr", "@mut", [["get", "inExpandMode", ["loc", [null, [90, 15], [90, 27]]]]], [], []], "disableHierarchicalMode", ["subexpr", "if", [["get", "hierarchyByAttribute", ["loc", [null, [91, 30], [91, 50]]]], true, ["get", "disableHierarchicalMode", ["loc", [null, [91, 56], [91, 79]]]]], [], ["loc", [null, [91, 26], [91, 80]]]], "loadRecords", ["subexpr", "action", ["loadRecords"], [], ["loc", [null, [92, 14], [92, 36]]]], "availableHierarchicalMode", ["subexpr", "action", ["availableHierarchicalMode"], [], ["loc", [null, [93, 28], [93, 64]]]], "useRowByRowLoading", ["subexpr", "@mut", [["get", "useRowByRowLoading", ["loc", [null, [94, 21], [94, 39]]]]], [], []], "useRowByRowLoadingProgress", ["subexpr", "@mut", [["get", "useRowByRowLoadingProgress", ["loc", [null, [95, 29], [95, 55]]]]], [], []], "eventsBus", ["subexpr", "@mut", [["get", "eventsBus", ["loc", [null, [96, 12], [96, 21]]]]], [], []], "onEditForm", ["subexpr", "@mut", [["get", "onEditForm", ["loc", [null, [97, 13], [97, 23]]]]], [], []], "customButtonInRowAction", "customButtonInRowAction", "customButtonsInRow", ["subexpr", "@mut", [["get", "customButtonsInRow", ["loc", [null, [99, 21], [99, 39]]]]], [], []], "defaultSortingButton", ["subexpr", "@mut", [["get", "defaultSortingButton", ["loc", [null, [100, 23], [100, 43]]]]], [], []], "defaultLeftPadding", ["subexpr", "@mut", [["get", "defaultLeftPadding", ["loc", [null, [101, 21], [101, 39]]]]], [], []], "overflowedComponents", ["subexpr", "@mut", [["get", "overflowedComponents", ["loc", [null, [102, 23], [102, 43]]]]], [], []], "fixedHeader", ["subexpr", "@mut", [["get", "fixedHeader", ["loc", [null, [103, 14], [103, 25]]]]], [], []]], ["loc", [null, [36, 0], [104, 2]]]], ["block", "if", [["subexpr", "or", [["subexpr", "not", [["get", "inHierarchicalMode", ["loc", [null, [105, 15], [105, 33]]]]], [], ["loc", [null, [105, 10], [105, 34]]]], ["get", "hierarchyPaging", ["loc", [null, [105, 35], [105, 50]]]]], [], ["loc", [null, [105, 6], [105, 51]]]]], [], 0, null, ["loc", [null, [105, 0], [147, 7]]]]],
+      statements: [["inline", "olv-toolbar", [], ["class", "ui secondary menu no-margin", "createNewButton", ["subexpr", "@mut", [["get", "createNewButton", ["loc", [null, [3, 18], [3, 33]]]]], [], []], "enableCreateNewButton", ["subexpr", "not", [["get", "readonly", ["loc", [null, [4, 29], [4, 37]]]]], [], ["loc", [null, [4, 24], [4, 38]]]], "refreshButton", ["subexpr", "@mut", [["get", "refreshButton", ["loc", [null, [5, 16], [5, 29]]]]], [], []], "deleteButton", ["subexpr", "@mut", [["get", "deleteButton", ["loc", [null, [6, 15], [6, 27]]]]], [], []], "colsConfigButton", ["subexpr", "@mut", [["get", "colsConfigButton", ["loc", [null, [7, 19], [7, 35]]]]], [], []], "advLimitButton", ["subexpr", "@mut", [["get", "advLimitButton", ["loc", [null, [8, 17], [8, 31]]]]], [], []], "enableFilters", ["subexpr", "@mut", [["get", "enableFilters", ["loc", [null, [9, 16], [9, 29]]]]], [], []], "exportExcelButton", ["subexpr", "@mut", [["get", "exportExcelButton", ["loc", [null, [10, 20], [10, 37]]]]], [], []], "showFilters", ["subexpr", "@mut", [["get", "_showFilters", ["loc", [null, [11, 14], [11, 26]]]]], [], []], "showFiltersInModal", ["subexpr", "@mut", [["get", "showFiltersInModal", ["loc", [null, [12, 21], [12, 39]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [13, 10], [13, 17]]]]], [], []], "toggleStateFilters", ["subexpr", "action", ["toggleStateFilters"], [], ["loc", [null, [14, 21], [14, 50]]]], "resetFilters", ["subexpr", "action", ["resetFilters", ["get", "this.attrs.resetFilters", ["loc", [null, [15, 38], [15, 61]]]]], [], ["loc", [null, [15, 15], [15, 62]]]], "filterButton", ["subexpr", "@mut", [["get", "filterButton", ["loc", [null, [16, 15], [16, 27]]]]], [], []], "filterText", ["subexpr", "@mut", [["get", "filterText", ["loc", [null, [17, 13], [17, 23]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [18, 14], [18, 25]]]]], [], []], "enableDeleteButton", ["subexpr", "not", [["get", "readonly", ["loc", [null, [19, 26], [19, 34]]]]], [], ["loc", [null, [19, 21], [19, 35]]]], "inLookup", ["subexpr", "eq", [["get", "componentMode", ["loc", [null, [20, 15], [20, 28]]]], "lookupform"], [], ["loc", [null, [20, 11], [20, 42]]]], "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [21, 16], [21, 29]]]]], [], []], "lookupComponentName", ["subexpr", "@mut", [["get", "lookupComponentName", ["loc", [null, [22, 22], [22, 41]]]]], [], []], "modelController", ["subexpr", "@mut", [["get", "currentController", ["loc", [null, [23, 18], [23, 35]]]]], [], []], "customButtonAction", "customButtonAction", "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [25, 16], [25, 29]]]]], [], []], "editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [26, 16], [26, 29]]]]], [], []], "showConfigDialog", "showConfigDialog", "showAdvLimitDialog", "showConfigDialog", "confirmDeleteRows", ["subexpr", "@mut", [["get", "confirmDeleteRows", ["loc", [null, [29, 20], [29, 37]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [30, 21], [30, 39]]]]], [], []], "inExpandMode", ["subexpr", "@mut", [["get", "inExpandMode", ["loc", [null, [31, 15], [31, 27]]]]], [], []], "availableHierarchicalMode", ["subexpr", "@mut", [["get", "_availableHierarchicalMode", ["loc", [null, [32, 28], [32, 54]]]]], [], []], "availableCollExpandMode", ["subexpr", "@mut", [["get", "availableCollExpandMode", ["loc", [null, [33, 26], [33, 49]]]]], [], []], "switchHierarchicalMode", ["subexpr", "action", ["switchHierarchicalMode"], [], ["loc", [null, [34, 25], [34, 58]]]], "switchExpandMode", ["subexpr", "action", ["switchExpandMode"], [], ["loc", [null, [35, 19], [35, 46]]]], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [36, 11], [36, 19]]]]], [], []]], ["loc", [null, [1, 0], [37, 2]]]], ["inline", "object-list-view", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [39, 14], [39, 25]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [40, 11], [40, 19]]]]], [], []], "columnsWidthAutoresize", ["subexpr", "@mut", [["get", "columnsWidthAutoresize", ["loc", [null, [41, 25], [41, 47]]]]], [], []], "minAutoColumnWidth", ["subexpr", "@mut", [["get", "minAutoColumnWidth", ["loc", [null, [42, 21], [42, 39]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [43, 14], [43, 25]]]]], [], []], "tableStriped", ["subexpr", "@mut", [["get", "tableStriped", ["loc", [null, [44, 15], [44, 27]]]]], [], []], "customTableClass", ["subexpr", "@mut", [["get", "customTableClass", ["loc", [null, [45, 19], [45, 35]]]]], [], []], "cellComponent", ["subexpr", "@mut", [["get", "cellComponent", ["loc", [null, [46, 16], [46, 29]]]]], [], []], "singleColumnCellComponent", ["subexpr", "@mut", [["get", "singleColumnCellComponent", ["loc", [null, [47, 28], [47, 53]]]]], [], []], "singleColumnHeaderTitle", ["subexpr", "@mut", [["get", "singleColumnHeaderTitle", ["loc", [null, [48, 26], [48, 49]]]]], [], []], "createNewByPrototype", ["subexpr", "action", ["createNewByPrototype"], [], ["loc", [null, [49, 23], [49, 54]]]], "showValidationMessagesInRow", ["subexpr", "and", [["subexpr", "not", [["get", "readonly", ["loc", [null, [50, 40], [50, 48]]]]], [], ["loc", [null, [50, 35], [50, 49]]]], ["get", "showValidationMessagesInRow", ["loc", [null, [50, 50], [50, 77]]]]], [], ["loc", [null, [50, 30], [50, 78]]]], "showAsteriskInRow", ["subexpr", "@mut", [["get", "showAsteriskInRow", ["loc", [null, [51, 20], [51, 37]]]]], [], []], "showCheckBoxInRow", ["subexpr", "@mut", [["get", "showCheckBoxInRow", ["loc", [null, [52, 20], [52, 37]]]]], [], []], "showEditButtonInRow", ["subexpr", "@mut", [["get", "showEditButtonInRow", ["loc", [null, [53, 22], [53, 41]]]]], [], []], "showPrototypeButtonInRow", ["subexpr", "@mut", [["get", "showPrototypeButtonInRow", ["loc", [null, [54, 27], [54, 51]]]]], [], []], "showDeleteButtonInRow", ["subexpr", "@mut", [["get", "showDeleteButtonInRow", ["loc", [null, [55, 24], [55, 45]]]]], [], []], "showEditMenuItemInRow", ["subexpr", "@mut", [["get", "showEditMenuItemInRow", ["loc", [null, [56, 24], [56, 45]]]]], [], []], "showPrototypeMenuItemInRow", ["subexpr", "@mut", [["get", "showPrototypeMenuItemInRow", ["loc", [null, [57, 29], [57, 55]]]]], [], []], "showDeleteMenuItemInRow", ["subexpr", "@mut", [["get", "showDeleteMenuItemInRow", ["loc", [null, [58, 26], [58, 49]]]]], [], []], "sendMenuItemAction", ["subexpr", "action", ["sendMenuItemAction"], [], ["loc", [null, [59, 21], [59, 50]]]], "menuInRowAdditionalItems", ["subexpr", "@mut", [["get", "menuInRowAdditionalItems", ["loc", [null, [60, 27], [60, 51]]]]], [], []], "rowClickable", ["subexpr", "and", [["subexpr", "not", [["get", "readonly", ["loc", [null, [61, 25], [61, 33]]]]], [], ["loc", [null, [61, 20], [61, 34]]]], ["get", "rowClickable", ["loc", [null, [61, 35], [61, 47]]]]], [], ["loc", [null, [61, 15], [61, 48]]]], "orderable", ["subexpr", "@mut", [["get", "orderable", ["loc", [null, [62, 12], [62, 21]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "sorting", ["loc", [null, [63, 10], [63, 17]]]]], [], []], "immediateDelete", true, "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [65, 12], [65, 21]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [66, 18], [66, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "content", ["loc", [null, [67, 10], [67, 17]]]]], [], []], "sortByColumn", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.sortByColumn", ["loc", [null, [68, 27], [68, 50]]]], ["get", "this.attrs.sortByColumn", ["loc", [null, [68, 51], [68, 74]]]], "sortByColumn"], [], ["loc", [null, [68, 23], [68, 90]]]]], [], ["loc", [null, [68, 15], [68, 91]]]], "addColumnToSorting", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.addColumnToSorting", ["loc", [null, [69, 33], [69, 62]]]], ["get", "this.attrs.addColumnToSorting", ["loc", [null, [69, 63], [69, 92]]]], "addColumnToSorting"], [], ["loc", [null, [69, 29], [69, 114]]]]], [], ["loc", [null, [69, 21], [69, 115]]]], "enableFilters", ["subexpr", "@mut", [["get", "enableFilters", ["loc", [null, [70, 16], [70, 29]]]]], [], []], "showFilters", ["subexpr", "@mut", [["get", "_showFilters", ["loc", [null, [71, 14], [71, 26]]]]], [], []], "showFiltersInModal", ["subexpr", "@mut", [["get", "showFiltersInModal", ["loc", [null, [72, 21], [72, 39]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [73, 10], [73, 17]]]]], [], []], "applyFilters", ["subexpr", "action", [["subexpr", "if", [["get", "applyFilters", ["loc", [null, [74, 27], [74, 39]]]], ["get", "applyFilters", ["loc", [null, [74, 40], [74, 52]]]], "applyFilters"], [], ["loc", [null, [74, 23], [74, 68]]]]], [], ["loc", [null, [74, 15], [74, 69]]]], "componentForFilter", ["subexpr", "@mut", [["get", "componentForFilter", ["loc", [null, [75, 21], [75, 39]]]]], [], []], "conditionsByType", ["subexpr", "@mut", [["get", "conditionsByType", ["loc", [null, [76, 19], [76, 35]]]]], [], []], "filterByAnyMatch", ["subexpr", "action", [["subexpr", "if", [["get", "this.attrs.filterByAnyMatch", ["loc", [null, [77, 31], [77, 58]]]], ["get", "this.attrs.filterByAnyMatch", ["loc", [null, [77, 59], [77, 86]]]], "filterByAnyMatch"], [], ["loc", [null, [77, 27], [77, 106]]]]], [], ["loc", [null, [77, 19], [77, 107]]]], "filterByAnyWord", ["subexpr", "@mut", [["get", "filterByAnyWord", ["loc", [null, [78, 18], [78, 33]]]]], [], []], "filterByAllWords", ["subexpr", "@mut", [["get", "filterByAllWords", ["loc", [null, [79, 19], [79, 35]]]]], [], []], "configurateRow", ["subexpr", "@mut", [["get", "this.attrs.configurateRow", ["loc", [null, [80, 17], [80, 42]]]]], [], []], "configurateSelectedRows", ["subexpr", "@mut", [["get", "this.attrs.configurateSelectedRows", ["loc", [null, [81, 26], [81, 60]]]]], [], []], "confirmDeleteRow", ["subexpr", "@mut", [["get", "confirmDeleteRow", ["loc", [null, [82, 19], [82, 35]]]]], [], []], "beforeDeleteRecord", ["subexpr", "@mut", [["get", "beforeDeleteRecord", ["loc", [null, [83, 21], [83, 39]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "@mut", [["get", "beforeDeleteAllRecords", ["loc", [null, [84, 25], [84, 47]]]]], [], []], "action", "objectListViewRowClick", "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [86, 16], [86, 29]]]]], [], []], "allowColumnResize", ["subexpr", "@mut", [["get", "allowColumnResize", ["loc", [null, [87, 20], [87, 37]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "selectedRecord", ["loc", [null, [88, 17], [88, 31]]]]], [], []], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [89, 21], [89, 39]]]]], [], []], "hierarchicalIndent", ["subexpr", "@mut", [["get", "hierarchicalIndent", ["loc", [null, [90, 21], [90, 39]]]]], [], []], "inHierarchicalMode", ["subexpr", "@mut", [["get", "inHierarchicalMode", ["loc", [null, [91, 21], [91, 39]]]]], [], []], "inExpandMode", ["subexpr", "@mut", [["get", "inExpandMode", ["loc", [null, [92, 15], [92, 27]]]]], [], []], "disableHierarchicalMode", ["subexpr", "if", [["get", "hierarchyByAttribute", ["loc", [null, [93, 30], [93, 50]]]], true, ["get", "disableHierarchicalMode", ["loc", [null, [93, 56], [93, 79]]]]], [], ["loc", [null, [93, 26], [93, 80]]]], "loadRecords", ["subexpr", "action", ["loadRecords"], [], ["loc", [null, [94, 14], [94, 36]]]], "availableHierarchicalMode", ["subexpr", "action", ["availableHierarchicalMode"], [], ["loc", [null, [95, 28], [95, 64]]]], "useRowByRowLoading", ["subexpr", "@mut", [["get", "useRowByRowLoading", ["loc", [null, [96, 21], [96, 39]]]]], [], []], "useRowByRowLoadingProgress", ["subexpr", "@mut", [["get", "useRowByRowLoadingProgress", ["loc", [null, [97, 29], [97, 55]]]]], [], []], "eventsBus", ["subexpr", "@mut", [["get", "eventsBus", ["loc", [null, [98, 12], [98, 21]]]]], [], []], "onEditForm", ["subexpr", "@mut", [["get", "onEditForm", ["loc", [null, [99, 13], [99, 23]]]]], [], []], "customButtonInRowAction", "customButtonInRowAction", "customButtonsInRow", ["subexpr", "@mut", [["get", "customButtonsInRow", ["loc", [null, [101, 21], [101, 39]]]]], [], []], "defaultSortingButton", ["subexpr", "@mut", [["get", "defaultSortingButton", ["loc", [null, [102, 23], [102, 43]]]]], [], []], "defaultLeftPadding", ["subexpr", "@mut", [["get", "defaultLeftPadding", ["loc", [null, [103, 21], [103, 39]]]]], [], []], "overflowedComponents", ["subexpr", "@mut", [["get", "overflowedComponents", ["loc", [null, [104, 23], [104, 43]]]]], [], []], "fixedHeader", ["subexpr", "@mut", [["get", "fixedHeader", ["loc", [null, [105, 14], [105, 25]]]]], [], []]], ["loc", [null, [38, 0], [106, 2]]]], ["block", "if", [["subexpr", "or", [["subexpr", "not", [["get", "inHierarchicalMode", ["loc", [null, [107, 15], [107, 33]]]]], [], ["loc", [null, [107, 10], [107, 34]]]], ["get", "hierarchyPaging", ["loc", [null, [107, 35], [107, 50]]]]], [], ["loc", [null, [107, 6], [107, 51]]]]], [], 0, null, ["loc", [null, [107, 0], [149, 7]]]]],
       locals: [],
       templates: [child0]
     };
@@ -67279,7 +67279,7 @@ define("dummy/templates/lookup-dialog-content", ["exports"], function (exports) 
             "column": 0
           },
           "end": {
-            "line": 43,
+            "line": 44,
             "column": 0
           }
         },
@@ -67310,7 +67310,7 @@ define("dummy/templates/lookup-dialog-content", ["exports"], function (exports) 
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "flexberry-objectlistview", [], ["class", "ui bottom attached", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [4, 20], [4, 35]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "currentLookupRow", ["loc", [null, [6, 19], [6, 35]]]]], [], []], "componentMode", "lookupform", "componentName", ["subexpr", "@mut", [["get", "folvComponentName", ["loc", [null, [8, 18], [8, 35]]]]], [], []], "showEditMenuItemInRow", false, "createNewButton", false, "showCheckBoxInRow", false, "colsConfigButton", false, "columnsWidthAutoresize", true, "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [16, 21], [16, 48]]]], "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [17, 15], [17, 21]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [18, 12], [18, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [19, 17], [19, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [20, 17], [20, 40]]]], "customProperties", ["subexpr", "@mut", [["get", "customPropertiesData", ["loc", [null, [22, 21], [22, 41]]]]], [], []], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [24, 10], [24, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [25, 17], [25, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [26, 18], [26, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [27, 22], [27, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [28, 20], [28, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [29, 16], [29, 27]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [30, 17], [30, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [31, 13], [31, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [32, 13], [32, 32]]]], "disableHierarchicalMode", ["subexpr", "@mut", [["get", "disableHierarchicalMode", ["loc", [null, [34, 28], [34, 51]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [35, 12], [35, 27]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [37, 17], [37, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [38, 23], [38, 52]]]], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [39, 23], [39, 41]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [40, 27], [40, 60]]]]], ["loc", [null, [2, 2], [41, 4]]]]],
+      statements: [["inline", "flexberry-objectlistview", [], ["class", "ui bottom attached", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [4, 20], [4, 35]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "currentLookupRow", ["loc", [null, [6, 19], [6, 35]]]]], [], []], "componentMode", "lookupform", "componentName", ["subexpr", "@mut", [["get", "folvComponentName", ["loc", [null, [8, 18], [8, 35]]]]], [], []], "lookupComponentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [9, 24], [9, 37]]]]], [], []], "showEditMenuItemInRow", false, "createNewButton", false, "showCheckBoxInRow", false, "colsConfigButton", false, "columnsWidthAutoresize", true, "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [17, 21], [17, 48]]]], "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [18, 15], [18, 21]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [19, 12], [19, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [20, 17], [20, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [21, 17], [21, 40]]]], "customProperties", ["subexpr", "@mut", [["get", "customPropertiesData", ["loc", [null, [23, 21], [23, 41]]]]], [], []], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [25, 10], [25, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [26, 17], [26, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [27, 18], [27, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [28, 22], [28, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [29, 20], [29, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [30, 16], [30, 27]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [31, 17], [31, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [32, 13], [32, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [33, 13], [33, 32]]]], "disableHierarchicalMode", ["subexpr", "@mut", [["get", "disableHierarchicalMode", ["loc", [null, [35, 28], [35, 51]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [36, 12], [36, 27]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [38, 17], [38, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [39, 23], [39, 52]]]], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [40, 23], [40, 41]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [41, 27], [41, 60]]]]], ["loc", [null, [2, 2], [42, 4]]]]],
       locals: [],
       templates: []
     };
@@ -72090,7 +72090,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.2+2961d065"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.2+bc17408c"});
 }
 
 /* jshint ignore:end */

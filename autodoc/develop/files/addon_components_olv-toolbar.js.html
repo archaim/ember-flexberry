@@ -341,6 +341,16 @@ export default FlexberryBaseComponent.extend({
     @default null
   */
   filterText: null,
+
+  /**
+    Indicates that the &#x60;flexberry-objectlistview&#x60; component is used for the &#x60;flexberry-lookup&#x60; component.
+
+    @property inLookup
+    @type Boolean
+    @default false
+  */
+  inLookup: false,
+
   /**
     Used to link to objectListView with same componentName.
 
@@ -349,6 +359,14 @@ export default FlexberryBaseComponent.extend({
     @default &#x27;&#x27;
   */
   componentName: &#x27;&#x27;,
+
+  /**
+    The name of the &#x60;flexberry-lookup&#x60; component for which the &#x60;flexberry-objectlistview&#x60; component is used.
+
+    @property lookupComponentName
+    @type String
+  */
+  lookupComponentName: undefined,
 
   /**
     The flag to specify whether the delete button is enabled.
@@ -678,6 +696,18 @@ export default FlexberryBaseComponent.extend({
   _infoModalDialog: null,
 
   /**
+    The name of the component for themodal window.
+    If the &#x60;flexberry-objectlistview&#x60; component is used for the &#x60;flexberry-lookup&#x60; component, we must pass the name of the &#x60;flexberry-lookup&#x60; component to the modal window.
+
+    @private
+    @property _componentNameForModalWindow
+    @type String
+  */
+  _componentNameForModalWindow: Ember.computed(&#x27;inLookup&#x27;, &#x27;componentName&#x27;, &#x27;lookupComponentName&#x27;, function () {
+    return this.get(&#x27;inLookup&#x27;) ? this.get(&#x27;lookupComponentName&#x27;) : this.get(&#x27;componentName&#x27;);
+  }),
+
+  /**
    Shows info modal dialog.
 
    @method showInfoModalDialog
@@ -838,7 +868,7 @@ export default FlexberryBaseComponent.extend({
     */
     showConfigDialog(settingName) {
       Ember.assert(&#x27;showConfigDialog:: componentName is not defined in flexberry-objectlistview component&#x27;, this.componentName);
-      this.get(&#x27;modelController&#x27;).send(&#x27;showConfigDialog&#x27;, this.componentName, settingName);
+      this.get(&#x27;modelController&#x27;).send(&#x27;showConfigDialog&#x27;, this.get(&#x27;_componentNameForModalWindow&#x27;), settingName);
     },
 
     /**
@@ -849,7 +879,7 @@ export default FlexberryBaseComponent.extend({
     */
     showAdvLimitDialog(settingName) {
       Ember.assert(&#x27;showAdvLimitDialog:: componentName is not defined in flexberry-objectlistview component&#x27;, this.componentName);
-      this.get(&#x27;modelController&#x27;).send(&#x27;showAdvLimitDialog&#x27;, this.componentName, settingName);
+      this.get(&#x27;modelController&#x27;).send(&#x27;showAdvLimitDialog&#x27;, this.get(&#x27;_componentNameForModalWindow&#x27;), settingName);
     },
 
     /**
@@ -880,7 +910,7 @@ export default FlexberryBaseComponent.extend({
     showExportDialog(settingName, immediateExport) {
       let settName = settingName ? &#x27;ExportExcel/&#x27; + settingName : settingName;
       Ember.assert(&#x27;showExportDialog:: componentName is not defined in flexberry-objectlistview component&#x27;, this.componentName);
-      this.get(&#x27;modelController&#x27;).send(&#x27;showConfigDialog&#x27;, this.componentName, settName, true, immediateExport);
+      this.get(&#x27;modelController&#x27;).send(&#x27;showConfigDialog&#x27;, this.get(&#x27;_componentNameForModalWindow&#x27;), settName, true, immediateExport);
     },
 
     /**
