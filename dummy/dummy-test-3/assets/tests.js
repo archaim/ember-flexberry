@@ -12658,7 +12658,7 @@ define('dummy/tests/unit/controllers/detail-edit-form-test', ['ember-qunit'], fu
   'use strict';
 
   (0, _emberQunit.moduleFor)('controller:detail-edit-form', 'Unit | Controller | detail edit form', {
-    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:flexberry-file-view-dialog', 'controller:lookup-dialog', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state', 'service:adv-limit']
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:flexberry-file-view-dialog', 'controller:lookup-dialog', 'controller:filters-dialog', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state', 'service:adv-limit']
   });
 
   // Replace this with your real tests.
@@ -12679,7 +12679,7 @@ define('dummy/tests/unit/controllers/edit-form-test', ['ember-data', 'ember-quni
   var App;
 
   (0, _emberQunit.moduleFor)('controller:edit-form', 'Unit | Controller | edit form', {
-    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:flexberry-file-view-dialog', 'controller:lookup-dialog', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state', 'service:adv-limit'],
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:flexberry-file-view-dialog', 'controller:lookup-dialog', 'controller:filters-dialog', 'service:detail-interaction', 'service:objectlistview-events', 'service:user-settings', 'service:app-state', 'service:adv-limit'],
 
     beforeEach: function beforeEach() {
       App = (0, _startApp.default)();
@@ -12773,7 +12773,7 @@ define('dummy/tests/unit/controllers/list-form-test', ['ember-qunit'], function 
   'use strict';
 
   (0, _emberQunit.moduleFor)('controller:list-form', 'Unit | Controller | list form', {
-    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'service:objectlistview-events', 'service:user-settings', 'service:adv-limit']
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:filters-dialog', 'service:objectlistview-events', 'service:user-settings', 'service:adv-limit']
   });
 
   // Replace this with your real tests.
@@ -12786,7 +12786,7 @@ define('dummy/tests/unit/controllers/lookup-dialog-test', ['ember-qunit', 'sinon
   'use strict';
 
   (0, _emberQunit.moduleFor)('controller:lookup-dialog', 'Unit | Controller | lookup dialog', {
-    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'service:lookup-events', 'service:objectlistview-events', 'service:user-settings', 'service:adv-limit']
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:filters-dialog', 'service:lookup-events', 'service:objectlistview-events', 'service:user-settings', 'service:adv-limit']
   });
 
   // Replace this with your real tests.
@@ -12818,7 +12818,7 @@ define('dummy/tests/unit/controllers/new-platform-flexberry-services-lock-list-t
   'use strict';
 
   (0, _emberQunit.moduleFor)('controller:new-platform-flexberry-services-lock-list', 'Unit | Controller | new-platform-flexberry-services-lock-list', {
-    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'service:adv-limit', 'service:objectlistview-events', 'service:user-settings']
+    needs: ['controller:advlimit-dialog', 'controller:colsconfig-dialog', 'controller:filters-dialog', 'service:adv-limit', 'service:objectlistview-events', 'service:user-settings']
   });
 
   (0, _emberQunit.test)('it exists', function (assert) {
