@@ -499,7 +499,11 @@ export default FlexberryBaseComponent.extend({
     let exportParams = this.get(&#x27;model.exportParams&#x27;) || {};
     builder.selectByProjection(exportParams.projectionName, true);
     let colsOrder = settings.colsOrder.filter(({ hide }) =&gt; !hide)
-      .map(column =&gt; adapter._getODataAttributeName(modelName, column.propName).replace(/\//g, &#x27;.&#x27;) + &#x27;/&#x27; + column.name || column.propName)
+      .map(column =&gt; {
+        let attributeName = adapter._getODataAttributeName(modelName, column.propName).replace(/\//g, &#x27;.&#x27;);
+        let propName = column.name || column.propName;
+        return encodeURIComponent(attributeName) + &#x27;/&#x27; + encodeURIComponent(propName);
+      })
       .join();
     if (sortString) {
       builder.orderBy(sortString);
