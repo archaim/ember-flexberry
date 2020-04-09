@@ -17628,7 +17628,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 439,
+            "line": 443,
             "description": "Delete object, if successful transition to parent route.",
             "itemtype": "method",
             "name": "delete",
@@ -17648,7 +17648,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 484,
+            "line": 488,
             "description": "Сlose edit form and transition to parent route.",
             "itemtype": "method",
             "name": "close",
@@ -17669,7 +17669,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 499,
+            "line": 503,
             "description": "This method will be invoked before save operation will be called.\nOverride this method to add some custom logic on save operation start.",
             "example": [
                 "\n  ```javascript\n  onSaveActionStarted() {\n    alert('Save operation started!');\n  }\n  ```"
@@ -17681,7 +17681,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 514,
+            "line": 518,
             "description": "This method will be invoked when save operation successfully completed.\nOverride this method to add some custom logic on save operation success.",
             "example": [
                 "\n  ```javascript\n  onSaveActionFulfilled() {\n    alert('Save operation succeed!');\n  }\n  ```"
@@ -17693,7 +17693,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 529,
+            "line": 533,
             "description": "This method will be invoked when save operation completed, but failed.\nOverride this method to add some custom logic on save operation fail.",
             "example": [
                 "\n  ```javascript\n  onSaveActionRejected() {\n    alert('Save operation failed!');\n  }\n  ```"
@@ -17712,7 +17712,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 549,
+            "line": 553,
             "description": "This method will be invoked always when save operation completed,\nregardless of save promise's state (was it fulfilled or rejected).\nOverride this method to add some custom logic on save operation completion.",
             "example": [
                 "\n  ```js\n  onSaveActionAlways(data) {\n    alert('Save operation completed!');\n  }\n  ```"
@@ -17731,7 +17731,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 567,
+            "line": 571,
             "description": "This method will be invoked before delete operation will be called.\nOverride this method to add custom logic on delete operation start.",
             "example": [
                 "\n  ```javascript\n  onDeleteActionStarted() {\n    alert('Delete operation started!');\n  }\n  ```"
@@ -17743,7 +17743,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 582,
+            "line": 586,
             "description": "This method will be invoked when delete operation successfully completed.\nOverride this method to add some custom logic on delete operation success.",
             "example": [
                 "\n  ```javascript\n  onDeleteActionFulfilled() {\n    alert('Delete operation succeed!');\n    this.close(false);\n  }\n  ```"
@@ -17762,7 +17762,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 600,
+            "line": 604,
             "description": "This method will be invoked when delete operation completed, but failed.\nOverride this method to add some custom logic on delete operation fail.",
             "example": [
                 "\n  ```javascript\n  onDeleteActionRejected() {\n    alert('Delete operation failed!');\n  }\n  ```"
@@ -17781,7 +17781,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 617,
+            "line": 621,
             "description": "This method will be invoked always when delete operation completed,\nregardless of save promise's state (was it fulfilled or rejected).\nOverride this method to add some custom logic on delete operation completion.",
             "example": [
                 "\n  ```js\n  onDeleteActionAlways(data) {\n    alert('Delete operation completed!');\n  }\n  ```"
@@ -17800,7 +17800,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 635,
+            "line": 639,
             "description": "This method will be invoked before close method will be called.\nOverride this method to add custom logic on close method start.",
             "example": [
                 "\n  ```javascript\n  onCloseActionStarted() {\n    alert('Form will be closed right now!');\n  }\n  ```"
@@ -17812,7 +17812,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 650,
+            "line": 654,
             "description": "Method transition to parent route (corresponding list form).",
             "itemtype": "method",
             "name": "transitionToParentRoute",
@@ -17828,7 +17828,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 672,
+            "line": 676,
             "description": "Method to get type and attributes of component, which will be embeded in object-list-view cell.",
             "itemtype": "method",
             "name": "getCellComponent",
@@ -17858,7 +17858,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 739,
+            "line": 743,
             "description": "Rollback dirty hasMany relationships in the `model` recursively.\nThis method invokes by `resetController` in the `edit-form` route.",
             "itemtype": "method",
             "name": "rollbackHasManyRelationships",
@@ -17876,7 +17876,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 752,
+            "line": 756,
             "description": "Service that lets interact between agregator's and detail's form.",
             "itemtype": "property",
             "name": "flexberryDetailInteractionService",
@@ -17889,7 +17889,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 762,
+            "line": 766,
             "description": "Save dirty hasMany relationships in the `model` recursively.\nThis method invokes by `save` method.",
             "itemtype": "method",
             "name": "_saveHasManyRelationships",
@@ -17911,7 +17911,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 797,
+            "line": 801,
             "description": "Returns an array with the model and all its `hasMany` relationships, obtained recursively, for each model.",
             "itemtype": "method",
             "name": "_getModelWithHasMany",
@@ -17931,7 +17931,7 @@
         },
         {
             "file": "addon/controllers/edit-form.js",
-            "line": 820,
+            "line": 824,
             "description": "Destroy (delete and save) all hasMany relationships in the `model` recursively.\nThis method invokes by `delete` method.",
             "itemtype": "method",
             "name": "_destroyHasManyRelationships",

@@ -639,7 +639,11 @@ FlexberryObjectlistviewHierarchicalControllerMixin, {
       });
     } else {
       const unsavedModels = this._getModelWithHasMany(model).filterBy(&#x27;hasDirtyAttributes&#x27;);
-      savePromise = unsavedModels.length &gt; 1 ? this.get(&#x27;store&#x27;).batchUpdate(unsavedModels) : model.save();
+      if ((unsavedModels.length === 1 &amp;&amp; unsavedModels[0] !== model) || unsavedModels.length &gt; 1) {
+        savePromise = this.get(&#x27;store&#x27;).batchUpdate(unsavedModels);
+      } else {
+        savePromise = model.save();
+      }
     }
 
     return savePromise.then(afterSaveModelFunction).catch((errorData) =&gt; {
