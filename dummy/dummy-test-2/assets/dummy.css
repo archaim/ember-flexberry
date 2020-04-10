@@ -117,6 +117,7 @@
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -128,7 +129,7 @@
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -315,7 +316,7 @@
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -338,7 +339,7 @@
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -347,9 +348,6 @@
              Reset
 *******************************/
 /* Packaged Theme */
-/*******************************
-             Reset
-*******************************/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -809,6 +807,7 @@ template {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -820,7 +819,7 @@ template {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -1007,7 +1006,7 @@ template {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -1030,7 +1029,7 @@ template {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -1418,6 +1417,9 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 /*******************************
         Global Overrides
 *******************************/
+/*******************************
+        Global Overrides
+*******************************/
 .bgw-fix {
   position: relative;
 }
@@ -1560,6 +1562,7 @@ lang {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -1571,7 +1574,7 @@ lang {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -1758,7 +1761,7 @@ lang {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -1781,7 +1784,7 @@ lang {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -5054,6 +5057,9 @@ lang {
   border-radius: 0.28571429rem;
 }
 /*******************************
+         Theme Overrides
+*******************************/
+/*******************************
            Overrides
 *******************************/
 /**************************************
@@ -5707,6 +5713,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -5718,7 +5725,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -5905,7 +5912,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -5928,7 +5935,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -6077,6 +6084,9 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*******************************
          Theme Overrides
 *******************************/
+/*******************************
+         Theme Overrides
+*******************************/
 .stackable.grid.container {
   margin-top: 70px;
 }
@@ -6144,6 +6154,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -6155,7 +6166,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -6342,7 +6353,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -6365,7 +6376,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -6389,24 +6400,6 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /* Section */
 /* Sizes */
 /* Packaged Theme */
-/*******************************
-            Divider
-*******************************/
-/*-------------------
-       Element
---------------------*/
-/* Text */
-/*-------------------
-       Coupling
---------------------*/
-/* Icon */
-/*******************************
-         Variations
-*******************************/
-/* Horizontal / Vertical */
-/* Inverted */
-/* Section */
-/* Sizes */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -6661,6 +6654,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -6672,7 +6666,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -6859,7 +6853,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -6882,7 +6876,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -6894,12 +6888,6 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
        Element
 --------------------*/
 /* Packaged Theme */
-/*******************************
-            Flag
-*******************************/
-/*-------------------
-       Element
---------------------*/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -7958,6 +7946,7 @@ i.flag.zimbabwe:before {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -7969,7 +7958,7 @@ i.flag.zimbabwe:before {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -8156,7 +8145,7 @@ i.flag.zimbabwe:before {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -8179,7 +8168,7 @@ i.flag.zimbabwe:before {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -8210,31 +8199,6 @@ i.flag.zimbabwe:before {
 /* Inverted */
 /* Floated */
 /* Packaged Theme */
-/*******************************
-            Header
-*******************************/
-/*-------------------
-       Element
---------------------*/
-/* Sub Heading */
-/* Sub Header */
-/* Icon */
-/* Image */
-/* Label */
-/* Content */
-/* Paragraph after Header */
-/*-------------------
-      Variations
---------------------*/
-/* Sizing */
-/* Sub Header */
-/* Icon Header */
-/* No Line Height Offset */
-/* Divided */
-/* Block */
-/* Attached */
-/* Inverted */
-/* Floated */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -8891,6 +8855,7 @@ a.ui.inverted.grey.header:hover {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -8902,7 +8867,7 @@ a.ui.inverted.grey.header:hover {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -9089,7 +9054,7 @@ a.ui.inverted.grey.header:hover {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -9112,7 +9077,7 @@ a.ui.inverted.grey.header:hover {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -9563,6 +9528,2783 @@ i.icons .inverted.corner.icon {
   text-shadow: #7ba7d9;
 }
 /*
+ * Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ * License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/*******************************
+
+Semantic-UI integration of font-awesome :
+
+///class names are separated
+i.icon.circle => i.icon.circle
+i.icon.circle-o => i.icon.circle.outline
+
+//abbreviation are replaced by full letters:
+i.icon.ellipsis-h => i.icon.ellipsis.horizontal
+i.icon.ellipsis-v => i.icon.ellipsis.vertical
+.alpha => .i.icon.alphabet
+.asc => .i.icon.ascending
+.desc => .i.icon.descending
+.alt =>.alternate
+
+ASCII order is conserved for easier maintenance.
+
+Icons that only have one style 'outline', 'square' etc do not require this class
+for instance `lemon icon` not `lemon outline icon` since there is only one lemon
+
+*******************************/
+/*******************************
+            Icons
+*******************************/
+/* Web Content */
+i.icon.search:before {
+  content: "\f002";
+}
+i.icon.mail.outline:before {
+  content: "\f003";
+}
+i.icon.signal:before {
+  content: "\f012";
+}
+i.icon.setting:before {
+  content: "\f013";
+}
+i.icon.home:before {
+  content: "\f015";
+}
+i.icon.inbox:before {
+  content: "\f01c";
+}
+i.icon.browser:before {
+  content: "\f022";
+}
+i.icon.tag:before {
+  content: "\f02b";
+}
+i.icon.tags:before {
+  content: "\f02c";
+}
+i.icon.image:before {
+  content: "\f03e";
+}
+i.icon.calendar:before {
+  content: "\f073";
+}
+i.icon.comment:before {
+  content: "\f075";
+}
+i.icon.shop:before {
+  content: "\f07a";
+}
+i.icon.comments:before {
+  content: "\f086";
+}
+i.icon.external:before {
+  content: "\f08e";
+}
+i.icon.privacy:before {
+  content: "\f084";
+}
+i.icon.settings:before {
+  content: "\f085";
+}
+i.icon.comments:before {
+  content: "\f086";
+}
+i.icon.external:before {
+  content: "\f08e";
+}
+i.icon.trophy:before {
+  content: "\f091";
+}
+i.icon.payment:before {
+  content: "\f09d";
+}
+i.icon.feed:before {
+  content: "\f09e";
+}
+i.icon.alarm.outline:before {
+  content: "\f0a2";
+}
+i.icon.tasks:before {
+  content: "\f0ae";
+}
+i.icon.cloud:before {
+  content: "\f0c2";
+}
+i.icon.lab:before {
+  content: "\f0c3";
+}
+i.icon.mail:before {
+  content: "\f0e0";
+}
+i.icon.dashboard:before {
+  content: "\f0e4";
+}
+i.icon.comment.outline:before {
+  content: "\f0e5";
+}
+i.icon.comments.outline:before {
+  content: "\f0e6";
+}
+i.icon.sitemap:before {
+  content: "\f0e8";
+}
+i.icon.idea:before {
+  content: "\f0eb";
+}
+i.icon.alarm:before {
+  content: "\f0f3";
+}
+i.icon.terminal:before {
+  content: "\f120";
+}
+i.icon.code:before {
+  content: "\f121";
+}
+i.icon.protect:before {
+  content: "\f132";
+}
+i.icon.calendar.outline:before {
+  content: "\f133";
+}
+i.icon.ticket:before {
+  content: "\f145";
+}
+i.icon.external.square:before {
+  content: "\f14c";
+}
+i.icon.bug:before {
+  content: "\f188";
+}
+i.icon.mail.square:before {
+  content: "\f199";
+}
+i.icon.history:before {
+  content: "\f1da";
+}
+i.icon.options:before {
+  content: "\f1de";
+}
+i.icon.text.telephone:before {
+  content: "\f1e4";
+}
+i.icon.find:before {
+  content: "\f1e5";
+}
+i.icon.alarm.mute:before {
+  content: "\f1f6";
+}
+i.icon.alarm.mute.outline:before {
+  content: "\f1f7";
+}
+i.icon.copyright:before {
+  content: "\f1f9";
+}
+i.icon.at:before {
+  content: "\f1fa";
+}
+i.icon.eyedropper:before {
+  content: "\f1fb";
+}
+i.icon.paint.brush:before {
+  content: "\f1fc";
+}
+i.icon.heartbeat:before {
+  content: "\f21e";
+}
+i.icon.mouse.pointer:before {
+  content: "\f245";
+}
+i.icon.hourglass.empty:before {
+  content: "\f250";
+}
+i.icon.hourglass.start:before {
+  content: "\f251";
+}
+i.icon.hourglass.half:before {
+  content: "\f252";
+}
+i.icon.hourglass.end:before {
+  content: "\f253";
+}
+i.icon.hourglass.full:before {
+  content: "\f254";
+}
+i.icon.hand.pointer:before {
+  content: "\f25a";
+}
+i.icon.trademark:before {
+  content: "\f25c";
+}
+i.icon.registered:before {
+  content: "\f25d";
+}
+i.icon.creative.commons:before {
+  content: "\f25e";
+}
+i.icon.add.to.calendar:before {
+  content: "\f271";
+}
+i.icon.remove.from.calendar:before {
+  content: "\f272";
+}
+i.icon.delete.calendar:before {
+  content: "\f273";
+}
+i.icon.checked.calendar:before {
+  content: "\f274";
+}
+i.icon.industry:before {
+  content: "\f275";
+}
+i.icon.shopping.bag:before {
+  content: "\f290";
+}
+i.icon.shopping.basket:before {
+  content: "\f291";
+}
+i.icon.hashtag:before {
+  content: "\f292";
+}
+i.icon.percent:before {
+  content: "\f295";
+}
+i.icon.handshake:before {
+  content: "\f2b5";
+}
+i.icon.open.envelope:before {
+  content: "\f2b6";
+}
+i.icon.open.envelope.outline:before {
+  content: "\f2b7";
+}
+i.icon.address.book:before {
+  content: "\f2b9";
+}
+i.icon.address.book.outline:before {
+  content: "\f2ba";
+}
+i.icon.address.card:before {
+  content: "\f2bb";
+}
+i.icon.address.card.outline:before {
+  content: "\f2bc";
+}
+i.icon.id.badge:before {
+  content: "\f2c1";
+}
+i.icon.id.card:before {
+  content: "\f2c2";
+}
+i.icon.id.card.outline:before {
+  content: "\f2c3";
+}
+i.icon.podcast:before {
+  content: "\f2ce";
+}
+i.icon.window.maximize:before {
+  content: "\f2d0";
+}
+i.icon.window.minimize:before {
+  content: "\f2d1";
+}
+i.icon.window.restore:before {
+  content: "\f2d2";
+}
+i.icon.window.close:before {
+  content: "\f2d3";
+}
+i.icon.window.close.outline:before {
+  content: "\f2d4";
+}
+/* User Actions */
+i.icon.wait:before {
+  content: "\f017";
+}
+i.icon.download:before {
+  content: "\f019";
+}
+i.icon.repeat:before {
+  content: "\f01e";
+}
+i.icon.refresh:before {
+  content: "\f021";
+}
+i.icon.lock:before {
+  content: "\f023";
+}
+i.icon.bookmark:before {
+  content: "\f02e";
+}
+i.icon.print:before {
+  content: "\f02f";
+}
+i.icon.write:before {
+  content: "\f040";
+}
+i.icon.adjust:before {
+  content: "\f042";
+}
+i.icon.theme:before {
+  content: "\f043";
+}
+i.icon.edit:before {
+  content: "\f044";
+}
+i.icon.external.share:before {
+  content: "\f045";
+}
+i.icon.ban:before {
+  content: "\f05e";
+}
+i.icon.mail.forward:before {
+  content: "\f064";
+}
+i.icon.share:before {
+  content: "\f064";
+}
+i.icon.expand:before {
+  content: "\f065";
+}
+i.icon.compress:before {
+  content: "\f066";
+}
+i.icon.unhide:before {
+  content: "\f06e";
+}
+i.icon.hide:before {
+  content: "\f070";
+}
+i.icon.random:before {
+  content: "\f074";
+}
+i.icon.retweet:before {
+  content: "\f079";
+}
+i.icon.sign.out:before {
+  content: "\f08b";
+}
+i.icon.pin:before {
+  content: "\f08d";
+}
+i.icon.sign.in:before {
+  content: "\f090";
+}
+i.icon.upload:before {
+  content: "\f093";
+}
+i.icon.call:before {
+  content: "\f095";
+}
+i.icon.remove.bookmark:before {
+  content: "\f097";
+}
+i.icon.call.square:before {
+  content: "\f098";
+}
+i.icon.unlock:before {
+  content: "\f09c";
+}
+i.icon.configure:before {
+  content: "\f0ad";
+}
+i.icon.filter:before {
+  content: "\f0b0";
+}
+i.icon.wizard:before {
+  content: "\f0d0";
+}
+i.icon.undo:before {
+  content: "\f0e2";
+}
+i.icon.exchange:before {
+  content: "\f0ec";
+}
+i.icon.cloud.download:before {
+  content: "\f0ed";
+}
+i.icon.cloud.upload:before {
+  content: "\f0ee";
+}
+i.icon.reply:before {
+  content: "\f112";
+}
+i.icon.reply.all:before {
+  content: "\f122";
+}
+i.icon.erase:before {
+  content: "\f12d";
+}
+i.icon.unlock.alternate:before {
+  content: "\f13e";
+}
+i.icon.write.square:before {
+  content: "\f14b";
+}
+i.icon.share.square:before {
+  content: "\f14d";
+}
+i.icon.archive:before {
+  content: "\f187";
+}
+i.icon.translate:before {
+  content: "\f1ab";
+}
+i.icon.recycle:before {
+  content: "\f1b8";
+}
+i.icon.send:before {
+  content: "\f1d8";
+}
+i.icon.send.outline:before {
+  content: "\f1d9";
+}
+i.icon.share.alternate:before {
+  content: "\f1e0";
+}
+i.icon.share.alternate.square:before {
+  content: "\f1e1";
+}
+i.icon.add.to.cart:before {
+  content: "\f217";
+}
+i.icon.in.cart:before {
+  content: "\f218";
+}
+i.icon.add.user:before {
+  content: "\f234";
+}
+i.icon.remove.user:before {
+  content: "\f235";
+}
+i.icon.object.group:before {
+  content: "\f247";
+}
+i.icon.object.ungroup:before {
+  content: "\f248";
+}
+i.icon.clone:before {
+  content: "\f24d";
+}
+i.icon.talk:before {
+  content: "\f27a";
+}
+i.icon.talk.outline:before {
+  content: "\f27b";
+}
+/* Messages */
+i.icon.help.circle:before {
+  content: "\f059";
+}
+i.icon.info.circle:before {
+  content: "\f05a";
+}
+i.icon.warning.circle:before {
+  content: "\f06a";
+}
+i.icon.warning.sign:before {
+  content: "\f071";
+}
+i.icon.announcement:before {
+  content: "\f0a1";
+}
+i.icon.help:before {
+  content: "\f128";
+}
+i.icon.info:before {
+  content: "\f129";
+}
+i.icon.warning:before {
+  content: "\f12a";
+}
+i.icon.birthday:before {
+  content: "\f1fd";
+}
+i.icon.help.circle.outline:before {
+  content: "\f29c";
+}
+/* Users */
+i.icon.user:before {
+  content: "\f007";
+}
+i.icon.users:before {
+  content: "\f0c0";
+}
+i.icon.doctor:before {
+  content: "\f0f0";
+}
+i.icon.handicap:before {
+  content: "\f193";
+}
+i.icon.student:before {
+  content: "\f19d";
+}
+i.icon.child:before {
+  content: "\f1ae";
+}
+i.icon.spy:before {
+  content: "\f21b";
+}
+i.icon.user.circle:before {
+  content: "\f2bd";
+}
+i.icon.user.circle.outline:before {
+  content: "\f2be";
+}
+i.icon.user.outline:before {
+  content: "\f2c0";
+}
+/* Gender & Sexuality */
+i.icon.female:before {
+  content: "\f182";
+}
+i.icon.male:before {
+  content: "\f183";
+}
+i.icon.woman:before {
+  content: "\f221";
+}
+i.icon.man:before {
+  content: "\f222";
+}
+i.icon.non.binary.transgender:before {
+  content: "\f223";
+}
+i.icon.intergender:before {
+  content: "\f224";
+}
+i.icon.transgender:before {
+  content: "\f225";
+}
+i.icon.lesbian:before {
+  content: "\f226";
+}
+i.icon.gay:before {
+  content: "\f227";
+}
+i.icon.heterosexual:before {
+  content: "\f228";
+}
+i.icon.other.gender:before {
+  content: "\f229";
+}
+i.icon.other.gender.vertical:before {
+  content: "\f22a";
+}
+i.icon.other.gender.horizontal:before {
+  content: "\f22b";
+}
+i.icon.neuter:before {
+  content: "\f22c";
+}
+i.icon.genderless:before {
+  content: "\f22d";
+}
+/* Accessibility */
+i.icon.universal.access:before {
+  content: "\f29a";
+}
+i.icon.wheelchair:before {
+  content: "\f29b";
+}
+i.icon.blind:before {
+  content: "\f29d";
+}
+i.icon.audio.description:before {
+  content: "\f29e";
+}
+i.icon.volume.control.phone:before {
+  content: "\f2a0";
+}
+i.icon.braille:before {
+  content: "\f2a1";
+}
+i.icon.asl:before {
+  content: "\f2a3";
+}
+i.icon.assistive.listening.systems:before {
+  content: "\f2a2";
+}
+i.icon.deafness:before {
+  content: "\f2a4";
+}
+i.icon.sign.language:before {
+  content: "\f2a7";
+}
+i.icon.low.vision:before {
+  content: "\f2a8";
+}
+/* View Adjustment */
+i.icon.block.layout:before {
+  content: "\f009";
+}
+i.icon.grid.layout:before {
+  content: "\f00a";
+}
+i.icon.list.layout:before {
+  content: "\f00b";
+}
+i.icon.zoom:before {
+  content: "\f00e";
+}
+i.icon.zoom.out:before {
+  content: "\f010";
+}
+i.icon.resize.vertical:before {
+  content: "\f07d";
+}
+i.icon.resize.horizontal:before {
+  content: "\f07e";
+}
+i.icon.maximize:before {
+  content: "\f0b2";
+}
+i.icon.crop:before {
+  content: "\f125";
+}
+/* Literal Objects */
+i.icon.cocktail:before {
+  content: "\f000";
+}
+i.icon.road:before {
+  content: "\f018";
+}
+i.icon.flag:before {
+  content: "\f024";
+}
+i.icon.book:before {
+  content: "\f02d";
+}
+i.icon.gift:before {
+  content: "\f06b";
+}
+i.icon.leaf:before {
+  content: "\f06c";
+}
+i.icon.fire:before {
+  content: "\f06d";
+}
+i.icon.plane:before {
+  content: "\f072";
+}
+i.icon.magnet:before {
+  content: "\f076";
+}
+i.icon.lemon:before {
+  content: "\f094";
+}
+i.icon.world:before {
+  content: "\f0ac";
+}
+i.icon.travel:before {
+  content: "\f0b1";
+}
+i.icon.shipping:before {
+  content: "\f0d1";
+}
+i.icon.money:before {
+  content: "\f0d6";
+}
+i.icon.legal:before {
+  content: "\f0e3";
+}
+i.icon.lightning:before {
+  content: "\f0e7";
+}
+i.icon.umbrella:before {
+  content: "\f0e9";
+}
+i.icon.treatment:before {
+  content: "\f0f1";
+}
+i.icon.suitcase:before {
+  content: "\f0f2";
+}
+i.icon.bar:before {
+  content: "\f0fc";
+}
+i.icon.flag.outline:before {
+  content: "\f11d";
+}
+i.icon.flag.checkered:before {
+  content: "\f11e";
+}
+i.icon.puzzle:before {
+  content: "\f12e";
+}
+i.icon.fire.extinguisher:before {
+  content: "\f134";
+}
+i.icon.rocket:before {
+  content: "\f135";
+}
+i.icon.anchor:before {
+  content: "\f13d";
+}
+i.icon.bullseye:before {
+  content: "\f140";
+}
+i.icon.sun:before {
+  content: "\f185";
+}
+i.icon.moon:before {
+  content: "\f186";
+}
+i.icon.fax:before {
+  content: "\f1ac";
+}
+i.icon.life.ring:before {
+  content: "\f1cd";
+}
+i.icon.bomb:before {
+  content: "\f1e2";
+}
+i.icon.soccer:before {
+  content: "\f1e3";
+}
+i.icon.calculator:before {
+  content: "\f1ec";
+}
+i.icon.diamond:before {
+  content: "\f219";
+}
+i.icon.sticky.note:before {
+  content: "\f249";
+}
+i.icon.sticky.note.outline:before {
+  content: "\f24a";
+}
+i.icon.law:before {
+  content: "\f24e";
+}
+i.icon.hand.peace:before {
+  content: "\f25b";
+}
+i.icon.hand.rock:before {
+  content: "\f255";
+}
+i.icon.hand.paper:before {
+  content: "\f256";
+}
+i.icon.hand.scissors:before {
+  content: "\f257";
+}
+i.icon.hand.lizard:before {
+  content: "\f258";
+}
+i.icon.hand.spock:before {
+  content: "\f259";
+}
+i.icon.tv:before {
+  content: "\f26c";
+}
+i.icon.thermometer.full:before {
+  content: "\f2c7";
+}
+i.icon.thermometer.three.quarters:before {
+  content: "\f2c8";
+}
+i.icon.thermometer.half:before {
+  content: "\f2c9";
+}
+i.icon.thermometer.quarter:before {
+  content: "\f2ca";
+}
+i.icon.thermometer.empty:before {
+  content: "\f2cb";
+}
+i.icon.shower:before {
+  content: "\f2cc";
+}
+i.icon.bathtub:before {
+  content: "\f2cd";
+}
+i.icon.snowflake:before {
+  content: "\f2dc";
+}
+/* Shapes */
+i.icon.crosshairs:before {
+  content: "\f05b";
+}
+i.icon.asterisk:before {
+  content: "\f069";
+}
+i.icon.square.outline:before {
+  content: "\f096";
+}
+i.icon.certificate:before {
+  content: "\f0a3";
+}
+i.icon.square:before {
+  content: "\f0c8";
+}
+i.icon.quote.left:before {
+  content: "\f10d";
+}
+i.icon.quote.right:before {
+  content: "\f10e";
+}
+i.icon.spinner:before {
+  content: "\f110";
+}
+i.icon.circle:before {
+  content: "\f111";
+}
+i.icon.ellipsis.horizontal:before {
+  content: "\f141";
+}
+i.icon.ellipsis.vertical:before {
+  content: "\f142";
+}
+i.icon.cube:before {
+  content: "\f1b2";
+}
+i.icon.cubes:before {
+  content: "\f1b3";
+}
+i.icon.circle.notched:before {
+  content: "\f1ce";
+}
+i.icon.circle.thin:before {
+  content: "\f1db";
+}
+/* Item Selection */
+i.icon.checkmark:before {
+  content: "\f00c";
+}
+i.icon.remove:before {
+  content: "\f00d";
+}
+i.icon.checkmark.box:before {
+  content: "\f046";
+}
+i.icon.move:before {
+  content: "\f047";
+}
+i.icon.add.circle:before {
+  content: "\f055";
+}
+i.icon.minus.circle:before {
+  content: "\f056";
+}
+i.icon.remove.circle:before {
+  content: "\f057";
+}
+i.icon.check.circle:before {
+  content: "\f058";
+}
+i.icon.remove.circle.outline:before {
+  content: "\f05c";
+}
+i.icon.check.circle.outline:before {
+  content: "\f05d";
+}
+i.icon.plus:before {
+  content: "\f067";
+}
+i.icon.minus:before {
+  content: "\f068";
+}
+i.icon.add.square:before {
+  content: "\f0fe";
+}
+i.icon.radio:before {
+  content: "\f10c";
+}
+i.icon.minus.square:before {
+  content: "\f146";
+}
+i.icon.minus.square.outline:before {
+  content: "\f147";
+}
+i.icon.check.square:before {
+  content: "\f14a";
+}
+i.icon.selected.radio:before {
+  content: "\f192";
+}
+i.icon.plus.square.outline:before {
+  content: "\f196";
+}
+i.icon.toggle.off:before {
+  content: "\f204";
+}
+i.icon.toggle.on:before {
+  content: "\f205";
+}
+/* Media */
+i.icon.film:before {
+  content: "\f008";
+}
+i.icon.sound:before {
+  content: "\f025";
+}
+i.icon.photo:before {
+  content: "\f030";
+}
+i.icon.bar.chart:before {
+  content: "\f080";
+}
+i.icon.camera.retro:before {
+  content: "\f083";
+}
+i.icon.newspaper:before {
+  content: "\f1ea";
+}
+i.icon.area.chart:before {
+  content: "\f1fe";
+}
+i.icon.pie.chart:before {
+  content: "\f200";
+}
+i.icon.line.chart:before {
+  content: "\f201";
+}
+/* Pointers */
+i.icon.arrow.circle.outline.down:before {
+  content: "\f01a";
+}
+i.icon.arrow.circle.outline.up:before {
+  content: "\f01b";
+}
+i.icon.chevron.left:before {
+  content: "\f053";
+}
+i.icon.chevron.right:before {
+  content: "\f054";
+}
+i.icon.arrow.left:before {
+  content: "\f060";
+}
+i.icon.arrow.right:before {
+  content: "\f061";
+}
+i.icon.arrow.up:before {
+  content: "\f062";
+}
+i.icon.arrow.down:before {
+  content: "\f063";
+}
+i.icon.chevron.up:before {
+  content: "\f077";
+}
+i.icon.chevron.down:before {
+  content: "\f078";
+}
+i.icon.pointing.right:before {
+  content: "\f0a4";
+}
+i.icon.pointing.left:before {
+  content: "\f0a5";
+}
+i.icon.pointing.up:before {
+  content: "\f0a6";
+}
+i.icon.pointing.down:before {
+  content: "\f0a7";
+}
+i.icon.arrow.circle.left:before {
+  content: "\f0a8";
+}
+i.icon.arrow.circle.right:before {
+  content: "\f0a9";
+}
+i.icon.arrow.circle.up:before {
+  content: "\f0aa";
+}
+i.icon.arrow.circle.down:before {
+  content: "\f0ab";
+}
+i.icon.caret.down:before {
+  content: "\f0d7";
+}
+i.icon.caret.up:before {
+  content: "\f0d8";
+}
+i.icon.caret.left:before {
+  content: "\f0d9";
+}
+i.icon.caret.right:before {
+  content: "\f0da";
+}
+i.icon.angle.double.left:before {
+  content: "\f100";
+}
+i.icon.angle.double.right:before {
+  content: "\f101";
+}
+i.icon.angle.double.up:before {
+  content: "\f102";
+}
+i.icon.angle.double.down:before {
+  content: "\f103";
+}
+i.icon.angle.left:before {
+  content: "\f104";
+}
+i.icon.angle.right:before {
+  content: "\f105";
+}
+i.icon.angle.up:before {
+  content: "\f106";
+}
+i.icon.angle.down:before {
+  content: "\f107";
+}
+i.icon.chevron.circle.left:before {
+  content: "\f137";
+}
+i.icon.chevron.circle.right:before {
+  content: "\f138";
+}
+i.icon.chevron.circle.up:before {
+  content: "\f139";
+}
+i.icon.chevron.circle.down:before {
+  content: "\f13a";
+}
+i.icon.toggle.down:before {
+  content: "\f150";
+}
+i.icon.toggle.up:before {
+  content: "\f151";
+}
+i.icon.toggle.right:before {
+  content: "\f152";
+}
+i.icon.long.arrow.down:before {
+  content: "\f175";
+}
+i.icon.long.arrow.up:before {
+  content: "\f176";
+}
+i.icon.long.arrow.left:before {
+  content: "\f177";
+}
+i.icon.long.arrow.right:before {
+  content: "\f178";
+}
+i.icon.arrow.circle.outline.right:before {
+  content: "\f18e";
+}
+i.icon.arrow.circle.outline.left:before {
+  content: "\f190";
+}
+i.icon.toggle.left:before {
+  content: "\f191";
+}
+/* Mobile */
+i.icon.tablet:before {
+  content: "\f10a";
+}
+i.icon.mobile:before {
+  content: "\f10b";
+}
+i.icon.battery.full:before {
+  content: "\f240";
+}
+i.icon.battery.high:before {
+  content: "\f241";
+}
+i.icon.battery.medium:before {
+  content: "\f242";
+}
+i.icon.battery.low:before {
+  content: "\f243";
+}
+i.icon.battery.empty:before {
+  content: "\f244";
+}
+/* Computer */
+i.icon.power:before {
+  content: "\f011";
+}
+i.icon.trash.outline:before {
+  content: "\f014";
+}
+i.icon.disk.outline:before {
+  content: "\f0a0";
+}
+i.icon.desktop:before {
+  content: "\f108";
+}
+i.icon.laptop:before {
+  content: "\f109";
+}
+i.icon.game:before {
+  content: "\f11b";
+}
+i.icon.keyboard:before {
+  content: "\f11c";
+}
+i.icon.plug:before {
+  content: "\f1e6";
+}
+/* File System */
+i.icon.trash:before {
+  content: "\f1f8";
+}
+i.icon.file.outline:before {
+  content: "\f016";
+}
+i.icon.folder:before {
+  content: "\f07b";
+}
+i.icon.folder.open:before {
+  content: "\f07c";
+}
+i.icon.file.text.outline:before {
+  content: "\f0f6";
+}
+i.icon.folder.outline:before {
+  content: "\f114";
+}
+i.icon.folder.open.outline:before {
+  content: "\f115";
+}
+i.icon.level.up:before {
+  content: "\f148";
+}
+i.icon.level.down:before {
+  content: "\f149";
+}
+i.icon.file:before {
+  content: "\f15b";
+}
+i.icon.file.text:before {
+  content: "\f15c";
+}
+i.icon.file.pdf.outline:before {
+  content: "\f1c1";
+}
+i.icon.file.word.outline:before {
+  content: "\f1c2";
+}
+i.icon.file.excel.outline:before {
+  content: "\f1c3";
+}
+i.icon.file.powerpoint.outline:before {
+  content: "\f1c4";
+}
+i.icon.file.image.outline:before {
+  content: "\f1c5";
+}
+i.icon.file.archive.outline:before {
+  content: "\f1c6";
+}
+i.icon.file.audio.outline:before {
+  content: "\f1c7";
+}
+i.icon.file.video.outline:before {
+  content: "\f1c8";
+}
+i.icon.file.code.outline:before {
+  content: "\f1c9";
+}
+/* Technologies */
+i.icon.qrcode:before {
+  content: "\f029";
+}
+i.icon.barcode:before {
+  content: "\f02a";
+}
+i.icon.rss:before {
+  content: "\f09e";
+}
+i.icon.fork:before {
+  content: "\f126";
+}
+i.icon.html5:before {
+  content: "\f13b";
+}
+i.icon.css3:before {
+  content: "\f13c";
+}
+i.icon.rss.square:before {
+  content: "\f143";
+}
+i.icon.openid:before {
+  content: "\f19b";
+}
+i.icon.database:before {
+  content: "\f1c0";
+}
+i.icon.wifi:before {
+  content: "\f1eb";
+}
+i.icon.server:before {
+  content: "\f233";
+}
+i.icon.usb:before {
+  content: "\f287";
+}
+i.icon.bluetooth:before {
+  content: "\f293";
+}
+i.icon.bluetooth.alternative:before {
+  content: "\f294";
+}
+i.icon.microchip:before {
+  content: "\f2db";
+}
+/* Rating */
+i.icon.heart:before {
+  content: "\f004";
+}
+i.icon.star:before {
+  content: "\f005";
+}
+i.icon.empty.star:before {
+  content: "\f006";
+}
+i.icon.thumbs.outline.up:before {
+  content: "\f087";
+}
+i.icon.thumbs.outline.down:before {
+  content: "\f088";
+}
+i.icon.star.half:before {
+  content: "\f089";
+}
+i.icon.empty.heart:before {
+  content: "\f08a";
+}
+i.icon.smile:before {
+  content: "\f118";
+}
+i.icon.frown:before {
+  content: "\f119";
+}
+i.icon.meh:before {
+  content: "\f11a";
+}
+i.icon.star.half.empty:before {
+  content: "\f123";
+}
+i.icon.thumbs.up:before {
+  content: "\f164";
+}
+i.icon.thumbs.down:before {
+  content: "\f165";
+}
+/* Audio */
+i.icon.music:before {
+  content: "\f001";
+}
+i.icon.video.play.outline:before {
+  content: "\f01d";
+}
+i.icon.volume.off:before {
+  content: "\f026";
+}
+i.icon.volume.down:before {
+  content: "\f027";
+}
+i.icon.volume.up:before {
+  content: "\f028";
+}
+i.icon.record:before {
+  content: "\f03d";
+}
+i.icon.step.backward:before {
+  content: "\f048";
+}
+i.icon.fast.backward:before {
+  content: "\f049";
+}
+i.icon.backward:before {
+  content: "\f04a";
+}
+i.icon.play:before {
+  content: "\f04b";
+}
+i.icon.pause:before {
+  content: "\f04c";
+}
+i.icon.stop:before {
+  content: "\f04d";
+}
+i.icon.forward:before {
+  content: "\f04e";
+}
+i.icon.fast.forward:before {
+  content: "\f050";
+}
+i.icon.step.forward:before {
+  content: "\f051";
+}
+i.icon.eject:before {
+  content: "\f052";
+}
+i.icon.unmute:before {
+  content: "\f130";
+}
+i.icon.mute:before {
+  content: "\f131";
+}
+i.icon.video.play:before {
+  content: "\f144";
+}
+i.icon.closed.captioning:before {
+  content: "\f20a";
+}
+i.icon.pause.circle:before {
+  content: "\f28b";
+}
+i.icon.pause.circle.outline:before {
+  content: "\f28c";
+}
+i.icon.stop.circle:before {
+  content: "\f28d";
+}
+i.icon.stop.circle.outline:before {
+  content: "\f28e";
+}
+/* Map, Locations, & Transportation */
+i.icon.marker:before {
+  content: "\f041";
+}
+i.icon.coffee:before {
+  content: "\f0f4";
+}
+i.icon.food:before {
+  content: "\f0f5";
+}
+i.icon.building.outline:before {
+  content: "\f0f7";
+}
+i.icon.hospital:before {
+  content: "\f0f8";
+}
+i.icon.emergency:before {
+  content: "\f0f9";
+}
+i.icon.first.aid:before {
+  content: "\f0fa";
+}
+i.icon.military:before {
+  content: "\f0fb";
+}
+i.icon.h:before {
+  content: "\f0fd";
+}
+i.icon.location.arrow:before {
+  content: "\f124";
+}
+i.icon.compass:before {
+  content: "\f14e";
+}
+i.icon.space.shuttle:before {
+  content: "\f197";
+}
+i.icon.university:before {
+  content: "\f19c";
+}
+i.icon.building:before {
+  content: "\f1ad";
+}
+i.icon.paw:before {
+  content: "\f1b0";
+}
+i.icon.spoon:before {
+  content: "\f1b1";
+}
+i.icon.car:before {
+  content: "\f1b9";
+}
+i.icon.taxi:before {
+  content: "\f1ba";
+}
+i.icon.tree:before {
+  content: "\f1bb";
+}
+i.icon.bicycle:before {
+  content: "\f206";
+}
+i.icon.bus:before {
+  content: "\f207";
+}
+i.icon.ship:before {
+  content: "\f21a";
+}
+i.icon.motorcycle:before {
+  content: "\f21c";
+}
+i.icon.street.view:before {
+  content: "\f21d";
+}
+i.icon.hotel:before {
+  content: "\f236";
+}
+i.icon.train:before {
+  content: "\f238";
+}
+i.icon.subway:before {
+  content: "\f239";
+}
+i.icon.map.pin:before {
+  content: "\f276";
+}
+i.icon.map.signs:before {
+  content: "\f277";
+}
+i.icon.map.outline:before {
+  content: "\f278";
+}
+i.icon.map:before {
+  content: "\f279";
+}
+/* Tables */
+i.icon.table:before {
+  content: "\f0ce";
+}
+i.icon.columns:before {
+  content: "\f0db";
+}
+i.icon.sort:before {
+  content: "\f0dc";
+}
+i.icon.sort.descending:before {
+  content: "\f0dd";
+}
+i.icon.sort.ascending:before {
+  content: "\f0de";
+}
+i.icon.sort.alphabet.ascending:before {
+  content: "\f15d";
+}
+i.icon.sort.alphabet.descending:before {
+  content: "\f15e";
+}
+i.icon.sort.content.ascending:before {
+  content: "\f160";
+}
+i.icon.sort.content.descending:before {
+  content: "\f161";
+}
+i.icon.sort.numeric.ascending:before {
+  content: "\f162";
+}
+i.icon.sort.numeric.descending:before {
+  content: "\f163";
+}
+/* Text Editor */
+i.icon.font:before {
+  content: "\f031";
+}
+i.icon.bold:before {
+  content: "\f032";
+}
+i.icon.italic:before {
+  content: "\f033";
+}
+i.icon.text.height:before {
+  content: "\f034";
+}
+i.icon.text.width:before {
+  content: "\f035";
+}
+i.icon.align.left:before {
+  content: "\f036";
+}
+i.icon.align.center:before {
+  content: "\f037";
+}
+i.icon.align.right:before {
+  content: "\f038";
+}
+i.icon.align.justify:before {
+  content: "\f039";
+}
+i.icon.list:before {
+  content: "\f03a";
+}
+i.icon.outdent:before {
+  content: "\f03b";
+}
+i.icon.indent:before {
+  content: "\f03c";
+}
+i.icon.linkify:before {
+  content: "\f0c1";
+}
+i.icon.cut:before {
+  content: "\f0c4";
+}
+i.icon.copy:before {
+  content: "\f0c5";
+}
+i.icon.attach:before {
+  content: "\f0c6";
+}
+i.icon.save:before {
+  content: "\f0c7";
+}
+i.icon.content:before {
+  content: "\f0c9";
+}
+i.icon.unordered.list:before {
+  content: "\f0ca";
+}
+i.icon.ordered.list:before {
+  content: "\f0cb";
+}
+i.icon.strikethrough:before {
+  content: "\f0cc";
+}
+i.icon.underline:before {
+  content: "\f0cd";
+}
+i.icon.paste:before {
+  content: "\f0ea";
+}
+i.icon.unlinkify:before {
+  content: "\f127";
+}
+i.icon.superscript:before {
+  content: "\f12b";
+}
+i.icon.subscript:before {
+  content: "\f12c";
+}
+i.icon.header:before {
+  content: "\f1dc";
+}
+i.icon.paragraph:before {
+  content: "\f1dd";
+}
+i.icon.text.cursor:before {
+  content: "\f246";
+}
+/* Currency */
+i.icon.euro:before {
+  content: "\f153";
+}
+i.icon.pound:before {
+  content: "\f154";
+}
+i.icon.dollar:before {
+  content: "\f155";
+}
+i.icon.rupee:before {
+  content: "\f156";
+}
+i.icon.yen:before {
+  content: "\f157";
+}
+i.icon.ruble:before {
+  content: "\f158";
+}
+i.icon.won:before {
+  content: "\f159";
+}
+i.icon.bitcoin:before {
+  content: "\f15a";
+}
+i.icon.lira:before {
+  content: "\f195";
+}
+i.icon.shekel:before {
+  content: "\f20b";
+}
+/* Payment Options */
+i.icon.paypal:before {
+  content: "\f1ed";
+}
+i.icon.google.wallet:before {
+  content: "\f1ee";
+}
+i.icon.visa:before {
+  content: "\f1f0";
+}
+i.icon.mastercard:before {
+  content: "\f1f1";
+}
+i.icon.discover:before {
+  content: "\f1f2";
+}
+i.icon.american.express:before {
+  content: "\f1f3";
+}
+i.icon.paypal.card:before {
+  content: "\f1f4";
+}
+i.icon.stripe:before {
+  content: "\f1f5";
+}
+i.icon.japan.credit.bureau:before {
+  content: "\f24b";
+}
+i.icon.diners.club:before {
+  content: "\f24c";
+}
+i.icon.credit.card.alternative:before {
+  content: "\f283";
+}
+/* Networks and Websites*/
+i.icon.twitter.square:before {
+  content: "\f081";
+}
+i.icon.facebook.square:before {
+  content: "\f082";
+}
+i.icon.linkedin.square:before {
+  content: "\f08c";
+}
+i.icon.github.square:before {
+  content: "\f092";
+}
+i.icon.twitter:before {
+  content: "\f099";
+}
+i.icon.facebook.f:before {
+  content: "\f09a";
+}
+i.icon.github:before {
+  content: "\f09b";
+}
+i.icon.pinterest:before {
+  content: "\f0d2";
+}
+i.icon.pinterest.square:before {
+  content: "\f0d3";
+}
+i.icon.google.plus.square:before {
+  content: "\f0d4";
+}
+i.icon.google.plus:before {
+  content: "\f0d5";
+}
+i.icon.linkedin:before {
+  content: "\f0e1";
+}
+i.icon.github.alternate:before {
+  content: "\f113";
+}
+i.icon.maxcdn:before {
+  content: "\f136";
+}
+i.icon.youtube.square:before {
+  content: "\f166";
+}
+i.icon.youtube:before {
+  content: "\f167";
+}
+i.icon.xing:before {
+  content: "\f168";
+}
+i.icon.xing.square:before {
+  content: "\f169";
+}
+i.icon.youtube.play:before {
+  content: "\f16a";
+}
+i.icon.dropbox:before {
+  content: "\f16b";
+}
+i.icon.stack.overflow:before {
+  content: "\f16c";
+}
+i.icon.instagram:before {
+  content: "\f16d";
+}
+i.icon.flickr:before {
+  content: "\f16e";
+}
+i.icon.adn:before {
+  content: "\f170";
+}
+i.icon.bitbucket:before {
+  content: "\f171";
+}
+i.icon.bitbucket.square:before {
+  content: "\f172";
+}
+i.icon.tumblr:before {
+  content: "\f173";
+}
+i.icon.tumblr.square:before {
+  content: "\f174";
+}
+i.icon.apple:before {
+  content: "\f179";
+}
+i.icon.windows:before {
+  content: "\f17a";
+}
+i.icon.android:before {
+  content: "\f17b";
+}
+i.icon.linux:before {
+  content: "\f17c";
+}
+i.icon.dribble:before {
+  content: "\f17d";
+}
+i.icon.skype:before {
+  content: "\f17e";
+}
+i.icon.foursquare:before {
+  content: "\f180";
+}
+i.icon.trello:before {
+  content: "\f181";
+}
+i.icon.gittip:before {
+  content: "\f184";
+}
+i.icon.vk:before {
+  content: "\f189";
+}
+i.icon.weibo:before {
+  content: "\f18a";
+}
+i.icon.renren:before {
+  content: "\f18b";
+}
+i.icon.pagelines:before {
+  content: "\f18c";
+}
+i.icon.stack.exchange:before {
+  content: "\f18d";
+}
+i.icon.vimeo.square:before {
+  content: "\f194";
+}
+i.icon.slack:before {
+  content: "\f198";
+}
+i.icon.wordpress:before {
+  content: "\f19a";
+}
+i.icon.yahoo:before {
+  content: "\f19e";
+}
+i.icon.google:before {
+  content: "\f1a0";
+}
+i.icon.reddit:before {
+  content: "\f1a1";
+}
+i.icon.reddit.square:before {
+  content: "\f1a2";
+}
+i.icon.stumbleupon.circle:before {
+  content: "\f1a3";
+}
+i.icon.stumbleupon:before {
+  content: "\f1a4";
+}
+i.icon.delicious:before {
+  content: "\f1a5";
+}
+i.icon.digg:before {
+  content: "\f1a6";
+}
+i.icon.pied.piper:before {
+  content: "\f1a7";
+}
+i.icon.pied.piper.alternate:before {
+  content: "\f1a8";
+}
+i.icon.drupal:before {
+  content: "\f1a9";
+}
+i.icon.joomla:before {
+  content: "\f1aa";
+}
+i.icon.behance:before {
+  content: "\f1b4";
+}
+i.icon.behance.square:before {
+  content: "\f1b5";
+}
+i.icon.steam:before {
+  content: "\f1b6";
+}
+i.icon.steam.square:before {
+  content: "\f1b7";
+}
+i.icon.spotify:before {
+  content: "\f1bc";
+}
+i.icon.deviantart:before {
+  content: "\f1bd";
+}
+i.icon.soundcloud:before {
+  content: "\f1be";
+}
+i.icon.vine:before {
+  content: "\f1ca";
+}
+i.icon.codepen:before {
+  content: "\f1cb";
+}
+i.icon.jsfiddle:before {
+  content: "\f1cc";
+}
+i.icon.rebel:before {
+  content: "\f1d0";
+}
+i.icon.empire:before {
+  content: "\f1d1";
+}
+i.icon.git.square:before {
+  content: "\f1d2";
+}
+i.icon.git:before {
+  content: "\f1d3";
+}
+i.icon.hacker.news:before {
+  content: "\f1d4";
+}
+i.icon.tencent.weibo:before {
+  content: "\f1d5";
+}
+i.icon.qq:before {
+  content: "\f1d6";
+}
+i.icon.wechat:before {
+  content: "\f1d7";
+}
+i.icon.slideshare:before {
+  content: "\f1e7";
+}
+i.icon.twitch:before {
+  content: "\f1e8";
+}
+i.icon.yelp:before {
+  content: "\f1e9";
+}
+i.icon.lastfm:before {
+  content: "\f202";
+}
+i.icon.lastfm.square:before {
+  content: "\f203";
+}
+i.icon.ioxhost:before {
+  content: "\f208";
+}
+i.icon.angellist:before {
+  content: "\f209";
+}
+i.icon.meanpath:before {
+  content: "\f20c";
+}
+i.icon.buysellads:before {
+  content: "\f20d";
+}
+i.icon.connectdevelop:before {
+  content: "\f20e";
+}
+i.icon.dashcube:before {
+  content: "\f210";
+}
+i.icon.forumbee:before {
+  content: "\f211";
+}
+i.icon.leanpub:before {
+  content: "\f212";
+}
+i.icon.sellsy:before {
+  content: "\f213";
+}
+i.icon.shirtsinbulk:before {
+  content: "\f214";
+}
+i.icon.simplybuilt:before {
+  content: "\f215";
+}
+i.icon.skyatlas:before {
+  content: "\f216";
+}
+i.icon.facebook:before {
+  content: "\f230";
+}
+i.icon.pinterest:before {
+  content: "\f231";
+}
+i.icon.whatsapp:before {
+  content: "\f232";
+}
+i.icon.viacoin:before {
+  content: "\f237";
+}
+i.icon.medium:before {
+  content: "\f23a";
+}
+i.icon.y.combinator:before {
+  content: "\f23b";
+}
+i.icon.optinmonster:before {
+  content: "\f23c";
+}
+i.icon.opencart:before {
+  content: "\f23d";
+}
+i.icon.expeditedssl:before {
+  content: "\f23e";
+}
+i.icon.gg:before {
+  content: "\f260";
+}
+i.icon.gg.circle:before {
+  content: "\f261";
+}
+i.icon.tripadvisor:before {
+  content: "\f262";
+}
+i.icon.odnoklassniki:before {
+  content: "\f263";
+}
+i.icon.odnoklassniki.square:before {
+  content: "\f264";
+}
+i.icon.pocket:before {
+  content: "\f265";
+}
+i.icon.wikipedia:before {
+  content: "\f266";
+}
+i.icon.safari:before {
+  content: "\f267";
+}
+i.icon.chrome:before {
+  content: "\f268";
+}
+i.icon.firefox:before {
+  content: "\f269";
+}
+i.icon.opera:before {
+  content: "\f26a";
+}
+i.icon.internet.explorer:before {
+  content: "\f26b";
+}
+i.icon.contao:before {
+  content: "\f26d";
+}
+i.icon.\35 00px:before {
+  content: "\f26e";
+}
+i.icon.amazon:before {
+  content: "\f270";
+}
+i.icon.houzz:before {
+  content: "\f27c";
+}
+i.icon.vimeo:before {
+  content: "\f27d";
+}
+i.icon.black.tie:before {
+  content: "\f27e";
+}
+i.icon.fonticons:before {
+  content: "\f280";
+}
+i.icon.reddit.alien:before {
+  content: "\f281";
+}
+i.icon.microsoft.edge:before {
+  content: "\f282";
+}
+i.icon.codiepie:before {
+  content: "\f284";
+}
+i.icon.modx:before {
+  content: "\f285";
+}
+i.icon.fort.awesome:before {
+  content: "\f286";
+}
+i.icon.product.hunt:before {
+  content: "\f288";
+}
+i.icon.mixcloud:before {
+  content: "\f289";
+}
+i.icon.scribd:before {
+  content: "\f28a";
+}
+i.icon.gitlab:before {
+  content: "\f296";
+}
+i.icon.wpbeginner:before {
+  content: "\f297";
+}
+i.icon.wpforms:before {
+  content: "\f298";
+}
+i.icon.envira.gallery:before {
+  content: "\f299";
+}
+i.icon.glide:before {
+  content: "\f2a5";
+}
+i.icon.glide.g:before {
+  content: "\f2a6";
+}
+i.icon.viadeo:before {
+  content: "\f2a9";
+}
+i.icon.viadeo.square:before {
+  content: "\f2aa";
+}
+i.icon.snapchat:before {
+  content: "\f2ab";
+}
+i.icon.snapchat.ghost:before {
+  content: "\f2ac";
+}
+i.icon.snapchat.square:before {
+  content: "\f2ad";
+}
+i.icon.pied.piper.hat:before {
+  content: "\f2ae";
+}
+i.icon.first.order:before {
+  content: "\f2b0";
+}
+i.icon.yoast:before {
+  content: "\f2b1";
+}
+i.icon.themeisle:before {
+  content: "\f2b2";
+}
+i.icon.google.plus.circle:before {
+  content: "\f2b3";
+}
+i.icon.font.awesome:before {
+  content: "\f2b4";
+}
+i.icon.linode:before {
+  content: "\f2b8";
+}
+i.icon.quora:before {
+  content: "\f2c4";
+}
+i.icon.free.code.camp:before {
+  content: "\f2c5";
+}
+i.icon.telegram:before {
+  content: "\f2c6";
+}
+i.icon.bandcamp:before {
+  content: "\f2d5";
+}
+i.icon.grav:before {
+  content: "\f2d6";
+}
+i.icon.etsy:before {
+  content: "\f2d7";
+}
+i.icon.imdb:before {
+  content: "\f2d8";
+}
+i.icon.ravelry:before {
+  content: "\f2d9";
+}
+i.icon.eercast:before {
+  content: "\f2da";
+}
+i.icon.superpowers:before {
+  content: "\f2dd";
+}
+i.icon.wpexplorer:before {
+  content: "\f2de";
+}
+i.icon.meetup:before {
+  content: "\f2e0";
+}
+/*******************************
+            Aliases
+*******************************/
+i.icon.like:before {
+  content: "\f004";
+}
+i.icon.favorite:before {
+  content: "\f005";
+}
+i.icon.video:before {
+  content: "\f008";
+}
+i.icon.check:before {
+  content: "\f00c";
+}
+i.icon.close:before {
+  content: "\f00d";
+}
+i.icon.cancel:before {
+  content: "\f00d";
+}
+i.icon.delete:before {
+  content: "\f00d";
+}
+i.icon.x:before {
+  content: "\f00d";
+}
+i.icon.zoom.in:before {
+  content: "\f00e";
+}
+i.icon.magnify:before {
+  content: "\f00e";
+}
+i.icon.shutdown:before {
+  content: "\f011";
+}
+i.icon.clock:before {
+  content: "\f017";
+}
+i.icon.time:before {
+  content: "\f017";
+}
+i.icon.play.circle.outline:before {
+  content: "\f01d";
+}
+i.icon.headphone:before {
+  content: "\f025";
+}
+i.icon.camera:before {
+  content: "\f030";
+}
+i.icon.video.camera:before {
+  content: "\f03d";
+}
+i.icon.picture:before {
+  content: "\f03e";
+}
+i.icon.pencil:before {
+  content: "\f040";
+}
+i.icon.compose:before {
+  content: "\f040";
+}
+i.icon.point:before {
+  content: "\f041";
+}
+i.icon.tint:before {
+  content: "\f043";
+}
+i.icon.signup:before {
+  content: "\f044";
+}
+i.icon.plus.circle:before {
+  content: "\f055";
+}
+i.icon.question.circle:before {
+  content: "\f059";
+}
+i.icon.dont:before {
+  content: "\f05e";
+}
+i.icon.minimize:before {
+  content: "\f066";
+}
+i.icon.add:before {
+  content: "\f067";
+}
+i.icon.exclamation.circle:before {
+  content: "\f06a";
+}
+i.icon.attention:before {
+  content: "\f06a";
+}
+i.icon.eye:before {
+  content: "\f06e";
+}
+i.icon.exclamation.triangle:before {
+  content: "\f071";
+}
+i.icon.shuffle:before {
+  content: "\f074";
+}
+i.icon.chat:before {
+  content: "\f075";
+}
+i.icon.cart:before {
+  content: "\f07a";
+}
+i.icon.shopping.cart:before {
+  content: "\f07a";
+}
+i.icon.bar.graph:before {
+  content: "\f080";
+}
+i.icon.key:before {
+  content: "\f084";
+}
+i.icon.cogs:before {
+  content: "\f085";
+}
+i.icon.discussions:before {
+  content: "\f086";
+}
+i.icon.like.outline:before {
+  content: "\f087";
+}
+i.icon.dislike.outline:before {
+  content: "\f088";
+}
+i.icon.heart.outline:before {
+  content: "\f08a";
+}
+i.icon.log.out:before {
+  content: "\f08b";
+}
+i.icon.thumb.tack:before {
+  content: "\f08d";
+}
+i.icon.winner:before {
+  content: "\f091";
+}
+i.icon.phone:before {
+  content: "\f095";
+}
+i.icon.bookmark.outline:before {
+  content: "\f097";
+}
+i.icon.phone.square:before {
+  content: "\f098";
+}
+i.icon.credit.card:before {
+  content: "\f09d";
+}
+i.icon.hdd.outline:before {
+  content: "\f0a0";
+}
+i.icon.bullhorn:before {
+  content: "\f0a1";
+}
+i.icon.bell.outline:before {
+  content: "\f0a2";
+}
+i.icon.hand.outline.right:before {
+  content: "\f0a4";
+}
+i.icon.hand.outline.left:before {
+  content: "\f0a5";
+}
+i.icon.hand.outline.up:before {
+  content: "\f0a6";
+}
+i.icon.hand.outline.down:before {
+  content: "\f0a7";
+}
+i.icon.globe:before {
+  content: "\f0ac";
+}
+i.icon.wrench:before {
+  content: "\f0ad";
+}
+i.icon.briefcase:before {
+  content: "\f0b1";
+}
+i.icon.group:before {
+  content: "\f0c0";
+}
+i.icon.linkify:before {
+  content: "\f0c1";
+}
+i.icon.chain:before {
+  content: "\f0c1";
+}
+i.icon.flask:before {
+  content: "\f0c3";
+}
+i.icon.sidebar:before {
+  content: "\f0c9";
+}
+i.icon.bars:before {
+  content: "\f0c9";
+}
+i.icon.list.ul:before {
+  content: "\f0ca";
+}
+i.icon.list.ol:before {
+  content: "\f0cb";
+}
+i.icon.numbered.list:before {
+  content: "\f0cb";
+}
+i.icon.magic:before {
+  content: "\f0d0";
+}
+i.icon.truck:before {
+  content: "\f0d1";
+}
+i.icon.currency:before {
+  content: "\f0d6";
+}
+i.icon.triangle.down:before {
+  content: "\f0d7";
+}
+i.icon.dropdown:before {
+  content: "\f0d7";
+}
+i.icon.triangle.up:before {
+  content: "\f0d8";
+}
+i.icon.triangle.left:before {
+  content: "\f0d9";
+}
+i.icon.triangle.right:before {
+  content: "\f0da";
+}
+i.icon.envelope:before {
+  content: "\f0e0";
+}
+i.icon.conversation:before {
+  content: "\f0e6";
+}
+i.icon.rain:before {
+  content: "\f0e9";
+}
+i.icon.clipboard:before {
+  content: "\f0ea";
+}
+i.icon.lightbulb:before {
+  content: "\f0eb";
+}
+i.icon.bell:before {
+  content: "\f0f3";
+}
+i.icon.ambulance:before {
+  content: "\f0f9";
+}
+i.icon.medkit:before {
+  content: "\f0fa";
+}
+i.icon.fighter.jet:before {
+  content: "\f0fb";
+}
+i.icon.beer:before {
+  content: "\f0fc";
+}
+i.icon.plus.square:before {
+  content: "\f0fe";
+}
+i.icon.computer:before {
+  content: "\f108";
+}
+i.icon.circle.outline:before {
+  content: "\f10c";
+}
+i.icon.gamepad:before {
+  content: "\f11b";
+}
+i.icon.star.half.full:before {
+  content: "\f123";
+}
+i.icon.broken.chain:before {
+  content: "\f127";
+}
+i.icon.question:before {
+  content: "\f128";
+}
+i.icon.exclamation:before {
+  content: "\f12a";
+}
+i.icon.eraser:before {
+  content: "\f12d";
+}
+i.icon.microphone:before {
+  content: "\f130";
+}
+i.icon.microphone.slash:before {
+  content: "\f131";
+}
+i.icon.shield:before {
+  content: "\f132";
+}
+i.icon.target:before {
+  content: "\f140";
+}
+i.icon.play.circle:before {
+  content: "\f144";
+}
+i.icon.pencil.square:before {
+  content: "\f14b";
+}
+i.icon.eur:before {
+  content: "\f153";
+}
+i.icon.gbp:before {
+  content: "\f154";
+}
+i.icon.usd:before {
+  content: "\f155";
+}
+i.icon.inr:before {
+  content: "\f156";
+}
+i.icon.cny:before {
+  content: "\f157";
+}
+i.icon.rmb:before {
+  content: "\f157";
+}
+i.icon.jpy:before {
+  content: "\f157";
+}
+i.icon.rouble:before {
+  content: "\f158";
+}
+i.icon.rub:before {
+  content: "\f158";
+}
+i.icon.krw:before {
+  content: "\f159";
+}
+i.icon.btc:before {
+  content: "\f15a";
+}
+i.icon.gratipay:before {
+  content: "\f184";
+}
+i.icon.zip:before {
+  content: "\f187";
+}
+i.icon.dot.circle.outline:before {
+  content: "\f192";
+}
+i.icon.try:before {
+  content: "\f195";
+}
+i.icon.graduation:before {
+  content: "\f19d";
+}
+i.icon.circle.outline:before {
+  content: "\f1db";
+}
+i.icon.sliders:before {
+  content: "\f1de";
+}
+i.icon.weixin:before {
+  content: "\f1d7";
+}
+i.icon.tty:before {
+  content: "\f1e4";
+}
+i.icon.teletype:before {
+  content: "\f1e4";
+}
+i.icon.binoculars:before {
+  content: "\f1e5";
+}
+i.icon.power.cord:before {
+  content: "\f1e6";
+}
+i.icon.wi-fi:before {
+  content: "\f1eb";
+}
+i.icon.visa.card:before {
+  content: "\f1f0";
+}
+i.icon.mastercard.card:before {
+  content: "\f1f1";
+}
+i.icon.discover.card:before {
+  content: "\f1f2";
+}
+i.icon.amex:before {
+  content: "\f1f3";
+}
+i.icon.american.express.card:before {
+  content: "\f1f3";
+}
+i.icon.stripe.card:before {
+  content: "\f1f5";
+}
+i.icon.bell.slash:before {
+  content: "\f1f6";
+}
+i.icon.bell.slash.outline:before {
+  content: "\f1f7";
+}
+i.icon.area.graph:before {
+  content: "\f1fe";
+}
+i.icon.pie.graph:before {
+  content: "\f200";
+}
+i.icon.line.graph:before {
+  content: "\f201";
+}
+i.icon.cc:before {
+  content: "\f20a";
+}
+i.icon.sheqel:before {
+  content: "\f20b";
+}
+i.icon.ils:before {
+  content: "\f20b";
+}
+i.icon.plus.cart:before {
+  content: "\f217";
+}
+i.icon.arrow.down.cart:before {
+  content: "\f218";
+}
+i.icon.detective:before {
+  content: "\f21b";
+}
+i.icon.venus:before {
+  content: "\f221";
+}
+i.icon.mars:before {
+  content: "\f222";
+}
+i.icon.mercury:before {
+  content: "\f223";
+}
+i.icon.intersex:before {
+  content: "\f224";
+}
+i.icon.venus.double:before {
+  content: "\f226";
+}
+i.icon.female.homosexual:before {
+  content: "\f226";
+}
+i.icon.mars.double:before {
+  content: "\f227";
+}
+i.icon.male.homosexual:before {
+  content: "\f227";
+}
+i.icon.venus.mars:before {
+  content: "\f228";
+}
+i.icon.mars.stroke:before {
+  content: "\f229";
+}
+i.icon.mars.alternate:before {
+  content: "\f229";
+}
+i.icon.mars.vertical:before {
+  content: "\f22a";
+}
+i.icon.mars.stroke.vertical:before {
+  content: "\f22a";
+}
+i.icon.mars.horizontal:before {
+  content: "\f22b";
+}
+i.icon.mars.stroke.horizontal:before {
+  content: "\f22b";
+}
+i.icon.asexual:before {
+  content: "\f22d";
+}
+i.icon.facebook.official:before {
+  content: "\f230";
+}
+i.icon.user.plus:before {
+  content: "\f234";
+}
+i.icon.user.times:before {
+  content: "\f235";
+}
+i.icon.user.close:before {
+  content: "\f235";
+}
+i.icon.user.cancel:before {
+  content: "\f235";
+}
+i.icon.user.delete:before {
+  content: "\f235";
+}
+i.icon.user.x:before {
+  content: "\f235";
+}
+i.icon.bed:before {
+  content: "\f236";
+}
+i.icon.yc:before {
+  content: "\f23b";
+}
+i.icon.ycombinator:before {
+  content: "\f23b";
+}
+i.icon.battery.four:before {
+  content: "\f240";
+}
+i.icon.battery.three:before {
+  content: "\f241";
+}
+i.icon.battery.three.quarters:before {
+  content: "\f241";
+}
+i.icon.battery.two:before {
+  content: "\f242";
+}
+i.icon.battery.half:before {
+  content: "\f242";
+}
+i.icon.battery.one:before {
+  content: "\f243";
+}
+i.icon.battery.quarter:before {
+  content: "\f243";
+}
+i.icon.battery.zero:before {
+  content: "\f244";
+}
+i.icon.i.cursor:before {
+  content: "\f246";
+}
+i.icon.jcb:before {
+  content: "\f24b";
+}
+i.icon.japan.credit.bureau.card:before {
+  content: "\f24b";
+}
+i.icon.diners.club.card:before {
+  content: "\f24c";
+}
+i.icon.balance:before {
+  content: "\f24e";
+}
+i.icon.hourglass.outline:before {
+  content: "\f250";
+}
+i.icon.hourglass.zero:before {
+  content: "\f250";
+}
+i.icon.hourglass.one:before {
+  content: "\f251";
+}
+i.icon.hourglass.two:before {
+  content: "\f252";
+}
+i.icon.hourglass.three:before {
+  content: "\f253";
+}
+i.icon.hourglass.four:before {
+  content: "\f254";
+}
+i.icon.grab:before {
+  content: "\f255";
+}
+i.icon.hand.victory:before {
+  content: "\f25b";
+}
+i.icon.tm:before {
+  content: "\f25c";
+}
+i.icon.r.circle:before {
+  content: "\f25d";
+}
+i.icon.television:before {
+  content: "\f26c";
+}
+i.icon.five.hundred.pixels:before {
+  content: "\f26e";
+}
+i.icon.calendar.plus:before {
+  content: "\f271";
+}
+i.icon.calendar.minus:before {
+  content: "\f272";
+}
+i.icon.calendar.times:before {
+  content: "\f273";
+}
+i.icon.calendar.check:before {
+  content: "\f274";
+}
+i.icon.factory:before {
+  content: "\f275";
+}
+i.icon.commenting:before {
+  content: "\f27a";
+}
+i.icon.commenting.outline:before {
+  content: "\f27b";
+}
+i.icon.edge:before {
+  content: "\f282";
+}
+i.icon.ms.edge:before {
+  content: "\f282";
+}
+i.icon.wordpress.beginner:before {
+  content: "\f297";
+}
+i.icon.wordpress.forms:before {
+  content: "\f298";
+}
+i.icon.envira:before {
+  content: "\f299";
+}
+i.icon.question.circle.outline:before {
+  content: "\f29c";
+}
+i.icon.assistive.listening.devices:before {
+  content: "\f2a2";
+}
+i.icon.als:before {
+  content: "\f2a2";
+}
+i.icon.ald:before {
+  content: "\f2a2";
+}
+i.icon.asl.interpreting:before {
+  content: "\f2a3";
+}
+i.icon.deaf:before {
+  content: "\f2a4";
+}
+i.icon.american.sign.language.interpreting:before {
+  content: "\f2a3";
+}
+i.icon.hard.of.hearing:before {
+  content: "\f2a4";
+}
+i.icon.signing:before {
+  content: "\f2a7";
+}
+i.icon.new.pied.piper:before {
+  content: "\f2ae";
+}
+i.icon.theme.isle:before {
+  content: "\f2b2";
+}
+i.icon.google.plus.official:before {
+  content: "\f2b3";
+}
+i.icon.fa:before {
+  content: "\f2b4";
+}
+i.icon.vcard:before {
+  content: "\f2bb";
+}
+i.icon.vcard.outline:before {
+  content: "\f2bc";
+}
+i.icon.drivers.license:before {
+  content: "\f2c2";
+}
+i.icon.drivers.license.outline:before {
+  content: "\f2c3";
+}
+i.icon.thermometer:before {
+  content: "\f2c7";
+}
+i.icon.s15:before {
+  content: "\f2cd";
+}
+i.icon.bath:before {
+  content: "\f2cd";
+}
+i.icon.times.rectangle:before {
+  content: "\f2d3";
+}
+i.icon.times.rectangle.outline:before {
+  content: "\f2d4";
+}
+/*
  * Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  * License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
@@ -9995,6 +12737,7 @@ i.minus.icon {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -10006,7 +12749,7 @@ i.minus.icon {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -10193,7 +12936,7 @@ i.minus.icon {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -10216,7 +12959,7 @@ i.minus.icon {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -10512,6 +13255,9 @@ img.ui.bordered.image {
 /*******************************
          Theme Overrides
 *******************************/
+/*******************************
+         Theme Overrides
+*******************************/
 .flexberry-file-image-preview-wrapper.ui.segment .ui.small.image {
   min-height: 57px;
 }
@@ -10554,6 +13300,7 @@ img.ui.bordered.image {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -10565,7 +13312,7 @@ img.ui.bordered.image {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -10752,7 +13499,7 @@ img.ui.bordered.image {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -10775,7 +13522,7 @@ img.ui.bordered.image {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -11238,6 +13985,9 @@ img.ui.bordered.image {
 /*******************************
          Theme Overrides
 *******************************/
+/*******************************
+         Theme Overrides
+*******************************/
 .ui.action.input:not([class*="left action"]) > input {
   height: 35px;
 }
@@ -11339,6 +14089,7 @@ span.lookup-field {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -11350,7 +14101,7 @@ span.lookup-field {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -11537,7 +14288,7 @@ span.lookup-field {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -11560,7 +14311,7 @@ span.lookup-field {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -12733,6 +15484,9 @@ a.ui.basic.label:hover {
 /*******************************
          Theme Overrides
 *******************************/
+/*******************************
+         Theme Overrides
+*******************************/
 /*!
  * # Semantic UI - List
  * http://github.com/semantic-org/semantic-ui/
@@ -12769,6 +15523,7 @@ a.ui.basic.label:hover {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -12780,7 +15535,7 @@ a.ui.basic.label:hover {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -12967,7 +15722,7 @@ a.ui.basic.label:hover {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -12990,7 +15745,7 @@ a.ui.basic.label:hover {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -13042,52 +15797,6 @@ a.ui.basic.label:hover {
 /* Relaxed */
 /* Very Relaxed */
 /* Packaged Theme */
-/*******************************
-             List
-*******************************/
-/*-------------------
-         View
---------------------*/
-/* List */
-/* List Item */
-/* Sub List */
-/* Sub List Item */
-/*-------------------
-      Elements
---------------------*/
-/* Icon */
-/* Image */
-/* Content */
-/* Header */
-/* Description */
-/* Link */
-/* Header Link */
-/* Linked Icon */
-/*-------------------
-        States
---------------------*/
-/*-------------------
-      Variations
---------------------*/
-/* Float */
-/* Horizontal */
-/* Inverted */
-/* Link List */
-/* Inverted Link List */
-/* Selection List */
-/* Selection List States */
-/* Inverted Selection List */
-/* Animated List */
-/* Bulleted */
-/* Horizontal Bullets */
-/* Ordered List */
-/* Horizontal Ordered */
-/* Divided */
-/* Divided Horizontal */
-/* Divided */
-/* Divided Horizontal */
-/* Relaxed */
-/* Very Relaxed */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -13973,6 +16682,7 @@ ol.ui.horizontal.list li:before,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -13984,7 +16694,7 @@ ol.ui.horizontal.list li:before,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -14171,7 +16881,7 @@ ol.ui.horizontal.list li:before,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -14194,7 +16904,7 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -14218,24 +16928,6 @@ ol.ui.horizontal.list li:before,
 --------------------*/
 /* Exact Sizes (Avoids Rounding Errors) */
 /* Packaged Theme */
-/*******************************
-             Loader
-*******************************/
-/* Some global loader styles defined in site.variables */
-/*-------------------
-      Standard
---------------------*/
-/*-------------------
-        Types
---------------------*/
-/* Text */
-/*-------------------
-        States
---------------------*/
-/*-------------------
-      Variations
---------------------*/
-/* Exact Sizes (Avoids Rounding Errors) */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -14561,6 +17253,7 @@ ol.ui.horizontal.list li:before,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -14572,7 +17265,7 @@ ol.ui.horizontal.list li:before,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -14759,7 +17452,7 @@ ol.ui.horizontal.list li:before,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -14782,7 +17475,7 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -14799,17 +17492,6 @@ ol.ui.horizontal.list li:before,
 /* Close */
 /* Dividing */
 /* Packaged Theme */
-/*******************************
-            Rail
-*******************************/
-/*-------------------
-       Element
---------------------*/
-/*-------------------
-      Variations
---------------------*/
-/* Close */
-/* Dividing */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -14975,6 +17657,7 @@ ol.ui.horizontal.list li:before,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -14986,7 +17669,7 @@ ol.ui.horizontal.list li:before,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -15173,7 +17856,7 @@ ol.ui.horizontal.list li:before,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -15196,7 +17879,7 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -15206,10 +17889,6 @@ ol.ui.horizontal.list li:before,
 *******************************/
 /* Types */
 /* Packaged Theme */
-/*******************************
-            Reveal
-*******************************/
-/* Types */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -15470,6 +18149,7 @@ ol.ui.horizontal.list li:before,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -15481,7 +18161,7 @@ ol.ui.horizontal.list li:before,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -15668,7 +18348,7 @@ ol.ui.horizontal.list li:before,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -15691,7 +18371,7 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -16405,6 +19085,9 @@ ol.ui.horizontal.list li:before,
 /*******************************
          Theme Overrides
 *******************************/
+/*******************************
+         Theme Overrides
+*******************************/
 .ui.vertical.footer.segment > .flex-container > .ui.text.menu {
   margin: 0px;
   padding: 0px 30px;
@@ -16494,6 +19177,7 @@ ol.ui.horizontal.list li:before,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -16505,7 +19189,7 @@ ol.ui.horizontal.list li:before,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -16692,7 +19376,7 @@ ol.ui.horizontal.list li:before,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -16715,7 +19399,7 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -16751,36 +19435,6 @@ ol.ui.horizontal.list li:before,
 /* Active + Hover */
 /* Disabled */
 /* Packaged Theme */
-/*******************************
-             Step
-*******************************/
-/*-------------------
-       Group
---------------------*/
-/*-------------------
-      Element
---------------------*/
-/* Icon */
-/* Title */
-/* Description */
-/* Arrow */
-/* Mobile */
-/*-------------------
-       Types
---------------------*/
-/* Vertical */
-/*-------------------
-      Variations
---------------------*/
-/*-------------------
-       States
---------------------*/
-/* Completed */
-/* Hover */
-/* Down */
-/* Active */
-/* Active + Hover */
-/* Disabled */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -17310,6 +19964,7 @@ ol.ui.horizontal.list li:before,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -17321,7 +19976,7 @@ ol.ui.horizontal.list li:before,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -17508,7 +20163,7 @@ ol.ui.horizontal.list li:before,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -17531,7 +20186,7 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -17547,16 +20202,6 @@ ol.ui.horizontal.list li:before,
        States
 --------------------*/
 /* Packaged Theme */
-/*******************************
-          Breadcrumb
-*******************************/
-/*-------------------
-     Breadcrumb
---------------------*/
-/* Coupling */
-/*-------------------
-       States
---------------------*/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -17693,6 +20338,7 @@ ol.ui.horizontal.list li:before,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -17704,7 +20350,7 @@ ol.ui.horizontal.list li:before,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -17891,7 +20537,7 @@ ol.ui.horizontal.list li:before,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -17914,7 +20560,7 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -18894,6 +21540,9 @@ ol.ui.horizontal.list li:before,
 }
 /*******************************
          Theme Overrides
+*******************************/
+/*******************************
+         Theme Overrides
 
 *******************************/
 .ui.form select {
@@ -19052,6 +21701,7 @@ option {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -19063,7 +21713,7 @@ option {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -19250,7 +21900,7 @@ option {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -19273,7 +21923,7 @@ option {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -19309,36 +21959,6 @@ option {
 /* Legacy (DO NOT USE)
  */
 /* Packaged Theme */
-/*******************************
-             Grid
-*******************************/
-/* Inherited From Site */
-/*******************************
-            Grid
-*******************************/
-/*******************************
-           Variations
-*******************************/
-/*--------------
-     Relaxed
----------------*/
-/*--------------
-     Divided
----------------*/
-/*--------------
-    Celled
----------------*/
-/*--------------
-    Stackable
----------------*/
-/*******************************
-             Legacy
-*******************************/
-/*--------------
-     Page
----------------*/
-/* Legacy (DO NOT USE)
- */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -21170,6 +23790,7 @@ option {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -21181,7 +23802,7 @@ option {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -21368,7 +23989,7 @@ option {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -21391,7 +24012,7 @@ option {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -23215,6 +25836,9 @@ Floated Menu / Item
 /*******************************
          Theme Overrides
 *******************************/
+/*******************************
+         Theme Overrides
+*******************************/
 .ui.menu > .brand.item {
   background: none;
 }
@@ -23303,6 +25927,7 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -23314,7 +25939,7 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -23501,7 +26126,7 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -23524,7 +26149,7 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -23549,25 +26174,6 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /* Colors */
 /* Warning / Positive / Negative / Info */
 /* Packaged Theme */
-/*******************************
-            Message
-*******************************/
-/*-------------------
-       Elements
---------------------*/
-/* Header */
-/* Paragraph */
-/* List */
-/* Icon */
-/* Close Icon */
-/*-------------------
-        Types
---------------------*/
-/* Icon Message */
-/* Attached */
-/* Floating */
-/* Colors */
-/* Warning / Positive / Negative / Info */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -23983,11 +26589,6 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*******************************
          Theme Overrides
 *******************************/
-.ui.form .flexberry-colsconfig .success.message,
-.ui.form .flexberry-colsconfig .warning.message,
-.ui.form .flexberry-colsconfig .error.message {
-  display: block;
-}
 /*!
  * # Semantic UI - Table
  * http://github.com/semantic-org/semantic-ui/
@@ -24024,6 +26625,7 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -24035,7 +26637,7 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -24222,7 +26824,7 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -24245,7 +26847,7 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -25398,6 +28000,7 @@ table.object-list-view.selectable thead {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -25409,7 +28012,7 @@ table.object-list-view.selectable thead {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -25596,7 +28199,7 @@ table.object-list-view.selectable thead {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -25619,7 +28222,7 @@ table.object-list-view.selectable thead {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -25628,9 +28231,6 @@ table.object-list-view.selectable thead {
           Advertisement
 *******************************/
 /* Packaged Theme */
-/*******************************
-          Advertisement
-*******************************/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -25883,6 +28483,7 @@ table.object-list-view.selectable thead {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -25894,7 +28495,7 @@ table.object-list-view.selectable thead {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -26081,7 +28682,7 @@ table.object-list-view.selectable thead {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -26104,7 +28705,7 @@ table.object-list-view.selectable thead {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -26146,42 +28747,6 @@ table.object-list-view.selectable thead {
 /* Sizes */
 /* Colored */
 /* Packaged Theme */
-/*******************************
-             Card
-*******************************/
-/*-------------------
-         View
---------------------*/
-/* Shadow */
-/* Card */
-/* Card Group */
-/* Consecutive Cards */
-/*-------------------
-       Content
---------------------*/
-/* Image */
-/* Content */
-/* Header */
-/* Metadata */
-/* Icons */
-/* Links */
-/* Description */
-/* Content Image */
-/* Avatar Image */
-/* Paragraph */
-/* Dimmer */
-/* Additional Content */
-/* Extra Links */
-/* Buttons */
-/*-------------------
-      Variations
---------------------*/
-/* Link */
-/* Raised */
-/* Card Count */
-/* Stackable */
-/* Sizes */
-/* Colored */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -27065,6 +29630,7 @@ a.ui.card:hover,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -27076,7 +29642,7 @@ a.ui.card:hover,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -27263,7 +29829,7 @@ a.ui.card:hover,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -27286,7 +29852,7 @@ a.ui.card:hover,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -27315,29 +29881,6 @@ a.ui.card:hover,
 /* Threaded */
 /* Minimal */
 /* Packaged Theme */
-/*******************************
-            Comments
-*******************************/
-/*-------------------
-       View
---------------------*/
-/*-------------------
-      Elements
---------------------*/
-/* Comment */
-/* Nested Comment */
-/* Avatar */
-/* Content */
-/* Author */
-/* Metadata */
-/* Text */
-/* Actions */
-/* Reply */
-/*-------------------
-      Variations
---------------------*/
-/* Threaded */
-/* Minimal */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -27599,6 +30142,7 @@ a.ui.card:hover,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -27610,7 +30154,7 @@ a.ui.card:hover,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -27797,7 +30341,7 @@ a.ui.card:hover,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -27820,7 +30364,7 @@ a.ui.card:hover,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -27855,35 +30399,6 @@ a.ui.card:hover,
       Variations
 --------------------*/
 /* Packaged Theme */
-/*******************************
-             Feed
-*******************************/
-/*-------------------
-        Feed
---------------------*/
-/*-------------------
-      Elements
---------------------*/
-/* Event */
-/* Event Label */
-/* Icon Label */
-/* Image Label */
-/* Content w/ Label */
-/* Content */
-/* Date */
-/* Summary */
-/* Summary Image */
-/* Summary Date */
-/* User */
-/* Extra Summary Data */
-/* Extra Images */
-/* Extra Text */
-/* Metadata Group */
-/* Like */
-/* Metadata Divider */
-/*-------------------
-      Variations
---------------------*/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -28161,6 +30676,7 @@ a.ui.card:hover,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -28172,7 +30688,7 @@ a.ui.card:hover,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -28359,7 +30875,7 @@ a.ui.card:hover,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -28382,7 +30898,7 @@ a.ui.card:hover,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -28418,36 +30934,6 @@ a.ui.card:hover,
 /* Divided */
 /* Unstackable */
 /* Packaged Theme */
-/*******************************
-             Item
-*******************************/
-/*-------------------
-         View
---------------------*/
-/* Group */
-/* Item */
-/* Responsive */
-/*-------------------
-       Content
---------------------*/
-/* Image */
-/* Content */
-/* Header */
-/* Metadata */
-/* Icons */
-/* Actions */
-/* Links */
-/* Description */
-/* Content Image */
-/* Avatar Image */
-/* Paragraph */
-/* Additional Content */
-/*-------------------
-      Variations
---------------------*/
-/* Relaxed */
-/* Divided */
-/* Unstackable */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -28878,6 +31364,7 @@ a.ui.card:hover,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -28889,7 +31376,7 @@ a.ui.card:hover,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -29076,7 +31563,7 @@ a.ui.card:hover,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -29099,7 +31586,7 @@ a.ui.card:hover,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -29130,31 +31617,6 @@ a.ui.card:hover,
 /* Item Width */
 /* Size */
 /* Packaged Theme */
-/*******************************
-           Statistic
-*******************************/
-/*-------------------
-         View
---------------------*/
-/* Group */
-/* Group Element */
-/*-------------------
-       Content
---------------------*/
-/* Value */
-/* Label */
-/* Text */
-/* Label Image */
-/*-------------------
-      Types
---------------------*/
-/*-------------------
-      Variations
---------------------*/
-/* Floated */
-/* Inverted */
-/* Item Width */
-/* Size */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -29674,6 +32136,7 @@ a.ui.card:hover,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -29685,7 +32148,7 @@ a.ui.card:hover,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -29872,7 +32335,7 @@ a.ui.card:hover,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -29895,7 +32358,7 @@ a.ui.card:hover,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -29924,29 +32387,6 @@ a.ui.card:hover,
 /* Styled Child Title States */
 /* Inverted */
 /* Packaged Theme */
-/*******************************
-           Accordion
-*******************************/
-/* Title */
-/* Icon */
-/* Child Accordion */
-/* Content */
-/*-------------------
-       Coupling
---------------------*/
-/*-------------------
-       States
---------------------*/
-/*-------------------
-      Variations
---------------------*/
-/* Styled */
-/* Content */
-/* Child Content */
-/* Styled Title */
-/* Styled Title States */
-/* Styled Child Title States */
-/* Inverted */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -30183,6 +32623,7 @@ a.ui.card:hover,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -30194,7 +32635,7 @@ a.ui.card:hover,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -30381,7 +32822,7 @@ a.ui.card:hover,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -30404,7 +32845,7 @@ a.ui.card:hover,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -30952,6 +33393,34 @@ a.ui.card:hover,
 /*******************************
          Theme Overrides
 *******************************/
+@font-face {
+  font-family: 'Checkbox';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBD8AAAC8AAAAYGNtYXAYVtCJAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zn4huwUAAAF4AAABYGhlYWQGPe1ZAAAC2AAAADZoaGVhB30DyAAAAxAAAAAkaG10eBBKAEUAAAM0AAAAHGxvY2EAmgESAAADUAAAABBtYXhwAAkALwAAA2AAAAAgbmFtZSC8IugAAAOAAAABknBvc3QAAwAAAAAFFAAAACAAAwMTAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADoAgPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6AL//f//AAAAAAAg6AD//f//AAH/4xgEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAEUAUQO7AvgAGgAAARQHAQYjIicBJjU0PwE2MzIfAQE2MzIfARYVA7sQ/hQQFhcQ/uMQEE4QFxcQqAF2EBcXEE4QAnMWEP4UEBABHRAXFhBOEBCoAXcQEE4QFwAAAAABAAABbgMlAkkAFAAAARUUBwYjISInJj0BNDc2MyEyFxYVAyUQEBf9SRcQEBAQFwK3FxAQAhJtFxAQEBAXbRcQEBAQFwAAAAABAAAASQMlA24ALAAAARUUBwYrARUUBwYrASInJj0BIyInJj0BNDc2OwE1NDc2OwEyFxYdATMyFxYVAyUQEBfuEBAXbhYQEO4XEBAQEBfuEBAWbhcQEO4XEBACEm0XEBDuFxAQEBAX7hAQF20XEBDuFxAQEBAX7hAQFwAAAQAAAAIAAHRSzT9fDzz1AAsEAAAAAADRsdR3AAAAANGx1HcAAAAAA7sDbgAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAADuwABAAAAAAAAAAAAAAAAAAAABwQAAAAAAAAAAAAAAAIAAAAEAABFAyUAAAMlAAAAAAAAAAoAFAAeAE4AcgCwAAEAAAAHAC0AAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAIAAAAAQAAAAAAAgAHAGkAAQAAAAAAAwAIADkAAQAAAAAABAAIAH4AAQAAAAAABQALABgAAQAAAAAABgAIAFEAAQAAAAAACgAaAJYAAwABBAkAAQAQAAgAAwABBAkAAgAOAHAAAwABBAkAAwAQAEEAAwABBAkABAAQAIYAAwABBAkABQAWACMAAwABBAkABgAQAFkAAwABBAkACgA0ALBDaGVja2JveABDAGgAZQBjAGsAYgBvAHhWZXJzaW9uIDIuMABWAGUAcgBzAGkAbwBuACAAMgAuADBDaGVja2JveABDAGgAZQBjAGsAYgBvAHhDaGVja2JveABDAGgAZQBjAGsAYgBvAHhSZWd1bGFyAFIAZQBnAHUAbABhAHJDaGVja2JveABDAGgAZQBjAGsAYgBvAHhGb250IGdlbmVyYXRlZCBieSBJY29Nb29uLgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format('truetype');
+}
+/* Checkmark */
+.ui.checkbox label:after,
+.ui.checkbox .box:after {
+  font-family: 'Checkbox';
+}
+/* Checked */
+.ui.checkbox input:checked ~ .box:after,
+.ui.checkbox input:checked ~ label:after {
+  content: '\e800';
+}
+/* Indeterminate */
+.ui.checkbox input:indeterminate ~ .box:after,
+.ui.checkbox input:indeterminate ~ label:after {
+  font-size: 12px;
+  content: '\e801';
+}
+/*  UTF Reference
+.check:before { content: '\e800'; }
+.dash:before  { content: '\e801'; }
+.plus:before { content: '\e802'; }
+*/
+/*******************************
+         Theme Overrides
+*******************************/
 /* Checked */
 .ui.checkbox input:checked ~ .box:after,
 .ui.checkbox input:checked ~ label:after {
@@ -31018,6 +33487,7 @@ a.ui.card:hover,
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -31029,7 +33499,7 @@ a.ui.card:hover,
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -31216,7 +33686,7 @@ a.ui.card:hover,
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -31239,7 +33709,7 @@ a.ui.card:hover,
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -31260,21 +33730,6 @@ a.ui.card:hover,
 /* Inverted */
 /* Simple */
 /* Packaged Theme */
-/*******************************
-            Dimmer
-*******************************/
-/* Hidden (Default) */
-/* Content */
-/* Visible */
-/*-------------------
-        Types
---------------------*/
-/* Page Dimmer*/
-/*-------------------
-      Variations
---------------------*/
-/* Inverted */
-/* Simple */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -31477,6 +33932,7 @@ body.dimmable > .dimmer {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -31488,7 +33944,7 @@ body.dimmable > .dimmer {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -31675,7 +34131,7 @@ body.dimmable > .dimmer {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -31698,7 +34154,7 @@ body.dimmable > .dimmer {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -33008,6 +35464,58 @@ select.ui.dropdown {
 /*******************************
          Theme Overrides
 *******************************/
+/* Dropdown Carets */
+@font-face {
+  font-family: 'Dropdown';
+  src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMggjB5AAAAC8AAAAYGNtYXAPfuIIAAABHAAAAExnYXNwAAAAEAAAAWgAAAAIZ2x5Zjo82LgAAAFwAAABVGhlYWQAQ88bAAACxAAAADZoaGVhAwcB6QAAAvwAAAAkaG10eAS4ABIAAAMgAAAAIGxvY2EBNgDeAAADQAAAABJtYXhwAAoAFgAAA1QAAAAgbmFtZVcZpu4AAAN0AAABRXBvc3QAAwAAAAAEvAAAACAAAwIAAZAABQAAAUwBZgAAAEcBTAFmAAAA9QAZAIQAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADw2gHg/+D/4AHgACAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEADgAAAAKAAgAAgACAAEAIPDa//3//wAAAAAAIPDX//3//wAB/+MPLQADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAIABJQElABMAABM0NzY3BTYXFhUUDwEGJwYvASY1AAUGBwEACAUGBoAFCAcGgAUBEgcGBQEBAQcECQYHfwYBAQZ/BwYAAQAAAG4BJQESABMAADc0PwE2MzIfARYVFAcGIyEiJyY1AAWABgcIBYAGBgUI/wAHBgWABwaABQWABgcHBgUFBgcAAAABABIASQC3AW4AEwAANzQ/ATYXNhcWHQEUBwYnBi8BJjUSBoAFCAcFBgYFBwgFgAbbBwZ/BwEBBwQJ/wgEBwEBB38GBgAAAAABAAAASQClAW4AEwAANxE0NzYzMh8BFhUUDwEGIyInJjUABQYHCAWABgaABQgHBgVbAQAIBQYGgAUIBwWABgYFBwAAAAEAAAABAADZuaKOXw889QALAgAAAAAA0ABHWAAAAADQAEdYAAAAAAElAW4AAAAIAAIAAAAAAAAAAQAAAeD/4AAAAgAAAAAAASUAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAASUAAAElAAAAtwASALcAAAAAAAAACgAUAB4AQgBkAIgAqgAAAAEAAAAIABQAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAOAAAAAQAAAAAAAgAOAEcAAQAAAAAAAwAOACQAAQAAAAAABAAOAFUAAQAAAAAABQAWAA4AAQAAAAAABgAHADIAAQAAAAAACgA0AGMAAwABBAkAAQAOAAAAAwABBAkAAgAOAEcAAwABBAkAAwAOACQAAwABBAkABAAOAFUAAwABBAkABQAWAA4AAwABBAkABgAOADkAAwABBAkACgA0AGMAaQBjAG8AbQBvAG8AbgBWAGUAcgBzAGkAbwBuACAAMQAuADAAaQBjAG8AbQBvAG8Abmljb21vb24AaQBjAG8AbQBvAG8AbgBSAGUAZwB1AGwAYQByAGkAYwBvAG0AbwBvAG4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format('truetype'), url(data:application/font-woff;charset=utf-8;base64,d09GRk9UVE8AAAVwAAoAAAAABSgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAA9AAAAdkAAAHZLDXE/09TLzIAAALQAAAAYAAAAGAIIweQY21hcAAAAzAAAABMAAAATA9+4ghnYXNwAAADfAAAAAgAAAAIAAAAEGhlYWQAAAOEAAAANgAAADYAQ88baGhlYQAAA7wAAAAkAAAAJAMHAelobXR4AAAD4AAAACAAAAAgBLgAEm1heHAAAAQAAAAABgAAAAYACFAAbmFtZQAABAgAAAFFAAABRVcZpu5wb3N0AAAFUAAAACAAAAAgAAMAAAEABAQAAQEBCGljb21vb24AAQIAAQA6+BwC+BsD+BgEHgoAGVP/i4seCgAZU/+LiwwHi2v4lPh0BR0AAACIDx0AAACNER0AAAAJHQAAAdASAAkBAQgPERMWGyAlKmljb21vb25pY29tb29udTB1MXUyMHVGMEQ3dUYwRDh1RjBEOXVGMERBAAACAYkABgAIAgABAAQABwAKAA0AVgCfAOgBL/yUDvyUDvyUDvuUDvtvi/emFYuQjZCOjo+Pj42Qiwj3lIsFkIuQiY6Hj4iNhouGi4aJh4eHCPsU+xQFiIiGiYaLhouHjYeOCPsU9xQFiI+Jj4uQCA77b4v3FBWLkI2Pjo8I9xT3FAWPjo+NkIuQi5CJjogI9xT7FAWPh42Hi4aLhomHh4eIiIaJhosI+5SLBYaLh42HjoiPiY+LkAgO+92d928Vi5CNkI+OCPcU9xQFjo+QjZCLkIuPiY6Hj4iNhouGCIv7lAWLhomHh4iIh4eJhouGi4aNiI8I+xT3FAWHjomPi5AIDvvdi+YVi/eUBYuQjZCOjo+Pj42Qi5CLkImOhwj3FPsUBY+IjYaLhouGiYeHiAj7FPsUBYiHhomGi4aLh42Hj4iOiY+LkAgO+JQU+JQViwwKAAAAAAMCAAGQAAUAAAFMAWYAAABHAUwBZgAAAPUAGQCEAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA8NoB4P/g/+AB4AAgAAAAAQAAAAAAAAAAAAAAIAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABAA4AAAACgAIAAIAAgABACDw2v/9//8AAAAAACDw1//9//8AAf/jDy0AAwABAAAAAAAAAAAAAAABAAH//wAPAAEAAAABAAA5emozXw889QALAgAAAAAA0ABHWAAAAADQAEdYAAAAAAElAW4AAAAIAAIAAAAAAAAAAQAAAeD/4AAAAgAAAAAAASUAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAASUAAAElAAAAtwASALcAAAAAUAAACAAAAAAADgCuAAEAAAAAAAEADgAAAAEAAAAAAAIADgBHAAEAAAAAAAMADgAkAAEAAAAAAAQADgBVAAEAAAAAAAUAFgAOAAEAAAAAAAYABwAyAAEAAAAAAAoANABjAAMAAQQJAAEADgAAAAMAAQQJAAIADgBHAAMAAQQJAAMADgAkAAMAAQQJAAQADgBVAAMAAQQJAAUAFgAOAAMAAQQJAAYADgA5AAMAAQQJAAoANABjAGkAYwBvAG0AbwBvAG4AVgBlAHIAcwBpAG8AbgAgADEALgAwAGkAYwBvAG0AbwBvAG5pY29tb29uAGkAYwBvAG0AbwBvAG4AUgBlAGcAdQBsAGEAcgBpAGMAbwBtAG8AbwBuAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.ui.dropdown > .dropdown.icon {
+  font-family: 'Dropdown';
+  line-height: 1;
+  height: 1em;
+  width: 1.23em;
+  backface-visibility: hidden;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+}
+.ui.dropdown > .dropdown.icon {
+  width: auto;
+}
+.ui.dropdown > .dropdown.icon:before {
+  content: '\f0d7';
+}
+/* Sub Menu */
+.ui.dropdown .menu .item .dropdown.icon:before {
+  content: '\f0da' /*rtl:'\f0d9'*/;
+}
+.ui.dropdown .item .left.dropdown.icon:before,
+.ui.dropdown .left.menu .item .dropdown.icon:before {
+  content: "\f0d9" /*rtl:"\f0da"*/;
+}
+/* Vertical Menu Dropdown */
+.ui.vertical.menu .dropdown.item > .dropdown.icon:before {
+  content: "\f0da" /*rtl:"\f0d9"*/;
+}
+/* Icons for Reference
+.dropdown.down.icon {
+  content: "\f0d7";
+}
+.dropdown.up.icon {
+  content: "\f0d8";
+}
+.dropdown.left.icon {
+  content: "\f0d9";
+}
+.dropdown.icon.icon {
+  content: "\f0da";
+}
+*/
+/*******************************
+         Theme Overrides
+*******************************/
 .ui.selection.active.dropdown {
   box-shadow: none;
 }
@@ -33098,6 +35606,7 @@ select.ui.dropdown {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -33109,7 +35618,7 @@ select.ui.dropdown {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -33296,7 +35805,7 @@ select.ui.dropdown {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -33319,7 +35828,7 @@ select.ui.dropdown {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -33343,24 +35852,6 @@ select.ui.dropdown {
 --------------------*/
 /* Aspect Ratios */
 /* Packaged Theme */
-/*******************************
-             Video
-*******************************/
-/*-------------------
-       Element
---------------------*/
-/* Simple */
-/* Placeholder */
-/* Placeholder Overlayed Background */
-/* Icon */
-/*-------------------
-       States
---------------------*/
-/* Hover */
-/*-------------------
-      Variations
---------------------*/
-/* Aspect Ratios */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -33530,6 +36021,7 @@ select.ui.dropdown {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -33541,7 +36033,7 @@ select.ui.dropdown {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -33728,7 +36220,7 @@ select.ui.dropdown {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -33751,7 +36243,7 @@ select.ui.dropdown {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -34289,6 +36781,9 @@ select.ui.dropdown {
 /*******************************
          Theme Overrides
 *******************************/
+/*******************************
+         Theme Overrides
+*******************************/
 .ui.modal > .header:not(.ui) {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -34356,6 +36851,7 @@ select.ui.dropdown {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -34367,7 +36863,7 @@ select.ui.dropdown {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -34554,7 +37050,7 @@ select.ui.dropdown {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -34577,7 +37073,7 @@ select.ui.dropdown {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -34605,28 +37101,6 @@ select.ui.dropdown {
       Plural
 ---------------*/
 /* Packaged Theme */
-/*******************************
-             Nag
-*******************************/
-/*--------------
-   Collection
----------------*/
-/*--------------
-    Elements
----------------*/
-/* Title */
-/*--------------
-      States
----------------*/
-/* Hover */
-/*--------------
-   Variations
----------------*/
-/* Top / Bottom */
-/* Inverted */
-/*--------------
-      Plural
----------------*/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -34780,6 +37254,7 @@ a.ui.nag {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -34791,7 +37266,7 @@ a.ui.nag {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -34978,7 +37453,7 @@ a.ui.nag {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -35001,7 +37476,7 @@ a.ui.nag {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -35041,40 +37516,6 @@ a.ui.nag {
 /* Inverted */
 /* Arrow color by position */
 /* Packaged Theme */
-/*******************************
-             Popup
-*******************************/
-/*-------------------
-       Element
---------------------*/
-/*-------------------
-       Parts
---------------------*/
-/* Placement */
-/* Header */
-/* Content Border */
-/* Arrow */
-/* Arrow color by position */
-/*-------------------
-       Types
---------------------*/
-/* Tooltip */
-/* Inverted */
-/* Arrow */
-/*-------------------
-       Coupling
---------------------*/
-/* Grid Inside Popup */
-/* (padding * @medium) */
-/*-------------------
-       States
---------------------*/
-/*-------------------
-       Variations
---------------------*/
-/* Wide */
-/* Inverted */
-/* Arrow color by position */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -35728,6 +38169,7 @@ a.ui.nag {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -35739,7 +38181,7 @@ a.ui.nag {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -35926,7 +38368,7 @@ a.ui.nag {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -35949,7 +38391,7 @@ a.ui.nag {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -35977,28 +38419,6 @@ a.ui.nag {
 /* Inverted */
 /* Sizing */
 /* Packaged Theme */
-/*******************************
-            Progress
-*******************************/
-/*-------------------
-       Element
---------------------*/
-/* Bar */
-/* Progress Bar Label */
-/* Label */
-/*-------------------
-        Types
---------------------*/
-/*-------------------
-        States
---------------------*/
-/* Active */
-/*-------------------
-      Variations
---------------------*/
-/* Attached */
-/* Inverted */
-/* Sizing */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -36471,6 +38891,7 @@ a.ui.nag {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -36482,7 +38903,7 @@ a.ui.nag {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -36669,7 +39090,7 @@ a.ui.nag {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -36692,7 +39113,7 @@ a.ui.nag {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -36713,21 +39134,6 @@ a.ui.nag {
       Variations
 --------------------*/
 /* Packaged Theme */
-/*******************************
-             Rating
-*******************************/
-/*-------------------
-        Types
---------------------*/
-/* Standard */
-/* Star */
-/* Heart */
-/*-------------------
-        States
---------------------*/
-/*-------------------
-      Variations
---------------------*/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -36971,6 +39377,7 @@ a.ui.nag {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -36982,7 +39389,7 @@ a.ui.nag {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -37169,7 +39576,7 @@ a.ui.nag {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -37192,7 +39599,7 @@ a.ui.nag {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -37223,31 +39630,6 @@ a.ui.nag {
 /* Selection */
 /* Category */
 /* Packaged Theme */
-/*******************************
-            Search
-*******************************/
-/* Search Prompt */
-/* Result Box */
-/* Result */
-/* Result Image */
-/* Result Content */
-/* Description */
-/* Price */
-/* Special Message */
-/* All Results Link */
-/*******************************
-            States
-*******************************/
-/* Focus */
-/* Hover */
-/* Loading */
-/* Active Category */
-/* Active Result */
-/*******************************
-            Types
-*******************************/
-/* Selection */
-/* Category */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -37630,6 +40012,7 @@ a.ui.nag {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -37641,7 +40024,7 @@ a.ui.nag {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -37828,7 +40211,7 @@ a.ui.nag {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -37851,7 +40234,7 @@ a.ui.nag {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -37866,15 +40249,6 @@ a.ui.nag {
 ---------------*/
 /* Cube */
 /* Packaged Theme */
-/*******************************
-             Shape
-*******************************/
-/* Animating */
-/* Side */
-/*--------------
-      Types
----------------*/
-/* Cube */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -38027,6 +40401,7 @@ a.ui.nag {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -38038,7 +40413,7 @@ a.ui.nag {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -38225,7 +40600,7 @@ a.ui.nag {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -38248,7 +40623,7 @@ a.ui.nag {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -38723,6 +41098,9 @@ body.pushable > .pusher {
 /*******************************
          Theme Overrides
 *******************************/
+/*******************************
+         Theme Overrides
+*******************************/
 .ui.sidebar {
   top: 90px;
   float: left;
@@ -38839,6 +41217,7 @@ img.item-minus {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -38850,7 +41229,7 @@ img.item-minus {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -39037,7 +41416,7 @@ img.item-minus {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -39060,7 +41439,7 @@ img.item-minus {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -39069,9 +41448,6 @@ img.item-minus {
             Sticky
 *******************************/
 /* Packaged Theme */
-/*******************************
-            Sticky
-*******************************/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -39166,6 +41542,7 @@ img.item-minus {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -39177,7 +41554,7 @@ img.item-minus {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -39364,7 +41741,7 @@ img.item-minus {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -39387,7 +41764,7 @@ img.item-minus {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -39397,10 +41774,6 @@ img.item-minus {
 *******************************/
 /* Loading */
 /* Packaged Theme */
-/*******************************
-              Tab
-*******************************/
-/* Loading */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -39509,6 +41882,7 @@ img.item-minus {
 /*******************************
             Folders
 *******************************/
+/* Path to default semantic ui theme packages */
 /* Path to theme packages */
 /* Path to site override folder */
 /*******************************
@@ -39520,7 +41894,7 @@ img.item-minus {
 /*--------------------
    Site Variables
 ---------------------*/
-/* Default */
+/* Default site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -39707,7 +42081,7 @@ img.item-minus {
 /*---  Brand   ---*/
 /*---  Dark Tones  ---*/
 /*---  Light Tones  ---*/
-/* Packaged Theme */
+/* Packaged site.variables */
 /*******************************
          Site Settings
 *******************************/
@@ -39730,7 +42104,7 @@ img.item-minus {
 /*-------------------
         Heights
 --------------------*/
-/* Site Theme */
+/* Site theme site.variables */
 /*-------------------
  Component Variables
 ---------------------*/
@@ -39739,9 +42113,6 @@ img.item-minus {
           Transition
 *******************************/
 /* Packaged Theme */
-/*******************************
-          Transition
-*******************************/
 /* Site Theme */
 /*******************************
              Mix-ins
