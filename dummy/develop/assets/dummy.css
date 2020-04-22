@@ -6,7 +6,7 @@
  */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
 .hidden {
-  display: none !important;
+  display: none;
 }
 .no-padding {
   padding: 0 !important;
@@ -37534,6 +37534,10 @@ html.ios body {
 .text-menu-hide span {
   padding-left: 10px;
   color: #91a7cd;
+}
+.text-menu-hide.hidden,
+.text-menu-show.hidden {
+  display: none;
 }
 .text_menu {
   margin-left: 15px;
