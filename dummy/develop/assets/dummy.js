@@ -6379,6 +6379,14 @@ define('dummy/controllers/components-examples/flexberry-objectlistview/ember-fle
     }
   });
 });
+define('dummy/controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new', ['exports', 'dummy/controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit'], function (exports, _dummyControllersComponentsExamplesFlexberryObjectlistviewEmberFlexberryDummySuggestionMultiListEdit) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _dummyControllersComponentsExamplesFlexberryObjectlistviewEmberFlexberryDummySuggestionMultiListEdit['default'];
+    }
+  });
+});
 define('dummy/controllers/components-examples/flexberry-objectlistview/hierarchy-example', ['exports', 'ember-flexberry/controllers/list-form'], function (exports, _emberFlexberryControllersListForm) {
   exports['default'] = _emberFlexberryControllersListForm['default'].extend({
 
@@ -18120,6 +18128,7 @@ define('dummy/router', ['exports', 'ember', 'dummy/config/environment'], functio
     this.route('ember-flexberry-dummy-multi-list-user-edit', { path: 'ember-flexberry-dummy-multi-list-user-edit/:id' });
     this.route('ember-flexberry-dummy-multi-list-user-edit.new', { path: 'ember-flexberry-dummy-multi-list-user-edit/new' });
     this.route('components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit', { path: 'components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/:id' });
+    this.route('components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.new', { path: 'components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new' });
 
     this.route('ember-flexberry-dummy-comment-edit', { path: 'ember-flexberry-dummy-comment-edit/:id' });
     this.route('ember-flexberry-dummy-comment-edit.new', { path: 'ember-flexberry-dummy-comment-edit/new' });
@@ -21060,6 +21069,33 @@ define('dummy/routes/components-examples/flexberry-objectlistview/ember-flexberr
 
   });
 });
+define('dummy/routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new', ['exports', 'ember-flexberry/routes/edit-form-new', 'ember-flexberry/mixins/edit-form-route-operations-indication'], function (exports, _emberFlexberryRoutesEditFormNew, _emberFlexberryMixinsEditFormRouteOperationsIndication) {
+  exports['default'] = _emberFlexberryRoutesEditFormNew['default'].extend(_emberFlexberryMixinsEditFormRouteOperationsIndication['default'], {
+    /**
+      Name of model projection to be used as record's properties limitation.
+       @property modelProjection
+      @type String
+      @default 'SuggestionE'
+    */
+    modelProjection: 'SuggestionE',
+
+    /**
+      Name of model to be used as form's record type.
+       @property modelName
+      @type String
+      @default 'ember-flexberry-dummy-suggestion'
+    */
+    modelName: 'ember-flexberry-dummy-suggestion',
+
+    /**
+      Name of template to be rendered.
+       @property templateName
+      @type String
+      @default 'ember-flexberry-dummy-suggestion-edit'
+    */
+    templateName: 'ember-flexberry-dummy-suggestion-multi-list-edit'
+  });
+});
 define('dummy/routes/components-examples/flexberry-objectlistview/hierarchy-example', ['exports', 'ember-flexberry/routes/list-form'], function (exports, _emberFlexberryRoutesListForm) {
   exports['default'] = _emberFlexberryRoutesListForm['default'].extend({
     /**
@@ -23027,6 +23063,13 @@ define('dummy/routes/ember-flexberry-dummy-multi-list-user-edit/new', ['exports'
       @default 'ember-flexberry-dummy-application-user'
     */
     modelName: 'ember-flexberry-dummy-application-user',
+
+    /**
+      @property developerUserSettings
+      @type Object
+      @default {}
+    */
+    developerUserSettings: { FOLVOnEditFormObjectListView: {} },
 
     /**
       Name of template to be rendered.
@@ -72114,7 +72157,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.7+66faf059"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.7+16bdbede"});
 }
 
 /* jshint ignore:end */

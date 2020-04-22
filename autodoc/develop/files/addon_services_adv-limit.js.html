@@ -311,7 +311,9 @@ export default Ember.Service.extend({
    @return {String}
   */
   getCurrentAppPage() {
-    return this.get(&#x27;currentAppPage&#x27;);
+    let currAppPage = this.get(&#x27;currentAppPage&#x27;);
+    currAppPage = currAppPage.replace(&#x27;.&#x27;, &#x27;/&#x27;);
+    return currAppPage;
   },
 
   /**

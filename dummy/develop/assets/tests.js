@@ -7255,6 +7255,23 @@ define('dummy/tests/controllers/components-examples/flexberry-objectlistview/emb
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass jshint.');
   });
 });
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit');
+  test('controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js should pass jscs', function () {
+    ok(true, 'controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js should pass jshint.');
+  });
+});
 define('dummy/tests/controllers/components-examples/flexberry-objectlistview/hierarchy-example.jscs-test', ['exports'], function (exports) {
   'use strict';
 
@@ -21346,6 +21363,23 @@ define('dummy/tests/routes/components-examples/flexberry-objectlistview/ember-fl
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit');
+  test('routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js should pass jscs', function () {
+    ok(true, 'routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js should pass jshint.');
   });
 });
 define('dummy/tests/routes/components-examples/flexberry-objectlistview/hierarchy-example.jscs-test', ['exports'], function (exports) {

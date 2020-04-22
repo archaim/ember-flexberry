@@ -23729,7 +23729,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 102,
+            "line": 104,
             "description": "Get adv limits from store.",
             "itemtype": "method",
             "name": "getAdvLimitsFromStore",
@@ -23745,7 +23745,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 139,
+            "line": 141,
             "description": "Get list of component names.",
             "itemtype": "method",
             "name": "getListComponentNames",
@@ -23758,7 +23758,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 157,
+            "line": 159,
             "description": "Returns  true if adv limit for current appPage exists.",
             "itemtype": "method",
             "name": "exists",
@@ -23771,7 +23771,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 167,
+            "line": 169,
             "description": "Returns current list of named adv limits.",
             "itemtype": "method",
             "name": "getNamedAdvLimits",
@@ -23790,7 +23790,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 188,
+            "line": 190,
             "description": "Returns current adv limits for specified component.",
             "itemtype": "method",
             "name": "getCurrentAdvLimits",
@@ -23810,7 +23810,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 201,
+            "line": 203,
             "description": "Returns current adv limit by name.",
             "itemtype": "method",
             "name": "getCurrentAdvLimit",
@@ -23835,7 +23835,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 215,
+            "line": 217,
             "description": "Deletes given adv limit from storage.",
             "itemtype": "method",
             "name": "deleteAdvLimit",
@@ -23860,7 +23860,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 240,
+            "line": 242,
             "description": "Saves given adv limit to storage.",
             "itemtype": "method",
             "name": "saveAdvLimit",
@@ -23890,7 +23890,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 287,
+            "line": 289,
             "description": "Returns  adv limits for current appPage from storage.",
             "itemtype": "method",
             "name": "_getAdvLimits",
@@ -23910,7 +23910,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 314,
+            "line": 316,
             "description": "Sets current adv limits",
             "itemtype": "method",
             "name": "_setCurrentAdvLimits",
@@ -23930,7 +23930,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 338,
+            "line": 340,
             "description": "Deletes adv limit record from storage.",
             "itemtype": "method",
             "name": "_deleteExistingRecord",
@@ -23957,7 +23957,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 365,
+            "line": 367,
             "description": "Looks for already created adv limit record.",
             "itemtype": "method",
             "name": "_getExistingRecord",
@@ -23984,7 +23984,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 392,
+            "line": 394,
             "description": "Looks for all created adv limits.",
             "itemtype": "method",
             "name": "_getExistingLimits",
@@ -24011,7 +24011,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 414,
+            "line": 416,
             "description": "Gets adv limit from storage.",
             "itemtype": "method",
             "name": "_getLimitFromStore",
@@ -24038,7 +24038,7 @@
         },
         {
             "file": "addon/services/adv-limit.js",
-            "line": 436,
+            "line": 438,
             "description": "Creates predicate for adv limit.",
             "itemtype": "method",
             "name": "_getLimitFromStore",
