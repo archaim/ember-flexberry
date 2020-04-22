@@ -3891,12 +3891,18 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
     */
     openFileInNewWindowInsteadOfLoading: false,
 
+    base64Value: null,
+
+    base64FileName: null,
+
+    base64FileExtension: null,
+
     /**
       Template text for 'flexberry-textbox' component.
        @property componentTemplateText
       @type String
      */
-    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-file<br>' + '  value=model.file<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  uploadUrl=uploadUrl<br>' + '  maxUploadFileSize=maxUploadFileSize<br>' + '  showPreview=showPreview<br>' + '  showUploadButton=showUploadButton<br>' + '  showDownloadButton=showDownloadButton<br>' + '  showModalDialogOnUploadError=showModalDialogOnUploadError<br>' + '  showModalDialogOnDownloadError=showModalDialogOnDownloadError<br>' + '  inputClass=inputClass<br>' + '  buttonClass=buttonClass<br>' + '  openFileInNewWindowInsteadOfLoading=openFileInNewWindowInsteadOfLoading<br>' + '}}'),
+    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-file<br>' + '  value=model.file<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  uploadUrl=uploadUrl<br>' + '  maxUploadFileSize=maxUploadFileSize<br>' + '  showPreview=showPreview<br>' + '  showUploadButton=showUploadButton<br>' + '  showDownloadButton=showDownloadButton<br>' + '  showModalDialogOnUploadError=showModalDialogOnUploadError<br>' + '  showModalDialogOnDownloadError=showModalDialogOnDownloadError<br>' + '  inputClass=inputClass<br>' + '  buttonClass=buttonClass<br>' + '  openFileInNewWindowInsteadOfLoading=openFileInNewWindowInsteadOfLoading<br>' + '  base64Value=base64Value<br>' + '  base64FileName=base64FileName<br>' + '  base64FileExtension=base64FileExtension<br>' + '}}'),
 
     /**
       Component settings metadata.
@@ -3984,6 +3990,24 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
         settingType: 'boolean',
         settingDefaultValue: false,
         bindedControllerPropertieName: 'openFileInNewWindowInsteadOfLoading'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'base64Value',
+        settingType: 'string',
+        settingDefaultValue: null,
+        bindedControllerPropertieName: 'base64Value'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'base64FileName',
+        settingType: 'string',
+        settingDefaultValue: null,
+        bindedControllerPropertieName: 'base64FileName'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'base64FileExtension',
+        settingType: 'string',
+        settingDefaultValue: null,
+        bindedControllerPropertieName: 'base64FileExtension'
       });
 
       return componentSettingsMetadata;
@@ -28685,7 +28709,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
               "column": 2
             },
             "end": {
-              "line": 24,
+              "line": 27,
               "column": 2
             }
           },
@@ -28710,7 +28734,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-file", [], ["value", ["subexpr", "@mut", [["get", "model.file", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "uploadUrl", ["subexpr", "@mut", [["get", "uploadUrl", ["loc", [null, [13, 16], [13, 25]]]]], [], []], "maxUploadFileSize", ["subexpr", "@mut", [["get", "maxUploadFileSize", ["loc", [null, [14, 24], [14, 41]]]]], [], []], "showPreview", ["subexpr", "@mut", [["get", "showPreview", ["loc", [null, [15, 18], [15, 29]]]]], [], []], "showUploadButton", ["subexpr", "@mut", [["get", "showUploadButton", ["loc", [null, [16, 23], [16, 39]]]]], [], []], "showDownloadButton", ["subexpr", "@mut", [["get", "showDownloadButton", ["loc", [null, [17, 25], [17, 43]]]]], [], []], "showModalDialogOnUploadError", ["subexpr", "@mut", [["get", "showModalDialogOnUploadError", ["loc", [null, [18, 35], [18, 63]]]]], [], []], "showModalDialogOnDownloadError", ["subexpr", "@mut", [["get", "showModalDialogOnDownloadError", ["loc", [null, [19, 37], [19, 67]]]]], [], []], "inputClass", ["subexpr", "@mut", [["get", "inputClass", ["loc", [null, [20, 17], [20, 27]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [21, 18], [21, 29]]]]], [], []], "openFileInNewWindowInsteadOfLoading", ["subexpr", "@mut", [["get", "openFileInNewWindowInsteadOfLoading", ["loc", [null, [22, 42], [22, 77]]]]], [], []]], ["loc", [null, [9, 4], [23, 6]]]]],
+        statements: [["inline", "flexberry-file", [], ["value", ["subexpr", "@mut", [["get", "model.file", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "uploadUrl", ["subexpr", "@mut", [["get", "uploadUrl", ["loc", [null, [13, 16], [13, 25]]]]], [], []], "maxUploadFileSize", ["subexpr", "@mut", [["get", "maxUploadFileSize", ["loc", [null, [14, 24], [14, 41]]]]], [], []], "showPreview", ["subexpr", "@mut", [["get", "showPreview", ["loc", [null, [15, 18], [15, 29]]]]], [], []], "showUploadButton", ["subexpr", "@mut", [["get", "showUploadButton", ["loc", [null, [16, 23], [16, 39]]]]], [], []], "showDownloadButton", ["subexpr", "@mut", [["get", "showDownloadButton", ["loc", [null, [17, 25], [17, 43]]]]], [], []], "showModalDialogOnUploadError", ["subexpr", "@mut", [["get", "showModalDialogOnUploadError", ["loc", [null, [18, 35], [18, 63]]]]], [], []], "showModalDialogOnDownloadError", ["subexpr", "@mut", [["get", "showModalDialogOnDownloadError", ["loc", [null, [19, 37], [19, 67]]]]], [], []], "inputClass", ["subexpr", "@mut", [["get", "inputClass", ["loc", [null, [20, 17], [20, 27]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [21, 18], [21, 29]]]]], [], []], "openFileInNewWindowInsteadOfLoading", ["subexpr", "@mut", [["get", "openFileInNewWindowInsteadOfLoading", ["loc", [null, [22, 42], [22, 77]]]]], [], []], "base64Value", ["subexpr", "@mut", [["get", "base64Value", ["loc", [null, [23, 18], [23, 29]]]]], [], []], "base64FileName", ["subexpr", "@mut", [["get", "base64FileName", ["loc", [null, [24, 21], [24, 35]]]]], [], []], "base64FileExtension", ["subexpr", "@mut", [["get", "base64FileExtension", ["loc", [null, [25, 26], [25, 45]]]]], [], []]], ["loc", [null, [9, 4], [26, 6]]]]],
         locals: [],
         templates: []
       };
@@ -28729,7 +28753,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
             "column": 0
           },
           "end": {
-            "line": 26,
+            "line": 29,
             "column": 0
           }
         },
@@ -28766,7 +28790,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-file.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [24, 23]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-file.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [27, 23]]]]],
       locals: [],
       templates: [child0]
     };
@@ -72090,7 +72114,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.7+4ffd3c88"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.7+97b7fc26"});
 }
 
 /* jshint ignore:end */
