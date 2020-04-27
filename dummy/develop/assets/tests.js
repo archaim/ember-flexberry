@@ -2055,7 +2055,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/filther/folv-
 define('dummy/tests/acceptance/components/flexberry-objectlistview/filther/folv-without-operation-filter-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test', 'dummy/tests/acceptance/components/flexberry-objectlistview/folv-tests-functions', 'ember-flexberry-data'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewFolvTestsFunctions, _emberFlexberryData) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check without operation filter', function (store, assert, app) {
-    assert.expect(4);
+    assert.expect(3);
     var path = 'components-acceptance-tests/flexberry-objectlistview/folv-filter';
     var modelName = 'ember-flexberry-dummy-suggestion';
     var filtreInsertOperation = '';
@@ -2100,8 +2100,6 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/filther/folv-
               }
             }
 
-            var dropdown = _ember['default'].$('.flexberry-dropdown')[0];
-            assert.equal(dropdown.innerText, 'like', 'Filter select like operation if it is not specified');
             assert.equal(filtherResult.length >= 1, true, 'Filtered list is empty');
             assert.equal(successful, true, 'Filter successfully worked');
             done1();
@@ -18705,6 +18703,79 @@ define('dummy/tests/integration/components/object-list-view-test.jshint', ['expo
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/object-list-view-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/integration/components/olv-filter-interval-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('olv-filter-interval', 'Integration | Component | olv filter interval', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template((function () {
+      return {
+        meta: {
+          'fragmentReason': {
+            'name': 'missing-wrapper',
+            'problems': ['wrong-type']
+          },
+          'revision': 'Ember@2.4.6',
+          'loc': {
+            'source': null,
+            'start': {
+              'line': 1,
+              'column': 0
+            },
+            'end': {
+              'line': 1,
+              'column': 23
+            }
+          }
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment('');
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+          dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
+          return morphs;
+        },
+        statements: [['content', 'olv-filter-interval', ['loc', [null, [1, 0], [1, 23]]]]],
+        locals: [],
+        templates: []
+      };
+    })()));
+
+    assert.equal(this.$().text().trim(), '');
+  });
+});
+define('dummy/tests/integration/components/olv-filter-interval-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - integration/components');
+  test('integration/components/olv-filter-interval-test.js should pass jscs', function () {
+    ok(true, 'integration/components/olv-filter-interval-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/integration/components/olv-filter-interval-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - integration/components/olv-filter-interval-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/olv-filter-interval-test.js should pass jshint.');
   });
 });
 define('dummy/tests/integration/components/ui-message-test', ['exports', 'ember', 'ember-qunit'], function (exports, _ember, _emberQunit) {

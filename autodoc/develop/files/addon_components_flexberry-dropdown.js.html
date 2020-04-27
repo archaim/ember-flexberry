@@ -225,7 +225,7 @@ import { translationMacro as t } from &#x27;ember-i18n&#x27;;
   @extends FlexberryBaseComponent
 */
 export default FlexberryBaseComponent.extend({
-  _items: Ember.computed(&#x27;items.[]&#x27;, function() {
+  _items: Ember.computed(&#x27;items.[]&#x27;, function () {
     let items = this.get(&#x27;items&#x27;);
     let obj = null;
 
@@ -333,6 +333,21 @@ export default FlexberryBaseComponent.extend({
   items: {},
 
   /**
+    Flag indicates whether to display captions for dropdown items.
+    To make it work, &quot;items&quot; property should have following structure:
+    {
+      item1: &#x27;caption for item1&#x27;,
+      item2: &#x27;caption for item2&#x27;
+    }
+    For example, user will see &#x27;caption for item1&#x27;, but on choose, item1 is set to &#x27;value&#x27; property.
+
+    @property displayCaptions
+    @type Boolean
+    @default false
+  */
+  displayCaptions: false,
+
+  /**
     DOM-element representing semantic ui-dropdown component.
 
     @property dropdownDomElement
@@ -372,8 +387,14 @@ export default FlexberryBaseComponent.extend({
   */
   text: Ember.computed(&#x27;value&#x27;, function() {
     let value = this.get(&#x27;value&#x27;);
-    value = value === &#x27;&lt;!----&gt;&#x27; ? &#x27;&#x27; : value;
-    return !Ember.isBlank(value) ? value : &#x27;&#x27;;
+    let valueIsEmpty = Ember.isBlank(value) || value === &#x27;&lt;!----&gt;&#x27;;
+
+    if (this.get(&#x27;displayCaptions&#x27;)) {
+      let captionForValue = this.get(&#x27;_items&#x27;)[value];
+      return captionForValue || &#x27;&#x27;;
+    }
+
+    return valueIsEmpty ? &#x27;&#x27; : value;
   }),
 
   /**
@@ -385,21 +406,23 @@ export default FlexberryBaseComponent.extend({
       return;
     }
 
-    // Convert &#x27;value&#x27; and &#x27;items&#x27; into strings because flexberry-dropdown interpret selected value as string commonly.
     let value = this.get(&#x27;value&#x27;);
-    let stringValue = !Ember.isNone(value) ? value.toString() : null;
-
-    if (this.get(&#x27;needChecksOnValue&#x27;)) {
+    if (this.get(&#x27;needChecksOnValue&#x27;) &amp;&amp; value) {
       let items = this.get(&#x27;_items&#x27;) || {};
-      let itemsArray = Ember.A();
-      for (let key in items) {
-        if (items.hasOwnProperty(key)) {
-          itemsArray.pushObject(items[key]);
+      if (this.get(&#x27;displayCaptions&#x27;)) {
+        let itemsArray = Ember.A(Object.keys(items));
+        if (!itemsArray.contains(value)) {
+          throw new Error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; property: \&#x60;${value.toString()}\&#x60;.&#x60; +
+            &#x60;Allowed values are: [\&#x60;${itemsArray.map(x =&gt; x.toString()).join(&#x60;\&#x60;, \&#x60;&#x60;)}\&#x60;].&#x60;);
         }
-      }
+      } else {
+        let itemsArray = Ember.A(Object.values(items));
 
-      if (!Ember.isBlank(stringValue) &amp;&amp; !itemsArray.contains(stringValue)) {
-        throw new Error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; property: \&#x60;${stringValue}\&#x60;. Allowed values are: [\&#x60;${itemsArray.join(&#x60;\&#x60;, \&#x60;&#x60;)}\&#x60;].&#x60;);
+        // Convert &#x27;value&#x27; into string because &#x27;items&#x27; values are strings also
+        let stringValue = value.toString();
+        if (!itemsArray.contains(stringValue)) {
+          throw new Error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; property: \&#x60;${stringValue}\&#x60;. Allowed values are: [\&#x60;${itemsArray.join(&#x60;\&#x60;, \&#x60;&#x60;)}\&#x60;].&#x60;);
+        }
       }
     }
 
@@ -438,6 +461,7 @@ export default FlexberryBaseComponent.extend({
     */
     onChange(component, id, newValue) {
       let oldValue = !Ember.isNone(this.get(&#x27;value&#x27;)) ? this.get(&#x27;value&#x27;) : null;
+      newValue = this.get(&#x27;displayCaptions&#x27;) ? id : newValue;
       newValue = !Ember.isNone(newValue) ? newValue : null;
       newValue = newValue === &#x27;&lt;!----&gt;&#x27; ? &#x27;&#x27; : newValue;
 
@@ -448,7 +472,7 @@ export default FlexberryBaseComponent.extend({
       // Semantic ui-dropdown component has only one way binding,
       // so we have to set selected value manually.
       this.set(&#x27;value&#x27;, newValue);
-      this.sendAction(&#x27;onChange&#x27;, newValue);
+      this.sendAction(&#x27;onChange&#x27;, newValue, oldValue);
     },
 
     /**
