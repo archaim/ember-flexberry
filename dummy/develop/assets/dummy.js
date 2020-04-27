@@ -636,17 +636,15 @@ define('dummy/controllers/application', ['exports', 'ember', 'dummy/config/envir
         var sidebar = _ember['default'].$('.ui.sidebar.main.menu');
         sidebar.sidebar('toggle');
 
-        if (_ember['default'].$('.inverted.vertical.main.menu').hasClass('visible')) {
-          _ember['default'].$('.sidebar.icon.text-menu-show').removeClass('hidden');
-          _ember['default'].$('.sidebar.icon.text-menu-hide').addClass('hidden');
-          _ember['default'].$('.bgw-opacity').addClass('hidden');
-          _ember['default'].$('.full.height').css({ transition: 'width 0.45s ease-in-out 0s', width: '100%' });
-        } else {
-          _ember['default'].$('.sidebar.icon.text-menu-show').addClass('hidden');
-          _ember['default'].$('.sidebar.icon.text-menu-hide').removeClass('hidden');
-          _ember['default'].$('.bgw-opacity').removeClass('hidden');
-          _ember['default'].$('.full.height').css({ transition: 'width 0.3s ease-in-out 0s', width: 'calc(100% - ' + sidebar.width() + 'px)' });
-        }
+        _ember['default'].$('.full.height').css({
+          transition: 'width 0.35s ease-in-out 0s',
+          width: sidebar.sidebar('is visible') ? '100%' : 'calc(100% - ' + sidebar.width() + 'px)'
+        });
+
+        _ember['default'].$('.sidebar.icon .text_menu').toggleClass('hidden');
+        _ember['default'].$('.sidebar.icon').toggleClass('text-menu-show');
+        _ember['default'].$('.sidebar.icon').toggleClass('text-menu-hide');
+        _ember['default'].$('.bgw-opacity').toggleClass('hidden');
       },
 
       /**
@@ -656,15 +654,10 @@ define('dummy/controllers/application', ['exports', 'ember', 'dummy/config/envir
       toggleSidebarMobile: function toggleSidebarMobile() {
         _ember['default'].$('.ui.sidebar.main.menu').sidebar('toggle');
 
-        if (_ember['default'].$('.inverted.vertical.main.menu').hasClass('visible')) {
-          _ember['default'].$('.sidebar.icon.text-menu-show').removeClass('hidden');
-          _ember['default'].$('.sidebar.icon.text-menu-hide').addClass('hidden');
-          _ember['default'].$('.bgw-opacity').addClass('hidden');
-        } else {
-          _ember['default'].$('.sidebar.icon.text-menu-show').addClass('hidden');
-          _ember['default'].$('.sidebar.icon.text-menu-hide').removeClass('hidden');
-          _ember['default'].$('.bgw-opacity').removeClass('hidden');
-        }
+        _ember['default'].$('.sidebar.icon').toggleClass('text-menu-show');
+        _ember['default'].$('.sidebar.icon').toggleClass('text-menu-hide');
+        _ember['default'].$('.sidebar.icon').toggleClass('hidden-text');
+        _ember['default'].$('.bgw-opacity').toggleClass('hidden');
       }
     },
 
@@ -13957,7 +13950,6 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
         'header': {
           'menu': {
             'sitemap-button': {
-              'caption': '',
               'title': 'Menu'
             },
             'user-settings-service-checkbox': {
@@ -15197,7 +15189,6 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
         'header': {
           'menu': {
             'sitemap-button': {
-              'caption': '',
               'title': 'Меню'
             },
             'user-settings-service-checkbox': {
@@ -21125,9 +21116,9 @@ define('dummy/routes/components-examples/flexberry-objectlistview/ember-flexberr
       Name of template to be rendered.
        @property templateName
       @type String
-      @default 'ember-flexberry-dummy-suggestion-edit'
+      @default 'components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit'
     */
-    templateName: 'ember-flexberry-dummy-suggestion-multi-list-edit'
+    templateName: 'components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit'
   });
 });
 define('dummy/routes/components-examples/flexberry-objectlistview/hierarchy-example', ['exports', 'ember-flexberry/routes/list-form'], function (exports, _emberFlexberryRoutesListForm) {
@@ -24905,7 +24896,7 @@ define("dummy/templates/application", ["exports"], function (exports) {
               "column": 0
             },
             "end": {
-              "line": 100,
+              "line": 105,
               "column": 0
             }
           },
@@ -24945,31 +24936,31 @@ define("dummy/templates/application", ["exports"], function (exports) {
           dom.setAttribute(el6, "class", "launch icon item");
           var el7 = dom.createTextNode("\n              ");
           dom.appendChild(el6, el7);
-          var el7 = dom.createComment("");
-          dom.appendChild(el6, el7);
-          var el7 = dom.createTextNode("\n              ");
-          dom.appendChild(el6, el7);
           var el7 = dom.createElement("i");
           dom.setAttribute(el7, "class", "sidebar icon text-menu-show");
-          var el8 = dom.createElement("span");
-          dom.setAttribute(el8, "class", "text_menu ");
-          var el9 = dom.createComment("");
-          dom.appendChild(el8, el9);
+          var el8 = dom.createTextNode("\n                ");
           dom.appendChild(el7, el8);
           var el8 = dom.createElement("span");
-          dom.setAttribute(el8, "class", "text_menu hidden text-menu-hide");
+          dom.setAttribute(el8, "class", "text_menu");
+          var el9 = dom.createTextNode("\n                  ");
+          dom.appendChild(el8, el9);
           var el9 = dom.createComment("");
+          dom.appendChild(el8, el9);
+          var el9 = dom.createTextNode("\n                ");
           dom.appendChild(el8, el9);
           dom.appendChild(el7, el8);
-          dom.appendChild(el6, el7);
-          var el7 = dom.createTextNode("\n              ");
-          dom.appendChild(el6, el7);
-          var el7 = dom.createElement("i");
-          dom.setAttribute(el7, "class", "sidebar icon hidden text-menu-hide hidden-text");
+          var el8 = dom.createTextNode("\n                ");
+          dom.appendChild(el7, el8);
           var el8 = dom.createElement("span");
-          dom.setAttribute(el8, "class", "text_menu hidden-text");
+          dom.setAttribute(el8, "class", "text_menu hidden-text hidden");
+          var el9 = dom.createTextNode("\n                  ");
+          dom.appendChild(el8, el9);
           var el9 = dom.createComment("");
           dom.appendChild(el8, el9);
+          var el9 = dom.createTextNode("\n                ");
+          dom.appendChild(el8, el9);
+          dom.appendChild(el7, el8);
+          var el8 = dom.createTextNode("\n              ");
           dom.appendChild(el7, el8);
           dom.appendChild(el6, el7);
           var el7 = dom.createTextNode("\n            ");
@@ -25180,38 +25171,36 @@ define("dummy/templates/application", ["exports"], function (exports) {
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
           var element1 = dom.childAt(fragment, [2, 1]);
           var element2 = dom.childAt(element1, [1, 1, 1, 1]);
-          var element3 = dom.childAt(element2, [3]);
+          var element3 = dom.childAt(element2, [1]);
           var element4 = dom.childAt(element1, [3]);
           var element5 = dom.childAt(fragment, [4, 1]);
           var element6 = dom.childAt(fragment, [8, 1, 1]);
           var element7 = dom.childAt(element6, [3]);
           var element8 = dom.childAt(element6, [5]);
           var element9 = dom.childAt(element6, [7, 1]);
-          var morphs = new Array(20);
+          var morphs = new Array(18);
           morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
           morphs[1] = dom.createAttrMorph(element2, 'title');
           morphs[2] = dom.createElementMorph(element2);
-          morphs[3] = dom.createMorphAt(element2, 1, 1);
-          morphs[4] = dom.createMorphAt(dom.childAt(element3, [0]), 0, 0);
-          morphs[5] = dom.createMorphAt(dom.childAt(element3, [1]), 0, 0);
-          morphs[6] = dom.createMorphAt(dom.childAt(element2, [5, 0]), 0, 0);
-          morphs[7] = dom.createAttrMorph(element4, 'title');
-          morphs[8] = dom.createMorphAt(dom.childAt(element1, [5, 0]), 0, 0);
-          morphs[9] = dom.createAttrMorph(element5, 'class');
-          morphs[10] = dom.createMorphAt(dom.childAt(element5, [3, 1, 1, 1]), 1, 1);
-          morphs[11] = dom.createMorphAt(dom.childAt(fragment, [6]), 1, 1);
-          morphs[12] = dom.createMorphAt(dom.childAt(element6, [1]), 1, 1);
-          morphs[13] = dom.createMorphAt(dom.childAt(element7, [1]), 1, 1);
-          morphs[14] = dom.createMorphAt(element7, 3, 3);
-          morphs[15] = dom.createMorphAt(dom.childAt(element8, [1]), 1, 1);
-          morphs[16] = dom.createMorphAt(element8, 3, 3);
-          morphs[17] = dom.createAttrMorph(element9, 'href');
-          morphs[18] = dom.createAttrMorph(element9, 'title');
-          morphs[19] = dom.createMorphAt(element9, 1, 1);
+          morphs[3] = dom.createMorphAt(dom.childAt(element3, [1]), 1, 1);
+          morphs[4] = dom.createMorphAt(dom.childAt(element3, [3]), 1, 1);
+          morphs[5] = dom.createAttrMorph(element4, 'title');
+          morphs[6] = dom.createMorphAt(dom.childAt(element1, [5, 0]), 0, 0);
+          morphs[7] = dom.createAttrMorph(element5, 'class');
+          morphs[8] = dom.createMorphAt(dom.childAt(element5, [3, 1, 1, 1]), 1, 1);
+          morphs[9] = dom.createMorphAt(dom.childAt(fragment, [6]), 1, 1);
+          morphs[10] = dom.createMorphAt(dom.childAt(element6, [1]), 1, 1);
+          morphs[11] = dom.createMorphAt(dom.childAt(element7, [1]), 1, 1);
+          morphs[12] = dom.createMorphAt(element7, 3, 3);
+          morphs[13] = dom.createMorphAt(dom.childAt(element8, [1]), 1, 1);
+          morphs[14] = dom.createMorphAt(element8, 3, 3);
+          morphs[15] = dom.createAttrMorph(element9, 'href');
+          morphs[16] = dom.createAttrMorph(element9, 'title');
+          morphs[17] = dom.createMorphAt(element9, 1, 1);
           dom.insertBoundary(fragment, 0);
           return morphs;
         },
-        statements: [["block", "ui-sidebar", [], ["class", "inverted vertical main menu", "ui_context", ".ember-application > .ember-view", "closable", false, "dimPage", false, "onShow", ["subexpr", "action", ["updateWidth"], [], ["loc", [null, [10, 11], [10, 33]]]], "onHidden", ["subexpr", "action", ["updateWidth"], [], ["loc", [null, [11, 13], [11, 35]]]]], 0, null, ["loc", [null, [5, 2], [20, 17]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.header.menu.sitemap-button.title"], [], ["loc", [null, [28, 20], [28, 78]]]]], ["element", "action", ["toggleSidebar"], [], ["loc", [null, [26, 15], [26, 41]]]], ["inline", "t", ["forms.application.header.menu.sitemap-button.caption"], [], ["loc", [null, [29, 14], [29, 74]]]], ["inline", "t", ["forms.application.header.menu.show-menu.caption"], [], ["loc", [null, [30, 78], [30, 133]]]], ["inline", "t", ["forms.application.header.menu.hide-menu.caption"], [], ["loc", [null, [30, 186], [30, 241]]]], ["inline", "t", ["forms.application.header.menu.hide-menu.caption"], [], ["loc", [null, [31, 108], [31, 163]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.sitemap.application-name.title"], [], ["loc", [null, [39, 14], [39, 70]]]]], ["inline", "t", ["application-name"], [], ["loc", [null, [42, 78], [42, 102]]]], ["attribute", "class", ["concat", ["ui form ", ["get", "appState.state", ["loc", [null, [46, 26], [46, 40]]]]]]], ["content", "outlet", ["loc", [null, [52, 14], [52, 24]]]], ["inline", "outlet", ["modal"], [], ["loc", [null, [60, 4], [60, 22]]]], ["inline", "t", ["forms.application.footer.application-name"], [], ["loc", [null, [66, 10], [66, 59]]]], ["inline", "t", ["forms.application.header.menu.user-settings-service-checkbox.caption"], [], ["loc", [null, [70, 12], [70, 88]]]], ["inline", "flexberry-checkbox", [], ["class", "toggle", "value", ["subexpr", "@mut", [["get", "userSettingsService.isUserSettingsServiceEnabled", ["loc", [null, [74, 18], [74, 66]]]]], [], []]], ["loc", [null, [72, 10], [75, 12]]]], ["inline", "t", ["forms.application.header.menu.language-dropdown.caption"], [], ["loc", [null, [79, 12], [79, 75]]]], ["inline", "flexberry-dropdown", [], ["class", "compact", "items", ["subexpr", "@mut", [["get", "locales", ["loc", [null, [83, 18], [83, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "i18n.locale", ["loc", [null, [84, 18], [84, 29]]]]], [], []], "placeholder", ["subexpr", "t", ["forms.application.header.menu.language-dropdown.placeholder"], [], ["loc", [null, [85, 24], [85, 89]]]], "direction", "upward"], ["loc", [null, [81, 10], [87, 12]]]], ["attribute", "href", ["get", "addonVersionHref", ["loc", [null, [91, 19], [91, 35]]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.footer.application-version.title"], [], ["loc", [null, [93, 18], [93, 76]]]]], ["inline", "t", ["forms.application.footer.application-version.caption"], ["version", ["subexpr", "@mut", [["get", "addonVersion", ["loc", [null, [94, 81], [94, 93]]]]], [], []]], ["loc", [null, [94, 14], [94, 95]]]]],
+        statements: [["block", "ui-sidebar", [], ["class", "inverted vertical main menu", "ui_context", ".ember-application > .ember-view", "closable", false, "dimPage", false, "onShow", ["subexpr", "action", ["updateWidth"], [], ["loc", [null, [10, 11], [10, 33]]]], "onHidden", ["subexpr", "action", ["updateWidth"], [], ["loc", [null, [11, 13], [11, 35]]]]], 0, null, ["loc", [null, [5, 2], [20, 17]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.header.menu.sitemap-button.title"], [], ["loc", [null, [28, 20], [28, 78]]]]], ["element", "action", ["toggleSidebar"], [], ["loc", [null, [26, 15], [26, 41]]]], ["inline", "t", ["forms.application.header.menu.show-menu.caption"], [], ["loc", [null, [31, 18], [31, 73]]]], ["inline", "t", ["forms.application.header.menu.hide-menu.caption"], [], ["loc", [null, [34, 18], [34, 73]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.sitemap.application-name.title"], [], ["loc", [null, [44, 14], [44, 70]]]]], ["inline", "t", ["application-name"], [], ["loc", [null, [47, 78], [47, 102]]]], ["attribute", "class", ["concat", ["ui form ", ["get", "appState.state", ["loc", [null, [51, 26], [51, 40]]]]]]], ["content", "outlet", ["loc", [null, [57, 14], [57, 24]]]], ["inline", "outlet", ["modal"], [], ["loc", [null, [65, 4], [65, 22]]]], ["inline", "t", ["forms.application.footer.application-name"], [], ["loc", [null, [71, 10], [71, 59]]]], ["inline", "t", ["forms.application.header.menu.user-settings-service-checkbox.caption"], [], ["loc", [null, [75, 12], [75, 88]]]], ["inline", "flexberry-checkbox", [], ["class", "toggle", "value", ["subexpr", "@mut", [["get", "userSettingsService.isUserSettingsServiceEnabled", ["loc", [null, [79, 18], [79, 66]]]]], [], []]], ["loc", [null, [77, 10], [80, 12]]]], ["inline", "t", ["forms.application.header.menu.language-dropdown.caption"], [], ["loc", [null, [84, 12], [84, 75]]]], ["inline", "flexberry-dropdown", [], ["class", "compact", "items", ["subexpr", "@mut", [["get", "locales", ["loc", [null, [88, 18], [88, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "i18n.locale", ["loc", [null, [89, 18], [89, 29]]]]], [], []], "placeholder", ["subexpr", "t", ["forms.application.header.menu.language-dropdown.placeholder"], [], ["loc", [null, [90, 24], [90, 89]]]], "direction", "upward"], ["loc", [null, [86, 10], [92, 12]]]], ["attribute", "href", ["get", "addonVersionHref", ["loc", [null, [96, 19], [96, 35]]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.footer.application-version.title"], [], ["loc", [null, [98, 18], [98, 76]]]]], ["inline", "t", ["forms.application.footer.application-version.caption"], ["version", ["subexpr", "@mut", [["get", "addonVersion", ["loc", [null, [99, 81], [99, 93]]]]], [], []]], ["loc", [null, [99, 14], [99, 95]]]]],
         locals: [],
         templates: [child0]
       };
@@ -25230,7 +25219,7 @@ define("dummy/templates/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 101,
+            "line": 106,
             "column": 0
           }
         },
@@ -25253,7 +25242,7 @@ define("dummy/templates/application", ["exports"], function (exports) {
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["get", "isInAcceptanceTestMode", ["loc", [null, [1, 6], [1, 28]]]]], [], 0, 1, ["loc", [null, [1, 0], [100, 7]]]]],
+      statements: [["block", "if", [["get", "isInAcceptanceTestMode", ["loc", [null, [1, 6], [1, 28]]]]], [], 0, 1, ["loc", [null, [1, 0], [105, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -67691,7 +67680,7 @@ define("dummy/templates/mobile/application", ["exports"], function (exports) {
               "column": 0
             },
             "end": {
-              "line": 86,
+              "line": 85,
               "column": 0
             }
           },
@@ -67727,11 +67716,6 @@ define("dummy/templates/mobile/application", ["exports"], function (exports) {
           dom.appendChild(el5, el6);
           var el6 = dom.createElement("i");
           dom.setAttribute(el6, "class", "sidebar icon text-menu-show");
-          dom.appendChild(el5, el6);
-          var el6 = dom.createTextNode("\n          ");
-          dom.appendChild(el5, el6);
-          var el6 = dom.createElement("i");
-          dom.setAttribute(el6, "class", "sidebar icon hidden text-menu-hide hidden-text");
           dom.appendChild(el5, el6);
           var el6 = dom.createTextNode("\n        ");
           dom.appendChild(el5, el6);
@@ -67931,7 +67915,7 @@ define("dummy/templates/mobile/application", ["exports"], function (exports) {
           dom.insertBoundary(fragment, 0);
           return morphs;
         },
-        statements: [["block", "ui-sidebar", [], ["class", "mobile inverted vertical main menu", "ui_context", ".ember-application > .ember-view", "onShow", ["subexpr", "action", ["updateWidth"], [], ["loc", [null, [8, 9], [8, 31]]]], "onHidden", ["subexpr", "action", ["updateWidth"], [], ["loc", [null, [9, 11], [9, 33]]]]], 0, null, ["loc", [null, [5, 0], [18, 15]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.header.menu.sitemap-button.title"], [], ["loc", [null, [25, 16], [25, 74]]]]], ["element", "action", ["toggleSidebarMobile"], [], ["loc", [null, [23, 11], [23, 43]]]], ["inline", "t", ["forms.application.header.menu.user-settings-service-checkbox.caption"], [], ["loc", [null, [31, 12], [31, 88]]]], ["inline", "flexberry-checkbox", [], ["class", "toggle", "value", ["subexpr", "@mut", [["get", "userSettingsService.isUserSettingsServiceEnabled", ["loc", [null, [35, 18], [35, 66]]]]], [], []]], ["loc", [null, [33, 10], [36, 12]]]], ["inline", "t", ["forms.application.header.menu.language-dropdown.caption"], [], ["loc", [null, [40, 12], [40, 75]]]], ["inline", "flexberry-dropdown", [], ["class", "compact", "items", ["subexpr", "@mut", [["get", "locales", ["loc", [null, [44, 18], [44, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "i18n.locale", ["loc", [null, [45, 18], [45, 29]]]]], [], []], "placeholder", ["subexpr", "t", ["forms.application.header.menu.language-dropdown.placeholder"], [], ["loc", [null, [46, 24], [46, 89]]]]], ["loc", [null, [42, 10], [47, 12]]]], ["attribute", "class", ["concat", ["ui form ", ["get", "appState.state", ["loc", [null, [54, 24], [54, 38]]]]]]], ["content", "outlet", ["loc", [null, [59, 12], [59, 22]]]], ["inline", "outlet", ["modal"], [], ["loc", [null, [67, 2], [67, 20]]]], ["inline", "t", ["forms.application.footer.application-name"], [], ["loc", [null, [73, 8], [73, 57]]]], ["attribute", "href", ["get", "addonVersionHref", ["loc", [null, [77, 17], [77, 33]]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.footer.application-version.title"], [], ["loc", [null, [79, 16], [79, 74]]]]], ["inline", "t", ["forms.application.footer.application-version.caption"], ["version", ["subexpr", "@mut", [["get", "addonVersion", ["loc", [null, [80, 79], [80, 91]]]]], [], []]], ["loc", [null, [80, 12], [80, 93]]]]],
+        statements: [["block", "ui-sidebar", [], ["class", "mobile inverted vertical main menu", "ui_context", ".ember-application > .ember-view", "onShow", ["subexpr", "action", ["updateWidth"], [], ["loc", [null, [8, 9], [8, 31]]]], "onHidden", ["subexpr", "action", ["updateWidth"], [], ["loc", [null, [9, 11], [9, 33]]]]], 0, null, ["loc", [null, [5, 0], [18, 15]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.header.menu.sitemap-button.title"], [], ["loc", [null, [25, 16], [25, 74]]]]], ["element", "action", ["toggleSidebarMobile"], [], ["loc", [null, [23, 11], [23, 43]]]], ["inline", "t", ["forms.application.header.menu.user-settings-service-checkbox.caption"], [], ["loc", [null, [30, 12], [30, 88]]]], ["inline", "flexberry-checkbox", [], ["class", "toggle", "value", ["subexpr", "@mut", [["get", "userSettingsService.isUserSettingsServiceEnabled", ["loc", [null, [34, 18], [34, 66]]]]], [], []]], ["loc", [null, [32, 10], [35, 12]]]], ["inline", "t", ["forms.application.header.menu.language-dropdown.caption"], [], ["loc", [null, [39, 12], [39, 75]]]], ["inline", "flexberry-dropdown", [], ["class", "compact", "items", ["subexpr", "@mut", [["get", "locales", ["loc", [null, [43, 18], [43, 25]]]]], [], []], "value", ["subexpr", "@mut", [["get", "i18n.locale", ["loc", [null, [44, 18], [44, 29]]]]], [], []], "placeholder", ["subexpr", "t", ["forms.application.header.menu.language-dropdown.placeholder"], [], ["loc", [null, [45, 24], [45, 89]]]]], ["loc", [null, [41, 10], [46, 12]]]], ["attribute", "class", ["concat", ["ui form ", ["get", "appState.state", ["loc", [null, [53, 24], [53, 38]]]]]]], ["content", "outlet", ["loc", [null, [58, 12], [58, 22]]]], ["inline", "outlet", ["modal"], [], ["loc", [null, [66, 2], [66, 20]]]], ["inline", "t", ["forms.application.footer.application-name"], [], ["loc", [null, [72, 8], [72, 57]]]], ["attribute", "href", ["get", "addonVersionHref", ["loc", [null, [76, 17], [76, 33]]]]], ["attribute", "title", ["subexpr", "t", ["forms.application.footer.application-version.title"], [], ["loc", [null, [78, 16], [78, 74]]]]], ["inline", "t", ["forms.application.footer.application-version.caption"], ["version", ["subexpr", "@mut", [["get", "addonVersion", ["loc", [null, [79, 79], [79, 91]]]]], [], []]], ["loc", [null, [79, 12], [79, 93]]]]],
         locals: [],
         templates: [child0]
       };
@@ -67950,7 +67934,7 @@ define("dummy/templates/mobile/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 87,
+            "line": 86,
             "column": 0
           }
         },
@@ -67973,7 +67957,7 @@ define("dummy/templates/mobile/application", ["exports"], function (exports) {
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["get", "isInAcceptanceTestMode", ["loc", [null, [1, 6], [1, 28]]]]], [], 0, 1, ["loc", [null, [1, 0], [86, 7]]]]],
+      statements: [["block", "if", [["get", "isInAcceptanceTestMode", ["loc", [null, [1, 6], [1, 28]]]]], [], 0, 1, ["loc", [null, [1, 0], [85, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -72253,7 +72237,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.7+e7d3f6db"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0-beta.7+cdb06ad2"});
 }
 
 /* jshint ignore:end */

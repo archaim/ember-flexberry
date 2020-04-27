@@ -37535,10 +37535,6 @@ html.ios body {
   padding-left: 10px;
   color: #91a7cd;
 }
-.text-menu-hide.hidden,
-.text-menu-show.hidden {
-  display: none;
-}
 .text_menu {
   margin-left: 15px;
   color: #FFFFFF;
