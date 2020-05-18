@@ -6,7 +6,7 @@
  */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
 .hidden {
-  display: none !important;
+  display: none;
 }
 .no-padding {
   padding: 0 !important;
@@ -9671,6 +9671,9 @@ i.plus.icon {
 i.minus.icon {
   position: relative;
   left: 5px;
+}
+.object-list-view-row-delete-button.mobile i.minus.icon {
+  left: 0px;
 }
 /*!
  * # Semantic UI - Image
