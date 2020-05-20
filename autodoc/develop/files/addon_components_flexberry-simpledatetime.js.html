@@ -372,11 +372,6 @@ export default FlexberryBaseComponent.extend({
       let minValue = value instanceof Date ? value.setMilliseconds(0) : moment(value).toDate().setMilliseconds(0);
       if (this.get(&#x27;useBrowserInput&#x27;) &amp;&amp; this.get(&#x27;currentTypeSupported&#x27;)) {
         this.set(&#x27;_minAsString&#x27;, this._convertDateToString(minValue));
-      } else {
-        let flatpickr = this.get(&#x27;_flatpickr&#x27;);
-        if (flatpickr) {
-          flatpickr.set(&#x27;minDate&#x27;, minValue);
-        }
       }
 
       return value;
@@ -397,11 +392,6 @@ export default FlexberryBaseComponent.extend({
       let maxValue = value instanceof Date ? value.setMilliseconds(0) : moment(value).toDate().setMilliseconds(0);
       if (this.get(&#x27;useBrowserInput&#x27;) &amp;&amp; this.get(&#x27;currentTypeSupported&#x27;)) {
         this.set(&#x27;_maxAsString&#x27;, this._convertDateToString(maxValue));
-      } else {
-        let flatpickr = this.get(&#x27;_flatpickr&#x27;);
-        if (flatpickr) {
-          flatpickr.set(&#x27;maxDate&#x27;, maxValue);
-        }
       }
 
       return value;
@@ -555,55 +545,38 @@ export default FlexberryBaseComponent.extend({
     @private
   */
   _flatpickrCreate() {
-    let i18n = this.get(&#x27;i18n&#x27;);
-    let locale = this.get(&#x27;locale&#x27;);
-    if (i18n &amp;&amp; Ember.isBlank(locale)) {
-      locale = i18n.locale;
-    }
+    const timeless = this.get(&#x27;type&#x27;) === &#x27;date&#x27;;
+    const min = this.get(&#x27;min&#x27;);
+    const max = this.get(&#x27;max&#x27;);
 
-    let options = {
+    const options = {
       altInput: true,
       time_24hr: true,
+      enableTime: !timeless,
       allowInput: true,
       clickOpens: false,
       disableMobile: true,
       altInputClass: &#x27;custom-flatpickr&#x27;,
-      minDate: this.get(&#x27;min&#x27;),
-      maxDate: this.get(&#x27;max&#x27;),
+      minDate: timeless &amp;&amp; min ? moment(min).startOf(&#x27;day&#x27;).toDate() : min,
+      maxDate: timeless &amp;&amp; max ? moment(max).endOf(&#x27;day&#x27;).toDate() : max,
       defaultDate: this.get(&#x27;value&#x27;),
       defaultHour: this.get(&#x27;defaultHour&#x27;),
       defaultMinute: this.get(&#x27;defaultMinute&#x27;),
-      locale: locale,
+      locale: this.get(&#x27;locale&#x27;) || this.get(&#x27;i18n.locale&#x27;),
+      altFormat: timeless ? &#x27;d.m.Y&#x27; : &#x27;d.m.Y H:i&#x27;,
+      dateFormat: timeless ? &#x27;Y-m-d&#x27; : &#x27;Y-m-dTH:i&#x27;,
       onChange: (dates) =&gt; {
-        if (dates.length) {
-          if (this.get(&#x27;_flatpickr.config.enableTime&#x27;) &amp;&amp; Ember.isNone(this.get(&#x27;_valueAsDate&#x27;))) {
-            dates[0].setHours(this.get(&#x27;defaultHour&#x27;));
-            dates[0].setMinutes(this.get(&#x27;defaultMinute&#x27;));
-            this.get(&#x27;_flatpickr&#x27;).setDate(dates[0], false);
-          }
-
-          this.set(&#x27;_valueAsDate&#x27;, dates[0]);
-        }
+        this.set(&#x27;_valueAsDate&#x27;, dates[0]);
       },
       onClose: () =&gt; {
         this.set(&#x27;canClick&#x27;, true);
       },
     };
 
-    let type = this.get(&#x27;type&#x27;);
-    if (type === &#x27;datetime-local&#x27; || type === &#x27;datetime&#x27;) {
-      options.enableTime = true;
-      options.altFormat = &#x27;d.m.Y H:i&#x27;;
-      options.dateFormat = &#x27;Y-m-dTH:i&#x27;;
-    } else {
-      options.altFormat = &#x27;d.m.Y&#x27;;
-      options.dateFormat = &#x27;Y-m-d&#x27;;
-    }
-
     this.set(&#x27;_flatpickr&#x27;, this.$(&#x27;.flatpickr &gt; input&#x27;).flatpickr(options));
     Ember.$(&#x27;.flatpickr-calendar .numInput.flatpickr-hour&#x27;).prop(&#x27;readonly&#x27;, true);
     Ember.$(&#x27;.flatpickr-calendar .numInput.flatpickr-minute&#x27;).prop(&#x27;readonly&#x27;, true);
-    this.$(&#x27;.custom-flatpickr&#x27;).mask(type === &#x27;date&#x27; ? &#x27;99.99.9999&#x27; : &#x27;99.99.9999 99:99&#x27;);
+    this.$(&#x27;.custom-flatpickr&#x27;).mask(timeless ? &#x27;99.99.9999&#x27; : &#x27;99.99.9999 99:99&#x27;);
     this.$(&#x27;.custom-flatpickr&#x27;).keydown(Ember.$.proxy(function (e) {
       if (e.which === 13) {
         this.$(&#x27;.custom-flatpickr&#x27;).blur();
@@ -628,11 +601,15 @@ export default FlexberryBaseComponent.extend({
   }),
 
   /**
-    Reinit flatpickr (defaultHour and defaultMinute for dynamically updating because set() for this options doesn&#x27;t update view).
+    Observer for reinit flatpickr (defaultHour, defaultMinute, and others, for dynamically updating because set() for this options doesn&#x27;t update view).
+
+    @method reinitFlatpickrObserver
   */
-  reinitFlatpikrObserver: Ember.observer(&#x27;type&#x27;, &#x27;locale&#x27;, &#x27;i18n.locale&#x27;, &#x27;defaultHour&#x27;, &#x27;defaultMinute&#x27;, function () {
-    this._flatpickrDestroy();
-    Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, &#x27;_flatpickrCreate&#x27;);
+  reinitFlatpickrObserver: Ember.observer(&#x27;type&#x27;, &#x27;min&#x27;, &#x27;max&#x27;, &#x27;locale&#x27;, &#x27;i18n.locale&#x27;, &#x27;defaultHour&#x27;, &#x27;defaultMinute&#x27;, function () {
+    if (!this.get(&#x27;useBrowserInput&#x27;) || !this.get(&#x27;currentTypeSupported&#x27;)) {
+      this._flatpickrDestroy();
+      Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, this._flatpickrCreate);
+    }
   }),
 
   /**
@@ -728,10 +705,14 @@ export default FlexberryBaseComponent.extend({
       @method actions.remove
     */
     remove() {
-      let value = this.get(&#x27;value&#x27;);
-      if (!Ember.isNone(value) &amp;&amp; !this.get(&#x27;readonly&#x27;)) {
-        this.get(&#x27;_flatpickr&#x27;).clear();
-        this.set(&#x27;_valueAsDate&#x27;, this.get(&#x27;_flatpickr&#x27;).selectedDates[0]);
+      if (!this.get(&#x27;readonly&#x27;)) {
+        const flatpickr = this.get(&#x27;_flatpickr&#x27;);
+        const value = this.get(&#x27;value&#x27;) || new Date();
+
+        value.setHours(this.get(&#x27;defaultHour&#x27;), this.get(&#x27;defaultMinute&#x27;));
+
+        flatpickr.setDate(value, false);
+        flatpickr.clear();
       }
     }
   }
