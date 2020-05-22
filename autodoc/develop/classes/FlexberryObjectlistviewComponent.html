@@ -748,7 +748,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1427"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1427</code></a>
+                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1439"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1439</code></a>
                             </p>
                     
                     
@@ -780,7 +780,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1371"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1371</code></a>
+                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1383"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1383</code></a>
                             </p>
                     
                     
@@ -817,7 +817,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1389"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1389</code></a>
+                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1401"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1401</code></a>
                             </p>
                     
                     
@@ -1915,7 +1915,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1288"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1288</code></a>
+                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1300"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1300</code></a>
                             </p>
                     
                     
@@ -2033,7 +2033,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1252"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1252</code></a>
+                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1264"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1264</code></a>
                             </p>
                     
                     
@@ -2133,13 +2133,13 @@
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>data</code>
+                                            <code>record</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
                             </span>
                     
                     
@@ -2168,12 +2168,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">data</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <code class="param-name">record</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>selected row data.</p>
+                                            <p>The record to be deleted.</p>
                     
                                         </div>
                     
@@ -2185,8 +2185,8 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
-                                        <p>If <code>true</code> then delete row, else cancel.</p>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                                        <p>If <code>true</code>, then delete row, if <code>Promise</code>, then delete row after successful resolve, else cancel.</p>
                     
                                 </div>
                             </div>
@@ -2195,23 +2195,29 @@
                                 <h4>Example:</h4>
                     
                                 <div class="example-content">
-                                    <pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/example.hbs --&gt;
-                    {{flexberry-objectlistview
-                      ...
-                      confirmDeleteRow=(action 'confirmDeleteRow')
-                      ...
-                    }}
-                    </code></pre>
-                    <pre class="code prettyprint"><code class="language-javascript">// app/controllers/example.js
+                                    <pre class="code prettyprint"><code class="language-javascript">// app/controllers/example.js
                     ...
                     actions: {
                       ...
-                      confirmDeleteRow(data) {
-                        return confirm('You sure?');
+                      confirmDeleteRow(record) {
+                        return new Promise((resolve, reject) =&gt; {
+                          this.showConfirmDialg({
+                            title: <code>Delete an object with the ID &#x27;${record.get(&#x27;id&#x27;)}&#x27;?</code>,
+                            onApprove: resolve,
+                            onDeny: reject,
+                          });
+                        });
                       }
                       ...
                     }
                     ...
+                    </code></pre>
+                    <pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/example.hbs --&gt;
+                    {{flexberry-objectlistview
+                      ...
+                      confirmDeleteRow=(action "confirmDeleteRow")
+                      ...
+                    }}
                     </code></pre>
                     
                                 </div>
@@ -2223,7 +2229,7 @@
                             <span class="paren">()</span>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
                             </span>
                     
                     
@@ -2235,7 +2241,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1221"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1221</code></a>
+                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1227"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1227</code></a>
                             </p>
                     
                     
@@ -2252,8 +2258,8 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
-                                        <p>If <code>true</code> then delete selected rows, else cancel.</p>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                                        <p>If <code>true</code>, then delete row, if <code>Promise</code>, then delete row after successful resolve, else cancel.</p>
                     
                                 </div>
                             </div>
@@ -2262,23 +2268,29 @@
                                 <h4>Example:</h4>
                     
                                 <div class="example-content">
-                                    <pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/example.hbs --&gt;
-                    {{flexberry-objectlistview
-                      ...
-                      confirmDeleteRows=(action 'confirmDeleteRows')
-                      ...
-                    }}
-                    </code></pre>
-                    <pre class="code prettyprint"><code class="language-javascript">// app/controllers/example.js
+                                    <pre class="code prettyprint"><code class="language-javascript">// app/controllers/example.js
                     ...
                     actions: {
                       ...
-                      confirmDeleteRows(data) {
-                        return confirm('You sure?');
+                      confirmDeleteRows() {
+                        return new Promise((resolve, reject) =&gt; {
+                          this.showConfirmDialg({
+                            title: 'Delete all selected records?',
+                            onApprove: resolve,
+                            onDeny: reject,
+                          });
+                        });
                       }
                       ...
                     }
                     ...
+                    </code></pre>
+                    <pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/example.hbs --&gt;
+                    {{flexberry-objectlistview
+                      ...
+                      confirmDeleteRows=(action "confirmDeleteRows")
+                      ...
+                    }}
                     </code></pre>
                     
                                 </div>
@@ -2299,7 +2311,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1347"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1347</code></a>
+                            <a href="../files/addon_components_flexberry-objectlistview.js.html#l1359"><code>addon&#x2F;components&#x2F;flexberry-objectlistview.js:1359</code></a>
                             </p>
                     
                     

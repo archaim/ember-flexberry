@@ -781,6 +781,81 @@ export default folv.extend(
   filterByAnyMatch: &#x27;filterByAnyMatch&#x27;,
 
   /**
+    Hook that can be used to confirm delete row.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/controllers/example.js
+      ...
+      actions: {
+        ...
+        confirmDeleteRow(record) {
+          return new Promise((resolve, reject) =&gt; {
+            this.showConfirmDialg({
+              title: &#x60;Delete an object with the ID &#x27;${record.get(&#x27;id&#x27;)}&#x27;?&#x60;,
+              onApprove: resolve,
+              onDeny: reject,
+            });
+          });
+        }
+        ...
+      }
+      ...
+      &#x60;&#x60;&#x60;
+
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/example.hbs --&gt;
+      {{flexberry-objectlistview
+        ...
+        confirmDeleteRow=(action &quot;confirmDeleteRow&quot;)
+        ...
+      }}
+      &#x60;&#x60;&#x60;
+
+    @method confirmDeleteRow
+    @param {DS.Model} record The record to be deleted.
+    @return {Boolean|Promise} If &#x60;true&#x60;, then delete row, if &#x60;Promise&#x60;, then delete row after successful resolve, else cancel.
+  */
+  confirmDeleteRow: undefined,
+
+  /**
+    Hook that can be used to confirm delete rows.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/controllers/example.js
+      ...
+      actions: {
+        ...
+        confirmDeleteRows() {
+          return new Promise((resolve, reject) =&gt; {
+            this.showConfirmDialg({
+              title: &#x27;Delete all selected records?&#x27;,
+              onApprove: resolve,
+              onDeny: reject,
+            });
+          });
+        }
+        ...
+      }
+      ...
+      &#x60;&#x60;&#x60;
+
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/example.hbs --&gt;
+      {{flexberry-objectlistview
+        ...
+        confirmDeleteRows=(action &quot;confirmDeleteRows&quot;)
+        ...
+      }}
+      &#x60;&#x60;&#x60;
+
+    @method confirmDeleteRows
+    @return {Boolean|Promise} If &#x60;true&#x60;, then delete row, if &#x60;Promise&#x60;, then delete row after successful resolve, else cancel.
+  */
+  confirmDeleteRows: undefined,
+
+  /**
     Hook for configurate rows.
 
     @example
