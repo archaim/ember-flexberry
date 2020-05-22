@@ -4015,8 +4015,10 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
     })
   });
 });
-define('dummy/controllers/components-examples/flexberry-groupedit/configurate-row-example', ['exports', 'ember', 'ember-flexberry/controllers/edit-form'], function (exports, _ember, _emberFlexberryControllersEditForm) {
+define('dummy/controllers/components-examples/flexberry-groupedit/configurate-row-example', ['exports', 'ember', 'ember-flexberry/controllers/edit-form', 'ember-i18n'], function (exports, _ember, _emberFlexberryControllersEditForm, _emberI18n) {
   exports['default'] = _emberFlexberryControllersEditForm['default'].extend({
+
+    title: (0, _emberI18n.translationMacro)('forms.application.delete-rows-modal-dialog.delete-rows-caption'),
 
     /**
       Configurate rows 'flexberry-groupedit' component by address.
@@ -4046,9 +4048,35 @@ define('dummy/controllers/components-examples/flexberry-groupedit/configurate-ro
         if (record.get('flag') === this.get('configurateRowByFlag')) {
           _ember['default'].set(rowConfig, 'canBeDeleted', false);
         }
+      },
+
+      /**
+        Confirm delete rows.
+         @param {Object} data Row data.
+      */
+      confirmDeleteRows: function confirmDeleteRows(data) {
+        var _this = this;
+
+        return new _ember['default'].RSVP.Promise(function (resolve, reject) {
+          _this.set('approveDeleting', resolve);
+          _this.set('denyDeleting', reject);
+
+          _this.send('showModalDialog', 'delete-rows-modal-dialog', {
+            controller: 'components-examples/flexberry-groupedit/configurate-row-example'
+          });
+        });
+      },
+
+      /**
+        Close modal dialog and clear actions.
+      */
+      closeModalDialog: function closeModalDialog() {
+        this.set('approveDeleting', null);
+        this.set('denyDeleting', null);
+
+        this.send('removeModalDialog');
       }
     }
-
   });
 });
 define('dummy/controllers/components-examples/flexberry-groupedit/custom-buttons-example', ['exports', 'ember', 'ember-flexberry/controllers/edit-form'], function (exports, _ember, _emberFlexberryControllersEditForm) {
@@ -13979,6 +14007,13 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
           }
         },
 
+        'delete-rows-modal-dialog': {
+          'confirm-button-caption': 'Delete',
+          'cancel-button-caption': 'Cancel',
+          'delete-row-caption': 'Delete row ?',
+          'delete-rows-caption': 'Delete selected rows ?'
+        },
+
         'footer': {
           'application-name': 'Test stand for ember-flexberry',
           'application-version': {
@@ -14600,7 +14635,8 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
             'enable-button-name': 'Enable adjacent button'
           },
           'configurate-row-example': {
-            'caption': 'Flexberry-groupedit. Configurate rows'
+            'caption': 'Flexberry-groupedit. Configurate rows',
+            'confirm': 'Are you sure ?'
           },
           'model-update-example': {
             'caption': 'Flexberry-groupedit. Model update example',
@@ -15212,6 +15248,13 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
           'logout': {
             'caption': 'Выход'
           }
+        },
+
+        'delete-rows-modal-dialog': {
+          'confirm-button-caption': 'Удалить',
+          'cancel-button-caption': 'Отмена',
+          'delete-row-caption': 'Удалить строку ?',
+          'delete-rows-caption': 'Удалить выбранные строки ?'
         },
 
         'footer': {
@@ -15839,7 +15882,8 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
             'enable-button-name': 'Включить соседнюю кнопку'
           },
           'configurate-row-example': {
-            'caption': 'Flexberry-groupedit. Настройка строк'
+            'caption': 'Flexberry-groupedit. Настройка строк',
+            'confirm': 'Вы уверены ?'
           },
           'model-update-example': {
             'caption': 'Flexberry-groupedit. Обновление модели',
@@ -28879,7 +28923,7 @@ define("dummy/templates/components-examples/flexberry-groupedit/configurate-row-
             "column": 0
           },
           "end": {
-            "line": 26,
+            "line": 27,
             "column": 0
           }
         },
@@ -28925,7 +28969,7 @@ define("dummy/templates/components-examples/flexberry-groupedit/configurate-row-
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-groupedit.configurate-row-example.caption"], [], ["loc", [null, [1, 22], [1, 107]]]], ["inline", "flexberry-groupedit", [], ["componentName", "aggregatorDetailsGroupedit", "content", ["subexpr", "@mut", [["get", "model.details", ["loc", [null, [6, 16], [6, 29]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection.attributes.details", ["loc", [null, [7, 24], [7, 58]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [8, 20], [8, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [9, 17], [9, 25]]]]], [], []], "allowColumnResize", false, "createNewButton", true, "deleteButton", true, "showAsteriskInRow", true, "showCheckBoxInRow", true, "showDeleteButtonInRow", true, "rowClickable", false, "immediateDelete", false, "editOnSeperateRoute", false, "searchForContentChange", ["subexpr", "@mut", [["get", "searchForContentChange", ["loc", [null, [19, 31], [19, 53]]]]], [], []], "orderable", false, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [21, 17], [21, 25]]]]], [], []], "configurateRow", ["subexpr", "action", ["configurateRow"], [], ["loc", [null, [22, 23], [22, 48]]]]], ["loc", [null, [4, 4], [23, 8]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-groupedit.configurate-row-example.caption"], [], ["loc", [null, [1, 22], [1, 107]]]], ["inline", "flexberry-groupedit", [], ["componentName", "aggregatorDetailsGroupedit", "content", ["subexpr", "@mut", [["get", "model.details", ["loc", [null, [6, 16], [6, 29]]]]], [], []], "modelProjection", ["subexpr", "@mut", [["get", "modelProjection.attributes.details", ["loc", [null, [7, 24], [7, 58]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [8, 20], [8, 31]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [9, 17], [9, 25]]]]], [], []], "confirmDeleteRows", ["subexpr", "action", ["confirmDeleteRows"], [], ["loc", [null, [10, 26], [10, 54]]]], "allowColumnResize", false, "createNewButton", true, "deleteButton", true, "showAsteriskInRow", true, "showCheckBoxInRow", true, "showDeleteButtonInRow", true, "rowClickable", false, "immediateDelete", false, "editOnSeperateRoute", false, "searchForContentChange", ["subexpr", "@mut", [["get", "searchForContentChange", ["loc", [null, [20, 31], [20, 53]]]]], [], []], "orderable", false, "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [22, 17], [22, 25]]]]], [], []], "configurateRow", ["subexpr", "action", ["configurateRow"], [], ["loc", [null, [23, 23], [23, 48]]]]], ["loc", [null, [4, 4], [24, 8]]]]],
       locals: [],
       templates: []
     };
@@ -58078,6 +58122,122 @@ define("dummy/templates/components/ui-radio", ["exports"], function (exports) {
     };
   })());
 });
+define("dummy/templates/delete-rows-modal-dialog", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": {
+            "name": "triple-curlies"
+          },
+          "revision": "Ember@2.4.6",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 20,
+              "column": 0
+            }
+          },
+          "moduleName": "dummy/templates/delete-rows-modal-dialog.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "class", "actions");
+          var el2 = dom.createTextNode("\n    ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("div");
+          dom.setAttribute(el2, "class", "ui primary approve large button");
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n    ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n    ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("div");
+          dom.setAttribute(el2, "class", "ui cancel large button");
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n    ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n  ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element0 = dom.childAt(fragment, [1]);
+          var morphs = new Array(2);
+          morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 1, 1);
+          morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 1, 1);
+          return morphs;
+        },
+        statements: [["inline", "t", ["forms.application.delete-rows-modal-dialog.confirm-button-caption"], [], ["loc", [null, [14, 6], [14, 79]]]], ["inline", "t", ["forms.application.delete-rows-modal-dialog.cancel-button-caption"], [], ["loc", [null, [17, 6], [17, 78]]]]],
+        locals: [],
+        templates: []
+      };
+    })();
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["wrong-type"]
+        },
+        "revision": "Ember@2.4.6",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 20,
+            "column": 17
+          }
+        },
+        "moduleName": "dummy/templates/delete-rows-modal-dialog.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        dom.insertBoundary(fragment, 0);
+        dom.insertBoundary(fragment, null);
+        return morphs;
+      },
+      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "useOkButton", false, "useCloseButton", false, "close", ["subexpr", "action", ["closeModalDialog"], [], ["loc", [null, [5, 8], [5, 35]]]], "settings", ["subexpr", "hash", [], ["closable", false, "onApprove", ["subexpr", "action", [["get", "approveDeleting", ["loc", [null, [8, 22], [8, 37]]]]], [], ["loc", [null, [8, 14], [8, 38]]]], "onDeny", ["subexpr", "action", [["get", "denyDeleting", ["loc", [null, [9, 19], [9, 31]]]]], [], ["loc", [null, [9, 11], [9, 32]]]]], ["loc", [null, [6, 11], [10, 3]]]]], 0, null, ["loc", [null, [1, 0], [20, 17]]]]],
+      locals: [],
+      templates: [child0]
+    };
+  })());
+});
 define("dummy/templates/ember-flexberry-dummy-application-user-edit", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     var child0 = (function () {
@@ -71703,7 +71863,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.4.0+dc54eeb6"});
 }
 
 /* jshint ignore:end */

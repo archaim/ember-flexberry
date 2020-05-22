@@ -924,7 +924,7 @@ export default FlexberryBaseComponent.extend({
       ...
       actions: {
         ...
-        confirmDeleteRow() {
+        confirmDeleteRow(data) {
           return confirm(&#x27;You sure?&#x27;);
         }
         ...
@@ -933,6 +933,7 @@ export default FlexberryBaseComponent.extend({
       &#x60;&#x60;&#x60;
 
     @method confirmDeleteRow
+    @param {Object} data selected row data.
     @return {Boolean} If &#x60;true&#x60; then delete row, else cancel.
   */
   confirmDeleteRow: undefined,
@@ -955,7 +956,7 @@ export default FlexberryBaseComponent.extend({
       ...
       actions: {
         ...
-        confirmDeleteRows() {
+        confirmDeleteRows(data) {
           return confirm(&#x27;You sure?&#x27;);
         }
         ...
@@ -964,6 +965,7 @@ export default FlexberryBaseComponent.extend({
       &#x60;&#x60;&#x60;
 
     @method confirmDeleteRows
+    @param {Object} data selected rows data.
     @return {Boolean} If &#x60;true&#x60; then delete selected rows, else cancel.
   */
   confirmDeleteRows: undefined,

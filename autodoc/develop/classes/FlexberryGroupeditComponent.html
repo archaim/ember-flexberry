@@ -813,7 +813,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-groupedit.js.html#l756"><code>addon&#x2F;components&#x2F;flexberry-groupedit.js:756</code></a>
+                            <a href="../files/addon_components_flexberry-groupedit.js.html#l758"><code>addon&#x2F;components&#x2F;flexberry-groupedit.js:758</code></a>
                             </p>
                     
                     
@@ -910,7 +910,13 @@
                     <div id="method_confirmDeleteRow" class="method item">
                         <h3 class="name"><code>confirmDeleteRow</code></h3>
                     
-                            <span class="paren">()</span>
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>data</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
                     
                             <span class="returns-inline">
                                 <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -937,6 +943,23 @@
                     
                         </div>
                     
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">data</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>selected row data.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
                     
                             <div class="returns">
                                 <h4>Returns:</h4>
@@ -963,7 +986,7 @@
                     ...
                     actions: {
                       ...
-                      confirmDeleteRow() {
+                      confirmDeleteRow(data) {
                         return confirm('You sure?');
                       }
                       ...
@@ -977,7 +1000,13 @@
                     <div id="method_confirmDeleteRows" class="method item">
                         <h3 class="name"><code>confirmDeleteRows</code></h3>
                     
-                            <span class="paren">()</span>
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>data</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
                     
                             <span class="returns-inline">
                                 <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -992,7 +1021,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/addon_components_flexberry-groupedit.js.html#l725"><code>addon&#x2F;components&#x2F;flexberry-groupedit.js:725</code></a>
+                            <a href="../files/addon_components_flexberry-groupedit.js.html#l726"><code>addon&#x2F;components&#x2F;flexberry-groupedit.js:726</code></a>
                             </p>
                     
                     
@@ -1004,6 +1033,23 @@
                     
                         </div>
                     
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">data</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>selected rows data.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
                     
                             <div class="returns">
                                 <h4>Returns:</h4>
@@ -1030,7 +1076,7 @@
                     ...
                     actions: {
                       ...
-                      confirmDeleteRows() {
+                      confirmDeleteRows(data) {
                         return confirm('You sure?');
                       }
                       ...
