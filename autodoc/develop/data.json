@@ -18683,17 +18683,6 @@
         {
             "file": "addon/controllers/lookup-dialog.js",
             "line": 36,
-            "description": "Size of Semantic-UI modal.\n[More info](http://semantic-ui.com/modules/modal.html#size).\n\nPossible variants:\n- **small**\n- **large**\n- **fullscreen**",
-            "itemtype": "property",
-            "name": "sizeClass",
-            "type": "String",
-            "default": "'small'",
-            "class": "LookupDialogController",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "addon/controllers/lookup-dialog.js",
-            "line": 51,
             "description": "Current lookup selected record.\nIt is used to highlight selected record.",
             "itemtype": "property",
             "name": "currentLookupRow",
@@ -18703,7 +18692,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 60,
+            "line": 45,
             "description": "Set of properties to set for list commponent.",
             "itemtype": "property",
             "name": "customPropertiesData",
@@ -18713,7 +18702,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 68,
+            "line": 53,
             "description": "Type of current loaded data.",
             "itemtype": "property",
             "name": "modelType",
@@ -18723,7 +18712,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 76,
+            "line": 61,
             "description": "Name of projection data were loaded by.",
             "itemtype": "property",
             "name": "projectionName",
@@ -18733,7 +18722,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 84,
+            "line": 69,
             "description": "Predicate to limit loaded data by.",
             "itemtype": "property",
             "name": "predicate",
@@ -18743,7 +18732,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 92,
+            "line": 77,
             "description": "Handler to call when parameters of loaded data changed (filter, currentPage, etc.).",
             "itemtype": "property",
             "name": "reloadDataHandler",
@@ -18753,7 +18742,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 100,
+            "line": 85,
             "description": "Context for handler of data reloading call.",
             "itemtype": "property",
             "name": "reloadContext",
@@ -18764,7 +18753,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 109,
+            "line": 94,
             "description": "Flag indicates whether to observe query parameters or they are not still initiated..",
             "itemtype": "property",
             "name": "reloadObserverIsActive",
@@ -18775,7 +18764,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 118,
+            "line": 103,
             "description": "Flag indicates whether to show hierarchical button if hierarchy is available.",
             "itemtype": "property",
             "name": "disableHierarchicalMode",
@@ -18786,7 +18775,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 127,
+            "line": 112,
             "description": "Service that triggers lookup events.",
             "itemtype": "property",
             "name": "lookupEventsService",
@@ -18796,7 +18785,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 136,
+            "line": 121,
             "description": "Handlers OLV row click, Save selected row to object master property and close modal window.",
             "itemtype": "method",
             "name": "actions.objectListViewRowClick",
@@ -18812,7 +18801,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 147,
+            "line": 132,
             "description": "Handlers create modal window action. Save created window, to have opportunity to close it later.",
             "itemtype": "method",
             "name": "actions.createdModalDialog",
@@ -18828,7 +18817,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 158,
+            "line": 143,
             "description": "Handlers correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "actions.routeWillTransition",
@@ -18837,7 +18826,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 168,
+            "line": 153,
             "description": "Save filters and refresh list.",
             "itemtype": "method",
             "name": "actions.applyFilters",
@@ -18853,7 +18842,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 179,
+            "line": 164,
             "description": "Reset filters and refresh list.",
             "itemtype": "method",
             "name": "actions.resetFilters",
@@ -18862,7 +18851,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 189,
+            "line": 174,
             "description": "Refresh list with actual parameters.",
             "itemtype": "method",
             "name": "actions.refreshList",
@@ -18871,7 +18860,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 241,
+            "line": 225,
             "description": "Redirect actions into route.",
             "itemtype": "method",
             "name": "actions.loadRecords",
@@ -18902,7 +18891,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 259,
+            "line": 243,
             "description": "It observes query parameters changing.\nIf query parameter (filter, current page, etc.) is changed then displayed data are reloaded.",
             "itemtype": "method",
             "name": "queryParametersChanged",
@@ -18911,7 +18900,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 271,
+            "line": 255,
             "description": "It clears current controller.\nIt has to be done before each use.",
             "itemtype": "method",
             "name": "clear",
@@ -18927,7 +18916,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 304,
+            "line": 290,
             "description": "Set master to corresponding property of editing object.",
             "itemtype": "method",
             "name": "_selectMaster",
@@ -18945,7 +18934,7 @@
         },
         {
             "file": "addon/controllers/lookup-dialog.js",
-            "line": 323,
+            "line": 309,
             "description": "Close current modal window if it exists.",
             "itemtype": "method",
             "name": "_closeModalDialog",
