@@ -2174,7 +2174,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/filther/folv-
   'use strict';
 
   (0, _executeFolvTest.executeTest)('check without operation filter', function (store, assert, app) {
-    assert.expect(4);
+    assert.expect(3);
     var path = 'components-acceptance-tests/flexberry-objectlistview/folv-filter';
     var modelName = 'ember-flexberry-dummy-suggestion';
     var filtreInsertOperation = '';
@@ -2221,8 +2221,6 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/filther/folv-
               }
             }
 
-            var dropdown = Ember.$('.flexberry-dropdown')[0];
-            assert.equal(dropdown.innerText, 'like', 'Filter select like operation if it is not specified');
             assert.equal(filtherResult.length >= 1, true, 'Filtered list is empty');
             assert.equal(successful, true, 'Filter successfully worked');
             done1();
@@ -5761,6 +5759,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/components-examples/flexberry-objectlistview/hierarchy-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/hierarchy-example.js should pass ESLint\n\n');
@@ -6694,6 +6697,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/ember-flexberry-dummy-suggestion-multi-list-edit/new.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/components-examples/flexberry-objectlistview/hierarchy-example.js', function (assert) {
@@ -8400,8 +8408,8 @@ define('dummy/tests/integration/components/flexberry-error-test', ['ember-qunit'
 
   (0, _emberQunit.test)('it renders', function (assert) {
     this.render(Ember.HTMLBars.template({
-      "id": "I1RspYd4",
-      "block": "{\"symbols\":[],\"statements\":[[1,[26,\"flexberry-error\",null,[[\"error\"],[[22,[\"error\"]]]]],false]],\"hasEval\":false}",
+      "id": "jAayP0on",
+      "block": "{\"symbols\":[],\"statements\":[[1,[26,\"flexberry-error\",null,[[\"error\",\"modalContext\"],[[22,[\"error\"]],\"body\"]]],false]],\"hasEval\":false}",
       "meta": {}
     }));
     this.set('error', new Error('Error, error, error...'));
@@ -11527,6 +11535,26 @@ define('dummy/tests/integration/components/object-list-view-test', ['ember-qunit
     });
   });
 });
+define('dummy/tests/integration/components/olv-filter-interval-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleForComponent)('olv-filter-interval', 'Integration | Component | olv filter interval', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template({
+      "id": "ZGoM5/ro",
+      "block": "{\"symbols\":[],\"statements\":[[1,[20,\"olv-filter-interval\"],false]],\"hasEval\":false}",
+      "meta": {}
+    }));
+
+    assert.equal(this.$().text().trim(), '');
+  });
+});
 define('dummy/tests/integration/components/ui-message-test', ['ember-qunit'], function (_emberQunit) {
   'use strict';
 
@@ -12355,6 +12383,11 @@ define('dummy/tests/tests.lint-test', [], function () {
   QUnit.test('integration/components/object-list-view-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/object-list-view-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('integration/components/olv-filter-interval-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/olv-filter-interval-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('integration/components/ui-message-test.js', function (assert) {
