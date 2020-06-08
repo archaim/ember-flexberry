@@ -15837,7 +15837,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1370,
+            "line": 1368,
             "description": "Restores the state of selected rows after updating the list.\n\nSee [EmberJS API](https://api.emberjs.com/).",
             "itemtype": "method",
             "name": "didUpdateAttrs",
@@ -15846,21 +15846,21 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1381,
+            "line": 1379,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "ObjectListViewComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1403,
+            "line": 1401,
             "description": "Called when the element of the view is going to be destroyed.\nFor more information see [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement) event of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "ObjectListViewComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1413,
+            "line": 1411,
             "description": "It reinits plugin for column resize.\nReinit is important for proper position of resize elements.",
             "itemtype": "method",
             "name": "_reinitResizablePlugin",
@@ -15871,7 +15871,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1471,
+            "line": 1469,
             "description": "It handles the end of getting user setting with column widths.",
             "itemtype": "method",
             "name": "_setColumnWidths",
@@ -15889,7 +15889,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1582,
+            "line": 1580,
             "description": "It handles the end of column resize.\nNew column widths are send to user settings service for saving.",
             "itemtype": "method",
             "name": "_afterColumnResize",
@@ -15907,7 +15907,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1614,
+            "line": 1612,
             "description": "This method returns property name for column.\nProperty name is got from atribute `data-olv-header-property-name` of column header.\nIf property name won't be found, exeption will be thrown.",
             "itemtype": "method",
             "name": "_getColumnPropertyName",
@@ -15929,7 +15929,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1637,
+            "line": 1635,
             "description": "Generate the columns.",
             "itemtype": "method",
             "name": "_generateColumns",
@@ -15940,7 +15940,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1694,
+            "line": 1692,
             "description": "Set current columns width for currentController.",
             "itemtype": "method",
             "name": "_setCurrentColumnsWidth",
@@ -15951,14 +15951,14 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1723,
+            "line": 1721,
             "description": "Create the key from locales.",
             "class": "ObjectListViewComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1751,
+            "line": 1749,
             "description": "Create the column.",
             "itemtype": "method",
             "name": "_createColumn",
@@ -15969,7 +15969,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1819,
+            "line": 1817,
             "description": "Add filter parameters for column.",
             "itemtype": "method",
             "name": "_addFilterForColumn",
@@ -15995,7 +15995,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1870,
+            "line": 1868,
             "description": "Return attribute of model.",
             "itemtype": "method",
             "name": "_getAttribute",
@@ -16020,7 +16020,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1897,
+            "line": 1895,
             "description": "Return available conditions for filter.",
             "itemtype": "method",
             "name": "_conditionsByType",
@@ -16040,7 +16040,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1948,
+            "line": 1946,
             "description": "Return object with parameters for component.",
             "itemtype": "method",
             "name": "_getFilterComponent",
@@ -16060,7 +16060,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 1998,
+            "line": 1996,
             "description": "Alter filter component depending on condition chosen by user.",
             "access": "private",
             "tagname": "",
@@ -16087,7 +16087,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2019,
+            "line": 2017,
             "description": "Sets content for component.",
             "itemtype": "method",
             "name": "_setContent",
@@ -16108,7 +16108,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2071,
+            "line": 2069,
             "description": "Refresh list with the entered filter.",
             "itemtype": "method",
             "name": "_refreshList",
@@ -16126,7 +16126,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2109,
+            "line": 2107,
             "description": "Get the row by key.",
             "itemtype": "method",
             "name": "_getRowByKey",
@@ -16137,7 +16137,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2132,
+            "line": 2130,
             "description": "Get the key of model.",
             "itemtype": "method",
             "name": "_getModelKey",
@@ -16148,7 +16148,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2147,
+            "line": 2145,
             "description": "Remove the model with key.",
             "itemtype": "method",
             "name": "_removeModelWithKey",
@@ -16159,7 +16159,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2171,
+            "line": 2169,
             "description": "Adds detail model to current model, generates unique key for detail model.\nIf record is deleted then `undefined` is returned and record isn't added to list.",
             "itemtype": "method",
             "name": "_addModel",
@@ -16181,7 +16181,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2226,
+            "line": 2224,
             "description": "Adds row to component and calls click on row action if detail is edited on separate route.\nThis method is triggered on toolbar's add batton click.",
             "itemtype": "method",
             "name": "_addRow",
@@ -16199,7 +16199,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2255,
+            "line": 2253,
             "description": "Handler for \"delete all rows on all pages\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -16220,7 +16220,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2298,
+            "line": 2296,
             "description": "Actually delete the all records on all pages.",
             "itemtype": "method",
             "name": "_actualDeleteAllRecords",
@@ -16248,7 +16248,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2342,
+            "line": 2340,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -16269,7 +16269,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2365,
+            "line": 2363,
             "description": "Delete the record.",
             "itemtype": "method",
             "name": "_deleteRecord",
@@ -16292,7 +16292,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2405,
+            "line": 2403,
             "description": "Actually delete the record.",
             "itemtype": "method",
             "name": "_actualDeleteRecord",
@@ -16315,7 +16315,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2437,
+            "line": 2435,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -16342,7 +16342,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2460,
+            "line": 2458,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -16360,7 +16360,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2478,
+            "line": 2476,
             "description": "Set the active record.",
             "itemtype": "method",
             "name": "_setActiveRecord",
@@ -16378,7 +16378,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2506,
+            "line": 2504,
             "description": "It observes changes of flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}searchForContentChange{{/crossLink}}.\n\nIf flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}{{/crossLink}} changes its value\nobserver on component content is set otherwise it is removed.",
             "itemtype": "method",
             "name": "_searchForContentChange",
@@ -16389,7 +16389,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2524,
+            "line": 2522,
             "description": "Schedules the `_contentDidChange` function to run once in the `render` queue.",
             "access": "private",
             "tagname": "",
@@ -16400,7 +16400,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2534,
+            "line": 2532,
             "description": "It observes changes of model's data that are displayed on component\nif flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}{{/crossLink}} is enabled.\n\nProperty changing displayes automatically.\nComponent compares current detail array with used on component,\nremoves deleted and marked as deleted on model level records, adds created on model level records.",
             "itemtype": "method",
             "name": "_contentDidChange",
@@ -16411,7 +16411,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2588,
+            "line": 2586,
             "description": "Get attributes name from model.",
             "itemtype": "method",
             "name": "_getAttributesName",
@@ -16422,7 +16422,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2605,
+            "line": 2603,
             "description": "Restore selected records after refreshing or transition to other page.",
             "itemtype": "method",
             "name": "_restoreSelectedRecords",
@@ -16433,7 +16433,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2644,
+            "line": 2642,
             "description": "Select/Unselect all records on all pages.",
             "itemtype": "method",
             "name": "_selectAll",
@@ -16444,7 +16444,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2682,
+            "line": 2680,
             "description": "It observes changes of flag {{#crossLink \"FlexberryObjectlistviewComponent/showFilters:property\"}}showFilters{{/crossLink}}.\n\nIf flag {{#crossLink \"FlexberryObjectlistviewComponent/showFilters:property\"}}{{/crossLink}} changes its value\nand flag is true trigger scroll.",
             "itemtype": "method",
             "name": "_showFiltersObserver",
@@ -16455,7 +16455,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2700,
+            "line": 2698,
             "description": "Set style of table parent.",
             "itemtype": "method",
             "name": "_setParent",
@@ -16466,7 +16466,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2742,
+            "line": 2740,
             "description": "Set fixed cells backgrounds.",
             "itemtype": "method",
             "name": "_setBackground",
@@ -16477,7 +16477,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2766,
+            "line": 2764,
             "description": "Fixed table head.",
             "itemtype": "method",
             "name": "_setBackground",
@@ -16488,7 +16488,7 @@
         },
         {
             "file": "addon/components/object-list-view.js",
-            "line": 2814,
+            "line": 2812,
             "description": "Move all selected records.",
             "itemtype": "method",
             "name": "_moveRow",
@@ -27265,15 +27265,15 @@
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " addon/components/object-list-view.js:1381"
+            "line": " addon/components/object-list-view.js:1379"
         },
         {
             "message": "Missing item type\nCalled when the element of the view is going to be destroyed.\nFor more information see [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement) event of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " addon/components/object-list-view.js:1403"
+            "line": " addon/components/object-list-view.js:1401"
         },
         {
             "message": "Missing item type\nCreate the key from locales.",
-            "line": " addon/components/object-list-view.js:1723"
+            "line": " addon/components/object-list-view.js:1721"
         },
         {
             "message": "Missing item type\nStart of interval",

@@ -1517,8 +1517,7 @@ export default FlexberryBaseComponent.extend(
 
           if (renderedRowIndex &gt;= contentLength) {
             // The last menu needs will be up.
-            this.$(&#x27;.object-list-view-menu .ui.dropdown&#x27;).removeClass(&#x27;bottom&#x27;);
-            this.$(&#x27;.object-list-view-menu:last .ui.dropdown&#x27;).addClass(&#x27;bottom&#x27;);
+            this.$(&#x27;.object-list-view-menu .ui.dropdown&#x27;).removeClass(&#x27;bottom&#x27;).not(&#x27;:first&#x27;).last().addClass(&#x27;bottom&#x27;);
             this.$(&#x27;.object-list-view-menu &gt; .ui.dropdown&#x27;).dropdown();
 
             // Remove long loading spinners.
@@ -1567,8 +1566,7 @@ export default FlexberryBaseComponent.extend(
       }
 
       // The last menu needs will be up.
-      this.$(&#x27;.object-list-view-menu .ui.dropdown&#x27;).removeClass(&#x27;bottom&#x27;);
-      this.$(&#x27;.object-list-view-menu:last .ui.dropdown&#x27;).addClass(&#x27;bottom&#x27;);
+      this.$(&#x27;.object-list-view-menu .ui.dropdown&#x27;).removeClass(&#x27;bottom&#x27;).not(&#x27;:first&#x27;).last().addClass(&#x27;bottom&#x27;);
       this.$(&#x27;.object-list-view-menu &gt; .ui.dropdown&#x27;).dropdown();
     }
 
