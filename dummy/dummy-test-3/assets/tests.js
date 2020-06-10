@@ -8795,8 +8795,8 @@ define('dummy/tests/integration/components/flexberry-groupedit-test', ['ember-te
       _this.set('componentName', testComponentName);
       _this.set('searchForContentChange', true);
       _this.render(Ember.HTMLBars.template({
-        "id": "ieiQ6Lvy",
-        "block": "{\"symbols\":[],\"statements\":[[0,\"\\n        \"],[1,[26,\"flexberry-groupedit\",null,[[\"content\",\"componentName\",\"modelProjection\",\"searchForContentChange\"],[[22,[\"model\",\"details\"]],[22,[\"componentName\"]],[22,[\"proj\",\"attributes\",\"details\"]],[22,[\"searchForContentChange\"]]]]],false]],\"hasEval\":false}",
+        "id": "/LNc+cH4",
+        "block": "{\"symbols\":[],\"statements\":[[0,\"\\n        \"],[1,[26,\"flexberry-groupedit\",null,[[\"content\",\"componentName\",\"modelProjection\",\"searchForContentChange\",\"showAsteriskInRow\"],[[22,[\"model\",\"details\"]],[22,[\"componentName\"]],[22,[\"proj\",\"attributes\",\"details\"]],[22,[\"searchForContentChange\"]],true]]],false]],\"hasEval\":false}",
         "meta": {}
       }));
 
