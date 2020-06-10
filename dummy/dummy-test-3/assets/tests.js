@@ -11474,7 +11474,7 @@ define('dummy/tests/integration/components/modal-dialog-test', ['ember-qunit', '
     }));
 
     return (0, _wait.default)().then(function () {
-      assert.equal(_this2.$('.description').text().trim(), 'template block text');
+      assert.equal(_this2.$('.content').text().trim(), 'template block text');
     });
   });
 
