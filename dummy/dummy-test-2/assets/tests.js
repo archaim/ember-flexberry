@@ -4961,17 +4961,15 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-detail-delet
       var $validationLablesContainer = Ember.$('.ember-view.ui.basic.label');
       assert.equal($validationLablesContainer.length, 11, 'All components have default value');
 
-      var $validationFlexberryCheckboxs = Ember.$('.flexberry-checkbox');
-      var $validationFlexberryCheckbox = Ember.$($validationFlexberryCheckboxs[1]);
-      var $validationFlexberryOLVDeleteButton = Ember.$(Ember.$('.ui.disabled.button')[1]);
-
       // Delete detail.
-      Ember.run($validationFlexberryCheckbox, $validationFlexberryCheckbox.click);
-      Ember.run($validationFlexberryOLVDeleteButton, $validationFlexberryOLVDeleteButton.click);
+      click('.groupedit-new-row .flexberry-checkbox:first');
+      click('.groupedit-toolbar .ui-delete');
 
-      // Сounting the number of validationmessage = 8 afther detail delete.
-      $validationLablesContainer = Ember.$('.ember-view.ui.basic.label');
-      assert.equal($validationLablesContainer.length, 8, 'Detail was deleted without errors');
+      andThen(function () {
+        // Сounting the number of validationmessage = 8 afther detail delete.
+        $validationLablesContainer = Ember.$('.ember-view.ui.basic.label');
+        assert.equal($validationLablesContainer.length, 8, 'Detail was deleted without errors');
+      });
     });
   });
   /* eslint-enable no-unused-vars */
