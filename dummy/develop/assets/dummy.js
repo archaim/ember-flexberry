@@ -9910,12 +9910,45 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-edit', ['exports', 'e
     parentRoute: 'ember-flexberry-dummy-suggestion-list',
 
     /**
+      Available file extensions for upload. In MIME type format.
+       @property availableMimeTypes
+      @type String
+    */
+    availableMimeTypes: 'text/plain,video/mp4',
+
+    /**
+      Maximum file size in bytes for uploading files.
+      It should be greater then 0 and less or equal then APP.components.file.maxUploadFileSize from application config\environment.
+      If null or undefined, then APP.components.file.maxUploadFileSize from application config\environment will be used.
+       @property maxUploadFileSize
+      @type Number
+    */
+    maxUploadFileSize: 10,
+
+    /**
+      Maximum file size unit. May be 'Bt' 'Kb' 'Mb' or 'Gb'.
+       @property maxUploadFileSizeUnit
+      @type String
+    */
+    maxUploadFileSizeUnit: 'Mb',
+
+    /**
       Name of model.comments edit route.
        @property commentsEditRoute
       @type String
       @default 'ember-flexberry-dummy-comment-edit'
      */
     commentsEditRoute: 'ember-flexberry-dummy-comment-edit',
+
+    /**
+      Function for check uploaded file type.
+       @method checkFileType
+      @param {String} fileType file type as MIME TYPES.
+      @param {String} accept available MIME TYPES.
+     */
+    checkFileType: function checkFileType(fileType, accept) {
+      return true;
+    },
 
     actions: {
 
@@ -9974,6 +10007,16 @@ define('dummy/controllers/ember-flexberry-dummy-suggestion-edit', ['exports', 'e
             cellComponent.componentProperties = {
               readonly: true
             };
+            break;
+
+          case 'ember-flexberry-dummy-suggestion-file+file':
+            cellComponent.componentProperties = {
+              accept: this.get('availableMimeTypes'),
+              isValidTypeFileCustom: this.get('checkFileType'),
+              maxUploadFileSize: this.get('maxUploadFileSize'),
+              maxUploadFileSizeUnit: this.get('maxUploadFileSizeUnit')
+            };
+            break;
         }
       }
 
@@ -12699,6 +12742,19 @@ define('dummy/ember-flexberry/tests/modules/ember-flexberry/utils/extended-set.j
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'modules/ember-flexberry/utils/extended-set.js should pass jshint.');
+  });
+});
+define('dummy/ember-flexberry/tests/modules/ember-flexberry/utils/file-size-units-converter.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry/utils');
+  test('modules/ember-flexberry/utils/file-size-units-converter.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry/utils/file-size-units-converter.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry/tests/modules/ember-flexberry/utils/file-size-units-converter.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry/utils/file-size-units-converter.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry/utils/file-size-units-converter.js should pass jshint.');
   });
 });
 define('dummy/ember-flexberry/tests/modules/ember-flexberry/utils/filter.jscs-test', ['exports'], function (exports) {
@@ -47274,19 +47330,20 @@ define("dummy/templates/components/flexberry-file", ["exports"], function (expor
         var element7 = dom.childAt(fragment, [0]);
         var element8 = dom.childAt(element7, [1]);
         var element9 = dom.childAt(fragment, [5]);
-        var morphs = new Array(9);
+        var morphs = new Array(10);
         morphs[0] = dom.createAttrMorph(element7, 'class');
-        morphs[1] = dom.createAttrMorph(element8, 'id');
-        morphs[2] = dom.createMorphAt(element7, 4, 4);
-        morphs[3] = dom.createMorphAt(element7, 6, 6);
-        morphs[4] = dom.createMorphAt(element7, 7, 7);
-        morphs[5] = dom.createMorphAt(fragment, 2, 2, contextualElement);
-        morphs[6] = dom.createMorphAt(dom.childAt(element9, [1]), 3, 3);
-        morphs[7] = dom.createMorphAt(dom.childAt(element9, [3, 1]), 1, 1);
-        morphs[8] = dom.createMorphAt(dom.childAt(element9, [5, 1, 1]), 3, 3);
+        morphs[1] = dom.createAttrMorph(element8, 'accept');
+        morphs[2] = dom.createAttrMorph(element8, 'id');
+        morphs[3] = dom.createMorphAt(element7, 4, 4);
+        morphs[4] = dom.createMorphAt(element7, 6, 6);
+        morphs[5] = dom.createMorphAt(element7, 7, 7);
+        morphs[6] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        morphs[7] = dom.createMorphAt(dom.childAt(element9, [1]), 3, 3);
+        morphs[8] = dom.createMorphAt(dom.childAt(element9, [3, 1]), 1, 1);
+        morphs[9] = dom.createMorphAt(dom.childAt(element9, [5, 1, 1]), 3, 3);
         return morphs;
       },
-      statements: [["attribute", "class", ["concat", ["ui ", ["get", "inputClass", ["loc", [null, [1, 17], [1, 27]]]], " action input"]]], ["attribute", "id", ["get", "_fileInputId", ["loc", [null, [2, 41], [2, 53]]]]], ["inline", "input", [], ["type", "text", "class", "flexberry-file-filename-input", "readonly", "readonly", "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [8, 16], [8, 27]]]]], [], []], "value", ["subexpr", "get", [["get", "this", ["loc", [null, [9, 15], [9, 19]]]], "_fileName"], [], ["loc", [null, [9, 10], [9, 32]]]]], ["loc", [null, [4, 2], [10, 4]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [11, 12], [11, 20]]]]], [], 0, null, ["loc", [null, [11, 2], [37, 13]]]], ["block", "if", [["get", "_downloadButtonIsVisible", ["loc", [null, [38, 8], [38, 32]]]]], [], 1, null, ["loc", [null, [38, 2], [45, 9]]]], ["block", "if", [["subexpr", "and", [["get", "showPreview", ["loc", [null, [47, 11], [47, 22]]]], ["get", "_hasFile", ["loc", [null, [47, 23], [47, 31]]]]], [], ["loc", [null, [47, 6], [47, 32]]]]], [], 2, null, ["loc", [null, [47, 0], [61, 7]]]], ["content", "_errorModalDialogCaption", ["loc", [null, [68, 4], [68, 32]]]], ["content", "_errorModalDialogContent", ["loc", [null, [72, 6], [72, 34]]]], ["inline", "t", ["components.flexberry-file.error-dialog-ok-button-caption"], [], ["loc", [null, [79, 8], [79, 72]]]]],
+      statements: [["attribute", "class", ["concat", ["ui ", ["get", "inputClass", ["loc", [null, [1, 17], [1, 27]]]], " action input"]]], ["attribute", "accept", ["get", "accept", ["loc", [null, [2, 45], [2, 51]]]]], ["attribute", "id", ["get", "_fileInputId", ["loc", [null, [2, 59], [2, 71]]]]], ["inline", "input", [], ["type", "text", "class", "flexberry-file-filename-input", "readonly", "readonly", "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [8, 16], [8, 27]]]]], [], []], "value", ["subexpr", "get", [["get", "this", ["loc", [null, [9, 15], [9, 19]]]], "_fileName"], [], ["loc", [null, [9, 10], [9, 32]]]]], ["loc", [null, [4, 2], [10, 4]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [11, 12], [11, 20]]]]], [], 0, null, ["loc", [null, [11, 2], [37, 13]]]], ["block", "if", [["get", "_downloadButtonIsVisible", ["loc", [null, [38, 8], [38, 32]]]]], [], 1, null, ["loc", [null, [38, 2], [45, 9]]]], ["block", "if", [["subexpr", "and", [["get", "showPreview", ["loc", [null, [47, 11], [47, 22]]]], ["get", "_hasFile", ["loc", [null, [47, 23], [47, 31]]]]], [], ["loc", [null, [47, 6], [47, 32]]]]], [], 2, null, ["loc", [null, [47, 0], [61, 7]]]], ["content", "_errorModalDialogCaption", ["loc", [null, [68, 4], [68, 32]]]], ["content", "_errorModalDialogContent", ["loc", [null, [72, 6], [72, 34]]]], ["inline", "t", ["components.flexberry-file.error-dialog-ok-button-caption"], [], ["loc", [null, [79, 8], [79, 72]]]]],
       locals: [],
       templates: [child0, child1, child2]
     };
@@ -71907,7 +71964,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.6"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.6+41589bbb"});
 }
 
 /* jshint ignore:end */

@@ -220,6 +220,7 @@
 import Ember from &#x27;ember&#x27;;
 import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 import { translationMacro as t } from &#x27;ember-i18n&#x27;;
+import { getSizeInUnits } from &#x27;../utils/file-size-units-converter&#x27;;
 
 /**
   Flexberry file component.
@@ -233,6 +234,20 @@ import { translationMacro as t } from &#x27;ember-i18n&#x27;;
   @extends FlexberryBaseComponent
 */
 export default FlexberryBaseComponent.extend({
+  /**
+    Available file size units with its captions.
+
+    @property _fileSizeUnits
+    @type Object
+    @private
+  */
+  _fileSizeUnits: {
+    Bt: t(&#x27;components.flexberry-file.error-dialog-size-unit-bt&#x27;),
+    Kb: t(&#x27;components.flexberry-file.error-dialog-size-unit-kb&#x27;),
+    Mb: t(&#x27;components.flexberry-file.error-dialog-size-unit-mb&#x27;),
+    Gb: t(&#x27;components.flexberry-file.error-dialog-size-unit-gb&#x27;)
+  },
+
   /**
     Selected file content. It can be used as source for image tag in order to view preview.
 
@@ -657,6 +672,15 @@ export default FlexberryBaseComponent.extend({
   maxUploadFileSize: undefined,
 
   /**
+    Maximum file size unit. May be &#x27;Bt&#x27; &#x27;Kb&#x27; &#x27;Mb&#x27; or &#x27;Gb&#x27;.
+
+    @property maxUploadFileSizeUnit
+    @type String
+    @default &#x27;Bt&#x27;
+  */
+  maxUploadFileSizeUnit: &#x27;Bt&#x27;,
+
+  /**
     Text to be displayed instead of file name, if file has not been selected.
 
     @property placeholder
@@ -709,6 +733,25 @@ export default FlexberryBaseComponent.extend({
     @default null
   */
   previewSettings: null,
+
+  /**
+    Available file extensions for upload. In MIME type format.
+    See [the documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) for more details.
+
+    @property accept
+    @type String
+    @default undefined
+  */
+  accept: undefined,
+
+  /**
+    Function with custom check for type of uploaded file.
+
+    @property isValidTypeFileCustom
+    @type Function
+    @default null
+  */
+  isValidTypeFileCustom: null,
 
   /**
     External Base64 string
@@ -853,6 +896,16 @@ export default FlexberryBaseComponent.extend({
     // jQuery fileupload &#x27;add&#x27; callback.
     let onFileAdd = (e, uploadData) =&gt; {
       let selectedFile = uploadData &amp;&amp; uploadData.files &amp;&amp; uploadData.files.length &gt; 0 ? uploadData.files[0] : null;
+
+      const accept = this.get(&#x27;accept&#x27;);
+      const fileType = selectedFile.type;
+      const fileName = selectedFile.name;
+
+      if (!this._isValidTypeFile(fileType, accept)) {
+        this.showFileExtensionErrorModalDialog(fileName);
+        return;
+      }
+
       let maxUploadFileSize = this.get(&#x27;maxUploadFileSize&#x27;);
 
       if (!Ember.isNone(maxUploadFileSize)) {
@@ -860,9 +913,17 @@ export default FlexberryBaseComponent.extend({
           &#x60;Wrong value of flexberry-file \&#x60;maxUploadFileSize\&#x60; propery: \&#x60;${maxUploadFileSize}\&#x60;.&#x60; +
           &#x60; Allowed value is a number &gt;= 0.&#x60;, Ember.typeOf(maxUploadFileSize) === &#x27;number&#x27; &amp;&amp; maxUploadFileSize &gt;= 0);
 
+        let sizeUnit = this.get(&#x27;maxUploadFileSizeUnit&#x27;);
+        if (!(sizeUnit in this.get(&#x27;_fileSizeUnits&#x27;))) {
+          console.log(&#x27;Flexberry-file error, file max size wrong units assigned&#x27;);
+          sizeUnit = Object.keys(this.get(&#x27;_fileSizeUnits&#x27;))[0];
+        }
+
+        let fileSizeInUnits = getSizeInUnits(selectedFile.size, sizeUnit);
+
         // Prevent files greater then maxUploadFileSize.
-        if (selectedFile.size &gt; maxUploadFileSize) {
-          this.showFileSizeErrorModalDialog(selectedFile.name, selectedFile.size, maxUploadFileSize);
+        if (fileSizeInUnits &gt; maxUploadFileSize) {
+          this.showFileSizeErrorModalDialog(selectedFile.name, fileSizeInUnits, maxUploadFileSize, sizeUnit);
 
           // Break file upload.
           return;
@@ -1091,15 +1152,37 @@ export default FlexberryBaseComponent.extend({
     @param {String} fileName Added file name.
     @param {String} actualFileSize Actual size of added file.
     @param {String} maxFileSize Max file size allowed.
+    @param {String} sizeUnit Max file size unit.
     @returns {String} Error content.
   */
-  showFileSizeErrorModalDialog(fileName, actualFileSize, maxFileSize) {
+  showFileSizeErrorModalDialog(fileName, actualFileSize, maxFileSize, sizeUnit) {
     let i18n = this.get(&#x27;i18n&#x27;);
+    let actualFileSizeRoundedString = actualFileSize.toFixed(1);
     let errorCaption = i18n.t(&#x27;components.flexberry-file.add-file-error-caption&#x27;);
     let errorContent = i18n.t(&#x27;components.flexberry-file.file-too-big-error-message&#x27;, {
       fileName: fileName,
-      actualFileSize: actualFileSize,
+      actualFileSize: actualFileSizeRoundedString,
       maxFileSize: maxFileSize,
+      sizeUnit: sizeUnit
+    });
+
+    this.showErrorModalDialog(errorCaption, errorContent);
+
+    return errorContent;
+  },
+
+  /**
+    Shows file extension errors if there were some.
+
+    @method showFileExtensionErrorModalDialog
+    @param {String} fileName Added file name.
+    @returns {String} Error content.
+  */
+  showFileExtensionErrorModalDialog(fileName) {
+    let i18n = this.get(&#x27;i18n&#x27;);
+    let errorCaption = i18n.t(&#x27;components.flexberry-file.add-file-error-caption&#x27;);
+    let errorContent = i18n.t(&#x27;components.flexberry-file.file-extension-error-message&#x27;, {
+      fileName: fileName,
     });
 
     this.showErrorModalDialog(errorCaption, errorContent);
@@ -1197,6 +1280,11 @@ export default FlexberryBaseComponent.extend({
     @private
   */
   _unsubscribeFromRelatedModelPresaveEvent() {
+    let uploadOnModelPreSave = this.get(&#x27;uploadOnModelPreSave&#x27;);
+    if (!uploadOnModelPreSave) {
+      return;
+    }
+
     let relatedModelOffPropertyType = Ember.typeOf(this.get(&#x27;relatedModel.off&#x27;));
     Ember.assert(&#x60;Wrong type of \&#x60;relatedModel.off\&#x60; propery: actual type is ${relatedModelOffPropertyType}, but function is expected.&#x60;,
       relatedModelOffPropertyType === &#x27;function&#x27;);
@@ -1206,15 +1294,41 @@ export default FlexberryBaseComponent.extend({
   },
 
   /**
+    Defines valid of file type.
+
+    @method _isValidTypeFile
+    @param {String} fileType file type as MIME TYPES.
+    @param {String} accept available MIME TYPES.
+    @private
+  */
+  _isValidTypeFile(fileType, accept) {
+    const isValidTypeFileCustom = this.get(&#x27;isValidTypeFileCustom&#x27;);
+
+    if (isValidTypeFileCustom &amp;&amp; (typeof isValidTypeFileCustom === &#x27;function&#x27;)) {
+      return isValidTypeFileCustom(fileType, accept);
+    }
+
+    const isFileTypeUndefined = fileType === &#x27;&#x27;;
+    const isFileTypeAvailable = !accept || (accept.indexOf(fileType) !== -1 &amp;&amp; !isFileTypeUndefined);
+
+    return isFileTypeAvailable;
+  },
+
+  /**
     Value change handler.
 
     @method _valueDidChange
     @private
   */
   _valueDidChange: Ember.observer(&#x27;value&#x27;, function() {
+    const value = this.get(&#x27;value&#x27;);
+    if (!value) {
+      this.removeFile();
+    }
+
     this.sendAction(&#x27;fileChange&#x27;, {
       uploadData: this.get(&#x27;_uploadData&#x27;),
-      value: this.get(&#x27;value&#x27;)
+      value: value
     });
   }),
 

@@ -1343,6 +1343,13 @@
             },
             "namespaces": {}
         },
+        "addon/utils/file-size-units-converter.js": {
+            "name": "addon/utils/file-size-units-converter.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "addon/utils/filter.js": {
             "name": "addon/utils/filter.js",
             "modules": {},
@@ -1875,7 +1882,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "addon/components/flexberry-file.js",
-            "line": 9,
+            "line": 10,
             "description": "Flexberry file component.\n\nUsage sample:\n```handlebars\n{{flexberry-file value=model.file uploadUrl=\"http://myApplication/api/File\"}}\n```",
             "extends": "FlexberryBaseComponent"
         },
@@ -6079,7 +6086,19 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 21,
+            "line": 22,
+            "description": "Available file size units with its captions.",
+            "itemtype": "property",
+            "name": "_fileSizeUnits",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryFileComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-file.js",
+            "line": 36,
             "description": "Selected file content. It can be used as source for image tag in order to view preview.",
             "itemtype": "property",
             "name": "_previewImageAsBase64String",
@@ -6092,7 +6111,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 31,
+            "line": 46,
             "description": "File input identifier.",
             "itemtype": "property",
             "name": "_fileInputId",
@@ -6105,7 +6124,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 51,
+            "line": 66,
             "description": "Copy of value created at initialization moment or after successful upload.",
             "itemtype": "property",
             "name": "_initialValue",
@@ -6117,7 +6136,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 60,
+            "line": 75,
             "description": "Deserialized copy of value created at initialization moment or after successful upload.",
             "itemtype": "property",
             "name": "_jsonInitialValue",
@@ -6130,7 +6149,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 73,
+            "line": 88,
             "description": "Deserialized value of file component.",
             "itemtype": "property",
             "name": "_jsonValue",
@@ -6143,7 +6162,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 86,
+            "line": 101,
             "description": "File name.\nIt is binded to component file name input, so every change to fileName will automatically change file name input value.",
             "itemtype": "property",
             "name": "_fileName",
@@ -6156,7 +6175,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 104,
+            "line": 119,
             "description": "Flag: indicates whether some file is added now or not.",
             "itemtype": "property",
             "name": "_hasFile",
@@ -6169,7 +6188,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 116,
+            "line": 131,
             "description": "Data from jQuery fileupload plugin (contains selected file).",
             "itemtype": "property",
             "name": "_uploadData",
@@ -6182,7 +6201,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 126,
+            "line": 141,
             "description": "Copy of data from jQuery fileupload plugin (contains selected file).",
             "itemtype": "property",
             "name": "_uploadDataCopy",
@@ -6195,7 +6214,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 136,
+            "line": 151,
             "description": "Current file selected for upload.",
             "itemtype": "property",
             "name": "_selectedFile",
@@ -6208,7 +6227,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 149,
+            "line": 164,
             "description": "Flag: indicates whether file upload is in progress now.",
             "itemtype": "property",
             "name": "_uploadIsInProgress",
@@ -6221,7 +6240,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 159,
+            "line": 174,
             "description": "Flag: indicates whether file preview download is in progress now.",
             "itemtype": "property",
             "name": "_previewDownloadIsInProgress",
@@ -6234,7 +6253,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 169,
+            "line": 184,
             "description": "Flag: indicates whether add button is visible now.",
             "itemtype": "property",
             "name": "_addButtonIsVisible",
@@ -6247,7 +6266,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 181,
+            "line": 196,
             "description": "Flag: indicates whether add button is enabled now.",
             "itemtype": "property",
             "name": "_addButtonIsEnabled",
@@ -6260,7 +6279,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 194,
+            "line": 209,
             "description": "Flag: indicates whether remove button is visible now.",
             "itemtype": "property",
             "name": "_removeButtonIsVisible",
@@ -6273,7 +6292,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 206,
+            "line": 221,
             "description": "Flag: indicates whether remove button is enabled now.",
             "itemtype": "property",
             "name": "_removeButtonIsEnabled",
@@ -6286,7 +6305,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 221,
+            "line": 236,
             "description": "Flag: indicates whether upload button is visible now.",
             "itemtype": "property",
             "name": "_uploadButtonIsVisible",
@@ -6299,7 +6318,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 233,
+            "line": 248,
             "description": "Flag: indicates whether upload button is enabled now.",
             "itemtype": "property",
             "name": "_uploadButtonIsEnabled",
@@ -6312,7 +6331,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 248,
+            "line": 263,
             "description": "Flag: indicates whether download button is visible now.",
             "itemtype": "property",
             "name": "_downloadButtonIsVisible",
@@ -6325,7 +6344,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 261,
+            "line": 276,
             "description": "Flag: indicates whether download button is enabled now.",
             "itemtype": "property",
             "name": "_downloadButtonIsEnabled",
@@ -6338,7 +6357,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 276,
+            "line": 291,
             "description": "Caption to be displayed in error modal dialog.\nIt will be displayed only if some error occurs.",
             "itemtype": "property",
             "name": "_errorModalDialogCaption",
@@ -6351,7 +6370,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 287,
+            "line": 302,
             "description": "Content to be displayed in error modal dialog.\nIt will be displayed only if some error occurs.",
             "itemtype": "property",
             "name": "_errorModalDialogContent",
@@ -6364,7 +6383,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 298,
+            "line": 313,
             "description": "Caption to be displayed in loaded file table cell.\nIt will be displayed only if preview can't be loaded.",
             "itemtype": "property",
             "name": "_errorPreviewCaption",
@@ -6377,7 +6396,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 309,
+            "line": 324,
             "description": "Selected jQuery object, containing HTML of error modal dialog.",
             "itemtype": "property",
             "name": "_errorModalDialog",
@@ -6390,7 +6409,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 319,
+            "line": 334,
             "description": "Component's wrapping <div> CSS-class names.",
             "itemtype": "property",
             "name": "classNames",
@@ -6401,7 +6420,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 328,
+            "line": 343,
             "description": "Component's input additional CSS-class names.\nSee [Semantic UI inputs classes](http://semantic-ui.com/elements/input.html).",
             "itemtype": "property",
             "name": "inputClass",
@@ -6415,7 +6434,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 345,
+            "line": 360,
             "description": "CSS-classes names for component's add, remove, upload, download buttons.\nSee [Semantic UI buttons classes](http://semantic-ui.com/elements/button.html).",
             "itemtype": "property",
             "name": "buttonClass",
@@ -6429,7 +6448,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 362,
+            "line": 377,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -6440,7 +6459,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 371,
+            "line": 386,
             "description": "Name of the action which will be send outside after click on selected image preview.",
             "itemtype": "property",
             "name": "viewImageAction",
@@ -6451,7 +6470,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 380,
+            "line": 395,
             "description": "Value of file component (contains serialized file metadata such as fileName, fileSize, etc.).\nIt is binded to related model property, so every change to value will automatically change model property.",
             "itemtype": "property",
             "name": "value",
@@ -6461,7 +6480,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 389,
+            "line": 404,
             "description": "Flag: indicates whether to upload file on 'relatedModel' 'preSave' event.",
             "itemtype": "property",
             "name": "uploadOnModelPreSave",
@@ -6472,7 +6491,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 398,
+            "line": 413,
             "description": "Flag: indicates whether to show preview element for images or not.",
             "itemtype": "property",
             "name": "showPreview",
@@ -6483,7 +6502,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 407,
+            "line": 422,
             "description": "indicates whether preview img can be loaded when show.",
             "itemtype": "property",
             "name": "_canLoadPreview",
@@ -6494,7 +6513,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 416,
+            "line": 431,
             "description": "Flag: indicates whether to show upload button or not.",
             "itemtype": "property",
             "name": "showUploadButton",
@@ -6505,7 +6524,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 425,
+            "line": 440,
             "description": "Flag: indicates whether to show download button or not.",
             "itemtype": "property",
             "name": "showDownloadButton",
@@ -6516,7 +6535,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 434,
+            "line": 449,
             "description": "Maximum file size in bytes for uploading files.\nIt should be greater then 0 and less or equal then APP.components.file.maxUploadFileSize from application config\\environment.\nIf null or undefined, then APP.components.file.maxUploadFileSize from application config\\environment will be used.",
             "itemtype": "property",
             "name": "maxUploadFileSize",
@@ -6526,7 +6545,18 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 444,
+            "line": 459,
+            "description": "Maximum file size unit. May be 'Bt' 'Kb' 'Mb' or 'Gb'.",
+            "itemtype": "property",
+            "name": "maxUploadFileSizeUnit",
+            "type": "String",
+            "default": "'Bt'",
+            "class": "FlexberryFileComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-file.js",
+            "line": 468,
             "description": "Text to be displayed instead of file name, if file has not been selected.",
             "itemtype": "property",
             "name": "placeholder",
@@ -6537,7 +6567,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 453,
+            "line": 477,
             "description": "File upload URL.\nIf null or undefined, then APP.components.file.uploadUrl from application config\\environment will be used.",
             "itemtype": "property",
             "name": "uploadUrl",
@@ -6547,7 +6577,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 462,
+            "line": 486,
             "description": "Flag: indicates whether to show modal dialog on upload errors or not.",
             "itemtype": "property",
             "name": "showModalDialogOnUploadError",
@@ -6558,7 +6588,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 471,
+            "line": 495,
             "description": "Flag: download by clicking download or open file in new window.",
             "itemtype": "property",
             "name": "openInNewWindowInsteadOfLoading",
@@ -6569,7 +6599,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 480,
+            "line": 504,
             "description": "Headers to the file upload request.",
             "itemtype": "property",
             "name": "headers",
@@ -6580,7 +6610,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 489,
+            "line": 513,
             "description": "Settings for preview modal dialog.",
             "itemtype": "property",
             "name": "previewSettings",
@@ -6591,7 +6621,29 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 498,
+            "line": 522,
+            "description": "Available file extensions for upload. In MIME type format.\nSee [the documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) for more details.",
+            "itemtype": "property",
+            "name": "accept",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryFileComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-file.js",
+            "line": 532,
+            "description": "Function with custom check for type of uploaded file.",
+            "itemtype": "property",
+            "name": "isValidTypeFileCustom",
+            "type": "Function",
+            "default": "null",
+            "class": "FlexberryFileComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-file.js",
+            "line": 541,
             "description": "External Base64 string",
             "itemtype": "property",
             "name": "base64Value",
@@ -6602,7 +6654,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 506,
+            "line": 549,
             "description": "Name for base64 file. {base64FileName}.{base64FileExtension}",
             "itemtype": "property",
             "name": "base64FileName",
@@ -6613,7 +6665,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 514,
+            "line": 557,
             "description": "Extension for base64 file. {base64FileName}.{base64FileExtension}",
             "itemtype": "property",
             "name": "base64FileExtension",
@@ -6624,7 +6676,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 523,
+            "line": 566,
             "description": "Handles click on selected image preview and sends action with data outside component\nin order to view selected image at modal window.",
             "itemtype": "method",
             "name": "actions.viewLoadedImage",
@@ -6635,7 +6687,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 544,
+            "line": 587,
             "description": "Handles click on add button.",
             "itemtype": "method",
             "name": "actions.addButtonClick",
@@ -6646,7 +6698,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 555,
+            "line": 598,
             "description": "Handles click on remove button.",
             "itemtype": "method",
             "name": "actions.removeButtonClick",
@@ -6657,7 +6709,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 565,
+            "line": 608,
             "description": "Handles click on upload button.",
             "itemtype": "method",
             "name": "actions.uploadButtonClick",
@@ -6668,7 +6720,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 575,
+            "line": 618,
             "description": "Handles click on download button.",
             "itemtype": "method",
             "name": "actions.downloadButtonClick",
@@ -6679,35 +6731,35 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 586,
+            "line": 629,
             "description": "Initializes {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 613,
+            "line": 656,
             "description": "Hook for base64Value update.\nIt runs \"change\" event on file-input to update file from base64Value if base64FileName and base64FileExtension set.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 626,
+            "line": 669,
             "description": "Initializes {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component DOM-related properties.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 699,
+            "line": 760,
             "description": "Changes url in jQuery fileupload when uploadUrl changed.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 714,
+            "line": 775,
             "description": "Method converts base64 string to File",
             "itemtype": "method",
             "name": "_dataURLtoFile",
@@ -6730,14 +6782,14 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 741,
+            "line": 802,
             "description": "Destroys {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 753,
+            "line": 814,
             "description": "Removes selected file.",
             "itemtype": "method",
             "name": "removeFile",
@@ -6746,7 +6798,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 766,
+            "line": 827,
             "description": "Uploads selected file.",
             "itemtype": "method",
             "name": "uploadFile",
@@ -6755,7 +6807,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 823,
+            "line": 884,
             "description": "Downloads previously uploaded file.",
             "itemtype": "method",
             "name": "downloadFile",
@@ -6764,7 +6816,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 849,
+            "line": 910,
             "description": "Shows error modal dialog.",
             "itemtype": "method",
             "name": "showErrorModalDialog",
@@ -6789,7 +6841,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 872,
+            "line": 933,
             "description": "Shows file size errors if there were some.",
             "itemtype": "method",
             "name": "showUploadErrorModalDialog",
@@ -6808,6 +6860,11 @@
                     "name": "maxFileSize",
                     "description": "Max file size allowed.",
                     "type": "String"
+                },
+                {
+                    "name": "sizeUnit",
+                    "description": "Max file size unit.",
+                    "type": "String"
                 }
             ],
             "return": {
@@ -6819,7 +6876,27 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 895,
+            "line": 959,
+            "description": "Shows file extension errors if there were some.",
+            "itemtype": "method",
+            "name": "showFileExtensionErrorModalDialog",
+            "params": [
+                {
+                    "name": "fileName",
+                    "description": "Added file name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Error content.",
+                "type": "String"
+            },
+            "class": "FlexberryFileComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-file.js",
+            "line": 978,
             "description": "Shows errors if there were some during file upload.",
             "itemtype": "method",
             "name": "showUploadErrorModalDialog",
@@ -6844,7 +6921,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 917,
+            "line": 1000,
             "description": "Shows errors if there were some during file download.",
             "itemtype": "method",
             "name": "showDownloadErrorModalDialog",
@@ -6865,7 +6942,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 939,
+            "line": 1022,
             "description": "Handles related model's 'preSave' event.",
             "itemtype": "method",
             "name": "_onRelatedModelPreSave",
@@ -6890,7 +6967,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 958,
+            "line": 1041,
             "description": "Subscribes on related model's 'preSave' event.",
             "itemtype": "method",
             "name": "_subscribeOnRelatedModelPreSaveEvent",
@@ -6901,7 +6978,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 978,
+            "line": 1061,
             "description": "Unsubscribes from related model's 'preSave' event.",
             "itemtype": "method",
             "name": "_unsubscribeFromRelatedModelPresaveEvent",
@@ -6912,7 +6989,30 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 993,
+            "line": 1081,
+            "description": "Defines valid of file type.",
+            "itemtype": "method",
+            "name": "_isValidTypeFile",
+            "params": [
+                {
+                    "name": "fileType",
+                    "description": "file type as MIME TYPES.",
+                    "type": "String"
+                },
+                {
+                    "name": "accept",
+                    "description": "available MIME TYPES.",
+                    "type": "String"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryFileComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-file.js",
+            "line": 1102,
             "description": "Value change handler.",
             "itemtype": "method",
             "name": "_valueDidChange",
@@ -6923,7 +7023,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 1006,
+            "line": 1120,
             "description": "Upload data change handler.",
             "itemtype": "method",
             "name": "_uploadDataDidChange",
@@ -6934,7 +7034,7 @@
         },
         {
             "file": "addon/components/flexberry-file.js",
-            "line": 1029,
+            "line": 1143,
             "description": "Preview options change handler.",
             "itemtype": "method",
             "name": "_previewOptionsDidChange",
@@ -26609,6 +26709,31 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "addon/utils/file-size-units-converter.js",
+            "line": 5,
+            "description": "Used for convert file size value depending on units.",
+            "itemtype": "method",
+            "name": "getSizeInUnits",
+            "params": [
+                {
+                    "name": "fileSize",
+                    "description": "file size in bytes.",
+                    "type": "Number"
+                },
+                {
+                    "name": "fileSizeUnits",
+                    "description": "wanted file size units as 'Bt' 'Kb' 'Mb' 'Gb'.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "File size in bytes.\n\nUsage:\ncontrollers/my-form.js\n```javascript\n  import { getRecord } from 'ember-flexberry/utils/file-size-units-converter'\n  let layer = getSizeInUnits(file.size, 'Mb')\n\n```",
+                "type": "Number"
+            },
+            "class": "Utils.Layers",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "addon/utils/filter.js",
             "line": 9,
             "description": "Builds predicate for filter",
@@ -26841,15 +26966,19 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/flexberry-file.js:849"
+            "line": " addon/components/flexberry-file.js:910"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/flexberry-file.js:872"
+            "line": " addon/components/flexberry-file.js:933"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/flexberry-file.js:895"
+            "line": " addon/components/flexberry-file.js:959"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/flexberry-file.js:978"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -26997,23 +27126,23 @@
         },
         {
             "message": "Missing item type\nInitializes {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component.",
-            "line": " addon/components/flexberry-file.js:586"
+            "line": " addon/components/flexberry-file.js:629"
         },
         {
             "message": "Missing item type\nHook for base64Value update.\nIt runs \"change\" event on file-input to update file from base64Value if base64FileName and base64FileExtension set.",
-            "line": " addon/components/flexberry-file.js:613"
+            "line": " addon/components/flexberry-file.js:656"
         },
         {
             "message": "Missing item type\nInitializes {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component DOM-related properties.",
-            "line": " addon/components/flexberry-file.js:626"
+            "line": " addon/components/flexberry-file.js:669"
         },
         {
             "message": "Missing item type\nChanges url in jQuery fileupload when uploadUrl changed.",
-            "line": " addon/components/flexberry-file.js:699"
+            "line": " addon/components/flexberry-file.js:760"
         },
         {
             "message": "Missing item type\nDestroys {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component.",
-            "line": " addon/components/flexberry-file.js:741"
+            "line": " addon/components/flexberry-file.js:802"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
