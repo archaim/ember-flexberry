@@ -5451,6 +5451,9 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 .ui.right.floated.tiny.primary.compact.button:hover {
   border: 1px solid #7ba7d9;
 }
+.ui.loading.button i.icon:before {
+  color: transparent !important;
+}
 /*!
  * # Semantic UI - Container
  * http://github.com/semantic-org/semantic-ui/
