@@ -18,13 +18,13 @@
   width: 50px;
 }
 .flexberry-colsconfig .columns-order {
-  width: 90px;
+  width: 70px;
 }
 .flexberry-colsconfig .column-width {
   width: 90px;
 }
 .flexberry-colsconfig .sort-direction {
-  width: 80px;
+  width: 176px;
 }
 .flexberry-colsconfig .sort-priority {
   width: 70px;
@@ -64,6 +64,9 @@
   }
   .flexberry-colsconfig .columns-order {
     width: 50px;
+  }
+  .flexberry-colsconfig .sort-direction {
+    width: 156px;
   }
   .flexberry-colsconfig .ui.right.button {
     margin-top: 5px;
@@ -5366,8 +5369,6 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
       Not categorized buttons section
 *******************************************/
 .flexberry-colsconfig.content .cols-config-apply {
-  display: flex;
-  align-items: center;
   background-color: #7dd4b4;
   border: 1px solid #7ba7d9;
 }
@@ -5382,6 +5383,9 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 .flexberry-colsconfig.content .cols-config-save:hover {
   border: 1px solid #7dd4b4;
   background-color: #7dd4b4;
+}
+.colsconfig-actions .ui.button {
+  font-size: 0.85714286rem;
 }
 .ui.icon.button > .large.table.icon,
 .large.file.excel {
@@ -18509,6 +18513,24 @@ option {
 .flexberry-file-error-modal-dialog .flexberry-file-error-modal-dialog-button.ui.grid {
   padding-top: 20px;
 }
+.flexberry-colsconfig .colsconfig-prop {
+  padding: 1em 0;
+}
+.flexberry-colsconfig .colsconfig-prop-name span {
+  font-size: 16px;
+  font-weight: bold;
+}
+@media only screen and (max-width: 767px) {
+  .ui.form .two.fields.unstackable > .field {
+    width: 50% !important;
+  }
+  .ui.form .fields.unstackable {
+    margin: 0 -0.5em;
+  }
+  .ui.form .fields.unstackable .field {
+    padding: 0 0.5em;
+  }
+}
 /*!
  * # Semantic UI - Grid
  * http://github.com/semantic-org/semantic-ui/
@@ -31382,10 +31404,10 @@ body.dimmable > .dimmer {
   outline: 0;
   transform: rotateZ(0deg);
   min-width: 14em;
-  min-height: 2.7142em;
+  min-height: 2.42857143em;
   background: none;
   display: inline-block;
-  padding: 0.78571429em 2.6em 0.78571429em 1em;
+  padding: 0.67861429em 2.6em 0.67861429em 1em;
   color: rgba(0, 0, 0, 0.87);
   box-shadow: none;
   border: 1px solid #b1cae8;
@@ -31410,8 +31432,8 @@ select.ui.dropdown {
   top: auto;
   width: auto;
   z-index: 3;
-  margin: -0.78571429em;
-  padding: 0.78571429em;
+  margin: -0.67861429em;
+  padding: 0.67861429em;
   right: 1em;
   opacity: 0.8;
   transition: opacity 0.1s ease;
@@ -31554,7 +31576,7 @@ select.ui.dropdown {
 /* Search Selection */
 .ui.search.selection.dropdown > input.search {
   line-height: 1.2142em;
-  padding: 0.67861429em 2.6em 0.67861429em 1em;
+  padding: 0.57151429em 2.6em 0.57151429em 1em;
 }
 /* Active/Visible Search */
 .ui.search.dropdown.active > input.search,
@@ -31605,7 +31627,7 @@ select.ui.dropdown {
 ---------------*/
 /* Multiple Selection */
 .ui.multiple.dropdown {
-  padding: 0.22620476em 2.6em 0.22620476em 0.28571429em;
+  padding: 0.19050476em 2.6em 0.19050476em 0.28571429em;
 }
 .ui.multiple.dropdown .menu {
   cursor: auto;
@@ -31636,7 +31658,7 @@ select.ui.dropdown {
   position: static;
   padding: 0;
   max-width: 100%;
-  margin: 0.45240952em 0em 0.45240952em 0.71428571em;
+  margin: 0.38100952em 0em 0.38100952em 0.71428571em;
   line-height: 1.2142em;
 }
 .ui.multiple.dropdown > .label ~ .text {
@@ -31652,7 +31674,7 @@ select.ui.dropdown {
   top: 0;
   left: 0;
   padding: inherit;
-  margin: 0.45240952em 0em 0.45240952em 0.71428571em;
+  margin: 0.38100952em 0em 0.38100952em 0.71428571em;
   line-height: 1.2142em;
 }
 .ui.multiple.search.dropdown > .label ~ .text {
@@ -31663,7 +31685,7 @@ select.ui.dropdown {
   position: static;
   padding: 0;
   max-width: 100%;
-  margin: 0.45240952em 0em 0.45240952em 0.71428571em;
+  margin: 0.38100952em 0em 0.38100952em 0.71428571em;
   width: 2.2em;
   line-height: 1.2142em;
 }
@@ -32245,6 +32267,13 @@ select.ui.dropdown {
   border-bottom: 1px solid #b1cae8;
   border-radius: 0px;
   outline: none;
+  line-height: 1.2142em;
+}
+.ui.dropdown > .text {
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+  width: 100%;
 }
 .ui.search.dropdown > .text {
   cursor: pointer;
@@ -33437,6 +33466,10 @@ select.ui.dropdown {
 }
 .ui.modal.preview-model .content .close-button {
   display: none;
+}
+.mobile .ui.modal .content .flexberry-colsconfig.content {
+  padding: 0 1em;
+  margin: 0 -1em;
 }
 /*!
  * # Semantic UI - Nag

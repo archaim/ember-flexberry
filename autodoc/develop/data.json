@@ -591,13 +591,6 @@
             "fors": {},
             "namespaces": {}
         },
-        "addon/helpers/parse-cols-config-sorting.js": {
-            "name": "addon/helpers/parse-cols-config-sorting.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
         "addon/helpers/readonly-cell.js": {
             "name": "addon/helpers/readonly-cell.js",
             "modules": {},
