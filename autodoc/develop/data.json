@@ -4303,7 +4303,7 @@
         },
         {
             "file": "addon/components/colsconfig-dialog-content.js",
-            "line": 268,
+            "line": 271,
             "description": "Gets current query for export excel.",
             "itemtype": "method",
             "name": "_getCurrentQuery",

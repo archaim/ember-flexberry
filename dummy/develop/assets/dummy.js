@@ -68658,11 +68658,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
           "loc": {
             "source": null,
             "start": {
-              "line": 17,
+              "line": 28,
               "column": 4
             },
             "end": {
-              "line": 30,
+              "line": 41,
               "column": 4
             }
           },
@@ -68706,7 +68706,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
           morphs[1] = dom.createMorphAt(dom.childAt(fragment, [3]), 1, 1);
           return morphs;
         },
-        statements: [["inline", "flexberry-checkbox", [], ["label", ["subexpr", "t", ["components.colsconfig-dialog-content.det-separate-cols"], [], ["loc", [null, [20, 16], [20, 76]]]], "value", ["subexpr", "@mut", [["get", "model.exportParams.detSeparateCols", ["loc", [null, [21, 16], [21, 50]]]]], [], []]], ["loc", [null, [19, 8], [22, 10]]]], ["inline", "flexberry-checkbox", [], ["label", ["subexpr", "t", ["components.colsconfig-dialog-content.det-separate-rows"], [], ["loc", [null, [26, 16], [26, 76]]]], "value", ["subexpr", "@mut", [["get", "model.exportParams.detSeparateRows", ["loc", [null, [27, 16], [27, 50]]]]], [], []]], ["loc", [null, [25, 8], [28, 10]]]]],
+        statements: [["inline", "flexberry-checkbox", [], ["label", ["subexpr", "t", ["components.colsconfig-dialog-content.det-separate-cols"], [], ["loc", [null, [31, 16], [31, 76]]]], "value", ["subexpr", "@mut", [["get", "model.exportParams.detSeparateCols", ["loc", [null, [32, 16], [32, 50]]]]], [], []]], ["loc", [null, [30, 8], [33, 10]]]], ["inline", "flexberry-checkbox", [], ["label", ["subexpr", "t", ["components.colsconfig-dialog-content.det-separate-rows"], [], ["loc", [null, [37, 16], [37, 76]]]], "value", ["subexpr", "@mut", [["get", "model.exportParams.detSeparateRows", ["loc", [null, [38, 16], [38, 50]]]]], [], []]], ["loc", [null, [36, 8], [39, 10]]]]],
         locals: [],
         templates: []
       };
@@ -68719,11 +68719,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
           "loc": {
             "source": null,
             "start": {
-              "line": 30,
+              "line": 41,
               "column": 4
             },
             "end": {
-              "line": 48,
+              "line": 59,
               "column": 4
             }
           },
@@ -68781,7 +68781,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
           morphs[1] = dom.createMorphAt(dom.childAt(element14, [3]), 3, 3);
           return morphs;
         },
-        statements: [["inline", "flexberry-field", [], ["class", "per-page-input", "value", ["subexpr", "@mut", [["get", "model.perPageValue", ["loc", [null, [35, 18], [35, 36]]]]], [], []], "label", ["subexpr", "t", ["components.colsconfig-dialog-content.per-page"], [], ["loc", [null, [36, 18], [36, 69]]]]], ["loc", [null, [33, 10], [37, 12]]]], ["inline", "flexberry-checkbox", [], ["class", "toggle", "value", ["subexpr", "@mut", [["get", "model.saveColWidthState", ["loc", [null, [43, 18], [43, 41]]]]], [], []], "label", ["subexpr", "t", ["components.colsconfig-dialog-content.col-width-on"], [], ["loc", [null, [44, 18], [44, 73]]]]], ["loc", [null, [41, 10], [45, 12]]]]],
+        statements: [["inline", "flexberry-field", [], ["class", "per-page-input", "value", ["subexpr", "@mut", [["get", "model.perPageValue", ["loc", [null, [46, 18], [46, 36]]]]], [], []], "label", ["subexpr", "t", ["components.colsconfig-dialog-content.per-page"], [], ["loc", [null, [47, 18], [47, 69]]]]], ["loc", [null, [44, 10], [48, 12]]]], ["inline", "flexberry-checkbox", [], ["class", "toggle", "value", ["subexpr", "@mut", [["get", "model.saveColWidthState", ["loc", [null, [54, 18], [54, 41]]]]], [], []], "label", ["subexpr", "t", ["components.colsconfig-dialog-content.col-width-on"], [], ["loc", [null, [55, 18], [55, 73]]]]], ["loc", [null, [52, 10], [56, 12]]]]],
         locals: [],
         templates: []
       };
@@ -68795,11 +68795,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             "loc": {
               "source": null,
               "start": {
-                "line": 53,
+                "line": 64,
                 "column": 10
               },
               "end": {
-                "line": 56,
+                "line": 67,
                 "column": 10
               }
             },
@@ -68831,7 +68831,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             morphs[1] = dom.createMorphAt(fragment, 3, 3, contextualElement);
             return morphs;
           },
-          statements: [["inline", "t", ["components.colsconfig-dialog-content.column-name"], [], ["loc", [null, [54, 19], [54, 75]]]], ["inline", "input", [], ["class", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [55, 30], [55, 42]]]], "disabled"], [], ["loc", [null, [55, 26], [55, 54]]]], "value", ["subexpr", "@mut", [["get", "colDesc.name", ["loc", [null, [55, 61], [55, 73]]]]], [], []]], ["loc", [null, [55, 12], [55, 75]]]]],
+          statements: [["inline", "t", ["components.colsconfig-dialog-content.column-name"], [], ["loc", [null, [65, 19], [65, 75]]]], ["inline", "input", [], ["class", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [66, 30], [66, 42]]]], "disabled"], [], ["loc", [null, [66, 26], [66, 54]]]], "value", ["subexpr", "@mut", [["get", "colDesc.name", ["loc", [null, [66, 61], [66, 73]]]]], [], []]], ["loc", [null, [66, 12], [66, 75]]]]],
           locals: [],
           templates: []
         };
@@ -68844,11 +68844,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             "loc": {
               "source": null,
               "start": {
-                "line": 56,
+                "line": 67,
                 "column": 10
               },
               "end": {
-                "line": 58,
+                "line": 69,
                 "column": 10
               }
             },
@@ -68875,7 +68875,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
             return morphs;
           },
-          statements: [["content", "colDesc.name", ["loc", [null, [57, 18], [57, 34]]]]],
+          statements: [["content", "colDesc.name", ["loc", [null, [68, 18], [68, 34]]]]],
           locals: [],
           templates: []
         };
@@ -68889,11 +68889,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 66,
+                  "line": 77,
                   "column": 14
                 },
                 "end": {
-                  "line": 74,
+                  "line": 85,
                   "column": 14
                 }
               },
@@ -68961,7 +68961,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
               morphs[3] = dom.createMorphAt(dom.childAt(element2, [5]), 0, 0);
               return morphs;
             },
-            statements: [["inline", "t", ["components.colsconfig-dialog-content.sort-direction-none"], [], ["loc", [null, [68, 42], [68, 106]]]], ["inline", "t", ["components.colsconfig-dialog-content.sort-direction-none"], [], ["loc", [null, [70, 51], [70, 115]]]], ["inline", "t", ["components.colsconfig-dialog-content.sort-direction-asc"], [], ["loc", [null, [71, 51], [71, 114]]]], ["inline", "t", ["components.colsconfig-dialog-content.sort-direction-desc"], [], ["loc", [null, [72, 52], [72, 116]]]]],
+            statements: [["inline", "t", ["components.colsconfig-dialog-content.sort-direction-none"], [], ["loc", [null, [79, 42], [79, 106]]]], ["inline", "t", ["components.colsconfig-dialog-content.sort-direction-none"], [], ["loc", [null, [81, 51], [81, 115]]]], ["inline", "t", ["components.colsconfig-dialog-content.sort-direction-asc"], [], ["loc", [null, [82, 51], [82, 114]]]], ["inline", "t", ["components.colsconfig-dialog-content.sort-direction-desc"], [], ["loc", [null, [83, 52], [83, 116]]]]],
             locals: [],
             templates: []
           };
@@ -68973,11 +68973,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             "loc": {
               "source": null,
               "start": {
-                "line": 63,
+                "line": 74,
                 "column": 10
               },
               "end": {
-                "line": 76,
+                "line": 87,
                 "column": 10
               }
             },
@@ -69017,7 +69017,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             morphs[1] = dom.createMorphAt(element3, 3, 3);
             return morphs;
           },
-          statements: [["inline", "t", ["components.colsconfig-dialog-content.sort-direction-caption"], [], ["loc", [null, [65, 21], [65, 88]]]], ["block", "ui-dropdown", [], ["class", ["subexpr", "concat", ["ui compact selection dropdown sort-direction-dropdown", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [66, 103], [66, 115]]]], " disabled"], [], ["loc", [null, [66, 99], [66, 128]]]], ["subexpr", "if", [["get", "colDesc.isHasMany", ["loc", [null, [66, 133], [66, 150]]]], " hidden"], [], ["loc", [null, [66, 129], [66, 161]]]]], [], ["loc", [null, [66, 35], [66, 162]]]], "onChange", ["subexpr", "action", ["setSortOrder", ["get", "colDesc", ["loc", [null, [66, 195], [66, 202]]]]], [], ["loc", [null, [66, 172], [66, 203]]]]], 0, null, ["loc", [null, [66, 14], [74, 30]]]]],
+          statements: [["inline", "t", ["components.colsconfig-dialog-content.sort-direction-caption"], [], ["loc", [null, [76, 21], [76, 88]]]], ["block", "ui-dropdown", [], ["class", ["subexpr", "concat", ["ui compact selection dropdown sort-direction-dropdown", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [77, 103], [77, 115]]]], " disabled"], [], ["loc", [null, [77, 99], [77, 128]]]], ["subexpr", "if", [["get", "colDesc.isHasMany", ["loc", [null, [77, 133], [77, 150]]]], " hidden"], [], ["loc", [null, [77, 129], [77, 161]]]]], [], ["loc", [null, [77, 35], [77, 162]]]], "onChange", ["subexpr", "action", ["setSortOrder", ["get", "colDesc", ["loc", [null, [77, 195], [77, 202]]]]], [], ["loc", [null, [77, 172], [77, 203]]]]], 0, null, ["loc", [null, [77, 14], [85, 30]]]]],
           locals: [],
           templates: [child0]
         };
@@ -69030,11 +69030,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             "loc": {
               "source": null,
               "start": {
-                "line": 78,
+                "line": 89,
                 "column": 10
               },
               "end": {
-                "line": 88,
+                "line": 99,
                 "column": 10
               }
             },
@@ -69082,7 +69082,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             morphs[2] = dom.createMorphAt(element1, 1, 1);
             return morphs;
           },
-          statements: [["inline", "t", ["components.colsconfig-dialog-content.sort-priority-caption"], [], ["loc", [null, [80, 21], [80, 87]]]], ["attribute", "class", ["concat", ["ui input ", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [81, 40], [81, 52]]]], "disabled"], [], ["loc", [null, [81, 35], [81, 65]]]]]]], ["inline", "input", [], ["class", "sort-priority-input", "value", ["subexpr", "@mut", [["get", "colDesc.sortPriority", ["loc", [null, [84, 24], [84, 44]]]]], [], []]], ["loc", [null, [82, 16], [85, 18]]]]],
+          statements: [["inline", "t", ["components.colsconfig-dialog-content.sort-priority-caption"], [], ["loc", [null, [91, 21], [91, 87]]]], ["attribute", "class", ["concat", ["ui input ", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [92, 40], [92, 52]]]], "disabled"], [], ["loc", [null, [92, 35], [92, 65]]]]]]], ["inline", "input", [], ["class", "sort-priority-input", "value", ["subexpr", "@mut", [["get", "colDesc.sortPriority", ["loc", [null, [95, 24], [95, 44]]]]], [], []]], ["loc", [null, [93, 16], [96, 18]]]]],
           locals: [],
           templates: []
         };
@@ -69094,11 +69094,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
           "loc": {
             "source": null,
             "start": {
-              "line": 50,
+              "line": 61,
               "column": 4
             },
             "end": {
-              "line": 108,
+              "line": 119,
               "column": 4
             }
           },
@@ -69230,7 +69230,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
           morphs[13] = dom.createElementMorph(element13);
           return morphs;
         },
-        statements: [["attribute", "propName", ["concat", [["get", "colDesc.propName", ["loc", [null, [51, 23], [51, 39]]]]]]], ["attribute", "class", ["concat", ["field colsconfig-prop-name ", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [52, 52], [52, 64]]]], "disabled"], [], ["loc", [null, [52, 47], [52, 77]]]]]]], ["block", "if", [["get", "model.exportParams.isExportExcel", ["loc", [null, [53, 16], [53, 48]]]]], [], 0, 1, ["loc", [null, [53, 10], [58, 17]]]], ["block", "unless", [["get", "colDesc.isHasMany", ["loc", [null, [63, 20], [63, 37]]]]], [], 2, null, ["loc", [null, [63, 10], [76, 21]]]], ["block", "if", [["get", "colDesc.sortOrder", ["loc", [null, [78, 16], [78, 33]]]]], [], 3, null, ["loc", [null, [78, 10], [88, 17]]]], ["inline", "t", ["components.colsconfig-dialog-content.column-width-caption"], [], ["loc", [null, [93, 17], [93, 82]]]], ["attribute", "class", ["concat", ["ui input ", ["subexpr", "if", [["subexpr", "or", [["get", "colDesc.hide", ["loc", [null, [94, 40], [94, 52]]]], ["subexpr", "or", [["get", "model.exportParams.isExportExcel", ["loc", [null, [94, 57], [94, 89]]]], ["subexpr", "or", [["get", "colDesc.fixed", ["loc", [null, [94, 94], [94, 107]]]], ["subexpr", "not", [["get", "model.saveColWidthState", ["loc", [null, [94, 113], [94, 136]]]]], [], ["loc", [null, [94, 108], [94, 137]]]]], [], ["loc", [null, [94, 90], [94, 138]]]]], [], ["loc", [null, [94, 53], [94, 139]]]]], [], ["loc", [null, [94, 36], [94, 140]]]], "disabled"], [], ["loc", [null, [94, 31], [94, 153]]]]]]], ["inline", "input", [], ["class", "column-width-input", "value", ["subexpr", "@mut", [["get", "colDesc.columnWidth", ["loc", [null, [97, 20], [97, 39]]]]], [], []]], ["loc", [null, [95, 12], [98, 14]]]], ["element", "action", ["invertVisibility", ["get", "n", ["loc", [null, [103, 60], [103, 61]]]]], [], ["loc", [null, [103, 32], [103, 63]]]], ["attribute", "class", ["concat", ["large ", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [103, 108], [103, 120]]]], "hide", "unhide"], [], ["loc", [null, [103, 103], [103, 138]]]], " icon"]]], ["attribute", "class", ["concat", ["ui icon button", ["subexpr", "if", [["subexpr", "eq", [["get", "n", ["loc", [null, [104, 83], [104, 84]]]], 0], [], ["loc", [null, [104, 79], [104, 87]]]], " disabled"], [], ["loc", [null, [104, 74], [104, 101]]]]]]], ["element", "action", ["rowUp", ["get", "n", ["loc", [null, [104, 49], [104, 50]]]]], [], ["loc", [null, [104, 32], [104, 52]]]], ["attribute", "class", ["concat", ["ui icon button row-down-button no-margin", ["subexpr", "if", [["subexpr", "eq", [["get", "colDesc", ["loc", [null, [105, 111], [105, 118]]]], ["get", "model.colDescs.lastObject", ["loc", [null, [105, 119], [105, 144]]]]], [], ["loc", [null, [105, 107], [105, 145]]]], " disabled"], [], ["loc", [null, [105, 102], [105, 159]]]]]]], ["element", "action", ["rowDown", ["get", "n", ["loc", [null, [105, 51], [105, 52]]]]], [], ["loc", [null, [105, 32], [105, 54]]]]],
+        statements: [["attribute", "propName", ["concat", [["get", "colDesc.propName", ["loc", [null, [62, 23], [62, 39]]]]]]], ["attribute", "class", ["concat", ["field colsconfig-prop-name ", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [63, 52], [63, 64]]]], "disabled"], [], ["loc", [null, [63, 47], [63, 77]]]]]]], ["block", "if", [["get", "model.exportParams.isExportExcel", ["loc", [null, [64, 16], [64, 48]]]]], [], 0, 1, ["loc", [null, [64, 10], [69, 17]]]], ["block", "unless", [["get", "colDesc.isHasMany", ["loc", [null, [74, 20], [74, 37]]]]], [], 2, null, ["loc", [null, [74, 10], [87, 21]]]], ["block", "if", [["get", "colDesc.sortOrder", ["loc", [null, [89, 16], [89, 33]]]]], [], 3, null, ["loc", [null, [89, 10], [99, 17]]]], ["inline", "t", ["components.colsconfig-dialog-content.column-width-caption"], [], ["loc", [null, [104, 17], [104, 82]]]], ["attribute", "class", ["concat", ["ui input ", ["subexpr", "if", [["subexpr", "or", [["get", "colDesc.hide", ["loc", [null, [105, 40], [105, 52]]]], ["subexpr", "or", [["get", "model.exportParams.isExportExcel", ["loc", [null, [105, 57], [105, 89]]]], ["subexpr", "or", [["get", "colDesc.fixed", ["loc", [null, [105, 94], [105, 107]]]], ["subexpr", "not", [["get", "model.saveColWidthState", ["loc", [null, [105, 113], [105, 136]]]]], [], ["loc", [null, [105, 108], [105, 137]]]]], [], ["loc", [null, [105, 90], [105, 138]]]]], [], ["loc", [null, [105, 53], [105, 139]]]]], [], ["loc", [null, [105, 36], [105, 140]]]], "disabled"], [], ["loc", [null, [105, 31], [105, 153]]]]]]], ["inline", "input", [], ["class", "column-width-input", "value", ["subexpr", "@mut", [["get", "colDesc.columnWidth", ["loc", [null, [108, 20], [108, 39]]]]], [], []]], ["loc", [null, [106, 12], [109, 14]]]], ["element", "action", ["invertVisibility", ["get", "n", ["loc", [null, [114, 60], [114, 61]]]]], [], ["loc", [null, [114, 32], [114, 63]]]], ["attribute", "class", ["concat", ["large ", ["subexpr", "if", [["get", "colDesc.hide", ["loc", [null, [114, 108], [114, 120]]]], "hide", "unhide"], [], ["loc", [null, [114, 103], [114, 138]]]], " icon"]]], ["attribute", "class", ["concat", ["ui icon button", ["subexpr", "if", [["subexpr", "eq", [["get", "n", ["loc", [null, [115, 83], [115, 84]]]], 0], [], ["loc", [null, [115, 79], [115, 87]]]], " disabled"], [], ["loc", [null, [115, 74], [115, 101]]]]]]], ["element", "action", ["rowUp", ["get", "n", ["loc", [null, [115, 49], [115, 50]]]]], [], ["loc", [null, [115, 32], [115, 52]]]], ["attribute", "class", ["concat", ["ui icon button row-down-button no-margin", ["subexpr", "if", [["subexpr", "eq", [["get", "colDesc", ["loc", [null, [116, 111], [116, 118]]]], ["get", "model.colDescs.lastObject", ["loc", [null, [116, 119], [116, 144]]]]], [], ["loc", [null, [116, 107], [116, 145]]]], " disabled"], [], ["loc", [null, [116, 102], [116, 159]]]]]]], ["element", "action", ["rowDown", ["get", "n", ["loc", [null, [116, 51], [116, 52]]]]], [], ["loc", [null, [116, 32], [116, 54]]]]],
         locals: ["colDesc", "n"],
         templates: [child0, child1, child2, child3]
       };
@@ -69248,7 +69248,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
             "column": 0
           },
           "end": {
-            "line": 120,
+            "line": 123,
             "column": 0
           }
         },
@@ -69271,7 +69271,11 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
         dom.setAttribute(el3, "class", "field");
         var el4 = dom.createTextNode("\n      ");
         dom.appendChild(el3, el4);
-        var el4 = dom.createComment("");
+        var el4 = dom.createElement("button");
+        dom.setAttribute(el4, "type", "button");
+        dom.setAttribute(el4, "class", "ui button cols-config-apply");
+        var el5 = dom.createComment("");
+        dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         var el4 = dom.createTextNode("\n    ");
         dom.appendChild(el3, el4);
@@ -69279,25 +69283,39 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("div");
-        dom.setAttribute(el3, "class", "field");
+        dom.setAttribute(el3, "class", "ui segment");
         var el4 = dom.createTextNode("\n      ");
         dom.appendChild(el3, el4);
-        var el4 = dom.createElement("button");
-        dom.setAttribute(el4, "type", "button");
-        dom.setAttribute(el4, "class", "ui button cols-config-apply");
-        var el5 = dom.createComment("");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n      ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("button");
-        dom.setAttribute(el4, "type", "button");
+        var el4 = dom.createElement("div");
+        dom.setAttribute(el4, "class", "field");
         var el5 = dom.createTextNode("\n        ");
         dom.appendChild(el4, el5);
         var el5 = dom.createComment("");
         dom.appendChild(el4, el5);
         var el5 = dom.createTextNode("\n      ");
         dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("div");
+        dom.setAttribute(el4, "class", "field");
+        var el5 = dom.createTextNode("\n        ");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createElement("button");
+        dom.setAttribute(el5, "type", "button");
+        var el6 = dom.createTextNode("\n          ");
+        dom.appendChild(el5, el6);
+        var el6 = dom.createComment("");
+        dom.appendChild(el5, el6);
+        var el6 = dom.createTextNode("\n        ");
+        dom.appendChild(el5, el6);
+        dom.appendChild(el4, el5);
+        var el5 = dom.createTextNode("\n      ");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
         var el4 = dom.createTextNode("\n    ");
         dom.appendChild(el3, el4);
@@ -69310,11 +69328,7 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
         dom.appendChild(el2, el3);
         var el3 = dom.createComment("");
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n    ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n    ");
+        var el3 = dom.createTextNode("    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("a");
         dom.setAttribute(el3, "class", "hidden download-anchor");
@@ -69332,23 +69346,23 @@ define("dummy/templates/mobile/components/colsconfig-dialog-content", ["exports"
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element15 = dom.childAt(fragment, [0]);
         var element16 = dom.childAt(element15, [1]);
-        var element17 = dom.childAt(element16, [3]);
-        var element18 = dom.childAt(element17, [1]);
-        var element19 = dom.childAt(element17, [3]);
+        var element17 = dom.childAt(element16, [1, 1]);
+        var element18 = dom.childAt(element16, [3]);
+        var element19 = dom.childAt(element18, [3, 1]);
         var morphs = new Array(10);
         morphs[0] = dom.createAttrMorph(element15, 'class');
-        morphs[1] = dom.createMorphAt(dom.childAt(element16, [1]), 1, 1);
-        morphs[2] = dom.createElementMorph(element18);
-        morphs[3] = dom.createMorphAt(element18, 0, 0);
+        morphs[1] = dom.createElementMorph(element17);
+        morphs[2] = dom.createMorphAt(element17, 0, 0);
+        morphs[3] = dom.createMorphAt(dom.childAt(element18, [1]), 1, 1);
         morphs[4] = dom.createAttrMorph(element19, 'class');
         morphs[5] = dom.createElementMorph(element19);
         morphs[6] = dom.createMorphAt(element19, 1, 1);
-        morphs[7] = dom.createMorphAt(element16, 5, 5);
-        morphs[8] = dom.createMorphAt(element16, 7, 7);
-        morphs[9] = dom.createMorphAt(element16, 9, 9);
+        morphs[7] = dom.createMorphAt(element18, 5, 5);
+        morphs[8] = dom.createMorphAt(element16, 5, 5);
+        morphs[9] = dom.createMorphAt(element16, 7, 7);
         return morphs;
       },
-      statements: [["attribute", "class", ["concat", ["ui form ", ["get", "appState.state", ["loc", [null, [1, 22], [1, 36]]]]]]], ["inline", "flexberry-field", [], ["class", "setting-name-input fluid", "value", ["subexpr", "@mut", [["get", "model.settingName", ["loc", [null, [6, 14], [6, 31]]]]], [], []], "label", ["subexpr", "t", ["components.colsconfig-dialog-content.enter-setting-name"], [], ["loc", [null, [7, 14], [7, 75]]]]], ["loc", [null, [4, 6], [8, 8]]]], ["element", "action", ["apply"], [], ["loc", [null, [11, 64], [11, 82]]]], ["inline", "if", [["get", "model.exportParams.isExportExcel", ["loc", [null, [11, 88], [11, 120]]]], ["subexpr", "t", ["components.colsconfig-dialog-content.export"], [], ["loc", [null, [11, 121], [11, 170]]]], ["subexpr", "t", ["components.colsconfig-dialog-content.use"], [], ["loc", [null, [11, 171], [11, 217]]]]], [], ["loc", [null, [11, 83], [11, 219]]]], ["attribute", "class", ["concat", ["ui button positive cols-config-save", ["subexpr", "unless", [["get", "model.settingName", ["loc", [null, [12, 79], [12, 96]]]], " disabled"], [], ["loc", [null, [12, 70], [12, 110]]]]]]], ["element", "action", ["saveColsSetting"], [], ["loc", [null, [12, 112], [12, 140]]]], ["inline", "t", ["components.colsconfig-dialog-content.save"], [], ["loc", [null, [13, 8], [13, 57]]]], ["block", "if", [["get", "model.exportParams.isExportExcel", ["loc", [null, [17, 10], [17, 42]]]]], [], 0, 1, ["loc", [null, [17, 4], [48, 11]]]], ["block", "each", [["get", "model.colDescs", ["loc", [null, [50, 12], [50, 26]]]]], [], 2, null, ["loc", [null, [50, 4], [108, 13]]]], ["inline", "ui-message", [], ["type", ["subexpr", "@mut", [["get", "type", ["loc", [null, [111, 11], [111, 15]]]]], [], []], "closeable", ["subexpr", "@mut", [["get", "closeable", ["loc", [null, [112, 16], [112, 25]]]]], [], []], "visible", ["subexpr", "@mut", [["get", "visible", ["loc", [null, [113, 14], [113, 21]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "caption", ["loc", [null, [114, 14], [114, 21]]]]], [], []], "message", ["subexpr", "@mut", [["get", "message", ["loc", [null, [115, 14], [115, 21]]]]], [], []]], ["loc", [null, [110, 4], [116, 6]]]]],
+      statements: [["attribute", "class", ["concat", ["ui form ", ["get", "appState.state", ["loc", [null, [1, 22], [1, 36]]]]]]], ["element", "action", ["apply"], [], ["loc", [null, [4, 64], [4, 82]]]], ["inline", "if", [["get", "model.exportParams.isExportExcel", ["loc", [null, [4, 88], [4, 120]]]], ["subexpr", "t", ["components.colsconfig-dialog-content.export"], [], ["loc", [null, [4, 121], [4, 170]]]], ["subexpr", "t", ["components.colsconfig-dialog-content.use"], [], ["loc", [null, [4, 171], [4, 217]]]]], [], ["loc", [null, [4, 83], [4, 219]]]], ["inline", "flexberry-field", [], ["class", "setting-name-input fluid", "value", ["subexpr", "@mut", [["get", "model.settingName", ["loc", [null, [10, 16], [10, 33]]]]], [], []], "label", ["subexpr", "t", ["components.colsconfig-dialog-content.enter-setting-name"], [], ["loc", [null, [11, 16], [11, 77]]]]], ["loc", [null, [8, 8], [12, 10]]]], ["attribute", "class", ["concat", ["ui button positive cols-config-save", ["subexpr", "unless", [["get", "model.settingName", ["loc", [null, [15, 81], [15, 98]]]], " disabled"], [], ["loc", [null, [15, 72], [15, 112]]]]]]], ["element", "action", ["saveColsSetting"], [], ["loc", [null, [15, 114], [15, 142]]]], ["inline", "t", ["components.colsconfig-dialog-content.save"], [], ["loc", [null, [16, 10], [16, 59]]]], ["inline", "ui-message", [], ["type", ["subexpr", "@mut", [["get", "type", ["loc", [null, [20, 13], [20, 17]]]]], [], []], "closeable", ["subexpr", "@mut", [["get", "closeable", ["loc", [null, [21, 18], [21, 27]]]]], [], []], "visible", ["subexpr", "@mut", [["get", "visible", ["loc", [null, [22, 16], [22, 23]]]]], [], []], "caption", ["subexpr", "@mut", [["get", "caption", ["loc", [null, [23, 16], [23, 23]]]]], [], []], "message", ["subexpr", "@mut", [["get", "message", ["loc", [null, [24, 16], [24, 23]]]]], [], []]], ["loc", [null, [19, 6], [25, 8]]]], ["block", "if", [["get", "model.exportParams.isExportExcel", ["loc", [null, [28, 10], [28, 42]]]]], [], 0, 1, ["loc", [null, [28, 4], [59, 11]]]], ["block", "each", [["get", "model.colDescs", ["loc", [null, [61, 12], [61, 26]]]]], [], 2, null, ["loc", [null, [61, 4], [119, 13]]]]],
       locals: [],
       templates: [child0, child1, child2]
     };
@@ -72706,7 +72720,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.6+9922284c"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.6+9aa015f4"});
 }
 
 /* jshint ignore:end */

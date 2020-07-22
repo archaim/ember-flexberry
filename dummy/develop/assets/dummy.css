@@ -18523,6 +18523,9 @@ option {
   font-size: 16px;
   font-weight: bold;
 }
+.mobile .flexberry-colsconfig .ui.button:first-child {
+  margin-left: 0;
+}
 @media only screen and (max-width: 767px) {
   .ui.form .two.fields.unstackable > .field {
     width: 50% !important;
@@ -18530,7 +18533,7 @@ option {
   .ui.form .fields.unstackable {
     margin: 0 -0.5em;
   }
-  .ui.form .fields.unstackable .field {
+  .ui.form .fields.unstackable > .field {
     padding: 0 0.5em;
   }
 }
@@ -33473,6 +33476,7 @@ select.ui.dropdown {
 .mobile .ui.modal .content .flexberry-colsconfig.content {
   padding: 0 1em;
   margin: 0 -1em;
+  max-height: calc(100vh - 3.5rem - 68px - 7rem);
 }
 /*!
  * # Semantic UI - Nag
