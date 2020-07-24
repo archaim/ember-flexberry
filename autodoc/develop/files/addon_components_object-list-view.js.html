@@ -781,7 +781,7 @@ export default FlexberryBaseComponent.extend(
       ret = cols;
     }
 
-    this.get(&#x27;objectlistviewEventsService&#x27;).setOlvFilterColumnsArray(ret);
+    this.get(&#x27;objectlistviewEventsService&#x27;).setOlvFilterColumnsArray(this.get(&#x27;componentName&#x27;), ret);
     return ret;
   }),
 
@@ -1372,9 +1372,9 @@ export default FlexberryBaseComponent.extend(
       Called when filter condition in any column was changed by user.
 
       @method actions.filterConditionChanged
-      @param {Object} filter
-      @param {String} newCondition
-      @param {String} oldCondition
+      @param {Object} filter Object with the filter description.
+      @param {String} newCondition The new value of the filter condition.
+      @param {String} oldCondition The old value of the filter condition.
     */
     filterConditionChanged(filter, newCondition, oldCondition) {
       if (oldCondition === &#x27;between&#x27; || newCondition === &#x27;empty&#x27; || newCondition === &#x27;nempty&#x27;) {
@@ -1429,6 +1429,7 @@ export default FlexberryBaseComponent.extend(
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;updateWidth&#x27;, this, this.setColumnWidths);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;updateSelectAll&#x27;, this, this._selectAll);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;moveRow&#x27;, this, this._moveRow);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;filterConditionChanged&#x27;, this, this._filterConditionChanged);
   },
 
   /**
@@ -1607,6 +1608,7 @@ export default FlexberryBaseComponent.extend(
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;updateWidth&#x27;, this, this.setColumnWidths);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;updateSelectAll&#x27;, this, this._selectAll);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;moveRow&#x27;, this, this._moveRow);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;filterConditionChanged&#x27;, this, this._filterConditionChanged);
 
     this.get(&#x27;objectlistviewEventsService&#x27;).clearSelectedRecords(this.get(&#x27;componentName&#x27;));
 
@@ -3054,6 +3056,22 @@ export default FlexberryBaseComponent.extend(
           contentForRender.replace(newIndex, 0, temp);
         }
       });
+    }
+  },
+
+  /**
+    Calls the &#x60;filterConditionChanged&#x60; action when filters are displayed in the modal window.
+
+    @private
+    @method _filterConditionChanged
+    @param {String} componentName The name of the component relative to which the event occurred.
+    @param {Object} filter Object with the filter description.
+    @param {String} newValue The new value of the filter condition.
+    @param {String} oldvalue The old value of the filter condition.
+  */
+  _filterConditionChanged(componentName, filter, newValue, oldValue) {
+    if (this.get(&#x27;componentName&#x27;) === componentName) {
+      this.send(&#x27;filterConditionChanged&#x27;, filter, newValue, oldValue);
     }
   },
 });

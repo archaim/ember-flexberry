@@ -880,7 +880,7 @@ export default FlexberryBaseComponent.extend({
 
       if (showFiltersInModal) {
         const componentName = this.get(&#x27;componentName&#x27;);
-        const columns = this.get(&#x27;objectlistviewEventsService&#x27;).getOlvFilterColumnsArray();
+        const columns = this.get(&#x27;objectlistviewEventsService&#x27;).getOlvFilterColumnsArray(componentName);
 
         this.get(&#x27;modelController&#x27;).send(&#x27;showFiltersDialog&#x27;, componentName, columns);
       } else {
