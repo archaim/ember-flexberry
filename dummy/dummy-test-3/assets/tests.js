@@ -4594,10 +4594,10 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $checkbox = Ember.$('.not-in-groupedit .flexberry-checkbox');
+      var $checkbox = find('[data-test-checkbox]');
       assert.strictEqual($checkbox.hasClass('read-only'), true, 'Checkbox is readonly');
 
-      var $checkboxFge = Ember.$('.in-groupedit .flexberry-checkbox');
+      var $checkboxFge = find('[data-test-groupedit] .flexberry-checkbox');
       assert.strictEqual($checkboxFge.hasClass('read-only'), true, 'Groupedit\'s checkbox is readonly');
 
       controller.set('readonly', false);
@@ -4614,18 +4614,16 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $textbox = Ember.$('.not-in-groupedit .flexberry-textbox');
-      var $textboxInput = $textbox.children('input');
+      var $textboxInput = find('[data-test-textbox] input');
       assert.strictEqual(Ember.$.trim($textboxInput.attr('readonly')), 'readonly', 'Textbox is readonly');
 
-      var $textboxFge = Ember.$('.in-groupedit .flexberry-textbox');
-      var $textboxFgeInput = $textboxFge.children('input');
+      var $textboxFgeInput = find('[data-test-groupedit] .flexberry-textbox input');
       assert.strictEqual(Ember.$.trim($textboxFgeInput.attr('readonly')), 'readonly', 'Groupedit\'s textbox is readonly');
 
       controller.set('readonly', false);
       Ember.run.scheduleOnce('afterRender', function () {
-        assert.strictEqual($textbox.is('readonly'), false, 'Textbox is not readonly');
-        assert.strictEqual($textboxFge.is('readonly'), false, 'Groupedit\'s textbox is not readonly');
+        assert.strictEqual($textboxInput.is('readonly'), false, 'Textbox is not readonly');
+        assert.strictEqual($textboxFgeInput.is('readonly'), false, 'Groupedit\'s textbox is not readonly');
       });
     });
   });
@@ -4636,18 +4634,16 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $textarea = Ember.$('.not-in-groupedit .flexberry-textarea');
-      var $textareaInput = $textarea.children('textarea');
+      var $textareaInput = find('[data-test-textarea] textarea');
       assert.strictEqual(Ember.$.trim($textareaInput.attr('readonly')), 'readonly', 'Textarea is readonly');
 
-      var $textareaFGE = Ember.$('.in-groupedit .flexberry-textarea');
-      var $textareaInputFGE = $textareaFGE.children('textarea');
+      var $textareaInputFGE = find('[data-test-groupedit] .flexberry-textarea textarea');
       assert.strictEqual(Ember.$.trim($textareaInputFGE.attr('readonly')), 'readonly', 'Groupedit\'s textarea is readonly');
 
       controller.set('readonly', false);
       Ember.run.scheduleOnce('afterRender', function () {
-        assert.strictEqual(Ember.$.trim($textareaInput.attr('readonly')), '', 'Textarea is not readonly');
-        assert.strictEqual(Ember.$.trim($textareaInputFGE.attr('readonly')), '', 'Groupedit\'s textarea is not readonly');
+        assert.strictEqual(Ember.$.trim($textareaInput.attr('readonly')), '', 'Textarea don\'t readonly');
+        assert.strictEqual(Ember.$.trim($textareaInputFGE.attr('readonly')), '', 'Groupedit\'s textarea don\'t readonly');
       });
     });
   });
@@ -4658,7 +4654,7 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $simpledatetime = Ember.$('.not-in-groupedit .flexberry-simpledatetime .custom-flatpickr');
+      var $simpledatetime = find('[data-test-simpledatetime] .custom-flatpickr');
 
       assert.strictEqual(Ember.$.trim($simpledatetime.attr('readonly')), 'readonly', 'Time is readonly');
 
@@ -4679,10 +4675,10 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $dropdown = Ember.$('.not-in-groupedit .flexberry-dropdown');
+      var $dropdown = find('.not-in-groupedit .flexberry-dropdown');
       assert.strictEqual($dropdown.hasClass('disabled'), true, 'Dropdown is readonly');
 
-      var $dropdownFge = Ember.$('.in-groupedit .flexberry-dropdown');
+      var $dropdownFge = find('[data-test-groupedit] .flexberry-dropdown');
       assert.strictEqual($dropdownFge.hasClass('disabled'), true, 'Groupedit\'s dropdown is readonly');
 
       controller.set('readonly', false);
@@ -4699,33 +4695,33 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $file = Ember.$('.not-in-groupedit input.flexberry-file-filename-input');
+      var $file = find('[data-test-file] input.flexberry-file-filename-input');
       assert.strictEqual(Ember.$.trim($file.attr('readonly')), 'readonly', 'Flexberry-file is readonly');
-      var $downloadButton = Ember.$('.not-in-groupedit label.flexberry-file-download-button');
+      var $downloadButton = find('[data-test-file] label.flexberry-file-download-button');
       assert.strictEqual($downloadButton.hasClass('disabled'), true, 'Flexberry-file\'s button \'Download\' is readonly');
 
-      var $fileFge = Ember.$('.in-groupedit input.flexberry-file-filename-input');
+      var $fileFge = find('[data-test-groupedit] input.flexberry-file-filename-input');
       assert.strictEqual(Ember.$.trim($fileFge.attr('readonly')), 'readonly', 'Groupedit\'s flexberry-file is readonly');
-      var $downloadButtonFge = Ember.$('.in-groupedit label.flexberry-file-download-button');
+      var $downloadButtonFge = find('[data-test-groupedit] label.flexberry-file-download-button');
       assert.strictEqual($downloadButtonFge.hasClass('disabled'), true, 'Groupedit\'s flexberry-file\'s button \'Download\' is readonly');
 
       controller.set('readonly', false);
       Ember.run.scheduleOnce('afterRender', function () {
-        assert.strictEqual($file.is('readonly'), false, 'Flexberry-file is not readonly');
-        var $addButton = Ember.$('.not-in-groupedit label.flexberry-file-add-button');
-        assert.strictEqual($addButton.hasClass('disabled'), false, 'Flexberry-file\'s button \'Add\' is not readonly');
-        var $removeButton = Ember.$('.not-in-groupedit label.flexberry-file-remove-button');
+        assert.strictEqual(Ember.$(undefined).is('readonly'), false, 'Flexberry-file don\'t readonly');
+        var $addButton = find('[data-test-file] label.flexberry-file-add-button');
+        assert.strictEqual($addButton.hasClass('disabled'), false, 'Flexberry-file\'s button \'Add\' don\'t readonly');
+        var $removeButton = find('[data-test-file] label.flexberry-file-remove-button');
         assert.strictEqual($removeButton.hasClass('disabled'), true, 'Flexberry-file has button \'Remove\'');
-        var $uploadButton = Ember.$('.not-in-groupedit label.flexberry-file-upload-button');
+        var $uploadButton = find('[data-test-file] label.flexberry-file-upload-button');
         assert.strictEqual($uploadButton.hasClass('disabled'), true, 'Flexberry-file has button \'Upload\'');
         assert.strictEqual($downloadButton.hasClass('disabled'), true, 'Flexberry-file has button \'Download\'');
 
-        assert.strictEqual($fileFge.is('readonly'), false, 'Groupedit\'s flexberry-file is not readonly');
-        var $addButtonFge = Ember.$('.in-groupedit label.flexberry-file-add-button');
-        assert.strictEqual($addButtonFge.hasClass('disabled'), false, 'Groupedit\'s flexberry-file\'s button \'Add\' is not readonly');
-        var $removeButtonFge = Ember.$('.in-groupedit label.flexberry-file-remove-button');
+        assert.strictEqual(Ember.$(undefined).is('readonly'), false, 'Groupedit\'s flexberry-file don\'t readonly');
+        var $addButtonFge = find('[data-test-groupedit] label.flexberry-file-add-button');
+        assert.strictEqual($addButtonFge.hasClass('disabled'), false, 'Groupedit\'s flexberry-file\'s button \'Add\' don\'t readonly');
+        var $removeButtonFge = find('[data-test-groupedit] label.flexberry-file-remove-button');
         assert.strictEqual($removeButtonFge.hasClass('disabled'), true, 'Groupedit\'s flexberry-file has button \'Remove\'');
-        var $uploadButtonFge = Ember.$('.in-groupedit label.flexberry-file-upload-button');
+        var $uploadButtonFge = find('[data-test-groupedit] label.flexberry-file-upload-button');
         assert.strictEqual($uploadButtonFge.hasClass('disabled'), true, 'Groupedit\'s flexberry-file has button \'Upload\'');
         assert.strictEqual($downloadButtonFge.hasClass('disabled'), true, 'Groupedit\'s flexberry-file has button \'Download\'');
       });
@@ -4738,25 +4734,24 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $flexberryLookup = Ember.$('.not-in-groupedit .flexberry-lookup div.ui.fluid.action.input');
-      var $lookup = $flexberryLookup.children('.lookup-field');
+      var $lookup = find('[data-test-lookup] input.lookup-field');
       assert.strictEqual(Ember.$.trim($lookup.attr('readonly')), 'readonly', 'Lookup is readonly');
-      var $chooseButton = $flexberryLookup.children('.button.ui-change');
+      var $chooseButton = find('[data-test-lookup] button.ui-change');
       assert.strictEqual($chooseButton.hasClass('disabled'), true, 'Flexberry-lookup\'s button \'Choose\' is readonly');
-      var $removeButton = $flexberryLookup.children('.button.ui-clear');
+      var $removeButton = find('[data-test-lookup] button.ui-clear');
       assert.strictEqual($removeButton.hasClass('disabled'), true, 'Flexberry-lookup\'s button \'Remove\' is readonly');
 
-      var $lookupFge = Ember.$('.in-groupedit input.lookup-field');
+      var $lookupFge = find('[data-test-groupedit] input.lookup-field');
       assert.strictEqual(Ember.$.trim($lookupFge.attr('readonly')), 'readonly', 'Groupedit\'s lookup is readonly');
-      var $chooseButtonFge = Ember.$('.in-groupedit button.ui-change');
+      var $chooseButtonFge = find('[data-test-groupedit] button.ui-change');
       assert.strictEqual($chooseButtonFge.hasClass('disabled'), true, 'Groupedit\'s flexberry-lookup\'s button \'Choose\' is readonly');
-      var $removeButtonFge = Ember.$('.in-groupedit button.ui-clear');
+      var $removeButtonFge = find('[data-test-groupedit] button.ui-clear');
       assert.strictEqual($removeButtonFge.hasClass('disabled'), true, 'Groupedit\'s flexberry-lookup\'s button \'Remove\' is readonly');
 
       controller.set('readonly', false);
       Ember.run.scheduleOnce('afterRender', function () {
-        $removeButton = Ember.$('.not-in-groupedit button.ui-clear');
-        $removeButtonFge = Ember.$('.in-groupedit button.ui-clear');
+        $removeButton = find('[data-test-lookup] button.ui-clear');
+        $removeButtonFge = find('[data-test-groupedit] button.ui-clear');
         assert.strictEqual(Ember.$(undefined).is('readonly'), false, 'Lookup don\'t readonly');
         assert.strictEqual($chooseButton.hasClass('disabled'), false, 'Flexberry-lookup\'s button \'Choose\' don\'t readonly');
         assert.strictEqual($removeButton.hasClass('disabled'), false, 'Flexberry-lookup\'s button \'Remove\' don\'t readonly');
@@ -4774,8 +4769,7 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $dropdownAsLookup = Ember.$('.not-in-groupedit .flexberry-lookup');
-      var $dropdown = Ember.$($dropdownAsLookup[1]).children('.flexberry-dropdown');
+      var $dropdown = find('[data-test-lookup-d] .flexberry-dropdown');
       assert.strictEqual($dropdown.hasClass('disabled'), true, 'Lookup as dropdown is readonly');
 
       controller.set('readonly', false);
@@ -4791,7 +4785,7 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
     visit(path);
     andThen(function () {
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $groupedit = Ember.$('.in-groupedit table');
+      var $groupedit = find('[data-test-groupedit] table');
       assert.strictEqual($groupedit.hasClass('readonly'), true, 'Groupedit is readonly');
 
       controller.set('readonly', false);
@@ -4806,34 +4800,34 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
 
     visit(path);
     andThen(function () {
-      var $addButton = Ember.$('.in-groupedit .ui-add');
-      var $removeButton = Ember.$('.in-groupedit .ui-delete');
-      var $checkbox = Ember.$('.in-groupedit .flexberry-checkbox');
-      var $removeButtonRow = Ember.$('.in-groupedit .object-list-view-row-delete-button');
-      var $itemEditMenu = Ember.$('.in-groupedit .edit-menu');
-      var $itemDeleteMenu = Ember.$('.in-groupedit .delete-menu');
+      var $addButton = find('[data-test-groupedit] .ui-add');
+      var $removeButton = find('[data-test-groupedit] .ui-delete');
+      var $checkbox = find('[data-test-groupedit] .flexberry-checkbox');
+      var $removeButtonRow = find('[data-test-groupedit] .object-list-view-row-delete-button');
+      var $itemEditMenu = find('[data-test-groupedit] .edit-menu');
+      var $itemDeconsteMenu = find('[data-test-groupedit] .delete-menu');
 
       assert.strictEqual(Ember.$.trim($addButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Add\' is readonly');
       assert.strictEqual(Ember.$.trim($removeButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Remove\' is readonly');
       assert.strictEqual($checkbox.hasClass('read-only'), true, 'Flexberry-groupedit\'s checkbox helper is readonly');
       assert.strictEqual($removeButtonRow.hasClass('disabled'), true, 'Flexberry-groupedit\'s button \'Remove in row\' is readonly');
       assert.strictEqual($itemEditMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Edit\' in left menu is readonly');
-      assert.strictEqual($itemDeleteMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Delete\' in left menu is readonly');
+      assert.strictEqual($itemDeconsteMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Deconste\' in left menu is readonly');
 
       var controller = app.__container__.lookup('controller:' + currentRouteName());
       controller.set('readonly', false);
       Ember.run.scheduleOnce('afterRender', function () {
-        $checkbox = Ember.$('.in-groupedit .flexberry-checkbox');
-        $itemEditMenu = Ember.$('.in-groupedit .edit-menu');
-        $itemDeleteMenu = Ember.$('.in-groupedit .delete-menu');
-        $removeButtonRow = Ember.$('.in-groupedit .object-list-view-row-delete-button');
+        $checkbox = find('[data-test-groupedit] .flexberry-checkbox');
+        $itemEditMenu = find('[data-test-groupedit] .edit-menu');
+        $itemDeconsteMenu = find('[data-test-groupedit] .delete-menu');
+        $removeButtonRow = find('[data-test-groupedit] .object-list-view-row-delete-button');
 
         assert.strictEqual(Ember.$(undefined).is('disabled'), false, 'Flexberry-groupedit\'s button \'Add\' don\'t readonly');
         assert.strictEqual(Ember.$(undefined).is('disabled'), false, 'Flexberry-groupedit\'s button \'Remove\' don\'t readonly');
         assert.strictEqual($checkbox.hasClass('read-only'), false, 'Flexberry-groupedit\'s checkbox helper don\'t readonly');
         assert.strictEqual($removeButtonRow.hasClass('disabled'), false, 'Flexberry-groupedit\'s button \'Remove in row\' don\'t readonly');
         assert.strictEqual($itemEditMenu.hasClass('disabled'), false, 'Flexberry-groupedit\'s item \'Edit\' in left menu don\'t readonly');
-        assert.strictEqual($itemDeleteMenu.hasClass('disabled'), false, 'Flexberry-groupedit\'s item \'Delete\' in left menu don\'t readonly');
+        assert.strictEqual($itemDeconsteMenu.hasClass('disabled'), false, 'Flexberry-groupedit\'s item \'Deconste\' in left menu don\'t readonly');
       });
     });
   });
