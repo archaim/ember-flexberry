@@ -4913,7 +4913,7 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-checkbox-tes
     andThen(function () {
       assert.equal(currentPath(), path);
 
-      var $validationField = Ember.$(Ember.$('.field.error')[0]);
+      var $validationField = Ember.$(Ember.$('.field')[1]);
       var $validationFlexberryCheckbox = $validationField.children('.flexberry-checkbox');
       var $validationFlexberryErrorLable = $validationField.children('.label');
 
@@ -5030,7 +5030,7 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-dropdown-tes
     andThen(function () {
       assert.equal(currentPath(), path);
 
-      var $validationField = Ember.$(Ember.$('.field.error')[5]);
+      var $validationField = Ember.$(Ember.$('.field')[6]);
       var $validationFlexberryDropdown = $validationField.children('.flexberry-dropdown');
       var $validationFlexberryErrorLable = $validationField.children('.label');
 
@@ -5067,7 +5067,7 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-file-test', 
     andThen(function () {
       assert.equal(currentPath(), path);
 
-      var $validationFieldFile = Ember.$(Ember.$('.field.error')[6]);
+      var $validationFieldFile = Ember.$(Ember.$('.field')[7]);
       var $validationFlexberryErrorLable = $validationFieldFile.children('.label');
 
       // Check default validationmessage text.
@@ -5107,7 +5107,7 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-lookup-test'
     andThen(function () {
       assert.equal(currentPath(), path);
 
-      var $validationField = Ember.$(Ember.$('.field.error')[7]);
+      var $validationField = Ember.$(Ember.$('.field')[8]);
       var $validationFlexberryErrorLable = $validationField.children('.label');
 
       // Check default validationmessage text.
@@ -5265,7 +5265,7 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-textarea-tes
     andThen(function () {
       assert.equal(currentPath(), path);
 
-      var $validationField = Ember.$(Ember.$('.field.error')[3]);
+      var $validationField = Ember.$(Ember.$('.field')[4]);
       var $validationFlexberryTextarea = Ember.$('.flexberry-textarea');
       var $validationFlexberryTextboxInner = $validationFlexberryTextarea.children('textarea');
       var $validationFlexberryErrorLable = $validationField.children('.label');
@@ -5299,7 +5299,7 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-textbox-lett
     andThen(function () {
       assert.equal(currentPath(), path);
 
-      var $validationField = Ember.$(Ember.$('.field.error')[2]);
+      var $validationField = Ember.$(Ember.$('.field')[3]);
       var $validationFlexberryTextbox = $validationField.children('.flexberry-textbox');
       var $validationFlexberryTextboxInner = $validationFlexberryTextbox.children('input');
       var $validationFlexberryErrorLable = $validationField.children('.label');
@@ -5342,7 +5342,7 @@ define('dummy/tests/acceptance/edit-form-validation-test/validation-textbox-nume
     andThen(function () {
       assert.equal(currentPath(), path);
 
-      var $validationField = Ember.$(Ember.$('.field.error')[1]);
+      var $validationField = Ember.$(Ember.$('.field')[2]);
       var $validationFlexberryTextbox = $validationField.children('.flexberry-textbox');
       var $validationFlexberryTextboxInner = $validationFlexberryTextbox.children('input');
       var $validationFlexberryErrorLable = $validationField.children('.label');
