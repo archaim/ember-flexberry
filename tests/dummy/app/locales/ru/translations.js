@@ -652,6 +652,14 @@ Ember.$.extend(true, translations, {
               'title': ''
             }
           },
+          'flexberry-tab-bar': {
+            'caption': 'flexberry-tab-bar',
+            'title': '',
+            'settings-example': {
+              'caption': 'Пример работы с настройками',
+              'title': ''
+            }
+          },
           'flexberry-text-cell': {
             'caption': 'flexberry-text-cell',
             'title': '',
@@ -1149,6 +1157,11 @@ Ember.$.extend(true, translations, {
       'flexberry-simpledatetime': {
         'settings-example': {
           'caption': 'Flexberry-simpledatetime. Пример работы с настройками'
+        }
+      },
+      'flexberry-tab-bar': {
+        'settings-example': {
+          'caption': 'Flexberry-tab-bar. Пример работы с настройками'
         }
       },
       'flexberry-text-cell': {
