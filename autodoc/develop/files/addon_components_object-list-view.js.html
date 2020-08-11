@@ -252,8 +252,7 @@ export default FlexberryBaseComponent.extend(
   _contentObserver: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;content&#x27;, function() {
     this._setContent(this.get(&#x27;componentName&#x27;));
 
-    if (this.get(&#x27;allSelect&#x27;))
-    {
+    if (this.get(&#x27;allSelect&#x27;)) {
       let contentWithKeys = this.get(&#x27;contentWithKeys&#x27;);
       let checked = this.get(&#x27;allSelect&#x27;);
 
@@ -1324,6 +1323,42 @@ export default FlexberryBaseComponent.extend(
       let componentName = this.get(&#x27;componentName&#x27;);
       this.get(&#x27;objectlistviewEventsService&#x27;).updateSelectAllTrigger(componentName, checked, true);
       this.selectedRowsChanged();
+    },
+
+    /**
+      Handler click on flexberry-menu.
+
+      @method actions.onCheckRowMenuItemClick
+      @param {jQuery.Event} e jQuery.Event by click on menu item
+    */
+    onCheckRowMenuItemClick(e) {
+      let namedItemSpans = Ember.$(e.currentTarget).find(&#x27;span&#x27;);
+      if (namedItemSpans.length &lt;= 0) {
+        return;
+      }
+
+      let i18n = this.get(&#x27;i18n&#x27;);
+      let namedSetting = namedItemSpans.get(0).innerText;
+
+      let isUncheckAllAtPage = this.get(&#x27;allSelectAtPage&#x27;);
+      let checkAllAtPageTitle = isUncheckAllAtPage ? i18n.t(&#x27;components.olv-toolbar.uncheck-all-at-page-button-text&#x27;) :
+      i18n.t(&#x27;components.olv-toolbar.check-all-at-page-button-text&#x27;);
+
+      let isUncheckAll = this.get(&#x27;allSelect&#x27;);
+      let checkAllTitle = isUncheckAll ? i18n.t(&#x27;components.olv-toolbar.uncheck-all-button-text&#x27;) :
+      i18n.t(&#x27;components.olv-toolbar.check-all-button-text&#x27;);
+
+      switch (namedSetting) {
+        case checkAllAtPageTitle.toString(): {
+          this.send(&#x27;checkAllAtPage&#x27;);
+          break;
+        }
+
+        case checkAllTitle.toString(): {
+          this.send(&#x27;checkAll&#x27;);
+          break;
+        }
+      }
     },
 
     /**
@@ -2418,6 +2453,7 @@ export default FlexberryBaseComponent.extend(
     // Mark previously selected records.
     let componentName = this.get(&#x27;componentName&#x27;);
     let selectedRecordsToRestore = this.get(&#x27;objectlistviewEventsService&#x27;).getSelectedRecords(componentName);
+
     if (selectedRecordsToRestore &amp;&amp; selectedRecordsToRestore.size &amp;&amp; selectedRecordsToRestore.size &gt; 0) {
       selectedRecordsToRestore.forEach((recordWithData, key) =&gt; {
         if (record === recordWithData.data) {
@@ -2834,6 +2870,7 @@ export default FlexberryBaseComponent.extend(
     let componentName = this.get(&#x27;componentName&#x27;);
 
     let selectedRecordsToRestore = this.get(&#x27;objectlistviewEventsService&#x27;).getSelectedRecords(componentName);
+
     if (selectedRecordsToRestore &amp;&amp; selectedRecordsToRestore.size &amp;&amp; selectedRecordsToRestore.size &gt; 0) {
       let e = {
         checked: true

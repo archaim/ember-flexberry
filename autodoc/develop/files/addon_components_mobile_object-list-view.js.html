@@ -228,6 +228,34 @@ import ObjectListViewComponent from &#x27;../object-list-view&#x27;;
 */
 export default ObjectListViewComponent.extend({
   /**
+    Flag indicates whether visible selected menu for mobile.
+
+    @private
+    @property _selectedMobileMenu
+    @type Boolean
+    @readOnly
+  */
+  _selectedMobileMenu: Ember.computed(&#x27;selectedRecords.length&#x27;, &#x27;allSelect&#x27;, function() {
+    return this.get(&#x27;selectedRecords.length&#x27;) &gt; 0 || this.get(&#x27;allSelect&#x27;);
+  }),
+
+  /**
+    Count selected row for mobile menu.
+
+    @private
+    @property _selectedCountMobileMenu
+    @type Number
+    @readOnly
+  */
+  _selectedCountMobileMenu: Ember.computed(&#x27;selectedRecords.length&#x27;, &#x27;allSelect&#x27;, function() {
+    if (this.get(&#x27;allSelect&#x27;)) {
+      return this.get(&#x27;recordsTotalCount&#x27;);
+    }
+
+    return this.get(&#x27;selectedRecords.length&#x27;);
+  }),
+
+  /**
     Flag indicates whether allow to resize columns (if &#x60;true&#x60;) or not (if &#x60;false&#x60;).
 
     @property allowColumnResize
@@ -274,7 +302,111 @@ export default ObjectListViewComponent.extend({
     }
 
     return columnsCount;
-  })
+  }),
+
+  /**
+    @private
+    @property _checkRowsSettingsItems
+    @readOnly
+  */
+  _checkRowsSettingsItems: Ember.computed(
+    &#x27;i18n.locale&#x27;,
+    &#x27;userSettingsService.isUserSettingsServiceEnabled&#x27;,
+    &#x27;readonly&#x27;,
+    &#x27;allSelect&#x27;,
+    &#x27;allSelectAtPage&#x27;,
+    function() {
+      let i18n = this.get(&#x27;i18n&#x27;);
+      let readonly = this.get(&#x27;readonly&#x27;);
+      let allSelect = this.get(&#x27;allSelect&#x27;);
+
+      let rootItem = {
+        icon: &#x27;icon-guideline-check-menu icon&#x27;,
+        iconAlignment: &#x27;right&#x27;,
+        title: &#x27;&#x27;,
+        items: [],
+        localeKey: &#x27;&#x27;
+      };
+
+      let isUncheckAllAtPage = this.get(&#x27;allSelectAtPage&#x27;);
+      let checkAllAtPageTitle = isUncheckAllAtPage ? i18n.t(&#x27;components.olv-toolbar.uncheck-all-at-page-button-text&#x27;) :
+      i18n.t(&#x27;components.olv-toolbar.check-all-at-page-button-text&#x27;);
+      let checkAllAtPageTitleKey = isUncheckAllAtPage ? &#x27;components.olv-toolbar.uncheck-all-at-page-button-text&#x27; :
+      &#x27;components.olv-toolbar.check-all-at-page-button-text&#x27;;
+
+      let checkAllTitle = allSelect ? i18n.t(&#x27;components.olv-toolbar.uncheck-all-button-text&#x27;) :
+      i18n.t(&#x27;components.olv-toolbar.check-all-button-text&#x27;);
+      let checkAllTitleKey = allSelect ? &#x27;components.olv-toolbar.uncheck-all-button-text&#x27; :
+      &#x27;components.olv-toolbar.check-all-button-text&#x27;;
+
+      if (!readonly) {
+        if (!allSelect) {
+          rootItem.items.push({
+            title: checkAllAtPageTitle,
+            localeKey: checkAllAtPageTitleKey
+          });
+        }
+
+        let classNames = this.get(&#x27;classNames&#x27;);
+        if (classNames &amp;&amp; classNames.indexOf(&#x27;groupedit-container&#x27;) === -1) {
+          rootItem.items.push({
+            title: checkAllTitle,
+            localeKey: checkAllTitleKey
+          });
+        }
+      }
+
+      return this.get(&#x27;userSettingsService&#x27;).isUserSettingsServiceEnabled ? [rootItem] : [];
+    }
+  ),
+
+  actions: {
+    /**
+      Delete selected rows.
+
+      @method actions.deleteSelectedRow
+    */
+    deleteSelectedRow() {
+      let confirmDeleteRows = this.get(&#x27;confirmDeleteRows&#x27;);
+      if (confirmDeleteRows) {
+        Ember.assert(&#x27;Error: confirmDeleteRows must be a function.&#x27;, typeof confirmDeleteRows === &#x27;function&#x27;);
+        if (!confirmDeleteRows()) {
+          return;
+        }
+      }
+
+      let componentName = this.get(&#x27;componentName&#x27;);
+
+      if (!this.get(&#x27;allSelect&#x27;)) {
+        this._deleteRows(componentName, true);
+      } else {
+        let filterQuery = {
+          predicate: this.get(&#x27;currentController.filtersPredicate&#x27;),
+          modelName: this.get(&#x27;modelProjection.modelName&#x27;)
+        };
+
+        this._deleteAllRows(componentName, filterQuery);
+      }
+    },
+
+    /**
+      Clear selected rows.
+
+      @method actions.clearSelectedRecords
+    */
+    clearSelectedRecords() {
+      if (this.get(&#x27;allSelect&#x27;)) {
+        this.send(&#x27;checkAll&#x27;);
+      } else {
+        let selectedRecords = this.get(&#x27;selectedRecords&#x27;);
+        for (let i = 0; i &lt; selectedRecords.length; i++) {
+          this.send(&#x27;selectRow&#x27;, selectedRecords[i], {
+            checked: false
+          });
+        }
+      }
+    },
+  }
 });
 
     </pre>
