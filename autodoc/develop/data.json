@@ -1965,7 +1965,7 @@
             "line": 8,
             "description": "Menu component for Semantic UI.\n\nQuestions:\n- Need {{yield}} in flexberry-menu.hbs?",
             "example": [
-                "\n  ```javascript\n  // app/controllers/menu.js\n  ...\n  items: [{\n    icon: 'search icon',\n    title: 'Search',\n  },{\n    icon: 'settings icon',\n    iconAlignment: 'right',\n    title: 'Settings',\n  },{\n    icon: 'list icon',\n    title: 'Submenu',\n    items: [{\n      icon: 'trash icon',\n      title: 'Delete',\n    }],\n  }],\n  ...\n  actions: {\n    ...\n    onItemClick(e) {\n      let clickedMenuItem = Ember.$(e.currentTarget);\n      ...\n    },\n    ...\n  },\n  ...\n  ```\n\n  ```handlebars\n  <!-- app/templates/menu.hbs -->\n  ...\n  {{flexberry-menu\n    items=items\n    onItemClick=(action 'onItemClick')\n  }}\n  ...\n  ```"
+                "\n  ```javascript\n  // app/controllers/menu.js\n  ...\n  items: [{\n    icon: 'search icon',\n    title: 'Search',\n  },{\n    icon: 'settings icon',\n    iconAlignment: 'right',\n    title: 'Settings',\n  },{\n    icon: 'list icon',\n    title: 'Submenu',\n    items: [{\n      icon: 'trash icon',\n      title: 'Delete',\n    }],\n  }, {\n    title: 'Item',\n    buttons: [{\n      title: 'edit',\n      buttonClasses: 'icon',\n      iconClass: 'edit icon',\n      disabled: false,\n      buttonAction: () => {\n        window.alert('clicked edit button');\n      }\n    }]\n  }],\n  ...\n  actions: {\n    ...\n    onItemClick(e) {\n      let clickedMenuItem = Ember.$(e.currentTarget);\n      ...\n    },\n    ...\n  },\n  ...\n  ```\n\n  ```handlebars\n  <!-- app/templates/menu.hbs -->\n  ...\n  {{flexberry-menu\n    items=items\n    onItemClick=(action 'onItemClick')\n  }}\n  ...\n  ```"
             ],
             "extends": "FlexberryBaseComponent"
         },
@@ -8918,7 +8918,7 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 59,
+            "line": 70,
             "description": "Flag: indicates whether to call 'items.[].onClick' callbacks or not.",
             "itemtype": "property",
             "name": "callItemsOnClickCallbacks",
@@ -8929,7 +8929,7 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 68,
+            "line": 79,
             "description": "Flag: indicates whether to collapse menu when clicking menuitem or not.",
             "itemtype": "property",
             "name": "collapseMenuOnItemClick",
@@ -8940,7 +8940,7 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 77,
+            "line": 88,
             "description": "Menu items.",
             "itemtype": "property",
             "name": "items",
@@ -8951,7 +8951,7 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 86,
+            "line": 97,
             "description": "Array CSS class names.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#property_classNames).",
             "itemtype": "property",
             "name": "classNames",
@@ -8962,7 +8962,7 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 96,
+            "line": 107,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -8973,7 +8973,7 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 105,
+            "line": 116,
             "description": "Indicates than only click handler needed.",
             "itemtype": "property",
             "name": "onlyClickHandler",
@@ -8984,28 +8984,28 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 114,
+            "line": 125,
             "description": "Initializes component.",
             "class": "FlexberryMenu",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 145,
+            "line": 156,
             "description": "Initializes DOM-related component's logic.",
             "class": "FlexberryMenu",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 161,
+            "line": 172,
             "description": "Cleans up DOM-related component's logic.",
             "class": "FlexberryMenu",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 172,
+            "line": 183,
             "description": "Hook which will be called to configure menu items.",
             "example": [
                 "\n  ```handlebars\n  <!-- app/templates/menu.hbs -->\n  {{flexberry-menu\n    ...\n    configurateItems=(action 'configurateItems')\n    ...\n  }}\n  ```\n\n  ```javascript\n  // app/controllers/menu.js\n  export default Ember.Controller.extend({\n  ...\n    actions: {\n      ...\n      configurateItems(items) {\n        items.push({\n          icon: 'edit icon',\n          title: 'Edit',\n        });\n      },\n      ...\n    }\n  ...\n  });\n  ```"
@@ -9024,7 +9024,7 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 208,
+            "line": 219,
             "description": "Menu click handler.\nUsed to delegate menu items clicks handling.",
             "itemtype": "method",
             "name": "_onClickHandler",
@@ -9042,14 +9042,14 @@
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 239,
+            "line": 255,
             "description": "Menu's collapseMenuOnItemClick observer.",
             "class": "FlexberryMenu",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/flexberry-menu.js",
-            "line": 248,
+            "line": 264,
             "description": "Method for getting action name for menu based on collapseMenuOnItemClick property.",
             "itemtype": "method",
             "name": "_getActionForMenu",
@@ -9144,8 +9144,24 @@
         },
         {
             "file": "addon/components/flexberry-menuitem.js",
-            "line": 109,
+            "line": 112,
             "description": "Cleans up DOM-related component's logic.",
+            "class": "FlexberryMenuitem",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-menuitem.js",
+            "line": 125,
+            "description": "Action for custom button.",
+            "itemtype": "method",
+            "name": "actions.itemButtonAction",
+            "params": [
+                {
+                    "name": "action",
+                    "description": "The action and only action.",
+                    "type": "Function"
+                }
+            ],
             "class": "FlexberryMenuitem",
             "module": "ember-flexberry"
         },
@@ -27350,19 +27366,19 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " addon/components/flexberry-menu.js:114"
+            "line": " addon/components/flexberry-menu.js:125"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's logic.",
-            "line": " addon/components/flexberry-menu.js:145"
+            "line": " addon/components/flexberry-menu.js:156"
         },
         {
             "message": "Missing item type\nCleans up DOM-related component's logic.",
-            "line": " addon/components/flexberry-menu.js:161"
+            "line": " addon/components/flexberry-menu.js:172"
         },
         {
             "message": "Missing item type\nMenu's collapseMenuOnItemClick observer.",
-            "line": " addon/components/flexberry-menu.js:239"
+            "line": " addon/components/flexberry-menu.js:255"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's logic.",
@@ -27370,7 +27386,7 @@
         },
         {
             "message": "Missing item type\nCleans up DOM-related component's logic.",
-            "line": " addon/components/flexberry-menuitem.js:109"
+            "line": " addon/components/flexberry-menuitem.js:112"
         },
         {
             "message": "Missing item type\nAn overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",

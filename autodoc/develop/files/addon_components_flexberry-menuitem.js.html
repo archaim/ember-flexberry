@@ -314,6 +314,9 @@ export default FlexberryBaseComponent.extend({
     let item = this.get(&#x27;item&#x27;);
     if (this.get(&#x27;tagName&#x27;) !== &#x27;&#x27;) {
       this.$().data(&#x27;flexberry-menuitem.item&#x27;, item);
+      if (item.dividing) {
+        this.$().addClass(&#x27;dividing&#x27;);
+      }
     } else {
       let parentView = this.get(&#x27;parentView&#x27;);
       parentView.$().data(&#x27;flexberry-menu&#x27;, item)
@@ -331,6 +334,23 @@ export default FlexberryBaseComponent.extend({
     if (this.get(&#x27;tagName&#x27;) !== &#x27;&#x27;) {
       this.$().removeData(&#x27;flexberry-menuitem.item&#x27;);
     }
+  },
+
+  actions: {
+    /**
+      Action for custom button.
+
+      @method actions.itemButtonAction
+      @param {Function} action The action and only action.
+    */
+    itemButtonAction(action) {
+      let actionType = typeof action;
+      if (actionType === &#x27;function&#x27;) {
+        action(this.get(&#x27;item&#x27;));
+      } else {
+        throw new Error(&#x27;Unsupported action type for custom buttons.&#x27;);
+      }
+    },
   }
 });
 

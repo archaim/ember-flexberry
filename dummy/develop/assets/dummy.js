@@ -5702,6 +5702,24 @@ define('dummy/controllers/components-examples/flexberry-menu/settings-example', 
           title: i18n.t('forms.components-examples.flexberry-menu.settings-example.titleIcon1'),
           items: null
         }, {
+          title: i18n.t('forms.components-examples.flexberry-menu.settings-example.titleIcon4'),
+          buttons: [{
+            buttonClasses: 'icon',
+            iconClass: 'delete icon',
+            disabled: false,
+            buttonAction: function buttonAction() {
+              window.alert('btn1');
+            }
+          }, {
+            buttonClasses: 'icon',
+            iconClass: 'edit icon',
+            disabled: false,
+            buttonAction: function buttonAction() {
+              window.alert('btn2');
+            }
+          }],
+          items: null
+        }, {
           icon: 'setting icon',
           iconAlignment: 'right',
           title: i18n.t('forms.components-examples.flexberry-menu.settings-example.titleIcon2'),
@@ -14754,7 +14772,8 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
             'caption': 'Flexberry-menu. Settings example',
             'titleIcon1': 'Left side aligned icon',
             'titleIcon2': 'Right side aligned icon',
-            'titleIcon3': 'Submenu'
+            'titleIcon3': 'Submenu',
+            'titleIcon4': 'Row buttons'
           }
         },
         'flexberry-objectlistview': {
@@ -16001,7 +16020,8 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
             'caption': 'Flexberry-menu. Пример работы с настройками',
             'titleIcon1': 'Значок выравнен по левому краю',
             'titleIcon2': 'Значок выравнен по правому краю',
-            'titleIcon3': 'Подменю'
+            'titleIcon3': 'Подменю',
+            'titleIcon4': 'Кнопки в строке'
           }
         },
         'flexberry-objectlistview': {
@@ -48245,9 +48265,9 @@ define("dummy/templates/components/flexberry-menuitem", ["exports"], function (e
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element1 = dom.childAt(fragment, [1]);
+          var element3 = dom.childAt(fragment, [1]);
           var morphs = new Array(1);
-          morphs[0] = dom.createAttrMorph(element1, 'class');
+          morphs[0] = dom.createAttrMorph(element3, 'class');
           return morphs;
         },
         statements: [["attribute", "class", ["concat", [["get", "item.icon", ["loc", [null, [9, 14], [9, 23]]]]]]]],
@@ -48392,11 +48412,113 @@ define("dummy/templates/components/flexberry-menuitem", ["exports"], function (e
             "loc": {
               "source": null,
               "start": {
-                "line": 20,
+                "line": 25,
+                "column": 6
+              },
+              "end": {
+                "line": 27,
+                "column": 6
+              }
+            },
+            "moduleName": "dummy/templates/components/flexberry-menuitem.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("        ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("i");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var element1 = dom.childAt(fragment, [1]);
+            var morphs = new Array(1);
+            morphs[0] = dom.createAttrMorph(element1, 'class');
+            return morphs;
+          },
+          statements: [["attribute", "class", ["concat", [["get", "button.iconClass", ["loc", [null, [26, 20], [26, 36]]]]]]]],
+          locals: [],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.6",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 18,
+              "column": 0
+            },
+            "end": {
+              "line": 30,
+              "column": 0
+            }
+          },
+          "moduleName": "dummy/templates/components/flexberry-menuitem.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("button");
+          dom.setAttribute(el1, "type", "button");
+          var el2 = dom.createTextNode("\n");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("      ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n  ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element2 = dom.childAt(fragment, [1]);
+          var morphs = new Array(6);
+          morphs[0] = dom.createAttrMorph(element2, 'class');
+          morphs[1] = dom.createAttrMorph(element2, 'title');
+          morphs[2] = dom.createAttrMorph(element2, 'disabled');
+          morphs[3] = dom.createElementMorph(element2);
+          morphs[4] = dom.createMorphAt(element2, 1, 1);
+          morphs[5] = dom.createMorphAt(element2, 3, 3);
+          return morphs;
+        },
+        statements: [["attribute", "class", ["concat", ["ui ", ["get", "button.buttonClasses", ["loc", [null, [21, 16], [21, 36]]]], " button"]]], ["attribute", "title", ["get", "button.buttonTitle", ["loc", [null, [22, 12], [22, 30]]]]], ["attribute", "disabled", ["get", "button.disabled", ["loc", [null, [23, 15], [23, 30]]]]], ["element", "action", ["itemButtonAction", ["get", "button.buttonAction", ["loc", [null, [24, 32], [24, 51]]]]], ["bubbles", false], ["loc", [null, [24, 4], [24, 67]]]], ["block", "if", [["get", "button.iconClass", ["loc", [null, [25, 12], [25, 28]]]]], [], 0, null, ["loc", [null, [25, 6], [27, 13]]]], ["inline", "if", [["get", "button.buttonName", ["loc", [null, [28, 11], [28, 28]]]], ["get", "button.buttonName", ["loc", [null, [28, 29], [28, 46]]]]], [], ["loc", [null, [28, 6], [28, 48]]]]],
+        locals: ["button"],
+        templates: [child0]
+      };
+    })();
+    var child4 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.6",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 33,
                 "column": 4
               },
               "end": {
-                "line": 22,
+                "line": 35,
                 "column": 4
               }
             },
@@ -48421,7 +48543,7 @@ define("dummy/templates/components/flexberry-menuitem", ["exports"], function (e
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "flexberry-menuitem", [], ["item", ["subexpr", "@mut", [["get", "item", ["loc", [null, [21, 32], [21, 36]]]]], [], []]], ["loc", [null, [21, 6], [21, 38]]]]],
+          statements: [["inline", "flexberry-menuitem", [], ["item", ["subexpr", "@mut", [["get", "item", ["loc", [null, [34, 32], [34, 36]]]]], [], []]], ["loc", [null, [34, 6], [34, 38]]]]],
           locals: ["item"],
           templates: []
         };
@@ -48433,11 +48555,11 @@ define("dummy/templates/components/flexberry-menuitem", ["exports"], function (e
           "loc": {
             "source": null,
             "start": {
-              "line": 18,
+              "line": 31,
               "column": 0
             },
             "end": {
-              "line": 24,
+              "line": 37,
               "column": 0
             }
           },
@@ -48470,7 +48592,7 @@ define("dummy/templates/components/flexberry-menuitem", ["exports"], function (e
           morphs[1] = dom.createMorphAt(element0, 1, 1);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", [["subexpr", "if", [["get", "item.itemsAlignment", ["loc", [null, [19, 19], [19, 38]]]], ["get", "item.itemsAlignment", ["loc", [null, [19, 39], [19, 58]]]]], [], ["loc", [null, [19, 14], [19, 60]]]], " menu"]]], ["block", "each", [["get", "item.items", ["loc", [null, [20, 12], [20, 22]]]]], [], 0, null, ["loc", [null, [20, 4], [22, 13]]]]],
+        statements: [["attribute", "class", ["concat", [["subexpr", "if", [["get", "item.itemsAlignment", ["loc", [null, [32, 19], [32, 38]]]], ["get", "item.itemsAlignment", ["loc", [null, [32, 39], [32, 58]]]]], [], ["loc", [null, [32, 14], [32, 60]]]], " menu"]]], ["block", "each", [["get", "item.items", ["loc", [null, [33, 12], [33, 22]]]]], [], 0, null, ["loc", [null, [33, 4], [35, 13]]]]],
         locals: [],
         templates: [child0]
       };
@@ -48489,7 +48611,7 @@ define("dummy/templates/components/flexberry-menuitem", ["exports"], function (e
             "column": 0
           },
           "end": {
-            "line": 26,
+            "line": 39,
             "column": 0
           }
         },
@@ -48511,23 +48633,26 @@ define("dummy/templates/components/flexberry-menuitem", ["exports"], function (e
         dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(5);
+        var morphs = new Array(6);
         morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
         morphs[1] = dom.createMorphAt(fragment, 1, 1, contextualElement);
         morphs[2] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         morphs[3] = dom.createMorphAt(fragment, 3, 3, contextualElement);
         morphs[4] = dom.createMorphAt(fragment, 4, 4, contextualElement);
+        morphs[5] = dom.createMorphAt(fragment, 5, 5, contextualElement);
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["block", "if", [["get", "titleIsBeforeIcon", ["loc", [null, [1, 6], [1, 23]]]]], [], 0, null, ["loc", [null, [1, 0], [7, 7]]]], ["block", "if", [["get", "item.icon", ["loc", [null, [8, 6], [8, 15]]]]], [], 1, null, ["loc", [null, [8, 0], [10, 7]]]], ["block", "if", [["subexpr", "not", [["get", "titleIsBeforeIcon", ["loc", [null, [11, 11], [11, 28]]]]], [], ["loc", [null, [11, 6], [11, 29]]]]], [], 2, null, ["loc", [null, [11, 0], [17, 7]]]], ["block", "if", [["get", "hasSubitems", ["loc", [null, [18, 6], [18, 17]]]]], [], 3, null, ["loc", [null, [18, 0], [24, 7]]]], ["content", "yield", ["loc", [null, [25, 0], [25, 9]]]]],
+      statements: [["block", "if", [["get", "titleIsBeforeIcon", ["loc", [null, [1, 6], [1, 23]]]]], [], 0, null, ["loc", [null, [1, 0], [7, 7]]]], ["block", "if", [["get", "item.icon", ["loc", [null, [8, 6], [8, 15]]]]], [], 1, null, ["loc", [null, [8, 0], [10, 7]]]], ["block", "if", [["subexpr", "not", [["get", "titleIsBeforeIcon", ["loc", [null, [11, 11], [11, 28]]]]], [], ["loc", [null, [11, 6], [11, 29]]]]], [], 2, null, ["loc", [null, [11, 0], [17, 7]]]], ["block", "each", [["get", "item.buttons", ["loc", [null, [18, 8], [18, 20]]]]], [], 3, null, ["loc", [null, [18, 0], [30, 9]]]], ["block", "if", [["get", "hasSubitems", ["loc", [null, [31, 6], [31, 17]]]]], [], 4, null, ["loc", [null, [31, 0], [37, 7]]]], ["content", "yield", ["loc", [null, [38, 0], [38, 9]]]]],
       locals: [],
-      templates: [child0, child1, child2, child3]
+      templates: [child0, child1, child2, child3, child4]
     };
   })());
 });
@@ -72730,7 +72855,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+9d66e891"});
 }
 
 /* jshint ignore:end */
