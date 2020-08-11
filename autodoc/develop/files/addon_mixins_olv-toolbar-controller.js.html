@@ -215,6 +215,7 @@
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
 import { getValueFromLocales } from &#x27;ember-flexberry-data/utils/model-functions&#x27;;
+import getAttrLocaleKey from &#x27;../utils/get-attr-locale-key&#x27;;
 
 export default Ember.Mixin.create({
   _userSettingsService: Ember.inject.service(&#x27;user-settings&#x27;),
@@ -586,9 +587,9 @@ export default Ember.Mixin.create({
           mainModelName = descriptor.type;
         }
       });
-      key = &#x60;models.${mainModelName}.projections.${mainModelProjection.projectionName}.${nameRelationship}.${bindingPath}.__caption__&#x60;;
+      key = getAttrLocaleKey(mainModelName, mainModelProjection.projectionName, bindingPath, nameRelationship);
     } else {
-      key = &#x60;models.${modelName}.projections.${projection.projectionName}.${bindingPath}.__caption__&#x60;;
+      key = getAttrLocaleKey(modelName, projection.projectionName, bindingPath);
     }
 
     return key;

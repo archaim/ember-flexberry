@@ -1774,6 +1774,10 @@ lang {
       Variations
 --------------------*/
 /* Attached */
+/*-------------------
+        Navbar
+--------------------*/
+/*Navbar sorting*/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -5325,6 +5329,15 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 }
 .right.pointing.ui.icon.dropdown.button.active:hover i.icon.list.layout:before {
   color: #7ba7d9;
+}
+.ui.button.mobile-sorting-setting-button {
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav-bar .ui.input.nav-bar-search-page {
+  width: 100px !important;
 }
 /******************************************
       Positive/negative buttons section

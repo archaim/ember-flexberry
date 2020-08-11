@@ -26560,6 +26560,44 @@ define('dummy/tests/unit/utils/deserialize-sorting-param-test.jshint', ['exports
     assert.ok(true, 'unit/utils/deserialize-sorting-param-test.js should pass jshint.');
   });
 });
+define('dummy/tests/unit/utils/get-attr-locale-key-test', ['exports', 'dummy/utils/get-attr-locale-key', 'qunit'], function (exports, _dummyUtilsGetAttrLocaleKey, _qunit) {
+
+  (0, _qunit.module)('Unit | Utility | get attr locale key');
+
+  (0, _qunit.test)('get key', function (assert) {
+    var mainModelName = 'ember-flexberry-dummy-suggestion';
+    var projectionName = 'SuggestionE';
+    var bindingPath = 'address';
+    var result = (0, _dummyUtilsGetAttrLocaleKey['default'])(mainModelName, projectionName, bindingPath);
+    assert.equal(result, 'models.' + mainModelName + '.projections.' + projectionName + '.' + bindingPath + '.__caption__');
+  });
+
+  (0, _qunit.test)('get key with relationship', function (assert) {
+    var mainModelName = 'ember-flexberry-dummy-suggestion';
+    var projectionName = 'SuggestionE';
+    var bindingPath = 'address';
+    var relationship = 'type';
+    var result = (0, _dummyUtilsGetAttrLocaleKey['default'])(mainModelName, projectionName, bindingPath, relationship);
+    assert.equal(result, 'models.' + mainModelName + '.projections.' + projectionName + '.' + relationship + '.' + bindingPath + '.__caption__');
+  });
+});
+define('dummy/tests/unit/utils/get-attr-locale-key-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - unit/utils');
+  test('unit/utils/get-attr-locale-key-test.js should pass jscs', function () {
+    ok(true, 'unit/utils/get-attr-locale-key-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/unit/utils/get-attr-locale-key-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/utils/get-attr-locale-key-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/utils/get-attr-locale-key-test.js should pass jshint.');
+  });
+});
 define('dummy/tests/unit/utils/get-current-agregator-test', ['exports', 'dummy/utils/get-current-agregator', 'qunit', 'dummy/tests/helpers/start-app', 'ember'], function (exports, _dummyUtilsGetCurrentAgregator, _qunit, _dummyTestsHelpersStartApp, _ember) {
 
   var App = undefined;
