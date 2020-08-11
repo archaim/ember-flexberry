@@ -5446,6 +5446,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 .ui.basic.green.button:hover {
   box-shadow: none;
 }
+.ui.icon.basic.button:hover i.icon:before,
 .ui.icon.tiny.button:hover i.icon.chevron.down:before {
   color: #FFFFFF;
 }
@@ -17509,6 +17510,7 @@ ol.ui.horizontal.list li:before,
         States
 --------------------*/
 /* Input Focus */
+@filter СonditionWidth: 150px;
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -18404,151 +18406,6 @@ ol.ui.horizontal.list li:before,
 /* Huge */
 .ui.huge.form {
   font-size: 1.42857143rem;
-}
-/*******************************
-         Theme Overrides
-
-*******************************/
-.ui.form select {
-  color: #7ba7d9;
-  border: none;
-  border-bottom: 1px solid #b1cae8;
-  border-radius: 0px;
-  outline: none;
-}
-.ui.form select:hover {
-  color: #3c87dc;
-}
-.ui.form input:not([type]),
-.ui.form input[type="date"],
-.ui.form input[type="datetime-local"],
-.ui.form input[type="email"],
-.ui.form input[type="number"],
-.ui.form input[type="password"],
-.ui.form input[type="search"],
-.ui.form input[type="tel"],
-.ui.form input[type="time"],
-.ui.form input[type="text"],
-.ui.form input[type="url"] {
-  border: none;
-  border-bottom: 1px solid #b1cae8;
-  border-radius: 0px;
-  outline: none;
-}
-.ember-view.flexberry-lookup input.lookup-field.ember-view.ember-text-field {
-  border-bottom: none;
-}
-.flexberry-lookup .ui.fluid.action.input {
-  border: none;
-  border-bottom: 1px solid #b1cae8;
-  border-radius: 0px;
-  outline: none;
-}
-.flexberry-simpledatetime .ui.fluid.action.input {
-  border: none;
-  border-bottom: 1px solid #b1cae8;
-  border-radius: 0px;
-  outline: none;
-}
-.flexberry-simpledatetime .ui.fluid.action.input input.flatpickr-input {
-  border-bottom: none;
-}
-html.mobile .overflowed-cell .flexberry-simpledatetime {
-  width: 100%;
-}
-input[type="checkbox"]:after {
-  content: "";
-  display: inline-block;
-  font-size: 16px;
-  height: 16px;
-  width: 17px;
-  position: relative;
-  border-radius: 4px;
-  top: -3px;
-  left: -2px;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  background: #f1f8ff;
-}
-input[type=checkbox]:checked:after,
-input[type=checkbox]:indeterminate:after {
-  content: '\e805';
-  font-family: 'Crimean';
-  color: #7ba7d9;
-  border-color: #7ba7d9;
-  font-size: 16px;
-  border-left: none;
-  border-top: none;
-  width: 17px;
-}
-.ui.form textarea,
-.ui.form input[type="checkbox"] {
-  margin: 5px;
-}
-.ui.form .olv-toolbar-info-modal-dialog-content textarea {
-  background: white;
-}
-.center.aligned.ui.grid div {
-  margin: 0px 0px 10px 0px;
-}
-.ui.button.olv-toolbar-info-modal-dialog-ok-button {
-  padding: 0.8571em 1.284em 0.8571em;
-}
-.ui.button.flexberry-file-error-modal-dialog-ok-button {
-  padding: 0.8571em 1.284em 0.8571em;
-}
-.center.aligned.ui.grid .button {
-  background: white;
-  color: #4f73b0;
-  border: 1px solid #4f73b0;
-  opacity: 1;
-}
-.center.aligned.ui.grid .button:hover {
-  background: #7dd4b4;
-  color: white;
-  border: 1px solid #7dd4b4;
-}
-select {
-  color: #7ba7d9;
-}
-select:hover {
-  color: #3c87dc;
-}
-option {
-  color: rgba(0, 0, 0, 0.87);
-}
-.ui.form .fields .field .ui.input input,
-.ui.form .field .ui.input input {
-  background: none;
-}
-.ui.form .field .ui.input .block-action-input input {
-  width: 100%;
-}
-.flexberry-file-error-modal-dialog .flexberry-file-error-modal-dialog-content {
-  text-align: center;
-}
-.flexberry-file-error-modal-dialog .flexberry-file-error-modal-dialog-button.ui.grid {
-  padding-top: 20px;
-}
-.flexberry-colsconfig .colsconfig-prop {
-  padding: 1em 0;
-}
-.flexberry-colsconfig .colsconfig-prop-name span {
-  font-size: 16px;
-  font-weight: bold;
-}
-.mobile .flexberry-colsconfig .ui.button:first-child {
-  margin-left: 0;
-}
-@media only screen and (max-width: 767px) {
-  .ui.form .two.fields.unstackable > .field {
-    width: 50% !important;
-  }
-  .ui.form .fields.unstackable {
-    margin: 0 -0.5em;
-  }
-  .ui.form .fields.unstackable > .field {
-    padding: 0 0.5em;
-  }
 }
 /*!
  * # Semantic UI - Grid

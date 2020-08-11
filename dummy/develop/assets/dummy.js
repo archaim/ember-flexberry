@@ -44195,12 +44195,12 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
             "loc": {
               "source": null,
               "start": {
-                "line": 8,
-                "column": 12
+                "line": 11,
+                "column": 10
               },
               "end": {
-                "line": 18,
-                "column": 12
+                "line": 21,
+                "column": 10
               }
             },
             "moduleName": "dummy/templates/components/filters-dialog-content.hbs"
@@ -44211,7 +44211,7 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
           hasRendered: false,
           buildFragment: function buildFragment(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("              ");
+            var el1 = dom.createTextNode("            ");
             dom.appendChild(el0, el1);
             var el1 = dom.createComment("");
             dom.appendChild(el0, el1);
@@ -44224,7 +44224,7 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "flexberry-dropdown", [], ["value", ["subexpr", "@mut", [["get", "column.filter.condition", ["loc", [null, [10, 22], [10, 45]]]]], [], []], "items", ["subexpr", "@mut", [["get", "column.filter.conditions", ["loc", [null, [11, 22], [11, 46]]]]], [], []], "displayCaptions", ["subexpr", "not", [["subexpr", "is-array", [["get", "column.filter.conditions", ["loc", [null, [12, 47], [12, 71]]]]], [], ["loc", [null, [12, 37], [12, 72]]]]], [], ["loc", [null, [12, 32], [12, 73]]]], "class", "compact fluid", "placeholder", ["subexpr", "t", ["components.object-list-view.filter-condition"], [], ["loc", [null, [14, 28], [14, 78]]]], "needChecksOnValue", false, "onChange", ["subexpr", "action", ["filterConditionChanged", ["get", "column.filter", ["loc", [null, [16, 58], [16, 71]]]]], [], ["loc", [null, [16, 25], [16, 72]]]]], ["loc", [null, [9, 14], [17, 16]]]]],
+          statements: [["inline", "flexberry-dropdown", [], ["value", ["subexpr", "@mut", [["get", "column.filter.condition", ["loc", [null, [13, 20], [13, 43]]]]], [], []], "items", ["subexpr", "@mut", [["get", "column.filter.conditions", ["loc", [null, [14, 20], [14, 44]]]]], [], []], "displayCaptions", ["subexpr", "not", [["subexpr", "is-array", [["get", "column.filter.conditions", ["loc", [null, [15, 45], [15, 69]]]]], [], ["loc", [null, [15, 35], [15, 70]]]]], [], ["loc", [null, [15, 30], [15, 71]]]], "class", "compact fluid", "placeholder", ["subexpr", "t", ["components.object-list-view.filter-condition"], [], ["loc", [null, [17, 26], [17, 76]]]], "needChecksOnValue", false, "onChange", ["subexpr", "action", ["filterConditionChanged", ["get", "column.filter", ["loc", [null, [19, 56], [19, 69]]]]], [], ["loc", [null, [19, 23], [19, 70]]]]], ["loc", [null, [12, 12], [20, 14]]]]],
           locals: [],
           templates: []
         };
@@ -44237,12 +44237,12 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
             "loc": {
               "source": null,
               "start": {
-                "line": 21,
-                "column": 12
+                "line": 24,
+                "column": 10
               },
               "end": {
-                "line": 30,
-                "column": 12
+                "line": 33,
+                "column": 10
               }
             },
             "moduleName": "dummy/templates/components/filters-dialog-content.hbs"
@@ -44253,7 +44253,7 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
           hasRendered: false,
           buildFragment: function buildFragment(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("              ");
+            var el1 = dom.createTextNode("            ");
             dom.appendChild(el0, el1);
             var el1 = dom.createComment("");
             dom.appendChild(el0, el1);
@@ -44266,7 +44266,7 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "component", [["get", "column.filter.component.name", ["loc", [null, [22, 26], [22, 54]]]]], ["value", ["subexpr", "@mut", [["get", "column.filter.pattern", ["loc", [null, [23, 22], [23, 43]]]]], [], []], "readonly", ["subexpr", "or", [["subexpr", "eq", [["get", "column.filter.condition", ["loc", [null, [25, 22], [25, 45]]]], "empty"], [], ["loc", [null, [25, 18], [25, 54]]]], ["subexpr", "eq", [["get", "column.filter.condition", ["loc", [null, [26, 22], [26, 45]]]], "nempty"], [], ["loc", [null, [26, 18], [26, 55]]]]], [], ["loc", [null, [24, 25], [27, 17]]]], "dynamicProperties", ["subexpr", "@mut", [["get", "column.filter.component.properties", ["loc", [null, [28, 34], [28, 68]]]]], [], []]], ["loc", [null, [22, 14], [29, 16]]]]],
+          statements: [["inline", "component", [["get", "column.filter.component.name", ["loc", [null, [25, 24], [25, 52]]]]], ["value", ["subexpr", "@mut", [["get", "column.filter.pattern", ["loc", [null, [26, 20], [26, 41]]]]], [], []], "readonly", ["subexpr", "or", [["subexpr", "eq", [["get", "column.filter.condition", ["loc", [null, [28, 20], [28, 43]]]], "empty"], [], ["loc", [null, [28, 16], [28, 52]]]], ["subexpr", "eq", [["get", "column.filter.condition", ["loc", [null, [29, 20], [29, 43]]]], "nempty"], [], ["loc", [null, [29, 16], [29, 53]]]]], [], ["loc", [null, [27, 23], [30, 15]]]], "dynamicProperties", ["subexpr", "@mut", [["get", "column.filter.component.properties", ["loc", [null, [31, 32], [31, 66]]]]], [], []]], ["loc", [null, [25, 12], [32, 14]]]]],
           locals: [],
           templates: []
         };
@@ -44279,12 +44279,12 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
             "loc": {
               "source": null,
               "start": {
-                "line": 33,
-                "column": 12
+                "line": 35,
+                "column": 8
               },
               "end": {
-                "line": 42,
-                "column": 12
+                "line": 43,
+                "column": 8
               }
             },
             "moduleName": "dummy/templates/components/filters-dialog-content.hbs"
@@ -44295,17 +44295,17 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
           hasRendered: false,
           buildFragment: function buildFragment(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("              ");
+            var el1 = dom.createTextNode("          ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("button");
             dom.setAttribute(el1, "type", "button");
-            dom.setAttribute(el1, "class", "ui basic small icon button");
-            var el2 = dom.createTextNode("\n                ");
+            dom.setAttribute(el1, "class", "ui basic icon button");
+            var el2 = dom.createTextNode("\n            ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("i");
-            dom.setAttribute(el2, "class", "x icon");
+            dom.setAttribute(el2, "class", "trash icon");
             dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode("\n              ");
+            var el2 = dom.createTextNode("\n          ");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n");
@@ -44319,7 +44319,7 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
             morphs[1] = dom.createElementMorph(element0);
             return morphs;
           },
-          statements: [["attribute", "title", ["subexpr", "t", ["components.filters-dialog-content.clear-this-filter"], [], ["loc", [null, [37, 22], [37, 81]]]]], ["element", "action", ["clearFilterField", ["get", "column.filter", ["loc", [null, [38, 44], [38, 57]]]]], [], ["loc", [null, [38, 16], [38, 59]]]]],
+          statements: [["attribute", "title", ["subexpr", "t", ["components.filters-dialog-content.clear-this-filter"], [], ["loc", [null, [39, 18], [39, 77]]]]], ["element", "action", ["clearFilterField", ["get", "column.filter", ["loc", [null, [40, 40], [40, 53]]]]], [], ["loc", [null, [40, 12], [40, 55]]]]],
           locals: [],
           templates: []
         };
@@ -44331,12 +44331,12 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
           "loc": {
             "source": null,
             "start": {
-              "line": 4,
-              "column": 6
+              "line": 3,
+              "column": 4
             },
             "end": {
               "line": 45,
-              "column": 6
+              "column": 4
             }
           },
           "moduleName": "dummy/templates/components/filters-dialog-content.hbs"
@@ -44347,47 +44347,46 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("        ");
+          var el1 = dom.createTextNode("      ");
           dom.appendChild(el0, el1);
-          var el1 = dom.createElement("tr");
-          dom.setAttribute(el1, "class", "object-list-view-filters");
-          var el2 = dom.createTextNode("\n          ");
+          var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "class", "fields object-list-view-filters");
+          var el2 = dom.createTextNode("\n        ");
           dom.appendChild(el1, el2);
-          var el2 = dom.createElement("td");
-          var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n          ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createElement("td");
-          var el3 = dom.createTextNode("\n");
+          var el2 = dom.createElement("div");
+          dom.setAttribute(el2, "class", "field");
+          var el3 = dom.createTextNode("\n          ");
           dom.appendChild(el2, el3);
           var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("          ");
-          dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n          ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createElement("td");
-          var el3 = dom.createTextNode("\n");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("          ");
-          dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n          ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createElement("td");
-          var el3 = dom.createTextNode("\n");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("          ");
           dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("div");
+          dom.setAttribute(el2, "class", "field");
+          var el3 = dom.createTextNode("\n");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("        ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("div");
+          dom.setAttribute(el2, "class", "field");
+          var el3 = dom.createTextNode("\n");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("        ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("      ");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
           var el1 = dom.createTextNode("\n");
@@ -44397,13 +44396,13 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
           var element1 = dom.childAt(fragment, [1]);
           var morphs = new Array(4);
-          morphs[0] = dom.createMorphAt(dom.childAt(element1, [1]), 0, 0);
+          morphs[0] = dom.createMorphAt(dom.childAt(element1, [1]), 1, 1);
           morphs[1] = dom.createMorphAt(dom.childAt(element1, [3]), 1, 1);
           morphs[2] = dom.createMorphAt(dom.childAt(element1, [5]), 1, 1);
-          morphs[3] = dom.createMorphAt(dom.childAt(element1, [7]), 1, 1);
+          morphs[3] = dom.createMorphAt(element1, 7, 7);
           return morphs;
         },
-        statements: [["content", "column.header", ["loc", [null, [6, 14], [6, 31]]]], ["block", "if", [["get", "column.filter.conditions", ["loc", [null, [8, 18], [8, 42]]]]], [], 0, null, ["loc", [null, [8, 12], [18, 19]]]], ["block", "if", [["get", "column.filter.component.name", ["loc", [null, [21, 18], [21, 46]]]]], [], 1, null, ["loc", [null, [21, 12], [30, 19]]]], ["block", "if", [["get", "column.filter.component.name", ["loc", [null, [33, 18], [33, 46]]]]], [], 2, null, ["loc", [null, [33, 12], [42, 19]]]]],
+        statements: [["inline", "flexberry-textbox", [], ["value", ["subexpr", "@mut", [["get", "column.header", ["loc", [null, [7, 18], [7, 31]]]]], [], []], "readonly", true], ["loc", [null, [6, 10], [9, 12]]]], ["block", "if", [["get", "column.filter.conditions", ["loc", [null, [11, 16], [11, 40]]]]], [], 0, null, ["loc", [null, [11, 10], [21, 17]]]], ["block", "if", [["get", "column.filter.component.name", ["loc", [null, [24, 16], [24, 44]]]]], [], 1, null, ["loc", [null, [24, 10], [33, 17]]]], ["block", "if", [["get", "column.filter.component.name", ["loc", [null, [35, 14], [35, 42]]]]], [], 2, null, ["loc", [null, [35, 8], [43, 15]]]]],
         locals: ["column"],
         templates: [child0, child1, child2]
       };
@@ -44421,7 +44420,7 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
             "column": 0
           },
           "end": {
-            "line": 55,
+            "line": 52,
             "column": 0
           }
         },
@@ -44434,46 +44433,33 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("div");
-        dom.setAttribute(el1, "class", "ui form");
+        dom.setAttribute(el1, "class", "ui equal width form");
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("div");
         dom.setAttribute(el2, "class", "flexberry-colsconfig content");
-        var el3 = dom.createTextNode("\n    ");
+        var el3 = dom.createTextNode("\n");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("table");
-        dom.setAttribute(el3, "class", "ui table");
-        var el4 = dom.createTextNode("\n");
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("div");
+        dom.setAttribute(el3, "class", "field");
+        var el4 = dom.createTextNode("\n      ");
         dom.appendChild(el3, el4);
-        var el4 = dom.createComment("");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("      ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("tr");
-        var el5 = dom.createTextNode("\n        ");
+        var el4 = dom.createElement("button");
+        dom.setAttribute(el4, "type", "button");
+        dom.setAttribute(el4, "class", "ui right floated primary button");
+        var el5 = dom.createComment("");
         dom.appendChild(el4, el5);
-        var el5 = dom.createElement("td");
-        dom.setAttribute(el5, "colspan", "4");
-        var el6 = dom.createTextNode("\n          ");
-        dom.appendChild(el5, el6);
-        var el6 = dom.createElement("button");
-        dom.setAttribute(el6, "type", "button");
-        dom.setAttribute(el6, "class", "ui right floated primary button");
-        var el7 = dom.createComment("");
-        dom.appendChild(el6, el7);
-        dom.appendChild(el5, el6);
-        var el6 = dom.createTextNode("\n          ");
-        dom.appendChild(el5, el6);
-        var el6 = dom.createElement("button");
-        dom.setAttribute(el6, "type", "button");
-        dom.setAttribute(el6, "class", "ui right floated basic button");
-        var el7 = dom.createComment("");
-        dom.appendChild(el6, el7);
-        dom.appendChild(el5, el6);
-        var el6 = dom.createTextNode("\n        ");
-        dom.appendChild(el5, el6);
-        dom.appendChild(el4, el5);
-        var el5 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("button");
+        dom.setAttribute(el4, "type", "button");
+        dom.setAttribute(el4, "class", "ui right floated basic button");
+        var el5 = dom.createComment("");
         dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         var el4 = dom.createTextNode("\n    ");
@@ -44490,8 +44476,8 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element2 = dom.childAt(fragment, [0, 1, 1]);
-        var element3 = dom.childAt(element2, [3, 1]);
+        var element2 = dom.childAt(fragment, [0, 1]);
+        var element3 = dom.childAt(element2, [3]);
         var element4 = dom.childAt(element3, [1]);
         var element5 = dom.childAt(element3, [3]);
         var morphs = new Array(5);
@@ -44502,7 +44488,7 @@ define("dummy/templates/components/filters-dialog-content", ["exports"], functio
         morphs[4] = dom.createMorphAt(element5, 0, 0);
         return morphs;
       },
-      statements: [["block", "each", [["get", "filterColumns", ["loc", [null, [4, 14], [4, 27]]]]], [], 0, null, ["loc", [null, [4, 6], [45, 15]]]], ["element", "action", ["applyFilters"], [], ["loc", [null, [48, 72], [48, 97]]]], ["inline", "t", ["components.filters-dialog-content.apply"], [], ["loc", [null, [48, 98], [48, 145]]]], ["element", "action", ["clearFiltersFields"], [], ["loc", [null, [49, 70], [49, 101]]]], ["inline", "t", ["components.filters-dialog-content.clear"], [], ["loc", [null, [49, 102], [49, 149]]]]],
+      statements: [["block", "each", [["get", "filterColumns", ["loc", [null, [3, 12], [3, 25]]]]], [], 0, null, ["loc", [null, [3, 4], [45, 13]]]], ["element", "action", ["applyFilters"], [], ["loc", [null, [47, 68], [47, 93]]]], ["inline", "t", ["components.filters-dialog-content.apply"], [], ["loc", [null, [47, 94], [47, 141]]]], ["element", "action", ["clearFiltersFields"], [], ["loc", [null, [48, 66], [48, 97]]]], ["inline", "t", ["components.filters-dialog-content.clear"], [], ["loc", [null, [48, 98], [48, 145]]]]],
       locals: [],
       templates: [child0]
     };
@@ -73315,7 +73301,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+7cf0ae78"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+a9d55869"});
 }
 
 /* jshint ignore:end */
