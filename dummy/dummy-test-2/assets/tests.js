@@ -12627,6 +12627,11 @@ define('dummy/tests/tests.lint-test', [], function () {
     assert.ok(true, 'unit/utils/deserialize-sorting-param-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/utils/get-attr-locale-key-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/utils/get-attr-locale-key-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/utils/get-current-agregator-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/utils/get-current-agregator-test.js should pass ESLint\n\n');
@@ -15061,6 +15066,28 @@ define('dummy/tests/unit/utils/deserialize-sorting-param-test', ['dummy/utils/de
     assert.ok(result);
     assert.ok(Ember.isArray(result));
     assert.equal(result.length, 0);
+  });
+});
+define('dummy/tests/unit/utils/get-attr-locale-key-test', ['dummy/utils/get-attr-locale-key', 'qunit'], function (_getAttrLocaleKey, _qunit) {
+  'use strict';
+
+  (0, _qunit.module)('Unit | Utility | get attr locale key');
+
+  (0, _qunit.test)('get key', function (assert) {
+    var mainModelName = 'ember-flexberry-dummy-suggestion';
+    var projectionName = 'SuggestionE';
+    var bindingPath = 'address';
+    var result = (0, _getAttrLocaleKey.default)(mainModelName, projectionName, bindingPath);
+    assert.equal(result, 'models.' + mainModelName + '.projections.' + projectionName + '.' + bindingPath + '.__caption__');
+  });
+
+  (0, _qunit.test)('get key with relationship', function (assert) {
+    var mainModelName = 'ember-flexberry-dummy-suggestion';
+    var projectionName = 'SuggestionE';
+    var bindingPath = 'address';
+    var relationship = 'type';
+    var result = (0, _getAttrLocaleKey.default)(mainModelName, projectionName, bindingPath, relationship);
+    assert.equal(result, 'models.' + mainModelName + '.projections.' + projectionName + '.' + relationship + '.' + bindingPath + '.__caption__');
   });
 });
 define('dummy/tests/unit/utils/get-current-agregator-test', ['qunit', 'dummy/tests/helpers/start-app', 'dummy/utils/get-current-agregator'], function (_qunit, _startApp, _getCurrentAgregator) {
