@@ -7460,7 +7460,7 @@
             "itemtype": "property",
             "name": "searchForContentChange",
             "type": "Boolean",
-            "default": "false",
+            "default": "true",
             "class": "FlexberryGroupeditComponent",
             "module": "ember-flexberry"
         },
