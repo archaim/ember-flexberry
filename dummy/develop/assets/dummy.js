@@ -8191,7 +8191,7 @@ define('dummy/controllers/components-examples/flexberry-simpleolv/configurate-ro
 
   });
 });
-define('dummy/controllers/components-examples/flexberry-simpleolv/custom-filter', ['exports', 'ember', 'ember-flexberry/controllers/list-form'], function (exports, _ember, _emberFlexberryControllersListForm) {
+define('dummy/controllers/components-examples/flexberry-simpleolv/custom-filter', ['exports', 'ember', 'ember-flexberry/controllers/list-form', 'ember-flexberry-data/utils/generate-unique-id'], function (exports, _ember, _emberFlexberryControllersListForm, _emberFlexberryDataUtilsGenerateUniqueId) {
   exports['default'] = _emberFlexberryControllersListForm['default'].extend({
     filterByAnyWord: false,
 
@@ -8219,7 +8219,8 @@ define('dummy/controllers/components-examples/flexberry-simpleolv/custom-filter'
       return filterCondition;
     }),
 
-    customButtons: _ember['default'].computed('filterByAnyWord', 'filterByAllWords', function () {
+    customButtons: _ember['default'].computed('filterByAnyWord', 'filterByAllWords', 'i18n.locale', function () {
+      var i18n = this.get('i18n');
       return [{
         buttonName: 'filterByAnyWord',
         buttonAction: 'toggleFilterByAnyWord',
@@ -8228,6 +8229,9 @@ define('dummy/controllers/components-examples/flexberry-simpleolv/custom-filter'
         buttonName: 'filterByAllWords',
         buttonAction: 'toggleFilterByAllWords',
         buttonClasses: this.get('filterByAllWords') ? 'positive' : ''
+      }, {
+        buttonName: i18n.t('forms.components-examples.flexberry-simpleolv.custom-filter.addObjects-button'),
+        buttonAction: 'addObjects'
       }];
     }),
 
@@ -8244,6 +8248,64 @@ define('dummy/controllers/components-examples/flexberry-simpleolv/custom-filter'
         if (this.get('filterByAllWords')) {
           this.set('filterByAnyWord', false);
         }
+      },
+
+      addObjects: function addObjects() {
+        var _this = this;
+
+        var store = this.get('store');
+
+        var user1 = store.createRecord('ember-flexberry-dummy-application-user', {
+          name: 'NameForTest',
+          eMail: 'ya@.test',
+          id: (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])()
+        });
+        var type1 = store.createRecord('ember-flexberry-dummy-suggestion-type', {
+          name: 'typeForTest',
+          id: (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])()
+        });
+        var user2 = store.createRecord('ember-flexberry-dummy-application-user', {
+          name: 'Different NameForTest',
+          eMail: 'ti@.test',
+          id: (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])()
+        });
+        var type2 = store.createRecord('ember-flexberry-dummy-suggestion-type', {
+          name: 'Another typeForTest',
+          id: (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])()
+        });
+
+        var record1 = store.createRecord(this.get('modelName'), {
+          address: 'TestingAddress',
+          type: type1,
+          author: user1,
+          editor1: user2,
+          id: (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])()
+        });
+        var record2 = store.createRecord(this.get('modelName'), {
+          address: '',
+          type: type1,
+          author: user2,
+          editor1: user2,
+          id: (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])()
+        });
+        var record3 = store.createRecord(this.get('modelName'), {
+          address: 'new address',
+          type: type2,
+          author: user1,
+          editor1: user1,
+          id: (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])()
+        });
+        var record4 = store.createRecord(this.get('modelName'), {
+          address: 'address with several words for testing',
+          type: type2,
+          author: user2,
+          editor1: user1,
+          id: (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])()
+        });
+
+        store.batchUpdate([user1, type1, user2, type2, record1, record2, record3, record4]).then(function () {
+          _this.send('refreshList', _this.get('componentName'));
+        });
       },
 
       componentForFilter: function componentForFilter(type, relation) {
@@ -14885,7 +14947,8 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
             'caption': 'Flexberry-simpleolv. FlexberryObjectlistview custom data sample'
           },
           'custom-filter': {
-            'caption': 'Flexberry-simpleolv. Custom filter'
+            'caption': 'Flexberry-simpleolv. Custom filter',
+            'addObjects-button': 'Add objects'
           },
           'configurate-rows': {
             'caption': 'Flexberry-simpleolv. Configurate rows'
@@ -16133,7 +16196,8 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
             'caption': 'Flexberry-simpleolv. FlexberryObjectlistview пример произвольных данных'
           },
           'custom-filter': {
-            'caption': 'Flexberry-simpleolv. Настройка фильтра'
+            'caption': 'Flexberry-simpleolv. Настройка фильтра',
+            'addObjects-button': 'Добавить объекты'
           },
           'configurate-rows': {
             'caption': 'Flexberry-simpleolv. Раскраска строк'
@@ -40334,7 +40398,7 @@ define("dummy/templates/components-examples/flexberry-simpleolv/custom-filter", 
             "column": 0
           },
           "end": {
-            "line": 43,
+            "line": 44,
             "column": 0
           }
         },
@@ -40377,7 +40441,7 @@ define("dummy/templates/components-examples/flexberry-simpleolv/custom-filter", 
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [1, 24], [1, 29]]]]], [], []]], ["loc", [null, [1, 0], [1, 31]]]], ["inline", "t", ["forms.components-examples.flexberry-simpleolv.custom-filter.caption"], [], ["loc", [null, [2, 4], [2, 79]]]], ["inline", "flexberry-simpleolv", [], ["content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "modelName", "ember-flexberry-dummy-suggestion", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [7, 20], [7, 35]]]]], [], []], "editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [8, 18], [8, 31]]]]], [], []], "createNewButton", false, "refreshButton", true, "enableFilters", true, "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [12, 12], [12, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [13, 17], [13, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [14, 17], [14, 40]]]], "componentForFilter", ["subexpr", "action", ["componentForFilter"], [], ["loc", [null, [15, 23], [15, 52]]]], "conditionsByType", ["subexpr", "action", ["conditionsByType"], [], ["loc", [null, [16, 21], [16, 48]]]], "filterButton", true, "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [18, 15], [18, 21]]]]], [], []], "filterByAnyWord", ["subexpr", "@mut", [["get", "filterByAnyWord", ["loc", [null, [19, 20], [19, 35]]]]], [], []], "filterByAllWords", ["subexpr", "@mut", [["get", "filterByAllWords", ["loc", [null, [20, 21], [20, 37]]]]], [], []], "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [21, 21], [21, 48]]]], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [22, 27], [22, 60]]]], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [23, 12], [23, 27]]]]], [], []], "orderable", true, "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [25, 10], [25, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [26, 17], [26, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [27, 18], [27, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [28, 22], [28, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [29, 20], [29, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [30, 16], [30, 27]]]]], [], []], "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [31, 17], [31, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [32, 23], [32, 52]]]], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [33, 17], [33, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [34, 13], [34, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [35, 13], [35, 32]]]], "colsConfigButton", false, "componentName", "SOLVCustomFilterObjectListView", "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [38, 18], [38, 31]]]]], [], []], "toggleFilterByAnyWord", "toggleFilterByAnyWord", "toggleFilterByAllWords", "toggleFilterByAllWords"], ["loc", [null, [4, 2], [41, 4]]]]],
+      statements: [["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [1, 24], [1, 29]]]]], [], []]], ["loc", [null, [1, 0], [1, 31]]]], ["inline", "t", ["forms.components-examples.flexberry-simpleolv.custom-filter.caption"], [], ["loc", [null, [2, 4], [2, 79]]]], ["inline", "flexberry-simpleolv", [], ["content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "modelName", "ember-flexberry-dummy-suggestion", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [7, 20], [7, 35]]]]], [], []], "editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [8, 18], [8, 31]]]]], [], []], "createNewButton", false, "refreshButton", true, "enableFilters", true, "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [12, 12], [12, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [13, 17], [13, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [14, 17], [14, 40]]]], "componentForFilter", ["subexpr", "action", ["componentForFilter"], [], ["loc", [null, [15, 23], [15, 52]]]], "conditionsByType", ["subexpr", "action", ["conditionsByType"], [], ["loc", [null, [16, 21], [16, 48]]]], "filterButton", true, "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [18, 15], [18, 21]]]]], [], []], "filterByAnyWord", ["subexpr", "@mut", [["get", "filterByAnyWord", ["loc", [null, [19, 20], [19, 35]]]]], [], []], "filterByAllWords", ["subexpr", "@mut", [["get", "filterByAllWords", ["loc", [null, [20, 21], [20, 37]]]]], [], []], "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [21, 21], [21, 48]]]], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [22, 27], [22, 60]]]], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [23, 12], [23, 27]]]]], [], []], "orderable", true, "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [25, 10], [25, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [26, 17], [26, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [27, 18], [27, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [28, 22], [28, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [29, 20], [29, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [30, 16], [30, 27]]]]], [], []], "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [31, 17], [31, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [32, 23], [32, 52]]]], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [33, 17], [33, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [34, 13], [34, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [35, 13], [35, 32]]]], "colsConfigButton", false, "componentName", "SOLVCustomFilterObjectListView", "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [38, 18], [38, 31]]]]], [], []], "toggleFilterByAnyWord", "toggleFilterByAnyWord", "toggleFilterByAllWords", "toggleFilterByAllWords", "addObjects", "addObjects"], ["loc", [null, [4, 2], [42, 4]]]]],
       locals: [],
       templates: []
     };
@@ -73516,7 +73580,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+bae16743"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+e3967481"});
 }
 
 /* jshint ignore:end */
