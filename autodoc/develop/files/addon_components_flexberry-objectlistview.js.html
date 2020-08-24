@@ -276,6 +276,7 @@ export default FlexberryBaseComponent.extend({
     @private
   */
   _switchExpandMode: &#x27;switchExpandMode&#x27;,
+
   /**
     Store the action name at controller for save the hierarchical attribute name.
 
@@ -421,6 +422,16 @@ export default FlexberryBaseComponent.extend({
   defaultLeftPadding: 10,
 
   /**
+    The passed pages as Ember array.
+
+    @property _pages
+    @type Ember.Array
+  */
+  _pages: Ember.computed(&#x27;pages&#x27;, function () {
+    return Ember.A(this.get(&#x27;pages&#x27;));
+  }),
+
+  /**
     Number page for search.
 
     @property searchPageValue
@@ -434,14 +445,14 @@ export default FlexberryBaseComponent.extend({
     @property searchPageButtonReadonly
     @type Boolean
   */
-  searchPageButtonReadonly: Ember.computed(&#x27;searchPageValue&#x27;, function() {
+  searchPageButtonReadonly: Ember.computed(&#x27;searchPageValue&#x27;, &#x27;_pages.@each.isCurrent&#x27;, function() {
     const searchPageValue = this.get(&#x27;searchPageValue&#x27;);
     const searchPage = parseInt(searchPageValue, 10);
     if (isNaN(searchPage)) {
       return true;
     }
 
-    const pages = Ember.A(this.get(&#x27;pages&#x27;));
+    const pages = this.get(&#x27;_pages&#x27;);
     const firstPage = pages.get(&#x27;firstObject.number&#x27;);
     const lastPage = pages.get(&#x27;lastObject.number&#x27;);
     const currentPage = pages.findBy(&#x27;isCurrent&#x27;).number;
@@ -1452,15 +1463,14 @@ export default FlexberryBaseComponent.extend({
       Action search and open page.
 
       @method actions.searchPageButtonAction
-      @param {Action} action Action go to page.
-      @param {Number} pageNumber Number of page to go to.
+      @param {Function} action The &#x60;goToPage&#x60; action from controller.
     */
-    searchPageButtonAction(action, componentName) {
+    searchPageButtonAction(action) {
       let searchPageValue = this.get(&#x27;searchPageValue&#x27;);
       let searchPageNumber = parseInt(searchPageValue, 10);
 
       if (searchPageNumber) {
-        this.send(&#x27;gotoPage&#x27;, action, searchPageNumber, componentName);
+        this.send(&#x27;gotoPage&#x27;, action, searchPageNumber);
       }
     }
   },
