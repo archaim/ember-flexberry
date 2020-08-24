@@ -398,12 +398,11 @@ export default ObjectListViewComponent.extend({
       if (this.get(&#x27;allSelect&#x27;)) {
         this.send(&#x27;checkAll&#x27;);
       } else {
-        let selectedRecords = this.get(&#x27;selectedRecords&#x27;);
-        for (let i = 0; i &lt; selectedRecords.length; i++) {
-          this.send(&#x27;selectRow&#x27;, selectedRecords[i], {
-            checked: false
-          });
-        }
+        const contentWithKeys = this.get(&#x27;contentWithKeys&#x27;);
+        this.get(&#x27;selectedRecords&#x27;).map((record) =&gt; contentWithKeys.findBy(&#x27;data&#x27;, record)).forEach((modelWithKey) =&gt; {
+          modelWithKey.set(&#x27;selected&#x27;, false);
+          this.send(&#x27;selectRow&#x27;, modelWithKey, { checked: false });
+        });
       }
     },
   }
