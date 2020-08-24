@@ -17202,6 +17202,7 @@ define('dummy/models/ember-flexberry-dummy-suggestion-type', ['exports', 'ember'
   var Model = _emberFlexberryData.Projection.Model.extend({
     name: _emberData['default'].attr('string'),
     moderated: _emberData['default'].attr('boolean'),
+    isParentRecord: _emberData['default'].attr('boolean'),
 
     // This property is for flexberry-lookup component. No inverse relationship here.
     parent: _emberData['default'].belongsTo('ember-flexberry-dummy-suggestion-type', {
@@ -17272,6 +17273,9 @@ define('dummy/models/ember-flexberry-dummy-suggestion-type', ['exports', 'ember'
   Model.defineProjection('SuggestionTypeL', 'ember-flexberry-dummy-suggestion-type', {
     name: _emberFlexberryData.Projection.attr('Name'),
     moderated: _emberFlexberryData.Projection.attr('Moderated'),
+    isParentRecord: _emberFlexberryData.Projection.attr('IsParentRecord', {
+      hidden: true
+    }),
     parent: _emberFlexberryData.Projection.belongsTo('ember-flexberry-dummy-suggestion-type', 'Parent', {
       name: _emberFlexberryData.Projection.attr('Name', {
         hidden: true
@@ -73512,7 +73516,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+8c90df32"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+388d4a32"});
 }
 
 /* jshint ignore:end */
