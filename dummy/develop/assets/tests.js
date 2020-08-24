@@ -4592,7 +4592,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-tests-fu
     return new _ember['default'].RSVP.Promise(function (resolve) {
       _ember['default'].run(function () {
         var modelName = projection.modelName;
-        var builder = new _emberFlexberryData.Query.Builder(store).from(modelName).selectByProjection(projection.projectionName);
+        var builder = new _emberFlexberryData.Query.Builder(store).from(modelName).selectByProjection(projection.projectionName).skip(0);
         builder = !ordr ? builder : builder.orderBy(ordr);
         store.query(modelName, builder.build()).then(function (records) {
           var recordsArr = records.toArray();
