@@ -6103,6 +6103,28 @@
         {
             "file": "addon/components/flexberry-error.js",
             "line": 69,
+            "description": "Flag defining whether or not showing close button.\nRewrites {{#crossLink \"ModalDialog/useCloseButton:property\"}}`useCloseButton`{{/crossLink}}.",
+            "itemtype": "property",
+            "name": "useCloseButton",
+            "type": "Boolean",
+            "default": "true",
+            "class": "FlexberryErrorComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-error.js",
+            "line": 79,
+            "description": "Flag defining whether or not showing ok button.\nRewrites {{#crossLink \"ModalDialog/useOkButton:property\"}}`useOkButton`{{/crossLink}}.",
+            "itemtype": "property",
+            "name": "useOkButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryErrorComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-error.js",
+            "line": 89,
             "description": "Error for displaying.",
             "itemtype": "property",
             "name": "error",
@@ -6112,7 +6134,7 @@
         },
         {
             "file": "addon/components/flexberry-error.js",
-            "line": 86,
+            "line": 106,
             "description": "Cleans error after displaying.",
             "itemtype": "method",
             "name": "actions.close",
