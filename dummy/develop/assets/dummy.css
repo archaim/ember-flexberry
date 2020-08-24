@@ -5151,7 +5151,7 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
 .ui.ui-delete.button:hover i.icon.minus:before {
   color: #FF7500;
 }
-.ui.check-all-at-page-button.button {
+.object-list-view-operations .ui.check-all-at-page-button.button {
   padding: 0px;
   height: 25px;
   width: 25px;
@@ -5160,11 +5160,11 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
   background: none;
   margin: 0 0 0 0px;
 }
-.ui.check-all-at-page-button.button:hover {
+.object-list-view-operations .ui.check-all-at-page-button.button:hover {
   border: 0px;
   background: none;
 }
-.ui.check-all-at-page-button.button:hover i.icon.check-square-o:before {
+.object-list-view-operations .ui.check-all-at-page-button.button:hover i.icon.check-square-o:before {
   color: #FF7500;
 }
 .ui.check-all-button.button {
@@ -17517,6 +17517,7 @@ ol.ui.horizontal.list li:before,
         States
 --------------------*/
 /* Input Focus */
+/* Selected row menu */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -18559,6 +18560,55 @@ option {
 .ui[class*="equal width"].form .flexberry-colsconfig .fields.object-list-view-filters .button {
   padding-top: 0;
   padding-bottom: 0;
+}
+.check-rows-container {
+  background: #FFFFFF;
+  bottom: 40px;
+  box-shadow: 0 -0.063em 0.313em rgba(0, 0, 0, 0.1);
+  display: -webkit- flex;
+  display: -moz- flex;
+  display: -ms- flex;
+  display: -o- flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  left: 0;
+  min-height: 56px;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+}
+.check-rows-container .flexberry-menu {
+  height: auto;
+  border: none;
+}
+.check-rows-container .flexberry-menu::before {
+  content: "\e815";
+  font-family: 'Crimean';
+  font-size: 20px;
+  color: #7ba7d9;
+}
+.check-rows-container .flexberry-menu.active {
+  background: none;
+  box-shadow: none;
+}
+.check-rows-container .count-selected-rows {
+  font-size: 16px;
+}
+.check-rows-container .clear-select-button {
+  margin-left: auto;
+  border: none;
+}
+.check-rows-container .flexberry-menu:hover,
+.check-rows-container .clear-select-button:hover {
+  background: none;
+}
+.check-rows-container .ui.button.check-all-at-page-button {
+  height: auto;
+  width: auto;
+  border: none;
 }
 @media only screen and (max-width: 767px) {
   .ui[class*="equal width"].form .flexberry-colsconfig .fields.object-list-view-filters > .field:nth-child(1) {

@@ -71827,11 +71827,11 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element10 = dom.childAt(fragment, [1, 1]);
+          var element9 = dom.childAt(fragment, [1, 1]);
           var morphs = new Array(3);
-          morphs[0] = dom.createMorphAt(element10, 1, 1);
-          morphs[1] = dom.createMorphAt(dom.childAt(element10, [3]), 0, 0);
-          morphs[2] = dom.createMorphAt(element10, 5, 5);
+          morphs[0] = dom.createMorphAt(element9, 1, 1);
+          morphs[1] = dom.createMorphAt(dom.childAt(element9, [3]), 0, 0);
+          morphs[2] = dom.createMorphAt(element9, 5, 5);
           return morphs;
         },
         statements: [["block", "if", [["get", "showHelperColumn", ["loc", [null, [5, 14], [5, 30]]]]], [], 0, null, ["loc", [null, [5, 8], [7, 15]]]], ["content", "singleColumnHeaderTitle", ["loc", [null, [8, 84], [8, 111]]]], ["block", "if", [["get", "showMenuColumn", ["loc", [null, [9, 14], [9, 28]]]]], [], 1, null, ["loc", [null, [9, 8], [11, 15]]]]],
@@ -71880,9 +71880,9 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             return el0;
           },
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var element8 = dom.childAt(fragment, [1]);
+            var element7 = dom.childAt(fragment, [1]);
             var morphs = new Array(1);
-            morphs[0] = dom.createAttrMorph(element8, 'class');
+            morphs[0] = dom.createAttrMorph(element7, 'class');
             return morphs;
           },
           statements: [["attribute", "class", ["concat", ["object-list-view-helper-column ", ["subexpr", "unless", [["get", "showHelperColumn", ["loc", [null, [19, 61], [19, 77]]]], "hidden"], [], ["loc", [null, [19, 52], [19, 88]]]]]]]],
@@ -72038,11 +72038,11 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             return el0;
           },
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var element7 = dom.childAt(fragment, [1]);
+            var element6 = dom.childAt(fragment, [1]);
             var morphs = new Array(3);
-            morphs[0] = dom.createMorphAt(dom.childAt(element7, [1]), 0, 0);
-            morphs[1] = dom.createMorphAt(element7, 3, 3);
-            morphs[2] = dom.createMorphAt(element7, 4, 4);
+            morphs[0] = dom.createMorphAt(dom.childAt(element6, [1]), 0, 0);
+            morphs[1] = dom.createMorphAt(element6, 3, 3);
+            morphs[2] = dom.createMorphAt(element6, 4, 4);
             return morphs;
           },
           statements: [["inline", "if", [["get", "column.keyLocale", ["loc", [null, [26, 26], [26, 42]]]], ["subexpr", "t", [["get", "column.keyLocale", ["loc", [null, [26, 46], [26, 62]]]]], [], ["loc", [null, [26, 43], [26, 63]]]], ["get", "column.header", ["loc", [null, [26, 64], [26, 77]]]]], [], ["loc", [null, [26, 21], [26, 79]]]], ["block", "if", [["get", "column.filter.conditions", ["loc", [null, [27, 20], [27, 44]]]]], [], 0, null, ["loc", [null, [27, 14], [39, 21]]]], ["block", "if", [["get", "column.filter.component.name", ["loc", [null, [40, 20], [40, 48]]]]], [], 1, null, ["loc", [null, [40, 14], [51, 21]]]]],
@@ -72144,12 +72144,12 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element9 = dom.childAt(fragment, [1]);
+          var element8 = dom.childAt(fragment, [1]);
           var morphs = new Array(4);
-          morphs[0] = dom.createAttrMorph(element9, 'onkeydown');
-          morphs[1] = dom.createMorphAt(element9, 1, 1);
-          morphs[2] = dom.createMorphAt(dom.childAt(element9, [3]), 1, 1);
-          morphs[3] = dom.createMorphAt(element9, 5, 5);
+          morphs[0] = dom.createAttrMorph(element8, 'onkeydown');
+          morphs[1] = dom.createMorphAt(element8, 1, 1);
+          morphs[2] = dom.createMorphAt(dom.childAt(element8, [3]), 1, 1);
+          morphs[3] = dom.createMorphAt(element8, 5, 5);
           return morphs;
         },
         statements: [["attribute", "onkeydown", ["subexpr", "action", ["applyFiltersByEnter"], [], ["loc", [null, [17, 20], [17, 52]]]]], ["block", "if", [["get", "showHelperColumn", ["loc", [null, [18, 14], [18, 30]]]]], [], 0, null, ["loc", [null, [18, 8], [22, 15]]]], ["block", "each", [["get", "columns", ["loc", [null, [24, 18], [24, 25]]]]], [], 1, null, ["loc", [null, [24, 10], [53, 19]]]], ["block", "if", [["get", "showMenuColumn", ["loc", [null, [55, 14], [55, 28]]]]], [], 2, null, ["loc", [null, [55, 8], [57, 15]]]]],
@@ -72203,10 +72203,10 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element6 = dom.childAt(fragment, [1, 1]);
+          var element5 = dom.childAt(fragment, [1, 1]);
           var morphs = new Array(2);
-          morphs[0] = dom.createAttrMorph(element6, 'colspan');
-          morphs[1] = dom.createMorphAt(element6, 1, 1);
+          morphs[0] = dom.createAttrMorph(element5, 'colspan');
+          morphs[1] = dom.createMorphAt(element5, 1, 1);
           return morphs;
         },
         statements: [["attribute", "colspan", ["concat", [["get", "colspan", ["loc", [null, [62, 23], [62, 30]]]]]]], ["content", "placeholder", ["loc", [null, [63, 12], [63, 27]]]]],
@@ -72308,10 +72308,10 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             return el0;
           },
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var element5 = dom.childAt(fragment, [1, 1]);
+            var element4 = dom.childAt(fragment, [1, 1]);
             var morphs = new Array(2);
-            morphs[0] = dom.createAttrMorph(element5, 'colspan');
-            morphs[1] = dom.createMorphAt(element5, 3, 3);
+            morphs[0] = dom.createAttrMorph(element4, 'colspan');
+            morphs[1] = dom.createMorphAt(element4, 3, 3);
             return morphs;
           },
           statements: [["attribute", "colspan", ["concat", [["get", "colspan", ["loc", [null, [102, 25], [102, 32]]]]]]], ["inline", "t", ["components.object-list-view.loading-text"], [], ["loc", [null, [104, 12], [104, 60]]]]],
@@ -72374,7 +72374,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
                 "column": 4
               },
               "end": {
-                "line": 123,
+                "line": 120,
                 "column": 4
               }
             },
@@ -72388,31 +72388,18 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             var el0 = dom.createDocumentFragment();
             var el1 = dom.createTextNode("      ");
             dom.appendChild(el0, el1);
-            var el1 = dom.createElement("div");
-            var el2 = dom.createTextNode("\n        ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("i");
-            dom.setAttribute(el2, "class", "check-square-o icon");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode("\n        ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createComment("");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode("\n      ");
-            dom.appendChild(el1, el2);
+            var el1 = dom.createComment("");
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n");
             dom.appendChild(el0, el1);
             return el0;
           },
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var element1 = dom.childAt(fragment, [1]);
-            var morphs = new Array(2);
-            morphs[0] = dom.createAttrMorph(element1, 'class');
-            morphs[1] = dom.createMorphAt(element1, 3, 3);
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["attribute", "class", ["concat", ["ui check-rows-button ", ["get", "buttonClass", ["loc", [null, [115, 41], [115, 52]]]], " button ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [115, 67], [115, 75]]]], "disabled"], [], ["loc", [null, [115, 62], [115, 88]]]]]]], ["inline", "flexberry-menu", [], ["onlyClickHandler", true, "items", ["subexpr", "@mut", [["get", "_checkRowsSettingsItems", ["loc", [null, [119, 16], [119, 39]]]]], [], []], "onItemClick", ["subexpr", "action", ["onCheckRowMenuItemClick"], [], ["loc", [null, [120, 22], [120, 56]]]]], ["loc", [null, [117, 8], [121, 10]]]]],
+          statements: [["inline", "flexberry-menu", [], ["onlyClickHandler", true, "items", ["subexpr", "@mut", [["get", "_checkRowsSettingsItems", ["loc", [null, [117, 14], [117, 37]]]]], [], []], "onItemClick", ["subexpr", "action", ["onCheckRowMenuItemClick"], [], ["loc", [null, [118, 20], [118, 54]]]]], ["loc", [null, [115, 6], [119, 8]]]]],
           locals: [],
           templates: []
         };
@@ -72425,11 +72412,11 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             "loc": {
               "source": null,
               "start": {
-                "line": 123,
+                "line": 120,
                 "column": 4
               },
               "end": {
-                "line": 131,
+                "line": 128,
                 "column": 4
               }
             },
@@ -72465,7 +72452,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             morphs[2] = dom.createElementMorph(element0);
             return morphs;
           },
-          statements: [["attribute", "class", ["concat", ["ui check-all-at-page-button ", ["get", "buttonClass", ["loc", [null, [126, 45], [126, 56]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [126, 64], [126, 72]]]], "disabled"], [], ["loc", [null, [126, 59], [126, 85]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.check-all-at-page-button-text"], [], ["loc", [null, [127, 14], [127, 74]]]]], ["element", "action", ["checkAllAtPage"], [], ["loc", [null, [128, 8], [128, 35]]]]],
+          statements: [["attribute", "class", ["concat", ["ui check-all-at-page-button icon ", ["get", "buttonClass", ["loc", [null, [123, 50], [123, 61]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [123, 69], [123, 77]]]], "disabled"], [], ["loc", [null, [123, 64], [123, 90]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.check-all-at-page-button-text"], [], ["loc", [null, [124, 14], [124, 74]]]]], ["element", "action", ["checkAllAtPage"], [], ["loc", [null, [125, 8], [125, 35]]]]],
           locals: [],
           templates: []
         };
@@ -72481,7 +72468,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
               "column": 0
             },
             "end": {
-              "line": 153,
+              "line": 150,
               "column": 0
             }
           },
@@ -72504,6 +72491,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("label");
+          dom.setAttribute(el2, "class", "count-selected-rows");
           var el3 = dom.createComment("");
           dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
@@ -72530,7 +72518,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           var el3 = dom.createTextNode("\n      ");
           dom.appendChild(el2, el3);
           var el3 = dom.createElement("i");
-          dom.setAttribute(el3, "class", "x icon");
+          dom.setAttribute(el3, "class", "remove icon");
           dom.appendChild(el2, el3);
           var el3 = dom.createTextNode("\n    ");
           dom.appendChild(el2, el3);
@@ -72543,23 +72531,23 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element2 = dom.childAt(fragment, [1]);
-          var element3 = dom.childAt(element2, [5]);
-          var element4 = dom.childAt(element2, [7]);
+          var element1 = dom.childAt(fragment, [1]);
+          var element2 = dom.childAt(element1, [5]);
+          var element3 = dom.childAt(element1, [7]);
           var morphs = new Array(10);
-          morphs[0] = dom.createMorphAt(element2, 1, 1);
-          morphs[1] = dom.createMorphAt(dom.childAt(element2, [3]), 0, 0);
-          morphs[2] = dom.createAttrMorph(element3, 'class');
-          morphs[3] = dom.createAttrMorph(element3, 'title');
-          morphs[4] = dom.createAttrMorph(element3, 'disabled');
-          morphs[5] = dom.createElementMorph(element3);
-          morphs[6] = dom.createMorphAt(element3, 1, 1);
-          morphs[7] = dom.createAttrMorph(element4, 'class');
-          morphs[8] = dom.createAttrMorph(element4, 'title');
-          morphs[9] = dom.createElementMorph(element4);
+          morphs[0] = dom.createMorphAt(element1, 1, 1);
+          morphs[1] = dom.createMorphAt(dom.childAt(element1, [3]), 0, 0);
+          morphs[2] = dom.createAttrMorph(element2, 'class');
+          morphs[3] = dom.createAttrMorph(element2, 'title');
+          morphs[4] = dom.createAttrMorph(element2, 'disabled');
+          morphs[5] = dom.createElementMorph(element2);
+          morphs[6] = dom.createMorphAt(element2, 1, 1);
+          morphs[7] = dom.createAttrMorph(element3, 'class');
+          morphs[8] = dom.createAttrMorph(element3, 'title');
+          morphs[9] = dom.createElementMorph(element3);
           return morphs;
         },
-        statements: [["block", "if", [["subexpr", "not-eq", [["get", "class", ["loc", [null, [114, 18], [114, 23]]]], "groupedit-container"], [], ["loc", [null, [114, 10], [114, 46]]]]], [], 0, 1, ["loc", [null, [114, 4], [131, 11]]]], ["content", "_selectedCountMobileMenu", ["loc", [null, [133, 11], [133, 39]]]], ["attribute", "class", ["concat", ["ui delete-button ", ["get", "buttonClass", ["loc", [null, [137, 32], [137, 43]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [137, 51], [137, 59]]]], "disabled"], [], ["loc", [null, [137, 46], [137, 72]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [138, 12], [138, 61]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [139, 17], [139, 25]]]]], ["element", "action", ["deleteSelectedRow"], [], ["loc", [null, [140, 6], [140, 36]]]], ["inline", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [141, 8], [141, 57]]]], ["attribute", "class", ["concat", ["ui clear-select-button ", ["get", "buttonClass", ["loc", [null, [147, 38], [147, 49]]]], " circular icon button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.clear-select-button-text"], [], ["loc", [null, [148, 12], [148, 67]]]]], ["element", "action", ["clearSelectedRecords"], [], ["loc", [null, [149, 6], [149, 39]]]]],
+        statements: [["block", "if", [["subexpr", "not-eq", [["get", "class", ["loc", [null, [114, 18], [114, 23]]]], "groupedit-container"], [], ["loc", [null, [114, 10], [114, 46]]]]], [], 0, 1, ["loc", [null, [114, 4], [128, 11]]]], ["content", "_selectedCountMobileMenu", ["loc", [null, [130, 39], [130, 67]]]], ["attribute", "class", ["concat", ["ui delete-button ", ["get", "buttonClass", ["loc", [null, [134, 32], [134, 43]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [134, 51], [134, 59]]]], "disabled"], [], ["loc", [null, [134, 46], [134, 72]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [135, 12], [135, 61]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [136, 17], [136, 25]]]]], ["element", "action", ["deleteSelectedRow"], [], ["loc", [null, [137, 6], [137, 36]]]], ["inline", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [138, 8], [138, 57]]]], ["attribute", "class", ["concat", ["ui clear-select-button ", ["get", "buttonClass", ["loc", [null, [144, 38], [144, 49]]]], " circular icon button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.clear-select-button-text"], [], ["loc", [null, [145, 12], [145, 67]]]]], ["element", "action", ["clearSelectedRecords"], [], ["loc", [null, [146, 6], [146, 39]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -72578,7 +72566,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             "column": 0
           },
           "end": {
-            "line": 154,
+            "line": 151,
             "column": 0
           }
         },
@@ -72617,18 +72605,18 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element11 = dom.childAt(fragment, [0]);
-        var element12 = dom.childAt(element11, [3]);
+        var element10 = dom.childAt(fragment, [0]);
+        var element11 = dom.childAt(element10, [3]);
         var morphs = new Array(5);
-        morphs[0] = dom.createAttrMorph(element11, 'class');
-        morphs[1] = dom.createMorphAt(element11, 1, 1);
-        morphs[2] = dom.createMorphAt(element12, 1, 1);
-        morphs[3] = dom.createMorphAt(element12, 2, 2);
+        morphs[0] = dom.createAttrMorph(element10, 'class');
+        morphs[1] = dom.createMorphAt(element10, 1, 1);
+        morphs[2] = dom.createMorphAt(element11, 1, 1);
+        morphs[3] = dom.createMorphAt(element11, 2, 2);
         morphs[4] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["attribute", "class", ["concat", ["object-list-view ui unstackable celled ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [1, 58], [1, 66]]]], "readonly"], [], ["loc", [null, [1, 53], [1, 79]]]], " ", ["get", "tableClass", ["loc", [null, [1, 82], [1, 92]]]], " table"]]], ["block", "if", [["get", "singleColumnHeaderTitle", ["loc", [null, [2, 8], [2, 31]]]]], [], 0, null, ["loc", [null, [2, 2], [14, 9]]]], ["block", "if", [["get", "showFilters", ["loc", [null, [16, 10], [16, 21]]]]], [], 1, null, ["loc", [null, [16, 4], [59, 11]]]], ["block", "unless", [["get", "content", ["loc", [null, [60, 14], [60, 21]]]]], [], 2, 3, ["loc", [null, [60, 4], [108, 15]]]], ["block", "if", [["subexpr", "and", [["get", "_selectedMobileMenu", ["loc", [null, [112, 11], [112, 30]]]], ["get", "showCheckBoxInRow", ["loc", [null, [112, 31], [112, 48]]]]], [], ["loc", [null, [112, 6], [112, 49]]]]], [], 4, null, ["loc", [null, [112, 0], [153, 7]]]]],
+      statements: [["attribute", "class", ["concat", ["object-list-view ui unstackable celled ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [1, 58], [1, 66]]]], "readonly"], [], ["loc", [null, [1, 53], [1, 79]]]], " ", ["get", "tableClass", ["loc", [null, [1, 82], [1, 92]]]], " table"]]], ["block", "if", [["get", "singleColumnHeaderTitle", ["loc", [null, [2, 8], [2, 31]]]]], [], 0, null, ["loc", [null, [2, 2], [14, 9]]]], ["block", "if", [["get", "showFilters", ["loc", [null, [16, 10], [16, 21]]]]], [], 1, null, ["loc", [null, [16, 4], [59, 11]]]], ["block", "unless", [["get", "content", ["loc", [null, [60, 14], [60, 21]]]]], [], 2, 3, ["loc", [null, [60, 4], [108, 15]]]], ["block", "if", [["subexpr", "and", [["get", "_selectedMobileMenu", ["loc", [null, [112, 11], [112, 30]]]], ["get", "showCheckBoxInRow", ["loc", [null, [112, 31], [112, 48]]]]], [], ["loc", [null, [112, 6], [112, 49]]]]], [], 4, null, ["loc", [null, [112, 0], [150, 7]]]]],
       locals: [],
       templates: [child0, child1, child2, child3, child4]
     };
@@ -73580,7 +73568,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+bccbd474"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+0fb9fc1a"});
 }
 
 /* jshint ignore:end */
