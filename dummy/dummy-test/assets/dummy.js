@@ -3853,6 +3853,13 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
     maxUploadFileSize: null,
 
     /**
+      Max upload file size (in bytes) for 'flexberry-file' component 'maxUploadFileSizeUnit' property.
+       @property maxUploadFileSizeUnit
+      @type String
+     */
+    maxUploadFileSizeUnit: 'Bt',
+
+    /**
       Flag for 'flexberry-file' component 'showPreview' property.
        @property showPreview
       @type Boolean
@@ -3906,7 +3913,7 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
        @property componentTemplateText
       @type String
      */
-    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-file<br>' + '  value=model.file<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  uploadUrl=uploadUrl<br>' + '  maxUploadFileSize=maxUploadFileSize<br>' + '  showPreview=showPreview<br>' + '  showUploadButton=showUploadButton<br>' + '  showDownloadButton=showDownloadButton<br>' + '  showModalDialogOnUploadError=showModalDialogOnUploadError<br>' + '  showModalDialogOnDownloadError=showModalDialogOnDownloadError<br>' + '  inputClass=inputClass<br>' + '  buttonClass=buttonClass<br>' + '  openFileInNewWindowInsteadOfLoading=openFileInNewWindowInsteadOfLoading<br>' + '  base64Value=base64Value<br>' + '  base64FileName=base64FileName<br>' + '  base64FileExtension=base64FileExtension<br>' + '}}'),
+    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-file<br>' + '  value=model.file<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  uploadUrl=uploadUrl<br>' + '  maxUploadFileSize=maxUploadFileSize<br>' + '  maxUploadFileSizeUnit=maxUploadFileSizeUnit<br>' + '  showPreview=showPreview<br>' + '  showUploadButton=showUploadButton<br>' + '  showDownloadButton=showDownloadButton<br>' + '  showModalDialogOnUploadError=showModalDialogOnUploadError<br>' + '  showModalDialogOnDownloadError=showModalDialogOnDownloadError<br>' + '  inputClass=inputClass<br>' + '  buttonClass=buttonClass<br>' + '  openFileInNewWindowInsteadOfLoading=openFileInNewWindowInsteadOfLoading<br>' + '  base64Value=base64Value<br>' + '  base64FileName=base64FileName<br>' + '  base64FileExtension=base64FileExtension<br>' + '}}'),
 
     /**
       Component settings metadata.
@@ -3944,6 +3951,13 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
         settingType: 'number',
         settingDefaultValue: null,
         bindedControllerPropertieName: 'maxUploadFileSize'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'maxUploadFileSizeUnit',
+        settingType: 'enumeration',
+        settingAvailableItems: ['Bt', 'Kb', 'Mb', 'Gb'],
+        settingDefaultValue: 'Bt',
+        bindedControllerPropertieName: 'maxUploadFileSizeUnit'
       });
       componentSettingsMetadata.pushObject({
         settingName: 'showPreview',
@@ -28967,7 +28981,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
               "column": 2
             },
             "end": {
-              "line": 27,
+              "line": 28,
               "column": 2
             }
           },
@@ -28992,7 +29006,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-file", [], ["value", ["subexpr", "@mut", [["get", "model.file", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "uploadUrl", ["subexpr", "@mut", [["get", "uploadUrl", ["loc", [null, [13, 16], [13, 25]]]]], [], []], "maxUploadFileSize", ["subexpr", "@mut", [["get", "maxUploadFileSize", ["loc", [null, [14, 24], [14, 41]]]]], [], []], "showPreview", ["subexpr", "@mut", [["get", "showPreview", ["loc", [null, [15, 18], [15, 29]]]]], [], []], "showUploadButton", ["subexpr", "@mut", [["get", "showUploadButton", ["loc", [null, [16, 23], [16, 39]]]]], [], []], "showDownloadButton", ["subexpr", "@mut", [["get", "showDownloadButton", ["loc", [null, [17, 25], [17, 43]]]]], [], []], "showModalDialogOnUploadError", ["subexpr", "@mut", [["get", "showModalDialogOnUploadError", ["loc", [null, [18, 35], [18, 63]]]]], [], []], "showModalDialogOnDownloadError", ["subexpr", "@mut", [["get", "showModalDialogOnDownloadError", ["loc", [null, [19, 37], [19, 67]]]]], [], []], "inputClass", ["subexpr", "@mut", [["get", "inputClass", ["loc", [null, [20, 17], [20, 27]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [21, 18], [21, 29]]]]], [], []], "openFileInNewWindowInsteadOfLoading", ["subexpr", "@mut", [["get", "openFileInNewWindowInsteadOfLoading", ["loc", [null, [22, 42], [22, 77]]]]], [], []], "base64Value", ["subexpr", "@mut", [["get", "base64Value", ["loc", [null, [23, 18], [23, 29]]]]], [], []], "base64FileName", ["subexpr", "@mut", [["get", "base64FileName", ["loc", [null, [24, 21], [24, 35]]]]], [], []], "base64FileExtension", ["subexpr", "@mut", [["get", "base64FileExtension", ["loc", [null, [25, 26], [25, 45]]]]], [], []]], ["loc", [null, [9, 4], [26, 6]]]]],
+        statements: [["inline", "flexberry-file", [], ["value", ["subexpr", "@mut", [["get", "model.file", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "uploadUrl", ["subexpr", "@mut", [["get", "uploadUrl", ["loc", [null, [13, 16], [13, 25]]]]], [], []], "maxUploadFileSize", ["subexpr", "@mut", [["get", "maxUploadFileSize", ["loc", [null, [14, 24], [14, 41]]]]], [], []], "maxUploadFileSizeUnit", ["subexpr", "@mut", [["get", "maxUploadFileSizeUnit", ["loc", [null, [15, 28], [15, 49]]]]], [], []], "showPreview", ["subexpr", "@mut", [["get", "showPreview", ["loc", [null, [16, 18], [16, 29]]]]], [], []], "showUploadButton", ["subexpr", "@mut", [["get", "showUploadButton", ["loc", [null, [17, 23], [17, 39]]]]], [], []], "showDownloadButton", ["subexpr", "@mut", [["get", "showDownloadButton", ["loc", [null, [18, 25], [18, 43]]]]], [], []], "showModalDialogOnUploadError", ["subexpr", "@mut", [["get", "showModalDialogOnUploadError", ["loc", [null, [19, 35], [19, 63]]]]], [], []], "showModalDialogOnDownloadError", ["subexpr", "@mut", [["get", "showModalDialogOnDownloadError", ["loc", [null, [20, 37], [20, 67]]]]], [], []], "inputClass", ["subexpr", "@mut", [["get", "inputClass", ["loc", [null, [21, 17], [21, 27]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [22, 18], [22, 29]]]]], [], []], "openFileInNewWindowInsteadOfLoading", ["subexpr", "@mut", [["get", "openFileInNewWindowInsteadOfLoading", ["loc", [null, [23, 42], [23, 77]]]]], [], []], "base64Value", ["subexpr", "@mut", [["get", "base64Value", ["loc", [null, [24, 18], [24, 29]]]]], [], []], "base64FileName", ["subexpr", "@mut", [["get", "base64FileName", ["loc", [null, [25, 21], [25, 35]]]]], [], []], "base64FileExtension", ["subexpr", "@mut", [["get", "base64FileExtension", ["loc", [null, [26, 26], [26, 45]]]]], [], []]], ["loc", [null, [9, 4], [27, 6]]]]],
         locals: [],
         templates: []
       };
@@ -29011,7 +29025,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
             "column": 0
           },
           "end": {
-            "line": 29,
+            "line": 30,
             "column": 0
           }
         },
@@ -29048,7 +29062,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-file.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [27, 23]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-file.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [28, 23]]]]],
       locals: [],
       templates: [child0]
     };
@@ -48108,7 +48122,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("    ");
+          var el1 = dom.createTextNode("  ");
           dom.appendChild(el0, el1);
           var el1 = dom.createComment("");
           dom.appendChild(el0, el1);
@@ -48121,7 +48135,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-menuitem", [], ["tagName", "", "item", ["subexpr", "@mut", [["get", "item", ["loc", [null, [4, 10], [4, 14]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "settings", ["loc", [null, [5, 14], [5, 22]]]]], [], []]], ["loc", [null, [2, 4], [6, 6]]]]],
+        statements: [["inline", "flexberry-menuitem", [], ["tagName", "", "item", ["subexpr", "@mut", [["get", "item", ["loc", [null, [4, 9], [4, 13]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "settings", ["loc", [null, [5, 13], [5, 21]]]]], [], []]], ["loc", [null, [2, 2], [6, 4]]]]],
         locals: ["item"],
         templates: []
       };
@@ -48140,8 +48154,8 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 8,
-            "column": 0
+            "line": 7,
+            "column": 9
           }
         },
         "moduleName": "dummy/templates/components/flexberry-menu.hbs"
@@ -72388,7 +72402,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
                 "column": 4
               },
               "end": {
-                "line": 121,
+                "line": 122,
                 "column": 4
               }
             },
@@ -72413,7 +72427,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "flexberry-menu", [], ["onlyClickHandler", true, "items", ["subexpr", "@mut", [["get", "_checkRowsSettingsItems", ["loc", [null, [117, 14], [117, 37]]]]], [], []], "settings", ["subexpr", "hash", [], ["direction", "upward"], ["loc", [null, [118, 17], [118, 42]]]], "onItemClick", ["subexpr", "action", ["onCheckRowMenuItemClick"], [], ["loc", [null, [119, 20], [119, 54]]]]], ["loc", [null, [115, 6], [120, 8]]]]],
+          statements: [["inline", "flexberry-menu", [], ["_skipDropdownInit", true, "onlyClickHandler", true, "items", ["subexpr", "@mut", [["get", "_checkRowsSettingsItems", ["loc", [null, [118, 14], [118, 37]]]]], [], []], "settings", ["subexpr", "hash", [], ["direction", "upward"], ["loc", [null, [119, 17], [119, 42]]]], "onItemClick", ["subexpr", "action", ["onCheckRowMenuItemClick"], [], ["loc", [null, [120, 20], [120, 54]]]]], ["loc", [null, [115, 6], [121, 8]]]]],
           locals: [],
           templates: []
         };
@@ -72426,11 +72440,11 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             "loc": {
               "source": null,
               "start": {
-                "line": 121,
+                "line": 122,
                 "column": 4
               },
               "end": {
-                "line": 129,
+                "line": 130,
                 "column": 4
               }
             },
@@ -72466,7 +72480,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             morphs[2] = dom.createElementMorph(element0);
             return morphs;
           },
-          statements: [["attribute", "class", ["concat", ["ui check-all-at-page-button icon ", ["get", "buttonClass", ["loc", [null, [124, 50], [124, 61]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [124, 69], [124, 77]]]], "disabled"], [], ["loc", [null, [124, 64], [124, 90]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.check-all-at-page-button-text"], [], ["loc", [null, [125, 14], [125, 74]]]]], ["element", "action", ["checkAllAtPage"], [], ["loc", [null, [126, 8], [126, 35]]]]],
+          statements: [["attribute", "class", ["concat", ["ui check-all-at-page-button icon ", ["get", "buttonClass", ["loc", [null, [125, 50], [125, 61]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [125, 69], [125, 77]]]], "disabled"], [], ["loc", [null, [125, 64], [125, 90]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.check-all-at-page-button-text"], [], ["loc", [null, [126, 14], [126, 74]]]]], ["element", "action", ["checkAllAtPage"], [], ["loc", [null, [127, 8], [127, 35]]]]],
           locals: [],
           templates: []
         };
@@ -72482,7 +72496,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
               "column": 0
             },
             "end": {
-              "line": 151,
+              "line": 152,
               "column": 0
             }
           },
@@ -72561,7 +72575,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           morphs[9] = dom.createElementMorph(element3);
           return morphs;
         },
-        statements: [["block", "if", [["subexpr", "not-eq", [["get", "class", ["loc", [null, [114, 18], [114, 23]]]], "groupedit-container"], [], ["loc", [null, [114, 10], [114, 46]]]]], [], 0, 1, ["loc", [null, [114, 4], [129, 11]]]], ["content", "_selectedCountMobileMenu", ["loc", [null, [131, 39], [131, 67]]]], ["attribute", "class", ["concat", ["ui delete-button ", ["get", "buttonClass", ["loc", [null, [135, 32], [135, 43]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [135, 51], [135, 59]]]], "disabled"], [], ["loc", [null, [135, 46], [135, 72]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [136, 12], [136, 61]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [137, 17], [137, 25]]]]], ["element", "action", ["deleteSelectedRow"], [], ["loc", [null, [138, 6], [138, 36]]]], ["inline", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [139, 8], [139, 57]]]], ["attribute", "class", ["concat", ["ui clear-select-button ", ["get", "buttonClass", ["loc", [null, [145, 38], [145, 49]]]], " circular icon button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.clear-select-button-text"], [], ["loc", [null, [146, 12], [146, 67]]]]], ["element", "action", ["clearSelectedRecords"], [], ["loc", [null, [147, 6], [147, 39]]]]],
+        statements: [["block", "if", [["subexpr", "not-eq", [["get", "class", ["loc", [null, [114, 18], [114, 23]]]], "groupedit-container"], [], ["loc", [null, [114, 10], [114, 46]]]]], [], 0, 1, ["loc", [null, [114, 4], [130, 11]]]], ["content", "_selectedCountMobileMenu", ["loc", [null, [132, 39], [132, 67]]]], ["attribute", "class", ["concat", ["ui delete-button ", ["get", "buttonClass", ["loc", [null, [136, 32], [136, 43]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [136, 51], [136, 59]]]], "disabled"], [], ["loc", [null, [136, 46], [136, 72]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [137, 12], [137, 61]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [138, 17], [138, 25]]]]], ["element", "action", ["deleteSelectedRow"], [], ["loc", [null, [139, 6], [139, 36]]]], ["inline", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [140, 8], [140, 57]]]], ["attribute", "class", ["concat", ["ui clear-select-button ", ["get", "buttonClass", ["loc", [null, [146, 38], [146, 49]]]], " circular icon button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.clear-select-button-text"], [], ["loc", [null, [147, 12], [147, 67]]]]], ["element", "action", ["clearSelectedRecords"], [], ["loc", [null, [148, 6], [148, 39]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -72580,7 +72594,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             "column": 0
           },
           "end": {
-            "line": 152,
+            "line": 153,
             "column": 0
           }
         },
@@ -72630,7 +72644,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["attribute", "class", ["concat", ["object-list-view ui unstackable celled ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [1, 58], [1, 66]]]], "readonly"], [], ["loc", [null, [1, 53], [1, 79]]]], " ", ["get", "tableClass", ["loc", [null, [1, 82], [1, 92]]]], " table"]]], ["block", "if", [["get", "singleColumnHeaderTitle", ["loc", [null, [2, 8], [2, 31]]]]], [], 0, null, ["loc", [null, [2, 2], [14, 9]]]], ["block", "if", [["get", "showFilters", ["loc", [null, [16, 10], [16, 21]]]]], [], 1, null, ["loc", [null, [16, 4], [59, 11]]]], ["block", "unless", [["get", "content", ["loc", [null, [60, 14], [60, 21]]]]], [], 2, 3, ["loc", [null, [60, 4], [108, 15]]]], ["block", "if", [["subexpr", "and", [["get", "_selectedMobileMenu", ["loc", [null, [112, 11], [112, 30]]]], ["get", "showCheckBoxInRow", ["loc", [null, [112, 31], [112, 48]]]]], [], ["loc", [null, [112, 6], [112, 49]]]]], [], 4, null, ["loc", [null, [112, 0], [151, 7]]]]],
+      statements: [["attribute", "class", ["concat", ["object-list-view ui unstackable celled ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [1, 58], [1, 66]]]], "readonly"], [], ["loc", [null, [1, 53], [1, 79]]]], " ", ["get", "tableClass", ["loc", [null, [1, 82], [1, 92]]]], " table"]]], ["block", "if", [["get", "singleColumnHeaderTitle", ["loc", [null, [2, 8], [2, 31]]]]], [], 0, null, ["loc", [null, [2, 2], [14, 9]]]], ["block", "if", [["get", "showFilters", ["loc", [null, [16, 10], [16, 21]]]]], [], 1, null, ["loc", [null, [16, 4], [59, 11]]]], ["block", "unless", [["get", "content", ["loc", [null, [60, 14], [60, 21]]]]], [], 2, 3, ["loc", [null, [60, 4], [108, 15]]]], ["block", "if", [["subexpr", "and", [["get", "_selectedMobileMenu", ["loc", [null, [112, 11], [112, 30]]]], ["get", "showCheckBoxInRow", ["loc", [null, [112, 31], [112, 48]]]]], [], ["loc", [null, [112, 6], [112, 49]]]]], [], 4, null, ["loc", [null, [112, 0], [152, 7]]]]],
       locals: [],
       templates: [child0, child1, child2, child3, child4]
     };
@@ -73582,7 +73596,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.9+d60371fb"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.9+b7e8727e"});
 }
 
 /* jshint ignore:end */
