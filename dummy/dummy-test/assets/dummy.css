@@ -4853,12 +4853,15 @@ lang {
 .ui.button.huge {
   height: 55px;
 }
-.ui.small.button:not(.goto-page-button) {
+.ui.small.button {
   border: none;
   font-size: 14px;
 }
-.ui.small.button:not(.goto-page-button):hover {
+.ui.small.button:hover {
   background: #d01919;
+}
+.ui.small.button.goto-page-button:hover {
+  background-color: #6299d9;
 }
 .ui.buttons .disabled.button {
   color: #999;
@@ -5336,10 +5339,10 @@ html.mobile .overflowed-cell .flexberry-simpledatetime .flatpickr .ui.ui-clear.b
   text-overflow: ellipsis;
   padding: 0.5em;
 }
-.ui.form .field .ui.input.nav-bar-search-page {
+.ui.input.nav-bar-search-page {
   max-width: 100px;
 }
-.mobile .ui.form .field .ui.input.nav-bar-search-page {
+.mobile .ui.input.nav-bar-search-page {
   max-width: 50px;
 }
 /******************************************
@@ -22810,34 +22813,26 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
   flex-basis: 0px;
   flex-grow: 1;
 }
-.menu .flexberry-menuitem.item {
-  display: flex;
-}
 .menu .flexberry-menuitem.item.dividing:after {
   content: '';
   height: 1px;
   width: calc(100% - 2em);
   position: absolute;
   left: 1em;
-  bottom: 0;
+  bottom: 1em;
   background-color: rgba(0, 0, 0, 0.1);
 }
 .menu .flexberry-menuitem.item .ui.button.icon {
-  line-height: 1;
   padding: 0;
+  line-height: 1;
   border: none;
   height: auto;
   margin: 0 0 0 0.5em;
+  float: right;
+  width: auto;
 }
 .menu .flexberry-menuitem.item .ui.button.icon:hover {
-  background-color: transparent!important;
-}
-.flexberry-menu.ui.dropdown .menu > .item {
-  display: flex;
-  align-items: center;
-}
-.flexberry-menu.ui.dropdown .menu > .item span {
-  flex-basis: 100%;
+  background-color: transparent !important;
 }
 .flexberry-menu.ui.dropdown .menu > .item .ui.button.icon > .icon:not(.dropdown) {
   margin: 0;

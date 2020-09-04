@@ -27508,7 +27508,7 @@ define("dummy/templates/components-acceptance-tests/flexberry-objectlistview/bas
             "column": 0
           },
           "end": {
-            "line": 27,
+            "line": 28,
             "column": 0
           }
         },
@@ -27532,7 +27532,7 @@ define("dummy/templates/components-acceptance-tests/flexberry-objectlistview/bas
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["inline", "flexberry-objectlistview", [], ["editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [2, 16], [2, 29]]]]], [], []], "showCheckBoxInRow", true, "modelName", "ember-flexberry-dummy-suggestion", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [5, 18], [5, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [6, 10], [6, 15]]]]], [], []], "createNewButton", true, "refreshButton", true, "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [9, 10], [9, 25]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [11, 15], [11, 38]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [12, 21], [12, 50]]]], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [13, 8], [13, 13]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [14, 15], [14, 27]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [15, 16], [15, 29]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [16, 20], [16, 37]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [17, 18], [17, 33]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [18, 14], [18, 25]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [19, 15], [19, 38]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [20, 11], [20, 30]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [21, 11], [21, 30]]]], "componentName", "FOLVSettingExampleObjectListView", "showDeleteMenuItemInRow", true, "deleteButton", true, "rowClickable", ["subexpr", "@mut", [["get", "rowClickable", ["loc", [null, [25, 15], [25, 27]]]]], [], []]], ["loc", [null, [1, 0], [26, 2]]]]],
+      statements: [["inline", "flexberry-objectlistview", [], ["editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [2, 16], [2, 29]]]]], [], []], "showCheckBoxInRow", true, "modelName", "ember-flexberry-dummy-suggestion", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [5, 18], [5, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [6, 10], [6, 15]]]]], [], []], "createNewButton", true, "refreshButton", true, "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [9, 10], [9, 25]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [11, 15], [11, 38]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [12, 21], [12, 50]]]], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [13, 8], [13, 13]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [14, 15], [14, 27]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [15, 16], [15, 29]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [16, 20], [16, 37]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [17, 18], [17, 33]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [18, 14], [18, 25]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [19, 15], [19, 38]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [20, 11], [20, 30]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [21, 11], [21, 30]]]], "componentName", "FOLVSettingExampleObjectListView", "showDeleteMenuItemInRow", true, "deleteButton", true, "rowClickable", ["subexpr", "@mut", [["get", "rowClickable", ["loc", [null, [25, 15], [25, 27]]]]], [], []], "data-test-olv", true], ["loc", [null, [1, 0], [27, 2]]]]],
       locals: [],
       templates: []
     };
@@ -48096,7 +48096,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
               "column": 0
             },
             "end": {
-              "line": 3,
+              "line": 7,
               "column": 0
             }
           },
@@ -48121,7 +48121,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-menuitem", [], ["tagName", "", "item", ["subexpr", "@mut", [["get", "item", ["loc", [null, [2, 41], [2, 45]]]]], [], []]], ["loc", [null, [2, 4], [2, 47]]]]],
+        statements: [["inline", "flexberry-menuitem", [], ["tagName", "", "item", ["subexpr", "@mut", [["get", "item", ["loc", [null, [4, 10], [4, 14]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "settings", ["loc", [null, [5, 14], [5, 22]]]]], [], []]], ["loc", [null, [2, 4], [6, 6]]]]],
         locals: ["item"],
         templates: []
       };
@@ -48140,7 +48140,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 4,
+            "line": 8,
             "column": 0
           }
         },
@@ -48163,7 +48163,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "each", [["get", "items", ["loc", [null, [1, 8], [1, 13]]]]], [], 0, null, ["loc", [null, [1, 0], [3, 9]]]]],
+      statements: [["block", "each", [["get", "items", ["loc", [null, [1, 8], [1, 13]]]]], [], 0, null, ["loc", [null, [1, 0], [7, 9]]]]],
       locals: [],
       templates: [child0]
     };
@@ -56196,7 +56196,7 @@ define("dummy/templates/components/olv-toolbar", ["exports"], function (exports)
           var el1 = dom.createTextNode("  ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "ui action input");
+          dom.setAttribute(el1, "class", "ui action input olv-search");
           var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("div");
@@ -73582,7 +73582,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+1eed3dcb"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.9+d60371fb"});
 }
 
 /* jshint ignore:end */
