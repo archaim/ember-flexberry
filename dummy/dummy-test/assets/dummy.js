@@ -14113,6 +14113,17 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
             editor: {
               __caption__: 'editor'
             }
+          },
+          CustomizeLookupWindowExampleView: {
+            'name': {
+              __caption__: 'Name'
+            },
+            'moderated': {
+              __caption__: 'Moderated'
+            },
+            'parent': {
+              __caption__: 'Parent'
+            }
           }
         }
       }
@@ -15326,6 +15337,17 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
             },
             editor: {
               __caption__: 'editor'
+            }
+          },
+          CustomizeLookupWindowExampleView: {
+            'name': {
+              __caption__: 'Наименование'
+            },
+            'moderated': {
+              __caption__: 'Одобрено'
+            },
+            'parent': {
+              __caption__: 'Иерархия'
             }
           }
         }
@@ -68022,7 +68044,7 @@ define("dummy/templates/lookup-dialog-content", ["exports"], function (exports) 
             "column": 0
           },
           "end": {
-            "line": 44,
+            "line": 45,
             "column": 0
           }
         },
@@ -68053,7 +68075,7 @@ define("dummy/templates/lookup-dialog-content", ["exports"], function (exports) 
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "flexberry-objectlistview", [], ["class", "ui bottom attached", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [4, 20], [4, 35]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "currentLookupRow", ["loc", [null, [6, 19], [6, 35]]]]], [], []], "componentMode", "lookupform", "componentName", ["subexpr", "@mut", [["get", "folvComponentName", ["loc", [null, [8, 18], [8, 35]]]]], [], []], "lookupComponentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [9, 24], [9, 37]]]]], [], []], "showEditMenuItemInRow", false, "createNewButton", false, "showCheckBoxInRow", false, "colsConfigButton", false, "columnsWidthAutoresize", true, "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [17, 21], [17, 48]]]], "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [18, 15], [18, 21]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [19, 12], [19, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [20, 17], [20, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [21, 17], [21, 40]]]], "customProperties", ["subexpr", "@mut", [["get", "customPropertiesData", ["loc", [null, [23, 21], [23, 41]]]]], [], []], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [25, 10], [25, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [26, 17], [26, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [27, 18], [27, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [28, 22], [28, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [29, 20], [29, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [30, 16], [30, 27]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [31, 17], [31, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [32, 13], [32, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [33, 13], [33, 32]]]], "disableHierarchicalMode", ["subexpr", "@mut", [["get", "disableHierarchicalMode", ["loc", [null, [35, 28], [35, 51]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [36, 12], [36, 27]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [38, 17], [38, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [39, 23], [39, 52]]]], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [40, 23], [40, 41]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [41, 27], [41, 60]]]]], ["loc", [null, [2, 2], [42, 4]]]]],
+      statements: [["inline", "flexberry-objectlistview", [], ["class", "ui bottom attached", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [4, 20], [4, 35]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "currentLookupRow", ["loc", [null, [6, 19], [6, 35]]]]], [], []], "componentMode", "lookupform", "componentName", ["subexpr", "@mut", [["get", "folvComponentName", ["loc", [null, [8, 18], [8, 35]]]]], [], []], "lookupComponentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [9, 24], [9, 37]]]]], [], []], "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [10, 14], [10, 23]]]]], [], []], "showEditMenuItemInRow", false, "createNewButton", false, "showCheckBoxInRow", false, "colsConfigButton", false, "columnsWidthAutoresize", true, "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [18, 21], [18, 48]]]], "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [19, 15], [19, 21]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [20, 12], [20, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [21, 17], [21, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [22, 17], [22, 40]]]], "customProperties", ["subexpr", "@mut", [["get", "customPropertiesData", ["loc", [null, [24, 21], [24, 41]]]]], [], []], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [26, 10], [26, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [27, 17], [27, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [28, 18], [28, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [29, 22], [29, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [30, 20], [30, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [31, 16], [31, 27]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [32, 17], [32, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [33, 13], [33, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [34, 13], [34, 32]]]], "disableHierarchicalMode", ["subexpr", "@mut", [["get", "disableHierarchicalMode", ["loc", [null, [36, 28], [36, 51]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [37, 12], [37, 27]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [39, 17], [39, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [40, 23], [40, 52]]]], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [41, 23], [41, 41]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [42, 27], [42, 60]]]]], ["loc", [null, [2, 2], [43, 4]]]]],
       locals: [],
       templates: []
     };
@@ -70916,7 +70938,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
           morphs[7] = dom.createMorphAt(element5, 3, 3);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "colsConfigButton", ["loc", [null, [42, 25], [42, 41]]]], "disabled"], [], ["loc", [null, [42, 16], [42, 54]]]], " button mobile-sorting-setting-button"]]], ["attribute", "title", ["get", "mobileSortingSettingsCaption", ["loc", [null, [43, 14], [43, 42]]]]], ["attribute", "disabled", ["subexpr", "not", [["get", "colsConfigButton", ["loc", [null, [44, 21], [44, 37]]]]], [], ["loc", [null, [44, 15], [44, 39]]]]], ["element", "action", ["showConfigDialog"], [], ["loc", [null, [45, 6], [45, 35]]]], ["attribute", "class", ["get", "_mobileSortingSettingsIcon", ["loc", [null, [46, 19], [46, 45]]]]], ["content", "_mobileSortingSettingsCaption", ["loc", [null, [47, 8], [47, 41]]]], ["block", "each", [["get", "_mobilePages", ["loc", [null, [51, 16], [51, 28]]]]], [], 0, null, ["loc", [null, [51, 8], [59, 17]]]], ["block", "if", [["subexpr", "gt", [["get", "_mobilePages.length", ["loc", [null, [61, 16], [61, 35]]]], 4], [], ["loc", [null, [61, 12], [61, 38]]]]], [], 1, null, ["loc", [null, [61, 6], [74, 13]]]]],
+        statements: [["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "colsConfigButton", ["loc", [null, [42, 25], [42, 41]]]], "disabled"], [], ["loc", [null, [42, 16], [42, 54]]]], " button mobile-sorting-setting-button"]]], ["attribute", "title", ["get", "_mobileSortingSettingsCaption", ["loc", [null, [43, 14], [43, 43]]]]], ["attribute", "disabled", ["subexpr", "not", [["get", "colsConfigButton", ["loc", [null, [44, 21], [44, 37]]]]], [], ["loc", [null, [44, 15], [44, 39]]]]], ["element", "action", ["showConfigDialog"], [], ["loc", [null, [45, 6], [45, 35]]]], ["attribute", "class", ["get", "_mobileSortingSettingsIcon", ["loc", [null, [46, 19], [46, 45]]]]], ["content", "_mobileSortingSettingsCaption", ["loc", [null, [47, 8], [47, 41]]]], ["block", "each", [["get", "_mobilePages", ["loc", [null, [51, 16], [51, 28]]]]], [], 0, null, ["loc", [null, [51, 8], [59, 17]]]], ["block", "if", [["subexpr", "gt", [["get", "_mobilePages.length", ["loc", [null, [61, 16], [61, 35]]]], 4], [], ["loc", [null, [61, 12], [61, 38]]]]], [], 1, null, ["loc", [null, [61, 6], [74, 13]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -73596,7 +73618,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.9+b7e8727e"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.10+84737a2c"});
 }
 
 /* jshint ignore:end */
