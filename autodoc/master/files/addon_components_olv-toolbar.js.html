@@ -766,27 +766,24 @@ export default FlexberryBaseComponent.extend({
     */
     delete() {
       let confirmDeleteRows = this.get(&#x27;confirmDeleteRows&#x27;);
+      let possiblePromise = null;
+
       if (confirmDeleteRows) {
         Ember.assert(&#x27;Error: confirmDeleteRows must be a function.&#x27;, typeof confirmDeleteRows === &#x27;function&#x27;);
-        if (!confirmDeleteRows()) {
+
+        possiblePromise = confirmDeleteRows();
+
+        if ((!possiblePromise || !(possiblePromise instanceof Ember.RSVP.Promise))) {
           return;
         }
       }
 
-      let componentName = this.get(&#x27;componentName&#x27;);
-
-      if (!this.get(&#x27;allSelect&#x27;))
-      {
-        this.get(&#x27;objectlistviewEventsService&#x27;).deleteRowsTrigger(componentName, true);
+      if (possiblePromise || (possiblePromise instanceof Ember.RSVP.Promise)) {
+        possiblePromise.then(() =&gt; {
+          this._confirmDeleteRows();
+        });
       } else {
-        let modelName = this.get(&#x27;modelController.modelProjection.modelName&#x27;);
-
-        let filterQuery = {
-          predicate: this.get(&#x27;currentController.filtersPredicate&#x27;),
-          modelName: modelName
-        };
-
-        this.get(&#x27;objectlistviewEventsService&#x27;).deleteAllRowsTrigger(componentName, filterQuery);
+        this._confirmDeleteRows();
       }
     },
 
@@ -883,7 +880,7 @@ export default FlexberryBaseComponent.extend({
 
       if (showFiltersInModal) {
         const componentName = this.get(&#x27;componentName&#x27;);
-        const columns = this.get(&#x27;objectlistviewEventsService&#x27;).getOlvFilterColumnsArray();
+        const columns = this.get(&#x27;objectlistviewEventsService&#x27;).getOlvFilterColumnsArray(componentName);
 
         this.get(&#x27;modelController&#x27;).send(&#x27;showFiltersDialog&#x27;, componentName, columns);
       } else {
@@ -1277,6 +1274,30 @@ export default FlexberryBaseComponent.extend({
 
     const itemsNames = Ember.A(Object.keys(itemsNameList)).sortBy(&#x27;name&#x27;);
     return itemsNames.map(name =&gt; { return { title: name, icon: icon, iconAlignment: &#x27;left&#x27; }; });
+  },
+
+  /**
+    Delete rows when it confirmed.
+
+    @method _confirmDeleteRows
+    @private
+  */
+  _confirmDeleteRows() {
+    let componentName = this.get(&#x27;componentName&#x27;);
+
+    if (!this.get(&#x27;allSelect&#x27;))
+    {
+      this.get(&#x27;objectlistviewEventsService&#x27;).deleteRowsTrigger(componentName, true);
+    } else {
+      let modelName = this.get(&#x27;modelController.modelProjection.modelName&#x27;);
+
+      let filterQuery = {
+        predicate: this.get(&#x27;currentController.filtersPredicate&#x27;),
+        modelName: modelName
+      };
+
+      this.get(&#x27;objectlistviewEventsService&#x27;).deleteAllRowsTrigger(componentName, filterQuery);
+    }
   }
 });
 

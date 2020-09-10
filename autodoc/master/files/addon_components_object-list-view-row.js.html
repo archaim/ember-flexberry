@@ -228,6 +228,15 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 */
 export default FlexberryBaseComponent.extend({
   /**
+    Indicates that child records are being loaded.
+
+    @property _recordsIsLoading
+    @type Boolean
+    @default false
+  */
+  _recordsIsLoading: false,
+
+  /**
     Flag used to display embedded records.
 
     @property _expanded
@@ -338,6 +347,7 @@ export default FlexberryBaseComponent.extend({
       return this.get(&#x27;_records&#x27;);
     },
     set(key, value) {
+      this.set(&#x27;_recordsIsLoading&#x27;, true);
       value.then((records) =&gt; {
         records.forEach((record) =&gt; {
           let config = Ember.copy(this.get(&#x27;defaultRowConfig&#x27;));
@@ -356,10 +366,25 @@ export default FlexberryBaseComponent.extend({
 
           this.get(&#x27;_records&#x27;).pushObject(newRecord);
         });
+      }).finally(() =&gt; {
+        this.set(&#x27;_recordsIsLoading&#x27;, false);
       });
+
       return this.get(&#x27;records&#x27;);
     },
   }),
+
+  /**
+    Indicates whether the record displayed on this row has child records.
+    See {{#crossLink &quot;FlexberryObjectlistviewComponent/isParentRecordPropertyName:property&quot;}}details here{{/crossLink}}.
+
+    @property isParentRecord
+    @type Boolean
+    @readOnly
+  */
+  isParentRecord: Ember.computed(&#x27;record.data&#x27;, &#x27;isParentRecordPropertyName&#x27;, function () {
+    return this.get(&#x60;record.data.${this.get(&#x27;isParentRecordPropertyName&#x27;)}&#x60;);
+  }).readOnly(),
 
   /**
     Flag indicate whether there nested records.
@@ -484,6 +509,29 @@ export default FlexberryBaseComponent.extend({
     },
 
     /**
+      Loads and, by default, displays the records that are children of the record displayed on this row.
+
+      @method actions.loadChildRecords
+      @param {Boolean} [expand=true] If &#x60;true&#x60;, the child records will be displayed by sending the &#x60;expand&#x60; event.
+    */
+    loadChildRecords(expand = true) {
+      const id = this.get(&#x27;record.data.id&#x27;);
+      const currentLevel = this.get(&#x27;_currentLevel&#x27;);
+      const hierarchyLoadedLevel = this.get(&#x27;hierarchyLoadedLevel&#x27;);
+
+      this.sendAction(&#x27;loadRecords&#x27;, id, this, &#x27;records&#x27;, currentLevel &gt; hierarchyLoadedLevel);
+      this.set(&#x27;recordsLoaded&#x27;, true);
+
+      if (currentLevel &gt; hierarchyLoadedLevel) {
+        this.set(&#x27;hierarchyLoadedLevel&#x27;, currentLevel);
+      }
+
+      if (expand) {
+        this.send(&#x27;expand&#x27;);
+      }
+    },
+
+    /**
       Redirect action from FlexberryLookupComponent in the controller.
 
       @method actions.showLookupDialog
@@ -541,15 +589,9 @@ export default FlexberryBaseComponent.extend({
   didRender() {
     this._super(...arguments);
     if (!this.get(&#x27;recordsLoaded&#x27;)) {
-      let id = this.get(&#x27;record.data.id&#x27;);
-      if (id &amp;&amp; this.get(&#x27;inHierarchicalMode&#x27;)) {
-        let currentLevel = this.get(&#x27;_currentLevel&#x27;);
-        let hierarchyLoadedLevel = this.get(&#x27;hierarchyLoadedLevel&#x27;);
-        this.sendAction(&#x27;loadRecords&#x27;, id, this, &#x27;records&#x27;, currentLevel &gt; hierarchyLoadedLevel);
-        this.set(&#x27;recordsLoaded&#x27;, true);
-        if (currentLevel &gt; hierarchyLoadedLevel) {
-          this.set(&#x27;hierarchyLoadedLevel&#x27;, currentLevel);
-        }
+      const id = this.get(&#x27;record.data.id&#x27;);
+      if (id &amp;&amp; this.get(&#x27;inHierarchicalMode&#x27;) &amp;&amp; this.get(&#x27;isParentRecord&#x27;) === undefined) {
+        this.send(&#x27;loadChildRecords&#x27;, false);
       }
     }
   },

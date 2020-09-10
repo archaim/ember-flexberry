@@ -282,6 +282,26 @@ export default Ember.Component.extend({
   modalContext: &#x27;.pusher:first&#x27;,
 
   /**
+    Flag defining whether or not showing close button.
+    Rewrites {{#crossLink &quot;ModalDialog/useCloseButton:property&quot;}}&#x60;useCloseButton&#x60;{{/crossLink}}.
+
+    @property useCloseButton
+    @type Boolean
+    @default true
+  */
+  useCloseButton: true,
+
+  /**
+    Flag defining whether or not showing ok button.
+    Rewrites {{#crossLink &quot;ModalDialog/useOkButton:property&quot;}}&#x60;useOkButton&#x60;{{/crossLink}}.
+
+    @property useOkButton
+    @type Boolean
+    @default false
+  */
+  useOkButton: false,
+
+  /**
     Error for displaying.
 
     @property error

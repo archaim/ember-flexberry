@@ -539,9 +539,9 @@ export default FlexberryBaseComponent.extend({
 
     @property searchForContentChange
     @type Boolean
-    @default false
+    @default true
   */
-  searchForContentChange: false,
+  searchForContentChange: true,
 
   /**
     Flag: indicates whether to show validation messages in every row or not.
@@ -886,7 +886,7 @@ export default FlexberryBaseComponent.extend({
     for (let i = start + 1; i &lt;= end; i++) {
       for (let j = i; j &gt; start &amp;&amp; condition(j); j--) {
         let record = recordsSort.objectAt(j);
-        recordsSort.replace(j, 1, [recordsSort.objectAt(j - 1)]);
+        recordsSort.removeAt(j);
         recordsSort.insertAt(j - 1, record);
       }
     }
@@ -910,30 +910,37 @@ export default FlexberryBaseComponent.extend({
     Hook that can be used to confirm delete row.
 
     @example
-      &#x60;&#x60;&#x60;handlebars
-      &lt;!-- app/templates/example.hbs --&gt;
-      {{flexberry-groupedit
-        ...
-        confirmDeleteRow=(action &#x27;confirmDeleteRow&#x27;)
-        ...
-      }}
-      &#x60;&#x60;&#x60;
-
       &#x60;&#x60;&#x60;javascript
       // app/controllers/example.js
       ...
       actions: {
         ...
-        confirmDeleteRow() {
-          return confirm(&#x27;You sure?&#x27;);
+        confirmDeleteRow(record) {
+          return new Promise((resolve, reject) =&gt; {
+            this.showConfirmDialg({
+              title: &#x60;Delete an object with the ID &#x27;${record.get(&#x27;id&#x27;)}&#x27;?&#x60;,
+              onApprove: resolve,
+              onDeny: reject,
+            });
+          });
         }
         ...
       }
       ...
       &#x60;&#x60;&#x60;
 
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/example.hbs --&gt;
+      {{flexberry-objectlistview
+        ...
+        confirmDeleteRow=(action &quot;confirmDeleteRow&quot;)
+        ...
+      }}
+      &#x60;&#x60;&#x60;
+
     @method confirmDeleteRow
-    @return {Boolean} If &#x60;true&#x60; then delete row, else cancel.
+    @param {DS.Model} record The record to be deleted.
+    @return {Boolean|Promise} If &#x60;true&#x60;, then delete row, if &#x60;Promise&#x60;, then delete row after successful resolve, else cancel.
   */
   confirmDeleteRow: undefined,
 
@@ -941,30 +948,36 @@ export default FlexberryBaseComponent.extend({
     Hook that can be used to confirm delete rows.
 
     @example
-      &#x60;&#x60;&#x60;handlebars
-      &lt;!-- app/templates/example.hbs --&gt;
-      {{flexberry-groupedit
-        ...
-        confirmDeleteRows=(action &#x27;confirmDeleteRows&#x27;)
-        ...
-      }}
-      &#x60;&#x60;&#x60;
-
       &#x60;&#x60;&#x60;javascript
       // app/controllers/example.js
       ...
       actions: {
         ...
         confirmDeleteRows() {
-          return confirm(&#x27;You sure?&#x27;);
+          return new Promise((resolve, reject) =&gt; {
+            this.showConfirmDialg({
+              title: &#x27;Delete all selected records?&#x27;,
+              onApprove: resolve,
+              onDeny: reject,
+            });
+          });
         }
         ...
       }
       ...
       &#x60;&#x60;&#x60;
 
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/example.hbs --&gt;
+      {{flexberry-objectlistview
+        ...
+        confirmDeleteRows=(action &quot;confirmDeleteRows&quot;)
+        ...
+      }}
+      &#x60;&#x60;&#x60;
+
     @method confirmDeleteRows
-    @return {Boolean} If &#x60;true&#x60; then delete selected rows, else cancel.
+    @return {Boolean|Promise} If &#x60;true&#x60;, then delete row, if &#x60;Promise&#x60;, then delete row after successful resolve, else cancel.
   */
   confirmDeleteRows: undefined,
 

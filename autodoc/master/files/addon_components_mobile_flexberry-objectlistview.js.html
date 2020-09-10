@@ -218,6 +218,8 @@
 */
 
 import FlexberryObjectlistview from &#x27;./../flexberry-objectlistview&#x27;;
+import getAttrLocaleKey from &#x27;../../utils/get-attr-locale-key&#x27;;
+import Ember from &#x27;ember&#x27;;
 
 /**
   Mobile version of flexberry-objectlistview (with mobile-specific defaults).
@@ -353,6 +355,138 @@ export default FlexberryObjectlistview.extend({
     @default true
   */
   columnsWidthAutoresize: true,
+
+  /**
+    Array of objects corresponding to list of pages.
+
+    Each page is presented as object with following properties:
+    - **number** - Number of page.
+    - **isCurrent** - If &#x60;true&#x60; this page is current.
+    - **isEllipsis** - If &#x60;true&#x60; this page showing in pages list.
+
+    @private
+    @property _mobilePages
+    @type Array
+    @readOnly
+  */
+  _mobilePages: Ember.computed(&#x27;pages&#x27;, function() {
+    let mobilePages = Ember.A();
+    let pages = Ember.A(this.get(&#x27;pages&#x27;));
+
+    if (pages.length &lt;= 4) {
+      return pages;
+    }
+
+    let currentPageNumber = pages.find(page =&gt; page.isCurrent).number;
+    let lastPageNumber = pages[pages.length - 1].number;
+
+    for (let i = 1; i &lt;= lastPageNumber; i++) {
+      let isEllipsis;
+
+      if (currentPageNumber === 1 || currentPageNumber === lastPageNumber) {
+        isEllipsis  = currentPageNumber === 1 ? i &gt; 3 : i &lt; lastPageNumber - 2;
+      } else {
+        isEllipsis = currentPageNumber - 1 &gt; i || i &gt; currentPageNumber + 1;
+      }
+
+      let page = {
+        isCurrent: i === currentPageNumber,
+        isEllipsis: isEllipsis,
+        number: i
+      };
+
+      mobilePages.pushObject(page);
+    }
+
+    return mobilePages;
+  }),
+
+  /*
+    Convert array of object sorting to array.
+
+    @private
+    @property _currecntSortingArray
+    @type Array
+    @readOnly
+  */
+  _currecntSortingArray: Ember.computed(&#x27;sorting&#x27;,  function() {
+    let sorting = this.get(&#x27;sorting&#x27;);
+    let columns = Ember.A();
+    if (sorting === null) {
+      return columns;
+    }
+
+    let sortingKeys = Object.keys(sorting);
+    sortingKeys.forEach(key =&gt; {
+      let column = sorting[key];
+      columns.pushObject({
+        key: key,
+        sortNumber: column.sortNumber,
+        sortAscending: column.sortAscending
+      });
+    });
+
+    columns.sortBy(&#x27;sortNumber&#x27;);
+
+    return columns;
+  }),
+
+  /**
+    Class icons for sorting.
+
+    @private
+    @property _mobileSortingSettingsIcon
+    @type String
+    @readOnly
+  */
+  _mobileSortingSettingsIcon: Ember.computed(&#x27;_currecntSortingArray&#x27;,  function() {
+    let icon = &#x27;sort content descending&#x27;;
+    let firstColumn = this.get(&#x27;_currecntSortingArray&#x27;)[0];
+
+    if (firstColumn !== undefined) {
+      icon = firstColumn.sortAscending ? &#x27;sort content ascending&#x27; : &#x27;sort content descending&#x27;;
+    }
+
+    return &#x60;${icon} icon&#x60;;
+  }),
+
+  /**
+    Mobile sort text.
+
+    @private
+    @property _mobileSortingSettingsCaption
+    @type String
+    @readOnly
+  */
+  _mobileSortingSettingsCaption: Ember.computed(&#x27;_currecntSortingArray&#x27;, &#x27;i18n.locale&#x27;,  function() {
+    let i18n = this.get(&#x27;i18n&#x27;);
+    let sorting = this.get(&#x27;_currecntSortingArray&#x27;);
+    if (sorting.length === 0) {
+      return i18n.t(&#x27;components.flexberry-objectlistview.without-sorting&#x27;);
+    }
+
+    let sortingValue;
+    sorting.forEach((column) =&gt; {
+      let columnHeader = i18n.t(getAttrLocaleKey(this.get(&#x27;modelName&#x27;), this.get(&#x27;modelProjection&#x27;).projectionName, column.key)).string;
+      if (columnHeader !== undefined) {
+        let key = column.key.split(&#x27;.&#x27;)[0];
+        columnHeader = i18n.t(getAttrLocaleKey(this.get(&#x27;modelName&#x27;), this.get(&#x27;modelProjection&#x27;).projectionName, key)).string;
+      }
+
+      if (sortingValue  !== undefined) {
+        sortingValue += &#x60;, ${columnHeader}&#x60;;
+      } else {
+        sortingValue = columnHeader;
+      }
+    });
+
+    return sortingValue;
+  }),
+  actions: {
+    showConfigDialog() {
+      this.get(&#x27;currentController&#x27;).send(&#x27;showConfigDialog&#x27;, this.get(&#x27;componentName&#x27;), undefined, false, false);
+    }
+  }
 });
 
     </pre>

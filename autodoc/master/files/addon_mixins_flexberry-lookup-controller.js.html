@@ -658,9 +658,12 @@ export default Ember.Mixin.create(ReloadListMixin, {
       hierarchyPaging: reloadData.hierarchyPaging
     };
 
-    const modalDialogSettings = Ember.merge(Ember.merge({}, lookupSettings.modalDialogSettings), reloadData.modalDialogSettings);
-
     controller.clear(reloadData.initialLoad);
+
+    const modalDialogSettings = controller.get(&#x27;modalDialogSettings&#x27;) || Ember.merge(Ember.merge({}, reloadData.modalDialogSettings), {
+      settings: Ember.merge(Ember.merge({}, lookupSettings.modalDialogSettings), reloadData.modalDialogSettings.settings),
+    });
+
     controller.setProperties({
       modelProjection: projection,
       title: reloadData.title,
@@ -670,6 +673,7 @@ export default Ember.Mixin.create(ReloadListMixin, {
       componentName: reloadData.componentName,
       folvComponentName: reloadData.folvComponentName,
       notUseUserSettings: reloadData.notUseUserSettings,
+      modelName: reloadData.relatedToType,
 
       perPage: queryParameters.perPage,
       page: queryParameters.page,

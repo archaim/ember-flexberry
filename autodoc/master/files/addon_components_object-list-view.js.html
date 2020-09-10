@@ -220,6 +220,7 @@ import Ember from &#x27;ember&#x27;;
 import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 import { getValueFromLocales } from &#x27;ember-flexberry-data/utils/model-functions&#x27;;
 import generateUniqueId from &#x27;ember-flexberry-data/utils/generate-unique-id&#x27;;
+import getAttrLocaleKey from &#x27;../utils/get-attr-locale-key&#x27;;
 
 import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lookup-compatible-component&#x27;;
@@ -251,8 +252,7 @@ export default FlexberryBaseComponent.extend(
   _contentObserver: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;content&#x27;, function() {
     this._setContent(this.get(&#x27;componentName&#x27;));
 
-    if (this.get(&#x27;allSelect&#x27;))
-    {
+    if (this.get(&#x27;allSelect&#x27;)) {
       let contentWithKeys = this.get(&#x27;contentWithKeys&#x27;);
       let checked = this.get(&#x27;allSelect&#x27;);
 
@@ -781,7 +781,7 @@ export default FlexberryBaseComponent.extend(
       ret = cols;
     }
 
-    this.get(&#x27;objectlistviewEventsService&#x27;).setOlvFilterColumnsArray(ret);
+    this.get(&#x27;objectlistviewEventsService&#x27;).setOlvFilterColumnsArray(this.get(&#x27;componentName&#x27;), ret);
     return ret;
   }),
 
@@ -1207,14 +1207,25 @@ export default FlexberryBaseComponent.extend(
       }
 
       let confirmDeleteRow = this.get(&#x27;confirmDeleteRow&#x27;);
+      let possiblePromise = null;
+
       if (confirmDeleteRow) {
         Ember.assert(&#x27;Error: confirmDeleteRow must be a function.&#x27;, typeof confirmDeleteRow === &#x27;function&#x27;);
-        if (!confirmDeleteRow()) {
+
+        possiblePromise = confirmDeleteRow(recordWithKey.data);
+
+        if ((!possiblePromise || !(possiblePromise instanceof Ember.RSVP.Promise))) {
           return;
         }
       }
 
-      this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
+      if (possiblePromise || (possiblePromise instanceof Ember.RSVP.Promise)) {
+        possiblePromise.then(() =&gt; {
+          this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
+        });
+      } else {
+        this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
+      }
     },
 
     /**
@@ -1315,6 +1326,42 @@ export default FlexberryBaseComponent.extend(
     },
 
     /**
+      Handler click on flexberry-menu.
+
+      @method actions.onCheckRowMenuItemClick
+      @param {jQuery.Event} e jQuery.Event by click on menu item
+    */
+    onCheckRowMenuItemClick(e) {
+      let namedItemSpans = Ember.$(e.currentTarget).find(&#x27;span&#x27;);
+      if (namedItemSpans.length &lt;= 0) {
+        return;
+      }
+
+      let i18n = this.get(&#x27;i18n&#x27;);
+      let namedSetting = namedItemSpans.get(0).innerText;
+
+      let isUncheckAllAtPage = this.get(&#x27;allSelectAtPage&#x27;);
+      let checkAllAtPageTitle = isUncheckAllAtPage ? i18n.t(&#x27;components.olv-toolbar.uncheck-all-at-page-button-text&#x27;) :
+      i18n.t(&#x27;components.olv-toolbar.check-all-at-page-button-text&#x27;);
+
+      let isUncheckAll = this.get(&#x27;allSelect&#x27;);
+      let checkAllTitle = isUncheckAll ? i18n.t(&#x27;components.olv-toolbar.uncheck-all-button-text&#x27;) :
+      i18n.t(&#x27;components.olv-toolbar.check-all-button-text&#x27;);
+
+      switch (namedSetting) {
+        case checkAllAtPageTitle.toString(): {
+          this.send(&#x27;checkAllAtPage&#x27;);
+          break;
+        }
+
+        case checkAllTitle.toString(): {
+          this.send(&#x27;checkAll&#x27;);
+          break;
+        }
+      }
+    },
+
+    /**
       This action is called when click clear sorting button.
 
       @method actions.clearSorting
@@ -1361,9 +1408,9 @@ export default FlexberryBaseComponent.extend(
       Called when filter condition in any column was changed by user.
 
       @method actions.filterConditionChanged
-      @param {Object} filter
-      @param {String} newCondition
-      @param {String} oldCondition
+      @param {Object} filter Object with the filter description.
+      @param {String} newCondition The new value of the filter condition.
+      @param {String} oldCondition The old value of the filter condition.
     */
     filterConditionChanged(filter, newCondition, oldCondition) {
       if (oldCondition === &#x27;between&#x27; || newCondition === &#x27;empty&#x27; || newCondition === &#x27;nempty&#x27;) {
@@ -1418,6 +1465,7 @@ export default FlexberryBaseComponent.extend(
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;updateWidth&#x27;, this, this.setColumnWidths);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;updateSelectAll&#x27;, this, this._selectAll);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;moveRow&#x27;, this, this._moveRow);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;filterConditionChanged&#x27;, this, this._filterConditionChanged);
   },
 
   /**
@@ -1506,8 +1554,7 @@ export default FlexberryBaseComponent.extend(
 
           if (renderedRowIndex &gt;= contentLength) {
             // The last menu needs will be up.
-            this.$(&#x27;.object-list-view-menu .ui.dropdown&#x27;).removeClass(&#x27;bottom&#x27;);
-            this.$(&#x27;.object-list-view-menu:last .ui.dropdown&#x27;).addClass(&#x27;bottom&#x27;);
+            this.$(&#x27;.object-list-view-menu .ui.dropdown&#x27;).removeClass(&#x27;bottom&#x27;).not(&#x27;:first&#x27;).last().addClass(&#x27;bottom&#x27;);
             this.$(&#x27;.object-list-view-menu &gt; .ui.dropdown&#x27;).dropdown();
 
             // Remove long loading spinners.
@@ -1556,8 +1603,7 @@ export default FlexberryBaseComponent.extend(
       }
 
       // The last menu needs will be up.
-      this.$(&#x27;.object-list-view-menu .ui.dropdown&#x27;).removeClass(&#x27;bottom&#x27;);
-      this.$(&#x27;.object-list-view-menu:last .ui.dropdown&#x27;).addClass(&#x27;bottom&#x27;);
+      this.$(&#x27;.object-list-view-menu .ui.dropdown&#x27;).removeClass(&#x27;bottom&#x27;).not(&#x27;:first&#x27;).last().addClass(&#x27;bottom&#x27;);
       this.$(&#x27;.object-list-view-menu &gt; .ui.dropdown&#x27;).dropdown();
     }
 
@@ -1598,6 +1644,7 @@ export default FlexberryBaseComponent.extend(
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;updateWidth&#x27;, this, this.setColumnWidths);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;updateSelectAll&#x27;, this, this._selectAll);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;moveRow&#x27;, this, this._moveRow);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;filterConditionChanged&#x27;, this, this._filterConditionChanged);
 
     this.get(&#x27;objectlistviewEventsService&#x27;).clearSelectedRecords(this.get(&#x27;componentName&#x27;));
 
@@ -1944,9 +1991,9 @@ export default FlexberryBaseComponent.extend(
           mainModelName = descriptor.type;
         }
       });
-      key = &#x60;models.${mainModelName}.projections.${mainModelProjection.projectionName}.${nameRelationship}.${bindingPath}.__caption__&#x60;;
+      key = getAttrLocaleKey(mainModelName, mainModelProjection.projectionName, bindingPath, nameRelationship);
     } else {
-      key = &#x60;models.${modelName}.projections.${projection.projectionName}.${bindingPath}.__caption__&#x60;;
+      key = getAttrLocaleKey(modelName, projection.projectionName, bindingPath);
     }
 
     return key;
@@ -2406,6 +2453,7 @@ export default FlexberryBaseComponent.extend(
     // Mark previously selected records.
     let componentName = this.get(&#x27;componentName&#x27;);
     let selectedRecordsToRestore = this.get(&#x27;objectlistviewEventsService&#x27;).getSelectedRecords(componentName);
+
     if (selectedRecordsToRestore &amp;&amp; selectedRecordsToRestore.size &amp;&amp; selectedRecordsToRestore.size &gt; 0) {
       selectedRecordsToRestore.forEach((recordWithData, key) =&gt; {
         if (record === recordWithData.data) {
@@ -2701,7 +2749,7 @@ export default FlexberryBaseComponent.extend(
   // TODO: why this observer here in olv, if it is needed only for groupedit? And why there is still no group-edit component?
   _rowsChanged: Ember.observer(&#x27;content.@each.dirtyType&#x27;, function() {
     let content = this.get(&#x27;content&#x27;);
-    if (content &amp;&amp; !(content instanceof Ember.RSVP.Promise) &amp;&amp; content.isAny(&#x27;dirtyType&#x27;, &#x27;updated&#x27;)) {
+    if (Ember.isArray(content) &amp;&amp; content.isAny(&#x27;dirtyType&#x27;, &#x27;updated&#x27;)) {
       let componentName = this.get(&#x27;componentName&#x27;);
       this.get(&#x27;objectlistviewEventsService&#x27;).rowsChangedTrigger(componentName);
     }
@@ -2822,6 +2870,7 @@ export default FlexberryBaseComponent.extend(
     let componentName = this.get(&#x27;componentName&#x27;);
 
     let selectedRecordsToRestore = this.get(&#x27;objectlistviewEventsService&#x27;).getSelectedRecords(componentName);
+
     if (selectedRecordsToRestore &amp;&amp; selectedRecordsToRestore.size &amp;&amp; selectedRecordsToRestore.size &gt; 0) {
       let e = {
         checked: true
@@ -3045,6 +3094,22 @@ export default FlexberryBaseComponent.extend(
           contentForRender.replace(newIndex, 0, temp);
         }
       });
+    }
+  },
+
+  /**
+    Calls the &#x60;filterConditionChanged&#x60; action when filters are displayed in the modal window.
+
+    @private
+    @method _filterConditionChanged
+    @param {String} componentName The name of the component relative to which the event occurred.
+    @param {Object} filter Object with the filter description.
+    @param {String} newValue The new value of the filter condition.
+    @param {String} oldvalue The old value of the filter condition.
+  */
+  _filterConditionChanged(componentName, filter, newValue, oldValue) {
+    if (this.get(&#x27;componentName&#x27;) === componentName) {
+      this.send(&#x27;filterConditionChanged&#x27;, filter, newValue, oldValue);
     }
   },
 });

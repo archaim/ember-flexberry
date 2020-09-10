@@ -220,6 +220,7 @@ import FlexberryFileCompatibleComponentMixin from &#x27;../mixins/flexberry-file
 import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 import { getValueFromLocales } from &#x27;ember-flexberry-data/utils/model-functions&#x27;;
 import serializeSortingParam from &#x27;../utils/serialize-sorting-param&#x27;;
+import getAttrLocaleKey from &#x27;../utils/get-attr-locale-key&#x27;;
 const { getOwner } = Ember;
 
 /**
@@ -781,6 +782,81 @@ export default folv.extend(
   filterByAnyMatch: &#x27;filterByAnyMatch&#x27;,
 
   /**
+    Hook that can be used to confirm delete row.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/controllers/example.js
+      ...
+      actions: {
+        ...
+        confirmDeleteRow(record) {
+          return new Promise((resolve, reject) =&gt; {
+            this.showConfirmDialg({
+              title: &#x60;Delete an object with the ID &#x27;${record.get(&#x27;id&#x27;)}&#x27;?&#x60;,
+              onApprove: resolve,
+              onDeny: reject,
+            });
+          });
+        }
+        ...
+      }
+      ...
+      &#x60;&#x60;&#x60;
+
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/example.hbs --&gt;
+      {{flexberry-objectlistview
+        ...
+        confirmDeleteRow=(action &quot;confirmDeleteRow&quot;)
+        ...
+      }}
+      &#x60;&#x60;&#x60;
+
+    @method confirmDeleteRow
+    @param {DS.Model} record The record to be deleted.
+    @return {Boolean|Promise} If &#x60;true&#x60;, then delete row, if &#x60;Promise&#x60;, then delete row after successful resolve, else cancel.
+  */
+  confirmDeleteRow: undefined,
+
+  /**
+    Hook that can be used to confirm delete rows.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/controllers/example.js
+      ...
+      actions: {
+        ...
+        confirmDeleteRows() {
+          return new Promise((resolve, reject) =&gt; {
+            this.showConfirmDialg({
+              title: &#x27;Delete all selected records?&#x27;,
+              onApprove: resolve,
+              onDeny: reject,
+            });
+          });
+        }
+        ...
+      }
+      ...
+      &#x60;&#x60;&#x60;
+
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/example.hbs --&gt;
+      {{flexberry-objectlistview
+        ...
+        confirmDeleteRows=(action &quot;confirmDeleteRows&quot;)
+        ...
+      }}
+      &#x60;&#x60;&#x60;
+
+    @method confirmDeleteRows
+    @return {Boolean|Promise} If &#x60;true&#x60;, then delete row, if &#x60;Promise&#x60;, then delete row after successful resolve, else cancel.
+  */
+  confirmDeleteRows: undefined,
+
+  /**
     Hook for configurate rows.
 
     @example
@@ -1004,14 +1080,25 @@ export default folv.extend(
       }
 
       let confirmDeleteRow = this.get(&#x27;confirmDeleteRow&#x27;);
+      let possiblePromise = null;
+
       if (confirmDeleteRow) {
         Ember.assert(&#x27;Error: confirmDeleteRow must be a function.&#x27;, typeof confirmDeleteRow === &#x27;function&#x27;);
-        if (!confirmDeleteRow()) {
+
+        possiblePromise = confirmDeleteRow(recordWithKey.data);
+
+        if ((!possiblePromise || !(possiblePromise instanceof Ember.RSVP.Promise))) {
           return;
         }
       }
 
-      this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
+      if (possiblePromise || (possiblePromise instanceof Ember.RSVP.Promise)) {
+        possiblePromise.then(() =&gt; {
+          this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
+        });
+      } else {
+        this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
+      }
     },
 
     /**
@@ -1080,27 +1167,24 @@ export default folv.extend(
     */
     delete() {
       let confirmDeleteRows = this.get(&#x27;confirmDeleteRows&#x27;);
+      let possiblePromise = null;
+
       if (confirmDeleteRows) {
         Ember.assert(&#x27;Error: confirmDeleteRows must be a function.&#x27;, typeof confirmDeleteRows === &#x27;function&#x27;);
-        if (!confirmDeleteRows()) {
+
+        possiblePromise = confirmDeleteRows();
+
+        if ((!possiblePromise || !(possiblePromise instanceof Ember.RSVP.Promise))) {
           return;
         }
       }
 
-      let componentName = this.get(&#x27;componentName&#x27;);
-
-      if (!this.get(&#x27;allSelect&#x27;))
-      {
-        this.get(&#x27;objectlistviewEventsService&#x27;).deleteRowsTrigger(componentName, true);
+      if (possiblePromise || (possiblePromise instanceof Ember.RSVP.Promise)) {
+        possiblePromise.then(() =&gt; {
+          this._confirmDeleteRows();
+        });
       } else {
-        let modelName = this.get(&#x27;modelProjection.modelName&#x27;);
-
-        let filterQuery = {
-          predicate: this.get(&#x27;currentController.filtersPredicate&#x27;),
-          modelName: modelName
-        };
-
-        this.get(&#x27;objectlistviewEventsService&#x27;).deleteAllRowsTrigger(componentName, filterQuery);
+        this._confirmDeleteRows();
       }
     },
 
@@ -2035,9 +2119,9 @@ export default folv.extend(
           mainModelName = descriptor.type;
         }
       });
-      key = &#x60;models.${mainModelName}.projections.${mainModelProjection.projectionName}.${nameRelationship}.${bindingPath}.__caption__&#x60;;
+      key = getAttrLocaleKey(mainModelName, mainModelProjection.projectionName, bindingPath, nameRelationship);
     } else {
-      key = &#x60;models.${modelName}.projections.${projection.projectionName}.${bindingPath}.__caption__&#x60;;
+      key = getAttrLocaleKey(modelName, projection.projectionName, bindingPath);
     }
 
     return key;
@@ -3419,6 +3503,29 @@ export default folv.extend(
       cells.css({
         &#x27;position&#x27;: &#x27;relative&#x27;
       });
+    }
+  },
+
+  /**
+    Delete rows when it confirmed.
+
+    @method _confirmDeleteRows
+    @private
+  */
+  _confirmDeleteRows() {
+    let componentName = this.get(&#x27;componentName&#x27;);
+
+    if (!this.get(&#x27;allSelect&#x27;)) {
+      this.get(&#x27;objectlistviewEventsService&#x27;).deleteRowsTrigger(componentName, true);
+    } else {
+      let modelName = this.get(&#x27;modelProjection.modelName&#x27;);
+
+      let filterQuery = {
+        predicate: this.get(&#x27;currentController.filtersPredicate&#x27;),
+        modelName: modelName
+      };
+
+      this.get(&#x27;objectlistviewEventsService&#x27;).deleteAllRowsTrigger(componentName, filterQuery);
     }
   }
 });
