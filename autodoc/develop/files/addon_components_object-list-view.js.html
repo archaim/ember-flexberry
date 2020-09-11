@@ -2749,7 +2749,7 @@ export default FlexberryBaseComponent.extend(
   // TODO: why this observer here in olv, if it is needed only for groupedit? And why there is still no group-edit component?
   _rowsChanged: Ember.observer(&#x27;content.@each.dirtyType&#x27;, function() {
     let content = this.get(&#x27;content&#x27;);
-    if (content &amp;&amp; !(content instanceof Ember.RSVP.Promise) &amp;&amp; content.isAny(&#x27;dirtyType&#x27;, &#x27;updated&#x27;)) {
+    if (Ember.isArray(content) &amp;&amp; content.isAny(&#x27;dirtyType&#x27;, &#x27;updated&#x27;)) {
       let componentName = this.get(&#x27;componentName&#x27;);
       this.get(&#x27;objectlistviewEventsService&#x27;).rowsChangedTrigger(componentName);
     }

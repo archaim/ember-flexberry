@@ -2302,6 +2302,34 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-check-al
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-check-all-at-page-test.js should pass jshint.');
   });
 });
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-check-config-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
+
+  (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check folv config', function (store, assert, app) {
+    var path = 'components-acceptance-tests/flexberry-objectlistview/base-operations';
+    visit(path);
+    andThen(function () {
+      var config = ['createNewButton', 'deleteButton', 'refreshButton', 'showCheckBoxInRow', 'showDeleteMenuItemInRow'];
+      checkOlvConfig('[data-test-olv]', null, assert, config);
+    });
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-check-config-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - acceptance/components/flexberry-objectlistview');
+  test('acceptance/components/flexberry-objectlistview/folv-check-config-test.js should pass jscs', function () {
+    ok(true, 'acceptance/components/flexberry-objectlistview/folv-check-config-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-check-config-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - acceptance/components/flexberry-objectlistview/folv-check-config-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-check-config-test.js should pass jshint.');
+  });
+});
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-checked-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('test checking', function (store, assert, app) {
@@ -3737,32 +3765,15 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-locales-
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-locales-test.js should pass jshint.');
   });
 });
-define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-open-newform-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test', 'dummy/tests/acceptance/components/flexberry-objectlistview/folv-tests-functions', 'ember-flexberry/locales/ru/translations'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewFolvTestsFunctions, _emberFlexberryLocalesRuTranslations) {
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-open-newform-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check goto new form', function (store, assert, app) {
-    assert.expect(4);
     var path = 'components-acceptance-tests/flexberry-objectlistview/base-operations';
     visit(path);
     andThen(function () {
-
-      // Set 'ru' as current locale.
-      (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewFolvTestsFunctions.loadingLocales)('ru', app).then(function () {
-        assert.equal(currentPath(), path);
-        var $toolBar = _ember['default'].$('.ui.secondary.menu')[0];
-        var $toolBarButtons = $toolBar.children;
-
-        assert.equal($toolBarButtons[1].innerText.trim(), _ember['default'].get(_emberFlexberryLocalesRuTranslations['default'], 'components.olv-toolbar.add-button-text'), 'button create exist');
-
-        var asyncOperationsCompleted = assert.async();
-        (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewFolvTestsFunctions.loadingList)($toolBarButtons[1], 'form', '.field').then(function ($editForm) {
-          assert.ok($editForm, 'new form open');
-          assert.equal(currentPath(), 'ember-flexberry-dummy-suggestion-edit.new', 'new form open');
-        })['catch'](function (reason) {
-          throw new Error(reason);
-        })['finally'](function () {
-          asyncOperationsCompleted();
-        });
-      });
+      var controller = app.__container__.lookup('controller:' + currentRouteName());
+      var newFormRoute = controller.get('editFormRoute') + '.new';
+      goToNewForm('[data-test-olv]', null, assert, newFormRoute);
     });
   });
 });
@@ -8783,7 +8794,7 @@ define('dummy/tests/helpers/resolver.jshint', ['exports'], function (exports) {
     assert.ok(true, 'helpers/resolver.js should pass jshint.');
   });
 });
-define('dummy/tests/helpers/start-app', ['exports', 'ember', 'dummy/app', 'dummy/config/environment'], function (exports, _ember, _dummyApp, _dummyConfigEnvironment) {
+define('dummy/tests/helpers/start-app', ['exports', 'ember', 'dummy/app', 'dummy/config/environment', 'ember-flexberry/test-support'], function (exports, _ember, _dummyApp, _dummyConfigEnvironment, _emberFlexberryTestSupport) {
   exports['default'] = startApp;
 
   function startApp(attrs) {

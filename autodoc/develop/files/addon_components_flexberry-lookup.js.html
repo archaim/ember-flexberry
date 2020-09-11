@@ -296,6 +296,16 @@ export default FlexberryBaseComponent.extend({
 
   /**
     This property is used in order to cache last value
+    of autocomplete input.
+
+    @private
+    @property _lastAutocompleteValue
+    @type String
+  */
+  _lastAutocompleteValue: undefined,
+
+  /**
+    This property is used in order to cache last value
     of flag {{#crossLink &quot;FlexberryLookup/dropdown:property&quot;}}{{/crossLink}}
     in order to let init this mode afrer re-render only once if flag was enabled.
 
@@ -1059,7 +1069,7 @@ export default FlexberryBaseComponent.extend({
       @method actions.onInputFocusOut
     */
     onInputFocusOut() {
-      if (!this.get(&#x27;value&#x27;) &amp;&amp; !this.get(&#x27;autocompletePersistValue&#x27;)) {
+      if (!this.get(&#x27;value&#x27;) &amp;&amp; !this.get(&#x27;autocompletePersistValue&#x27;) &amp;&amp; !this.get(&#x27;usePaginationForAutocomplete&#x27;)) {
         this.set(&#x27;displayValue&#x27;, null);
       }
     }
@@ -1294,6 +1304,12 @@ export default FlexberryBaseComponent.extend({
             return;
           }
 
+          // Set default page to value change.
+          if (_this.get(&#x27;_lastAutocompleteValue&#x27;) !== settings.urlData.query) {
+            _this.set(&#x27;_pageInResultsForAutocomplete&#x27;, 1);
+            _this.set(&#x27;_lastAutocompleteValue&#x27;, settings.urlData.query);
+          }
+
           let autocompleteProjection = _this.get(&#x27;autocompleteProjection&#x27;);
           let autocompleteOrder = _this.get(&#x27;autocompleteOrder&#x27;);
 
@@ -1365,22 +1381,24 @@ export default FlexberryBaseComponent.extend({
                 newRelationValue: result.instance
               });
           });
-        } else if (_this.get(&#x27;usePaginationForAutocomplete&#x27;)) {
-          state = &#x27;loading&#x27;;
-          if (result.nextPage) {
-            _this.incrementProperty(&#x27;_pageInResultsForAutocomplete&#x27;);
-          }
+        } else {
+          if (_this.get(&#x27;usePaginationForAutocomplete&#x27;)) {
+            state = &#x27;loading&#x27;;
+            if (result.nextPage) {
+              _this.incrementProperty(&#x27;_pageInResultsForAutocomplete&#x27;);
+            }
 
-          if (result.prevPage) {
-            _this.decrementProperty(&#x27;_pageInResultsForAutocomplete&#x27;);
-          }
+            if (result.prevPage) {
+              _this.decrementProperty(&#x27;_pageInResultsForAutocomplete&#x27;);
+            }
 
-          // In the &#x60;Semantic UI&#x60; of version 2.1.7, the results are closed regardless of what the &#x60;onSelect&#x60; handler returns.
-          // This function allows us to start the search again, thanks to the &#x60;searchOnFocus&#x60; option.
-          Ember.run.later(() =&gt; {
-            _this.$().search(&#x27;add results&#x27;, &#x27;&#x27;);
-            _this.$(&#x27;input&#x27;).focus();
-          }, 500);
+            // In the &#x60;Semantic UI&#x60; of version 2.1.7, the results are closed regardless of what the &#x60;onSelect&#x60; handler returns.
+            // This function allows us to start the search again, thanks to the &#x60;searchOnFocus&#x60; option.
+            Ember.run.later(() =&gt; {
+              _this.$().search(&#x27;add results&#x27;, &#x27;&#x27;);
+              _this.$(&#x27;input&#x27;).focus();
+            }, 500);
+          }
 
           return false;
         }

@@ -3853,6 +3853,13 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
     maxUploadFileSize: null,
 
     /**
+      Max upload file size (in bytes) for 'flexberry-file' component 'maxUploadFileSizeUnit' property.
+       @property maxUploadFileSizeUnit
+      @type String
+     */
+    maxUploadFileSizeUnit: 'Bt',
+
+    /**
       Flag for 'flexberry-file' component 'showPreview' property.
        @property showPreview
       @type Boolean
@@ -3906,7 +3913,7 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
        @property componentTemplateText
       @type String
      */
-    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-file<br>' + '  value=model.file<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  uploadUrl=uploadUrl<br>' + '  maxUploadFileSize=maxUploadFileSize<br>' + '  showPreview=showPreview<br>' + '  showUploadButton=showUploadButton<br>' + '  showDownloadButton=showDownloadButton<br>' + '  showModalDialogOnUploadError=showModalDialogOnUploadError<br>' + '  showModalDialogOnDownloadError=showModalDialogOnDownloadError<br>' + '  inputClass=inputClass<br>' + '  buttonClass=buttonClass<br>' + '  openFileInNewWindowInsteadOfLoading=openFileInNewWindowInsteadOfLoading<br>' + '  base64Value=base64Value<br>' + '  base64FileName=base64FileName<br>' + '  base64FileExtension=base64FileExtension<br>' + '}}'),
+    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-file<br>' + '  value=model.file<br>' + '  placeholder=placeholder<br>' + '  readonly=readonly<br>' + '  uploadUrl=uploadUrl<br>' + '  maxUploadFileSize=maxUploadFileSize<br>' + '  maxUploadFileSizeUnit=maxUploadFileSizeUnit<br>' + '  showPreview=showPreview<br>' + '  showUploadButton=showUploadButton<br>' + '  showDownloadButton=showDownloadButton<br>' + '  showModalDialogOnUploadError=showModalDialogOnUploadError<br>' + '  showModalDialogOnDownloadError=showModalDialogOnDownloadError<br>' + '  inputClass=inputClass<br>' + '  buttonClass=buttonClass<br>' + '  openFileInNewWindowInsteadOfLoading=openFileInNewWindowInsteadOfLoading<br>' + '  base64Value=base64Value<br>' + '  base64FileName=base64FileName<br>' + '  base64FileExtension=base64FileExtension<br>' + '}}'),
 
     /**
       Component settings metadata.
@@ -3944,6 +3951,13 @@ define('dummy/controllers/components-examples/flexberry-file/settings-example', 
         settingType: 'number',
         settingDefaultValue: null,
         bindedControllerPropertieName: 'maxUploadFileSize'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'maxUploadFileSizeUnit',
+        settingType: 'enumeration',
+        settingAvailableItems: ['Bt', 'Kb', 'Mb', 'Gb'],
+        settingDefaultValue: 'Bt',
+        bindedControllerPropertieName: 'maxUploadFileSizeUnit'
       });
       componentSettingsMetadata.pushObject({
         settingName: 'showPreview',
@@ -14099,6 +14113,17 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
             editor: {
               __caption__: 'editor'
             }
+          },
+          CustomizeLookupWindowExampleView: {
+            'name': {
+              __caption__: 'Name'
+            },
+            'moderated': {
+              __caption__: 'Moderated'
+            },
+            'parent': {
+              __caption__: 'Parent'
+            }
           }
         }
       }
@@ -15312,6 +15337,17 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
             },
             editor: {
               __caption__: 'editor'
+            }
+          },
+          CustomizeLookupWindowExampleView: {
+            'name': {
+              __caption__: 'Наименование'
+            },
+            'moderated': {
+              __caption__: 'Одобрено'
+            },
+            'parent': {
+              __caption__: 'Иерархия'
             }
           }
         }
@@ -27508,7 +27544,7 @@ define("dummy/templates/components-acceptance-tests/flexberry-objectlistview/bas
             "column": 0
           },
           "end": {
-            "line": 27,
+            "line": 28,
             "column": 0
           }
         },
@@ -27532,7 +27568,7 @@ define("dummy/templates/components-acceptance-tests/flexberry-objectlistview/bas
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["inline", "flexberry-objectlistview", [], ["editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [2, 16], [2, 29]]]]], [], []], "showCheckBoxInRow", true, "modelName", "ember-flexberry-dummy-suggestion", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [5, 18], [5, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [6, 10], [6, 15]]]]], [], []], "createNewButton", true, "refreshButton", true, "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [9, 10], [9, 25]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [11, 15], [11, 38]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [12, 21], [12, 50]]]], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [13, 8], [13, 13]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [14, 15], [14, 27]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [15, 16], [15, 29]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [16, 20], [16, 37]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [17, 18], [17, 33]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [18, 14], [18, 25]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [19, 15], [19, 38]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [20, 11], [20, 30]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [21, 11], [21, 30]]]], "componentName", "FOLVSettingExampleObjectListView", "showDeleteMenuItemInRow", true, "deleteButton", true, "rowClickable", ["subexpr", "@mut", [["get", "rowClickable", ["loc", [null, [25, 15], [25, 27]]]]], [], []]], ["loc", [null, [1, 0], [26, 2]]]]],
+      statements: [["inline", "flexberry-objectlistview", [], ["editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [2, 16], [2, 29]]]]], [], []], "showCheckBoxInRow", true, "modelName", "ember-flexberry-dummy-suggestion", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [5, 18], [5, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [6, 10], [6, 15]]]]], [], []], "createNewButton", true, "refreshButton", true, "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [9, 10], [9, 25]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [11, 15], [11, 38]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [12, 21], [12, 50]]]], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [13, 8], [13, 13]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [14, 15], [14, 27]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [15, 16], [15, 29]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [16, 20], [16, 37]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [17, 18], [17, 33]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [18, 14], [18, 25]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [19, 15], [19, 38]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [20, 11], [20, 30]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [21, 11], [21, 30]]]], "componentName", "FOLVSettingExampleObjectListView", "showDeleteMenuItemInRow", true, "deleteButton", true, "rowClickable", ["subexpr", "@mut", [["get", "rowClickable", ["loc", [null, [25, 15], [25, 27]]]]], [], []], "data-test-olv", true], ["loc", [null, [1, 0], [27, 2]]]]],
       locals: [],
       templates: []
     };
@@ -28967,7 +29003,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
               "column": 2
             },
             "end": {
-              "line": 27,
+              "line": 28,
               "column": 2
             }
           },
@@ -28992,7 +29028,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-file", [], ["value", ["subexpr", "@mut", [["get", "model.file", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "uploadUrl", ["subexpr", "@mut", [["get", "uploadUrl", ["loc", [null, [13, 16], [13, 25]]]]], [], []], "maxUploadFileSize", ["subexpr", "@mut", [["get", "maxUploadFileSize", ["loc", [null, [14, 24], [14, 41]]]]], [], []], "showPreview", ["subexpr", "@mut", [["get", "showPreview", ["loc", [null, [15, 18], [15, 29]]]]], [], []], "showUploadButton", ["subexpr", "@mut", [["get", "showUploadButton", ["loc", [null, [16, 23], [16, 39]]]]], [], []], "showDownloadButton", ["subexpr", "@mut", [["get", "showDownloadButton", ["loc", [null, [17, 25], [17, 43]]]]], [], []], "showModalDialogOnUploadError", ["subexpr", "@mut", [["get", "showModalDialogOnUploadError", ["loc", [null, [18, 35], [18, 63]]]]], [], []], "showModalDialogOnDownloadError", ["subexpr", "@mut", [["get", "showModalDialogOnDownloadError", ["loc", [null, [19, 37], [19, 67]]]]], [], []], "inputClass", ["subexpr", "@mut", [["get", "inputClass", ["loc", [null, [20, 17], [20, 27]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [21, 18], [21, 29]]]]], [], []], "openFileInNewWindowInsteadOfLoading", ["subexpr", "@mut", [["get", "openFileInNewWindowInsteadOfLoading", ["loc", [null, [22, 42], [22, 77]]]]], [], []], "base64Value", ["subexpr", "@mut", [["get", "base64Value", ["loc", [null, [23, 18], [23, 29]]]]], [], []], "base64FileName", ["subexpr", "@mut", [["get", "base64FileName", ["loc", [null, [24, 21], [24, 35]]]]], [], []], "base64FileExtension", ["subexpr", "@mut", [["get", "base64FileExtension", ["loc", [null, [25, 26], [25, 45]]]]], [], []]], ["loc", [null, [9, 4], [26, 6]]]]],
+        statements: [["inline", "flexberry-file", [], ["value", ["subexpr", "@mut", [["get", "model.file", ["loc", [null, [10, 12], [10, 22]]]]], [], []], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [11, 18], [11, 29]]]]], [], []], "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [12, 15], [12, 23]]]]], [], []], "uploadUrl", ["subexpr", "@mut", [["get", "uploadUrl", ["loc", [null, [13, 16], [13, 25]]]]], [], []], "maxUploadFileSize", ["subexpr", "@mut", [["get", "maxUploadFileSize", ["loc", [null, [14, 24], [14, 41]]]]], [], []], "maxUploadFileSizeUnit", ["subexpr", "@mut", [["get", "maxUploadFileSizeUnit", ["loc", [null, [15, 28], [15, 49]]]]], [], []], "showPreview", ["subexpr", "@mut", [["get", "showPreview", ["loc", [null, [16, 18], [16, 29]]]]], [], []], "showUploadButton", ["subexpr", "@mut", [["get", "showUploadButton", ["loc", [null, [17, 23], [17, 39]]]]], [], []], "showDownloadButton", ["subexpr", "@mut", [["get", "showDownloadButton", ["loc", [null, [18, 25], [18, 43]]]]], [], []], "showModalDialogOnUploadError", ["subexpr", "@mut", [["get", "showModalDialogOnUploadError", ["loc", [null, [19, 35], [19, 63]]]]], [], []], "showModalDialogOnDownloadError", ["subexpr", "@mut", [["get", "showModalDialogOnDownloadError", ["loc", [null, [20, 37], [20, 67]]]]], [], []], "inputClass", ["subexpr", "@mut", [["get", "inputClass", ["loc", [null, [21, 17], [21, 27]]]]], [], []], "buttonClass", ["subexpr", "@mut", [["get", "buttonClass", ["loc", [null, [22, 18], [22, 29]]]]], [], []], "openFileInNewWindowInsteadOfLoading", ["subexpr", "@mut", [["get", "openFileInNewWindowInsteadOfLoading", ["loc", [null, [23, 42], [23, 77]]]]], [], []], "base64Value", ["subexpr", "@mut", [["get", "base64Value", ["loc", [null, [24, 18], [24, 29]]]]], [], []], "base64FileName", ["subexpr", "@mut", [["get", "base64FileName", ["loc", [null, [25, 21], [25, 35]]]]], [], []], "base64FileExtension", ["subexpr", "@mut", [["get", "base64FileExtension", ["loc", [null, [26, 26], [26, 45]]]]], [], []]], ["loc", [null, [9, 4], [27, 6]]]]],
         locals: [],
         templates: []
       };
@@ -29011,7 +29047,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
             "column": 0
           },
           "end": {
-            "line": 29,
+            "line": 30,
             "column": 0
           }
         },
@@ -29048,7 +29084,7 @@ define("dummy/templates/components-examples/flexberry-file/settings-example", ["
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-file.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [27, 23]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-file.settings-example.caption"], [], ["loc", [null, [1, 22], [1, 95]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [4, 25], [4, 29]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [5, 30], [5, 55]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [6, 26], [6, 47]]]]], [], []], "componentBlockOverflow", "visible"], 0, null, ["loc", [null, [3, 2], [28, 23]]]]],
       locals: [],
       templates: [child0]
     };
@@ -48096,7 +48132,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
               "column": 0
             },
             "end": {
-              "line": 3,
+              "line": 7,
               "column": 0
             }
           },
@@ -48108,7 +48144,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("    ");
+          var el1 = dom.createTextNode("  ");
           dom.appendChild(el0, el1);
           var el1 = dom.createComment("");
           dom.appendChild(el0, el1);
@@ -48121,7 +48157,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "flexberry-menuitem", [], ["tagName", "", "item", ["subexpr", "@mut", [["get", "item", ["loc", [null, [2, 41], [2, 45]]]]], [], []]], ["loc", [null, [2, 4], [2, 47]]]]],
+        statements: [["inline", "flexberry-menuitem", [], ["tagName", "", "item", ["subexpr", "@mut", [["get", "item", ["loc", [null, [4, 9], [4, 13]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "settings", ["loc", [null, [5, 13], [5, 21]]]]], [], []]], ["loc", [null, [2, 2], [6, 4]]]]],
         locals: ["item"],
         templates: []
       };
@@ -48140,8 +48176,8 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 4,
-            "column": 0
+            "line": 7,
+            "column": 9
           }
         },
         "moduleName": "dummy/templates/components/flexberry-menu.hbs"
@@ -48163,7 +48199,7 @@ define("dummy/templates/components/flexberry-menu", ["exports"], function (expor
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "each", [["get", "items", ["loc", [null, [1, 8], [1, 13]]]]], [], 0, null, ["loc", [null, [1, 0], [3, 9]]]]],
+      statements: [["block", "each", [["get", "items", ["loc", [null, [1, 8], [1, 13]]]]], [], 0, null, ["loc", [null, [1, 0], [7, 9]]]]],
       locals: [],
       templates: [child0]
     };
@@ -56196,7 +56232,7 @@ define("dummy/templates/components/olv-toolbar", ["exports"], function (exports)
           var el1 = dom.createTextNode("  ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "ui action input");
+          dom.setAttribute(el1, "class", "ui action input olv-search");
           var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("div");
@@ -68008,7 +68044,7 @@ define("dummy/templates/lookup-dialog-content", ["exports"], function (exports) 
             "column": 0
           },
           "end": {
-            "line": 44,
+            "line": 45,
             "column": 0
           }
         },
@@ -68039,7 +68075,7 @@ define("dummy/templates/lookup-dialog-content", ["exports"], function (exports) 
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "flexberry-objectlistview", [], ["class", "ui bottom attached", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [4, 20], [4, 35]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "currentLookupRow", ["loc", [null, [6, 19], [6, 35]]]]], [], []], "componentMode", "lookupform", "componentName", ["subexpr", "@mut", [["get", "folvComponentName", ["loc", [null, [8, 18], [8, 35]]]]], [], []], "lookupComponentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [9, 24], [9, 37]]]]], [], []], "showEditMenuItemInRow", false, "createNewButton", false, "showCheckBoxInRow", false, "colsConfigButton", false, "columnsWidthAutoresize", true, "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [17, 21], [17, 48]]]], "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [18, 15], [18, 21]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [19, 12], [19, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [20, 17], [20, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [21, 17], [21, 40]]]], "customProperties", ["subexpr", "@mut", [["get", "customPropertiesData", ["loc", [null, [23, 21], [23, 41]]]]], [], []], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [25, 10], [25, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [26, 17], [26, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [27, 18], [27, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [28, 22], [28, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [29, 20], [29, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [30, 16], [30, 27]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [31, 17], [31, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [32, 13], [32, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [33, 13], [33, 32]]]], "disableHierarchicalMode", ["subexpr", "@mut", [["get", "disableHierarchicalMode", ["loc", [null, [35, 28], [35, 51]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [36, 12], [36, 27]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [38, 17], [38, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [39, 23], [39, 52]]]], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [40, 23], [40, 41]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [41, 27], [41, 60]]]]], ["loc", [null, [2, 2], [42, 4]]]]],
+      statements: [["inline", "flexberry-objectlistview", [], ["class", "ui bottom attached", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [4, 20], [4, 35]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "currentLookupRow", ["loc", [null, [6, 19], [6, 35]]]]], [], []], "componentMode", "lookupform", "componentName", ["subexpr", "@mut", [["get", "folvComponentName", ["loc", [null, [8, 18], [8, 35]]]]], [], []], "lookupComponentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [9, 24], [9, 37]]]]], [], []], "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [10, 14], [10, 23]]]]], [], []], "showEditMenuItemInRow", false, "createNewButton", false, "showCheckBoxInRow", false, "colsConfigButton", false, "columnsWidthAutoresize", true, "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [18, 21], [18, 48]]]], "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [19, 15], [19, 21]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [20, 12], [20, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [21, 17], [21, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [22, 17], [22, 40]]]], "customProperties", ["subexpr", "@mut", [["get", "customPropertiesData", ["loc", [null, [24, 21], [24, 41]]]]], [], []], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [26, 10], [26, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [27, 17], [27, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [28, 18], [28, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [29, 22], [29, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [30, 20], [30, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [31, 16], [31, 27]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [32, 17], [32, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [33, 13], [33, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [34, 13], [34, 32]]]], "disableHierarchicalMode", ["subexpr", "@mut", [["get", "disableHierarchicalMode", ["loc", [null, [36, 28], [36, 51]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [37, 12], [37, 27]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [39, 17], [39, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [40, 23], [40, 52]]]], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [41, 23], [41, 41]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [42, 27], [42, 60]]]]], ["loc", [null, [2, 2], [43, 4]]]]],
       locals: [],
       templates: []
     };
@@ -70902,7 +70938,7 @@ define("dummy/templates/mobile/components/flexberry-objectlistview", ["exports"]
           morphs[7] = dom.createMorphAt(element5, 3, 3);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "colsConfigButton", ["loc", [null, [42, 25], [42, 41]]]], "disabled"], [], ["loc", [null, [42, 16], [42, 54]]]], " button mobile-sorting-setting-button"]]], ["attribute", "title", ["get", "mobileSortingSettingsCaption", ["loc", [null, [43, 14], [43, 42]]]]], ["attribute", "disabled", ["subexpr", "not", [["get", "colsConfigButton", ["loc", [null, [44, 21], [44, 37]]]]], [], ["loc", [null, [44, 15], [44, 39]]]]], ["element", "action", ["showConfigDialog"], [], ["loc", [null, [45, 6], [45, 35]]]], ["attribute", "class", ["get", "_mobileSortingSettingsIcon", ["loc", [null, [46, 19], [46, 45]]]]], ["content", "_mobileSortingSettingsCaption", ["loc", [null, [47, 8], [47, 41]]]], ["block", "each", [["get", "_mobilePages", ["loc", [null, [51, 16], [51, 28]]]]], [], 0, null, ["loc", [null, [51, 8], [59, 17]]]], ["block", "if", [["subexpr", "gt", [["get", "_mobilePages.length", ["loc", [null, [61, 16], [61, 35]]]], 4], [], ["loc", [null, [61, 12], [61, 38]]]]], [], 1, null, ["loc", [null, [61, 6], [74, 13]]]]],
+        statements: [["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "colsConfigButton", ["loc", [null, [42, 25], [42, 41]]]], "disabled"], [], ["loc", [null, [42, 16], [42, 54]]]], " button mobile-sorting-setting-button"]]], ["attribute", "title", ["get", "_mobileSortingSettingsCaption", ["loc", [null, [43, 14], [43, 43]]]]], ["attribute", "disabled", ["subexpr", "not", [["get", "colsConfigButton", ["loc", [null, [44, 21], [44, 37]]]]], [], ["loc", [null, [44, 15], [44, 39]]]]], ["element", "action", ["showConfigDialog"], [], ["loc", [null, [45, 6], [45, 35]]]], ["attribute", "class", ["get", "_mobileSortingSettingsIcon", ["loc", [null, [46, 19], [46, 45]]]]], ["content", "_mobileSortingSettingsCaption", ["loc", [null, [47, 8], [47, 41]]]], ["block", "each", [["get", "_mobilePages", ["loc", [null, [51, 16], [51, 28]]]]], [], 0, null, ["loc", [null, [51, 8], [59, 17]]]], ["block", "if", [["subexpr", "gt", [["get", "_mobilePages.length", ["loc", [null, [61, 16], [61, 35]]]], 4], [], ["loc", [null, [61, 12], [61, 38]]]]], [], 1, null, ["loc", [null, [61, 6], [74, 13]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -72388,7 +72424,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
                 "column": 4
               },
               "end": {
-                "line": 121,
+                "line": 122,
                 "column": 4
               }
             },
@@ -72413,7 +72449,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "flexberry-menu", [], ["onlyClickHandler", true, "items", ["subexpr", "@mut", [["get", "_checkRowsSettingsItems", ["loc", [null, [117, 14], [117, 37]]]]], [], []], "settings", ["subexpr", "hash", [], ["direction", "upward"], ["loc", [null, [118, 17], [118, 42]]]], "onItemClick", ["subexpr", "action", ["onCheckRowMenuItemClick"], [], ["loc", [null, [119, 20], [119, 54]]]]], ["loc", [null, [115, 6], [120, 8]]]]],
+          statements: [["inline", "flexberry-menu", [], ["_skipDropdownInit", true, "onlyClickHandler", true, "items", ["subexpr", "@mut", [["get", "_checkRowsSettingsItems", ["loc", [null, [118, 14], [118, 37]]]]], [], []], "settings", ["subexpr", "hash", [], ["direction", "upward"], ["loc", [null, [119, 17], [119, 42]]]], "onItemClick", ["subexpr", "action", ["onCheckRowMenuItemClick"], [], ["loc", [null, [120, 20], [120, 54]]]]], ["loc", [null, [115, 6], [121, 8]]]]],
           locals: [],
           templates: []
         };
@@ -72426,11 +72462,11 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             "loc": {
               "source": null,
               "start": {
-                "line": 121,
+                "line": 122,
                 "column": 4
               },
               "end": {
-                "line": 129,
+                "line": 130,
                 "column": 4
               }
             },
@@ -72466,7 +72502,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             morphs[2] = dom.createElementMorph(element0);
             return morphs;
           },
-          statements: [["attribute", "class", ["concat", ["ui check-all-at-page-button icon ", ["get", "buttonClass", ["loc", [null, [124, 50], [124, 61]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [124, 69], [124, 77]]]], "disabled"], [], ["loc", [null, [124, 64], [124, 90]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.check-all-at-page-button-text"], [], ["loc", [null, [125, 14], [125, 74]]]]], ["element", "action", ["checkAllAtPage"], [], ["loc", [null, [126, 8], [126, 35]]]]],
+          statements: [["attribute", "class", ["concat", ["ui check-all-at-page-button icon ", ["get", "buttonClass", ["loc", [null, [125, 50], [125, 61]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [125, 69], [125, 77]]]], "disabled"], [], ["loc", [null, [125, 64], [125, 90]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.check-all-at-page-button-text"], [], ["loc", [null, [126, 14], [126, 74]]]]], ["element", "action", ["checkAllAtPage"], [], ["loc", [null, [127, 8], [127, 35]]]]],
           locals: [],
           templates: []
         };
@@ -72482,7 +72518,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
               "column": 0
             },
             "end": {
-              "line": 151,
+              "line": 152,
               "column": 0
             }
           },
@@ -72561,7 +72597,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
           morphs[9] = dom.createElementMorph(element3);
           return morphs;
         },
-        statements: [["block", "if", [["subexpr", "not-eq", [["get", "class", ["loc", [null, [114, 18], [114, 23]]]], "groupedit-container"], [], ["loc", [null, [114, 10], [114, 46]]]]], [], 0, 1, ["loc", [null, [114, 4], [129, 11]]]], ["content", "_selectedCountMobileMenu", ["loc", [null, [131, 39], [131, 67]]]], ["attribute", "class", ["concat", ["ui delete-button ", ["get", "buttonClass", ["loc", [null, [135, 32], [135, 43]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [135, 51], [135, 59]]]], "disabled"], [], ["loc", [null, [135, 46], [135, 72]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [136, 12], [136, 61]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [137, 17], [137, 25]]]]], ["element", "action", ["deleteSelectedRow"], [], ["loc", [null, [138, 6], [138, 36]]]], ["inline", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [139, 8], [139, 57]]]], ["attribute", "class", ["concat", ["ui clear-select-button ", ["get", "buttonClass", ["loc", [null, [145, 38], [145, 49]]]], " circular icon button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.clear-select-button-text"], [], ["loc", [null, [146, 12], [146, 67]]]]], ["element", "action", ["clearSelectedRecords"], [], ["loc", [null, [147, 6], [147, 39]]]]],
+        statements: [["block", "if", [["subexpr", "not-eq", [["get", "class", ["loc", [null, [114, 18], [114, 23]]]], "groupedit-container"], [], ["loc", [null, [114, 10], [114, 46]]]]], [], 0, 1, ["loc", [null, [114, 4], [130, 11]]]], ["content", "_selectedCountMobileMenu", ["loc", [null, [132, 39], [132, 67]]]], ["attribute", "class", ["concat", ["ui delete-button ", ["get", "buttonClass", ["loc", [null, [136, 32], [136, 43]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [136, 51], [136, 59]]]], "disabled"], [], ["loc", [null, [136, 46], [136, 72]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [137, 12], [137, 61]]]]], ["attribute", "disabled", ["get", "readonly", ["loc", [null, [138, 17], [138, 25]]]]], ["element", "action", ["deleteSelectedRow"], [], ["loc", [null, [139, 6], [139, 36]]]], ["inline", "t", ["components.olv-toolbar.delete-button-text"], [], ["loc", [null, [140, 8], [140, 57]]]], ["attribute", "class", ["concat", ["ui clear-select-button ", ["get", "buttonClass", ["loc", [null, [146, 38], [146, 49]]]], " circular icon button"]]], ["attribute", "title", ["subexpr", "t", ["components.olv-toolbar.clear-select-button-text"], [], ["loc", [null, [147, 12], [147, 67]]]]], ["element", "action", ["clearSelectedRecords"], [], ["loc", [null, [148, 6], [148, 39]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -72580,7 +72616,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
             "column": 0
           },
           "end": {
-            "line": 152,
+            "line": 153,
             "column": 0
           }
         },
@@ -72630,7 +72666,7 @@ define("dummy/templates/mobile/components/object-list-view", ["exports"], functi
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["attribute", "class", ["concat", ["object-list-view ui unstackable celled ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [1, 58], [1, 66]]]], "readonly"], [], ["loc", [null, [1, 53], [1, 79]]]], " ", ["get", "tableClass", ["loc", [null, [1, 82], [1, 92]]]], " table"]]], ["block", "if", [["get", "singleColumnHeaderTitle", ["loc", [null, [2, 8], [2, 31]]]]], [], 0, null, ["loc", [null, [2, 2], [14, 9]]]], ["block", "if", [["get", "showFilters", ["loc", [null, [16, 10], [16, 21]]]]], [], 1, null, ["loc", [null, [16, 4], [59, 11]]]], ["block", "unless", [["get", "content", ["loc", [null, [60, 14], [60, 21]]]]], [], 2, 3, ["loc", [null, [60, 4], [108, 15]]]], ["block", "if", [["subexpr", "and", [["get", "_selectedMobileMenu", ["loc", [null, [112, 11], [112, 30]]]], ["get", "showCheckBoxInRow", ["loc", [null, [112, 31], [112, 48]]]]], [], ["loc", [null, [112, 6], [112, 49]]]]], [], 4, null, ["loc", [null, [112, 0], [151, 7]]]]],
+      statements: [["attribute", "class", ["concat", ["object-list-view ui unstackable celled ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [1, 58], [1, 66]]]], "readonly"], [], ["loc", [null, [1, 53], [1, 79]]]], " ", ["get", "tableClass", ["loc", [null, [1, 82], [1, 92]]]], " table"]]], ["block", "if", [["get", "singleColumnHeaderTitle", ["loc", [null, [2, 8], [2, 31]]]]], [], 0, null, ["loc", [null, [2, 2], [14, 9]]]], ["block", "if", [["get", "showFilters", ["loc", [null, [16, 10], [16, 21]]]]], [], 1, null, ["loc", [null, [16, 4], [59, 11]]]], ["block", "unless", [["get", "content", ["loc", [null, [60, 14], [60, 21]]]]], [], 2, 3, ["loc", [null, [60, 4], [108, 15]]]], ["block", "if", [["subexpr", "and", [["get", "_selectedMobileMenu", ["loc", [null, [112, 11], [112, 30]]]], ["get", "showCheckBoxInRow", ["loc", [null, [112, 31], [112, 48]]]]], [], ["loc", [null, [112, 6], [112, 49]]]]], [], 4, null, ["loc", [null, [112, 0], [152, 7]]]]],
       locals: [],
       templates: [child0, child1, child2, child3, child4]
     };
@@ -73582,7 +73618,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0-beta.8+1eed3dcb"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0"});
 }
 
 /* jshint ignore:end */
