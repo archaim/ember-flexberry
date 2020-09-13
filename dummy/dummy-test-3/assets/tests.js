@@ -2397,6 +2397,18 @@ define("dummy/tests/acceptance/components/flexberry-objectlistview/folv-check-al
 define("dummy/tests/acceptance/components/flexberry-objectlistview/folv-check-all-at-page-test", [], function () {
   "use strict";
 });
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-check-config-test', ['dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (_executeFolvTest) {
+  'use strict';
+
+  (0, _executeFolvTest.executeTest)('check folv config', function (store, assert) {
+    var path = 'components-acceptance-tests/flexberry-objectlistview/base-operations';
+    visit(path);
+    andThen(function () {
+      var config = ['createNewButton', 'deleteButton', 'refreshButton', 'showDeleteMenuItemInRow'];
+      checkOlvConfig('[data-test-olv]', null, assert, config);
+    });
+  });
+});
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-checked-test', ['dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (_executeFolvTest) {
   'use strict';
 
@@ -3590,34 +3602,16 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-locales-
     });
   });
 });
-define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-open-newform-test', ['dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test', 'dummy/tests/acceptance/components/flexberry-objectlistview/folv-tests-functions', 'ember-flexberry/locales/ru/translations'], function (_executeFolvTest, _folvTestsFunctions, _translations) {
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-open-newform-test', ['dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (_executeFolvTest) {
   'use strict';
 
   (0, _executeFolvTest.executeTest)('check goto new form', function (store, assert, app) {
-    assert.expect(4);
     var path = 'components-acceptance-tests/flexberry-objectlistview/base-operations';
     visit(path);
     andThen(function () {
-
-      // Set 'ru' as current locale.
-      (0, _folvTestsFunctions.loadingLocales)('ru', app).then(function () {
-        assert.equal(currentPath(), path);
-        var $toolBar = Ember.$('.ui.secondary.menu')[0];
-        var $toolBarButtons = $toolBar.children;
-
-        assert.equal($toolBarButtons[1].innerText.trim(), Ember.get(_translations.default, 'components.olv-toolbar.add-button-text'), 'button create exist');
-
-        var asyncOperationsCompleted = assert.async();
-        (0, _folvTestsFunctions.loadingList)($toolBarButtons[1], 'form', '.field').then(function ($editForm) {
-          assert.ok($editForm, 'new form open');
-          assert.equal(currentPath(), 'ember-flexberry-dummy-suggestion-edit.new', 'new form open');
-        }).catch(function (reason) {
-          // Error output.
-          assert.ok(false, reason);
-        }).finally(function () {
-          asyncOperationsCompleted();
-        });
-      });
+      var controller = app.__container__.lookup('controller:' + currentRouteName());
+      var newFormRoute = controller.get('editFormRoute') + '.new';
+      goToNewForm('[data-test-olv]', null, assert, newFormRoute);
     });
   });
 });
@@ -4317,7 +4311,7 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-tests-fu
     return new Ember.RSVP.Promise(function (resolve) {
       Ember.run(function () {
         var modelName = projection.modelName;
-        var builder = new _builder.default(store).from(modelName).selectByProjection(projection.projectionName);
+        var builder = new _builder.default(store).from(modelName).selectByProjection(projection.projectionName).skip(0);
         builder = !ordr ? builder : builder.orderBy(ordr);
         store.query(modelName, builder.build()).then(function (records) {
           var recordsArr = records.toArray();
@@ -7298,7 +7292,7 @@ define('dummy/tests/helpers/resolver', ['exports', 'dummy/resolver', 'dummy/conf
 
   exports.default = resolver;
 });
-define('dummy/tests/helpers/start-app', ['exports', 'dummy/app', 'dummy/config/environment'], function (exports, _app, _environment) {
+define('dummy/tests/helpers/start-app', ['exports', 'dummy/app', 'dummy/config/environment', 'ember-flexberry/test-support'], function (exports, _app, _environment) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -12050,6 +12044,11 @@ define('dummy/tests/tests.lint-test', [], function () {
   QUnit.test('acceptance/components/flexberry-objectlistview/folv-check-all-at-page-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-check-all-at-page-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('acceptance/components/flexberry-objectlistview/folv-check-config-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-check-config-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('acceptance/components/flexberry-objectlistview/folv-checked-test.js', function (assert) {

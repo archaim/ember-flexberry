@@ -24928,6 +24928,114 @@ define('ember-cli-test-loader/test-support/index', ['exports'], function (export
   exports.default = TestLoader;
   ;
 });
+define('ember-flexberry/test-support/check-olv-config', [], function () {
+  'use strict';
+
+  Ember.Test.registerAsyncHelper('checkOlvConfig', function (app, olvSelector, context, assert) {
+    var config = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : [];
+
+    var helpers = app.testHelpers;
+    var olv = helpers.findWithAssert(olvSelector, context);
+    var helperCells = helpers.find('tbody .object-list-view-helper-column-cell', olv);
+    var olvMenu = helpers.find('tbody .object-list-view-menu', olv);
+    var checkBoxes = void 0;
+    var editButtons = void 0;
+    var protoButtons = void 0;
+    var deleteButtons = void 0;
+    var editMenuButtons = void 0;
+    var protoMenuButtons = void 0;
+    var deleteMenuButtons = void 0;
+    config.forEach(function (prop) {
+      switch (prop) {
+        case 'refreshButton':
+          helpers.findWithAssert('.refresh-button', olv);
+          break;
+        case 'createNewButton':
+          helpers.findWithAssert('.create-button', olv);
+          break;
+        case 'deleteButton':
+          helpers.findWithAssert('.delete-button', olv);
+          break;
+        case 'colsConfigButton':
+          helpers.findWithAssert('.cols-config', olv);
+          break;
+        case 'exportExcelButton':
+          helpers.findWithAssert('.export-config', olv);
+          break;
+        case 'advLimitButton':
+          helpers.findWithAssert('.adv-limit-config', olv);
+          break;
+        case '_availableHierarchicalMode':
+          helpers.findWithAssert('.hierarchical-button .sitemap', olv);
+          break;
+        case 'availableCollExpandMode':
+          helpers.findWithAssert('.hierarchical-button .expand', olv);
+          break;
+        case 'enableFilters':
+          helpers.findWithAssert('.buttons.filter-active', olv);
+          break;
+        case 'filterButton':
+          helpers.findWithAssert('.olv-search', olv);
+          break;
+        case 'defaultSortingButton':
+          helpers.findWithAssert('.clear-sorting-button', olv);
+          break;
+        case 'showCheckBoxInRow':
+          helpers.findWithAssert('.check-all-at-page-button', olv);
+          helpers.findWithAssert('.check-all-button', olv);
+          checkBoxes = helpers.find('.flexberry-checkbox', helperCells);
+          assert.equal(helperCells.length, checkBoxes.length, 'Every row have checkbox');
+          break;
+        case 'showEditButtonInRow':
+          editButtons = helpers.find('.object-list-view-row-edit-button', helperCells);
+          assert.equal(helperCells.length, editButtons.length, 'Every row have edit button');
+          break;
+        case 'showPrototypeButtonInRow':
+          protoButtons = helpers.find('.object-list-view-row-prototype-button', helperCells);
+          assert.equal(helperCells.length, protoButtons.length, 'Every row have prototype button');
+          break;
+        case 'showDeleteButtonInRow':
+          deleteButtons = helpers.find('.object-list-view-row-delete-button', helperCells);
+          assert.equal(helperCells.length, deleteButtons.length, 'Every row have delete button');
+          break;
+        case 'showEditMenuItemInRow':
+          editMenuButtons = helpers.find('.edit-menu', olvMenu);
+          assert.equal(olvMenu.length, editMenuButtons.length, 'Every row have edit menu button');
+          break;
+        case 'showPrototypeMenuItemInRow':
+          protoMenuButtons = helpers.find('.prototype-menu', olvMenu);
+          assert.equal(olvMenu.length, protoMenuButtons.length, 'Every row have prototype menu button');
+          break;
+        case 'showDeleteMenuItemInRow':
+          deleteMenuButtons = helpers.find('.delete-menu', olvMenu);
+          assert.equal(olvMenu.length, deleteMenuButtons.length, 'Every row have delete menu button');
+          break;
+        default:
+          throw new Error('Helper checkOlvConfig can\'t check ' + prop + ' config property');
+      }
+    });
+  });
+});
+define('ember-flexberry/test-support/go-to-new-form', [], function () {
+  'use strict';
+
+  Ember.Test.registerAsyncHelper('goToNewForm', function (app, olvSelector, context, assert, newRoute) {
+    if (Ember.isBlank(newRoute)) {
+      throw new Error('newRoute can\'t be undefined');
+    }
+
+    var helpers = app.testHelpers;
+    var olv = helpers.findWithAssert(olvSelector, context);
+    var newButton = helpers.findWithAssert('.secondary.menu .create-button', olv);
+    helpers.click(newButton);
+    helpers.andThen(function () {
+      assert.equal(helpers.currentRouteName(), newRoute, 'not on new route');
+    });
+  });
+});
+define('ember-flexberry/test-support/index', ['ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config'], function () {
+  'use strict';
+});
 define('ember-i18n/test-support/-private/assert-translation', ['exports'], function (exports) {
   'use strict';
 
