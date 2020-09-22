@@ -12889,6 +12889,87 @@ define('sinon', [], function() {
   };
 });
 
+define('ember-flexberry/test-support/check-delete-record-from-olv', ['exports', 'ember', 'moment', 'ember-flexberry-data/utils/generate-unique-id'], function (exports, _ember, _moment, _emberFlexberryDataUtilsGenerateUniqueId) {
+  'use strict';
+
+  _ember['default'].Test.registerAsyncHelper('checkDeleteRecordFromOlv', function (app, olvSelector, context, assert, store, model, prop) {
+    var helpers = app.testHelpers;
+    var olv = helpers.findWithAssert(olvSelector, context);
+
+    var currentData = (0, _moment['default'])().format('DD.MM.YYYY HH:mm');
+    var deleteUseRowButton = (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])();
+    var deleteUseRowMeny = (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])();
+    var deleteUseToolbar1 = (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])();
+    var deleteUseToolbar2 = (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])();
+
+    _ember['default'].RSVP.all([createRecord(store, model, prop, deleteUseRowButton, currentData), createRecord(store, model, prop, deleteUseRowMeny, currentData), createRecord(store, model, prop, deleteUseToolbar1, currentData), createRecord(store, model, prop, deleteUseToolbar2, currentData)]).then(function () {
+
+      assert.expect(assert.expect() + 6);
+
+      // Delete use row button.
+      visit(currentPath() + '?filter=' + currentData + ' ' + deleteUseRowButton);
+      andThen(function () {
+        var helperColumn = helpers.find('tbody .object-list-view-helper-column', olv).toArray();
+        var deletaRowButton = helpers.find('.object-list-view-row-delete-button', helperColumn);
+        assert.equal(1, helperColumn.length);
+
+        click(deletaRowButton);
+        click('.menu .refresh-button');
+        andThen(function () {
+          var helperColumn = helpers.find('tbody .object-list-view-helper-column', olv).toArray();
+          assert.equal(0, helperColumn.length);
+
+          // Delete use row meny.
+          visit(currentPath() + '?filter=' + currentData + ' ' + deleteUseRowMeny);
+          andThen(function () {
+            var menuColumn = helpers.find('tbody .object-list-view-menu', olv).toArray();
+            var deletaRowButton = helpers.find('.item.delete-menu', menuColumn);
+            assert.equal(1, menuColumn.length);
+
+            click(deletaRowButton);
+            click('.menu .refresh-button');
+            andThen(function () {
+              var helperColumn = helpers.find('tbody .object-list-view-helper-column', olv).toArray();
+              assert.equal(0, helperColumn.length);
+
+              // Delete use toolBar.
+              visit(currentPath() + '?filter=' + currentData);
+              andThen(function () {
+                var helperColumn = helpers.find('tbody .object-list-view-helper-column', olv).toArray();
+                var checkboxRowButton = helpers.find('.flexberry-checkbox', helperColumn).toArray();
+                assert.equal(2, helperColumn.length);
+
+                checkboxRowButton.forEach(function (checkbox) {
+                  click(checkbox);
+                });
+                andThen(function () {
+                  var deleteToolbarButton = helpers.find('.menu .delete-button', olv);
+                  click(deleteToolbarButton);
+                  click('.menu .refresh-button');
+                  andThen(function () {
+                    var helperColumn = helpers.find('tbody .object-list-view-helper-column', olv).toArray();
+                    assert.equal(0, helperColumn.length);
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+
+  // Create record.
+  var createRecord = function createRecord(store, model, prop, id, data) {
+    var record = store.createRecord(model, {
+      id: id
+    });
+
+    record.set('' + prop, data + ' ' + id);
+
+    return record.save();
+  };
+});
 define('ember-flexberry/test-support/check-olv-config', ['exports', 'ember'], function (exports, _ember) {
   'use strict';
 
@@ -13069,7 +13150,7 @@ define('ember-flexberry/test-support/go-to-new-form', ['exports', 'ember'], func
     });
   });
 });
-define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns) {
+define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns', 'ember-flexberry/test-support/check-delete-record-from-olv'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns, _emberFlexberryTestSupportCheckDeleteRecordFromOlv) {
   'use strict';
 });
 define('ember-flexberry/test-support/utils/check-olv-sort-function', ['exports', 'ember'], function (exports, _ember) {

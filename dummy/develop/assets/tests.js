@@ -3369,6 +3369,38 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-b
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-delete-button-test.js should pass jshint.');
   });
 });
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-record-from-olv-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
+
+  (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check delete record from olv', function (store, assert, app) {
+    assert.expect(1);
+    var path = 'components-acceptance-tests/flexberry-objectlistview/folv-paging';
+    visit(path);
+    andThen(function () {
+      assert.equal(currentPath(), path);
+
+      var model = 'ember-flexberry-dummy-suggestion-type';
+      var prop = 'name';
+      checkDeleteRecordFromOlv('[data-test-olv]', null, assert, store, model, prop);
+    });
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-record-from-olv-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - acceptance/components/flexberry-objectlistview');
+  test('acceptance/components/flexberry-objectlistview/folv-delete-record-from-olv-test.js should pass jscs', function () {
+    ok(true, 'acceptance/components/flexberry-objectlistview/folv-delete-record-from-olv-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-record-from-olv-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - acceptance/components/flexberry-objectlistview/folv-delete-record-from-olv-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-delete-record-from-olv-test.js should pass jshint.');
+  });
+});
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-edit-button-in-row-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test', 'dummy/tests/acceptance/components/flexberry-objectlistview/folv-tests-functions'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewFolvTestsFunctions) {
 
   // Need to add sort by multiple columns.
