@@ -4227,6 +4227,70 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-sorting-clear-test.js should pass jshint.');
   });
 });
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-for-each-column-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
+
+  (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check sorting for each column', function (store, assert, app) {
+    assert.expect(1);
+    var path = 'components-acceptance-tests/flexberry-objectlistview/base-operations';
+    visit(path);
+    andThen(function () {
+
+      // Check page path.
+      assert.equal(currentPath(), path);
+
+      checkOlvSortForEachColumn('[data-test-olv]', null, assert);
+    });
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-for-each-column-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - acceptance/components/flexberry-objectlistview');
+  test('acceptance/components/flexberry-objectlistview/folv-sorting-for-each-column-test.js should pass jscs', function () {
+    ok(true, 'acceptance/components/flexberry-objectlistview/folv-sorting-for-each-column-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-for-each-column-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - acceptance/components/flexberry-objectlistview/folv-sorting-for-each-column-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-sorting-for-each-column-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-on-all-columns-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
+
+  (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check sorting on all column', function (store, assert, app) {
+    assert.expect(1);
+    var path = 'components-acceptance-tests/flexberry-objectlistview/base-operations';
+    visit(path);
+    andThen(function () {
+
+      // Check page path.
+      assert.equal(currentPath(), path);
+
+      checkOlvSortOnAllColumns('[data-test-olv]', null, assert);
+    });
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-on-all-columns-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - acceptance/components/flexberry-objectlistview');
+  test('acceptance/components/flexberry-objectlistview/folv-sorting-on-all-columns-test.js should pass jscs', function () {
+    ok(true, 'acceptance/components/flexberry-objectlistview/folv-sorting-on-all-columns-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-on-all-columns-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - acceptance/components/flexberry-objectlistview/folv-sorting-on-all-columns-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-sorting-on-all-columns-test.js should pass jshint.');
+  });
+});
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test', 'dummy/tests/acceptance/components/flexberry-objectlistview/folv-tests-functions', 'ember-flexberry/locales/ru/translations'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewFolvTestsFunctions, _emberFlexberryLocalesRuTranslations) {
 
   // Need to add sort by multiple columns.

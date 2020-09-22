@@ -12970,6 +12970,88 @@ define('ember-flexberry/test-support/check-olv-config', ['exports', 'ember'], fu
     });
   });
 });
+define('ember-flexberry/test-support/check-olv-sort-for-each-column', ['exports', 'ember', 'ember-flexberry/test-support/utils/check-olv-sort-function'], function (exports, _ember, _emberFlexberryTestSupportUtilsCheckOlvSortFunction) {
+  'use strict';
+
+  _ember['default'].Test.registerAsyncHelper('checkOlvSortForEachColumn', function (app, olvSelector, context, assert) {
+    var helpers = app.testHelpers;
+    var olv = helpers.findWithAssert(olvSelector, context);
+    var headCells = helpers.find('thead .dt-head-left', olv).toArray();
+
+    if (headCells.length > 0) {
+      assert.expect(assert.expect() + headCells.length * 4);
+
+      checkColumns(headCells, 0, olv, helpers, assert);
+    } else {
+      throw new Error('Helper checkOlvSortForEachColumn can\'t check empty list');
+    }
+  });
+
+  var checkColumns = function checkColumns(headCells, index, olv, helpers, assert) {
+    var headCell = headCells[index];
+
+    click('.ui.clear-sorting-button');
+    click(headCell);
+    andThen(function () {
+      var sortValue = (0, _emberFlexberryTestSupportUtilsCheckOlvSortFunction.getHeaderSort)(olv, index, helpers);
+      assert.equal('▲', sortValue.icon, 'Sorting icon is not correct');
+      assert.equal(1, sortValue.index, 'Sorting index is not correct');
+
+      click(headCell);
+      andThen(function () {
+        var sortValue = (0, _emberFlexberryTestSupportUtilsCheckOlvSortFunction.getHeaderSort)(olv, index, helpers);
+        assert.equal('▼', sortValue.icon, 'Sorting icon is not correct');
+        assert.equal(1, sortValue.index, 'Sorting index is not correct');
+
+        if (index !== headCells.length - 1) {
+          checkColumns(headCells, index + 1, olv, helpers, assert);
+        }
+      });
+    });
+  };
+});
+define('ember-flexberry/test-support/check-olv-sort-on-all-columns', ['exports', 'ember', 'ember-flexberry/test-support/utils/check-olv-sort-function'], function (exports, _ember, _emberFlexberryTestSupportUtilsCheckOlvSortFunction) {
+  'use strict';
+
+  _ember['default'].Test.registerAsyncHelper('checkOlvSortOnAllColumns', function (app, olvSelector, context, assert) {
+    var helpers = app.testHelpers;
+    var olv = helpers.findWithAssert(olvSelector, context);
+    var headCells = helpers.find('thead .dt-head-left', olv).toArray();
+
+    if (headCells.length > 0) {
+      assert.expect(assert.expect() + headCells.length * 4);
+
+      click('.ui.clear-sorting-button');
+      andThen(function () {
+        checkColumns(headCells, 0, olv, helpers, assert);
+      });
+    } else {
+      throw new Error('Helper checkOlvSortOnAllColumns can\'t check empty list');
+    }
+  });
+
+  var checkColumns = function checkColumns(headCells, index, olv, helpers, assert) {
+    var headCell = headCells[index];
+
+    triggerEvent(headCell, 'click', { ctrlKey: true });
+    andThen(function () {
+      var sortValue = (0, _emberFlexberryTestSupportUtilsCheckOlvSortFunction.getHeaderSort)(olv, index, helpers);
+      assert.equal('▲', sortValue.icon, 'Sorting icon is not correct');
+      assert.equal(index + 1, sortValue.index, 'Sorting index is not correct');
+
+      triggerEvent(headCell, 'click', { ctrlKey: true });
+      andThen(function () {
+        var sortValue = (0, _emberFlexberryTestSupportUtilsCheckOlvSortFunction.getHeaderSort)(olv, index, helpers);
+        assert.equal('▼', sortValue.icon, 'Sorting icon is not correct');
+        assert.equal(index + 1, sortValue.index, 'Sorting index is not correct');
+
+        if (index !== headCells.length - 1) {
+          checkColumns(headCells, index + 1, olv, helpers, assert);
+        }
+      });
+    });
+  };
+});
 define('ember-flexberry/test-support/go-to-new-form', ['exports', 'ember'], function (exports, _ember) {
   'use strict';
 
@@ -12987,8 +13069,26 @@ define('ember-flexberry/test-support/go-to-new-form', ['exports', 'ember'], func
     });
   });
 });
-define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig) {
+define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns) {
   'use strict';
+});
+define('ember-flexberry/test-support/utils/check-olv-sort-function', ['exports', 'ember'], function (exports, _ember) {
+  'use strict';
+
+  var getHeaderSort = function getHeaderSort(olv, index, helpers) {
+    var headCells = helpers.find('thead .dt-head-left', olv).toArray();
+    var headCell = headCells[index];
+    var sort = helpers.find('.object-list-view-order-icon', headCell);
+    var sortValue = sort.text().trim();
+    var sortIndex = parseInt(sortValue.slice(1));
+
+    return {
+      index: sortIndex,
+      icon: sortValue.slice(0, 1)
+    };
+  };
+
+  exports.getHeaderSort = getHeaderSort;
 });
 define('ember-qunit', ['exports', 'ember-qunit/module-for', 'ember-qunit/module-for-component', 'ember-qunit/module-for-model', 'ember-qunit/test', 'ember-qunit/only', 'ember-qunit/skip', 'ember-test-helpers'], function (exports, _emberQunitModuleFor, _emberQunitModuleForComponent, _emberQunitModuleForModel, _emberQunitTest, _emberQunitOnly, _emberQunitSkip, _emberTestHelpers) {
   'use strict';
