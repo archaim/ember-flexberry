@@ -12889,6 +12889,57 @@ define('sinon', [], function() {
   };
 });
 
+define('ember-flexberry/test-support/check-delete-record-from-e-form', ['exports', 'ember', 'moment', 'ember-flexberry-data/utils/generate-unique-id', 'ember-flexberry/test-support/utils/create-recort-for-test'], function (exports, _ember, _moment, _emberFlexberryDataUtilsGenerateUniqueId, _emberFlexberryTestSupportUtilsCreateRecortForTest) {
+  'use strict';
+
+  _ember['default'].Test.registerAsyncHelper('checkDeleteRecordFromEditForm', function (app, olvSelector, context, assert, store, model, prop) {
+    var helpers = app.testHelpers;
+    var olv = helpers.findWithAssert(olvSelector, context);
+
+    var currentData = (0, _moment['default'])().format('DD.MM.YYYY HH:mm');
+    var deleteRecordId = (0, _emberFlexberryDataUtilsGenerateUniqueId['default'])();
+
+    (0, _emberFlexberryTestSupportUtilsCreateRecortForTest.createRecord)(store, model, prop, deleteRecordId, currentData).then(function () {
+      assert.expect(assert.expect() + 4);
+
+      var currentPathPage = currentPath();
+      visit(currentPathPage + '?filter=' + currentData + ' ' + deleteRecordId);
+      andThen(function () {
+        var helperColumn = helpers.find('tbody .object-list-view-helper-column', olv).toArray();
+        var row = helpers.find('tbody tr', olv);
+        var cell = helpers.find('td', row)[1];
+
+        assert.equal(1, helperColumn.length);
+
+        var controller = app.__container__.lookup('controller:' + currentPath());
+        var editFormRoute = _ember['default'].get(controller, 'editFormRoute');
+        var waiterFunction = function waiterFunction() {
+          return currentPath() === editFormRoute;
+        };
+
+        _ember['default'].Test.registerWaiter(waiterFunction);
+        click(cell);
+        andThen(function () {
+          var deleteButton = helpers.find('.flexberry-edit-panel .save-del-button');
+
+          assert.equal(currentPath(), editFormRoute);
+
+          _ember['default'].Test.unregisterWaiter(waiterFunction);
+          click(deleteButton);
+          andThen(function () {
+            assert.equal(currentPath(), currentPathPage);
+
+            visit(currentPathPage + '?filter=' + currentData + ' ' + deleteRecordId);
+            andThen(function () {
+              var helperColumn = helpers.find('tbody .object-list-view-helper-column', olv).toArray();
+              assert.equal(0, helperColumn.length);
+            });
+          });
+        });
+      });
+    });
+  });
+});
 define('ember-flexberry/test-support/check-delete-record-from-olv', ['exports', 'ember', 'moment', 'ember-flexberry-data/utils/generate-unique-id'], function (exports, _ember, _moment, _emberFlexberryDataUtilsGenerateUniqueId) {
   'use strict';
 
@@ -13150,7 +13201,7 @@ define('ember-flexberry/test-support/go-to-new-form', ['exports', 'ember'], func
     });
   });
 });
-define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns', 'ember-flexberry/test-support/check-delete-record-from-olv', 'ember-flexberry/test-support/open-editform'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns, _emberFlexberryTestSupportCheckDeleteRecordFromOlv, _emberFlexberryTestSupportOpenEditform) {
+define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns', 'ember-flexberry/test-support/check-delete-record-from-olv', 'ember-flexberry/test-support/open-editform', 'ember-flexberry/test-support/check-delete-record-from-e-form'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns, _emberFlexberryTestSupportCheckDeleteRecordFromOlv, _emberFlexberryTestSupportOpenEditform, _emberFlexberryTestSupportCheckDeleteRecordFromEForm) {
   'use strict';
 });
 define('ember-flexberry/test-support/open-editform', ['exports', 'ember'], function (exports, _ember) {
@@ -13195,6 +13246,22 @@ define('ember-flexberry/test-support/utils/check-olv-sort-function', ['exports',
   };
 
   exports.getHeaderSort = getHeaderSort;
+});
+define("ember-flexberry/test-support/utils/create-recort-for-test", ["exports"], function (exports) {
+  // Create record.
+  "use strict";
+
+  var createRecord = function createRecord(store, model, prop, id, data) {
+    var record = store.createRecord(model, {
+      id: id
+    });
+
+    record.set("" + prop, data + " " + id);
+
+    return record.save();
+  };
+
+  exports.createRecord = createRecord;
 });
 define('ember-qunit', ['exports', 'ember-qunit/module-for', 'ember-qunit/module-for-component', 'ember-qunit/module-for-model', 'ember-qunit/test', 'ember-qunit/only', 'ember-qunit/skip', 'ember-test-helpers'], function (exports, _emberQunitModuleFor, _emberQunitModuleForComponent, _emberQunitModuleForModel, _emberQunitTest, _emberQunitOnly, _emberQunitSkip, _emberTestHelpers) {
   'use strict';

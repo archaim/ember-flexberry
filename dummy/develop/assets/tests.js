@@ -3369,6 +3369,41 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-b
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-delete-button-test.js should pass jshint.');
   });
 });
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-record-from-e-form-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
+
+  // Need to add sort by multiple columns.
+  (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check delete record from edit form', function (store, assert, app) {
+    assert.expect(1);
+    var path = 'components-acceptance-tests/flexberry-objectlistview/folv-paging';
+    visit(path);
+    andThen(function () {
+
+      // Check page path.
+      assert.equal(currentPath(), path);
+
+      var model = 'ember-flexberry-dummy-suggestion-type';
+      var prop = 'name';
+      checkDeleteRecordFromEditForm('[data-test-olv]', null, assert, store, model, prop);
+    });
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-record-from-e-form-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - acceptance/components/flexberry-objectlistview');
+  test('acceptance/components/flexberry-objectlistview/folv-delete-record-from-e-form-test.js should pass jscs', function () {
+    ok(true, 'acceptance/components/flexberry-objectlistview/folv-delete-record-from-e-form-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-record-from-e-form-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - acceptance/components/flexberry-objectlistview/folv-delete-record-from-e-form-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-delete-record-from-e-form-test.js should pass jshint.');
+  });
+});
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-delete-record-from-olv-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check delete record from olv', function (store, assert, app) {
