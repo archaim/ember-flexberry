@@ -47862,7 +47862,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
                   "column": 6
                 },
                 "end": {
-                  "line": 30,
+                  "line": 31,
                   "column": 6
                 }
               },
@@ -47877,6 +47877,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
               var el1 = dom.createTextNode("        ");
               dom.appendChild(el0, el1);
               var el1 = dom.createElement("button");
+              dom.setAttribute(el1, "data-test-lookup-preview", "");
               var el2 = dom.createTextNode("\n          ");
               dom.appendChild(el1, el2);
               var el2 = dom.createComment("");
@@ -47898,7 +47899,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
               morphs[4] = dom.createUnsafeMorphAt(element0, 1, 1);
               return morphs;
             },
-            statements: [["attribute", "class", ["concat", ["ui ui-preview ", ["subexpr", "if", [["get", "isBlocked", ["loc", [null, [24, 36], [24, 45]]]], " disabled"], [], ["loc", [null, [24, 31], [24, 59]]]], " ", ["get", "previewButtonClass", ["loc", [null, [24, 62], [24, 80]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.preview-button-text"], [], ["loc", [null, [25, 16], [25, 71]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [26, 20], [26, 32]]]], "button", ""], [], ["loc", [null, [26, 15], [26, 46]]]]], ["element", "action", ["preview"], [], ["loc", [null, [27, 10], [27, 30]]]], ["content", "previewText", ["loc", [null, [28, 10], [28, 27]]]]],
+            statements: [["attribute", "class", ["concat", ["ui ui-preview ", ["subexpr", "if", [["get", "isBlocked", ["loc", [null, [25, 36], [25, 45]]]], " disabled"], [], ["loc", [null, [25, 31], [25, 59]]]], " ", ["get", "previewButtonClass", ["loc", [null, [25, 62], [25, 80]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.preview-button-text"], [], ["loc", [null, [26, 16], [26, 71]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [27, 20], [27, 32]]]], "button", ""], [], ["loc", [null, [27, 15], [27, 46]]]]], ["element", "action", ["preview"], [], ["loc", [null, [28, 10], [28, 30]]]], ["content", "previewText", ["loc", [null, [29, 10], [29, 27]]]]],
             locals: [],
             templates: []
           };
@@ -47914,7 +47915,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
                 "column": 4
               },
               "end": {
-                "line": 31,
+                "line": 32,
                 "column": 4
               }
             },
@@ -47937,7 +47938,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["block", "if", [["subexpr", "and", [["get", "previewFormRoute", ["loc", [null, [22, 17], [22, 33]]]], ["get", "value", ["loc", [null, [22, 34], [22, 39]]]]], [], ["loc", [null, [22, 12], [22, 40]]]]], [], 0, null, ["loc", [null, [22, 6], [30, 13]]]]],
+          statements: [["block", "if", [["subexpr", "and", [["get", "previewFormRoute", ["loc", [null, [22, 17], [22, 33]]]], ["get", "value", ["loc", [null, [22, 34], [22, 39]]]]], [], ["loc", [null, [22, 12], [22, 40]]]]], [], 0, null, ["loc", [null, [22, 6], [31, 13]]]]],
           locals: [],
           templates: [child0]
         };
@@ -47953,7 +47954,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
               "column": 0
             },
             "end": {
-              "line": 47,
+              "line": 50,
               "column": 0
             }
           },
@@ -47968,6 +47969,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           var el1 = dom.createTextNode("  ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "data-test-lookup", "");
           var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createComment("");
@@ -47979,6 +47981,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           var el2 = dom.createTextNode("    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("button");
+          dom.setAttribute(el2, "data-test-lookup-change", "");
           var el3 = dom.createTextNode("\n      ");
           dom.appendChild(el2, el3);
           var el3 = dom.createComment("");
@@ -47989,6 +47992,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("button");
+          dom.setAttribute(el2, "data-test-lookup-clear", "");
           var el3 = dom.createTextNode("\n      ");
           dom.appendChild(el2, el3);
           var el3 = dom.createComment("");
@@ -48023,7 +48027,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           morphs[12] = dom.createUnsafeMorphAt(element3, 1, 1);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui fluid action input ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [12, 41], [12, 49]]]], "disabled"], [], ["loc", [null, [12, 36], [12, 62]]]]]]], ["inline", "input", [], ["type", "text", "class", ["subexpr", "concat", ["lookup-field ", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [15, 40], [15, 52]]]], "prompt"], [], ["loc", [null, [15, 36], [15, 62]]]]], [], ["loc", [null, [15, 12], [15, 63]]]], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [16, 18], [16, 29]]]]], [], []], "value", ["subexpr", "@mut", [["get", "displayValue", ["loc", [null, [17, 12], [17, 24]]]]], [], []], "focusOut", ["subexpr", "action", ["onInputFocusOut"], [], ["loc", [null, [18, 15], [18, 41]]]], "readonly", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [19, 23], [19, 31]]]], ["subexpr", "not", [["get", "autocomplete", ["loc", [null, [19, 37], [19, 49]]]]], [], ["loc", [null, [19, 32], [19, 50]]]]], [], ["loc", [null, [19, 19], [19, 51]]]], "readonly"], [], ["loc", [null, [19, 15], [19, 63]]]]], ["loc", [null, [13, 4], [20, 6]]]], ["block", "if", [["get", "showPreviewButton", ["loc", [null, [21, 10], [21, 27]]]]], [], 0, null, ["loc", [null, [21, 4], [31, 11]]]], ["attribute", "class", ["concat", ["ui ui-change ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [33, 35], [33, 43]]]], ["get", "isBlocked", ["loc", [null, [33, 44], [33, 53]]]]], [], ["loc", [null, [33, 31], [33, 54]]]], " disabled"], [], ["loc", [null, [33, 26], [33, 68]]]], " ", ["get", "chooseButtonClass", ["loc", [null, [33, 71], [33, 88]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [33, 100], [33, 119]]]], ["get", "modalIsStartToShow", ["loc", [null, [33, 120], [33, 138]]]]], [], ["loc", [null, [33, 96], [33, 139]]]], " loading"], [], ["loc", [null, [33, 91], [33, 152]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.choose-button-text"], [], ["loc", [null, [34, 12], [34, 66]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [35, 16], [35, 28]]]], "button", ""], [], ["loc", [null, [35, 11], [35, 42]]]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [36, 24], [36, 34]]]]], [], ["loc", [null, [36, 6], [36, 36]]]], ["content", "chooseText", ["loc", [null, [37, 6], [37, 22]]]], ["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [40, 34], [40, 42]]]], ["get", "isBlocked", ["loc", [null, [40, 43], [40, 52]]]]], [], ["loc", [null, [40, 30], [40, 53]]]], " disabled"], [], ["loc", [null, [40, 25], [40, 67]]]], " ", ["get", "removeButtonClass", ["loc", [null, [40, 70], [40, 87]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [41, 12], [41, 66]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [42, 16], [42, 28]]]], "button", ""], [], ["loc", [null, [42, 11], [42, 42]]]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [43, 24], [43, 34]]]]], [], ["loc", [null, [43, 6], [43, 36]]]], ["content", "removeText", ["loc", [null, [44, 6], [44, 22]]]]],
+        statements: [["attribute", "class", ["concat", ["ui fluid action input ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [12, 58], [12, 66]]]], "disabled"], [], ["loc", [null, [12, 53], [12, 79]]]]]]], ["inline", "input", [], ["type", "text", "class", ["subexpr", "concat", ["lookup-field ", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [15, 40], [15, 52]]]], "prompt"], [], ["loc", [null, [15, 36], [15, 62]]]]], [], ["loc", [null, [15, 12], [15, 63]]]], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [16, 18], [16, 29]]]]], [], []], "value", ["subexpr", "@mut", [["get", "displayValue", ["loc", [null, [17, 12], [17, 24]]]]], [], []], "focusOut", ["subexpr", "action", ["onInputFocusOut"], [], ["loc", [null, [18, 15], [18, 41]]]], "readonly", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [19, 23], [19, 31]]]], ["subexpr", "not", [["get", "autocomplete", ["loc", [null, [19, 37], [19, 49]]]]], [], ["loc", [null, [19, 32], [19, 50]]]]], [], ["loc", [null, [19, 19], [19, 51]]]], "readonly"], [], ["loc", [null, [19, 15], [19, 63]]]]], ["loc", [null, [13, 4], [20, 6]]]], ["block", "if", [["get", "showPreviewButton", ["loc", [null, [21, 10], [21, 27]]]]], [], 0, null, ["loc", [null, [21, 4], [32, 11]]]], ["attribute", "class", ["concat", ["ui ui-change ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [35, 35], [35, 43]]]], ["get", "isBlocked", ["loc", [null, [35, 44], [35, 53]]]]], [], ["loc", [null, [35, 31], [35, 54]]]], " disabled"], [], ["loc", [null, [35, 26], [35, 68]]]], " ", ["get", "chooseButtonClass", ["loc", [null, [35, 71], [35, 88]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [35, 100], [35, 119]]]], ["get", "modalIsStartToShow", ["loc", [null, [35, 120], [35, 138]]]]], [], ["loc", [null, [35, 96], [35, 139]]]], " loading"], [], ["loc", [null, [35, 91], [35, 152]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.choose-button-text"], [], ["loc", [null, [36, 12], [36, 66]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [37, 16], [37, 28]]]], "button", ""], [], ["loc", [null, [37, 11], [37, 42]]]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [38, 24], [38, 34]]]]], [], ["loc", [null, [38, 6], [38, 36]]]], ["content", "chooseText", ["loc", [null, [39, 6], [39, 22]]]], ["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [43, 34], [43, 42]]]], ["get", "isBlocked", ["loc", [null, [43, 43], [43, 52]]]]], [], ["loc", [null, [43, 30], [43, 53]]]], " disabled"], [], ["loc", [null, [43, 25], [43, 67]]]], " ", ["get", "removeButtonClass", ["loc", [null, [43, 70], [43, 87]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [44, 12], [44, 66]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [45, 16], [45, 28]]]], "button", ""], [], ["loc", [null, [45, 11], [45, 42]]]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [46, 24], [46, 34]]]]], [], ["loc", [null, [46, 6], [46, 36]]]], ["content", "removeText", ["loc", [null, [47, 6], [47, 22]]]]],
         locals: [],
         templates: [child0]
       };
@@ -48036,11 +48040,11 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           "loc": {
             "source": null,
             "start": {
-              "line": 48,
+              "line": 51,
               "column": 0
             },
             "end": {
-              "line": 50,
+              "line": 53,
               "column": 0
             }
           },
@@ -48083,7 +48087,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
             "column": 0
           },
           "end": {
-            "line": 51,
+            "line": 54,
             "column": 0
           }
         },
@@ -48109,7 +48113,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [47, 7]]]], ["block", "if", [["get", "autocomplete", ["loc", [null, [48, 6], [48, 18]]]]], [], 2, null, ["loc", [null, [48, 0], [50, 7]]]]],
+      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [50, 7]]]], ["block", "if", [["get", "autocomplete", ["loc", [null, [51, 6], [51, 18]]]]], [], 2, null, ["loc", [null, [51, 0], [53, 7]]]]],
       locals: [],
       templates: [child0, child1, child2]
     };
@@ -68044,7 +68048,7 @@ define("dummy/templates/lookup-dialog-content", ["exports"], function (exports) 
             "column": 0
           },
           "end": {
-            "line": 45,
+            "line": 46,
             "column": 0
           }
         },
@@ -68075,7 +68079,7 @@ define("dummy/templates/lookup-dialog-content", ["exports"], function (exports) 
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "flexberry-objectlistview", [], ["class", "ui bottom attached", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [4, 20], [4, 35]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "currentLookupRow", ["loc", [null, [6, 19], [6, 35]]]]], [], []], "componentMode", "lookupform", "componentName", ["subexpr", "@mut", [["get", "folvComponentName", ["loc", [null, [8, 18], [8, 35]]]]], [], []], "lookupComponentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [9, 24], [9, 37]]]]], [], []], "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [10, 14], [10, 23]]]]], [], []], "showEditMenuItemInRow", false, "createNewButton", false, "showCheckBoxInRow", false, "colsConfigButton", false, "columnsWidthAutoresize", true, "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [18, 21], [18, 48]]]], "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [19, 15], [19, 21]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [20, 12], [20, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [21, 17], [21, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [22, 17], [22, 40]]]], "customProperties", ["subexpr", "@mut", [["get", "customPropertiesData", ["loc", [null, [24, 21], [24, 41]]]]], [], []], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [26, 10], [26, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [27, 17], [27, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [28, 18], [28, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [29, 22], [29, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [30, 20], [30, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [31, 16], [31, 27]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [32, 17], [32, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [33, 13], [33, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [34, 13], [34, 32]]]], "disableHierarchicalMode", ["subexpr", "@mut", [["get", "disableHierarchicalMode", ["loc", [null, [36, 28], [36, 51]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [37, 12], [37, 27]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [39, 17], [39, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [40, 23], [40, 52]]]], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [41, 23], [41, 41]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [42, 27], [42, 60]]]]], ["loc", [null, [2, 2], [43, 4]]]]],
+      statements: [["inline", "flexberry-objectlistview", [], ["class", "ui bottom attached", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [4, 20], [4, 35]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [5, 12], [5, 17]]]]], [], []], "selectedRecord", ["subexpr", "@mut", [["get", "currentLookupRow", ["loc", [null, [6, 19], [6, 35]]]]], [], []], "componentMode", "lookupform", "componentName", ["subexpr", "@mut", [["get", "folvComponentName", ["loc", [null, [8, 18], [8, 35]]]]], [], []], "lookupComponentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [9, 24], [9, 37]]]]], [], []], "modelName", ["subexpr", "@mut", [["get", "modelName", ["loc", [null, [10, 14], [10, 23]]]]], [], []], "showEditMenuItemInRow", false, "createNewButton", false, "showCheckBoxInRow", false, "colsConfigButton", false, "columnsWidthAutoresize", true, "filterByAnyMatch", ["subexpr", "action", ["filterByAnyMatch"], [], ["loc", [null, [18, 21], [18, 48]]]], "filterText", ["subexpr", "@mut", [["get", "filter", ["loc", [null, [19, 15], [19, 21]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [20, 12], [20, 19]]]]], [], []], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [21, 17], [21, 40]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [22, 17], [22, 40]]]], "customProperties", ["subexpr", "@mut", [["get", "customPropertiesData", ["loc", [null, [24, 21], [24, 41]]]]], [], []], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [26, 10], [26, 15]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [27, 17], [27, 29]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [28, 18], [28, 31]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [29, 22], [29, 39]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [30, 20], [30, 35]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [31, 16], [31, 27]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [32, 17], [32, 40]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [33, 13], [33, 32]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [34, 13], [34, 32]]]], "disableHierarchicalMode", ["subexpr", "@mut", [["get", "disableHierarchicalMode", ["loc", [null, [36, 28], [36, 51]]]]], [], []], "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [37, 12], [37, 27]]]]], [], []], "orderable", true, "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [39, 17], [39, 40]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [40, 23], [40, 52]]]], "notUseUserSettings", ["subexpr", "@mut", [["get", "notUseUserSettings", ["loc", [null, [41, 23], [41, 41]]]]], [], []], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [42, 27], [42, 60]]]], "data-test-lookup-olv", true], ["loc", [null, [2, 2], [44, 4]]]]],
       locals: [],
       templates: []
     };
@@ -68098,7 +68102,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
               "column": 0
             },
             "end": {
-              "line": 12,
+              "line": 13,
               "column": 0
             }
           },
@@ -68123,7 +68127,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "outlet", ["modal-content"], [], ["loc", [null, [11, 2], [11, 28]]]]],
+        statements: [["inline", "outlet", ["modal-content"], [], ["loc", [null, [12, 2], [12, 28]]]]],
         locals: [],
         templates: []
       };
@@ -68142,7 +68146,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 13,
+            "line": 14,
             "column": 0
           }
         },
@@ -68165,7 +68169,7 @@ define("dummy/templates/lookup-dialog", ["exports"], function (exports) {
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "sizeClass", ["subexpr", "@mut", [["get", "modalDialogSettings.sizeClass", ["loc", [null, [3, 12], [3, 41]]]]], [], []], "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", ["subexpr", "@mut", [["get", "modalDialogSettings.useOkButton", ["loc", [null, [6, 14], [6, 45]]]]], [], []], "useCloseButton", ["subexpr", "@mut", [["get", "modalDialogSettings.useCloseButton", ["loc", [null, [7, 17], [7, 51]]]]], [], []], "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [8, 16], [8, 29]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "modalDialogSettings.settings", ["loc", [null, [9, 11], [9, 39]]]]], [], []]], 0, null, ["loc", [null, [1, 0], [12, 17]]]]],
+      statements: [["block", "modal-dialog", [], ["title", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 8], [2, 13]]]]], [], []], "sizeClass", ["subexpr", "@mut", [["get", "modalDialogSettings.sizeClass", ["loc", [null, [3, 12], [3, 41]]]]], [], []], "close", "removeModalDialog", "created", "createdModalDialog", "useOkButton", ["subexpr", "@mut", [["get", "modalDialogSettings.useOkButton", ["loc", [null, [6, 14], [6, 45]]]]], [], []], "useCloseButton", ["subexpr", "@mut", [["get", "modalDialogSettings.useCloseButton", ["loc", [null, [7, 17], [7, 51]]]]], [], []], "componentName", ["subexpr", "@mut", [["get", "componentName", ["loc", [null, [8, 16], [8, 29]]]]], [], []], "settings", ["subexpr", "@mut", [["get", "modalDialogSettings.settings", ["loc", [null, [9, 11], [9, 39]]]]], [], []], "data-test-lookup-dialog", true], 0, null, ["loc", [null, [1, 0], [13, 17]]]]],
       locals: [],
       templates: [child0]
     };
@@ -73618,7 +73622,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0+69b45604"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0+28d843ed"});
 }
 
 /* jshint ignore:end */

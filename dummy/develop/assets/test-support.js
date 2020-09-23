@@ -13140,6 +13140,38 @@ define('ember-flexberry/test-support/check-lock-edit-form', ['exports', 'ember',
     });
   });
 });
+define('ember-flexberry/test-support/check-lookup-dialogs', ['exports', 'ember'], function (exports, _ember) {
+  'use strict';
+
+  _ember['default'].Test.registerAsyncHelper('checkLookupDialogs', function (app) {
+    var helpers = app.testHelpers;
+    var lookups = helpers.find('[data-test-lookup]');
+    if (lookups.length > 0) {
+      checkLookups(lookups, 0, helpers);
+    }
+  });
+
+  var checkLookups = function checkLookups(lookups, index, helpers) {
+    var _this = this;
+
+    var lookup = lookups[index];
+    var dialogButton = helpers.find('[data-test-lookup-change]', lookup);
+    helpers.click(dialogButton);
+    helpers.andThen(function () {
+      var dialog = helpers.findWithAssert('[data-test-lookup-dialog]');
+      helpers.findWithAssert('[data-test-lookup-olv]', dialog);
+      var closeButton = helpers.findWithAssert('.close', dialog);
+      helpers.click(closeButton);
+      helpers.andThen(function () {
+        if (index < lookups.length - 1) {
+          _ember['default'].run.later(_this, function () {
+            checkLookups(lookups, index + 1, helpers);
+          }, 500);
+        }
+      });
+    });
+  };
+});
 define('ember-flexberry/test-support/check-olv-config', ['exports', 'ember'], function (exports, _ember) {
   'use strict';
 
@@ -13320,7 +13352,7 @@ define('ember-flexberry/test-support/go-to-new-form', ['exports', 'ember'], func
     });
   });
 });
-define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns', 'ember-flexberry/test-support/check-delete-record-from-olv', 'ember-flexberry/test-support/open-editform', 'ember-flexberry/test-support/check-delete-record-from-e-form', 'ember-flexberry/test-support/check-close-edit-form', 'ember-flexberry/test-support/check-lock-edit-form'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns, _emberFlexberryTestSupportCheckDeleteRecordFromOlv, _emberFlexberryTestSupportOpenEditform, _emberFlexberryTestSupportCheckDeleteRecordFromEForm, _emberFlexberryTestSupportCheckCloseEditForm, _emberFlexberryTestSupportCheckLockEditForm) {
+define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns', 'ember-flexberry/test-support/check-delete-record-from-olv', 'ember-flexberry/test-support/open-editform', 'ember-flexberry/test-support/check-delete-record-from-e-form', 'ember-flexberry/test-support/check-close-edit-form', 'ember-flexberry/test-support/check-lock-edit-form', 'ember-flexberry/test-support/check-lookup-dialogs'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns, _emberFlexberryTestSupportCheckDeleteRecordFromOlv, _emberFlexberryTestSupportOpenEditform, _emberFlexberryTestSupportCheckDeleteRecordFromEForm, _emberFlexberryTestSupportCheckCloseEditForm, _emberFlexberryTestSupportCheckLockEditForm, _emberFlexberryTestSupportCheckLookupDialogs) {
   'use strict';
 });
 define('ember-flexberry/test-support/open-editform', ['exports', 'ember'], function (exports, _ember) {
