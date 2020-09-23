@@ -3841,6 +3841,38 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-locales-
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-locales-test.js should pass jshint.');
   });
 });
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-lock-edit-form-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
+
+  (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check lock edit form', function (store, assert, app) {
+    assert.expect(1);
+    var path = 'components-acceptance-tests/flexberry-objectlistview/folv-paging';
+    visit(path);
+    andThen(function () {
+      assert.equal(currentPath(), path);
+
+      var model = 'ember-flexberry-dummy-suggestion-type';
+      var prop = 'name';
+      checkLockEditForm('[data-test-olv]', null, assert, store, model, prop, path);
+    });
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-lock-edit-form-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - acceptance/components/flexberry-objectlistview');
+  test('acceptance/components/flexberry-objectlistview/folv-lock-edit-form-test.js should pass jscs', function () {
+    ok(true, 'acceptance/components/flexberry-objectlistview/folv-lock-edit-form-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-lock-edit-form-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - acceptance/components/flexberry-objectlistview/folv-lock-edit-form-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-lock-edit-form-test.js should pass jshint.');
+  });
+});
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-open-newform-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check goto new form', function (store, assert, app) {
