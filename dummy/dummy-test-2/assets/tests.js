@@ -6055,6 +6055,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/integration-examples/edit-form/readonly-mode.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/integration-examples/edit-form/theming-components.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/integration-examples/edit-form/theming-components.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/integration-examples/edit-form/validation.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/integration-examples/edit-form/validation.js should pass ESLint\n\n');
@@ -6993,6 +6998,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/integration-examples/edit-form/readonly-mode.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/integration-examples/edit-form/readonly-mode.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/integration-examples/edit-form/theming-components.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/integration-examples/edit-form/theming-components.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/integration-examples/edit-form/validation.js', function (assert) {
