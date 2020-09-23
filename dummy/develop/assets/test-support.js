@@ -13150,8 +13150,33 @@ define('ember-flexberry/test-support/go-to-new-form', ['exports', 'ember'], func
     });
   });
 });
-define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns', 'ember-flexberry/test-support/check-delete-record-from-olv'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns, _emberFlexberryTestSupportCheckDeleteRecordFromOlv) {
+define('ember-flexberry/test-support/index', ['exports', 'ember-flexberry/test-support/go-to-new-form', 'ember-flexberry/test-support/check-olv-config', 'ember-flexberry/test-support/check-olv-sort-for-each-column', 'ember-flexberry/test-support/check-olv-sort-on-all-columns', 'ember-flexberry/test-support/check-delete-record-from-olv', 'ember-flexberry/test-support/open-editform'], function (exports, _emberFlexberryTestSupportGoToNewForm, _emberFlexberryTestSupportCheckOlvConfig, _emberFlexberryTestSupportCheckOlvSortForEachColumn, _emberFlexberryTestSupportCheckOlvSortOnAllColumns, _emberFlexberryTestSupportCheckDeleteRecordFromOlv, _emberFlexberryTestSupportOpenEditform) {
   'use strict';
+});
+define('ember-flexberry/test-support/open-editform', ['exports', 'ember'], function (exports, _ember) {
+  'use strict';
+
+  _ember['default'].Test.registerAsyncHelper('openEditform', function (app, olvSelector, context, assert, editRoute) {
+    if (_ember['default'].isBlank(editRoute)) {
+      throw new Error('editRoute can\'t be undefined');
+    }
+
+    var helpers = app.testHelpers;
+    var olv = helpers.findWithAssert(olvSelector, context);
+
+    var rows = helpers.findWithAssert('.object-list-view-container table.object-list-view tbody tr', olv);
+
+    var controller = app.__container__.lookup('controller:' + currentRouteName());
+    controller.set('rowClickable', true);
+
+    var timeout = 1000;
+    _ember['default'].run.later(function () {
+      helpers.click(rows[1].children[1]);
+      _ember['default'].run.later(function () {
+        assert.equal(helpers.currentRouteName(), editRoute, 'on edit route');
+      }, timeout);
+    }, timeout);
+  });
 });
 define('ember-flexberry/test-support/utils/check-olv-sort-function', ['exports', 'ember'], function (exports, _ember) {
   'use strict';

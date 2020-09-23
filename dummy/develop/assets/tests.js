@@ -3613,39 +3613,16 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-getCellC
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-getCellComponent-test.js should pass jshint.');
   });
 });
-define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-goto-editform-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test', 'dummy/tests/acceptance/components/flexberry-objectlistview/folv-tests-functions'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewFolvTestsFunctions) {
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-goto-editform-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check goto editform', function (store, assert, app) {
-    assert.expect(5);
     var path = 'components-acceptance-tests/flexberry-objectlistview/base-operations';
     visit(path);
+
     andThen(function () {
-      assert.equal(currentPath(), path);
-
       var controller = app.__container__.lookup('controller:' + currentRouteName());
-      var $folvContainer = _ember['default'].$('.object-list-view-container');
-      var $trTableBody = _ember['default'].$('table.object-list-view tbody tr', $folvContainer);
-      var $cell = $trTableBody[0].children[1];
-
-      assert.equal(currentPath(), path, 'edit form not open');
-      $cell.click();
-
-      var timeout = 500;
-      _ember['default'].run.later(function () {
-        assert.equal(currentPath(), path, 'edit form not open');
-        controller.set('rowClickable', true);
-        _ember['default'].run.later(function () {
-          var asyncOperationsCompleted = assert.async();
-          (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewFolvTestsFunctions.loadingList)($cell, 'form.flexberry-vertical-form', '.field').then(function ($editForm) {
-            assert.ok($editForm, 'edit form open');
-            assert.equal(currentPath(), 'ember-flexberry-dummy-suggestion-edit', 'edit form path');
-          })['catch'](function (reason) {
-            throw new Error(reason);
-          })['finally'](function () {
-            asyncOperationsCompleted();
-          });
-        }, timeout);
-      }, timeout);
+      var editFormRoute = controller.get('editFormRoute');
+      openEditform('[data-test-olv]', null, assert, editFormRoute);
     });
   });
 });
