@@ -101,3 +101,86 @@ img.item-minus {
 .ui.sidebar.menu .menu .item-menu {
     padding-left: 25px;
 }
+
+/* Searchbar styles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sitemap-searchbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+input#sitemap-search {
+  align-self: center;
+  background-color: @white;
+  height: @searchbarHeight;
+  text-indent: @searchbarTextIndent;
+  width: @searchbarWidth;
+}
+
+#results-list {
+    align-self: center;
+    background:@white;
+    border-bottom-left-radius: @resultsListBorderRadius;
+    border-bottom-right-radius: @resultsListBorderRadius;
+    box-shadow: @resultsListShadow;
+    display: none;
+    font-size: @resultsListFontSize;
+    font-weight: @resultsListFontWeight;
+    line-height: @resultsListLineHeight;
+    margin-top: @resultsListMarginTop;
+    max-height: @resultsListMaxHeight;
+    overflow-y: scroll;
+    position: absolute;
+    scrollbar-width: thin;
+    width: @searchbarWidth;
+    z-index: 30121997;
+
+    animation: @resultsListAnimation;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #ddd;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #666;
+    }
+}
+
+#results-list .match-card a {
+  color: @matchCardLinkColor;
+  margin-left: @matchCardLinkMarginLeft;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    color: @matchCardLinkHoverColor;
+  }
+}
+
+.match-card {
+    padding: @matchCardPadding;
+}
+
+.match-card .title {
+  display: flex;
+  color: @matchCardTitleColor;
+  font-size: @resultsListFontSize;
+  line-height: @resultsListLineHeight;
+}

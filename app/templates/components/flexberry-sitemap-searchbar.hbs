@@ -1,0 +1,12 @@
+<div class="sitemap-searchbar ui search">
+  <input id="sitemap-search" type="text" placeholder="Найти раздел" />
+  <div id="results-list">
+    {{#each results as |node|}}
+    {{#searchbar-node
+    class="match-card"
+    node=node
+    }}
+    {{/searchbar-node}}
+    {{/each}}
+  </div>
+</div>
