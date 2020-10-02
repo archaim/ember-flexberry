@@ -14007,43 +14007,6 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
     assert.expect(31);
 
     this.render(_ember['default'].HTMLBars.template((function () {
-      var child0 = (function () {
-        return {
-          meta: {
-            'fragmentReason': {
-              'name': 'missing-wrapper',
-              'problems': ['empty-body']
-            },
-            'revision': 'Ember@2.4.6',
-            'loc': {
-              'source': null,
-              'start': {
-                'line': 1,
-                'column': 0
-              },
-              'end': {
-                'line': 3,
-                'column': 2
-              }
-            }
-          },
-          isEmpty: true,
-          arity: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          buildFragment: function buildFragment(dom) {
-            var el0 = dom.createDocumentFragment();
-            return el0;
-          },
-          buildRenderNodes: function buildRenderNodes() {
-            return [];
-          },
-          statements: [],
-          locals: [],
-          templates: []
-        };
-      })();
-
       return {
         meta: {
           'fragmentReason': {
@@ -14059,7 +14022,7 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
             },
             'end': {
               'line': 3,
-              'column': 23
+              'column': 4
             }
           }
         },
@@ -14080,9 +14043,9 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
           dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [['block', 'flexberry-lookup', [], ['placeholder', '(тестовое значение)'], 0, null, ['loc', [null, [1, 0], [3, 23]]]]],
+        statements: [['inline', 'flexberry-lookup', [], ['placeholder', '(тестовое значение)'], ['loc', [null, [1, 0], [3, 4]]]]],
         locals: [],
-        templates: [child0]
+        templates: []
       };
     })()));
 
@@ -14206,43 +14169,6 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
     this.set('tempTextRemove', 'TempText2');
 
     this.render(_ember['default'].HTMLBars.template((function () {
-      var child0 = (function () {
-        return {
-          meta: {
-            'fragmentReason': {
-              'name': 'missing-wrapper',
-              'problems': ['empty-body']
-            },
-            'revision': 'Ember@2.4.6',
-            'loc': {
-              'source': null,
-              'start': {
-                'line': 1,
-                'column': 0
-              },
-              'end': {
-                'line': 5,
-                'column': 2
-              }
-            }
-          },
-          isEmpty: true,
-          arity: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          buildFragment: function buildFragment(dom) {
-            var el0 = dom.createDocumentFragment();
-            return el0;
-          },
-          buildRenderNodes: function buildRenderNodes() {
-            return [];
-          },
-          statements: [],
-          locals: [],
-          templates: []
-        };
-      })();
-
       return {
         meta: {
           'fragmentReason': {
@@ -14257,8 +14183,8 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
               'column': 0
             },
             'end': {
-              'line': 5,
-              'column': 23
+              'line': 4,
+              'column': 4
             }
           }
         },
@@ -14279,9 +14205,9 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
           dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [['block', 'flexberry-lookup', [], ['chooseText', ['subexpr', '@mut', [['get', 'tempTextChoose', ['loc', [null, [2, 15], [2, 29]]]]], [], []], 'removeText', ['subexpr', '@mut', [['get', 'tempTextRemove', ['loc', [null, [3, 15], [3, 29]]]]], [], []]], 0, null, ['loc', [null, [1, 0], [5, 23]]]]],
+        statements: [['inline', 'flexberry-lookup', [], ['chooseText', ['subexpr', '@mut', [['get', 'tempTextChoose', ['loc', [null, [2, 15], [2, 29]]]]], [], []], 'removeText', ['subexpr', '@mut', [['get', 'tempTextRemove', ['loc', [null, [3, 15], [3, 29]]]]], [], []]], ['loc', [null, [1, 0], [4, 4]]]]],
         locals: [],
-        templates: [child0]
+        templates: []
       };
     })()));
 
@@ -14297,8 +14223,237 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
     assert.equal($lookupButtonClear.text().trim(), 'TempText2');
   });
 
-  (0, _emberQunit.test)('autocomplete doesn\'t send data-requests in readonly mode', function (assert) {
+  (0, _emberQunit.test)('component mode consistency', function (assert) {
     var _this = this;
+
+    var checkErrMsg = function checkErrMsg(err, str) {
+      var msg = _ember['default'].isNone(err.message) ? '' : err.message;
+      return msg.includes(str);
+    };
+
+    assert.expect(3);
+
+    // Check if both 'autocomplete' and 'dropdown' flags enabled cause an error.
+    assert.throws(function () {
+      _this.render(_ember['default'].HTMLBars.template((function () {
+        return {
+          meta: {
+            'fragmentReason': {
+              'name': 'missing-wrapper',
+              'problems': ['wrong-type']
+            },
+            'revision': 'Ember@2.4.6',
+            'loc': {
+              'source': null,
+              'start': {
+                'line': 1,
+                'column': 0
+              },
+              'end': {
+                'line': 4,
+                'column': 8
+              }
+            }
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment('');
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            dom.insertBoundary(fragment, null);
+            return morphs;
+          },
+          statements: [['inline', 'flexberry-lookup', [], ['autocomplete', true, 'dropdown', true], ['loc', [null, [1, 0], [4, 8]]]]],
+          locals: [],
+          templates: []
+        };
+      })()));
+    }, function (err) {
+      return checkErrMsg(err, 'flags \'autocomplete\' and \'dropdown\' enabled');
+    }, 'Both \'autocomplete\' and \'dropdown\' flags enabled cause an error.');
+
+    // Check if both 'dropdown' flag enabled and the block form definition cause an error.
+    assert.throws(function () {
+      _this.render(_ember['default'].HTMLBars.template((function () {
+        var child0 = (function () {
+          return {
+            meta: {
+              'fragmentReason': {
+                'name': 'missing-wrapper',
+                'problems': ['empty-body']
+              },
+              'revision': 'Ember@2.4.6',
+              'loc': {
+                'source': null,
+                'start': {
+                  'line': 1,
+                  'column': 0
+                },
+                'end': {
+                  'line': 4,
+                  'column': 6
+                }
+              }
+            },
+            isEmpty: true,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes() {
+              return [];
+            },
+            statements: [],
+            locals: [],
+            templates: []
+          };
+        })();
+
+        return {
+          meta: {
+            'fragmentReason': {
+              'name': 'missing-wrapper',
+              'problems': ['wrong-type']
+            },
+            'revision': 'Ember@2.4.6',
+            'loc': {
+              'source': null,
+              'start': {
+                'line': 1,
+                'column': 0
+              },
+              'end': {
+                'line': 4,
+                'column': 27
+              }
+            }
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment('');
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            dom.insertBoundary(fragment, null);
+            return morphs;
+          },
+          statements: [['block', 'flexberry-lookup', [], ['dropdown', true], 0, null, ['loc', [null, [1, 0], [4, 27]]]]],
+          locals: [],
+          templates: [child0]
+        };
+      })()));
+    }, function (err) {
+      return checkErrMsg(err, 'flag \'dropdown\' enabled and the block form definition');
+    }, 'Both \'dropdown\' flag enabled and the block form definition cause an error.');
+
+    // Check if both 'autocomplete' flag enabled and the block form definition cause an error.
+    assert.throws(function () {
+      _this.render(_ember['default'].HTMLBars.template((function () {
+        var child0 = (function () {
+          return {
+            meta: {
+              'fragmentReason': {
+                'name': 'missing-wrapper',
+                'problems': ['empty-body']
+              },
+              'revision': 'Ember@2.4.6',
+              'loc': {
+                'source': null,
+                'start': {
+                  'line': 1,
+                  'column': 0
+                },
+                'end': {
+                  'line': 4,
+                  'column': 6
+                }
+              }
+            },
+            isEmpty: true,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes() {
+              return [];
+            },
+            statements: [],
+            locals: [],
+            templates: []
+          };
+        })();
+
+        return {
+          meta: {
+            'fragmentReason': {
+              'name': 'missing-wrapper',
+              'problems': ['wrong-type']
+            },
+            'revision': 'Ember@2.4.6',
+            'loc': {
+              'source': null,
+              'start': {
+                'line': 1,
+                'column': 0
+              },
+              'end': {
+                'line': 4,
+                'column': 27
+              }
+            }
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment('');
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            dom.insertBoundary(fragment, null);
+            return morphs;
+          },
+          statements: [['block', 'flexberry-lookup', [], ['autocomplete', true], 0, null, ['loc', [null, [1, 0], [4, 27]]]]],
+          locals: [],
+          templates: [child0]
+        };
+      })()));
+    }, function (err) {
+      return checkErrMsg(err, 'flag \'autocomplete\' enabled and the block form definition');
+    }, 'Both \'autocomplete\' flag enabled and the block form definition cause an error.');
+  });
+
+  (0, _emberQunit.test)('autocomplete doesn\'t send data-requests in readonly mode', function (assert) {
+    var _this2 = this;
 
     assert.expect(1);
 
@@ -14323,12 +14478,12 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
       _ember['default'].assert('One or more \'' + modelName + '\' must exist', suggestionTypes.length > 0);
 
       // Remember model & render component.
-      _this.set('model', suggestionTypes[0]);
+      _this2.set('model', suggestionTypes[0]);
 
-      _this.set('actions.showLookupDialog', function () {});
-      _this.set('actions.removeLookupValue', function () {});
+      _this2.set('actions.showLookupDialog', function () {});
+      _this2.set('actions.removeLookupValue', function () {});
 
-      _this.render(_ember['default'].HTMLBars.template((function () {
+      _this2.render(_ember['default'].HTMLBars.template((function () {
         return {
           meta: {
             'fragmentReason': {
@@ -14372,7 +14527,7 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
       })()));
 
       // Retrieve component.
-      var $component = _this.$();
+      var $component = _this2.$();
       var $componentInput = _ember['default'].$('input', $component);
 
       return new _ember['default'].RSVP.Promise(function (resolve, reject) {
@@ -14402,7 +14557,7 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
   });
 
   (0, _emberQunit.test)('preview button renders properly', function (assert) {
-    var _this2 = this;
+    var _this3 = this;
 
     assert.expect(11);
 
@@ -14458,7 +14613,7 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
     assert.strictEqual($lookupFluid.children('.ui-preview').length === 0, true, 'Component has inner title block');
 
     _ember['default'].run(function () {
-      _this2.set('model', store.createRecord('ember-flexberry-dummy-suggestion-type', {
+      _this3.set('model', store.createRecord('ember-flexberry-dummy-suggestion-type', {
         name: 'TestTypeName'
       }));
 
@@ -14480,21 +14635,21 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
   });
 
   (0, _emberQunit.test)('preview button view previewButtonClass and previewText properly', function (assert) {
-    var _this3 = this;
+    var _this4 = this;
 
     assert.expect(3);
 
     var store = app.__container__.lookup('service:store');
 
     _ember['default'].run(function () {
-      _this3.set('model', store.createRecord('ember-flexberry-dummy-suggestion-type', {
+      _this4.set('model', store.createRecord('ember-flexberry-dummy-suggestion-type', {
         name: 'TestTypeName'
       }));
 
-      _this3.set('previewButtonClass', 'previewButtonClassTest');
-      _this3.set('previewText', 'previewTextTest');
+      _this4.set('previewButtonClass', 'previewButtonClassTest');
+      _this4.set('previewText', 'previewTextTest');
 
-      _this3.render(_ember['default'].HTMLBars.template((function () {
+      _this4.render(_ember['default'].HTMLBars.template((function () {
         return {
           meta: {
             'fragmentReason': {
@@ -14538,7 +14693,7 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
       })()));
 
       // Retrieve component.
-      var $component = _this3.$().children();
+      var $component = _this4.$().children();
       var $lookupFluid = $component.children('.fluid');
       var $lookupButtonPreview = $lookupFluid.children('.ui-preview');
 
@@ -14549,18 +14704,18 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
   });
 
   (0, _emberQunit.test)('preview with readonly renders properly', function (assert) {
-    var _this4 = this;
+    var _this5 = this;
 
     assert.expect(1);
 
     var store = app.__container__.lookup('service:store');
 
     _ember['default'].run(function () {
-      _this4.set('model', store.createRecord('ember-flexberry-dummy-suggestion-type', {
+      _this5.set('model', store.createRecord('ember-flexberry-dummy-suggestion-type', {
         name: 'TestTypeName'
       }));
 
-      _this4.render(_ember['default'].HTMLBars.template((function () {
+      _this5.render(_ember['default'].HTMLBars.template((function () {
         return {
           meta: {
             'fragmentReason': {
@@ -14604,7 +14759,7 @@ define('dummy/tests/integration/components/flexberry-lookup-test', ['exports', '
       })()));
 
       // Retrieve component.
-      var $component = _this4.$().children();
+      var $component = _this5.$().children();
       var $lookupFluid = $component.children('.fluid');
       var $lookupButtonPreview = $lookupFluid.children('.ui-preview');
 

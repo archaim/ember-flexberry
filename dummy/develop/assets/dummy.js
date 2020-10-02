@@ -14844,11 +14844,7 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
             'titleLookup': 'Master'
           },
           'lookup-block-form-example': {
-            'caption': 'Flexberry-lookup. Lookup block form example',
-            'message': 'This test only works on the mobile site. To start a mobile version should be:',
-            'paragraph1': 'Go to developer mode (press "F12").',
-            'paragraph2': 'Enable mobile site (press "Ctrl + Shift + M" in Chrome and Firefox)',
-            'paragraph3': 'Refresh page (press "F5")'
+            'caption': 'Flexberry-lookup. Lookup block form example'
           },
           'lookup-in-modal': {
             'caption': 'Flexberry-lookup. Lookup in modal window',
@@ -16104,11 +16100,7 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
             'captionClearLimitFunction': 'Очистить функцию ограничения'
           },
           'lookup-block-form-example': {
-            'caption': 'Flexberry-lookup. Лукап в блочной форме',
-            'message': 'Данный тест работает только в мобильной версии сайта. Чтобы запустить мобильную версию нужно:',
-            'paragraph1': 'Перейти в режим разработчика (нажать “F12”).',
-            'paragraph2': 'Включить мобильную версию сайта (нажать “Ctrl+Shift+M” в Chrome и Firefox)',
-            'paragraph3': 'Обновить страницу (нажать “F5”)'
+            'caption': 'Flexberry-lookup. Лукап в блочной форме'
           },
           'lookup-in-modal': {
             'caption': 'Flexberry-lookup. Лукап в модальном окне',
@@ -31936,6 +31928,62 @@ define("dummy/templates/components-examples/flexberry-lookup/limit-function-thro
 });
 define("dummy/templates/components-examples/flexberry-lookup/lookup-block-form-example", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.6",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 5,
+              "column": 4
+            },
+            "end": {
+              "line": 18,
+              "column": 4
+            }
+          },
+          "moduleName": "dummy/templates/components-examples/flexberry-lookup/lookup-block-form-example.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("      ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("br");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n      ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("br");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n      ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(3);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          morphs[1] = dom.createMorphAt(fragment, 4, 4, contextualElement);
+          morphs[2] = dom.createMorphAt(fragment, 7, 7, contextualElement);
+          return morphs;
+        },
+        statements: [["content", "model.editor1.name", ["loc", [null, [15, 6], [15, 28]]]], ["content", "model.editor1.eMail", ["loc", [null, [16, 6], [16, 29]]]], ["content", "model.editor1.gender", ["loc", [null, [17, 6], [17, 30]]]]],
+        locals: [],
+        templates: []
+      };
+    })();
     return {
       meta: {
         "fragmentReason": {
@@ -31950,7 +31998,7 @@ define("dummy/templates/components-examples/flexberry-lookup/lookup-block-form-e
             "column": 0
           },
           "end": {
-            "line": 14,
+            "line": 22,
             "column": 0
           }
         },
@@ -31972,47 +32020,25 @@ define("dummy/templates/components-examples/flexberry-lookup/lookup-block-form-e
         var el1 = dom.createElement("form");
         dom.setAttribute(el1, "class", "ui form flexberry-vertical-form");
         dom.setAttribute(el1, "role", "form");
-        var el2 = dom.createTextNode("\n");
+        var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("div");
-        dom.setAttribute(el2, "class", "ui info message");
-        var el3 = dom.createTextNode("\n  ");
+        dom.setAttribute(el2, "class", "field");
+        var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("div");
-        dom.setAttribute(el3, "class", "header");
-        var el4 = dom.createTextNode("\n  ");
-        dom.appendChild(el3, el4);
+        var el3 = dom.createElement("label");
         var el4 = dom.createComment("");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n  ");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n  ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("ul");
-        dom.setAttribute(el3, "class", "list");
-        var el4 = dom.createTextNode("\n    ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("li");
-        var el5 = dom.createComment("");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n    ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("li");
-        var el5 = dom.createComment("");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n    ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("li");
-        var el5 = dom.createComment("");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n  ");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -32024,18 +32050,16 @@ define("dummy/templates/components-examples/flexberry-lookup/lookup-block-form-e
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [2, 1]);
-        var element1 = dom.childAt(element0, [3]);
-        var morphs = new Array(5);
+        var morphs = new Array(4);
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 0, 0);
-        morphs[1] = dom.createMorphAt(dom.childAt(element0, [1]), 1, 1);
-        morphs[2] = dom.createMorphAt(dom.childAt(element1, [1]), 0, 0);
-        morphs[3] = dom.createMorphAt(dom.childAt(element1, [3]), 0, 0);
-        morphs[4] = dom.createMorphAt(dom.childAt(element1, [5]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(element0, [1]), 0, 0);
+        morphs[2] = dom.createMorphAt(element0, 3, 3);
+        morphs[3] = dom.createMorphAt(element0, 5, 5);
         return morphs;
       },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.lookup-block-form-example.caption"], [], ["loc", [null, [1, 22], [1, 106]]]], ["inline", "t", ["forms.components-examples.flexberry-lookup.lookup-block-form-example.message"], [], ["loc", [null, [5, 2], [5, 86]]]], ["inline", "t", ["forms.components-examples.flexberry-lookup.lookup-block-form-example.paragraph1"], [], ["loc", [null, [8, 8], [8, 95]]]], ["inline", "t", ["forms.components-examples.flexberry-lookup.lookup-block-form-example.paragraph2"], [], ["loc", [null, [9, 8], [9, 95]]]], ["inline", "t", ["forms.components-examples.flexberry-lookup.lookup-block-form-example.paragraph3"], [], ["loc", [null, [10, 8], [10, 95]]]]],
+      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.lookup-block-form-example.caption"], [], ["loc", [null, [1, 22], [1, 106]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.editor1-caption"], [], ["loc", [null, [4, 11], [4, 78]]]], ["block", "flexberry-lookup", [], ["value", ["subexpr", "@mut", [["get", "model.editor1", ["loc", [null, [6, 12], [6, 25]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [7, 19], [7, 24]]]]], [], []], "relationName", "editor1", "projection", "ApplicationUserL", "displayAttributeName", "Name", "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [11, 15], [11, 23]]]]], [], []], "choose", ["subexpr", "action", ["showLookupDialog"], [], ["loc", [null, [12, 13], [12, 40]]]], "remove", ["subexpr", "action", ["removeLookupValue"], [], ["loc", [null, [13, 13], [13, 41]]]]], 0, null, ["loc", [null, [5, 4], [18, 25]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.editor1", ["loc", [null, [19, 40], [19, 60]]]]], [], []], "pointing", "pointing"], ["loc", [null, [19, 4], [19, 82]]]]],
       locals: [],
-      templates: []
+      templates: [child0]
     };
   })());
 });
@@ -47801,11 +47825,241 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
               "loc": {
                 "source": null,
                 "start": {
+                  "line": 18,
+                  "column": 10
+                },
+                "end": {
+                  "line": 20,
+                  "column": 10
+                }
+              },
+              "moduleName": "dummy/templates/components/flexberry-lookup.hbs"
+            },
+            isEmpty: false,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              var el1 = dom.createTextNode("            ");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createComment("");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createTextNode("\n");
+              dom.appendChild(el0, el1);
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+              var morphs = new Array(1);
+              morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+              return morphs;
+            },
+            statements: [["content", "yield", ["loc", [null, [19, 12], [19, 21]]]]],
+            locals: [],
+            templates: []
+          };
+        })();
+        var child1 = (function () {
+          return {
+            meta: {
+              "fragmentReason": false,
+              "revision": "Ember@2.4.6",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 20,
+                  "column": 10
+                },
+                "end": {
                   "line": 22,
+                  "column": 10
+                }
+              },
+              "moduleName": "dummy/templates/components/flexberry-lookup.hbs"
+            },
+            isEmpty: false,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              var el1 = dom.createTextNode("            ");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createComment("");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createTextNode("\n");
+              dom.appendChild(el0, el1);
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+              var morphs = new Array(1);
+              morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+              return morphs;
+            },
+            statements: [["content", "placeholder", ["loc", [null, [21, 12], [21, 27]]]]],
+            locals: [],
+            templates: []
+          };
+        })();
+        var child2 = (function () {
+          return {
+            meta: {
+              "fragmentReason": false,
+              "revision": "Ember@2.4.6",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 24,
+                  "column": 8
+                },
+                "end": {
+                  "line": 26,
+                  "column": 8
+                }
+              },
+              "moduleName": "dummy/templates/components/flexberry-lookup.hbs"
+            },
+            isEmpty: false,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              var el1 = dom.createTextNode("          ");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createElement("i");
+              dom.setAttribute(el1, "class", "chevron right icon");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createTextNode("\n");
+              dom.appendChild(el0, el1);
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes() {
+              return [];
+            },
+            statements: [],
+            locals: [],
+            templates: []
+          };
+        })();
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.6",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 13,
+                "column": 4
+              },
+              "end": {
+                "line": 28,
+                "column": 4
+              }
+            },
+            "moduleName": "dummy/templates/components/flexberry-lookup.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("      ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("div");
+            var el2 = dom.createTextNode("\n        ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("span");
+            dom.setAttribute(el2, "class", "lookup-field");
+            var el3 = dom.createTextNode("\n");
+            dom.appendChild(el2, el3);
+            var el3 = dom.createComment("");
+            dom.appendChild(el2, el3);
+            var el3 = dom.createTextNode("        ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createComment("");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("      ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var element2 = dom.childAt(fragment, [1]);
+            var morphs = new Array(4);
+            morphs[0] = dom.createAttrMorph(element2, 'class');
+            morphs[1] = dom.createElementMorph(element2);
+            morphs[2] = dom.createMorphAt(dom.childAt(element2, [1]), 1, 1);
+            morphs[3] = dom.createMorphAt(element2, 3, 3);
+            return morphs;
+          },
+          statements: [["attribute", "class", ["concat", ["ui transparent ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [16, 39], [16, 47]]]], ["get", "isBlocked", ["loc", [null, [16, 48], [16, 57]]]]], [], ["loc", [null, [16, 35], [16, 58]]]], "disabled"], [], ["loc", [null, [16, 30], [16, 71]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [16, 81], [16, 100]]]], ["get", "modalIsStartToShow", ["loc", [null, [16, 101], [16, 119]]]]], [], ["loc", [null, [16, 77], [16, 120]]]], "loading"], [], ["loc", [null, [16, 72], [16, 132]]]], " icon input"]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [15, 26], [15, 36]]]]], [], ["loc", [null, [15, 8], [15, 38]]]], ["block", "if", [["get", "value", ["loc", [null, [18, 16], [18, 21]]]]], [], 0, 1, ["loc", [null, [18, 10], [22, 17]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [24, 18], [24, 26]]]]], [], 2, null, ["loc", [null, [24, 8], [26, 19]]]]],
+          locals: [],
+          templates: [child0, child1, child2]
+        };
+      })();
+      var child1 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.6",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 28,
+                "column": 4
+              },
+              "end": {
+                "line": 37,
+                "column": 4
+              }
+            },
+            "moduleName": "dummy/templates/components/flexberry-lookup.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("      ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+            return morphs;
+          },
+          statements: [["inline", "input", [], ["type", "text", "class", ["subexpr", "concat", ["lookup-field ", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [31, 42], [31, 54]]]], "prompt"], [], ["loc", [null, [31, 38], [31, 64]]]]], [], ["loc", [null, [31, 14], [31, 65]]]], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [32, 20], [32, 31]]]]], [], []], "value", ["subexpr", "@mut", [["get", "displayValue", ["loc", [null, [33, 14], [33, 26]]]]], [], []], "focusOut", ["subexpr", "action", ["onInputFocusOut"], [], ["loc", [null, [34, 17], [34, 43]]]], "readonly", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [35, 25], [35, 33]]]], ["subexpr", "not", [["get", "autocomplete", ["loc", [null, [35, 39], [35, 51]]]]], [], ["loc", [null, [35, 34], [35, 52]]]]], [], ["loc", [null, [35, 21], [35, 53]]]], "readonly"], [], ["loc", [null, [35, 17], [35, 65]]]]], ["loc", [null, [29, 6], [36, 8]]]]],
+          locals: [],
+          templates: []
+        };
+      })();
+      var child2 = (function () {
+        var child0 = (function () {
+          return {
+            meta: {
+              "fragmentReason": false,
+              "revision": "Ember@2.4.6",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 39,
                   "column": 6
                 },
                 "end": {
-                  "line": 31,
+                  "line": 48,
                   "column": 6
                 }
               },
@@ -47821,6 +48075,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
               dom.appendChild(el0, el1);
               var el1 = dom.createElement("button");
               dom.setAttribute(el1, "data-test-lookup-preview", "");
+              dom.setAttribute(el1, "type", "button");
               var el2 = dom.createTextNode("\n          ");
               dom.appendChild(el1, el2);
               var el2 = dom.createComment("");
@@ -47833,16 +48088,15 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
               return el0;
             },
             buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var element0 = dom.childAt(fragment, [1]);
-              var morphs = new Array(5);
-              morphs[0] = dom.createAttrMorph(element0, 'class');
-              morphs[1] = dom.createAttrMorph(element0, 'title');
-              morphs[2] = dom.createAttrMorph(element0, 'type');
-              morphs[3] = dom.createElementMorph(element0);
-              morphs[4] = dom.createUnsafeMorphAt(element0, 1, 1);
+              var element1 = dom.childAt(fragment, [1]);
+              var morphs = new Array(4);
+              morphs[0] = dom.createAttrMorph(element1, 'class');
+              morphs[1] = dom.createAttrMorph(element1, 'title');
+              morphs[2] = dom.createElementMorph(element1);
+              morphs[3] = dom.createUnsafeMorphAt(element1, 1, 1);
               return morphs;
             },
-            statements: [["attribute", "class", ["concat", ["ui ui-preview ", ["subexpr", "if", [["get", "isBlocked", ["loc", [null, [25, 36], [25, 45]]]], " disabled"], [], ["loc", [null, [25, 31], [25, 59]]]], " ", ["get", "previewButtonClass", ["loc", [null, [25, 62], [25, 80]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.preview-button-text"], [], ["loc", [null, [26, 16], [26, 71]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [27, 20], [27, 32]]]], "button", ""], [], ["loc", [null, [27, 15], [27, 46]]]]], ["element", "action", ["preview"], [], ["loc", [null, [28, 10], [28, 30]]]], ["content", "previewText", ["loc", [null, [29, 10], [29, 27]]]]],
+            statements: [["attribute", "class", ["concat", ["ui ui-preview ", ["subexpr", "if", [["get", "isBlocked", ["loc", [null, [42, 36], [42, 45]]]], " disabled"], [], ["loc", [null, [42, 31], [42, 59]]]], " ", ["get", "previewButtonClass", ["loc", [null, [42, 62], [42, 80]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.preview-button-text"], [], ["loc", [null, [43, 16], [43, 71]]]]], ["element", "action", ["preview"], [], ["loc", [null, [45, 10], [45, 30]]]], ["content", "previewText", ["loc", [null, [46, 10], [46, 27]]]]],
             locals: [],
             templates: []
           };
@@ -47854,11 +48108,11 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
             "loc": {
               "source": null,
               "start": {
-                "line": 21,
+                "line": 38,
                 "column": 4
               },
               "end": {
-                "line": 32,
+                "line": 49,
                 "column": 4
               }
             },
@@ -47881,9 +48135,63 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["block", "if", [["subexpr", "and", [["get", "previewFormRoute", ["loc", [null, [22, 17], [22, 33]]]], ["get", "value", ["loc", [null, [22, 34], [22, 39]]]]], [], ["loc", [null, [22, 12], [22, 40]]]]], [], 0, null, ["loc", [null, [22, 6], [31, 13]]]]],
+          statements: [["block", "if", [["subexpr", "and", [["get", "previewFormRoute", ["loc", [null, [39, 17], [39, 33]]]], ["get", "value", ["loc", [null, [39, 34], [39, 39]]]]], [], ["loc", [null, [39, 12], [39, 40]]]]], [], 0, null, ["loc", [null, [39, 6], [48, 13]]]]],
           locals: [],
           templates: [child0]
+        };
+      })();
+      var child3 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.6",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 50,
+                "column": 4
+              },
+              "end": {
+                "line": 59,
+                "column": 4
+              }
+            },
+            "moduleName": "dummy/templates/components/flexberry-lookup.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("      ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("button");
+            dom.setAttribute(el1, "data-test-lookup-change", "");
+            dom.setAttribute(el1, "type", "button");
+            var el2 = dom.createTextNode("\n        ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createComment("");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n      ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var element0 = dom.childAt(fragment, [1]);
+            var morphs = new Array(4);
+            morphs[0] = dom.createAttrMorph(element0, 'class');
+            morphs[1] = dom.createAttrMorph(element0, 'title');
+            morphs[2] = dom.createElementMorph(element0);
+            morphs[3] = dom.createUnsafeMorphAt(element0, 1, 1);
+            return morphs;
+          },
+          statements: [["attribute", "class", ["concat", ["ui ui-change ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [53, 37], [53, 45]]]], ["get", "isBlocked", ["loc", [null, [53, 46], [53, 55]]]]], [], ["loc", [null, [53, 33], [53, 56]]]], " disabled"], [], ["loc", [null, [53, 28], [53, 70]]]], " ", ["get", "chooseButtonClass", ["loc", [null, [53, 73], [53, 90]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [53, 102], [53, 121]]]], ["get", "modalIsStartToShow", ["loc", [null, [53, 122], [53, 140]]]]], [], ["loc", [null, [53, 98], [53, 141]]]], " loading"], [], ["loc", [null, [53, 93], [53, 154]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.choose-button-text"], [], ["loc", [null, [54, 14], [54, 68]]]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [56, 26], [56, 36]]]]], [], ["loc", [null, [56, 8], [56, 38]]]], ["content", "chooseText", ["loc", [null, [57, 8], [57, 24]]]]],
+          locals: [],
+          templates: []
         };
       })();
       return {
@@ -47897,7 +48205,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
               "column": 0
             },
             "end": {
-              "line": 50,
+              "line": 69,
               "column": 0
             }
           },
@@ -47913,29 +48221,19 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("div");
           dom.setAttribute(el1, "data-test-lookup", "");
-          var el2 = dom.createTextNode("\n    ");
+          var el2 = dom.createTextNode("\n");
           dom.appendChild(el1, el2);
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n");
+          var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("button");
-          dom.setAttribute(el2, "data-test-lookup-change", "");
-          var el3 = dom.createTextNode("\n      ");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n    ");
-          dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n    ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createElement("button");
           dom.setAttribute(el2, "data-test-lookup-clear", "");
+          dom.setAttribute(el2, "type", "button");
           var el3 = dom.createTextNode("\n      ");
           dom.appendChild(el2, el3);
           var el3 = dom.createComment("");
@@ -47951,28 +48249,22 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element1 = dom.childAt(fragment, [1]);
-          var element2 = dom.childAt(element1, [5]);
-          var element3 = dom.childAt(element1, [7]);
-          var morphs = new Array(13);
-          morphs[0] = dom.createAttrMorph(element1, 'class');
-          morphs[1] = dom.createMorphAt(element1, 1, 1);
-          morphs[2] = dom.createMorphAt(element1, 3, 3);
-          morphs[3] = dom.createAttrMorph(element2, 'class');
-          morphs[4] = dom.createAttrMorph(element2, 'title');
-          morphs[5] = dom.createAttrMorph(element2, 'type');
-          morphs[6] = dom.createElementMorph(element2);
-          morphs[7] = dom.createUnsafeMorphAt(element2, 1, 1);
-          morphs[8] = dom.createAttrMorph(element3, 'class');
-          morphs[9] = dom.createAttrMorph(element3, 'title');
-          morphs[10] = dom.createAttrMorph(element3, 'type');
-          morphs[11] = dom.createElementMorph(element3);
-          morphs[12] = dom.createUnsafeMorphAt(element3, 1, 1);
+          var element3 = dom.childAt(fragment, [1]);
+          var element4 = dom.childAt(element3, [5]);
+          var morphs = new Array(8);
+          morphs[0] = dom.createAttrMorph(element3, 'class');
+          morphs[1] = dom.createMorphAt(element3, 1, 1);
+          morphs[2] = dom.createMorphAt(element3, 2, 2);
+          morphs[3] = dom.createMorphAt(element3, 3, 3);
+          morphs[4] = dom.createAttrMorph(element4, 'class');
+          morphs[5] = dom.createAttrMorph(element4, 'title');
+          morphs[6] = dom.createElementMorph(element4);
+          morphs[7] = dom.createUnsafeMorphAt(element4, 1, 1);
           return morphs;
         },
-        statements: [["attribute", "class", ["concat", ["ui fluid action input ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [12, 58], [12, 66]]]], "disabled"], [], ["loc", [null, [12, 53], [12, 79]]]]]]], ["inline", "input", [], ["type", "text", "class", ["subexpr", "concat", ["lookup-field ", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [15, 40], [15, 52]]]], "prompt"], [], ["loc", [null, [15, 36], [15, 62]]]]], [], ["loc", [null, [15, 12], [15, 63]]]], "placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [16, 18], [16, 29]]]]], [], []], "value", ["subexpr", "@mut", [["get", "displayValue", ["loc", [null, [17, 12], [17, 24]]]]], [], []], "focusOut", ["subexpr", "action", ["onInputFocusOut"], [], ["loc", [null, [18, 15], [18, 41]]]], "readonly", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [19, 23], [19, 31]]]], ["subexpr", "not", [["get", "autocomplete", ["loc", [null, [19, 37], [19, 49]]]]], [], ["loc", [null, [19, 32], [19, 50]]]]], [], ["loc", [null, [19, 19], [19, 51]]]], "readonly"], [], ["loc", [null, [19, 15], [19, 63]]]]], ["loc", [null, [13, 4], [20, 6]]]], ["block", "if", [["get", "showPreviewButton", ["loc", [null, [21, 10], [21, 27]]]]], [], 0, null, ["loc", [null, [21, 4], [32, 11]]]], ["attribute", "class", ["concat", ["ui ui-change ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [35, 35], [35, 43]]]], ["get", "isBlocked", ["loc", [null, [35, 44], [35, 53]]]]], [], ["loc", [null, [35, 31], [35, 54]]]], " disabled"], [], ["loc", [null, [35, 26], [35, 68]]]], " ", ["get", "chooseButtonClass", ["loc", [null, [35, 71], [35, 88]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [35, 100], [35, 119]]]], ["get", "modalIsStartToShow", ["loc", [null, [35, 120], [35, 138]]]]], [], ["loc", [null, [35, 96], [35, 139]]]], " loading"], [], ["loc", [null, [35, 91], [35, 152]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.choose-button-text"], [], ["loc", [null, [36, 12], [36, 66]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [37, 16], [37, 28]]]], "button", ""], [], ["loc", [null, [37, 11], [37, 42]]]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [38, 24], [38, 34]]]]], [], ["loc", [null, [38, 6], [38, 36]]]], ["content", "chooseText", ["loc", [null, [39, 6], [39, 22]]]], ["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [43, 34], [43, 42]]]], ["get", "isBlocked", ["loc", [null, [43, 43], [43, 52]]]]], [], ["loc", [null, [43, 30], [43, 53]]]], " disabled"], [], ["loc", [null, [43, 25], [43, 67]]]], " ", ["get", "removeButtonClass", ["loc", [null, [43, 70], [43, 87]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [44, 12], [44, 66]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [45, 16], [45, 28]]]], "button", ""], [], ["loc", [null, [45, 11], [45, 42]]]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [46, 24], [46, 34]]]]], [], ["loc", [null, [46, 6], [46, 36]]]], ["content", "removeText", ["loc", [null, [47, 6], [47, 22]]]]],
+        statements: [["attribute", "class", ["concat", ["ui ", ["subexpr", "unless", [["get", "hasBlock", ["loc", [null, [12, 43], [12, 51]]]], "fluid"], [], ["loc", [null, [12, 34], [12, 61]]]], " action input ", ["subexpr", "if", [["subexpr", "and", [["get", "readonly", ["loc", [null, [12, 85], [12, 93]]]], ["subexpr", "not", [["get", "hasBlock", ["loc", [null, [12, 99], [12, 107]]]]], [], ["loc", [null, [12, 94], [12, 108]]]]], [], ["loc", [null, [12, 80], [12, 109]]]], "disabled"], [], ["loc", [null, [12, 75], [12, 122]]]]]]], ["block", "if", [["get", "hasBlock", ["loc", [null, [13, 10], [13, 18]]]]], [], 0, 1, ["loc", [null, [13, 4], [37, 11]]]], ["block", "if", [["get", "showPreviewButton", ["loc", [null, [38, 10], [38, 27]]]]], [], 2, null, ["loc", [null, [38, 4], [49, 11]]]], ["block", "unless", [["get", "hasBlock", ["loc", [null, [50, 14], [50, 22]]]]], [], 3, null, ["loc", [null, [50, 4], [59, 15]]]], ["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [62, 34], [62, 42]]]], ["get", "isBlocked", ["loc", [null, [62, 43], [62, 52]]]]], [], ["loc", [null, [62, 30], [62, 53]]]], " disabled"], [], ["loc", [null, [62, 25], [62, 67]]]], " ", ["get", "removeButtonClass", ["loc", [null, [62, 70], [62, 87]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.remove-button-text"], [], ["loc", [null, [63, 12], [63, 66]]]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [65, 24], [65, 34]]]]], [], ["loc", [null, [65, 6], [65, 36]]]], ["content", "removeText", ["loc", [null, [66, 6], [66, 22]]]]],
         locals: [],
-        templates: [child0]
+        templates: [child0, child1, child2, child3]
       };
     })();
     var child2 = (function () {
@@ -47983,11 +48275,11 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           "loc": {
             "source": null,
             "start": {
-              "line": 51,
+              "line": 70,
               "column": 0
             },
             "end": {
-              "line": 53,
+              "line": 72,
               "column": 0
             }
           },
@@ -48001,19 +48293,101 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
           var el0 = dom.createDocumentFragment();
           var el1 = dom.createTextNode("  ");
           dom.appendChild(el0, el1);
-          var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "results");
+          var el1 = dom.createComment("");
           dom.appendChild(el0, el1);
           var el1 = dom.createTextNode("\n");
           dom.appendChild(el0, el1);
           return el0;
         },
-        buildRenderNodes: function buildRenderNodes() {
-          return [];
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
         },
-        statements: [],
+        statements: [["content", "_hasBlockSetter", ["loc", [null, [71, 2], [71, 21]]]]],
         locals: [],
         templates: []
+      };
+    })();
+    var child3 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.6",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 72,
+                "column": 0
+              },
+              "end": {
+                "line": 74,
+                "column": 0
+              }
+            },
+            "moduleName": "dummy/templates/components/flexberry-lookup.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("  ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("div");
+            dom.setAttribute(el1, "class", "results");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes() {
+            return [];
+          },
+          statements: [],
+          locals: [],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.6",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 72,
+              "column": 0
+            },
+            "end": {
+              "line": 74,
+              "column": 0
+            }
+          },
+          "moduleName": "dummy/templates/components/flexberry-lookup.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+          dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
+          return morphs;
+        },
+        statements: [["block", "if", [["get", "autocomplete", ["loc", [null, [72, 10], [72, 22]]]]], [], 0, null, ["loc", [null, [72, 0], [74, 0]]]]],
+        locals: [],
+        templates: [child0]
       };
     })();
     return {
@@ -48030,7 +48404,7 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
             "column": 0
           },
           "end": {
-            "line": 54,
+            "line": 75,
             "column": 0
           }
         },
@@ -48056,9 +48430,9 @@ define("dummy/templates/components/flexberry-lookup", ["exports"], function (exp
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [50, 7]]]], ["block", "if", [["get", "autocomplete", ["loc", [null, [51, 6], [51, 18]]]]], [], 2, null, ["loc", [null, [51, 0], [53, 7]]]]],
+      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [69, 7]]]], ["block", "if", [["get", "hasBlock", ["loc", [null, [70, 6], [70, 14]]]]], [], 2, 3, ["loc", [null, [70, 0], [74, 7]]]]],
       locals: [],
-      templates: [child0, child1, child2]
+      templates: [child0, child1, child2, child3]
     };
   })());
 });
@@ -68091,143 +68465,6 @@ define("dummy/templates/mobile/application", ["exports"], function (exports) {
     };
   })());
 });
-define("dummy/templates/mobile/components-examples/flexberry-lookup/lookup-block-form-example", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template((function () {
-    var child0 = (function () {
-      return {
-        meta: {
-          "fragmentReason": false,
-          "revision": "Ember@2.4.6",
-          "loc": {
-            "source": null,
-            "start": {
-              "line": 5,
-              "column": 4
-            },
-            "end": {
-              "line": 18,
-              "column": 4
-            }
-          },
-          "moduleName": "dummy/templates/mobile/components-examples/flexberry-lookup/lookup-block-form-example.hbs"
-        },
-        isEmpty: false,
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("      ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createComment("");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("br");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n      ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createComment("");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("br");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n      ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createComment("");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var morphs = new Array(3);
-          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-          morphs[1] = dom.createMorphAt(fragment, 4, 4, contextualElement);
-          morphs[2] = dom.createMorphAt(fragment, 7, 7, contextualElement);
-          return morphs;
-        },
-        statements: [["content", "model.editor1.name", ["loc", [null, [15, 6], [15, 28]]]], ["content", "model.editor1.eMail", ["loc", [null, [16, 6], [16, 29]]]], ["content", "model.editor1.gender", ["loc", [null, [17, 6], [17, 30]]]]],
-        locals: [],
-        templates: []
-      };
-    })();
-    return {
-      meta: {
-        "fragmentReason": {
-          "name": "missing-wrapper",
-          "problems": ["multiple-nodes"]
-        },
-        "revision": "Ember@2.4.6",
-        "loc": {
-          "source": null,
-          "start": {
-            "line": 1,
-            "column": 0
-          },
-          "end": {
-            "line": 22,
-            "column": 0
-          }
-        },
-        "moduleName": "dummy/templates/mobile/components-examples/flexberry-lookup/lookup-block-form-example.hbs"
-      },
-      isEmpty: false,
-      arity: 0,
-      cachedFragment: null,
-      hasRendered: false,
-      buildFragment: function buildFragment(dom) {
-        var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("h3");
-        dom.setAttribute(el1, "class", "ui header");
-        var el2 = dom.createComment("");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("form");
-        dom.setAttribute(el1, "class", "ui form flexberry-vertical-form");
-        dom.setAttribute(el1, "role", "form");
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("div");
-        dom.setAttribute(el2, "class", "field");
-        var el3 = dom.createTextNode("\n    ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("label");
-        var el4 = dom.createComment("");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("    ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n  ");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        return el0;
-      },
-      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element0 = dom.childAt(fragment, [2, 1]);
-        var morphs = new Array(4);
-        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 0, 0);
-        morphs[1] = dom.createMorphAt(dom.childAt(element0, [1]), 0, 0);
-        morphs[2] = dom.createMorphAt(element0, 3, 3);
-        morphs[3] = dom.createMorphAt(element0, 5, 5);
-        return morphs;
-      },
-      statements: [["inline", "t", ["forms.components-examples.flexberry-lookup.lookup-block-form-example.caption"], [], ["loc", [null, [1, 22], [1, 106]]]], ["inline", "t", ["forms.ember-flexberry-dummy-suggestion-edit.editor1-caption"], [], ["loc", [null, [4, 11], [4, 78]]]], ["block", "flexberry-lookup", [], ["value", ["subexpr", "@mut", [["get", "model.editor1", ["loc", [null, [6, 12], [6, 25]]]]], [], []], "relatedModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [7, 19], [7, 24]]]]], [], []], "relationName", "editor1", "projection", "ApplicationUserL", "displayAttributeName", "Name", "readonly", ["subexpr", "@mut", [["get", "readonly", ["loc", [null, [11, 15], [11, 23]]]]], [], []], "choose", ["subexpr", "action", ["showLookupDialog"], [], ["loc", [null, [12, 13], [12, 40]]]], "remove", ["subexpr", "action", ["removeLookupValue"], [], ["loc", [null, [13, 13], [13, 41]]]]], 0, null, ["loc", [null, [5, 4], [18, 25]]]], ["inline", "flexberry-validationmessage", [], ["error", ["subexpr", "@mut", [["get", "model.errors.editor1", ["loc", [null, [19, 40], [19, 60]]]]], [], []], "pointing", "pointing"], ["loc", [null, [19, 4], [19, 82]]]]],
-      locals: [],
-      templates: [child0]
-    };
-  })());
-});
 define("dummy/templates/mobile/components-examples/flexberry-lookup/lookup-in-modal", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     var child0 = (function () {
@@ -69607,527 +69844,6 @@ define("dummy/templates/mobile/components/flexberry-file", ["exports"], function
       statements: [["attribute", "id", ["get", "_fileInputId", ["loc", [null, [2, 41], [2, 53]]]]], ["attribute", "class", ["concat", ["flexberry-file-add-button ui icon ", ["get", "buttonClass", ["loc", [null, [5, 49], [5, 60]]]], " ", ["subexpr", "if", [["get", "readonly", ["loc", [null, [5, 68], [5, 76]]]], "disabled", ["subexpr", "unless", [["get", "_addButtonIsEnabled", ["loc", [null, [5, 96], [5, 115]]]], "disabled"], [], ["loc", [null, [5, 88], [5, 127]]]]], [], ["loc", [null, [5, 63], [5, 129]]]], " ", ["subexpr", "if", [["get", "_hasFile", ["loc", [null, [5, 135], [5, 143]]]], "hidden"], [], ["loc", [null, [5, 130], [5, 154]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-file.add-button-title"], [], ["loc", [null, [6, 12], [6, 62]]]]], ["attribute", "for", ["get", "_fileInputId", ["loc", [null, [7, 12], [7, 24]]]]], ["element", "action", ["addButtonClick"], ["on", "click", "preventDefault", false], ["loc", [null, [8, 6], [8, 65]]]], ["inline", "t", ["components.flexberry-file.add-button-caption"], [], ["loc", [null, [9, 4], [9, 56]]]], ["block", "if", [["get", "_hasFile", ["loc", [null, [11, 10], [11, 18]]]]], [], 0, null, ["loc", [null, [11, 4], [37, 11]]]], ["content", "_errorModalDialogCaption", ["loc", [null, [45, 4], [45, 32]]]], ["content", "_errorModalDialogContent", ["loc", [null, [49, 6], [49, 34]]]], ["inline", "t", ["components.flexberry-file.error-dialog-ok-button-caption"], [], ["loc", [null, [56, 8], [56, 72]]]]],
       locals: [],
       templates: [child0]
-    };
-  })());
-});
-define("dummy/templates/mobile/components/flexberry-lookup", ["exports"], function (exports) {
-  exports["default"] = Ember.HTMLBars.template((function () {
-    var child0 = (function () {
-      return {
-        meta: {
-          "fragmentReason": {
-            "name": "missing-wrapper",
-            "problems": ["wrong-type"]
-          },
-          "revision": "Ember@2.4.6",
-          "loc": {
-            "source": null,
-            "start": {
-              "line": 1,
-              "column": 0
-            },
-            "end": {
-              "line": 11,
-              "column": 0
-            }
-          },
-          "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-        },
-        isEmpty: false,
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("  ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createComment("");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var morphs = new Array(1);
-          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-          return morphs;
-        },
-        statements: [["inline", "flexberry-dropdown", [], ["placeholder", ["subexpr", "@mut", [["get", "placeholder", ["loc", [null, [3, 16], [3, 27]]]]], [], []], "class", "search", "value", ["subexpr", "@mut", [["get", "displayValue", ["loc", [null, [5, 10], [5, 22]]]]], [], []], "readonly", ["subexpr", "if", [["get", "readonly", ["loc", [null, [6, 17], [6, 25]]]], "readonly"], [], ["loc", [null, [6, 13], [6, 37]]]], "needChecksOnValue", false, "isSearch", true, "isSearchReadOnly", ["subexpr", "@mut", [["get", "dropdownIsSearch", ["loc", [null, [9, 21], [9, 37]]]]], [], []]], ["loc", [null, [2, 2], [10, 4]]]]],
-        locals: [],
-        templates: []
-      };
-    })();
-    var child1 = (function () {
-      var child0 = (function () {
-        var child0 = (function () {
-          return {
-            meta: {
-              "fragmentReason": false,
-              "revision": "Ember@2.4.6",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 18,
-                  "column": 10
-                },
-                "end": {
-                  "line": 20,
-                  "column": 10
-                }
-              },
-              "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("            ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createComment("");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var morphs = new Array(1);
-              morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-              return morphs;
-            },
-            statements: [["content", "yield", ["loc", [null, [19, 12], [19, 21]]]]],
-            locals: [],
-            templates: []
-          };
-        })();
-        var child1 = (function () {
-          return {
-            meta: {
-              "fragmentReason": false,
-              "revision": "Ember@2.4.6",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 20,
-                  "column": 10
-                },
-                "end": {
-                  "line": 22,
-                  "column": 10
-                }
-              },
-              "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("            ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createComment("");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var morphs = new Array(1);
-              morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-              return morphs;
-            },
-            statements: [["content", "displayValue", ["loc", [null, [21, 12], [21, 28]]]]],
-            locals: [],
-            templates: []
-          };
-        })();
-        return {
-          meta: {
-            "fragmentReason": false,
-            "revision": "Ember@2.4.6",
-            "loc": {
-              "source": null,
-              "start": {
-                "line": 17,
-                "column": 8
-              },
-              "end": {
-                "line": 23,
-                "column": 8
-              }
-            },
-            "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-          },
-          isEmpty: false,
-          arity: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          buildFragment: function buildFragment(dom) {
-            var el0 = dom.createDocumentFragment();
-            var el1 = dom.createComment("");
-            dom.appendChild(el0, el1);
-            return el0;
-          },
-          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var morphs = new Array(1);
-            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-            dom.insertBoundary(fragment, 0);
-            dom.insertBoundary(fragment, null);
-            return morphs;
-          },
-          statements: [["block", "if", [["get", "hasBlock", ["loc", [null, [18, 16], [18, 24]]]]], [], 0, 1, ["loc", [null, [18, 10], [22, 17]]]]],
-          locals: [],
-          templates: [child0, child1]
-        };
-      })();
-      var child1 = (function () {
-        return {
-          meta: {
-            "fragmentReason": false,
-            "revision": "Ember@2.4.6",
-            "loc": {
-              "source": null,
-              "start": {
-                "line": 23,
-                "column": 8
-              },
-              "end": {
-                "line": 25,
-                "column": 8
-              }
-            },
-            "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-          },
-          isEmpty: false,
-          arity: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          buildFragment: function buildFragment(dom) {
-            var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("          ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createComment("");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n");
-            dom.appendChild(el0, el1);
-            return el0;
-          },
-          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var morphs = new Array(1);
-            morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-            return morphs;
-          },
-          statements: [["content", "placeholder", ["loc", [null, [24, 10], [24, 25]]]]],
-          locals: [],
-          templates: []
-        };
-      })();
-      var child2 = (function () {
-        return {
-          meta: {
-            "fragmentReason": false,
-            "revision": "Ember@2.4.6",
-            "loc": {
-              "source": null,
-              "start": {
-                "line": 27,
-                "column": 6
-              },
-              "end": {
-                "line": 29,
-                "column": 6
-              }
-            },
-            "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-          },
-          isEmpty: false,
-          arity: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          buildFragment: function buildFragment(dom) {
-            var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("        ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("i");
-            dom.setAttribute(el1, "class", "chevron right icon");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n");
-            dom.appendChild(el0, el1);
-            return el0;
-          },
-          buildRenderNodes: function buildRenderNodes() {
-            return [];
-          },
-          statements: [],
-          locals: [],
-          templates: []
-        };
-      })();
-      var child3 = (function () {
-        var child0 = (function () {
-          return {
-            meta: {
-              "fragmentReason": false,
-              "revision": "Ember@2.4.6",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 32,
-                  "column": 6
-                },
-                "end": {
-                  "line": 40,
-                  "column": 6
-                }
-              },
-              "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("        ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createElement("button");
-              var el2 = dom.createTextNode("\n          ");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createComment("");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createTextNode("\n        ");
-              dom.appendChild(el1, el2);
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var element1 = dom.childAt(fragment, [1]);
-              var morphs = new Array(5);
-              morphs[0] = dom.createAttrMorph(element1, 'class');
-              morphs[1] = dom.createAttrMorph(element1, 'title');
-              morphs[2] = dom.createAttrMorph(element1, 'type');
-              morphs[3] = dom.createElementMorph(element1);
-              morphs[4] = dom.createUnsafeMorphAt(element1, 1, 1);
-              return morphs;
-            },
-            statements: [["attribute", "class", ["concat", ["ui ui-preview ", ["subexpr", "if", [["get", "isBlocked", ["loc", [null, [34, 36], [34, 45]]]], " disabled"], [], ["loc", [null, [34, 31], [34, 59]]]], " ", ["get", "previewButtonClass", ["loc", [null, [34, 62], [34, 80]]]], " button"]]], ["attribute", "title", ["subexpr", "t", ["components.flexberry-lookup.preview-button-text"], [], ["loc", [null, [35, 16], [35, 71]]]]], ["attribute", "type", ["subexpr", "if", [["get", "autocomplete", ["loc", [null, [36, 20], [36, 32]]]], "button", ""], [], ["loc", [null, [36, 15], [36, 46]]]]], ["element", "action", ["preview"], [], ["loc", [null, [37, 10], [37, 30]]]], ["content", "previewText", ["loc", [null, [38, 10], [38, 27]]]]],
-            locals: [],
-            templates: []
-          };
-        })();
-        return {
-          meta: {
-            "fragmentReason": false,
-            "revision": "Ember@2.4.6",
-            "loc": {
-              "source": null,
-              "start": {
-                "line": 31,
-                "column": 4
-              },
-              "end": {
-                "line": 41,
-                "column": 4
-              }
-            },
-            "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-          },
-          isEmpty: false,
-          arity: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          buildFragment: function buildFragment(dom) {
-            var el0 = dom.createDocumentFragment();
-            var el1 = dom.createComment("");
-            dom.appendChild(el0, el1);
-            return el0;
-          },
-          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var morphs = new Array(1);
-            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-            dom.insertBoundary(fragment, 0);
-            dom.insertBoundary(fragment, null);
-            return morphs;
-          },
-          statements: [["block", "if", [["subexpr", "and", [["get", "previewFormRoute", ["loc", [null, [32, 17], [32, 33]]]], ["get", "value", ["loc", [null, [32, 34], [32, 39]]]]], [], ["loc", [null, [32, 12], [32, 40]]]]], [], 0, null, ["loc", [null, [32, 6], [40, 13]]]]],
-          locals: [],
-          templates: [child0]
-        };
-      })();
-      var child4 = (function () {
-        return {
-          meta: {
-            "fragmentReason": false,
-            "revision": "Ember@2.4.6",
-            "loc": {
-              "source": null,
-              "start": {
-                "line": 42,
-                "column": 4
-              },
-              "end": {
-                "line": 49,
-                "column": 4
-              }
-            },
-            "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-          },
-          isEmpty: false,
-          arity: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          buildFragment: function buildFragment(dom) {
-            var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("      ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("button");
-            dom.setAttribute(el1, "type", "button");
-            var el2 = dom.createTextNode("\n        ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createComment("");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode("\n      ");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n");
-            dom.appendChild(el0, el1);
-            return el0;
-          },
-          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var element0 = dom.childAt(fragment, [1]);
-            var morphs = new Array(3);
-            morphs[0] = dom.createAttrMorph(element0, 'class');
-            morphs[1] = dom.createElementMorph(element0);
-            morphs[2] = dom.createUnsafeMorphAt(element0, 1, 1);
-            return morphs;
-          },
-          statements: [["attribute", "class", ["concat", ["ui ui-clear ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [45, 36], [45, 44]]]], ["get", "isBlocked", ["loc", [null, [45, 45], [45, 54]]]]], [], ["loc", [null, [45, 32], [45, 55]]]], " disabled"], [], ["loc", [null, [45, 27], [45, 69]]]], " ", ["get", "removeButtonClass", ["loc", [null, [45, 72], [45, 89]]]], " button"]]], ["element", "action", ["remove", ["get", "removeData", ["loc", [null, [46, 26], [46, 36]]]]], [], ["loc", [null, [46, 8], [46, 38]]]], ["content", "removeText", ["loc", [null, [47, 8], [47, 24]]]]],
-          locals: [],
-          templates: []
-        };
-      })();
-      return {
-        meta: {
-          "fragmentReason": false,
-          "revision": "Ember@2.4.6",
-          "loc": {
-            "source": null,
-            "start": {
-              "line": 11,
-              "column": 0
-            },
-            "end": {
-              "line": 51,
-              "column": 0
-            }
-          },
-          "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-        },
-        isEmpty: false,
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("  ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "ui action input");
-          var el2 = dom.createTextNode("\n    ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createElement("div");
-          var el3 = dom.createTextNode("\n      ");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createElement("span");
-          dom.setAttribute(el3, "class", "lookup-field");
-          var el4 = dom.createTextNode("\n");
-          dom.appendChild(el3, el4);
-          var el4 = dom.createComment("");
-          dom.appendChild(el3, el4);
-          var el4 = dom.createTextNode("      ");
-          dom.appendChild(el3, el4);
-          dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("    ");
-          dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("  ");
-          dom.appendChild(el1, el2);
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element2 = dom.childAt(fragment, [1]);
-          var element3 = dom.childAt(element2, [1]);
-          var morphs = new Array(6);
-          morphs[0] = dom.createAttrMorph(element3, 'class');
-          morphs[1] = dom.createElementMorph(element3);
-          morphs[2] = dom.createMorphAt(dom.childAt(element3, [1]), 1, 1);
-          morphs[3] = dom.createMorphAt(element3, 3, 3);
-          morphs[4] = dom.createMorphAt(element2, 3, 3);
-          morphs[5] = dom.createMorphAt(element2, 4, 4);
-          return morphs;
-        },
-        statements: [["attribute", "class", ["concat", ["ui transparent ", ["subexpr", "if", [["subexpr", "or", [["get", "readonly", ["loc", [null, [15, 37], [15, 45]]]], ["get", "isBlocked", ["loc", [null, [15, 46], [15, 55]]]]], [], ["loc", [null, [15, 33], [15, 56]]]], " disabled"], [], ["loc", [null, [15, 28], [15, 70]]]], " ", ["subexpr", "if", [["subexpr", "or", [["get", "modalIsBeforeToShow", ["loc", [null, [15, 80], [15, 99]]]], ["get", "modalIsStartToShow", ["loc", [null, [15, 100], [15, 118]]]]], [], ["loc", [null, [15, 76], [15, 119]]]], " loading"], [], ["loc", [null, [15, 71], [15, 132]]]], " icon input "]]], ["element", "action", ["choose", ["get", "chooseData", ["loc", [null, [14, 24], [14, 34]]]]], [], ["loc", [null, [14, 6], [14, 36]]]], ["block", "if", [["get", "value", ["loc", [null, [17, 14], [17, 19]]]]], [], 0, 1, ["loc", [null, [17, 8], [25, 15]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [27, 16], [27, 24]]]]], [], 2, null, ["loc", [null, [27, 6], [29, 17]]]], ["block", "if", [["get", "showPreviewButton", ["loc", [null, [31, 10], [31, 27]]]]], [], 3, null, ["loc", [null, [31, 4], [41, 11]]]], ["block", "unless", [["get", "readonly", ["loc", [null, [42, 14], [42, 22]]]]], [], 4, null, ["loc", [null, [42, 4], [49, 15]]]]],
-        locals: [],
-        templates: [child0, child1, child2, child3, child4]
-      };
-    })();
-    return {
-      meta: {
-        "fragmentReason": {
-          "name": "missing-wrapper",
-          "problems": ["wrong-type"]
-        },
-        "revision": "Ember@2.4.6",
-        "loc": {
-          "source": null,
-          "start": {
-            "line": 1,
-            "column": 0
-          },
-          "end": {
-            "line": 52,
-            "column": 0
-          }
-        },
-        "moduleName": "dummy/templates/mobile/components/flexberry-lookup.hbs"
-      },
-      isEmpty: false,
-      arity: 0,
-      cachedFragment: null,
-      hasRendered: false,
-      buildFragment: function buildFragment(dom) {
-        var el0 = dom.createDocumentFragment();
-        var el1 = dom.createComment("");
-        dom.appendChild(el0, el1);
-        return el0;
-      },
-      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-        dom.insertBoundary(fragment, 0);
-        dom.insertBoundary(fragment, null);
-        return morphs;
-      },
-      statements: [["block", "if", [["get", "dropdown", ["loc", [null, [1, 6], [1, 14]]]]], [], 0, 1, ["loc", [null, [1, 0], [51, 7]]]]],
-      locals: [],
-      templates: [child0, child1]
     };
   })());
 });
@@ -73150,7 +72866,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0+4fd7cd70"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true,"errorMessageFilterActive":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.5.0+712a1b28"});
 }
 
 /* jshint ignore:end */
