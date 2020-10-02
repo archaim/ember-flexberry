@@ -1512,7 +1512,19 @@ export default folv.extend(
       }
 
       Ember.setProperties(filter.component, options);
-    }
+    },
+
+    /**
+      Cleans the filter for one column.
+
+      @method actions.clearFilterForColumn
+      @param {Object} filter Object with the filter description.
+    */
+    clearFilterForColumn(filter) {
+      Ember.set(filter, &#x27;component.name&#x27;, Ember.get(filter, &#x27;component._defaultComponent&#x27;));
+      Ember.set(filter, &#x27;condition&#x27;, null);
+      Ember.set(filter, &#x27;pattern&#x27;, null);
+    },
   },
 
   /**
@@ -2233,6 +2245,9 @@ export default folv.extend(
 
     Ember.$.extend(true, component, options);
 
+    // Hack to restore component when clearing filter for one column.
+    component._defaultComponent = component.name;
+
     column.filter = { name, type, pattern, condition, conditions, component };
   },
 
@@ -2331,20 +2346,19 @@ export default folv.extend(
       case &#x27;string&#x27;:
       case &#x27;number&#x27;:
         component.name = &#x27;flexberry-textbox&#x27;;
-        component.properties = { class: &#x27;compact fluid&#x27; };
         break;
 
       case &#x27;boolean&#x27;:
         component.name = &#x27;flexberry-dropdown&#x27;;
         component.properties = {
           items: [&#x27;true&#x27;, &#x27;false&#x27;],
-          class: &#x27;compact fluid&#x27;,
+          class: &#x27;compact&#x27;,
         };
         break;
 
       case &#x27;date&#x27;:
         component.name = &#x27;flexberry-simpledatetime&#x27;;
-        component.properties = { type: &#x27;date&#x27; };
+        component.properties = { type: &#x27;date&#x27;, removeButton: false };
         break;
 
       default:
@@ -2354,7 +2368,7 @@ export default folv.extend(
           component.name = &#x27;flexberry-dropdown&#x27;;
           component.properties = {
             items: transformInstance.get(&#x27;captions&#x27;),
-            class: &#x27;compact fluid&#x27;,
+            class: &#x27;compact&#x27;,
           };
         }
 

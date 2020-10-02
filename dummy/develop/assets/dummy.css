@@ -24861,6 +24861,12 @@ div.ui.secondary.menu.no-margin.nav-bar .right.menu {
 .object-list-view-container.fixed-header tr.object-list-view-filters:last-child > * {
   border-bottom: 1px solid rgba(34, 36, 38, 0.1);
 }
+.object-list-view-filters .flexberry-textbox {
+  min-width: 0;
+}
+.object-list-view-filters .flexberry-simpledatetime {
+  width: 100%;
+}
 table.object-list-view.selectable tbody,
 table.object-list-view.selectable thead {
   cursor: pointer;

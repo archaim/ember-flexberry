@@ -279,7 +279,7 @@ export default FlexberryBaseComponent.extend({
       @param {Object} filter Object with the filter description.
     */
     clearFilterField(filter) {
-      Ember.set(filter, &#x27;component.name&#x27;, &#x27;flexberry-textbox&#x27;);
+      Ember.set(filter, &#x27;component.name&#x27;, Ember.get(filter, &#x27;component._defaultComponent&#x27;));
       Ember.set(filter, &#x27;condition&#x27;, undefined);
       Ember.set(filter, &#x27;pattern&#x27;, undefined);
     },
