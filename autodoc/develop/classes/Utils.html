@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>addon/components/object-list-view-single-column-cell.js - Flexberry Documentation</title>
+    <title>Utils - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -209,80 +209,403 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>addon/components/object-list-view-single-column-cell.js <small>File</small></h1>
+    <h1>Utils <small>Class</small></h1>
 </div>
 
-<div class="file">
-    <pre class="prettyprint linenums">
-/**
-  @module ember-flexberry
-*/
+<div class="well well-small">
 
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
-import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lookup-compatible-component&#x27;;
-import FlexberryFileCompatibleComponentMixin from &#x27;../mixins/flexberry-file-compatible-component&#x27;;
 
-/**
-  @class ObjectListViewSingleColumnCellComponent
-  @extends FlexberryBaseComponent
-  @uses FlexberryLookupCompatibleComponentMixin
-  @uses FlexberryFileCompatibleComponentMixin
-*/
-export default FlexberryBaseComponent.extend(
-  FlexberryLookupCompatibleComponentMixin,
-  FlexberryFileCompatibleComponentMixin, {
-  /**
-    Component&#x27;s wrapping &lt;div&gt; CSS-class names.
-  */
-  classNames: [&#x27;object-list-view-single-column-cell&#x27;, &#x27;ui&#x27;, &#x27;form&#x27;],
 
-  /**
-    Model which need to be displayed by component.
+            Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
 
-    @property model
-    @type &lt;a href=&quot;http://emberjs.com/api/data/classes/DS.Model.html&quot;&gt;DS.Model&lt;/a&gt;
-    @default null
-  */
-  model: null,
+</div>
 
-  /**
-    Array containing metadata for model&#x27;s related columns.
 
-    @property value
-    @type Object[]
-    @default null
-  */
-  columns: null,
+<div class="well well-small">
+    
+</div>
 
-  /**
-    Flag indicates whether there are some editable values in cell.
 
-    @property hasEditableValues
-    @type Boolean
-    @default false
-  */
-  hasEditableValues: false,
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
-  /**
-    Flag: indicates whether to show validation messages or not.
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
+    </ul>
 
-    @property showValidationMessages
-    @type Boolean
-    @default false
-  */
-  showValidationMessages: true,
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
+            <h2 class="off-left">Item Index</h2>
 
-  /**
-    An overridable method called when objects are instantiated.
-    For more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).
-    Initializes {{#crossLink &quot;ObjectListViewSingleColumnCellComponent&quot;}}object-list-view-single-column-cell{{/crossLink}} component.
-   */
-  init() {
-    this._super(...arguments);
-  }
-});
+                <div class="index-section methods">
+                    <h3>Methods</h3>
 
-    </pre>
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getProjectionByName" data-tablink="getProjectionByName">getProjectionByName</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getSizeInUnits" data-tablink="getSizeInUnits">getSizeInUnits</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_predicateForFilter" data-tablink="predicateForFilter">predicateForFilter</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_runAfter" data-tablink="runAfter">runAfter</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="tab-pane">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method_getProjectionByName" class="method item">
+                        <h3 class="name"><code>getProjectionByName</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>projectionName</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>modelName</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>store</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/addon_utils_get-projection-by-name.js.html#l7"><code>addon&#x2F;utils&#x2F;get-projection-by-name.js:7</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Used for getting projection object by projection name.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">projectionName</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Projection name.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">modelName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Model Name.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">store</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Projection by name.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_getSizeInUnits" class="method item">
+                        <h3 class="name"><code>getSizeInUnits</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>fileSize</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>fileSizeUnits</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/addon_utils_file-size-units-converter.js.html#l5"><code>addon&#x2F;utils&#x2F;file-size-units-converter.js:5</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Used for convert file size value depending on units.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">fileSize</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>file size in bytes.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">fileSizeUnits</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>wanted file size units as 'Bt' 'Kb' 'Mb' 'Gb'.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>:
+                                        <p>File size in bytes.</p>
+                    <p>Usage:
+                    controllers/my-form.js</p>
+                    <pre><code class="language-javascript">  import { getRecord } from 'ember-flexberry/utils/file-size-units-converter'
+                      let layer = getSizeInUnits(file.size, 'Mb')
+                    
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_predicateForFilter" class="method item">
+                        <h3 class="name"><code>predicateForFilter</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>filter</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">BasePredicate | Null</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/addon_utils_filter.js.html#l9"><code>addon&#x2F;utils&#x2F;filter.js:9</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Builds predicate for filter</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">filter</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Object (<code>{ name, condition, pattern }</code>) with parameters for filter.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">BasePredicate | Null</span>:
+                                        <p>Predicate to filter through.</p>
+                    
+                                </div>
+                            </div>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-javascript">import { predicateForFilter } from 'ember-flexberry/utils/filter'
+                    predicateForFilter(filter)
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    </div>
+                    <div id="method_runAfter" class="method item private">
+                        <h3 class="name"><code>runAfter</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>context</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>condition</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>handler</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/addon_utils_run-after.js.html#l7"><code>addon&#x2F;utils&#x2F;run-after.js:7</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Runs <code>handler</code> after <code>condition</code> is met.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">context</code>
+                                            <span class="type">Any</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The context with which <code>handler</code> and <code>condition</code> functions will be called.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">condition</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The function that must return <code>true</code> for <code>handler</code> to be called.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">handler</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The function to be called when <code>condition</code> returns <code>true</code>.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+            </div>
+
+
+
+    </div>
 </div>
                     </div>
                 </div>

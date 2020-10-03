@@ -13152,7 +13152,11 @@ define('ember-flexberry/test-support/check-lookup-dialogs', ['exports', 'ember']
   });
 
   var checkLookups = function checkLookups(lookups, index, helpers) {
-    var _this = this;
+    var modalDialogWaiter = function modalDialogWaiter() {
+      var dimmer = helpers.find('.ui.dimmer');
+      return !dimmer.hasClass('animating') || dimmer.hasClass('hidden');
+    };
+    _ember['default'].Test.registerWaiter(modalDialogWaiter);
 
     var lookup = lookups[index];
     var dialogButton = helpers.find('[data-test-lookup-change]', lookup);
@@ -13163,10 +13167,9 @@ define('ember-flexberry/test-support/check-lookup-dialogs', ['exports', 'ember']
       var closeButton = helpers.findWithAssert('.close', dialog);
       helpers.click(closeButton);
       helpers.andThen(function () {
+        _ember['default'].Test.unregisterWaiter(modalDialogWaiter);
         if (index < lookups.length - 1) {
-          _ember['default'].run.later(_this, function () {
-            checkLookups(lookups, index + 1, helpers);
-          }, 500);
+          checkLookups(lookups, index + 1, helpers);
         }
       });
     });
@@ -13302,8 +13305,6 @@ define('ember-flexberry/test-support/check-olv-sort-on-all-columns', ['exports',
     var headCells = helpers.find('thead .dt-head-left', olv).toArray();
 
     if (headCells.length > 0) {
-      assert.expect(assert.expect() + headCells.length * 4);
-
       click('.ui.clear-sorting-button');
       andThen(function () {
         checkColumns(headCells, 0, olv, helpers, assert);

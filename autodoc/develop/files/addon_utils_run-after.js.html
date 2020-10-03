@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>addon/components/object-list-view-single-column-cell.js - Flexberry Documentation</title>
+    <title>addon/utils/run-after.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -209,7 +209,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>addon/components/object-list-view-single-column-cell.js <small>File</small></h1>
+    <h1>addon/utils/run-after.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -218,69 +218,32 @@
   @module ember-flexberry
 */
 
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
-import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lookup-compatible-component&#x27;;
-import FlexberryFileCompatibleComponentMixin from &#x27;../mixins/flexberry-file-compatible-component&#x27;;
+import Ember from &#x27;ember&#x27;;
 
 /**
-  @class ObjectListViewSingleColumnCellComponent
-  @extends FlexberryBaseComponent
-  @uses FlexberryLookupCompatibleComponentMixin
-  @uses FlexberryFileCompatibleComponentMixin
+  Runs &#x60;handler&#x60; after &#x60;condition&#x60; is met.
+
+  @for Utils
+
+  @private
+  @method runAfter
+  @param {any} context The context with which &#x60;handler&#x60; and &#x60;condition&#x60; functions will be called.
+  @param {Function} condition The function that must return &#x60;true&#x60; for &#x60;handler&#x60; to be called.
+  @param {Function} handler The function to be called when &#x60;condition&#x60; returns &#x60;true&#x60;.
 */
-export default FlexberryBaseComponent.extend(
-  FlexberryLookupCompatibleComponentMixin,
-  FlexberryFileCompatibleComponentMixin, {
-  /**
-    Component&#x27;s wrapping &lt;div&gt; CSS-class names.
-  */
-  classNames: [&#x27;object-list-view-single-column-cell&#x27;, &#x27;ui&#x27;, &#x27;form&#x27;],
+export default function runAfter(context, condition, handler) {
+  const checkInterval = 50;
 
-  /**
-    Model which need to be displayed by component.
+  const checkCondition = () =&gt; {
+    if (condition.call(context) === true) {
+      Ember.run(context, handler);
+    } else {
+      Ember.run.later(checkCondition, checkInterval);
+    }
+  };
 
-    @property model
-    @type &lt;a href=&quot;http://emberjs.com/api/data/classes/DS.Model.html&quot;&gt;DS.Model&lt;/a&gt;
-    @default null
-  */
-  model: null,
-
-  /**
-    Array containing metadata for model&#x27;s related columns.
-
-    @property value
-    @type Object[]
-    @default null
-  */
-  columns: null,
-
-  /**
-    Flag indicates whether there are some editable values in cell.
-
-    @property hasEditableValues
-    @type Boolean
-    @default false
-  */
-  hasEditableValues: false,
-
-  /**
-    Flag: indicates whether to show validation messages or not.
-
-    @property showValidationMessages
-    @type Boolean
-    @default false
-  */
-  showValidationMessages: true,
-
-  /**
-    An overridable method called when objects are instantiated.
-    For more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).
-    Initializes {{#crossLink &quot;ObjectListViewSingleColumnCellComponent&quot;}}object-list-view-single-column-cell{{/crossLink}} component.
-   */
-  init() {
-    this._super(...arguments);
-  }
-});
+  Ember.run.later(checkCondition, checkInterval);
+}
 
     </pre>
 </div>

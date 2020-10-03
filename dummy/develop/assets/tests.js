@@ -4370,7 +4370,6 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-sorting-on-all-columns-test', ['exports', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check sorting on all column', function (store, assert, app) {
-    assert.expect(1);
     var path = 'components-acceptance-tests/flexberry-objectlistview/base-operations';
     visit(path);
     andThen(function () {
@@ -27056,6 +27055,89 @@ define('dummy/tests/unit/utils/need-save-current-agregator-test.jshint', ['expor
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/utils/need-save-current-agregator-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/unit/utils/run-after-test', ['exports', 'ember', 'qunit', 'ember-flexberry/utils/run-after'], function (exports, _ember, _qunit, _emberFlexberryUtilsRunAfter) {
+
+  (0, _qunit.module)('Unit | Utility | run-after');
+
+  (0, _qunit.test)('possible condition', function (assert) {
+    var done = assert.async();
+
+    var counter = 0;
+    var condition = function condition() {
+      return ++counter === 5;
+    };
+
+    (0, _emberFlexberryUtilsRunAfter['default'])(null, condition, function () {
+      assert.strictEqual(counter, 5, 'The \'condition\' is called five times.');
+      done();
+    });
+  });
+
+  (0, _qunit.test)('impossible condition', function (assert) {
+    var onerror = _ember['default'].onerror;
+    var done = assert.async();
+
+    var error = undefined;
+    var counter = 0;
+    var conditionCalled = false;
+    _ember['default'].onerror = function (e) {
+      error = e;
+    };
+
+    (0, _emberFlexberryUtilsRunAfter['default'])(null, function () {
+      conditionCalled = true;
+      throw new Error('Impossible condition.');
+    }, function () {
+      return ++counter;
+    });
+
+    (0, _emberFlexberryUtilsRunAfter['default'])(null, function () {
+      return conditionCalled;
+    }, function () {
+      _ember['default'].onerror = onerror;
+
+      assert.strictEqual(counter, 0, 'The \'handler\' is not called.');
+      assert.strictEqual(error.message, 'Impossible condition.', 'Condition complete.');
+
+      done();
+    });
+  });
+
+  (0, _qunit.test)('validate context', function (assert) {
+    var done = assert.async();
+
+    var context = {};
+
+    var condition = function condition() {
+      assert.ok(this === context, 'The \'condition\' is called with correct context.');
+      return true;
+    };
+
+    var handler = function handler() {
+      assert.ok(this === context, 'The \'handler\' is called with correct context.');
+      done();
+    };
+
+    (0, _emberFlexberryUtilsRunAfter['default'])(context, condition, handler);
+  });
+});
+define('dummy/tests/unit/utils/run-after-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - unit/utils');
+  test('unit/utils/run-after-test.js should pass jscs', function () {
+    ok(true, 'unit/utils/run-after-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/unit/utils/run-after-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/utils/run-after-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/utils/run-after-test.js should pass jshint.');
   });
 });
 define('dummy/tests/unit/utils/serialize-sorting-param-test', ['exports', 'dummy/utils/serialize-sorting-param', 'qunit'], function (exports, _dummyUtilsSerializeSortingParam, _qunit) {

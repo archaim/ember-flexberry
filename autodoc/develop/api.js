@@ -119,6 +119,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "TreeNodeObject",
         "UIMessage",
         "UserSettingsService",
+        "Utils",
         "Utils.Layers",
         "ValidationDataObject"
     ],
