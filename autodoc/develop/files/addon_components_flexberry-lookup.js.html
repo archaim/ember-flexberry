@@ -748,6 +748,7 @@ export default FlexberryBaseComponent.extend({
     &#x27;title&#x27;,
     &#x27;lookupLimitPredicate&#x27;,
     &#x27;relatedModel&#x27;,
+    &#x27;updateLookupAction&#x27;,
     &#x27;_modalDialogSettings&#x27;,
     &#x27;_lookupWindowCustomPropertiesData&#x27;,
     function() {
@@ -764,6 +765,7 @@ export default FlexberryBaseComponent.extend({
         perPage: perPage || this.get(&#x27;perPage&#x27;),
         folvComponentName: this.get(&#x27;folvComponentName&#x27;),
         modalDialogSettings: this.get(&#x27;_modalDialogSettings&#x27;),
+        updateLookupAction: this.get(&#x27;updateLookupAction&#x27;),
       };
     }),
 
@@ -1399,7 +1401,8 @@ export default FlexberryBaseComponent.extend({
               {
                 relationName: relationName,
                 modelToLookup: relatedModel,
-                newRelationValue: result.instance
+                newRelationValue: result.instance,
+                componentName: _this.get(&#x27;componentName&#x27;)
               });
           });
         } else {
@@ -1461,7 +1464,8 @@ export default FlexberryBaseComponent.extend({
                       {
                         relationName: relationName,
                         modelToLookup: relatedModel,
-                        newRelationValue: record
+                        newRelationValue: record,
+                        componentName: _this.get(&#x27;componentName&#x27;)
                       });
                   }
                 });
@@ -1585,7 +1589,8 @@ export default FlexberryBaseComponent.extend({
           {
             relationName: relationName,
             modelToLookup: relatedModel,
-            newRelationValue: newValue
+            newRelationValue: newValue,
+            componentName: _this.get(&#x27;componentName&#x27;)
           });
       }
     });
@@ -1782,7 +1787,8 @@ export default FlexberryBaseComponent.extend({
           {
             relationName: relationName,
             modelToLookup: relatedModel,
-            newRelationValue: record
+            newRelationValue: record,
+            componentName: _this.get(&#x27;componentName&#x27;)
           });
       }
     });

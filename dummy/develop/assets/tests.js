@@ -23715,7 +23715,7 @@ define('dummy/tests/unit/controllers/lookup-dialog-test', ['exports', 'ember-qun
 
   (0, _emberQunit.moduleFor)('controller:lookup-dialog', 'Unit | Controller | lookup dialog', {
     // Specify the other units that are required for this test.
-    // needs: ['controller:foo']
+    needs: ['service:lookup-events']
   });
 
   // Replace this with your real tests.
