@@ -235,8 +235,8 @@ export default Ember.Service.extend(Ember.Evented, {
       pathPrefixWithType = type;
     }
 
-    // Path prefix with common type only: 'mobile' for both tablets and phones etc.
-    let pathPrefixCommon = this.mobile() || this.tablet() ? 'mobile' : '';
+    // Path prefix with common type: 'mobile' or 'tablet'.
+    let pathPrefixCommon = this.mobile() ? 'mobile' : this.tablet() ? 'tablet' : '';
 
     // Path prefixes without orientation.
     let pathPrefixesWithoutOrientation = [

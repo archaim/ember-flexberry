@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+* Add tempalete path prefix tablet.
+
 
 ## [2.6.0-beta.0] - 2020-10-06
 ### Added
