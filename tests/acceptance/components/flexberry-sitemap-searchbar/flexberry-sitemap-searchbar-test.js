@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
-import { fillIn } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 import I18nService from 'ember-i18n/services/i18n';
