@@ -9,7 +9,7 @@
 @textMenuColor: @white;
 @textMenuHideColor: #91a7cd;
 
-@searchbarHeight: 40px;
+@searchbarHeight: 30px;
 @searchbarWidth: 86%;
 @searchbarTextIndent: 20px;
 
@@ -18,10 +18,8 @@
 @resultsListFontSize: 12px;
 @resultsListFontWeight: 400;
 @resultsListLineHeight: 20px;
-@resultsListMarginTop: 2.5rem;
+@resultsListMarginTop: 2rem;
 @resultsListMaxHeight: 700px;
-
-@resultsListAnimation: fadeIn 0.25s ease-in 0s;
 
 @matchCardLinkColor: #3B4256;
 @matchCardLinkHoverColor: #0C49CD;

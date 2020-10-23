@@ -1,22 +1,50 @@
 import Ember from 'ember';
+import { translationMacro as t } from 'ember-i18n';
 
 export default Ember.Component.extend({
 
   /**
     Array of search objects.
 
-    @property treeContent
+    @property sitemap
     @type Array
   */
-  treeContent: Ember.A(),
+  sitemap: [],
 
   /**
     Result array consisting of filtered objects.
 
-    @property results
+    @property _results
     @type Array
+    @private
   */
-  results: Ember.A(),
+  _results: [],
+
+  /**
+    User input from .sitemap-search-input.
+
+    @property lastKeyPress
+    @type string
+  */
+  userQuery: null,
+
+  /**
+    Toggler for showing .sitemap-search-results-list.
+
+    @property isShowingResults
+    @type boolean
+  */
+  isShowingResults: false,
+
+  /**
+    Flag for showing error message if user query doesn't get any hits.
+
+    @property noHits
+    @type boolean
+  */
+  noHits: Ember.computed('_results', 'userQuery', function() {
+    return this.get('_results').length === 0 && !Ember.isEmpty(this.get('userQuery'));
+  }),
 
   /**
     Event timestamp in milliseconds.
@@ -27,7 +55,16 @@ export default Ember.Component.extend({
   lastKeyPress: 0,
 
   /**
-   Method that recursively returns filtered treeContent.
+    Component's input placeholder.
+
+    @property placeholder
+    @type String
+    @default t('components.flexberry-sitemap-searchbar.placeholder')
+  */
+  placeholder: t('components.flexberry-sitemap-searchbar.placeholder'),
+
+  /**
+   Recursively returns filtered sitemap.
 
    @private
    @method _searchTree
@@ -37,14 +74,14 @@ export default Ember.Component.extend({
 
     currentTree.forEach(element => {
       if (this._elementMatchesRegex(regexQuery, element)) {
-        resultTree.push(element);
+        let matchingNode = Ember.$.extend(true, {}, element);
+        resultTree.push(matchingNode);
       } else if (this._elementHasChildren(element)) {
         let resultChildren = this._searchTree(regexQuery, element.children);
 
         if (resultChildren.length > 0) {
-          let newElement = JSON.parse(JSON.stringify(element));
-          Ember.set(newElement, 'children', resultChildren);
-          resultTree.push(newElement);
+          const { link, caption, title } = element;
+          resultTree.push({ link, caption, title, children: resultChildren });
         }
       }
     });
@@ -53,57 +90,79 @@ export default Ember.Component.extend({
   },
 
   /**
-   Method that checks element caption string for regex.
+   Checks element caption string for regex.
 
    @private
    @method _elementMatchesRegex
- */
+  */
   _elementMatchesRegex(regex, element) {
-    return regex.test(element.caption.string);
+    if (element.caption) {
+      return regex.test(element.caption.string);
+    } else {
+      return regex.test(element.title.string);
+    }
   },
 
   /**
-   Method that checks if element has children.
+   Checks if element has children.
 
    @private
    @method _elementHasChildren
- */
+  */
   _elementHasChildren(element) {
-    return (typeof element === 'object') && (typeof element.children !== 'undefined') && (element.children !== null) && (element.children.length > 0);
+    return (typeof element === 'object') && (!Ember.isEmpty(element.children));
   },
 
+  actions: {
+    /**
+     Initiate sitemap search.
+
+     @private
+     @method startSearch
+    */
+    startSearch() {
+      this.set('isShowingResults', true);
+      let query = this.get('userQuery').toLowerCase();
+
+      if (query) {
+        // Recursive search will be initiated only if last keypress happened more than 200 ms ago (for performance reasons).
+        Ember.run.debounce(this, () => {
+          let regexQuery = new RegExp(`${query}`, 'gi');
+
+          this.set('_results', this._searchTree(regexQuery, this.get('sitemap')));
+        }, 200);
+
+      } else {
+        this.set('_results', this.get('sitemap'));
+      }
+    },
+
+    /**
+     Toggle isShowingResults prop.
+
+     @private
+     @method toggleResultsList
+    */
+    toggleResultsList() {
+      this.toggleProperty('isShowingResults');
+    }
+  },
   /**
     Initializes DOM-related component's logic.
   */
   didInsertElement() {
-    this.set('results', this.get('treeContent'));
-    const $sitemapSearch = document.getElementById('sitemap-search');
-
-    this.$('.sitemap-searchbar.ui.search').on('click', e => {
-      this.$('#results-list').show();
-      e.stopPropagation();
-    });
-
-    this.$('#results-list').on('click', e => {
-      e.stopPropagation();
-    });
+    this.set('_results', this.get('sitemap'));
 
     this.$(document).on('click', e => {
-      this.$('#results-list').hide();
       e.stopPropagation();
-    });
 
-    $sitemapSearch.addEventListener('input', (e) => {
-      let query = $sitemapSearch.value.toLowerCase();
-
-      if ((query === null || query === 'undefined' || query === '')) {
-        this.set('results', this.get('treeContent'));
-      } else if (e.timeStamp - this.lastKeyPress > 200) { // Recursive search will be initiated only if last keypress happened more than 200 ms ago (for performance reasons).
-        let regexQuery = new RegExp(`${query}`, 'gi');
-
-        this.set('results', this._searchTree(regexQuery, this.get('treeContent')));
-        this.set('lastKeyPress', e.timeStamp);
+      let clickTargetIsNotComponent = !e.target.offsetParent.classList.contains('sitemap-search-results-list') &&
+      !e.target.classList.contains('sitemap-search-results-list') &&
+      !e.target.classList.contains('sitemap-search-input');
+      if (clickTargetIsNotComponent) {
+        this.set('isShowingResults', false);
       }
     });
   }
 });
+
